@@ -290,17 +290,17 @@ function QuizContent() {
                     key={index}
                     onClick={() => handleSelectAnswer(index)}
                     disabled={hasAnswered}
-                    className={`w-full text-left p-4 rounded-xl border-2 transition-all ${optionClass}`}
+                    className={`w-full text-left p-3 sm:p-4 rounded-xl border-2 transition-all ${optionClass}`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
+                      <span className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center text-sm font-medium ${
                         hasAnswered && index === currentQuestion.correctAnswer ? 'bg-green-500 text-white' :
                         hasAnswered && index === selectedAnswer ? 'bg-red-500 text-white' :
                         'bg-gray-100 text-gray-600'
                       }`}>
                         {String.fromCharCode(65 + index)}
                       </span>
-                      <span>{option}</span>
+                      <span className="text-sm sm:text-base">{option}</span>
                       {hasAnswered && index === currentQuestion.correctAnswer && (
                         <span className="ml-auto text-green-600 font-bold">✓</span>
                       )}

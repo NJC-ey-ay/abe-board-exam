@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import MobileNav from './mobile-nav';
 
 export const metadata: Metadata = {
   title: 'ABE Study - Agricultural and Biosystems Engineering Board Exam Prep',
@@ -19,20 +20,21 @@ export default function RootLayout({
             <div className="max-w-7xl mx-auto px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
                     <span className="text-xl font-bold">ABE</span>
                   </div>
-                  <div>
-                    <h1 className="text-xl font-bold">ABE Study</h1>
-                    <p className="text-xs text-primary-200">Board Exam Preparation</p>
+                  <div className="min-w-0">
+                    <h1 className="text-lg sm:text-xl font-bold truncate">ABE Study</h1>
+                    <p className="text-xs text-primary-200 hidden sm:block">Board Exam Preparation</p>
                   </div>
                 </div>
-                <nav className="flex gap-2 sm:gap-4 md:gap-6 text-sm sm:text-base">
+                <nav className="hidden md:flex gap-6 text-sm">
                   <a href="/" className="hover:text-primary-200 transition whitespace-nowrap">Home</a>
                   <a href="/quiz" className="hover:text-primary-200 transition whitespace-nowrap">Practice</a>
-                  <a href="/conversions" className="hidden sm:inline hover:text-primary-200 transition whitespace-nowrap">Conversions</a>
+                  <a href="/conversions" className="hover:text-primary-200 transition whitespace-nowrap">Conversions</a>
                   <a href="/progress" className="hover:text-primary-200 transition whitespace-nowrap">Progress</a>
                 </nav>
+                <MobileNav />
               </div>
             </div>
           </header>
