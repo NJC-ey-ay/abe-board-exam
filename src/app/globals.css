@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.solution-card {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.option-hover:hover {
+  transform: translateX(4px);
+}
+
+.correct-option {
+  @apply bg-green-100 border-green-500 text-green-800;
+}
+
+.incorrect-option {
+  @apply bg-red-100 border-red-500 text-red-800;
+}
+
+.weak-point {
+  @apply inline-block bg-amber-100 text-amber-800 px-2 py-1 rounded text-xs font-medium mr-1 mb-1;
+}
