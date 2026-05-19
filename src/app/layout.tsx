@@ -27,11 +27,11 @@ export default function RootLayout({
                     <p className="text-xs text-primary-200">Board Exam Preparation</p>
                   </div>
                 </div>
-                <nav className="flex gap-6">
-                  <a href="/" className="hover:text-primary-200 transition">Home</a>
-                  <a href="/quiz" className="hover:text-primary-200 transition">Practice</a>
-                  <a href="/conversions" className="hover:text-primary-200 transition">Unit Conversions</a>
-                  <a href="/progress" className="hover:text-primary-200 transition">Progress</a>
+                <nav className="flex gap-2 sm:gap-4 md:gap-6 text-sm sm:text-base">
+                  <a href="/" className="hover:text-primary-200 transition whitespace-nowrap">Home</a>
+                  <a href="/quiz" className="hover:text-primary-200 transition whitespace-nowrap">Practice</a>
+                  <a href="/conversions" className="hidden sm:inline hover:text-primary-200 transition whitespace-nowrap">Conversions</a>
+                  <a href="/progress" className="hover:text-primary-200 transition whitespace-nowrap">Progress</a>
                 </nav>
               </div>
             </div>
