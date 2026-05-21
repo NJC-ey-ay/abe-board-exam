@@ -7,6 +7,11 @@
   --background-rgb: 255, 255, 255;
 }
 
+.dark {
+  --foreground-rgb: 230, 230, 230;
+  --background-rgb: 15, 23, 42;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
@@ -38,13 +43,35 @@ body {
 }
 
 .correct-option {
-  @apply bg-green-100 border-green-500 text-green-800;
+  @apply bg-green-100 border-green-500 text-green-800 dark:bg-green-900 dark:border-green-500 dark:text-green-200;
 }
 
 .incorrect-option {
-  @apply bg-red-100 border-red-500 text-red-800;
+  @apply bg-red-100 border-red-500 text-red-800 dark:bg-red-900 dark:border-red-500 dark:text-red-200;
 }
 
 .weak-point {
-  @apply inline-block bg-amber-100 text-amber-800 px-2 py-1 rounded text-xs font-medium mr-1 mb-1;
+  @apply inline-block bg-amber-100 text-amber-800 px-2 py-1 rounded text-xs font-medium mr-1 mb-1 dark:bg-amber-900 dark:text-amber-200;
 }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.katex { font-size: 1.1em; white-space: nowrap; }
+.katex-html { overflow: visible; }
+.katex-display { margin: 0.5em 0; }
+
+.dark .katex { color: #e0e0e0; }
+.dark .katex .mathnormal { color: #e0e0e0; }

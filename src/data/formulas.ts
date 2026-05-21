@@ -33,7 +33,7 @@ export const formulas: Formula[] = [
   {
     id: 'fluid-002',
     name: 'Bernoulli\'s Equation',
-    formula: 'P₁/ρg + v₁²/2g + z₁ = P₂/ρg + v₂²/2g + z₂',
+    formula: '\\frac{P_1}{ρg} + \\frac{v_1^2}{2g} + z_1 = \\frac{P_2}{ρg} + \\frac{v_2^2}{2g} + z_2',
     description: 'Conservation of energy in fluid flow',
     topic: 'Fluid Mechanics',
     area: 'A',
@@ -42,7 +42,7 @@ export const formulas: Formula[] = [
   {
     id: 'fluid-003',
     name: 'Continuity Equation',
-    formula: 'Q = A × v = A₁v₁ = A₂v₂',
+    formula: 'Q = A × v = A_1 v_1 = A_2 v_2',
     description: 'Conservation of mass in steady flow',
     topic: 'Fluid Mechanics',
     area: 'A',
@@ -51,7 +51,7 @@ export const formulas: Formula[] = [
   {
     id: 'fluid-004',
     name: 'Reynolds Number',
-    formula: 'Re = ρvD/μ = vD/ν',
+    formula: 'Re = \\frac{ρvD}{μ} = \\frac{vD}{ν}',
     description: 'Determines flow regime (laminar/turbulent)',
     topic: 'Fluid Mechanics',
     area: 'A',
@@ -64,7 +64,7 @@ export const formulas: Formula[] = [
   {
     id: 'fluid-005',
     name: 'Darcy-Weisbach Equation',
-    formula: 'h_f = f (L/D) (v²/2g)',
+    formula: 'h_f = f \\frac{L}{D} \\frac{v^2}{2g}',
     description: 'Head loss due to friction in pipes',
     topic: 'Fluid Mechanics',
     area: 'A',
@@ -82,7 +82,7 @@ export const formulas: Formula[] = [
   {
     id: 'fluid-007',
     name: 'Specific Speed (Pump)',
-    formula: 'N_s = N√Q/H^0.75',
+    formula: 'N_s = \\frac{N\\sqrt{Q}}{H^{0.75}}',
     description: 'Characterizes pump type',
     topic: 'Fluid Mechanics',
     area: 'A',
@@ -91,7 +91,7 @@ export const formulas: Formula[] = [
   {
     id: 'fluid-008',
     name: 'Weir Flow Rate',
-    formula: 'Q = Cd × L × H^1.5',
+    formula: 'Q = C_d × L × H^{1.5}',
     description: 'Flow over a weir',
     topic: 'Fluid Mechanics',
     area: 'A',
@@ -100,7 +100,7 @@ export const formulas: Formula[] = [
   {
     id: 'fluid-009',
     name: 'Manning\'s Equation',
-    formula: 'V = (1/n) × R^0.67 × S^0.5',
+    formula: 'V = (1/n) × R^{0.67} × S^{0.5}',
     description: 'Open channel flow velocity',
     topic: 'Fluid Mechanics',
     area: 'A',
@@ -152,7 +152,7 @@ export const formulas: Formula[] = [
   {
     id: 'thermo-005',
     name: 'COP (Refrigerator)',
-    formula: 'COP_R = Q_L/W_in = Q_L/(Q_H - Q_L)',
+    formula: 'COP_R = Q_L/W_{in} = Q_L/(Q_H - Q_L)',
     description: 'Coefficient of Performance',
     topic: 'Thermodynamics',
     area: 'A',
@@ -199,7 +199,7 @@ export const formulas: Formula[] = [
   {
     id: 'ice-004',
     name: 'Volumetric Efficiency',
-    formula: 'η_v = (Actual air intake)/(Displacement volume) × 100%',
+    formula: 'η_v = (\\text{Actual air intake})/(\\text{Displacement volume}) \\times 100%',
     description: 'Engine aspiration efficiency',
     topic: 'ICE',
     area: 'A',
@@ -208,7 +208,7 @@ export const formulas: Formula[] = [
   {
     id: 'ice-005',
     name: 'Specific Fuel Consumption',
-    formula: 'SFC = Fuel consumption (kg/hr) / BHP',
+    formula: 'SFC = \\text{Fuel consumption (kg/hr)} / BHP',
     description: 'Fuel efficiency measure',
     topic: 'ICE',
     area: 'A',
@@ -294,7 +294,7 @@ export const formulas: Formula[] = [
   {
     id: 'econ-004',
     name: 'Benefit-Cost Ratio',
-    formula: 'B/C = Benefits/Costs',
+    formula: 'B/C = \\text{Benefits}/\\text{Costs}',
     description: 'Project viability measure',
     topic: 'Engineering Economy',
     area: 'A',
@@ -303,7 +303,7 @@ export const formulas: Formula[] = [
   {
     id: 'econ-005',
     name: 'Straight-Line Depreciation',
-    formula: 'D = (Cost - Salvage) / Life',
+    formula: 'D = (\\text{Cost} - \\text{Salvage}) / \\text{Life}',
     description: 'Annual depreciation expense',
     topic: 'Engineering Economy',
     area: 'A',
@@ -390,7 +390,7 @@ export const formulas: Formula[] = [
   {
     id: 'irr-002',
     name: 'Irrigation Efficiency',
-    formula: 'Efficacy = (Water stored)/(Water applied)',
+    formula: '\\text{Efficacy} = (\\text{Water stored})/(\\text{Water applied})',
     description: 'Overall irrigation efficiency',
     topic: 'Irrigation',
     area: 'B',
@@ -408,7 +408,7 @@ export const formulas: Formula[] = [
   {
     id: 'irr-004',
     name: 'Gross Irrigation Requirement',
-    formula: 'GIR = NIR / Efficiency',
+    formula: 'GIR = NIR / \\text{Efficiency}',
     description: 'Total water to apply',
     topic: 'Irrigation',
     area: 'B',
@@ -540,7 +540,7 @@ export const formulas: Formula[] = [
   {
     id: 'strength-007',
     name: 'Euler\'s Buckling Load',
-    formula: 'P_cr = π²EI/(KL)²',
+    formula: 'P_{cr} = π²EI/(KL)²',
     description: 'Critical buckling load',
     topic: 'Strength of Materials',
     area: 'C',
@@ -560,7 +560,7 @@ export const formulas: Formula[] = [
   {
     id: 'struct-001',
     name: 'Bending Moment (Simply Supported)',
-    formula: 'M_max = PL/4',
+    formula: 'M_{max} = PL/4',
     description: 'Max moment at center load',
     topic: 'Structural Analysis',
     area: 'C',
@@ -587,7 +587,7 @@ export const formulas: Formula[] = [
   {
     id: 'struct-004',
     name: 'Cantilever Deflection',
-    formula: 'δ_max = 5wL⁴/384EI',
+    formula: 'δ_{max} = 5wL⁴/384EI',
     description: 'Uniformly distributed load',
     topic: 'Structural Analysis',
     area: 'C',
@@ -607,7 +607,7 @@ export const formulas: Formula[] = [
   {
     id: 'psych-002',
     name: 'Relative Humidity',
-    formula: 'φ = P_v / P_vs × 100%',
+    formula: 'φ = P_v / P_{vs} × 100%',
     description: 'Actual to saturation vapor pressure',
     topic: 'Psychrometrics',
     area: 'C',
@@ -636,7 +636,7 @@ export const formulas: Formula[] = [
   {
     id: 'food-001',
     name: 'Drying Rate',
-    formula: 'dm/dt = -h_m × A × ρ × (Y - Y_eq)',
+    formula: 'dm/dt = -h_m × A × ρ × (Y - Y_{eq})',
     description: 'Moisture removal rate',
     topic: 'Food Processing',
     area: 'C',
@@ -677,6 +677,24 @@ export const formulas: Formula[] = [
     topic: 'Food Processing',
     area: 'C',
     application: 'Cold storage design'
+  },
+
+  // Bioprocess / Waste Management
+  {
+    id: 'bioprocess-001',
+    name: 'Methane Generation from Waste',
+    formula: 'CH_4 = \\text{Waste} \\times (1-\\text{moisture}) \\times \\text{VS}_{\\text{content}} \\times \\text{Yield} \\times {CH_4}_{\\text{fraction}}',
+    description: 'Methane production from anaerobic digestion',
+    topic: 'Bioprocess Engineering',
+    area: 'C',
+    constants: [
+      { symbol: 'Waste', value: 'kg/year', description: 'total waste input' },
+      { symbol: 'moisture', value: 'decimal (0-1)', description: 'moisture content of waste' },
+      { symbol: 'VS_content', value: 'decimal (0-1)', description: 'volatile solids fraction' },
+      { symbol: 'Yield', value: 'm³ CH₄/kg VS', description: 'methane yield per kg VS' },
+      { symbol: 'CH₄_fraction', value: '~0.5–0.7', description: 'methane fraction in biogas' }
+    ],
+    application: 'Landfill gas estimation, biogas plant design'
   },
 
   // MATHEMATICS (used across all areas)

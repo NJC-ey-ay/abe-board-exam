@@ -19,616 +19,626 @@ export interface Question {
   month: number;
 }
 
-// Subject categorization based on TOS
+// Subject categorization based on ABELE TOS Areas
 export const subjects = [
-  { id: 'math1', name: 'Mathematics 1', month: 1, topics: ['Algebra', 'Trigonometry', 'Geometry', 'Linear Algebra'] },
-  { id: 'math2', name: 'Mathematics 2', month: 1, topics: ['Calculus', 'Differential Equations', 'Complex Numbers'] },
-  { id: 'statistics', name: 'Statistics', month: 2, topics: ['Descriptive Statistics', 'Probability', 'Hypothesis Testing', 'Regression'] },
-  { id: 'fluid-mechanics', name: 'Fluid Mechanics', month: 3, topics: ['Fluid Properties', 'Hydrostatics', 'Flow Analysis', 'Pumps'] },
-  { id: 'mechanics', name: 'Mechanics & Strength of Materials', month: 4, topics: ['Statics', 'Dynamics', 'Stress-Strain', 'Bending'] },
-  { id: 'thermodynamics', name: 'Thermodynamics & Heat Transfer', month: 5, topics: ['Laws of Thermodynamics', 'Heat Transfer', 'Cycles'] },
-  { id: 'refrigeration', name: 'Refrigeration & Psychrometry', month: 5, topics: ['Refrigeration Cycles', 'Psychrometric Charts', 'AC Systems'] },
-  { id: 'soil-water', name: 'Soil & Water Conservation', month: 6, topics: ['Soil Properties', 'Erosion', 'Conservation Practices'] },
-  { id: 'irrigation', name: 'Irrigation & Drainage', month: 6, topics: ['Irrigation Systems', 'Water Requirements', 'Drainage'] },
-  { id: 'hydrology', name: 'Hydrology', month: 7, topics: ['Precipitation', 'Runoff', 'Groundwater', 'Flood Analysis'] },
-  { id: 'processing', name: 'Processing', month: 8, topics: ['Material Handling', 'Size Reduction', 'Storage', 'Processing Equipment'] },
-  { id: 'food-env', name: 'Food & Environmental Engineering', month: 8, topics: ['Food Preservation', 'Waste Management', 'Environmental Impact'] },
-  { id: 'structures', name: 'Structures', month: 9, topics: ['Load Analysis', 'Structural Design', 'Foundations'] },
-  { id: 'electrification', name: 'Electrification', month: 10, topics: ['Electrical Systems', 'Motors', 'Power Distribution'] },
-  { id: 'power', name: 'Power', month: 10, topics: ['Engines', 'Tractors', 'Power Transmission'] },
-  { id: 'engineering-economy', name: 'Engineering Economy', month: 11, topics: ['Cost Analysis', 'Present Worth', 'Rate of Return'] },
-  { id: 'project-mgmt', name: 'Project Management', month: 11, topics: ['Planning', 'Scheduling', 'CPM/PERT'] },
-  { id: 'law', name: 'Law & Ethics', month: 11, topics: ['RA 8435 (AFMA)', 'RA 10601 (AFMech)', 'Code of Ethics'] },
-  { id: 'mech-gis', name: 'Mechanization & GIS', month: 12, topics: ['Farm Machinery', 'GIS Applications', 'Precision Agriculture'] },
-  { id: 'aquaculture', name: 'Aquaculture', month: 12, topics: ['Fish Culture', 'Water Quality', 'Pond Design'] },
-  { id: 'fundamentals-ag', name: 'Fundamentals of Agriculture', month: 12, topics: ['Crop Science', 'Soil Science', 'Agroforestry'] },
+  { id: 'power', name: 'Power, Energy & Machinery', month: 1, topics: ['Agricultural Machinery', 'Engines & Tractors', 'PAES Standards', 'Field Capacity', 'Equipment Maintenance'] },
+  { id: 'soil-water', name: 'Soil & Water Conservation', month: 2, topics: ['Soil Properties', 'Erosion Control', 'Conservation Practices', 'USLE'] },
+  { id: 'irrigation', name: 'Irrigation & Drainage', month: 3, topics: ['Irrigation Methods', 'Water Requirements', 'Pumps', 'Drainage Design'] },
+  { id: 'hydrology', name: 'Hydrology', month: 4, topics: ['Precipitation', 'Runoff', 'Groundwater', 'Flood Frequency'] },
+  { id: 'structures', name: 'Farm Structures', month: 5, topics: ['Building Design', 'Load Analysis', 'Livestock Housing', 'Greenhouses'] },
+  { id: 'processing', name: 'Post-Harvest & Processing', month: 6, topics: ['Drying', 'Storage', 'Milling', 'Food Preservation'] },
+  { id: 'bioprocess', name: 'Bioprocess & Environment', month: 7, topics: ['Biogas', 'Waste Treatment', 'Composting', 'Environmental Laws'] },
+  { id: 'law', name: 'Laws & Ethics', month: 8, topics: ['RA 10601', 'RA 8435 (AFMA)', 'PD 1152', 'RA 9003', 'Code of Ethics'] },
+  { id: 'engineering-economy', name: 'Engineering Economy', month: 9, topics: ['Cost Analysis', 'Depreciation', 'Break-even', 'Present Worth'] },
+  { id: 'machinery', name: 'Farm Machinery & Mechanization', month: 10, topics: ['Tractors', 'Tillage Equipment', 'Harvesting Machinery', 'Sprayers'] },
+  { id: 'food-env', name: 'Food & Environmental Engineering', month: 11, topics: ['Thermal Processing', 'Refrigeration', 'Water Quality', 'Waste Management'] },
+  { id: 'fundamentals-ag', name: 'Fundamentals of Agriculture', month: 12, topics: ['Crop Science', 'Soil Science', 'Animal Production', 'Fisheries'] },
 ];
 
 export const questions: Question[] = [
-  // MATHEMATICS 1
+  // === POWER, ENERGY & MACHINERY ===
   {
-    id: 'math1-001',
-    subject: 'math1',
-    topic: 'Algebra',
-    question: 'Solve for x: 2x² - 5x - 3 = 0',
-    options: ['x = 3 or x = -0.5', 'x = -3 or x = 0.5', 'x = 1.5 or x = -1', 'x = 2 or x = -0.75'],
+    id: 'power-001',
+    subject: 'power',
+    topic: 'Agricultural Machinery',
+    question: 'It is the force required to pull an agricultural implement through the soil.',
+    options: ['Draft', 'Traction', 'Drawbar pull', 'Torque'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: 'x = 3 or x = -0.5',
-      whyCorrect: 'Using the quadratic formula x = (-b ± √(b² - 4ac)) / 2a, where a=2, b=-5, c=-3. The discriminant is 25 + 24 = 49, giving √49 = 7.',
-      solution: [
-        'Step 1: Identify coefficients: a = 2, b = -5, c = -3',
-        'Step 2: Calculate discriminant: b² - 4ac = (-5)² - 4(2)(-3) = 25 + 24 = 49',
-        'Step 3: Apply quadratic formula: x = [5 ± √49] / (2×2) = [5 ± 7] / 4',
-        'Step 4: x₁ = (5 + 7)/4 = 12/4 = 3',
-        'Step 5: x₂ = (5 - 7)/4 = -2/4 = -0.5'
-      ],
-      commonMistakes: ['Forgetting to include ± in the formula', 'Sign errors with coefficients', 'Not simplifying fractions']
+      correctAnswer: 'Draft',
+      whyCorrect: 'Draft is the horizontal force needed to pull an implement. It depends on soil type, depth, and implement design.',
+      solution: ['Draft is measured in kN or lbf and is used to size tractors for tillage operations.']
     },
-    weakPoints: ['Quadratic formula application', 'Discriminant calculation', 'Factoring quadratic equations'],
+    weakPoints: ['Tillage terminology'],
+    difficulty: 'easy',
+    month: 1
+  },
+  {
+    id: 'power-002',
+    subject: 'power',
+    topic: 'Engines & Tractors',
+    question: 'Robin engines commonly used in agricultural machinery are manufactured in what country?',
+    options: ['Japan', 'USA', 'China', 'Germany'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Japan',
+      whyCorrect: 'Robin engines (Subaru/Robin) are Japanese-made, widely used in agricultural machinery in the Philippines.',
+      solution: ['Robin = Japan, Kirby = USA, Honda = Japan, Briggs & Stratton = USA']
+    },
+    weakPoints: ['Engine brand origins'],
+    difficulty: 'easy',
+    month: 1
+  },
+  {
+    id: 'power-003',
+    subject: 'power',
+    topic: 'Engines & Tractors',
+    question: 'What is the typical empty weight of a standard knapsack sprayer used in crop protection?',
+    options: ['16-20 kg', '5-10 kg', '25-30 kg', '35-40 kg'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '16-20 kg',
+      whyCorrect: 'Standard knapsack sprayer empty weight is approximately 16-20 kg with a typical tank capacity of 16-20 L.',
+      solution: ['The empty weight matches the tank volume. When full, the total weight is approximately 32-40 kg.']
+    },
+    weakPoints: ['Equipment specifications'],
+    difficulty: 'easy',
+    month: 1
+  },
+  {
+    id: 'power-004',
+    subject: 'power',
+    topic: 'Field Capacity',
+    question: 'A tractor pulls a 2.0 m wide tiller at 5 km/h with 80% field efficiency. What is the effective field capacity in ha/h?',
+    options: ['0.80 ha/h', '1.00 ha/h', '0.64 ha/h', '1.25 ha/h'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '0.80 ha/h',
+      whyCorrect: 'Field capacity formula: C = (W × S × E) / 10 = (2.0 × 5 × 0.80) / 10 = 8.0 / 10 = 0.80 ha/h',
+      solution: ['C = (W × S × E) / 10', 'W = 2.0 m, S = 5 km/h, E = 0.80', 'C = (2.0 × 5 × 0.80) / 10 = 0.80 ha/h'],
+      commonMistakes: ['Forgetting to include field efficiency', 'Using wrong constant']
+    },
+    weakPoints: ['Field capacity formula', 'Unit conversion'],
     difficulty: 'medium',
     month: 1
   },
   {
-    id: 'math1-002',
-    subject: 'math1',
-    topic: 'Trigonometry',
-    question: 'A ladder 10 meters long leans against a wall at an angle of 60° with the ground. How high up the wall does the ladder reach?',
-    options: ['5.0 m', '5√3 m ≈ 8.66 m', '10√3/2 m ≈ 8.66 m', '5√2 m ≈ 7.07 m'],
+    id: 'power-005',
+    subject: 'power',
+    topic: 'PAES Standards',
+    question: 'PAES 404 series covers what category of agricultural machinery?',
+    options: ['Harvesting and post-harvest machinery', 'Land preparation machinery', 'Crop care machinery', 'Planting machinery'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '5.0 m',
-      whyCorrect: 'Using sin(60°) = opposite/hypotenuse = height/10. Since sin(60°) = √3/2, height = 10 × (√3/2) = 5√3 ≈ 8.66 m. Wait, let me recalculate - actually using cos(60°) if the ladder angle is measured from the wall...',
-      solution: [
-        'Step 1: We need to identify which angle is given. The ladder makes 60° with the ground.',
-        'Step 2: The ladder is the hypotenuse (10 m).',
-        'Step 3: Using cosine: cos(θ) = adjacent/hypotenuse = base/10, where base is distance from wall.',
-        'Step 4: h = L × sin(60°) = 10 × (√3/2) = 5√3 ≈ 8.66 m',
-        'Answer: 5√3 m ≈ 8.66 m'
-      ],
-      commonMistakes: ['Confusing sin and cos for angle measurement', 'Forgetting the ladder length is the hypotenuse']
+      correctAnswer: 'Harvesting and post-harvest machinery',
+      whyCorrect: 'PAES 401 = Land Prep, 402 = Planting, 403 = Crop Care, 404 = Harvesting/Post-Harvest.',
+      solution: ['PAES series: 401 (Land Preparation), 402 (Planting), 403 (Crop Care), 404 (Harvesting/Post-Harvest)']
     },
-    weakPoints: ['Trigonometric ratios', 'Angle interpretation in word problems', 'SohCahToa application'],
+    weakPoints: ['PAES numbering'],
     difficulty: 'easy',
     month: 1
   },
   {
-    id: 'math1-003',
-    subject: 'math1',
-    topic: 'Algebra',
-    question: 'The sum of two numbers is 20 and their product is 96. Find the numbers.',
-    options: ['8 and 12', '6 and 14', '4 and 16', '10 and 10'],
+    id: 'power-006',
+    subject: 'power',
+    topic: 'PAES Standards',
+    question: 'What is the minimum drying efficiency required for a grain dryer under PAES?',
+    options: ['60%', '70%', '50%', '80%'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '8 and 12',
-      whyCorrect: 'Using the sum and product to form a quadratic equation: x² - (sum)x + (product) = 0. So x² - 20x + 96 = 0. Factoring: (x-8)(x-12) = 0.',
-      solution: [
-        'Step 1: Let the numbers be x and y. Then x + y = 20 and xy = 96',
-        'Step 2: Create equation: t² - (sum)t + (product) = 0',
-        'Step 3: t² - 20t + 96 = 0',
-        'Step 4: Factor: (t - 8)(t - 12) = 0',
-        'Step 5: t = 8 or t = 12',
-        'Answer: The numbers are 8 and 12'
-      ],
-      commonMistakes: ['Setting up wrong equation', 'Arithmetic error in factoring']
+      correctAnswer: '60%',
+      whyCorrect: 'PAES requires minimum 60% drying efficiency for mechanical grain dryers to be certified.',
+      solution: ['PAES 404 series specifies minimum 60% drying efficiency for grain dryers.']
     },
-    weakPoints: ['Word problem translation', 'Sum-product method', 'Quadratic factoring'],
-    difficulty: 'easy',
-    month: 1
-  },
-
-  // MATHEMATICS 2 (Calculus)
-  {
-    id: 'math2-001',
-    subject: 'math2',
-    topic: 'Calculus',
-    question: 'Find dy/dx if y = 3x⁴ - 2x³ + 5x - 7',
-    options: ['12x³ - 6x² + 5', '12x³ - 6x² + 5 - 7', '9x³ - 6x² + 5', '12x⁴ - 6x³ + 5'],
-    correctAnswer: 0,
-    explanation: {
-      correctAnswer: '12x³ - 6x² + 5',
-      whyCorrect: 'Apply the power rule: d/dx(xⁿ) = n·xⁿ⁻¹ for each term.',
-      solution: [
-        'Step 1: Apply power rule to each term',
-        'Step 2: d/dx(3x⁴) = 3 × 4x³ = 12x³',
-        'Step 3: d/dx(-2x³) = -2 × 3x² = -6x²',
-        'Step 4: d/dx(5x) = 5 × 1 = 5',
-        'Step 5: d/dx(-7) = 0 (constant term)',
-        'Result: dy/dx = 12x³ - 6x² + 5'
-      ],
-      commonMistakes: ['Bringing down wrong coefficient', 'Forgetting to subtract 1 from exponent', 'Forgetting constant is zero']
-    },
-    weakPoints: ['Power rule differentiation', 'Handling negative exponents', 'Constant differentiation'],
+    weakPoints: ['Dryer standards'],
     difficulty: 'easy',
     month: 1
   },
   {
-    id: 'math2-002',
-    subject: 'math2',
-    topic: 'Calculus',
-    question: 'Evaluate ∫(2x³ - 4x + 1)dx',
-    options: ['0.5x⁴ - 2x² + x + C', '0.5x⁴ - 2x² + x', '6x⁴ - 4x² + x + C', '6x² - 4 + C'],
+    id: 'power-007',
+    subject: 'power',
+    topic: 'Equipment Maintenance',
+    question: 'How often should transmission oil be changed in a typical agricultural tractor?',
+    options: ['Every 6 months or 24,000 km', 'Every 3 months or 10,000 km', 'Every 12 months or 50,000 km', 'Every 24 months or 100,000 km'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '0.5x⁴ - 2x² + x + C',
-      whyCorrect: 'Apply the power rule for integration: ∫xⁿdx = xⁿ⁺¹/(n+1) + C, for n ≠ -1.',
-      solution: [
-        'Step 1: Apply power rule: ∫xⁿdx = xⁿ⁺¹/(n+1)',
-        'Step 2: ∫2x³dx = 2 × (x⁴/4) = 0.5x⁴',
-        'Step 3: ∫(-4x)dx = -4 × (x²/2) = -2x²',
-        'Step 4: ∫1dx = x',
-        'Step 5: Add constant of integration + C',
-        'Result: 0.5x⁴ - 2x² + x + C'
-      ],
-      commonMistakes: ['Forgetting to add constant C', 'Adding 1 to exponent instead of dividing']
+      correctAnswer: 'Every 6 months or 24,000 km',
+      whyCorrect: 'Standard tractor maintenance: transmission oil change every 6 months or 24,000 km whichever comes first.',
+      solution: ['Regular transmission oil changes prevent gear wear and ensure smooth operation.']
     },
-    weakPoints: ['Integration power rule', 'Constant of integration', 'Integration of linear terms'],
-    difficulty: 'easy',
-    month: 1
-  },
-
-  // STATISTICS
-  {
-    id: 'stat-001',
-    subject: 'statistics',
-    topic: 'Descriptive Statistics',
-    question: 'Find the mean, median, and mode of the data set: 4, 7, 2, 9, 4, 6, 4, 2',
-    options: [
-      'Mean=5, Median=4.5, Mode=4',
-      'Mean=5.375, Median=5, Mode=4',
-      'Mean=5, Median=4, Mode=4',
-      'Mean=5.375, Median=4.5, Mode=4'
-    ],
-    correctAnswer: 3,
-    explanation: {
-      correctAnswer: 'Mean=5.375, Median=4.5, Mode=4',
-      whyCorrect: 'Mean = (4+7+2+9+4+6+4+2)/8 = 43/8 = 5.375. To find median, first sort: 2,2,4,4,4,6,7,9. Median = (4+4)/2 = 4. Mode = 4 (appears 3 times).',
-      solution: [
-        'Step 1: Sum all values: 4+7+2+9+4+6+4+2 = 43',
-        'Step 2: Mean = 43/8 = 5.375',
-        'Step 3: Sort data: 2,2,4,4,4,6,7,9',
-        'Step 4: Median = average of 4th and 5th values = (4+5)/2 = 4.5',
-        'Step 5: Mode = value with highest frequency = 4 (appears 3 times)'
-      ],
-      commonMistakes: ['Arithmetic errors in summation', 'Forgetting to sort for median', 'Incorrect median position']
-    },
-    weakPoints: ['Mean calculation', 'Median from sorted data', 'Mode identification'],
-    difficulty: 'easy',
-    month: 2
-  },
-  {
-    id: 'stat-002',
-    subject: 'statistics',
-    topic: 'Probability',
-    question: 'A bag contains 5 red balls, 3 blue balls, and 2 green balls. If two balls are drawn without replacement, what is the probability that both are red?',
-    options: ['2/9', '1/4', '25/100', '5/18'],
-    correctAnswer: 0,
-    explanation: {
-      correctAnswer: '2/9',
-      whyCorrect: 'P(both red) = P(1st red) × P(2nd red | 1st red) = (5/10) × (4/9) = 20/90 = 2/9',
-      solution: [
-        'Step 1: Total balls = 5 + 3 + 2 = 10',
-        'Step 2: P(first ball is red) = 5/10 = 1/2',
-        'Step 3: After removing one red ball, remaining = 9, red = 4',
-        'Step 4: P(second ball is red) = 4/9',
-        'Step 5: P(both red) = (5/10) × (4/9) = 20/90 = 2/9'
-      ],
-      commonMistakes: ['Using replacement when specified without replacement', 'Multiplying incorrectly', 'Not reducing fraction']
-    },
-    weakPoints: ['Conditional probability', 'Dependent events', 'Probability without replacement'],
+    weakPoints: ['Maintenance schedules'],
     difficulty: 'medium',
-    month: 2
-  },
-
-  // FLUID MECHANICS
-  {
-    id: 'fluid-001',
-    subject: 'fluid-mechanics',
-    topic: 'Fluid Properties',
-    question: 'A fluid has a specific gravity of 1.26. What is its density in kg/m³?',
-    options: ['1260 kg/m³', '126 kg/m³', '1.26 kg/m³', '12600 kg/m³'],
-    correctAnswer: 0,
-    explanation: {
-      correctAnswer: '1260 kg/m³',
-      whyCorrect: 'Specific gravity = density of fluid / density of water (1000 kg/m³). Therefore, density = 1.26 × 1000 = 1260 kg/m³.',
-      solution: [
-        'Step 1: Specific gravity (SG) = ρ_fluid / ρ_water',
-        'Step 2: ρ_water = 1000 kg/m³ (at 4°C)',
-        'Step 3: ρ_fluid = SG × ρ_water',
-        'Step 4: ρ_fluid = 1.26 × 1000 kg/m³',
-        'Step 5: ρ_fluid = 1260 kg/m³'
-      ],
-      commonMistakes: ['Confusing specific gravity with density', 'Forgetting to multiply by water density'],
-    },
-    weakPoints: ['Specific gravity concept', 'Density calculations', 'Unit conversion (SI)'],
-    difficulty: 'easy',
-    month: 3
+    month: 1
   },
   {
-    id: 'fluid-002',
-    subject: 'fluid-mechanics',
-    topic: 'Hydrostatics',
-    question: 'A dam wall is 15 m deep. What pressure acts at the base of the dam? (Use g = 9.81 m/s², ρ_water = 1000 kg/m³)',
-    options: ['147.15 kPa', '1471.5 kPa', '14.715 kPa', '1.4715 kPa'],
-    correctAnswer: 0,
-    explanation: {
-      correctAnswer: '147.15 kPa',
-      whyCorrect: 'Hydrostatic pressure P = ρgh. Using standard units: P = 1000 × 9.81 × 15 = 147,150 Pa = 147.15 kPa.',
-      solution: [
-        'Step 1: Use hydrostatic pressure formula: P = ρgh',
-        'Step 2: ρ = 1000 kg/m³ (density of water)',
-        'Step 3: g = 9.81 m/s²',
-        'Step 4: h = 15 m (depth)',
-        'Step 5: P = 1000 × 9.81 × 15 = 147,150 Pa',
-        'Step 6: Convert to kPa: 147,150 / 1000 = 147.15 kPa'
-      ],
-      commonMistakes: ['Using wrong formula (P = ρgh vs P = γh)', 'Forgetting to convert Pa to kPa', 'Using depth instead of height']
-    },
-    weakPoints: ['Hydrostatic pressure formula', 'Unit conversion', 'Pressure definition'],
-    difficulty: 'easy',
-    month: 3
-  },
-
-  // MECHANICS & STRENGTH OF MATERIALS
-  {
-    id: 'mech-001',
-    subject: 'mechanics',
-    topic: 'Statics',
-    question: 'A simply supported beam of length 6 m carries a point load of 12 kN at its midpoint. What is the maximum bending moment?',
-    options: ['9 kN·m', '18 kN·m', '36 kN·m', '6 kN·m'],
-    correctAnswer: 1,
-    explanation: {
-      correctAnswer: '18 kN·m',
-      whyCorrect: 'For a point load at midpoint of simply supported beam: Maximum moment = PL/4 = (12 kN × 6 m) / 4 = 18 kN·m.',
-      solution: [
-        'Step 1: For simply supported beam with center load, reactions are equal: R_A = R_B = P/2 = 6 kN',
-        'Step 2: Maximum bending moment occurs at the point of load application',
-        'Step 3: M_max = R_A × (L/2) = 6 kN × 3 m',
-        'Step 4: M_max = 18 kN·m',
-        'Alternative: M_max = PL/4 = (12 × 6)/4 = 18 kN·m'
-      ],
-      commonMistakes: ['Confusing with cantilever formula', 'Arithmetic errors', 'Wrong moment formula'],
-    },
-    weakPoints: ['Simply supported beam analysis', 'Bending moment calculation', 'Reactions at supports'],
-    difficulty: 'medium',
-    month: 4
-  },
-  {
-    id: 'mech-002',
-    subject: 'mechanics',
-    topic: 'Stress-Strain',
-    question: 'A steel rod with diameter 20 mm carries an axial tensile load of 50 kN. Calculate the stress in MPa.',
-    options: ['159.15 MPa', '2500 MPa', '1591.5 MPa', '15.915 MPa'],
-    correctAnswer: 0,
-    explanation: {
-      correctAnswer: '159.15 MPa',
-      whyCorrect: 'Stress (σ) = Force / Area. Area = πd²/4 = π(0.02)²/4 = 3.142 × 10⁻⁴ m². Stress = 50,000 N / 3.142 × 10⁻⁴ m² = 159.15 MPa.',
-      solution: [
-        'Step 1: Convert diameter to meters: d = 20 mm = 0.02 m',
-        'Step 2: Calculate area: A = πd²/4 = π(0.02)²/4 = 3.14 × 10⁻⁴ m²',
-        'Step 3: Convert load to Newtons: P = 50 kN = 50,000 N',
-        'Step 4: Calculate stress: σ = P/A = 50,000 / 3.14 × 10⁻⁴',
-        'Step 5: σ = 159,154,585 Pa = 159.15 MPa'
-      ],
-      commonMistakes: ['Forgetting to square the diameter', 'Using diameter instead of radius', 'Unit conversion errors'],
-    },
-    weakPoints: ['Stress formula σ = P/A', 'Area calculation for circular cross-section', 'Unit conversion (mm to m)'],
-    difficulty: 'medium',
-    month: 4
-  },
-
-  // THERMODYNAMICS
-  {
-    id: 'thermo-001',
-    subject: 'thermodynamics',
-    topic: 'Laws of Thermodynamics',
-    question: 'A heat engine receives 500 kJ of heat and rejects 350 kJ of heat. What is its thermal efficiency?',
-    options: ['35%', '70%', '30%', '65%'],
+    id: 'power-008',
+    subject: 'power',
+    topic: 'Engines & Tractors',
+    question: 'What is the standard PTO speed for agricultural tractors in the Philippines?',
+    options: ['540 RPM', '1000 RPM', 'Both 540 and 1000 RPM', '750 RPM'],
     correctAnswer: 2,
     explanation: {
-      correctAnswer: '30%',
-      whyCorrect: 'Thermal efficiency η = (Work output / Heat input) × 100%. Work output = Q_in - Q_out = 500 - 350 = 150 kJ. η = (150/500) × 100% = 30%.',
-      solution: [
-        'Step 1: Identify heat input: Q_in = 500 kJ',
-        'Step 2: Identify heat output: Q_out = 350 kJ',
-        'Step 3: Calculate work output: W = Q_in - Q_out = 500 - 350 = 150 kJ',
-        'Step 4: Use efficiency formula: η = W/Q_in × 100%',
-        'Step 5: η = (150/500) × 100% = 30%'
-      ],
-      commonMistakes: ['Using Q_out as work output', 'Forgetting to multiply by 100%', 'Inverting the ratio'],
+      correctAnswer: 'Both 540 and 1000 RPM',
+      whyCorrect: 'International PTO standards are 540 RPM (light implements) and 1000 RPM (heavy-duty).',
+      solution: ['540 RPM for light implements like mowers, 1000 RPM for heavy implements like large balers.']
     },
-    weakPoints: ['First law application', 'Thermal efficiency definition', 'Energy balance'],
+    weakPoints: ['PTO standards'],
     difficulty: 'easy',
-    month: 5
+    month: 1
   },
+
+  // === SOIL & WATER CONSERVATION ===
   {
-    id: 'thermo-002',
-    subject: 'thermodynamics',
-    topic: 'Heat Transfer',
-    question: 'A wall 4 m × 3 m has thermal conductivity k = 0.8 W/m·K and thickness 0.2 m. If surface temperatures are 30°C and 10°C, what is the heat transfer rate through the wall?',
-    options: ['960 W', '9600 W', '1920 W', '480 W'],
+    id: 'soil-001',
+    subject: 'soil-water',
+    topic: 'Erosion Control',
+    question: 'What type of soil erosion is caused by the impact of raindrops on bare soil?',
+    options: ['Splash erosion', 'Sheet erosion', 'Rill erosion', 'Gully erosion'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '960 W',
-      whyCorrect: 'Using Fourier\'s law: Q̇ = k × A × ΔT / L. Q̇ = 0.8 × (4×3) × 20 / 0.2 = 0.8 × 12 × 20 / 0.2 = 960 W.',
-      solution: [
-        'Step 1: Calculate area: A = 4 m × 3 m = 12 m²',
-        'Step 2: Temperature difference: ΔT = 30 - 10 = 20°C (or K)',
-        'Step 3: Apply Fourier\'s law: Q̇ = k × A × ΔT / L',
-        'Step 4: Q̇ = 0.8 × 12 × 20 / 0.2',
-        'Step 5: Q̇ = 960 W'
-      ],
-      commonMistakes: ['Forgetting to calculate area', 'Using thickness as exponent', 'Unit inconsistency'],
+      correctAnswer: 'Splash erosion',
+      whyCorrect: 'Splash erosion is the first stage of water erosion. Raindrop impact detaches soil particles and splashes them into the air.',
+      solution: ['Splash → Sheet → Rill → Gully (in increasing severity order)']
     },
-    weakPoints: ['Fourier\'s law of heat conduction', 'Conduction through slab', 'Unit consistency'],
+    weakPoints: ['Erosion types'],
+    difficulty: 'easy',
+    month: 2
+  },
+  {
+    id: 'soil-002',
+    subject: 'soil-water',
+    topic: 'Conservation Practices',
+    question: 'What soil conservation practice involves growing crops along elevation contours?',
+    options: ['Contour farming', 'Strip cropping', 'Terracing', 'Mulching'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Contour farming',
+      whyCorrect: 'Contour farming follows elevation contours, creating ridges that slow runoff and increase infiltration.',
+      solution: ['Each contour ridge acts as a small dam, reducing erosion on slopes.']
+    },
+    weakPoints: ['Conservation practices'],
+    difficulty: 'easy',
+    month: 2
+  },
+  {
+    id: 'soil-003',
+    subject: 'soil-water',
+    topic: 'USLE',
+    question: 'In the USLE equation A = R × K × LS × C × P, what does the K factor represent?',
+    options: ['Soil erodibility', 'Rainfall erosivity', 'Slope length-gradient', 'Cover management'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Soil erodibility',
+      whyCorrect: 'K factor measures soil susceptibility to erosion. Sandy soils have low K (less erodible), silty soils have high K.',
+      solution: ['R = rainfall erosivity, K = soil erodibility, LS = slope, C = cover, P = practice']
+    },
+    weakPoints: ['USLE factors'],
     difficulty: 'medium',
-    month: 5
-  },
-
-  // REFRIGERATION & PSYCHROMETRY
-  {
-    id: 'ref-001',
-    subject: 'refrigeration',
-    topic: 'Refrigeration Cycles',
-    question: 'A refrigeration system has a COP of 4.0 and removes 20 kW of heat from a space. What is the compressor power input?',
-    options: ['5 kW', '80 kW', '4 kW', '20 kW'],
-    correctAnswer: 0,
-    explanation: {
-      correctAnswer: '5 kW',
-      whyCorrect: 'COP = Q_L / W_net. Therefore W_net = Q_L / COP = 20 kW / 4 = 5 kW.',
-      solution: [
-        'Step 1: COP (Coefficient of Performance) = Q_L / W_in',
-        'Step 2: Given COP = 4.0 and Q_L (heat removed) = 20 kW',
-        'Step 3: Rearrange: W_in = Q_L / COP',
-        'Step 4: W_in = 20 kW / 4.0',
-        'Step 5: W_in = 5 kW'
-      ],
-      commonMistakes: ['Confusing COP formula', 'Multiplying instead of dividing', 'Mixing up Q_L and Q_H'],
-    },
-    weakPoints: ['COP definition for refrigerators', 'COP = Q_L/W ratio', 'Refrigeration cycle analysis'],
-    difficulty: 'easy',
-    month: 5
+    month: 2
   },
   {
-    id: 'ref-002',
-    subject: 'refrigeration',
-    topic: 'Psychrometric Charts',
-    question: 'Air at 30°C DB and 60% RH has a humidity ratio of 0.0162 kg/kg dry air. What is the dew point temperature?',
-    options: ['21°C', '30°C', '18°C', '24°C'],
+    id: 'soil-004',
+    subject: 'soil-water',
+    topic: 'Conservation Practices',
+    question: 'What is the maximum allowable soil loss under USLE for most agricultural lands?',
+    options: ['10 t/ha/yr', '5 t/ha/yr', '20 t/ha/yr', '2 t/ha/yr'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '21°C',
-      whyCorrect: 'Using psychrometric relationships, at 30°C and 60% RH, the saturation pressure is approximately 4.24 kPa. The actual vapor pressure = 0.6 × 4.24 = 2.54 kPa. The dew point is the temperature at which saturation pressure equals actual vapor pressure, which corresponds to approximately 21°C.',
-      solution: [
-        'Step 1: Determine saturation pressure at 30°C: P_sat ≈ 4.24 kPa',
-        'Step 2: Calculate actual vapor pressure: P_v = RH × P_sat = 0.6 × 4.24 = 2.54 kPa',
-        'Step 3: Find temperature where P_sat = 2.54 kPa',
-        'Step 4: Using steam tables, P_sat = 2.54 kPa corresponds to approximately 21°C',
-        'Answer: Dew point ≈ 21°C'
-      ],
-      commonMistakes: ['Confusing wet-bulb and dew point', 'Not interpolating correctly from tables'],
+      correctAnswer: '10 t/ha/yr',
+      whyCorrect: 'Tolerable soil loss (T value) for most agricultural lands is 10 t/ha/year, balancing erosion with soil formation.',
+      solution: ['T value ranges from 2-12 t/ha/yr depending on soil depth and type.']
     },
-    weakPoints: ['Psychrometric chart interpretation', 'Dew point calculation', 'Vapor pressure concept'],
-    difficulty: 'hard',
-    month: 5
+    weakPoints: ['Tolerable soil loss'],
+    difficulty: 'medium',
+    month: 2
   },
 
-  // IRRIGATION & DRAINAGE
+  // === IRRIGATION & DRAINAGE ===
   {
     id: 'irr-001',
     subject: 'irrigation',
-    topic: 'Irrigation Systems',
-    question: 'A sprinkler system applies water at a rate of 15 mm/hour over an area of 50 m × 30 m. How much water is applied per hour?',
-    options: ['22,500 L/hr', '225,000 L/hr', '2,250 L/hr', '225 L/hr'],
+    topic: 'Water Requirements',
+    question: 'A field requires 100 mm of net irrigation. If irrigation efficiency is 75%, what is the gross irrigation requirement?',
+    options: ['133 mm', '75 mm', '150 mm', '125 mm'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '22,500 L/hr',
-      whyCorrect: 'Volume = Application rate × Area. 15 mm/hr = 15 L/m²/hr. Area = 50 × 30 = 1500 m². Volume = 15 L/m²/hr × 1500 m² = 22,500 L/hr.',
-      solution: [
-        'Step 1: Convert application rate: 15 mm/hr = 15 L/m²/hr (1 mm = 1 L/m²)',
-        'Step 2: Calculate area: A = 50 m × 30 m = 1500 m²',
-        'Step 3: Calculate volume: V = application rate × area',
-        'Step 4: V = 15 L/m²/hr × 1500 m²',
-        'Step 5: V = 22,500 L/hr'
-      ],
-      commonMistakes: ['Forgetting unit conversion (mm to L/m²)', 'Area calculation errors'],
+      correctAnswer: '133 mm',
+      whyCorrect: 'GIR = Net Requirement / Efficiency = 100 / 0.75 = 133.3 mm ≈ 133 mm',
+      solution: ['GIR = NIR / E', 'GIR = 100 mm / 0.75 = 133 mm'],
+      commonMistakes: ['Multiplying instead of dividing', 'Forgetting to convert efficiency to decimal']
     },
-    weakPoints: ['Application rate units', 'Volume calculation', 'mm to L/m² conversion'],
+    weakPoints: ['Gross vs net requirement'],
     difficulty: 'easy',
-    month: 6
+    month: 3
   },
   {
     id: 'irr-002',
     subject: 'irrigation',
-    topic: 'Water Requirements',
-    question: 'A crop requires 450 mm of water per growing season. If irrigation efficiency is 70%, how much water needs to be applied?',
-    options: ['643 mm', '315 mm', '450 mm', '540 mm'],
+    topic: 'Irrigation Methods',
+    question: 'What irrigation method has the highest application efficiency (90-95%)?',
+    options: ['Drip irrigation', 'Sprinkler irrigation', 'Furrow irrigation', 'Basin irrigation'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '643 mm',
-      whyCorrect: 'Water to apply = Net requirement / Efficiency = 450 mm / 0.70 = 642.86 ≈ 643 mm.',
-      solution: [
-        'Step 1: Net water requirement = 450 mm',
-        'Step 2: Irrigation efficiency = 70% = 0.70',
-        'Step 3: Efficiency = Net water applied / Gross water applied',
-        'Step 4: Gross water = Net water / Efficiency',
-        'Step 5: Gross water = 450 / 0.70 = 642.86 mm ≈ 643 mm'
-      ],
-      commonMistakes: ['Multiplying instead of dividing', 'Confusing gross and net requirements'],
+      correctAnswer: 'Drip irrigation',
+      whyCorrect: 'Drip irrigation applies water directly to the root zone with minimal evaporation or runoff losses.',
+      solution: ['Drip: 90-95%, Sprinkler: 70-85%, Surface: 50-70% efficiency']
     },
-    weakPoints: ['Irrigation efficiency concept', 'Gross vs net water requirement', 'Percentage calculations'],
+    weakPoints: ['Irrigation methods efficiency'],
     difficulty: 'easy',
-    month: 6
+    month: 3
+  },
+  {
+    id: 'irr-003',
+    subject: 'irrigation',
+    topic: 'Pumps',
+    question: 'What pump type is most suitable for lifting water from deep wells (greater than 20 m)?',
+    options: ['Submersible pump', 'Centrifugal pump', 'Axial flow pump', 'Diaphragm pump'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Submersible pump',
+      whyCorrect: 'Submersible pumps are designed for deep well applications. Centrifugal pumps are limited to suction lifts under 7 m.',
+      solution: ['Submersible pumps are multi-stage and can lift water from 50+ m depths.']
+    },
+    weakPoints: ['Pump selection'],
+    difficulty: 'medium',
+    month: 3
   },
 
-  // HYDROLOGY
+  // === HYDROLOGY ===
   {
     id: 'hydro-001',
     subject: 'hydrology',
-    topic: 'Precipitation',
-    question: 'A storm produced 150 mm of rainfall over a 30 km² watershed. What is the total volume of rainwater in cubic meters?',
-    options: ['4,500,000 m³', '450,000 m³', '45,000 m³', '450 m³'],
+    topic: 'Runoff',
+    question: 'What is the peak runoff from a 5-hectare watershed with C = 0.5 and rainfall intensity of 100 mm/h?',
+    options: ['0.694 m³/s', '0.500 m³/s', '1.000 m³/s', '0.347 m³/s'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '4,500,000 m³',
-      whyCorrect: 'Volume = Depth × Area. 150 mm = 0.15 m. Area = 30 km² = 30,000,000 m². Volume = 0.15 × 30,000,000 = 4,500,000 m³.',
-      solution: [
-        'Step 1: Convert rainfall depth: 150 mm = 0.15 m',
-        'Step 2: Convert area: 30 km² = 30 × 10⁶ m²',
-        'Step 3: Calculate volume: V = depth × area',
-        'Step 4: V = 0.15 m × 30,000,000 m²',
-        'Step 5: V = 4,500,000 m³'
-      ],
-      commonMistakes: ['Not converting mm to m', 'Not converting km² to m²', 'Calculation errors'],
+      correctAnswer: '0.694 m³/s',
+      whyCorrect: 'Q = C × i × A / 360 = 0.5 × 100 × 5 / 360 = 0.694 m³/s',
+      solution: ['Q = C × i (mm/h) × A (ha) / 360', 'Q = 0.5 × 100 × 5 / 360 = 0.694 m³/s'],
+      commonMistakes: ['Wrong unit conversion', 'Using area in wrong units']
     },
-    weakPoints: ['Unit conversion for volume', 'km² to m² conversion', 'mm to m conversion'],
-    difficulty: 'easy',
-    month: 7
+    weakPoints: ['Rational method'],
+    difficulty: 'medium',
+    month: 4
   },
   {
     id: 'hydro-002',
     subject: 'hydrology',
-    topic: 'Runoff',
-    question: 'Using the CN method, a watershed has CN = 75 and initial abstraction = 10 mm. After a storm with 100 mm rainfall, what is the runoff?',
-    options: ['56.7 mm', '65 mm', '90 mm', '40 mm'],
+    topic: 'Flood Frequency',
+    question: 'A 20-year flood has what probability of being exceeded in any given year?',
+    options: ['5%', '20%', '1%', '0.5%'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '56.7 mm',
-      whyCorrect: 'Using CN method: S = (1000/CN) - 10 = (1000/75) - 10 = 13.33 - 10 = 3.33 in = 84.67 mm. Ia = 0.2S = 16.93 mm. Pe = (P - Ia)²/(P + S) = (100 - 16.93)²/(100 + 84.67) = 56.7 mm.',
-      solution: [
-        'Step 1: Calculate potential maximum retention: S = (1000/CN) - 10 inches = (1000/75) - 10 = 3.33 in = 84.67 mm',
-        'Step 2: Calculate initial abstraction: Ia = 0.2S = 0.2 × 84.67 = 16.93 mm',
-        'Step 3: Calculate effective rainfall: Pe = (P - Ia)²/(P + S)',
-        'Step 4: Pe = (100 - 16.93)²/(100 + 84.67)',
-        'Step 5: Pe = 83.07²/184.67 = 6900/122 = 56.7 mm'
-      ],
-      commonMistakes: ['Forgetting to account for Ia', 'Incorrect S calculation', 'Wrong SCS CN formula'],
+      correctAnswer: '5%',
+      whyCorrect: 'Exceedance probability = 1 / Return Period = 1/20 = 0.05 = 5%.',
+      solution: ['P = 1/T', 'P = 1/20 = 0.05 = 5%']
     },
-    weakPoints: ['SCS Curve Number method', 'Initial abstraction', 'Runoff volume calculation'],
-    difficulty: 'hard',
-    month: 7
+    weakPoints: ['Return period concept'],
+    difficulty: 'easy',
+    month: 4
   },
 
-  // PROCESSING
+  // === FARM STRUCTURES ===
+  {
+    id: 'struct-001',
+    subject: 'structures',
+    topic: 'Building Design',
+    question: 'What is the minimum recommended roof slope for livestock buildings in the Philippines?',
+    options: ['4:12 (18.4°)', '1:12 (4.8°)', '2:12 (9.5°)', '6:12 (26.6°)'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '4:12 (18.4°)',
+      whyCorrect: 'Minimum 4:12 roof slope ensures adequate ventilation through stack effect and proper rainwater runoff.',
+      solution: ['Steeper roofs improve natural ventilation and prevent water pooling.']
+    },
+    weakPoints: ['Livestock housing design'],
+    difficulty: 'medium',
+    month: 5
+  },
+  {
+    id: 'struct-002',
+    subject: 'structures',
+    topic: 'Building Design',
+    question: 'In farm structure design, what is considered a dead load?',
+    options: ['Weight of the structure itself and fixed components', 'Weight of movable items', 'Wind and earthquake forces', 'Rainwater accumulation'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Weight of the structure itself and fixed components',
+      whyCorrect: 'Dead load includes beams, columns, walls, roofing. Live loads are variable loads like equipment and people.',
+      solution: ['Dead load = permanent/static, Live load = variable/movable']
+    },
+    weakPoints: ['Structural loads'],
+    difficulty: 'easy',
+    month: 5
+  },
+
+  // === POST-HARVEST & PROCESSING ===
   {
     id: 'proc-001',
     subject: 'processing',
-    topic: 'Size Reduction',
-    question: 'A crusher reduces limestone from 100 mm to 20 mm average particle size. If the power consumption is 8 kW for 15 tons/hour, what is the power required per ton?',
-    options: ['0.53 kW/ton', '1.07 kW/ton', '2.14 kW/ton', '-0.53 kW/ton'],
+    topic: 'Drying',
+    question: 'A grain dryer reduces moisture of paddy from 24% to 14% (wet basis). If 1,000 kg wet paddy enters, what is the dried weight?',
+    options: ['884 kg', '860 kg', '907 kg', '950 kg'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '0.53 kW/ton',
-      whyCorrect: 'Bond\'s law states that work required is proportional to the reduction ratio. P = 8 kW for 15 tons/hr. Therefore, P_per_ton = 8/15 = 0.53 kW/ton.',
-      solution: [
-        'Step 1: Given: Power = 8 kW for throughput of 15 tons/hour',
-        'Step 2: Power per ton = Total Power / Throughput',
-        'Step 3: P_per_ton = 8 kW / 15 tons/hr',
-        'Step 4: P_per_ton = 0.533 kW/ton ≈ 0.53 kW/ton',
-        'Note: The size reduction ratio does not affect this direct calculation when rate is given'
-      ],
-      commonMistakes: ['Including size ratio when not needed', 'Arithmetic errors'],
+      correctAnswer: '884 kg',
+      whyCorrect: 'Dry matter = 1,000 × (1 - 0.24) = 760 kg. Final weight = 760 / (1 - 0.14) = 884 kg.',
+      solution: ['Dry matter is conserved: W_final = W_initial × (1 - MC_i) / (1 - MC_f)', 'W_f = 1,000 × 0.76 / 0.86 = 884 kg'],
+      commonMistakes: ['Using dry basis instead of wet basis']
     },
-    weakPoints: ['Power consumption in size reduction', 'Throughput calculations'],
+    weakPoints: ['Drying mass balance'],
     difficulty: 'medium',
-    month: 8
-  },
-
-  // ENGINEERING ECONOMY
-  {
-    id: 'econ-001',
-    subject: 'engineering-economy',
-    topic: 'Present Worth',
-    question: 'What is the present worth of $10,000 received after 5 years if the interest rate is 8% per year?',
-    options: ['$6,776', '$7,346', '$8,000', '$6,000'],
-    correctAnswer: 0,
-    explanation: {
-      correctAnswer: '$6,776',
-      whyCorrect: 'PW = F/(1+i)^n = 10,000/(1+0.08)^5 = 10,000/1.469 = $6,776',
-      solution: [
-        'Step 1: Use present worth formula: PW = F/(1+i)^n',
-        'Step 2: Future value F = $10,000',
-        'Step 3: Interest rate i = 8% = 0.08',
-        'Step 4: Number of periods n = 5 years',
-        'Step 5: Calculate: (1.08)^5 = 1.4693',
-        'Step 6: PW = 10,000/1.4693 = $6,776'
-      ],
-      commonMistakes: ['Using future value formula instead', 'Calculation errors in (1+i)^n', 'Unit conversion'],
-    },
-    weakPoints: ['Present worth factor', 'Compound interest calculations', 'Cash flow timing'],
-    difficulty: 'medium',
-    month: 11
+    month: 6
   },
   {
-    id: 'econ-002',
-    subject: 'engineering-economy',
-    topic: 'Cost Analysis',
-    question: 'Equipment costs $50,000, has a useful life of 5 years, and salvage value of $10,000. Using straight-line depreciation, what is the annual depreciation expense?',
-    options: ['$8,000/year', '$10,000/year', '$12,000/year', '$40,000/year'],
+    id: 'proc-002',
+    subject: 'processing',
+    topic: 'Storage',
+    question: 'What is the safe moisture content for long-term storage of milled rice?',
+    options: ['14%', '10%', '18%', '20%'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '$8,000/year',
-      whyCorrect: 'Straight-line depreciation: D = (Cost - Salvage) / Useful Life = ($50,000 - $10,000) / 5 years = $40,000 / 5 = $8,000/year.',
-      solution: [
-        'Step 1: Initial cost = $50,000',
-        'Step 2: Salvage value = $10,000',
-        'Step 3: Depreciable amount = Cost - Salvage = $50,000 - $10,000 = $40,000',
-        'Step 4: Useful life = 5 years',
-        'Step 5: Annual depreciation = $40,000 / 5 = $8,000/year'
-      ],
-      commonMistakes: ['Forgetting to subtract salvage value', 'Dividing original cost instead of depreciable amount'],
+      correctAnswer: '14%',
+      whyCorrect: 'Safe moisture for rice storage is 14% wet basis. Higher moisture promotes mold growth and insect infestation.',
+      solution: ['Standard trading moisture for grains is 14% wet basis.']
     },
-    weakPoints: ['Straight-line depreciation formula', 'Depreciable base', 'Salvage value concept'],
+    weakPoints: ['Grain storage conditions'],
     difficulty: 'easy',
-    month: 11
+    month: 6
+  },
+  {
+    id: 'proc-003',
+    subject: 'processing',
+    topic: 'Food Preservation',
+    question: 'In canning, what does the D-value represent?',
+    options: ['Time to reduce microbial population by 90% at a given temperature', 'Temperature to kill all microorganisms', 'Total process time', 'Cooling time constant'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Time to reduce microbial population by 90% at a given temperature',
+      whyCorrect: 'D-value (decimal reduction time) is the time at a specific temperature to kill 90% of target microorganisms.',
+      solution: ['D₁₂₁ = 1 min means 1 minute at 121°C reduces microbes by 90% (1 log).']
+    },
+    weakPoints: ['Thermal processing parameters'],
+    difficulty: 'medium',
+    month: 6
   },
 
-  // LAW (AFMA and related)
+  // === BIOPROCESS & ENVIRONMENT ===
+  {
+    id: 'bio-001',
+    subject: 'bioprocess',
+    topic: 'Biogas',
+    question: 'What is the typical methane content of combustible biogas?',
+    options: ['55-65%', '30-40%', '70-80%', '90-95%'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '55-65%',
+      whyCorrect: 'Biogas is 55-65% methane and 35-45% CO₂. Methane is the combustible component.',
+      solution: ['Higher methane content = higher heating value. Typical LHV = 21-23 MJ/m³.']
+    },
+    weakPoints: ['Biogas composition'],
+    difficulty: 'easy',
+    month: 7
+  },
+  {
+    id: 'bio-002',
+    subject: 'bioprocess',
+    topic: 'Waste Treatment',
+    question: 'What is the ideal C:N ratio for aerobic composting of agricultural wastes?',
+    options: ['25:1 to 30:1', '10:1 to 15:1', '40:1 to 50:1', '5:1 to 10:1'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '25:1 to 30:1',
+      whyCorrect: 'Optimal C:N ratio balances microbial activity. Too high C:N slows decomposition; too low causes ammonia loss.',
+      solution: ['C:N of 25-30:1 is ideal. Adjust with green materials (low C:N) and brown materials (high C:N).']
+    },
+    weakPoints: ['Composting parameters'],
+    difficulty: 'easy',
+    month: 7
+  },
+
+  // === LAWS & ETHICS ===
   {
     id: 'law-001',
     subject: 'law',
-    topic: 'RA 8435 (AFMA)',
-    question: 'Republic Act 8435, also known as the Agriculture and Fisheries Modernization Act, was enacted in what year?',
-    options: ['1997', '2000', '1995', '2003'],
+    topic: 'RA 10601',
+    question: 'RA 10601, the Agricultural and Biosystems Engineering Law, was enacted in what year?',
+    options: ['2013', '1997', '2003', '2010'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '1997',
-      whyCorrect: 'RA 8435, "The Agriculture and Fisheries Modernization Act of 1997," was signed into law on December 22, 1997. It aims to modernize the agriculture and fisheries sectors.',
-      solution: [
-        'Step 1: Identify RA 8435 by its common name: Agriculture and Fisheries Modernization Act',
-        'Step 2: Historical context: Enacted during the administration of President Fidel V. Ramos',
-        'Step 3: Signed into law on December 22, 1997',
-        'Step 4: The year in the question asks for the enactment year',
-        'Answer: 1997'
-      ],
-      commonMistakes: ['Confusing with later amendments', 'Mixing up with RA 10601 (AFMech Law of 2013)'],
+      correctAnswer: '2013',
+      whyCorrect: 'RA 10601 (ABE Law) was signed on July 23, 2013, replacing RA 8559 (Old Agricultural Engineering Law).',
+      solution: ['RA 10601 = 2013; RA 8435 (AFMA) = 1997']
     },
-    weakPoints: ['RA 8435 enactment date', 'Distinguishing AFMA from other agri laws', 'Key provisions of AFMA'],
+    weakPoints: ['ABE Law enactment'],
     difficulty: 'easy',
-    month: 11
+    month: 8
   },
   {
     id: 'law-002',
     subject: 'law',
-    topic: 'RA 10601 (AFMech Law)',
-    question: 'What is the minimum horsepower requirement for agricultural machinery that must be registered under RA 10601?',
-    options: ['25 horsepower', '15 horsepower', '10 horsepower', '50 horsepower'],
+    topic: 'PD 1152',
+    question: 'Presidential Decree 1152 is also known as what?',
+    options: ['Philippine Environmental Code', 'Philippine Clean Water Act', 'Ecological Solid Waste Management Act', 'Pollution Control Law'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '25 horsepower',
-      whyCorrect: 'Under RA 10601 (Agricultural and Fisheries Mechanization Act of 2013), agricultural machinery with at least 25 horsepower must be registered with the Department of Agriculture.',
-      solution: [
-        'Step 1: RA 10601 is the Agricultural and Fisheries Mechanization Act of 2013',
-        'Step 2: The law requires registration of certain agricultural machinery',
-        'Step 3: The minimum horsepower threshold is specified in the IRR (Implementing Rules and Regulations)',
-        'Step 4: According to the IRR of RA 10601, the minimum is 25 horsepower',
-        'Answer: 25 horsepower'
-      ],
-      commonMistakes: ['Confusing with other horsepower thresholds', 'Forgetting that smaller equipment may have different rules'],
+      correctAnswer: 'Philippine Environmental Code',
+      whyCorrect: 'PD 1152 (1977) sets environmental quality standards for air, water, land, and noise management.',
+      solution: ['PD 1152 = Environmental Code; RA 9003 = Solid Waste Act; RA 8749 = Clean Air Act; RA 9275 = Clean Water Act']
     },
-    weakPoints: ['RA 10601 registration requirements', 'AFMech Law horsepower threshold'],
+    weakPoints: ['Environmental legislation'],
+    difficulty: 'easy',
+    month: 8
+  },
+  {
+    id: 'law-003',
+    subject: 'law',
+    topic: 'Code of Ethics',
+    question: 'How many canons of professional ethics are in the Code for Agricultural and Biosystems Engineers?',
+    options: ['6', '5', '7', '4'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '6',
+      whyCorrect: 'The ABE Code of Ethics has 6 canons covering public welfare, integrity, competence, truthfulness, conflict avoidance, and professional development.',
+      solution: ['Canons: 1-Public Welfare, 2-Integrity, 3-Competence, 4-Truth, 5-Conflict Avoidance, 6-Professional Development']
+    },
+    weakPoints: ['Code of Ethics'],
+    difficulty: 'easy',
+    month: 8
+  },
+
+  // === ENGINEERING ECONOMY ===
+  {
+    id: 'econ-001',
+    subject: 'engineering-economy',
+    topic: 'Depreciation',
+    question: 'A machine costs ₱500,000 with salvage value of ₱50,000 after 10 years. What is the annual straight-line depreciation?',
+    options: ['₱45,000/yr', '₱50,000/yr', '₱40,000/yr', '₱55,000/yr'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '₱45,000/yr',
+      whyCorrect: 'Annual depreciation = (Cost - Salvage) / Life = (500,000 - 50,000) / 10 = ₱45,000/yr',
+      solution: ['D = (500,000 - 50,000) / 10 = 45,000'],
+      commonMistakes: ['Forgetting to subtract salvage value']
+    },
+    weakPoints: ['Straight-line depreciation'],
+    difficulty: 'easy',
+    month: 9
+  },
+  {
+    id: 'econ-002',
+    subject: 'engineering-economy',
+    topic: 'Break-even Analysis',
+    question: 'Fixed costs are ₱200,000, variable cost per unit is ₱75, selling price is ₱125. What is the break-even quantity?',
+    options: ['4,000 units', '2,000 units', '3,000 units', '5,000 units'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '4,000 units',
+      whyCorrect: 'BEP = FC / (P - VC) = 200,000 / (125 - 75) = 200,000 / 50 = 4,000 units',
+      solution: ['BEP = Fixed Cost / Contribution Margin = 200,000 / 50 = 4,000 units']
+    },
+    weakPoints: ['Break-even point'],
+    difficulty: 'medium',
+    month: 9
+  },
+
+  // === FARM MACHINERY & MECHANIZATION ===
+  {
+    id: 'mach-001',
+    subject: 'machinery',
+    topic: 'Tillage Equipment',
+    question: 'What implement breaks compacted soil layers below normal plow depth?',
+    options: ['Subsoiler', 'Moldboard plow', 'Disc plow', 'Rotavator'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Subsoiler',
+      whyCorrect: 'Subsoilers penetrate 30-60 cm deep to break hardpan without inverting soil, improving drainage and root growth.',
+      solution: ['Subsoiling is deep tillage (30-60 cm) done when soil is dry for best fracturing.']
+    },
+    weakPoints: ['Deep tillage implements'],
+    difficulty: 'easy',
+    month: 10
+  },
+  {
+    id: 'mach-002',
+    subject: 'machinery',
+    topic: 'Harvesting Machinery',
+    question: 'What component of a combine harvester separates grain from straw?',
+    options: ['Threshing cylinder and concave', 'Cleaning fan', 'Reel', 'Auger'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Threshing cylinder and concave',
+      whyCorrect: 'The rotating cylinder against the concave rubs and beats grain from the straw. Fan and sieves then clean the grain.',
+      solution: ['Threshing → Separation → Cleaning → Conveying to grain tank']
+    },
+    weakPoints: ['Combine components'],
+    difficulty: 'easy',
+    month: 10
+  },
+  {
+    id: 'mach-003',
+    subject: 'machinery',
+    topic: 'Harvesting Machinery',
+    question: 'What is the typical threshing cylinder speed for rice?',
+    options: ['500-700 RPM', '200-300 RPM', '1000-1200 RPM', '300-400 RPM'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '500-700 RPM',
+      whyCorrect: 'Rice requires moderate cylinder speed (500-700 RPM) to avoid grain damage. Higher speeds increase damage.',
+      solution: ['Proper cylinder speed balances threshing efficiency with grain quality.']
+    },
+    weakPoints: ['Threshing parameters'],
+    difficulty: 'medium',
+    month: 10
+  },
+
+  // === FOOD & ENVIRONMENTAL ENGINEERING ===
+  {
+    id: 'food-001',
+    subject: 'food-env',
+    topic: 'Thermal Processing',
+    question: 'What is the z-value in thermal processing of food?',
+    options: ['Temperature change needed to alter D-value by 90%', 'Time at 121°C for 90% reduction', 'Total process time', 'Cooling rate constant'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Temperature change needed to alter D-value by 90%',
+      whyCorrect: 'z-value is the °C required to change D-value by 1 log. For Clostridium botulinum, z = 10°C.',
+      solution: ['z = (T₂ - T₁) / log(D₁/D₂). Lower z means more sensitive to temperature change.']
+    },
+    weakPoints: ['Thermal processing parameters'],
     difficulty: 'medium',
     month: 11
+  },
+  {
+    id: 'food-002',
+    subject: 'food-env',
+    topic: 'Refrigeration',
+    question: 'What is 1 ton of refrigeration (TR) equivalent to in kW?',
+    options: ['3.517 kW', '1.000 kW', '2.500 kW', '4.500 kW'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: '3.517 kW',
+      whyCorrect: '1 TR = 3.517 kW = heat required to melt 1 short ton of ice in 24 hours.',
+      solution: ['TR = Q_cooling (kW) / 3.517. Used to size refrigeration equipment.']
+    },
+    weakPoints: ['Refrigeration units'],
+    difficulty: 'easy',
+    month: 11
+  },
+
+  // === FUNDAMENTALS OF AGRICULTURE ===
+  {
+    id: 'agri-001',
+    subject: 'fundamentals-ag',
+    topic: 'Crop Science',
+    question: 'What is the process by which plants convert light energy into chemical energy?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Absorption'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Photosynthesis',
+      whyCorrect: 'Photosynthesis uses sunlight, CO₂, and water to produce glucose and oxygen. The reaction is driven by chlorophyll.',
+      solution: ['6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂']
+    },
+    weakPoints: ['Plant physiology'],
+    difficulty: 'easy',
+    month: 12
+  },
+  {
+    id: 'agri-002',
+    subject: 'fundamentals-ag',
+    topic: 'Soil Science',
+    question: 'What soil texture has approximately equal proportions of sand, silt, and clay?',
+    options: ['Loam', 'Clay', 'Sand', 'Silt loam'],
+    correctAnswer: 0,
+    explanation: {
+      correctAnswer: 'Loam',
+      whyCorrect: 'Loam is the ideal soil texture with balanced sand (40%), silt (40%), and clay (20%) providing good drainage and nutrient retention.',
+      solution: ['Loam = ideal agricultural soil. Sand drains fast, clay holds water/ nutrients.']
+    },
+    weakPoints: ['Soil texture'],
+    difficulty: 'easy',
+    month: 12
   },
 ];
 
