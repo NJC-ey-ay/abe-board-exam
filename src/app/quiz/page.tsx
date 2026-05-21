@@ -4,6 +4,8 @@ import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { areaAQuestions, areaBQuestions, areaCQuestions } from '@/data/comprehensive-questions';
+import { generatedAreaAQuestions, generatedAreaBQuestions, generatedAreaCQuestions } from '@/data/generated-questions';
+import { bulkAreaAQuestions, bulkAreaBQuestions, bulkAreaCQuestions } from '@/data/bulk-questions';
 import type { Question, Area, Difficulty } from '@/data/comprehensive-questions';
 import { shuffleQuestions } from '@/lib/shuffle';
 import { MathRenderer, MathFormula } from '@/lib/math-renderer';
@@ -27,11 +29,11 @@ function QuizContent() {
     let questionPool: Question[] = [];
 
     if (selectedArea) {
-      if (selectedArea === 'A') questionPool = [...areaAQuestions];
-      else if (selectedArea === 'B') questionPool = [...areaBQuestions];
-      else if (selectedArea === 'C') questionPool = [...areaCQuestions];
+      if (selectedArea === 'A') questionPool = [...areaAQuestions, ...generatedAreaAQuestions, ...bulkAreaAQuestions];
+      else if (selectedArea === 'B') questionPool = [...areaBQuestions, ...generatedAreaBQuestions, ...bulkAreaBQuestions];
+      else if (selectedArea === 'C') questionPool = [...areaCQuestions, ...generatedAreaCQuestions, ...bulkAreaCQuestions];
     } else {
-      questionPool = [...areaAQuestions, ...areaBQuestions, ...areaCQuestions];
+      questionPool = [...areaAQuestions, ...areaBQuestions, ...areaCQuestions, ...generatedAreaAQuestions, ...generatedAreaBQuestions, ...generatedAreaCQuestions, ...bulkAreaAQuestions, ...bulkAreaBQuestions, ...bulkAreaCQuestions];
     }
 
     if (selectedDifficulty) {
@@ -48,7 +50,7 @@ function QuizContent() {
         <div className="text-center py-12">
           <p className="text-gray-500">Loading questions...</p>
           <Link href="/practice" className="text-primary-600 hover:underline mt-4 inline-block">
-            Go back to Practice Setup
+            Go back to Mock Test selection
           </Link>
         </div>
       </div>
@@ -114,8 +116,8 @@ function QuizContent() {
           <div className="text-6xl mb-4">
             {percentage >= 70 ? '🎉 Congrats!' : percentage >= 50 ? '👍 Good Effort!' : '📚 Keep Studying!'}
           </div>
-          <h1 className="text-2xl font-bold mb-2">Quiz Complete!</h1>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">100-Item Practice Test</p>
+          <h1 className="text-2xl font-bold mb-2">Mock Test Complete!</h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">100-Item Mock Test</p>
 
           <div className="text-6xl font-bold text-primary-600 dark:text-primary-400 mb-8">{percentage}%</div>
 
@@ -163,8 +165,8 @@ function QuizContent() {
               <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">Next Steps:</h4>
               <ul className="text-sm text-purple-700 dark:text-purple-300 space-y-1">
                 <li>• Review formulas in Formula Reference</li>
-                <li>• Practice weak areas</li>
-                <li>• Take another practice test</li>
+                <li>• Focus on weak areas</li>
+                <li>• Take another Mock Test</li>
               </ul>
             </div>
           </div>
@@ -174,7 +176,7 @@ function QuizContent() {
               href="/practice"
               className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition"
             >
-              Practice Again
+              Try Another Mock Test
             </Link>
             <Link
               href="/conversions"
@@ -195,7 +197,7 @@ function QuizContent() {
         <div>
           <div className="flex items-center gap-2 flex-wrap">
             <Link href="/practice" className="text-primary-600 hover:underline text-sm">
-              ← Back to Setup
+              ← Mock Test Selection
             </Link>
             <span className="text-gray-300 hidden sm:inline">|</span>
             <span className="text-sm text-gray-500">

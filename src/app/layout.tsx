@@ -42,7 +42,7 @@ export default function RootLayout({
                   <div className="flex items-center gap-2">
                     <nav className="hidden md:flex gap-6 text-sm items-center">
                       <a href="/" className="hover:text-primary-200 transition whitespace-nowrap">Home</a>
-                      <a href="/quiz" className="hover:text-primary-200 transition whitespace-nowrap">Practice</a>
+                      <a href="/practice" className="hover:text-primary-200 transition whitespace-nowrap">Mock Test</a>
                       <a href="/conversions" className="hover:text-primary-200 transition whitespace-nowrap">Conversions</a>
                       <ThemeToggle />
                     </nav>
