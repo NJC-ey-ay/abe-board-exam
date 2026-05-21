@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { MathFormula } from '@/lib/math-renderer';
 import { areaFormulas, type FormulaCategory } from '@/data/formulas';
 import { tosStructure, getSubjectByCode } from '@/data/tos';
 
@@ -147,8 +148,8 @@ function PracticeContent() {
                       <div className="font-semibold mb-1 text-sm text-gray-500 dark:text-gray-400">
                         {fm.name}
                       </div>
-                      <div className="text-lg font-mono font-bold text-primary-600 dark:text-primary-400 mb-2">
-                        {fm.formula}
+                      <div className="mb-2">
+                        <MathFormula formula={fm.formula} display />
                       </div>
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 text-xs text-gray-600 dark:text-gray-400">
                         {fm.variables.map(v => (
