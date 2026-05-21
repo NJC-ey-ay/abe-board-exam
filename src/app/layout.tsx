@@ -8,7 +8,12 @@ import MobileNav from './mobile-nav';
 export const metadata: Metadata = {
   title: 'ABE Study - Agricultural and Biosystems Engineering Board Exam Prep',
   description: 'Comprehensive study tool for ABE board exam preparation with practice questions, step-by-step solutions, and unit conversion practice.',
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({
