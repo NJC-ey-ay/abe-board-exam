@@ -1,5 +1,5 @@
 // Auto-generated ABELE-style questions from parameterized templates
-// Generated 2026-05-21T04:24:41.569Z
+// Generated 2026-05-21T04:39:01.023Z
 
 import { Question } from './comprehensive-questions';
 
@@ -1708,7 +1708,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (8 × 3) / 3.6 = 6.67 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1730,7 +1731,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (10 × 3) / 3.6 = 8.33 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1752,7 +1754,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (12 × 3) / 3.6 = 10 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1774,7 +1777,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (15 × 3) / 3.6 = 12.5 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1796,7 +1800,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (18 × 3) / 3.6 = 15 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1818,7 +1823,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (8 × 4) / 3.6 = 8.89 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1840,7 +1846,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (10 × 4) / 3.6 = 11.11 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1862,7 +1869,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (12 × 4) / 3.6 = 13.33 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1884,7 +1892,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (15 × 4) / 3.6 = 16.67 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1906,7 +1915,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (18 × 4) / 3.6 = 20 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1928,7 +1938,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (8 × 5) / 3.6 = 11.11 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1950,7 +1961,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (10 × 5) / 3.6 = 13.89 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1972,7 +1984,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (12 × 5) / 3.6 = 16.67 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -1994,7 +2007,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (15 × 5) / 3.6 = 20.83 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2016,7 +2030,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (18 × 5) / 3.6 = 25 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2038,7 +2053,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (8 × 6) / 3.6 = 13.33 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2060,7 +2076,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (10 × 6) / 3.6 = 16.67 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2082,7 +2099,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (12 × 6) / 3.6 = 20 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2104,7 +2122,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (15 × 6) / 3.6 = 25 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2126,7 +2145,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (18 × 6) / 3.6 = 30 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2148,7 +2168,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (8 × 7) / 3.6 = 15.56 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2170,7 +2191,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (10 × 7) / 3.6 = 19.44 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2192,7 +2214,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (12 × 7) / 3.6 = 23.33 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2214,7 +2237,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (15 × 7) / 3.6 = 29.17 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2236,7 +2260,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (18 × 7) / 3.6 = 35 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2258,7 +2283,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (8 × 8) / 3.6 = 17.78 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2280,7 +2306,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (10 × 8) / 3.6 = 22.22 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2302,7 +2329,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (12 × 8) / 3.6 = 26.67 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2324,7 +2352,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (15 × 8) / 3.6 = 33.33 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2346,7 +2375,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (18 × 8) / 3.6 = 40 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2368,7 +2398,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (8 × 3) / 3.6 = 6.67 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2390,7 +2421,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (10 × 3) / 3.6 = 8.33 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2412,7 +2444,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (12 × 3) / 3.6 = 10 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2434,7 +2467,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (15 × 3) / 3.6 = 12.5 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2456,7 +2490,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P = (18 × 3) / 3.6 = 15 kW"
       ],
-      "formula": "P_db = F × S / 3.6"
+      "formula": "P_db = F × S / 3.6",
+      "derive": "Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW."
     }
   },
   {
@@ -2479,7 +2514,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 75% × 88% × 75%",
         "η_total = 49.5%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2502,7 +2538,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 80% × 90% × 80%",
         "η_total = 57.6%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2525,7 +2562,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 85% × 92% × 85%",
         "η_total = 66.47%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2548,7 +2586,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 88% × 95% × 88%",
         "η_total = 73.57%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2571,7 +2610,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 90% × 75% × 90%",
         "η_total = 60.75%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2594,7 +2634,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 92% × 80% × 92%",
         "η_total = 67.71%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2617,7 +2658,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 95% × 85% × 95%",
         "η_total = 76.71%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2640,7 +2682,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 75% × 88% × 75%",
         "η_total = 49.5%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2663,7 +2706,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 80% × 90% × 80%",
         "η_total = 57.6%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2686,7 +2730,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 85% × 92% × 85%",
         "η_total = 66.47%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2709,7 +2754,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 88% × 95% × 88%",
         "η_total = 73.57%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2732,7 +2778,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 90% × 75% × 90%",
         "η_total = 60.75%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2755,7 +2802,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 92% × 80% × 92%",
         "η_total = 67.71%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2778,7 +2826,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 95% × 85% × 95%",
         "η_total = 76.71%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2801,7 +2850,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 75% × 88% × 75%",
         "η_total = 49.5%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2824,7 +2874,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 80% × 90% × 80%",
         "η_total = 57.6%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2847,7 +2898,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 85% × 92% × 85%",
         "η_total = 66.47%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2870,7 +2922,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 88% × 95% × 88%",
         "η_total = 73.57%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2893,7 +2946,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 90% × 75% × 90%",
         "η_total = 60.75%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2916,7 +2970,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 92% × 80% × 92%",
         "η_total = 67.71%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2939,7 +2994,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 95% × 85% × 95%",
         "η_total = 76.71%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2962,7 +3018,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 75% × 88% × 75%",
         "η_total = 49.5%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -2985,7 +3042,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 80% × 90% × 80%",
         "η_total = 57.6%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -3008,7 +3066,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 85% × 92% × 85%",
         "η_total = 66.47%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -3031,7 +3090,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 88% × 95% × 88%",
         "η_total = 73.57%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -3054,7 +3114,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 90% × 75% × 90%",
         "η_total = 60.75%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -3077,7 +3138,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 92% × 80% × 92%",
         "η_total = 67.71%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -3100,7 +3162,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 95% × 85% × 95%",
         "η_total = 76.71%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -3123,7 +3186,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 75% × 88% × 75%",
         "η_total = 49.5%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -3146,7 +3210,8 @@ export const bulkAreaAQuestions: Question[] = [
         "η_total = 80% × 90% × 80%",
         "η_total = 57.6%"
       ],
-      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ"
+      "formula": "η_total = η₁ × η₂ × η₃ × ... × ηₙ",
+      "derive": "Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar."
     }
   },
   {
@@ -3168,7 +3233,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (30 × 0.22) / 0.82 = 8.05 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3190,7 +3256,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (40 × 0.22) / 0.82 = 10.73 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3212,7 +3279,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (50 × 0.22) / 0.82 = 13.41 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3234,7 +3302,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (60 × 0.22) / 0.82 = 16.1 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3256,7 +3325,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (70 × 0.22) / 0.82 = 18.78 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3278,7 +3348,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (80 × 0.22) / 0.82 = 21.46 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3300,7 +3371,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (100 × 0.22) / 0.82 = 26.83 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3322,7 +3394,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (30 × 0.25) / 0.82 = 9.15 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3344,7 +3417,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (40 × 0.25) / 0.82 = 12.2 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3366,7 +3440,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (50 × 0.25) / 0.82 = 15.24 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3388,7 +3463,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (60 × 0.25) / 0.82 = 18.29 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3410,7 +3486,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (70 × 0.25) / 0.82 = 21.34 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3432,7 +3509,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (80 × 0.25) / 0.85 = 23.53 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3454,7 +3532,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (100 × 0.25) / 0.85 = 29.41 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3476,7 +3555,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (30 × 0.28) / 0.85 = 9.88 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3498,7 +3578,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (40 × 0.28) / 0.85 = 13.18 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3520,7 +3601,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (50 × 0.28) / 0.85 = 16.47 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3542,7 +3624,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (60 × 0.28) / 0.85 = 19.76 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3564,7 +3647,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (70 × 0.28) / 0.85 = 23.06 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3586,7 +3670,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (80 × 0.28) / 0.85 = 26.35 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3608,7 +3693,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (100 × 0.28) / 0.85 = 32.94 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3630,7 +3716,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (30 × 0.3) / 0.85 = 10.59 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3652,7 +3739,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (40 × 0.3) / 0.85 = 14.12 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3674,7 +3762,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (50 × 0.3) / 0.85 = 17.65 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3696,7 +3785,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (60 × 0.3) / 0.88 = 20.45 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3718,7 +3808,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (70 × 0.3) / 0.88 = 23.86 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3740,7 +3831,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (80 × 0.3) / 0.88 = 27.27 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3762,7 +3854,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (100 × 0.3) / 0.88 = 34.09 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3784,7 +3877,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (30 × 0.32) / 0.88 = 10.91 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3806,7 +3900,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (40 × 0.32) / 0.88 = 14.55 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3828,7 +3923,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (50 × 0.32) / 0.88 = 18.18 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3850,7 +3946,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (60 × 0.32) / 0.88 = 21.82 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3872,7 +3969,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (70 × 0.32) / 0.88 = 25.45 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3894,7 +3992,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (80 × 0.32) / 0.88 = 29.09 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3916,7 +4015,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V = (100 × 0.32) / 0.88 = 36.36 L/h"
       ],
-      "formula": "V = (BP × SFC) / ρ"
+      "formula": "V = (BP × SFC) / ρ",
+      "derive": "Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine."
     }
   },
   {
@@ -3938,7 +4038,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 2 × 0.05 × (14 - 1) = 1.3 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -3960,7 +4061,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 2 × 0.05 × (16 - 1) = 1.5 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -3982,7 +4084,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 2 × 0.05 × (18 - 1) = 1.7 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4004,7 +4107,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 2 × 0.05 × (20 - 1) = 1.9 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4026,7 +4130,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 2 × 0.05 × (22 - 1) = 2.1 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4048,7 +4153,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 2 × 0.05 × (14 - 1) = 1.3 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4070,7 +4176,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 2 × 0.06 × (16 - 1) = 1.8 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4092,7 +4199,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 2 × 0.06 × (18 - 1) = 2.04 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4114,7 +4222,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 3 × 0.06 × (20 - 1) = 3.42 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4136,7 +4245,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 3 × 0.06 × (22 - 1) = 3.78 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4158,7 +4268,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 3 × 0.06 × (14 - 1) = 2.34 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4180,7 +4291,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 3 × 0.06 × (16 - 1) = 2.7 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4202,7 +4314,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 3 × 0.07 × (18 - 1) = 3.57 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4224,7 +4337,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 3 × 0.07 × (20 - 1) = 3.99 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4246,7 +4360,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 3 × 0.07 × (22 - 1) = 4.41 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4268,7 +4383,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 3 × 0.07 × (14 - 1) = 2.73 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4290,7 +4406,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 4 × 0.07 × (16 - 1) = 4.2 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4312,7 +4429,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 4 × 0.07 × (18 - 1) = 4.76 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4334,7 +4452,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 4 × 0.08 × (20 - 1) = 6.08 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4356,7 +4475,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 4 × 0.08 × (22 - 1) = 6.72 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4378,7 +4498,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 4 × 0.08 × (14 - 1) = 4.16 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4400,7 +4521,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 4 × 0.08 × (16 - 1) = 4.8 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4422,7 +4544,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 4 × 0.08 × (18 - 1) = 5.44 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4444,7 +4567,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 4 × 0.08 × (20 - 1) = 6.08 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4466,7 +4590,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 6 × 0.1 × (22 - 1) = 12.6 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4488,7 +4613,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 6 × 0.1 × (14 - 1) = 7.8 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4510,7 +4636,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 6 × 0.1 × (16 - 1) = 9 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4532,7 +4659,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 6 × 0.1 × (18 - 1) = 10.2 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4554,7 +4682,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 6 × 0.1 × (20 - 1) = 11.4 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4576,7 +4705,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "V_d = 6 × 0.1 × (22 - 1) = 12.6 L"
       ],
-      "formula": "V_d = n × V_c × (CR - 1)"
+      "formula": "V_d = n × V_c × (CR - 1)",
+      "derive": "Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1)."
     }
   },
   {
@@ -4599,7 +4729,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2 × 3 × 0.6) / 10 = 0.36 ha/h",
         "Output = 0.36 × 3.5 = 1.26 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4622,7 +4753,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2.5 × 3 × 0.6) / 10 = 0.45 ha/h",
         "Output = 0.45 × 3.5 = 1.57 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4645,7 +4777,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3 × 3 × 0.6) / 10 = 0.54 ha/h",
         "Output = 0.54 × 3.5 = 1.89 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4668,7 +4801,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3.5 × 3 × 0.6) / 10 = 0.63 ha/h",
         "Output = 0.63 × 3.5 = 2.21 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4691,7 +4825,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (4 × 3 × 0.6) / 10 = 0.72 ha/h",
         "Output = 0.72 × 3.5 = 2.52 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4714,7 +4849,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2 × 4 × 0.6) / 10 = 0.48 ha/h",
         "Output = 0.48 × 3.5 = 1.68 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4737,7 +4873,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2.5 × 4 × 0.6) / 10 = 0.6 ha/h",
         "Output = 0.6 × 4 = 2.4 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4760,7 +4897,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3 × 4 × 0.6) / 10 = 0.72 ha/h",
         "Output = 0.72 × 4 = 2.88 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4783,7 +4921,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3.5 × 4 × 0.6) / 10 = 0.84 ha/h",
         "Output = 0.84 × 4 = 3.36 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4806,7 +4945,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (4 × 4 × 0.6) / 10 = 0.96 ha/h",
         "Output = 0.96 × 4 = 3.84 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4829,7 +4969,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2 × 5 × 0.6) / 10 = 0.6 ha/h",
         "Output = 0.6 × 4 = 2.4 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4852,7 +4993,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2.5 × 5 × 0.6) / 10 = 0.75 ha/h",
         "Output = 0.75 × 4 = 3 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4875,7 +5017,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3 × 5 × 0.6) / 10 = 0.9 ha/h",
         "Output = 0.9 × 4.5 = 4.05 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4898,7 +5041,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3.5 × 5 × 0.6) / 10 = 1.05 ha/h",
         "Output = 1.05 × 4.5 = 4.73 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4921,7 +5065,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (4 × 5 × 0.6) / 10 = 1.2 ha/h",
         "Output = 1.2 × 4.5 = 5.4 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4944,7 +5089,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2 × 6 × 0.6) / 10 = 0.72 ha/h",
         "Output = 0.72 × 4.5 = 3.24 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4967,7 +5113,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2.5 × 6 × 0.6) / 10 = 0.9 ha/h",
         "Output = 0.9 × 4.5 = 4.05 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -4990,7 +5137,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3 × 6 × 0.6) / 10 = 1.08 ha/h",
         "Output = 1.08 × 4.5 = 4.86 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5013,7 +5161,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3.5 × 6 × 0.6) / 10 = 1.26 ha/h",
         "Output = 1.26 × 5 = 6.3 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5036,7 +5185,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (4 × 6 × 0.6) / 10 = 1.44 ha/h",
         "Output = 1.44 × 5 = 7.2 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5059,7 +5209,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2 × 3 × 0.65) / 10 = 0.39 ha/h",
         "Output = 0.39 × 5 = 1.95 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5082,7 +5233,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2.5 × 3 × 0.65) / 10 = 0.49 ha/h",
         "Output = 0.49 × 5 = 2.45 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5105,7 +5257,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3 × 3 × 0.65) / 10 = 0.59 ha/h",
         "Output = 0.59 × 5 = 2.95 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5128,7 +5281,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3.5 × 3 × 0.65) / 10 = 0.68 ha/h",
         "Output = 0.68 × 5 = 3.4 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5151,7 +5305,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (4 × 3 × 0.65) / 10 = 0.78 ha/h",
         "Output = 0.78 × 5.5 = 4.29 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5174,7 +5329,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2 × 4 × 0.65) / 10 = 0.52 ha/h",
         "Output = 0.52 × 5.5 = 2.86 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5197,7 +5353,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2.5 × 4 × 0.65) / 10 = 0.65 ha/h",
         "Output = 0.65 × 5.5 = 3.58 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5220,7 +5377,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3 × 4 × 0.65) / 10 = 0.78 ha/h",
         "Output = 0.78 × 5.5 = 4.29 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5243,7 +5401,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3.5 × 4 × 0.65) / 10 = 0.91 ha/h",
         "Output = 0.91 × 5.5 = 5 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5266,7 +5425,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (4 × 4 × 0.65) / 10 = 1.04 ha/h",
         "Output = 1.04 × 5.5 = 5.72 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5289,7 +5449,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2 × 5 × 0.65) / 10 = 0.65 ha/h",
         "Output = 0.65 × 6 = 3.9 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5312,7 +5473,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (2.5 × 5 × 0.65) / 10 = 0.81 ha/h",
         "Output = 0.81 × 6 = 4.86 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5335,7 +5497,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3 × 5 × 0.65) / 10 = 0.97 ha/h",
         "Output = 0.97 × 6 = 5.82 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5358,7 +5521,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (3.5 × 5 × 0.65) / 10 = 1.14 ha/h",
         "Output = 1.14 × 6 = 6.84 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -5381,7 +5545,8 @@ export const bulkAreaAQuestions: Question[] = [
         "C = (4 × 5 × 0.65) / 10 = 1.3 ha/h",
         "Output = 1.3 × 6 = 7.8 t/h"
       ],
-      "formula": "Harvest output = C × Yield"
+      "formula": "Harvest output = C × Yield",
+      "derive": "Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h."
     }
   },
   {
@@ -6174,7 +6339,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (600 × 0.08 × 0.05 × 2 × 1800 × 0.5) / 60,000",
         "IP = 0 kW = 0.58 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6197,7 +6363,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (700 × 0.08 × 0.05 × 2 × 1800 × 0.5) / 60,000",
         "IP = 0.01 kW = 0.68 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6220,7 +6387,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (800 × 0.08 × 0.05 × 2 × 1800 × 0.5) / 60,000",
         "IP = 0.01 kW = 0.77 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6243,7 +6411,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (900 × 0.08 × 0.05 × 2 × 1800 × 0.5) / 60,000",
         "IP = 0.01 kW = 0.87 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6266,7 +6435,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (1000 × 0.08 × 0.05 × 2 × 1800 × 0.5) / 60,000",
         "IP = 0.01 kW = 0.97 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6289,7 +6459,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (600 × 0.1 × 0.05 × 2 × 1800 × 0.5) / 60,000",
         "IP = 0.01 kW = 0.72 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6312,7 +6483,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (700 × 0.1 × 0.06 × 2 × 2000 × 0.5) / 60,000",
         "IP = 0.01 kW = 1.13 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6335,7 +6507,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (800 × 0.1 × 0.06 × 2 × 2000 × 0.5) / 60,000",
         "IP = 0.01 kW = 1.29 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6358,7 +6531,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (900 × 0.1 × 0.06 × 3 × 2000 × 0.5) / 60,000",
         "IP = 0.02 kW = 2.17 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6381,7 +6555,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (1000 × 0.1 × 0.06 × 3 × 2000 × 0.5) / 60,000",
         "IP = 0.02 kW = 2.41 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6404,7 +6579,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (600 × 0.12 × 0.06 × 3 × 2000 × 0.5) / 60,000",
         "IP = 0.01 kW = 1.74 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6427,7 +6603,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (700 × 0.12 × 0.06 × 3 × 2000 × 0.5) / 60,000",
         "IP = 0.02 kW = 2.03 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6450,7 +6627,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (800 × 0.12 × 0.07 × 3 × 2200 × 0.5) / 60,000",
         "IP = 0.02 kW = 2.97 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6473,7 +6651,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (900 × 0.12 × 0.07 × 3 × 2200 × 0.5) / 60,000",
         "IP = 0.02 kW = 3.35 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6496,7 +6675,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (1000 × 0.12 × 0.07 × 3 × 2200 × 0.5) / 60,000",
         "IP = 0.03 kW = 3.72 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6519,7 +6699,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (600 × 0.14 × 0.07 × 3 × 2200 × 1) / 60,000",
         "IP = 0.04 kW = 5.2 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6542,7 +6723,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (700 × 0.14 × 0.07 × 4 × 2200 × 1) / 60,000",
         "IP = 0.06 kW = 8.1 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6565,7 +6747,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (800 × 0.14 × 0.07 × 4 × 2200 × 1) / 60,000",
         "IP = 0.07 kW = 9.25 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6588,7 +6771,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (900 × 0.14 × 0.08 × 4 × 2400 × 1) / 60,000",
         "IP = 0.1 kW = 12.98 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6611,7 +6795,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (1000 × 0.14 × 0.08 × 4 × 2400 × 1) / 60,000",
         "IP = 0.11 kW = 14.42 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6634,7 +6819,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (600 × 0.16 × 0.08 × 4 × 2400 × 1) / 60,000",
         "IP = 0.07 kW = 9.89 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6657,7 +6843,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (700 × 0.16 × 0.08 × 4 × 2400 × 1) / 60,000",
         "IP = 0.09 kW = 11.53 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6680,7 +6867,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (800 × 0.16 × 0.08 × 4 × 2400 × 1) / 60,000",
         "IP = 0.1 kW = 13.18 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6703,7 +6891,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (900 × 0.16 × 0.08 × 4 × 2400 × 1) / 60,000",
         "IP = 0.11 kW = 14.83 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6726,7 +6915,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (1000 × 0.16 × 0.09 × 6 × 2600 × 1) / 60,000",
         "IP = 0.22 kW = 30.12 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6749,7 +6939,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (600 × 0.08 × 0.09 × 6 × 2600 × 1) / 60,000",
         "IP = 0.07 kW = 9.04 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6772,7 +6963,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (700 × 0.08 × 0.09 × 6 × 2600 × 1) / 60,000",
         "IP = 0.08 kW = 10.54 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6795,7 +6987,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (800 × 0.08 × 0.09 × 6 × 2600 × 1) / 60,000",
         "IP = 0.09 kW = 12.05 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6818,7 +7011,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (900 × 0.08 × 0.09 × 6 × 2600 × 1) / 60,000",
         "IP = 0.1 kW = 13.56 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -6841,7 +7035,8 @@ export const bulkAreaAQuestions: Question[] = [
         "IP (kW) = (1000 × 0.08 × 0.09 × 6 × 2600 × 1) / 60,000",
         "IP = 0.11 kW = 15.06 HP"
       ],
-      "formula": "IP = (MEP × L × A × n × N × k) / 60,000"
+      "formula": "IP = (MEP × L × A × n × N × k) / 60,000",
+      "derive": "IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L."
     }
   },
   {
@@ -8513,7 +8708,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 5 × 35 = 175 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8535,7 +8731,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 8 × 35 = 280 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8557,7 +8754,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 10 × 35 = 350 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8579,7 +8777,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 12 × 35 = 420 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8601,7 +8800,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 15 × 35 = 525 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8623,7 +8823,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 5 × 35 = 175 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8645,7 +8846,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 8 × 38 = 304 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8667,7 +8869,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 10 × 38 = 380 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8689,7 +8892,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 12 × 38 = 456 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8711,7 +8915,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 15 × 38 = 570 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8733,7 +8938,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 5 × 38 = 190 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8755,7 +8961,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 8 × 38 = 304 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8777,7 +8984,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 10 × 40 = 400 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8799,7 +9007,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 12 × 40 = 480 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8821,7 +9030,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 15 × 40 = 600 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8843,7 +9053,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 5 × 40 = 200 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8865,7 +9076,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 8 × 40 = 320 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8887,7 +9099,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 10 × 40 = 400 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8909,7 +9122,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 12 × 42 = 504 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8931,7 +9145,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 15 × 42 = 630 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8953,7 +9168,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 5 × 42 = 210 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8975,7 +9191,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 8 × 42 = 336 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -8997,7 +9214,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 10 × 42 = 420 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -9019,7 +9237,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 12 × 42 = 504 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -9041,7 +9260,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 15 × 44 = 660 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -9063,7 +9283,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 5 × 44 = 220 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -9085,7 +9306,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 8 × 44 = 352 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -9107,7 +9329,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 10 × 44 = 440 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -9129,7 +9352,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 12 × 44 = 528 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -9151,7 +9375,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Q = 15 × 44 = 660 MJ/h"
       ],
-      "formula": "Q = m_f × CV"
+      "formula": "Q = m_f × CV",
+      "derive": "Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour."
     }
   },
   {
@@ -9173,7 +9398,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 4 × 0.8 = 3.2 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9195,7 +9421,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 5 × 0.8 = 4 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9217,7 +9444,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 6 × 0.8 = 4.8 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9239,7 +9467,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 8 × 0.8 = 6.4 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9261,7 +9490,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 10 × 0.8 = 8 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9283,7 +9513,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 4 × 1 = 4 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9305,7 +9536,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 5 × 1 = 5 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9327,7 +9559,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 6 × 1 = 6 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9349,7 +9582,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 8 × 1 = 8 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9371,7 +9605,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 10 × 1 = 10 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9393,7 +9628,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 4 × 1.2 = 4.8 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9415,7 +9651,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 5 × 1.2 = 6 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9437,7 +9674,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 6 × 1.2 = 7.2 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9459,7 +9697,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 8 × 1.2 = 9.6 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9481,7 +9720,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 10 × 1.2 = 12 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9503,7 +9743,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 4 × 1.5 = 6 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9525,7 +9766,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 5 × 1.5 = 7.5 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9547,7 +9789,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 6 × 1.5 = 9 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9569,7 +9812,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 8 × 1.5 = 12 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9591,7 +9835,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 10 × 1.5 = 15 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9613,7 +9858,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 4 × 1.8 = 7.2 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9635,7 +9881,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 5 × 1.8 = 9 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9657,7 +9904,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 6 × 1.8 = 10.8 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9679,7 +9927,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 8 × 1.8 = 14.4 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9701,7 +9950,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 10 × 1.8 = 18 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9723,7 +9973,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 4 × 0.8 = 3.2 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9745,7 +9996,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 5 × 0.8 = 4 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9767,7 +10019,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 6 × 0.8 = 4.8 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9789,7 +10042,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 8 × 0.8 = 6.4 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9811,7 +10065,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 10 × 0.8 = 8 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9833,7 +10088,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 4 × 1 = 4 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9855,7 +10111,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 5 × 1 = 5 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9877,7 +10134,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 6 × 1 = 6 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9899,7 +10157,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 8 × 1 = 8 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -9921,7 +10180,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Total draft = 10 × 1 = 10 kN"
       ],
-      "formula": "D_total = n × d_per_unit"
+      "formula": "D_total = n × d_per_unit",
+      "derive": "Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m."
     }
   },
   {
@@ -10823,7 +11083,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 100 × 25% = 25 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -10845,7 +11106,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 150 × 30% = 45 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -10867,7 +11129,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 200 × 33% = 66 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -10889,7 +11152,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 250 × 35% = 87.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -10911,7 +11175,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 300 × 25% = 75 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -10933,7 +11198,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 100 × 30% = 30 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -10955,7 +11221,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 150 × 33% = 49.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -10977,7 +11244,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 200 × 35% = 70 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -10999,7 +11267,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 250 × 25% = 62.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11021,7 +11290,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 300 × 30% = 90 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11043,7 +11313,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 100 × 33% = 33 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11065,7 +11336,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 150 × 35% = 52.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11087,7 +11359,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 200 × 25% = 50 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11109,7 +11382,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 250 × 30% = 75 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11131,7 +11405,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 300 × 33% = 99 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11153,7 +11428,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 100 × 35% = 35 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11175,7 +11451,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 150 × 25% = 37.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11197,7 +11474,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 200 × 30% = 60 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11219,7 +11497,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 250 × 33% = 82.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11241,7 +11520,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 300 × 35% = 105 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11263,7 +11543,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 100 × 25% = 25 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11285,7 +11566,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 150 × 30% = 45 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11307,7 +11589,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 200 × 33% = 66 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11329,7 +11612,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 250 × 35% = 87.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11351,7 +11635,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 300 × 25% = 75 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11373,7 +11658,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 100 × 30% = 30 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11395,7 +11681,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 150 × 33% = 49.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11417,7 +11704,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 200 × 35% = 70 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11439,7 +11727,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 250 × 25% = 62.5 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -11461,7 +11750,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "Work heat = 300 × 30% = 90 MJ/h"
       ],
-      "formula": "Q_work = Q_total × η_work"
+      "formula": "Q_work = Q_total × η_work",
+      "derive": "Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction."
     }
   },
   {
@@ -15588,7 +15878,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (5 × 35) × 0.25 = 175 MJ/h × 0.25 = 43.75 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15610,7 +15901,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (8 × 35) × 0.25 = 280 MJ/h × 0.25 = 70 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15632,7 +15924,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (10 × 35) × 0.25 = 350 MJ/h × 0.25 = 87.5 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15654,7 +15947,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (12 × 35) × 0.25 = 420 MJ/h × 0.25 = 105 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15676,7 +15970,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (15 × 35) × 0.25 = 525 MJ/h × 0.25 = 131.25 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15698,7 +15993,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (5 × 35) × 0.25 = 175 MJ/h × 0.25 = 43.75 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15720,7 +16016,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (8 × 38) × 0.28 = 304 MJ/h × 0.28 = 85.12 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15742,7 +16039,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (10 × 38) × 0.28 = 380 MJ/h × 0.28 = 106.4 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15764,7 +16062,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (12 × 38) × 0.28 = 456 MJ/h × 0.28 = 127.68 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15786,7 +16085,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (15 × 38) × 0.28 = 570 MJ/h × 0.28 = 159.6 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15808,7 +16108,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (5 × 38) × 0.28 = 190 MJ/h × 0.28 = 53.2 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15830,7 +16131,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (8 × 38) × 0.28 = 304 MJ/h × 0.28 = 85.12 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15852,7 +16154,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (10 × 40) × 0.3 = 400 MJ/h × 0.3 = 120 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15874,7 +16177,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (12 × 40) × 0.3 = 480 MJ/h × 0.3 = 144 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15896,7 +16200,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (15 × 40) × 0.3 = 600 MJ/h × 0.3 = 180 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15918,7 +16223,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (5 × 40) × 0.3 = 200 MJ/h × 0.3 = 60 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15940,7 +16246,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (8 × 40) × 0.3 = 320 MJ/h × 0.3 = 96 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15962,7 +16269,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (10 × 40) × 0.3 = 400 MJ/h × 0.3 = 120 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -15984,7 +16292,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (12 × 42) × 0.33 = 504 MJ/h × 0.33 = 166.32 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16006,7 +16315,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (15 × 42) × 0.33 = 630 MJ/h × 0.33 = 207.9 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16028,7 +16338,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (5 × 42) × 0.33 = 210 MJ/h × 0.33 = 69.3 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16050,7 +16361,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (8 × 42) × 0.33 = 336 MJ/h × 0.33 = 110.88 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16072,7 +16384,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (10 × 42) × 0.33 = 420 MJ/h × 0.33 = 138.6 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16094,7 +16407,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (12 × 42) × 0.33 = 504 MJ/h × 0.33 = 166.32 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16116,7 +16430,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (15 × 44) × 0.35 = 660 MJ/h × 0.35 = 231 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16138,7 +16453,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (5 × 44) × 0.35 = 220 MJ/h × 0.35 = 77 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16160,7 +16476,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (8 × 44) × 0.35 = 352 MJ/h × 0.35 = 123.2 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16182,7 +16499,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (10 × 44) × 0.35 = 440 MJ/h × 0.35 = 154 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16204,7 +16522,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (12 × 44) × 0.35 = 528 MJ/h × 0.35 = 184.8 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16226,7 +16545,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "W_out = (15 × 44) × 0.35 = 660 MJ/h × 0.35 = 231 MJ/h"
       ],
-      "formula": "W_out = m_f × CV × η"
+      "formula": "W_out = m_f × CV × η",
+      "derive": "Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work."
     }
   },
   {
@@ -16248,7 +16568,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 30 × 0.8 = 24 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16270,7 +16591,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 40 × 0.8 = 32 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16292,7 +16614,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 50 × 0.8 = 40 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16314,7 +16637,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 60 × 0.8 = 48 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16336,7 +16660,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 75 × 0.8 = 60 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16358,7 +16683,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 30 × 0.8 = 24 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16380,7 +16706,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 40 × 0.8 = 32 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16402,7 +16729,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 50 × 0.85 = 42.5 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16424,7 +16752,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 60 × 0.85 = 51 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16446,7 +16775,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 75 × 0.85 = 63.75 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16468,7 +16798,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 30 × 0.85 = 25.5 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16490,7 +16821,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 40 × 0.85 = 34 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16512,7 +16844,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 50 × 0.85 = 42.5 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16534,7 +16867,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 60 × 0.85 = 51 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16556,7 +16890,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 75 × 0.88 = 66 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16578,7 +16913,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 30 × 0.88 = 26.4 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16600,7 +16936,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 40 × 0.88 = 35.2 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16622,7 +16959,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 50 × 0.88 = 44 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16644,7 +16982,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 60 × 0.88 = 52.8 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16666,7 +17005,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 75 × 0.88 = 66 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16688,7 +17028,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 30 × 0.88 = 26.4 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16710,7 +17051,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 40 × 0.9 = 36 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16732,7 +17074,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 50 × 0.9 = 45 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16754,7 +17097,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 60 × 0.9 = 54 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16776,7 +17120,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 75 × 0.9 = 67.5 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16798,7 +17143,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 30 × 0.9 = 27 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16820,7 +17166,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 40 × 0.9 = 36 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16842,7 +17189,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 50 × 0.9 = 45 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16864,7 +17212,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 60 × 0.92 = 55.2 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16886,7 +17235,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 75 × 0.92 = 69 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16908,7 +17258,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 30 × 0.92 = 27.6 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16930,7 +17281,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 40 × 0.92 = 36.8 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16952,7 +17304,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 50 × 0.92 = 46 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16974,7 +17327,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 60 × 0.92 = 55.2 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -16996,7 +17350,8 @@ export const bulkAreaAQuestions: Question[] = [
       "steps": [
         "P_pump = 75 × 0.92 = 69 HP"
       ],
-      "formula": "P_pump = P_PTO × η_pump"
+      "formula": "P_pump = P_PTO × η_pump",
+      "derive": "Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H)."
     }
   },
   {
@@ -20836,7 +21191,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.05 × 3600) / (6 × 10) = 3 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -20858,7 +21214,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.08 × 3600) / (6 × 10) = 4.8 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -20880,7 +21237,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.1 × 3600) / (6 × 10) = 6 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -20902,7 +21260,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.12 × 3600) / (6 × 10) = 7.2 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -20924,7 +21283,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.15 × 3600) / (6 × 10) = 9 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -20946,7 +21306,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.05 × 3600) / (8 × 12) = 1.88 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -20968,7 +21329,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.08 × 3600) / (8 × 12) = 3 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -20990,7 +21352,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.1 × 3600) / (8 × 12) = 3.75 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21012,7 +21375,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.12 × 3600) / (8 × 12) = 4.5 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21034,7 +21398,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.15 × 3600) / (8 × 12) = 5.63 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21056,7 +21421,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.05 × 3600) / (10 × 15) = 1.2 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21078,7 +21444,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.08 × 3600) / (10 × 15) = 1.92 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21100,7 +21467,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.1 × 3600) / (10 × 15) = 2.4 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21122,7 +21490,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.12 × 3600) / (10 × 15) = 2.88 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21144,7 +21513,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.15 × 3600) / (10 × 15) = 3.6 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21166,7 +21536,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.05 × 3600) / (12 × 6) = 2.5 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21188,7 +21559,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.08 × 3600) / (12 × 6) = 4 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21210,7 +21582,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.1 × 3600) / (12 × 6) = 5 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21232,7 +21605,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.12 × 3600) / (12 × 6) = 6 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21254,7 +21628,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.15 × 3600) / (12 × 6) = 7.5 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21276,7 +21651,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.05 × 3600) / (15 × 8) = 1.5 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21298,7 +21674,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.08 × 3600) / (15 × 8) = 2.4 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21320,7 +21697,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.1 × 3600) / (15 × 8) = 3 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21342,7 +21720,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.12 × 3600) / (15 × 8) = 3.6 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21364,7 +21743,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.15 × 3600) / (15 × 8) = 4.5 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21386,7 +21766,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.05 × 3600) / (6 × 10) = 3 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21408,7 +21789,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.08 × 3600) / (6 × 10) = 4.8 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21430,7 +21812,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.1 × 3600) / (6 × 10) = 6 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21452,7 +21835,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.12 × 3600) / (6 × 10) = 7.2 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -21474,7 +21858,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "AR = (0.15 × 3600) / (6 × 10) = 9 mm/h"
       ],
-      "formula": "AR = (q × 3600) / (Sl × Ss)"
+      "formula": "AR = (q × 3600) / (Sl × Ss)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff."
     }
   },
   {
@@ -22156,7 +22541,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.2 × (1200 / 1000) × (20 × 10000) = 48000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22178,7 +22564,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.3 × (1200 / 1000) × (20 × 10000) = 72000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22200,7 +22587,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.4 × (1200 / 1000) × (20 × 10000) = 96000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22222,7 +22610,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.5 × (1200 / 1000) × (20 × 10000) = 120000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22244,7 +22633,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.6 × (1200 / 1000) × (20 × 10000) = 144000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22266,7 +22656,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.7 × (1200 / 1000) × (20 × 10000) = 168000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22288,7 +22679,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.2 × (1500 / 1000) × (50 × 10000) = 150000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22310,7 +22702,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.3 × (1500 / 1000) × (50 × 10000) = 225000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22332,7 +22725,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.4 × (1500 / 1000) × (50 × 10000) = 300000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22354,7 +22748,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.5 × (1500 / 1000) × (50 × 10000) = 375000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22376,7 +22771,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.6 × (1500 / 1000) × (50 × 10000) = 450000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22398,7 +22794,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.7 × (1500 / 1000) × (50 × 10000) = 525000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22420,7 +22817,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.2 × (1800 / 1000) × (100 × 10000) = 360000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22442,7 +22840,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.3 × (1800 / 1000) × (100 × 10000) = 540000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22464,7 +22863,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.4 × (1800 / 1000) × (100 × 10000) = 720000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22486,7 +22886,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.5 × (1800 / 1000) × (100 × 10000) = 900000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22508,7 +22909,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.6 × (1800 / 1000) × (100 × 10000) = 1080000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22530,7 +22932,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.7 × (1800 / 1000) × (100 × 10000) = 1260000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22552,7 +22955,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.2 × (2000 / 1000) × (200 × 10000) = 800000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22574,7 +22978,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.3 × (2000 / 1000) × (200 × 10000) = 1200000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22596,7 +23001,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.4 × (2000 / 1000) × (200 × 10000) = 1600000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22618,7 +23024,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.5 × (2000 / 1000) × (200 × 10000) = 2000000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22640,7 +23047,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.6 × (2000 / 1000) × (200 × 10000) = 2400000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22662,7 +23070,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.7 × (2000 / 1000) × (200 × 10000) = 2800000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22684,7 +23093,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.2 × (2500 / 1000) × (500 × 10000) = 2500000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22706,7 +23116,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.3 × (2500 / 1000) × (500 × 10000) = 3750000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22728,7 +23139,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.4 × (2500 / 1000) × (500 × 10000) = 5000000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22750,7 +23162,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.5 × (2500 / 1000) × (500 × 10000) = 6250000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22772,7 +23185,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.6 × (2500 / 1000) × (500 × 10000) = 7500000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -22794,7 +23208,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "V = 0.7 × (2500 / 1000) × (500 × 10000) = 8750000 m³"
       ],
-      "formula": "V = C × P × A"
+      "formula": "V = C × P × A",
+      "derive": "Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶."
     }
   },
   {
@@ -23477,7 +23892,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (2 × 10000 × 50 / 1000) / 0.55 = 1818.18 m³",
         "T = 1818.18 / (5 × 3600 / 1000) = 0.1 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23500,7 +23916,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (3 × 10000 × 50 / 1000) / 0.55 = 2727.27 m³",
         "T = 2727.27 / (5 × 3600 / 1000) = 0.15 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23523,7 +23940,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (5 × 10000 × 50 / 1000) / 0.55 = 4545.45 m³",
         "T = 4545.45 / (5 × 3600 / 1000) = 0.25 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23546,7 +23964,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (8 × 10000 × 50 / 1000) / 0.55 = 7272.73 m³",
         "T = 7272.73 / (5 × 3600 / 1000) = 0.4 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23569,7 +23988,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (10 × 10000 × 50 / 1000) / 0.55 = 9090.91 m³",
         "T = 9090.91 / (5 × 3600 / 1000) = 0.51 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23592,7 +24012,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (2 × 10000 × 75 / 1000) / 0.55 = 2727.27 m³",
         "T = 2727.27 / (8 × 3600 / 1000) = 0.09 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23615,7 +24036,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (3 × 10000 × 75 / 1000) / 0.6 = 3750 m³",
         "T = 3750 / (8 × 3600 / 1000) = 0.13 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23638,7 +24060,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (5 × 10000 × 75 / 1000) / 0.6 = 6250 m³",
         "T = 6250 / (8 × 3600 / 1000) = 0.22 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23661,7 +24084,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (8 × 10000 × 75 / 1000) / 0.6 = 10000 m³",
         "T = 10000 / (8 × 3600 / 1000) = 0.35 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23684,7 +24108,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (10 × 10000 × 75 / 1000) / 0.6 = 12500 m³",
         "T = 12500 / (8 × 3600 / 1000) = 0.43 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23707,7 +24132,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (2 × 10000 × 100 / 1000) / 0.6 = 3333.33 m³",
         "T = 3333.33 / (10 × 3600 / 1000) = 0.09 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23730,7 +24156,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (3 × 10000 × 100 / 1000) / 0.6 = 5000 m³",
         "T = 5000 / (10 × 3600 / 1000) = 0.14 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23753,7 +24180,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (5 × 10000 × 100 / 1000) / 0.65 = 7692.31 m³",
         "T = 7692.31 / (10 × 3600 / 1000) = 0.21 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23776,7 +24204,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (8 × 10000 × 100 / 1000) / 0.65 = 12307.69 m³",
         "T = 12307.69 / (10 × 3600 / 1000) = 0.34 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23799,7 +24228,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (10 × 10000 × 100 / 1000) / 0.65 = 15384.62 m³",
         "T = 15384.62 / (10 × 3600 / 1000) = 0.43 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23822,7 +24252,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (2 × 10000 × 120 / 1000) / 0.65 = 3692.31 m³",
         "T = 3692.31 / (12 × 3600 / 1000) = 0.09 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23845,7 +24276,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (3 × 10000 × 120 / 1000) / 0.65 = 5538.46 m³",
         "T = 5538.46 / (12 × 3600 / 1000) = 0.13 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23868,7 +24300,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (5 × 10000 × 120 / 1000) / 0.65 = 9230.77 m³",
         "T = 9230.77 / (12 × 3600 / 1000) = 0.21 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23891,7 +24324,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (8 × 10000 × 120 / 1000) / 0.7 = 13714.29 m³",
         "T = 13714.29 / (12 × 3600 / 1000) = 0.32 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23914,7 +24348,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (10 × 10000 × 120 / 1000) / 0.7 = 17142.86 m³",
         "T = 17142.86 / (12 × 3600 / 1000) = 0.4 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23937,7 +24372,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (2 × 10000 × 150 / 1000) / 0.7 = 4285.71 m³",
         "T = 4285.71 / (15 × 3600 / 1000) = 0.08 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23960,7 +24396,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (3 × 10000 × 150 / 1000) / 0.7 = 6428.57 m³",
         "T = 6428.57 / (15 × 3600 / 1000) = 0.12 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -23983,7 +24420,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (5 × 10000 × 150 / 1000) / 0.7 = 10714.29 m³",
         "T = 10714.29 / (15 × 3600 / 1000) = 0.2 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -24006,7 +24444,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (8 × 10000 × 150 / 1000) / 0.7 = 17142.86 m³",
         "T = 17142.86 / (15 × 3600 / 1000) = 0.32 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -24029,7 +24468,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (10 × 10000 × 150 / 1000) / 0.55 = 27272.73 m³",
         "T = 27272.73 / (15 × 3600 / 1000) = 0.51 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -24052,7 +24492,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (2 × 10000 × 50 / 1000) / 0.55 = 1818.18 m³",
         "T = 1818.18 / (5 × 3600 / 1000) = 0.1 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -24075,7 +24516,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (3 × 10000 × 50 / 1000) / 0.55 = 2727.27 m³",
         "T = 2727.27 / (5 × 3600 / 1000) = 0.15 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -24098,7 +24540,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (5 × 10000 × 50 / 1000) / 0.55 = 4545.45 m³",
         "T = 4545.45 / (5 × 3600 / 1000) = 0.25 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -24121,7 +24564,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (8 × 10000 × 50 / 1000) / 0.55 = 7272.73 m³",
         "T = 7272.73 / (5 × 3600 / 1000) = 0.4 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -24144,7 +24588,8 @@ export const bulkAreaBQuestions: Question[] = [
         "V = (10 × 10000 × 50 / 1000) / 0.55 = 9090.91 m³",
         "T = 9090.91 / (5 × 3600 / 1000) = 0.51 h"
       ],
-      "formula": "T = V / Q"
+      "formula": "T = V / Q",
+      "derive": "Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600."
     }
   },
   {
@@ -24166,7 +24611,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 250 × 0.15 × 1.5 × 0.1 = 5.63 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24188,7 +24634,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 300 × 0.15 × 1.5 × 0.1 = 6.75 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24210,7 +24657,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 350 × 0.15 × 1.5 × 0.1 = 7.88 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24232,7 +24680,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 400 × 0.15 × 1.5 × 0.1 = 9 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24254,7 +24703,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 450 × 0.15 × 1.5 × 0.1 = 10.13 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24276,7 +24726,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 250 × 0.15 × 1.5 × 0.1 = 5.63 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24298,7 +24749,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 300 × 0.2 × 2 × 0.15 = 18 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24320,7 +24772,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 350 × 0.2 × 2 × 0.15 = 21 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24342,7 +24795,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 400 × 0.2 × 2 × 0.15 = 24 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24364,7 +24818,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 450 × 0.2 × 2 × 0.15 = 27 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24386,7 +24841,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 250 × 0.2 × 2 × 0.15 = 15 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24408,7 +24864,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 300 × 0.2 × 2 × 0.15 = 18 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24430,7 +24887,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 350 × 0.25 × 2.5 × 0.2 = 43.75 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24452,7 +24910,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 400 × 0.25 × 2.5 × 0.2 = 50 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24474,7 +24933,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 450 × 0.25 × 2.5 × 0.2 = 56.25 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24496,7 +24956,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 250 × 0.25 × 2.5 × 0.2 = 31.25 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24518,7 +24979,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 300 × 0.25 × 2.5 × 0.2 = 37.5 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24540,7 +25002,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 350 × 0.25 × 2.5 × 0.2 = 43.75 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24562,7 +25025,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 400 × 0.3 × 3 × 0.25 = 90 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24584,7 +25048,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 450 × 0.3 × 3 × 0.25 = 101.25 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24606,7 +25071,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 250 × 0.3 × 3 × 0.25 = 56.25 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24628,7 +25094,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 300 × 0.3 × 3 × 0.25 = 67.5 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24650,7 +25117,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 350 × 0.3 × 3 × 0.25 = 78.75 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24672,7 +25140,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 400 × 0.3 × 3 × 0.25 = 90 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24694,7 +25163,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 450 × 0.35 × 4 × 0.3 = 189 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24716,7 +25186,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 250 × 0.35 × 4 × 0.3 = 105 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24738,7 +25209,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 300 × 0.35 × 4 × 0.3 = 126 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24760,7 +25232,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 350 × 0.35 × 4 × 0.3 = 147 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24782,7 +25255,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 400 × 0.35 × 4 × 0.3 = 168 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -24804,7 +25278,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "A = 450 × 0.35 × 4 × 0.3 = 189 t/ha/yr"
       ],
-      "formula": "A = R × K × LS × C × P"
+      "formula": "A = R × K × LS × C × P",
+      "derive": "Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing."
     }
   },
   {
@@ -26808,7 +27283,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 169.33 = 33.87 mm",
         "Q = (50 - 33.87)² / (50 - 33.87 + 169.33) = 1.4 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -26832,7 +27308,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 136.77 = 27.35 mm",
         "Q = (50 - 27.35)² / (50 - 27.35 + 136.77) = 3.22 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -26856,7 +27333,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 108.86 = 21.77 mm",
         "Q = (50 - 21.77)² / (50 - 21.77 + 108.86) = 5.81 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -26880,7 +27358,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 84.67 = 16.93 mm",
         "Q = (50 - 16.93)² / (50 - 16.93 + 84.67) = 9.29 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -26904,7 +27383,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 63.5 = 12.7 mm",
         "Q = (50 - 12.7)² / (50 - 12.7 + 63.5) = 13.8 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -26928,7 +27408,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 44.82 = 8.96 mm",
         "Q = (75 - 8.96)² / (75 - 8.96 + 44.82) = 39.34 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -26952,7 +27433,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 28.22 = 5.64 mm",
         "Q = (75 - 5.64)² / (75 - 5.64 + 28.22) = 49.3 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -26976,7 +27458,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 169.33 = 33.87 mm",
         "Q = (75 - 33.87)² / (75 - 33.87 + 169.33) = 8.04 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27000,7 +27483,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 136.77 = 27.35 mm",
         "Q = (75 - 27.35)² / (75 - 27.35 + 136.77) = 12.31 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27024,7 +27508,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 108.86 = 21.77 mm",
         "Q = (75 - 21.77)² / (75 - 21.77 + 108.86) = 17.48 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27048,7 +27533,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 84.67 = 16.93 mm",
         "Q = (100 - 16.93)² / (100 - 16.93 + 84.67) = 41.14 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27072,7 +27558,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 63.5 = 12.7 mm",
         "Q = (100 - 12.7)² / (100 - 12.7 + 63.5) = 50.54 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27096,7 +27583,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 44.82 = 8.96 mm",
         "Q = (100 - 8.96)² / (100 - 8.96 + 44.82) = 61.01 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27120,7 +27608,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 28.22 = 5.64 mm",
         "Q = (100 - 5.64)² / (100 - 5.64 + 28.22) = 72.64 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27144,7 +27633,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 169.33 = 33.87 mm",
         "Q = (100 - 33.87)² / (100 - 33.87 + 169.33) = 18.57 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27168,7 +27658,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 136.77 = 27.35 mm",
         "Q = (125 - 27.35)² / (125 - 27.35 + 136.77) = 40.68 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27192,7 +27683,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 108.86 = 21.77 mm",
         "Q = (125 - 21.77)² / (125 - 21.77 + 108.86) = 50.24 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27216,7 +27708,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 84.67 = 16.93 mm",
         "Q = (125 - 16.93)² / (125 - 16.93 + 84.67) = 60.6 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27240,7 +27733,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 63.5 = 12.7 mm",
         "Q = (125 - 12.7)² / (125 - 12.7 + 63.5) = 71.74 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27264,7 +27758,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 44.82 = 8.96 mm",
         "Q = (125 - 8.96)² / (125 - 8.96 + 44.82) = 83.71 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27288,7 +27783,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 28.22 = 5.64 mm",
         "Q = (150 - 5.64)² / (150 - 5.64 + 28.22) = 120.75 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27312,7 +27808,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 169.33 = 33.87 mm",
         "Q = (150 - 33.87)² / (150 - 33.87 + 169.33) = 47.24 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27336,7 +27833,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 136.77 = 27.35 mm",
         "Q = (150 - 27.35)² / (150 - 27.35 + 136.77) = 57.99 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27360,7 +27858,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 108.86 = 21.77 mm",
         "Q = (150 - 21.77)² / (150 - 21.77 + 108.86) = 69.35 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27384,7 +27883,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 84.67 = 16.93 mm",
         "Q = (150 - 16.93)² / (150 - 16.93 + 84.67) = 81.32 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27408,7 +27908,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 63.5 = 12.7 mm",
         "Q = (200 - 12.7)² / (200 - 12.7 + 63.5) = 139.88 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27432,7 +27933,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 44.82 = 8.96 mm",
         "Q = (200 - 8.96)² / (200 - 8.96 + 44.82) = 154.74 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27456,7 +27958,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 28.22 = 5.64 mm",
         "Q = (200 - 5.64)² / (200 - 5.64 + 28.22) = 169.72 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27480,7 +27983,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 169.33 = 33.87 mm",
         "Q = (200 - 33.87)² / (200 - 33.87 + 169.33) = 82.27 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -27504,7 +28008,8 @@ export const bulkAreaBQuestions: Question[] = [
         "Ia = 0.2 × 136.77 = 27.35 mm",
         "Q = (200 - 27.35)² / (200 - 27.35 + 136.77) = 96.34 mm"
       ],
-      "formula": "Q = (P - Ia)² / (P - Ia + S)"
+      "formula": "Q = (P - Ia)² / (P - Ia + S)",
+      "derive": "SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall."
     }
   },
   {
@@ -29506,7 +30011,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/5)^{2019} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29528,7 +30034,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/10)^{2019} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29550,7 +30057,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/20)^{2019} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29572,7 +30080,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/25)^{2019} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29594,7 +30103,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/50)^{2019} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29616,7 +30126,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/100)^{2019} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29638,7 +30149,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/5)^{2020} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29660,7 +30172,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/10)^{2020} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29682,7 +30195,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/20)^{2020} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29704,7 +30218,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/25)^{2020} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29726,7 +30241,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/50)^{2020} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29748,7 +30264,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/100)^{2020} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29770,7 +30287,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/5)^{2021} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29792,7 +30310,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/10)^{2021} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29814,7 +30333,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/20)^{2021} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29836,7 +30356,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/25)^{2021} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29858,7 +30379,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/50)^{2021} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29880,7 +30402,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/100)^{2021} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29902,7 +30425,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/5)^{2022} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29924,7 +30448,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/10)^{2022} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29946,7 +30471,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/20)^{2022} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29968,7 +30494,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/25)^{2022} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -29990,7 +30517,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/50)^{2022} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -30012,7 +30540,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/100)^{2022} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -30034,7 +30563,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/5)^{2023} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -30056,7 +30586,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/10)^{2023} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -30078,7 +30609,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/20)^{2023} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -30100,7 +30632,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/25)^{2023} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -30122,7 +30655,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/50)^{2023} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -30144,7 +30678,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "P = 1 - (1 - 1/100)^{2023} = 100%"
       ],
-      "formula": "P = 1 - (1 - 1/T)^n"
+      "formula": "P = 1 - (1 - 1/T)^n",
+      "derive": "Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n."
     }
   },
   {
@@ -30169,7 +30704,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 0.5 / 2 = 0.25 m",
         "Q = 0.5 × 0.25^(2/3) × √0.0005 / 0.012 = 0.37 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30194,7 +30730,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 0.5 / 2 = 0.25 m",
         "Q = 0.5 × 0.25^(2/3) × √0.0005 / 0.015 = 0.3 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30219,7 +30756,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 0.5 / 2 = 0.25 m",
         "Q = 0.5 × 0.25^(2/3) × √0.0005 / 0.018 = 0.25 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30244,7 +30782,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 0.5 / 2 = 0.25 m",
         "Q = 0.5 × 0.25^(2/3) × √0.0005 / 0.02 = 0.22 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30269,7 +30808,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 0.5 / 2 = 0.25 m",
         "Q = 0.5 × 0.25^(2/3) × √0.0005 / 0.025 = 0.18 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30294,7 +30834,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 0.5 / 2 = 0.25 m",
         "Q = 0.5 × 0.25^(2/3) × √0.0005 / 0.03 = 0.15 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30319,7 +30860,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 1.2 / 3.1 = 0.39 m",
         "Q = 1.2 × 0.39^(2/3) × √0.001 / 0.012 = 1.69 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30344,7 +30886,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 1.2 / 3.1 = 0.39 m",
         "Q = 1.2 × 0.39^(2/3) × √0.001 / 0.015 = 1.35 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30369,7 +30912,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 1.2 / 3.1 = 0.39 m",
         "Q = 1.2 × 0.39^(2/3) × √0.001 / 0.018 = 1.13 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30394,7 +30938,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 1.2 / 3.1 = 0.39 m",
         "Q = 1.2 × 0.39^(2/3) × √0.001 / 0.02 = 1.01 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30419,7 +30964,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 1.2 / 3.1 = 0.39 m",
         "Q = 1.2 × 0.39^(2/3) × √0.001 / 0.025 = 0.81 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30444,7 +30990,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 1.2 / 3.1 = 0.39 m",
         "Q = 1.2 × 0.39^(2/3) × √0.001 / 0.03 = 0.68 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30469,7 +31016,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 2 / 4 = 0.5 m",
         "Q = 2 × 0.5^(2/3) × √0.002 / 0.012 = 4.7 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30494,7 +31042,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 2 / 4 = 0.5 m",
         "Q = 2 × 0.5^(2/3) × √0.002 / 0.015 = 3.76 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30519,7 +31068,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 2 / 4 = 0.5 m",
         "Q = 2 × 0.5^(2/3) × √0.002 / 0.018 = 3.13 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30544,7 +31094,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 2 / 4 = 0.5 m",
         "Q = 2 × 0.5^(2/3) × √0.002 / 0.02 = 2.82 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30569,7 +31120,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 2 / 4 = 0.5 m",
         "Q = 2 × 0.5^(2/3) × √0.002 / 0.025 = 2.25 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30594,7 +31146,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 2 / 4 = 0.5 m",
         "Q = 2 × 0.5^(2/3) × √0.002 / 0.03 = 1.88 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30619,7 +31172,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 3 / 4.9 = 0.61 m",
         "Q = 3 × 0.61^(2/3) × √0.003 / 0.012 = 9.85 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30644,7 +31198,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 3 / 4.9 = 0.61 m",
         "Q = 3 × 0.61^(2/3) × √0.003 / 0.015 = 7.88 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30669,7 +31224,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 3 / 4.9 = 0.61 m",
         "Q = 3 × 0.61^(2/3) × √0.003 / 0.018 = 6.57 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30694,7 +31250,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 3 / 4.9 = 0.61 m",
         "Q = 3 × 0.61^(2/3) × √0.003 / 0.02 = 5.91 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30719,7 +31276,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 3 / 4.9 = 0.61 m",
         "Q = 3 × 0.61^(2/3) × √0.003 / 0.025 = 4.73 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30744,7 +31302,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 3 / 4.9 = 0.61 m",
         "Q = 3 × 0.61^(2/3) × √0.003 / 0.03 = 3.94 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30769,7 +31328,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 4.5 / 6 = 0.75 m",
         "Q = 4.5 × 0.75^(2/3) × √0.005 / 0.012 = 21.89 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30794,7 +31354,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 4.5 / 6 = 0.75 m",
         "Q = 4.5 × 0.75^(2/3) × √0.005 / 0.015 = 17.51 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30819,7 +31380,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 4.5 / 6 = 0.75 m",
         "Q = 4.5 × 0.75^(2/3) × √0.005 / 0.018 = 14.59 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30844,7 +31406,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 4.5 / 6 = 0.75 m",
         "Q = 4.5 × 0.75^(2/3) × √0.005 / 0.02 = 13.13 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30869,7 +31432,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 4.5 / 6 = 0.75 m",
         "Q = 4.5 × 0.75^(2/3) × √0.005 / 0.025 = 10.51 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30894,7 +31458,8 @@ export const bulkAreaBQuestions: Question[] = [
         "R = 4.5 / 6 = 0.75 m",
         "Q = 4.5 × 0.75^(2/3) × √0.005 / 0.03 = 8.76 m³/s"
       ],
-      "formula": "Q = A × R^(2/3) × S^(1/2) / n"
+      "formula": "Q = A × R^(2/3) × S^(1/2) / n",
+      "derive": "Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²)."
     }
   },
   {
@@ -30916,7 +31481,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.06 × 3600) / 5) = 6.57 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -30938,7 +31504,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.08 × 3600) / 5) = 7.59 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -30960,7 +31527,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.1 × 3600) / 5) = 8.49 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -30982,7 +31550,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.12 × 3600) / 5) = 9.3 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31004,7 +31573,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.15 × 3600) / 5) = 10.39 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31026,7 +31596,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.18 × 3600) / 5) = 11.38 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31048,7 +31619,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.06 × 3600) / 8) = 5.2 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31070,7 +31642,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.08 × 3600) / 8) = 6 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31092,7 +31665,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.1 × 3600) / 8) = 6.71 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31114,7 +31688,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.12 × 3600) / 8) = 7.35 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31136,7 +31711,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.15 × 3600) / 8) = 8.22 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31158,7 +31734,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.18 × 3600) / 8) = 9 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31180,7 +31757,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.06 × 3600) / 10) = 4.65 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31202,7 +31780,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.08 × 3600) / 10) = 5.37 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31224,7 +31803,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.1 × 3600) / 10) = 6 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31246,7 +31826,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.12 × 3600) / 10) = 6.57 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31268,7 +31849,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.15 × 3600) / 10) = 7.35 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31290,7 +31872,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.18 × 3600) / 10) = 8.05 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31312,7 +31895,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.06 × 3600) / 12) = 4.24 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31334,7 +31918,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.08 × 3600) / 12) = 4.9 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31356,7 +31941,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.1 × 3600) / 12) = 5.48 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31378,7 +31964,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.12 × 3600) / 12) = 6 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31400,7 +31987,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.15 × 3600) / 12) = 6.71 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31422,7 +32010,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.18 × 3600) / 12) = 7.35 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31444,7 +32033,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.06 × 3600) / 15) = 3.79 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31466,7 +32056,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.08 × 3600) / 15) = 4.38 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31488,7 +32079,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.1 × 3600) / 15) = 4.9 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31510,7 +32102,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.12 × 3600) / 15) = 5.37 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31532,7 +32125,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.15 × 3600) / 15) = 6 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -31554,7 +32148,8 @@ export const bulkAreaBQuestions: Question[] = [
       "steps": [
         "S = √((0.18 × 3600) / 15) = 6.57 m"
       ],
-      "formula": "S = √(q × 3600 / AR)"
+      "formula": "S = √(q × 3600 / AR)",
+      "derive": "Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%."
     }
   },
   {
@@ -32899,7 +33494,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 1000 × (100 - 20) / (100 - 12) = 909.09 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -32921,7 +33517,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 1000 × (100 - 22) / (100 - 12) = 886.36 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -32943,7 +33540,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 1000 × (100 - 24) / (100 - 12) = 863.64 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -32965,7 +33563,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 1000 × (100 - 26) / (100 - 12) = 840.91 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -32987,7 +33586,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 1000 × (100 - 28) / (100 - 12) = 818.18 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33009,7 +33609,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 1000 × (100 - 30) / (100 - 12) = 795.45 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33031,7 +33632,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 1000 × (100 - 20) / (100 - 13) = 919.54 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33053,7 +33655,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 1000 × (100 - 22) / (100 - 13) = 896.55 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33075,7 +33678,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 2000 × (100 - 24) / (100 - 13) = 1747.13 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33097,7 +33701,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 2000 × (100 - 26) / (100 - 13) = 1701.15 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33119,7 +33724,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 2000 × (100 - 28) / (100 - 13) = 1655.17 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33141,7 +33747,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 2000 × (100 - 30) / (100 - 13) = 1609.2 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33163,7 +33770,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 2000 × (100 - 20) / (100 - 14) = 1860.47 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33185,7 +33793,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 2000 × (100 - 22) / (100 - 14) = 1813.95 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33207,7 +33816,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 2000 × (100 - 24) / (100 - 14) = 1767.44 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33229,7 +33839,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 2000 × (100 - 26) / (100 - 14) = 1720.93 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33251,7 +33862,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 3000 × (100 - 28) / (100 - 14) = 2511.63 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33273,7 +33885,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 3000 × (100 - 30) / (100 - 14) = 2441.86 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33295,7 +33908,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 3000 × (100 - 20) / (100 - 15) = 2823.53 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33317,7 +33931,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 3000 × (100 - 22) / (100 - 15) = 2752.94 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33339,7 +33954,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 3000 × (100 - 24) / (100 - 15) = 2682.35 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33361,7 +33977,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 3000 × (100 - 26) / (100 - 15) = 2611.76 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33383,7 +34000,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 3000 × (100 - 28) / (100 - 15) = 2541.18 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33405,7 +34023,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 3000 × (100 - 30) / (100 - 15) = 2470.59 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33427,7 +34046,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 5000 × (100 - 20) / (100 - 16) = 4761.9 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33449,7 +34069,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 5000 × (100 - 22) / (100 - 16) = 4642.86 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33471,7 +34092,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 5000 × (100 - 24) / (100 - 16) = 4523.81 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33493,7 +34115,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 5000 × (100 - 26) / (100 - 16) = 4404.76 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33515,7 +34138,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 5000 × (100 - 28) / (100 - 16) = 4285.71 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33537,7 +34161,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "W_f = 5000 × (100 - 30) / (100 - 16) = 4166.67 kg"
       ],
-      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)"
+      "formula": "W_i × (100 - M_i) = W_f × (100 - M_f)",
+      "derive": "Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept."
     }
   },
   {
@@ -33561,7 +34186,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 500 - 443.18 = 56.82 kg",
         "Rate = 56.82 / 4 = 14.21 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33585,7 +34211,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 1000 - 886.36 = 113.64 kg",
         "Rate = 113.64 / 4 = 28.41 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33609,7 +34236,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 2000 - 1772.73 = 227.27 kg",
         "Rate = 227.27 / 4 = 56.82 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33633,7 +34261,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 3000 - 2659.09 = 340.91 kg",
         "Rate = 340.91 / 4 = 85.23 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33657,7 +34286,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 5000 - 4431.82 = 568.18 kg",
         "Rate = 568.18 / 4 = 142.04 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33681,7 +34311,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 500 - 431.82 = 68.18 kg",
         "Rate = 68.18 / 4 = 17.05 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33705,7 +34336,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 1000 - 863.64 = 136.36 kg",
         "Rate = 136.36 / 5 = 27.27 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33729,7 +34361,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 2000 - 1747.13 = 252.87 kg",
         "Rate = 252.87 / 5 = 50.57 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33753,7 +34386,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 3000 - 2620.69 = 379.31 kg",
         "Rate = 379.31 / 5 = 75.86 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33777,7 +34411,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 5000 - 4367.82 = 632.18 kg",
         "Rate = 632.18 / 5 = 126.44 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33801,7 +34436,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 500 - 425.29 = 74.71 kg",
         "Rate = 74.71 / 5 = 14.94 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33825,7 +34461,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 1000 - 850.57 = 149.43 kg",
         "Rate = 149.43 / 5 = 29.89 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33849,7 +34486,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 2000 - 1701.15 = 298.85 kg",
         "Rate = 298.85 / 6 = 49.81 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33873,7 +34511,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 3000 - 2551.72 = 448.28 kg",
         "Rate = 448.28 / 6 = 74.71 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33897,7 +34536,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 5000 - 4302.33 = 697.67 kg",
         "Rate = 697.67 / 6 = 116.28 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33921,7 +34561,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 500 - 418.6 = 81.4 kg",
         "Rate = 81.4 / 6 = 13.57 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33945,7 +34586,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 1000 - 837.21 = 162.79 kg",
         "Rate = 162.79 / 6 = 27.13 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33969,7 +34611,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 2000 - 1674.42 = 325.58 kg",
         "Rate = 325.58 / 6 = 54.26 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -33993,7 +34636,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 3000 - 2511.63 = 488.37 kg",
         "Rate = 488.37 / 7 = 69.77 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34017,7 +34661,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 5000 - 4186.05 = 813.95 kg",
         "Rate = 813.95 / 7 = 116.28 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34041,7 +34686,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 500 - 406.98 = 93.02 kg",
         "Rate = 93.02 / 7 = 13.29 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34065,7 +34711,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 1000 - 823.53 = 176.47 kg",
         "Rate = 176.47 / 7 = 25.21 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34089,7 +34736,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 2000 - 1647.06 = 352.94 kg",
         "Rate = 352.94 / 7 = 50.42 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34113,7 +34761,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 3000 - 2470.59 = 529.41 kg",
         "Rate = 529.41 / 7 = 75.63 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34137,7 +34786,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 5000 - 4117.65 = 882.35 kg",
         "Rate = 882.35 / 8 = 110.29 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34161,7 +34811,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 500 - 458.82 = 41.18 kg",
         "Rate = 41.18 / 8 = 5.15 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34185,7 +34836,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 1000 - 917.65 = 82.35 kg",
         "Rate = 82.35 / 8 = 10.29 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34209,7 +34861,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 2000 - 1835.29 = 164.71 kg",
         "Rate = 164.71 / 8 = 20.59 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34233,7 +34886,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 3000 - 2659.09 = 340.91 kg",
         "Rate = 340.91 / 8 = 42.61 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34257,7 +34911,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Water removed = 5000 - 4431.82 = 568.18 kg",
         "Rate = 568.18 / 8 = 71.02 kg/h"
       ],
-      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t"
+      "formula": "Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t",
+      "derive": "Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time."
     }
   },
   {
@@ -34969,7 +35624,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 100 × 1.5 × (50 - 25) = 3750 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -34991,7 +35647,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 200 × 1.5 × (50 - 25) = 7500 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35013,7 +35670,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 500 × 1.5 × (50 - 25) = 18750 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35035,7 +35693,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 1000 × 1.5 × (50 - 25) = 37500 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35057,7 +35716,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 2000 × 1.5 × (50 - 25) = 75000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35079,7 +35739,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 100 × 1.5 × (55 - 25) = 4500 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35101,7 +35762,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 200 × 1.8 × (55 - 25) = 10800 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35123,7 +35785,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 500 × 1.8 × (55 - 28) = 24300 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35145,7 +35808,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 1000 × 1.8 × (55 - 28) = 48600 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35167,7 +35831,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 2000 × 1.8 × (55 - 28) = 97200 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35189,7 +35854,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 100 × 1.8 × (60 - 28) = 5760 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35211,7 +35877,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 200 × 1.8 × (60 - 28) = 11520 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35233,7 +35900,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 500 × 2 × (60 - 28) = 32000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35255,7 +35923,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 1000 × 2 × (60 - 28) = 64000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35277,7 +35946,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 2000 × 2 × (60 - 30) = 120000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35299,7 +35969,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 100 × 2 × (65 - 30) = 7000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35321,7 +35992,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 200 × 2 × (65 - 30) = 14000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35343,7 +36015,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 500 × 2 × (65 - 30) = 35000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35365,7 +36038,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 1000 × 2.2 × (65 - 30) = 77000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35387,7 +36061,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 2000 × 2.2 × (65 - 30) = 154000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35409,7 +36084,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 100 × 2.2 × (70 - 30) = 8800 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35431,7 +36107,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 200 × 2.2 × (70 - 32) = 16720 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35453,7 +36130,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 500 × 2.2 × (70 - 32) = 41800 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35475,7 +36153,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 1000 × 2.2 × (70 - 32) = 83600 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35497,7 +36176,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 2000 × 2.5 × (70 - 32) = 190000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35519,7 +36199,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 100 × 2.5 × (50 - 32) = 4500 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35541,7 +36222,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 200 × 2.5 × (50 - 32) = 9000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35563,7 +36245,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 500 × 2.5 × (50 - 32) = 22500 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35585,7 +36268,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 1000 × 2.5 × (50 - 35) = 37500 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -35607,7 +36291,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Q = 2000 × 2.5 × (50 - 35) = 75000 kJ"
       ],
-      "formula": "Q = m × Cp × ΔT"
+      "formula": "Q = m × Cp × ΔT",
+      "derive": "Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C)."
     }
   },
   {
@@ -38990,7 +39675,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 50 × 1.5 = 75 kg",
         "Biogas = 75 × 1000 × 0.04 = 3000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39013,7 +39699,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 100 × 1.5 = 150 kg",
         "Biogas = 150 × 1000 × 0.04 = 6000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39036,7 +39723,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 200 × 1.5 = 300 kg",
         "Biogas = 300 × 1000 × 0.04 = 12000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39059,7 +39747,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 500 × 1.5 = 750 kg",
         "Biogas = 750 × 1000 × 0.04 = 30000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39082,7 +39771,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 1000 × 1.5 = 1500 kg",
         "Biogas = 1500 × 1000 × 0.04 = 60000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39105,7 +39795,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 50 × 1.5 = 75 kg",
         "Biogas = 75 × 1000 × 0.04 = 3000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39128,7 +39819,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 100 × 2 = 200 kg",
         "Biogas = 200 × 1000 × 0.05 = 10000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39151,7 +39843,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 200 × 2 = 400 kg",
         "Biogas = 400 × 1000 × 0.05 = 20000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39174,7 +39867,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 500 × 2 = 1000 kg",
         "Biogas = 1000 × 1000 × 0.05 = 50000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39197,7 +39891,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 1000 × 2 = 2000 kg",
         "Biogas = 2000 × 1000 × 0.05 = 100000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39220,7 +39915,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 50 × 2 = 100 kg",
         "Biogas = 100 × 1000 × 0.05 = 5000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39243,7 +39939,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 100 × 2 = 200 kg",
         "Biogas = 200 × 1000 × 0.05 = 10000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39266,7 +39963,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 200 × 2.5 = 500 kg",
         "Biogas = 500 × 1000 × 0.06 = 30000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39289,7 +39987,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 500 × 2.5 = 1250 kg",
         "Biogas = 1250 × 1000 × 0.06 = 75000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39312,7 +40011,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 1000 × 2.5 = 2500 kg",
         "Biogas = 2500 × 1000 × 0.06 = 150000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39335,7 +40035,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 50 × 2.5 = 125 kg",
         "Biogas = 125 × 1000 × 0.06 = 7500 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39358,7 +40059,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 100 × 2.5 = 250 kg",
         "Biogas = 250 × 1000 × 0.06 = 15000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39381,7 +40083,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 200 × 2.5 = 500 kg",
         "Biogas = 500 × 1000 × 0.06 = 30000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39404,7 +40107,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 500 × 3 = 1500 kg",
         "Biogas = 1500 × 1000 × 0.07 = 105000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39427,7 +40131,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 1000 × 3 = 3000 kg",
         "Biogas = 3000 × 1000 × 0.07 = 210000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39450,7 +40155,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 50 × 3 = 150 kg",
         "Biogas = 150 × 1000 × 0.07 = 10500 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39473,7 +40179,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 100 × 3 = 300 kg",
         "Biogas = 300 × 1000 × 0.07 = 21000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39496,7 +40203,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 200 × 3 = 600 kg",
         "Biogas = 600 × 1000 × 0.07 = 42000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39519,7 +40227,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 500 × 3 = 1500 kg",
         "Biogas = 1500 × 1000 × 0.07 = 105000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39542,7 +40251,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 1000 × 4 = 4000 kg",
         "Biogas = 4000 × 1000 × 0.08 = 320000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39565,7 +40275,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 50 × 4 = 200 kg",
         "Biogas = 200 × 1000 × 0.08 = 16000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39588,7 +40299,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 100 × 4 = 400 kg",
         "Biogas = 400 × 1000 × 0.08 = 32000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39611,7 +40323,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 200 × 4 = 800 kg",
         "Biogas = 800 × 1000 × 0.08 = 64000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39634,7 +40347,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 500 × 4 = 2000 kg",
         "Biogas = 2000 × 1000 × 0.08 = 160000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -39657,7 +40371,8 @@ export const bulkAreaCQuestions: Question[] = [
         "Total manure = 1000 × 4 = 4000 kg",
         "Biogas = 4000 × 1000 × 0.08 = 320000 m³/day"
       ],
-      "formula": "V_biogas = N × M_per_head × Y_biogas"
+      "formula": "V_biogas = N × M_per_head × Y_biogas",
+      "derive": "Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%)."
     }
   },
   {
@@ -41000,7 +41715,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 200 × 1000 / 900 = 222.22 m³",
         "V_total = 222.22 × 2 × 1.2 = 533.33 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41023,7 +41739,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 500 × 1000 / 900 = 555.56 m³",
         "V_total = 555.56 × 2 × 1.2 = 1333.34 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41046,7 +41763,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 1000 × 1000 / 900 = 1111.11 m³",
         "V_total = 1111.11 × 2 × 1.2 = 2666.66 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41069,7 +41787,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 2000 × 1000 / 900 = 2222.22 m³",
         "V_total = 2222.22 × 2 × 1.2 = 5333.33 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41092,7 +41811,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 5000 × 1000 / 900 = 5555.56 m³",
         "V_total = 5555.56 × 2 × 1.2 = 13333.34 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41115,7 +41835,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 200 × 1000 / 900 = 222.22 m³",
         "V_total = 222.22 × 2 × 1.2 = 533.33 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41138,7 +41859,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 500 × 1000 / 950 = 526.32 m³",
         "V_total = 526.32 × 3 × 1.2 = 1894.75 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41161,7 +41883,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 1000 × 1000 / 950 = 1052.63 m³",
         "V_total = 1052.63 × 3 × 1.2 = 3789.47 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41184,7 +41907,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 2000 × 1000 / 950 = 2105.26 m³",
         "V_total = 2105.26 × 3 × 1.2 = 7578.94 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41207,7 +41931,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 5000 × 1000 / 950 = 5263.16 m³",
         "V_total = 5263.16 × 3 × 1.2 = 18947.38 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41230,7 +41955,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 200 × 1000 / 950 = 210.53 m³",
         "V_total = 210.53 × 3 × 1.2 = 757.91 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41253,7 +41979,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 500 × 1000 / 950 = 526.32 m³",
         "V_total = 526.32 × 3 × 1.2 = 1894.75 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41276,7 +42003,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 1000 × 1000 / 1000 = 1000 m³",
         "V_total = 1000 × 5 × 1.2 = 6000 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41299,7 +42027,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 2000 × 1000 / 1000 = 2000 m³",
         "V_total = 2000 × 5 × 1.2 = 12000 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41322,7 +42051,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 5000 × 1000 / 1000 = 5000 m³",
         "V_total = 5000 × 5 × 1.2 = 30000 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41345,7 +42075,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 200 × 1000 / 1000 = 200 m³",
         "V_total = 200 × 5 × 1.2 = 1200 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41368,7 +42099,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 500 × 1000 / 1000 = 500 m³",
         "V_total = 500 × 5 × 1.2 = 3000 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41391,7 +42123,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 1000 × 1000 / 1000 = 1000 m³",
         "V_total = 1000 × 5 × 1.2 = 6000 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41414,7 +42147,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 2000 × 1000 / 1050 = 1904.76 m³",
         "V_total = 1904.76 × 7 × 1.2 = 15999.98 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41437,7 +42171,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 5000 × 1000 / 1050 = 4761.9 m³",
         "V_total = 4761.9 × 7 × 1.2 = 39999.96 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41460,7 +42195,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 200 × 1000 / 1050 = 190.48 m³",
         "V_total = 190.48 × 7 × 1.2 = 1600.03 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41483,7 +42219,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 500 × 1000 / 1050 = 476.19 m³",
         "V_total = 476.19 × 7 × 1.2 = 4000 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41506,7 +42243,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 1000 × 1000 / 1050 = 952.38 m³",
         "V_total = 952.38 × 7 × 1.2 = 7999.99 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41529,7 +42267,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 2000 × 1000 / 1050 = 1904.76 m³",
         "V_total = 1904.76 × 7 × 1.2 = 15999.98 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41552,7 +42291,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 5000 × 1000 / 1100 = 4545.45 m³",
         "V_total = 4545.45 × 10 × 1.2 = 54545.4 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41575,7 +42315,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 200 × 1000 / 1100 = 181.82 m³",
         "V_total = 181.82 × 10 × 1.2 = 2181.84 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41598,7 +42339,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 500 × 1000 / 1100 = 454.55 m³",
         "V_total = 454.55 × 10 × 1.2 = 5454.6 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41621,7 +42363,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 1000 × 1000 / 1100 = 909.09 m³",
         "V_total = 909.09 × 10 × 1.2 = 10909.08 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41644,7 +42387,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 2000 × 1000 / 1100 = 1818.18 m³",
         "V_total = 1818.18 × 10 × 1.2 = 21818.16 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -41667,7 +42411,8 @@ export const bulkAreaCQuestions: Question[] = [
         "V_daily = 5000 × 1000 / 1100 = 4545.45 m³",
         "V_total = 4545.45 × 10 × 1.2 = 54545.4 m³"
       ],
-      "formula": "V = (M/ρ) × t_ret × (1 + headspace)"
+      "formula": "V = (M/ρ) × t_ret × (1 + headspace)",
+      "derive": "Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection."
     }
   },
   {
@@ -43099,7 +43844,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (18 - 8) / (40 - 18) = 0.45"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43121,7 +43867,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (20 - 8) / (40 - 20) = 0.6"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43143,7 +43890,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (22 - 8) / (40 - 22) = 0.78"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43165,7 +43913,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (24 - 8) / (40 - 24) = 1"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43187,7 +43936,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (26 - 8) / (40 - 26) = 1.29"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43209,7 +43959,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (18 - 8) / (40 - 18) = 0.45"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43231,7 +43982,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (20 - 10) / (44 - 20) = 0.42"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43253,7 +44005,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (22 - 10) / (44 - 22) = 0.55"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43275,7 +44028,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (24 - 10) / (44 - 24) = 0.7"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43297,7 +44051,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (26 - 10) / (44 - 26) = 0.89"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43319,7 +44074,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (18 - 10) / (44 - 18) = 0.31"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43341,7 +44097,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (20 - 10) / (44 - 20) = 0.42"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43363,7 +44120,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (22 - 12) / (46 - 22) = 0.42"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43385,7 +44143,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (24 - 12) / (46 - 24) = 0.55"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43407,7 +44166,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (26 - 12) / (46 - 26) = 0.7"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43429,7 +44189,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (18 - 12) / (46 - 18) = 0.21"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43451,7 +44212,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (20 - 12) / (46 - 20) = 0.31"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43473,7 +44235,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (22 - 12) / (46 - 22) = 0.42"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43495,7 +44258,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (24 - 14) / (48 - 24) = 0.42"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43517,7 +44281,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (26 - 14) / (48 - 26) = 0.55"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43539,7 +44304,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (18 - 14) / (48 - 18) = 0.13"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43561,7 +44327,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (20 - 14) / (48 - 20) = 0.21"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43583,7 +44350,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (22 - 14) / (48 - 22) = 0.31"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43605,7 +44373,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (24 - 14) / (48 - 24) = 0.42"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43627,7 +44396,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (26 - 8) / (50 - 26) = 0.75"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43649,7 +44419,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (18 - 8) / (50 - 18) = 0.31"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43671,7 +44442,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (20 - 8) / (50 - 20) = 0.4"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43693,7 +44465,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (22 - 8) / (50 - 22) = 0.5"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43715,7 +44488,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (24 - 8) / (50 - 24) = 0.62"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -43737,7 +44511,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "Ratio = (26 - 8) / (50 - 26) = 0.75"
       ],
-      "formula": "R = (T - C₁) / (C₂ - T)"
+      "formula": "R = (T - C₁) / (C₂ - T)",
+      "derive": "Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T)."
     }
   },
   {
@@ -44419,7 +45194,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 100 / ((25 - 10) / 1000) = 6666.67 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44441,7 +45217,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 150 / ((25 - 10) / 1000) = 10000 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44463,7 +45240,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 200 / ((25 - 10) / 1000) = 13333.33 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44485,7 +45263,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 250 / ((25 - 10) / 1000) = 16666.67 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44507,7 +45286,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 300 / ((25 - 10) / 1000) = 20000 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44529,7 +45309,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 400 / ((25 - 10) / 1000) = 26666.67 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44551,7 +45332,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 100 / ((28 - 12) / 1000) = 6250 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44573,7 +45355,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 150 / ((28 - 12) / 1000) = 9375 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44595,7 +45378,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 200 / ((28 - 12) / 1000) = 12500 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44617,7 +45401,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 250 / ((28 - 12) / 1000) = 15625 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44639,7 +45424,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 300 / ((28 - 12) / 1000) = 18750 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44661,7 +45447,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 400 / ((28 - 12) / 1000) = 25000 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44683,7 +45470,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 100 / ((30 - 14) / 1000) = 6250 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44705,7 +45493,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 150 / ((30 - 14) / 1000) = 9375 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44727,7 +45516,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 200 / ((30 - 14) / 1000) = 12500 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44749,7 +45539,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 250 / ((30 - 14) / 1000) = 15625 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44771,7 +45562,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 300 / ((30 - 14) / 1000) = 18750 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44793,7 +45585,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 400 / ((30 - 14) / 1000) = 25000 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44815,7 +45608,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 100 / ((32 - 16) / 1000) = 6250 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44837,7 +45631,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 150 / ((32 - 16) / 1000) = 9375 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44859,7 +45654,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 200 / ((32 - 16) / 1000) = 12500 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44881,7 +45677,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 250 / ((32 - 16) / 1000) = 15625 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44903,7 +45700,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 300 / ((32 - 16) / 1000) = 18750 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44925,7 +45723,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 400 / ((32 - 16) / 1000) = 25000 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44947,7 +45746,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 100 / ((35 - 18) / 1000) = 5882.35 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44969,7 +45769,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 150 / ((35 - 18) / 1000) = 8823.53 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -44991,7 +45792,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 200 / ((35 - 18) / 1000) = 11764.71 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -45013,7 +45815,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 250 / ((35 - 18) / 1000) = 14705.88 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -45035,7 +45838,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 300 / ((35 - 18) / 1000) = 17647.06 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -45057,7 +45861,8 @@ export const bulkAreaCQuestions: Question[] = [
       "steps": [
         "m_air = 400 / ((35 - 18) / 1000) = 23529.41 kg/h"
       ],
-      "formula": "m_air = m_water / (ω_out - ω_in)"
+      "formula": "m_air = m_water / (ω_out - ω_in)",
+      "derive": "Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air."
     }
   },
   {
@@ -45081,7 +45886,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 25 = 25°C",
         "LMTD = (35 - 25) / ln(35/25) = 29.72°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45105,7 +45911,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 25 = 25°C",
         "LMTD = (45 - 25) / ln(45/25) = 34.03°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45129,7 +45936,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 25 = 25°C",
         "LMTD = (55 - 25) / ln(55/25) = 38.05°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45153,7 +45961,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 25 = 25°C",
         "LMTD = (65 - 25) / ln(65/25) = 41.86°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45177,7 +45986,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 25 = 25°C",
         "LMTD = (75 - 25) / ln(75/25) = 45.51°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45201,7 +46011,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 55 - 25 = 30°C",
         "LMTD = (35 - 30) / ln(35/30) = 32.44°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45225,7 +46036,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 55 - 28 = 27°C",
         "LMTD = (42 - 27) / ln(42/27) = 33.95°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45249,7 +46061,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 55 - 28 = 27°C",
         "LMTD = (52 - 27) / ln(52/27) = 38.14°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45273,7 +46086,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 55 - 28 = 27°C",
         "LMTD = (62 - 27) / ln(62/27) = 42.1°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45297,7 +46111,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 55 - 28 = 27°C",
         "LMTD = (72 - 27) / ln(72/27) = 45.88°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45321,7 +46136,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 60 - 28 = 32°C",
         "LMTD = (32 - 32) / ln(32/32) = NaN°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45345,7 +46161,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 60 - 28 = 32°C",
         "LMTD = (42 - 32) / ln(42/32) = 36.77°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45369,7 +46186,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 60 - 30 = 30°C",
         "LMTD = (50 - 30) / ln(50/30) = 39.15°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45393,7 +46211,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 60 - 30 = 30°C",
         "LMTD = (60 - 30) / ln(60/30) = 43.28°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45417,7 +46236,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 60 - 30 = 30°C",
         "LMTD = (70 - 30) / ln(70/30) = 47.21°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45441,7 +46261,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 65 - 30 = 35°C",
         "LMTD = (30 - 35) / ln(30/35) = 32.44°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45465,7 +46286,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 65 - 30 = 35°C",
         "LMTD = (40 - 35) / ln(40/35) = 37.44°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45489,7 +46311,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 65 - 30 = 35°C",
         "LMTD = (50 - 35) / ln(50/35) = 42.06°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45513,7 +46336,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 65 - 32 = 33°C",
         "LMTD = (55 - 33) / ln(55/33) = 43.07°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45537,7 +46361,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 65 - 32 = 33°C",
         "LMTD = (65 - 33) / ln(65/33) = 47.21°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45561,7 +46386,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 70 - 32 = 38°C",
         "LMTD = (25 - 38) / ln(25/38) = 31.05°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45585,7 +46411,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 70 - 32 = 38°C",
         "LMTD = (35 - 38) / ln(35/38) = 36.48°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45609,7 +46436,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 70 - 32 = 38°C",
         "LMTD = (45 - 38) / ln(45/38) = 41.4°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45633,7 +46461,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 70 - 32 = 38°C",
         "LMTD = (55 - 38) / ln(55/38) = 45.98°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45657,7 +46486,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 70 - 35 = 35°C",
         "LMTD = (60 - 35) / ln(60/35) = 46.38°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45681,7 +46511,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 35 = 15°C",
         "LMTD = (20 - 15) / ln(20/15) = 17.38°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45705,7 +46536,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 35 = 15°C",
         "LMTD = (30 - 15) / ln(30/15) = 21.64°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45729,7 +46561,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 35 = 15°C",
         "LMTD = (40 - 15) / ln(40/15) = 25.49°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45753,7 +46586,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 35 = 15°C",
         "LMTD = (50 - 15) / ln(50/15) = 29.07°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {
@@ -45777,7 +46611,8 @@ export const bulkAreaCQuestions: Question[] = [
         "ΔT₂ = 50 - 35 = 15°C",
         "LMTD = (60 - 15) / ln(60/15) = 32.46°C"
       ],
-      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)"
+      "formula": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)",
+      "derive": "LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger."
     }
   },
   {

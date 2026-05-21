@@ -16,9 +16,11 @@ function shuffleOpts(correct, wrongs, i) {
 let qid = 1000;
 const arrA = [], arrB = [], arrC = [];
 
-function pushQ(arr, area, sub, topic, diff, qText, correct, wrongs, i, concept, steps, formula) {
+function pushQ(arr, area, sub, topic, diff, qText, correct, wrongs, i, concept, steps, formula, derive) {
   const { opts, ca } = shuffleOpts(correct, wrongs, i);
-  arr.push({ id: `gen-${qid++}`, area, subTopic: sub, topic, difficulty: diff, question: qText, options: opts, correctAnswer: ca, solution: { keyConcept: concept, steps, formula } });
+  const sol = { keyConcept: concept, steps, formula };
+  if (derive) sol.derive = derive;
+  arr.push({ id: `gen-${qid++}`, area, subTopic: sub, topic, difficulty: diff, question: qText, options: opts, correctAnswer: ca, solution: sol });
 }
 
 const P = {
@@ -113,7 +115,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const l = pick(locs, i), t = pick(trs, Math.floor(i / 4)), sm = pick(soils, Math.floor(i / 6));
     const im = pick(impls, Math.floor(i / 5)), d = pick(P.depth, Math.floor(i / 7));
     const q = `A ${t} pulls a ${im} with ${d} cm working depth in ${sm} soil at ${S} km/h. The implement draft is ${F} kN. The tractor's PTO power rating is ${pick(P.PTO, i)} HP. Tractor weighs ${pick(P.T, i)} kg. What is the drawbar power in kW?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Drawbar Power', 'average', q, BP, [fmt((F * S) / 3.6 * 1.1), fmt((F * S) / 3.6 * 0.9), fmt(F * S)], i, 'Drawbar power (kW) = Draft (kN) × Speed (km/h) / 3.6. The 3.6 converts km/h to m/s and kN·m/s to kW.', [`P = (${F} × ${S}) / 3.6 = ${BP} kW`], 'P_db = F × S / 3.6');
+    pushQ(arrA, 'A', 'agri-machinery', 'Drawbar Power', 'average', q, BP, [fmt((F * S) / 3.6 * 1.1), fmt((F * S) / 3.6 * 0.9), fmt(F * S)], i, 'Drawbar power (kW) = Draft (kN) × Speed (km/h) / 3.6. The 3.6 converts km/h to m/s and kN·m/s to kW.', [`P = (${F} × ${S}) / 3.6 = ${BP} kW`], 'P_db = F × S / 3.6', 'Power = Force × Velocity. F in kN, v in km/h. Convert km/h to m/s: ×1000/3600 = /3.6. So P(kW) = F(kN) × S(km/h) / 3.6. Note: 1 N·m/s = 1 W, so 1000 N·m/s = 1 kW.');
   }
 })();
 
@@ -125,7 +127,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const BP = pick(P.BP, i);
     const l = pick(locs, i), t = pick(trs, Math.floor(i / 3));
     const q = `A ${t} in ${l} has an engine producing ${BP} HP at ${pick(P.RPM, i)} RPM. The transmission efficiency is ${(e1 * 100).toFixed(0)}%, final drive efficiency is ${(e2 * 100).toFixed(0)}%, and track/wheel efficiency is ${(e3 * 100).toFixed(0)}%. The oil capacity is ${pick(P.Qoil, i)} L. Tire pressure is ${pick([28, 32, 36, 40], i)} psi. What is the overall power train efficiency in %?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Power Train Efficiency', 'hard', q, tot, [fmt(BP ? (e1 * e2 * 100) : 0), fmt(e1 * 100 * e3), fmt(e2 * e3 * 100)], i, 'Overall efficiency = product of individual component efficiencies. η_total = η_1 × η_2 × η_3 × ... × η_n.', [`η_total = ${(e1 * 100).toFixed(0)}% × ${(e2 * 100).toFixed(0)}% × ${(e3 * 100).toFixed(0)}%`, `η_total = ${tot}%`], 'η_total = η₁ × η₂ × η₃ × ... × ηₙ');
+    pushQ(arrA, 'A', 'agri-machinery', 'Power Train Efficiency', 'hard', q, tot, [fmt(BP ? (e1 * e2 * 100) : 0), fmt(e1 * 100 * e3), fmt(e2 * e3 * 100)], i, 'Overall efficiency = product of individual component efficiencies. η_total = η_1 × η_2 × η_3 × ... × η_n.', [`η_total = ${(e1 * 100).toFixed(0)}% × ${(e2 * 100).toFixed(0)}% × ${(e3 * 100).toFixed(0)}%`, `η_total = ${tot}%`], 'η_total = η₁ × η₂ × η₃ × ... × ηₙ', 'Power flow: Engine → Transmission → Final Drive → Wheels. η_trans = PTO/BP, η_drive = axle/PTO, η_tractive = DB/axle. Overall η = DB/BP = η_trans × η_drive × η_tractive. Multiply all efficiencies to get the fraction of power reaching the drawbar.');
   }
 })();
 
@@ -137,7 +139,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const l = pick(locs, i), t = pick(trs, Math.floor(i / 4)), c = pick(crops, Math.floor(i / 8));
     const h = pick(P.h, Math.floor(i / 6)), yr = pick(P.years, Math.floor(i / 10));
     const q = `A ${t} operates in a ${c} field in ${l} at ${BP} HP for ${h} hours daily. Brake-specific fuel consumption is ${sfc} kg/HP-hr. Fuel density is ${rho} kg/L. The fuel price is P${pick([50, 52, 55, 58, 60], i)}/L. The ${yr} model tractor has accumulated ${pick([2000, 3000, 4000, 5000], i)} hours. What is the hourly fuel consumption in L/h?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Fuel Consumption', 'average', q, V, [fmt((BP * sfc) / rho * 1.15), fmt((BP * sfc) / rho * 0.85), fmt(BP * sfc)], i, 'Fuel consumption V = (BP × SFC) / ρ, where BP = brake power (HP), SFC = specific fuel consumption (kg/HP-hr), ρ = fuel density (kg/L).', [`V = (${BP} × ${sfc}) / ${rho} = ${V} L/h`], 'V = (BP × SFC) / ρ');
+    pushQ(arrA, 'A', 'agri-machinery', 'Fuel Consumption', 'average', q, V, [fmt((BP * sfc) / rho * 1.15), fmt((BP * sfc) / rho * 0.85), fmt(BP * sfc)], i, 'Fuel consumption V = (BP × SFC) / ρ, where BP = brake power (HP), SFC = specific fuel consumption (kg/HP-hr), ρ = fuel density (kg/L).', [`V = (${BP} × ${sfc}) / ${rho} = ${V} L/h`], 'V = (BP × SFC) / ρ', 'Fuel mass rate = BP × SFC (kg/h). Fuel volume rate = mass / density = BP × SFC / ρ (L/h). SFC = specific fuel consumption in kg/HP-h or kg/kW-h. Lower SFC means more efficient engine.');
   }
 })();
 
@@ -148,7 +150,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const Vd = fmt(n * Vc * (CR - 1));
     const t = pick(trs, i), y = pick(P.years, Math.floor(i / 6));
     const q = `A ${n}-cylinder ${t} (${y} model) has a compression ratio of ${CR}:1 and clearance volume of ${Vc} L per cylinder. The bore diameter is ${pick([85, 90, 95, 100], i)} mm. Maximum RPM is ${pick(P.RPM, Math.floor(i / 6))}. What is the total engine displacement in L?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Engine Displacement', 'hard', q, Vd, [fmt(n * Vc * CR), fmt(Vc * (CR + 1)), fmt(n * Vc)], i, 'Total displacement V_d = n × V_c × (CR - 1), where n = number of cylinders, V_c = clearance volume per cylinder. CR = (V_d + V_c) / V_c.', [`V_d = ${n} × ${Vc} × (${CR} - 1) = ${Vd} L`], 'V_d = n × V_c × (CR - 1)');
+    pushQ(arrA, 'A', 'agri-machinery', 'Engine Displacement', 'hard', q, Vd, [fmt(n * Vc * CR), fmt(Vc * (CR + 1)), fmt(n * Vc)], i, 'Total displacement V_d = n × V_c × (CR - 1), where n = number of cylinders, V_c = clearance volume per cylinder. CR = (V_d + V_c) / V_c.', [`V_d = ${n} × ${Vc} × (${CR} - 1) = ${Vd} L`], 'V_d = n × V_c × (CR - 1)', 'Compression ratio CR = (V_d + V_c) / V_c. Multiply: CR × V_c = V_d + V_c. Rearrange: V_d = CR × V_c - V_c = V_c × (CR - 1). Total displacement = n × V_c × (CR - 1).');
   }
 })();
 
@@ -162,7 +164,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const l = pick(locs, i), c = pick(crops, Math.floor(i / 5)), v = pick(varty, Math.floor(i / 4));
     const t = pick(trs, Math.floor(i / 5));
     const q = `A combine harvester with ${W} m header cuts ${c} (${v}) at ${S} km/h with ${(E * 100).toFixed(0)}% field efficiency in ${l}. Crop yield is ${yld} t/ha. The grain tank holds ${pick([2.0, 2.5, 3.0, 4.0], i)} t. Moisture content is ${pick([20, 22, 24, 26], i)}%. Grain price is P${pick([15, 17, 20, 22], i)}/kg. What is the harvest output in t/h?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Harvest Output', 'hard', q, output, [fmt(C * yld * 0.9), fmt(C * yld * 1.1), fmt(C * yld * 0.5)], i, 'Harvest output (t/h) = Effective field capacity (ha/h) × Yield (t/ha). C = (W × S × E) / 10 determines area covered per hour.', [`C = (${W} × ${S} × ${E}) / 10 = ${C} ha/h`, `Output = ${C} × ${yld} = ${output} t/h`], 'Harvest output = C × Yield');
+    pushQ(arrA, 'A', 'agri-machinery', 'Harvest Output', 'hard', q, output, [fmt(C * yld * 0.9), fmt(C * yld * 1.1), fmt(C * yld * 0.5)], i, 'Harvest output (t/h) = Effective field capacity (ha/h) × Yield (t/ha). C = (W × S × E) / 10 determines area covered per hour.', [`C = (${W} × ${S} × ${E}) / 10 = ${C} ha/h`, `Output = ${C} × ${yld} = ${output} t/h`], 'Harvest output = C × Yield', 'Step 1: Effective field capacity C = (W × S × E) / 10 (ha/h). Step 2: Harvest rate = C × Yield (t/h). Total output = C × Yield × operating time. Units: ha/h × t/ha = t/h.');
   }
 })();
 
@@ -186,7 +188,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const IP = fmt((mep * L * A * n * N * k_val * 1e-6 * 100) / 0.7457);
     const t = pick(trs, i);
     const q = `A ${n}-cylinder ${t} engine has a mean effective pressure of ${mep} kPa. Stroke length is ${(L * 1000).toFixed(0)} mm, piston area is ${(A * 10000).toFixed(0)} cm². Engine speed is ${N} RPM. It is a ${k_val === 0.5 ? '2-stroke' : '4-stroke'} engine. The cooling system holds ${pick([8, 10, 12, 15], i)} L. Valve clearance is ${pick([0.15, 0.20, 0.25, 0.30], i)} mm. What is the indicated power in HP?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Indicated Power', 'hard', q, IP, [fmt(IP * 0.85), fmt(IP * 1.15), fmt(IP / n)], i, 'IP (kW) = (MEP × L × A × n × N × k) / 60,000 where k = 0.5 for 2-stroke, 1.0 for 4-stroke. Convert to HP by dividing by 0.7457.', [`IP (kW) = (${mep} × ${L} × ${A} × ${n} × ${N} × ${k_val}) / 60,000`, `IP = ${fmt(IP * 0.7457 / 100)} kW = ${IP} HP`], 'IP = (MEP × L × A × n × N × k) / 60,000');
+    pushQ(arrA, 'A', 'agri-machinery', 'Indicated Power', 'hard', q, IP, [fmt(IP * 0.85), fmt(IP * 1.15), fmt(IP / n)], i, 'IP (kW) = (MEP × L × A × n × N × k) / 60,000 where k = 0.5 for 2-stroke, 1.0 for 4-stroke. Convert to HP by dividing by 0.7457.', [`IP (kW) = (${mep} × ${L} × ${A} × ${n} × ${N} × ${k_val}) / 60,000`, `IP = ${fmt(IP * 0.7457 / 100)} kW = ${IP} HP`], 'IP = (MEP × L × A × n × N × k) / 60,000', 'IP = (MEP × L × A × N × n × k) / 60,000. For 4-stroke: k = 0.5 (one power stroke per 2 revs). For 2-stroke: k = 1.0. L = stroke (m), A = πD²/4 (m²), N = RPM, n = cylinders. Result in kW. Derivation: Power = Work per cycle × cycles per second. Work = Force × distance = P × A × L.');
   }
 })();
 
@@ -223,7 +225,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const Q = fmt(mf * cv);
     const t = pick(trs, i), BP = pick(P.BP, Math.floor(i / 4)), h = pick(P.h, Math.floor(i / 8));
     const q = `A ${t} consumes ${mf} kg/h of diesel fuel with a calorific value of ${cv} MJ/kg. The engine produces ${BP} HP and runs ${h} hours per day. Lubricating oil consumption is ${pick([0.1, 0.15, 0.2, 0.25], i)} L/h. Coolant temperature is ${pick([80, 85, 90, 95], i)}°C. What is the total heat input in MJ/h?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Heat Input', 'hard', q, Q, [fmt(mf * cv * 0.9), fmt(mf * cv * 1.1), fmt(mf * cv * 0.5)], i, 'Heat input Q = m_f × CV, where m_f = fuel mass flow rate (kg/h) and CV = calorific value (MJ/kg). This is the total thermal energy released by fuel combustion.', [`Q = ${mf} × ${cv} = ${Q} MJ/h`], 'Q = m_f × CV');
+    pushQ(arrA, 'A', 'agri-machinery', 'Heat Input', 'hard', q, Q, [fmt(mf * cv * 0.9), fmt(mf * cv * 1.1), fmt(mf * cv * 0.5)], i, 'Heat input Q = m_f × CV, where m_f = fuel mass flow rate (kg/h) and CV = calorific value (MJ/kg). This is the total thermal energy released by fuel combustion.', [`Q = ${mf} × ${cv} = ${Q} MJ/h`], 'Q = m_f × CV', 'Heat input = m_f × CV. Fuel mass m_f = BP × SFC. So Q_in = BP × SFC × CV. SFC in kg/HP-h, CV in MJ/kg, times 746 converts HP to kW. The total thermal energy released by fuel combustion per hour.');
   }
 })();
 
@@ -235,7 +237,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const l = pick(locs, i), sm = pick(soils, Math.floor(i / 5)), t = pick(trs, Math.floor(i / 4));
     const d = pick(P.depth, Math.floor(i / 7));
     const q = `A ${n}-disc harrow is pulled by a ${t} in ${sm} soil at ${d} cm depth in ${l}. Each disc produces ${D} kN of draft at the operating speed. The harrow weighs ${pick([800, 1000, 1200, 1500], i)} kg. Disc diameter is ${pick([560, 610, 660, 710], i)} mm. What is the total implement draft in kN?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Implement Draft', 'average', q, totalD, [fmt(n * D * 1.2), fmt(n * D * 0.8), fmt(D)], i, 'Total draft = Number of gangs/discs × Draft per gang. Draft per disc depends on soil type, depth, speed, and disc angle.', [`Total draft = ${n} × ${D} = ${totalD} kN`], 'D_total = n × d_per_unit');
+    pushQ(arrA, 'A', 'agri-machinery', 'Implement Draft', 'average', q, totalD, [fmt(n * D * 1.2), fmt(n * D * 0.8), fmt(D)], i, 'Total draft = Number of gangs/discs × Draft per gang. Draft per disc depends on soil type, depth, speed, and disc angle.', [`Total draft = ${n} × ${D} = ${totalD} kN`], 'D_total = n × d_per_unit', 'Total width W = n_discs × disc_width. Draft = W × specific draft (kN). Drawbar power = Draft × speed / 3.6. Specific draft depends on soil type: clay ~8-10 kN/m, loam ~5-7 kN/m, sand ~3-5 kN/m.');
   }
 })();
 
@@ -259,7 +261,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const pct_W = pick([25, 30, 33, 35], i), pct_C = pick([25, 30, 33, 35], i + 5), pct_E = pick([25, 30, 33, 35], i + 10);
     const W_val = fmt(Q * pct_W / 100), C_val = fmt(Q * pct_C / 100), E_val = fmt(Q * pct_E / 100);
     const q = `A ${pick(trs, i)} engine has a fuel heat input of ${Q} MJ/h. Heat balance shows ${pct_W}% goes to useful work, ${pct_C}% to cooling water, and the rest to exhaust and friction. The cooling water flow rate is ${pick([60, 80, 100, 120], i)} L/h. Ambient temperature is ${pick([28, 30, 32, 35], i)}°C. What is the heat lost to useful work in MJ/h?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Engine Heat Balance', 'hard', q, W_val, [fmt(Q * (100 - pct_W) / 100), fmt(C_val), fmt(E_val)], i, 'Heat to useful work = Total heat input × (Work percentage / 100). The rest is lost to cooling, exhaust, friction, and radiation.', [`Work heat = ${Q} × ${pct_W}% = ${W_val} MJ/h`], 'Q_work = Q_total × η_work');
+    pushQ(arrA, 'A', 'agri-machinery', 'Engine Heat Balance', 'hard', q, W_val, [fmt(Q * (100 - pct_W) / 100), fmt(C_val), fmt(E_val)], i, 'Heat to useful work = Total heat input × (Work percentage / 100). The rest is lost to cooling, exhaust, friction, and radiation.', [`Work heat = ${Q} × ${pct_W}% = ${W_val} MJ/h`], 'Q_work = Q_total × η_work', 'Heat energy balance: Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction + Q_radiation. Given total Q and work %, useful work = Q_fuel × (%_work/100). Typical split: 30-35% useful work, 25-30% cooling, 30-35% exhaust, 5-10% friction.');
   }
 })();
 
@@ -334,7 +336,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const W = fmt(Q * eta);
     const t = pick(trs, i), rpm = pick(P.RPM, Math.floor(i / 8));
     const q = `A ${t} at ${rpm} RPM consumes ${mf} kg/h of diesel (CV = ${cv} MJ/kg). The thermal efficiency is ${(eta * 100).toFixed(0)}%. Cooling system removes ${pick([30, 35, 40, 45], i)}% of input heat. Exhaust temperature is ${pick([350, 400, 450, 500], i)}°C. Engine has ${pick([4, 6], i)} cylinders. What is the work output in MJ/h?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'Work Output', 'hard', q, W, [fmt(Q * (1 - eta)), fmt(Q * 0.5), fmt(Q / eta)], i, 'Work output = Heat input × Thermal efficiency. The difference between heat input and work output represents heat rejected to cooling and exhaust systems.', [`W_out = (${mf} × ${cv}) × ${eta} = ${Q} MJ/h × ${eta} = ${W} MJ/h`], 'W_out = m_f × CV × η');
+    pushQ(arrA, 'A', 'agri-machinery', 'Work Output', 'hard', q, W, [fmt(Q * (1 - eta)), fmt(Q * 0.5), fmt(Q / eta)], i, 'Work output = Heat input × Thermal efficiency. The difference between heat input and work output represents heat rejected to cooling and exhaust systems.', [`W_out = (${mf} × ${cv}) × ${eta} = ${Q} MJ/h × ${eta} = ${W} MJ/h`], 'W_out = m_f × CV × η', 'Work output = Heat input × Thermal efficiency. η_th = W_out / Q_in. So W_out = Q_in × η_th = (BP × SFC × CV) × η_th. If thermal efficiency is 30%, only 30% of fuel energy converts to useful shaft work.');
   }
 })();
 
@@ -347,7 +349,7 @@ const fert = '14-14-14|16-20-0|46-0-0|0-0-60|21-0-0|14-14-8'.split('|');
     const head = pick([20, 30, 40, 50, 60], Math.floor(i / 7));
     const t = pick(trs, i), l = pick(locs, Math.floor(i / 5));
     const q = `A ${t} in ${l} drives a centrifugal pump through the ${pick([540, 1000], i)} RPM PTO. PTO power is ${PTO} HP. Pump efficiency is ${(eta * 100).toFixed(0)}%. The pump delivers ${Qrate} L/min against a total head of ${head} m. The suction pipe diameter is ${pick([4, 6, 8], i)} inches. What is the power available at the pump in HP?`;
-    pushQ(arrA, 'A', 'agri-machinery', 'PTO Pump Matching', 'average', q, pwr, [fmt(PTO / eta), fmt(PTO), fmt(PTO * eta * 0.9)], i, 'Power available at pump = PTO power × Pump efficiency. Pump must be matched to PTO power for optimal performance without overloading.', [`P_pump = ${PTO} × ${eta} = ${pwr} HP`], 'P_pump = P_PTO × η_pump');
+    pushQ(arrA, 'A', 'agri-machinery', 'PTO Pump Matching', 'average', q, pwr, [fmt(PTO / eta), fmt(PTO), fmt(PTO * eta * 0.9)], i, 'Power available at pump = PTO power × Pump efficiency. Pump must be matched to PTO power for optimal performance without overloading.', [`P_pump = ${PTO} × ${eta} = ${pwr} HP`], 'P_pump = P_PTO × η_pump', 'Pump power = PTO × η_trans × η_pump. Hydraulic power = ρ × g × Q × H. Equating: ρ × g × Q × H = PTO × η_trans × η_pump. Solve for Q = (PTO × η_trans × η_pump) / (ρ × g × H).');
   }
 })();
 
@@ -430,7 +432,7 @@ const locsB = 'Nueva Ecija|Isabela|Pangasinan|Bulacan|Tarlac|Pampanga|Laguna|Ilo
     const AR = fmt((q * 3600) / (Sl * Ss));
     const l = pick(locsB, i), c = pick(cropsB, Math.floor(i / 6));
     const qq = `A ${c} field in ${l} uses sprinklers with ${fmt(q * 1000).toFixed(0)} L/s discharge. Lateral spacing is ${Sl} m and sprinkler spacing is ${Ss} m. Operating pressure is ${pick([250, 300, 350, 400], i)} kPa. Nozzle diameter is ${pick([4, 5, 6, 7], i)} mm. Field size is ${pick([3, 5, 8], i)} ha. What is the application rate in mm/h?`;
-    pushQ(arrB, 'B', 'irrigation', 'Sprinkler Application Rate', 'average', qq, AR, [fmt(AR * 1.2), fmt(AR * 0.8), fmt((q * 3600) / 100)], i, 'Application rate (mm/h) = (q × 3600) / (Sl × Ss), where q = discharge (L/s), Sl = lateral spacing (m), Ss = sprinkler spacing (m).', [`AR = (${q} × 3600) / (${Sl} × ${Ss}) = ${AR} mm/h`], 'AR = (q × 3600) / (Sl × Ss)');
+    pushQ(arrB, 'B', 'irrigation', 'Sprinkler Application Rate', 'average', qq, AR, [fmt(AR * 1.2), fmt(AR * 0.8), fmt((q * 3600) / 100)], i, 'Application rate (mm/h) = (q × 3600) / (Sl × Ss), where q = discharge (L/s), Sl = lateral spacing (m), Ss = sprinkler spacing (m).', [`AR = (${q} × 3600) / (${Sl} × ${Ss}) = ${AR} mm/h`], 'AR = (q × 3600) / (Sl × Ss)', 'Application rate AR = q × 3600 / (S_l × S_s). q in L/s, 3600 converts to L/h. S_l and S_s in m. Result in mm/h (1 L/m² = 1 mm). AR must be ≤ soil infiltration rate to prevent runoff.');
   }
 })();
 
@@ -455,7 +457,7 @@ const locsB = 'Nueva Ecija|Isabela|Pangasinan|Bulacan|Tarlac|Pampanga|Laguna|Ilo
     const V = fmt(C * P / 1000 * A * 10000);
     const l = pick(locsB, i), sm = pick(soilsB, Math.floor(i / 5));
     const q = `A ${A} ha watershed in ${l} with ${sm} soil receives ${P} mm annual rainfall. Runoff coefficient is ${C} based on land cover. Average temperature is ${pick([25, 27, 28, 30], i)}°C. Evaporation is ${pick([1200, 1500, 1800], i)} mm/year. What is the annual runoff volume in m³?`;
-    pushQ(arrB, 'B', 'irrigation', 'Annual Runoff', 'average', q, V, [fmt(C * P / 1000 * A * 10000 * 1.2), fmt(C * P / 1000 * A * 10000 * 0.8), fmt(P / 1000 * A * 10000)], i, 'Annual runoff volume V = C × P × A, where C = runoff coefficient, P = precipitation (m), A = area (m²). Convert P from mm to m by dividing by 1000.', [`V = ${C} × (${P} / 1000) × (${A} × 10000) = ${V} m³`], 'V = C × P × A');
+    pushQ(arrB, 'B', 'irrigation', 'Annual Runoff', 'average', q, V, [fmt(C * P / 1000 * A * 10000 * 1.2), fmt(C * P / 1000 * A * 10000 * 0.8), fmt(P / 1000 * A * 10000)], i, 'Annual runoff volume V = C × P × A, where C = runoff coefficient, P = precipitation (m), A = area (m²). Convert P from mm to m by dividing by 1000.', [`V = ${C} × (${P} / 1000) × (${A} × 10000) = ${V} m³`], 'V = C × P × A', 'Annual water balance: Runoff = Rainfall - ET - Infiltration ± Storage. Simplified: V_runoff = C × P × A. C = runoff coefficient (fraction). P in m, A in m², result in m³. Convert to million m³ by ÷10⁶.');
   }
 })();
 
@@ -480,7 +482,7 @@ const locsB = 'Nueva Ecija|Isabela|Pangasinan|Bulacan|Tarlac|Pampanga|Laguna|Ilo
     const T = fmt(V / (Qp * 3600));
     const l = pick(locsB, i), c = pick(cropsB, Math.floor(i / 6));
     const q = `A pump delivers ${Qp} L/s to irrigate ${A} ha of ${c} in ${l} with ${d} mm net depth and ${(eff * 100).toFixed(0)}% efficiency. The pump head is ${pick([20, 30, 40, 50], i)} m. Pipe diameter is ${pick([6, 8, 10, 12], i)} inches. Motor efficiency is ${pick([85, 88, 90, 92], i)}%. Electricity cost is P${pick([8, 10, 12, 15], i)}/kWh. What is the required pumping time in hours?`;
-    pushQ(arrB, 'B', 'irrigation', 'Pumping Time', 'hard', q, T, [fmt(V / (Qp * 3600) * 1.3), fmt(V / (Qp * 3600) * 0.7), fmt(V / 1000 / Qp)], i, 'Pumping time T = Total volume ÷ Pump discharge. First compute total volume V = (A × d) / E, then T = V / Q. Ensure consistent units (m³ and m³/s).', [`V = (${A} × 10000 × ${d} / 1000) / ${eff} = ${V} m³`, `T = ${V} / (${Qp} × 3600 / 1000) = ${T} h`], 'T = V / Q');
+    pushQ(arrB, 'B', 'irrigation', 'Pumping Time', 'hard', q, T, [fmt(V / (Qp * 3600) * 1.3), fmt(V / (Qp * 3600) * 0.7), fmt(V / 1000 / Qp)], i, 'Pumping time T = Total volume ÷ Pump discharge. First compute total volume V = (A × d) / E, then T = V / Q. Ensure consistent units (m³ and m³/s).', [`V = (${A} × 10000 × ${d} / 1000) / ${eff} = ${V} m³`, `T = ${V} / (${Qp} × 3600 / 1000) = ${T} h`], 'T = V / Q', 'Gross volume = (Area × net depth) / system efficiency. Convert ha to m² (×10,000), mm to m (÷1000). V = A × 10,000 × (d/1000) / E. Then time = Volume / Flow rate. Convert flow from L/s to m³/s (÷1000). T(s) = V_m³ / (Q_L/s ÷ 1000). Convert to hours: ÷3600.');
   }
 })();
 
@@ -494,7 +496,7 @@ const locsB = 'Nueva Ecija|Isabela|Pangasinan|Bulacan|Tarlac|Pampanga|Laguna|Ilo
     const l = pick(locsB, i), sm = pick(soilsB, Math.floor(i / 5)), c = pick(cropsB, Math.floor(i / 6));
     const sl = pick([3, 5, 8, 10, 15], Math.floor(i / 6));
     const q = `A ${c} field in ${l} on a ${sl}% slope with ${sm} soil has R = ${R} (MJ·mm)/(ha·h·yr), K = ${K}, LS = ${LS}, and CP = ${CP}. Field area is ${pick([3, 5, 8], i)} ha. Previous land use was ${pick(['forest', 'pasture', 'fallow'], Math.floor(i / 10))}. Contour farming is ${pick(['practiced', 'not practiced'], i % 2)}. What is the annual soil loss in t/ha?`;
-    pushQ(arrB, 'B', 'irrigation', 'USLE Soil Loss', 'hard', q, AL, [fmt(R * K * LS), fmt(R * K * CP), fmt(R * K * LS * CP * 0.8)], i, 'Universal Soil Loss Equation: A = R × K × LS × C × P, where R = rainfall erosivity, K = soil erodibility, LS = slope length/steepness, C = cover management, P = support practice.', [`A = ${R} × ${K} × ${LS} × ${CP} = ${AL} t/ha/yr`], 'A = R × K × LS × C × P');
+    pushQ(arrB, 'B', 'irrigation', 'USLE Soil Loss', 'hard', q, AL, [fmt(R * K * LS), fmt(R * K * CP), fmt(R * K * LS * CP * 0.8)], i, 'Universal Soil Loss Equation: A = R × K × LS × C × P, where R = rainfall erosivity, K = soil erodibility, LS = slope length/steepness, C = cover management, P = support practice.', [`A = ${R} × ${K} × ${LS} × ${CP} = ${AL} t/ha/yr`], 'A = R × K × LS × C × P', 'Universal Soil Loss Equation: A = R × K × LS × C × P. R from rainfall intensity × energy. K from soil texture/structure. LS = (λ/22.13)^m × (65.41 sin²θ + 4.56 sinθ + 0.065). C depends on cropping system. P reflects contouring/terracing.');
   }
 })();
 
@@ -547,7 +549,7 @@ const locsB = 'Nueva Ecija|Isabela|Pangasinan|Bulacan|Tarlac|Pampanga|Laguna|Ilo
     const l = pick(locsB, i), sm = pick(soilsB, Math.floor(i / 5)), c = pick(cropsB, Math.floor(i / 6));
     const amc = pick(['I', 'II', 'III'], Math.floor(i / 10));
     const q = `A ${c} field in ${l} with ${sm} soil has SCS curve number CN = ${CN} (AMC-${amc}). Rainfall depth is ${P} mm from a ${pick([6, 12, 24], i)}-hour storm. Antecedent moisture condition is ${amc}. The field is ${pick(['conventionally tilled', 'no-till', 'reduced till'], Math.floor(i / 10))}. What is the direct runoff in mm?`;
-    pushQ(arrB, 'B', 'irrigation', 'SCS Runoff', 'hard', q, Q_run, [fmt(P - 0.2 * S_val), fmt((P - Ia) ** 2 / (P - Ia)), fmt(P - Q_run)], i, 'SCS-CN method: Q = (P - Ia)² / (P - Ia + S) where S = 25400/CN - 254 and Ia = 0.2S. Runoff only occurs when P > Ia.', [`S = 25400 / ${CN} - 254 = ${S_val} mm`, `Ia = 0.2 × ${S_val} = ${Ia} mm`, `Q = (${P} - ${Ia})² / (${P} - ${Ia} + ${S_val}) = ${Q_run} mm`], 'Q = (P - Ia)² / (P - Ia + S)');
+    pushQ(arrB, 'B', 'irrigation', 'SCS Runoff', 'hard', q, Q_run, [fmt(P - 0.2 * S_val), fmt((P - Ia) ** 2 / (P - Ia)), fmt(P - Q_run)], i, 'SCS-CN method: Q = (P - Ia)² / (P - Ia + S) where S = 25400/CN - 254 and Ia = 0.2S. Runoff only occurs when P > Ia.', [`S = 25400 / ${CN} - 254 = ${S_val} mm`, `Ia = 0.2 × ${S_val} = ${Ia} mm`, `Q = (${P} - ${Ia})² / (${P} - ${Ia} + ${S_val}) = ${Q_run} mm`], 'Q = (P - Ia)² / (P - Ia + S)', 'SCS method: S = 25400/CN - 254 (mm). Ia = 0.2S (initial abstraction). Runoff Q = (P - Ia)² / (P - Ia + S) when P > Ia. If P ≤ Ia then Q = 0. Derived from: Q/P = (P - Ia) / (P - Ia + S) — ratio of runoff to rainfall.');
   }
 })();
 
@@ -595,7 +597,7 @@ const locsB = 'Nueva Ecija|Isabela|Pangasinan|Bulacan|Tarlac|Pampanga|Laguna|Ilo
     const P_y = fmt(1 - (1 - 1 / T) ** yrs);
     const l = pick(locsB, i);
     const q = `A flood control structure in ${l} is designed for a ${T}-year return period event. The project lifespan is ${yrs} years. The catchment area is ${pick([100, 500, 1000, 5000], i)} km². Historical floods occurred in ${pick(['1995, 2005, 2015', '2000, 2008, 2016', '1990, 2003, 2018'], Math.floor(i / 10))}. What is the probability of at least one flood exceeding the design in ${yrs} years?`;
-    pushQ(arrB, 'B', 'irrigation', 'Flood Probability', 'hard', q, fmt(P_y * 100), [fmt((1 / T) * 100), fmt((1 / T) * yrs * 100), fmt(100 - P_y * 100)], i, 'Probability of exceedance in n years: P = 1 - (1 - 1/T)^n, where T = return period, n = number of years. This is a binomial probability calculation.', [`P = 1 - (1 - 1/${T})^{${yrs}} = ${fmt(P_y * 100)}%`], 'P = 1 - (1 - 1/T)^n');
+    pushQ(arrB, 'B', 'irrigation', 'Flood Probability', 'hard', q, fmt(P_y * 100), [fmt((1 / T) * 100), fmt((1 / T) * yrs * 100), fmt(100 - P_y * 100)], i, 'Probability of exceedance in n years: P = 1 - (1 - 1/T)^n, where T = return period, n = number of years. This is a binomial probability calculation.', [`P = 1 - (1 - 1/${T})^{${yrs}} = ${fmt(P_y * 100)}%`], 'P = 1 - (1 - 1/T)^n', 'Risk = 1 - P(safe for n years) = 1 - (1 - p)^n, where p = 1/T (annual exceedance probability). Derived from binomial probability: P(X≥1) = 1 - P(X=0) = 1 - (1-p)^n.');
   }
 })();
 
@@ -612,7 +614,7 @@ const locsB = 'Nueva Ecija|Isabela|Pangasinan|Bulacan|Tarlac|Pampanga|Laguna|Ilo
     const Q_m = fmt(A_m * Math.pow(R_m, 2 / 3) * Math.sqrt(S_val) / n_val);
     const l = pick(locsB, i);
     const q = `A rectangular channel in ${l} is ${b} m wide with ${y} m flow depth at ${S_val} slope. Manning n = ${n_val}. The channel is lined with ${pick(['concrete', 'riprap', 'grass', 'earth'], Math.floor(i / 8))}. Freeboard is ${pick([0.2, 0.3, 0.5], i)} m. Design discharge for a ${pick([5, 10, 25], i)}-yr event is ${fmt(Q_m * 1.2)} m³/s. What is the actual flow capacity in m³/s?`;
-    pushQ(arrB, 'B', 'irrigation', 'Manning\'s Flow', 'hard', q, Q_m, [fmt(A_m * Math.pow(R_m, 2 / 3) / n_val), fmt(A_m * Math.sqrt(S_val) / n_val), fmt(A_m * Math.pow(R_m, 2 / 3) * Math.sqrt(S_val) / n_val * 0.8)], i, 'Manning\'s equation: Q = A × R^(2/3) × S^(1/2) / n, where A = cross-sectional area, R = hydraulic radius = A/P, S = slope, n = Manning\'s roughness.', [`A = ${b} × ${y} = ${A_m} m²`, `P = ${b} + 2 × ${y} = ${P_m} m`, `R = ${A_m} / ${P_m} = ${R_m} m`, `Q = ${A_m} × ${R_m}^(2/3) × √${S_val} / ${n_val} = ${Q_m} m³/s`], 'Q = A × R^(2/3) × S^(1/2) / n');
+    pushQ(arrB, 'B', 'irrigation', 'Manning\'s Flow', 'hard', q, Q_m, [fmt(A_m * Math.pow(R_m, 2 / 3) / n_val), fmt(A_m * Math.sqrt(S_val) / n_val), fmt(A_m * Math.pow(R_m, 2 / 3) * Math.sqrt(S_val) / n_val * 0.8)], i, 'Manning\'s equation: Q = A × R^(2/3) × S^(1/2) / n, where A = cross-sectional area, R = hydraulic radius = A/P, S = slope, n = Manning\'s roughness.', [`A = ${b} × ${y} = ${A_m} m²`, `P = ${b} + 2 × ${y} = ${P_m} m`, `R = ${A_m} / ${P_m} = ${R_m} m`, `Q = ${A_m} × ${R_m}^(2/3) × √${S_val} / ${n_val} = ${Q_m} m³/s`], 'Q = A × R^(2/3) × S^(1/2) / n', 'Manning: v = (1/n) × R^(2/3) × √S. Q = A × v = A × (1/n) × R^(2/3) × √S. R = A/P (hydraulic radius). For rectangular: A = b × y, P = b + 2y. For trapezoidal: A = (b + zy)y, P = b + 2y√(1+z²).');
   }
 })();
 
@@ -625,7 +627,7 @@ const locsB = 'Nueva Ecija|Isabela|Pangasinan|Bulacan|Tarlac|Pampanga|Laguna|Ilo
     const Ss = Sl;
     const l = pick(locsB, i), c = pick(cropsB, Math.floor(i / 6));
     const qq = `A ${c} field in ${l} uses sprinklers with ${fmt(q * 1000).toFixed(0)} L/s discharge. Desired application rate is ${AR} mm/h. Operating pressure is ${pick([250, 300, 350], i)} kPa. Wind speed is ${pick([2, 3, 4, 5], i)} m/s. Nozzle size is ${pick([4.0, 4.5, 5.0, 5.5], i)} mm. What is the maximum sprinkler spacing in m?`;
-    pushQ(arrB, 'B', 'irrigation', 'Sprinkler Spacing', 'hard', qq, Sl, [fmt(Sl * 1.2), fmt(Sl * 0.8), fmt(Math.sqrt(q * 3600))], i, 'Sprinkler spacing S = √(q × 3600 / AR), derived from AR = q × 3600 / (Sl × Ss). For square spacing, Sl × Ss = q × 3600 / AR.', [`S = √((${q} × 3600) / ${AR}) = ${Sl} m`], 'S = √(q × 3600 / AR)');
+    pushQ(arrB, 'B', 'irrigation', 'Sprinkler Spacing', 'hard', qq, Sl, [fmt(Sl * 1.2), fmt(Sl * 0.8), fmt(Math.sqrt(q * 3600))], i, 'Sprinkler spacing S = √(q × 3600 / AR), derived from AR = q × 3600 / (Sl × Ss). For square spacing, Sl × Ss = q × 3600 / AR.', [`S = √((${q} × 3600) / ${AR}) = ${Sl} m`], 'S = √(q × 3600 / AR)', 'Application rate AR = q × 3600 / (S_l × S_s). Rearranging: S_l × S_s = q × 3600 / AR. For square spacing (S_l = S_s = S): S² = q × 3600 / AR, hence S = √(q × 3600 / AR). Wind reduces effective spacing by 50-70%.');
   }
 })();
 
@@ -668,7 +670,7 @@ const fuelt = 'diesel|gasoline|LPG|biogas|rice hull'.split('|');
     const Wf = fmt(Wi * (100 - Mi) / (100 - Mf));
     const l = pick(locsC, i), c = pick(cropsC, Math.floor(i / 6)), v = pick(vartyC, Math.floor(i / 5));
     const q = `A ${c} drying facility in ${l} processes ${Wi} kg of ${v} at ${Mi}% initial moisture content. Target moisture is ${Mf}%. Drying air temperature is ${pick([40, 45, 50, 55], i)}°C with ${pick([50, 60, 70], i)}% RH. Airflow rate is ${pick([30, 40, 50], i)} m³/min. Fuel cost is P${pick([12, 15, 18], i)}/kg of ${pick(fuelt, Math.floor(i / 6))}. What is the final weight after drying in kg?`;
-    pushQ(arrC, 'C', 'post-harvest', 'Drying Mass Balance', 'average', q, Wf, [fmt(Wi * (100 - Mf) / (100 - Mi)), fmt(Wi * (Mi - Mf) / 100), fmt(Wi * (100 - Mi) / (100 - Mf) * 0.95)], i, 'Mass balance: W_i × (100 - M_i) = W_f × (100 - M_f). The dry matter (100 - M) remains constant during drying.', [`W_f = ${Wi} × (100 - ${Mi}) / (100 - ${Mf}) = ${Wf} kg`], 'W_i × (100 - M_i) = W_f × (100 - M_f)');
+    pushQ(arrC, 'C', 'post-harvest', 'Drying Mass Balance', 'average', q, Wf, [fmt(Wi * (100 - Mf) / (100 - Mi)), fmt(Wi * (Mi - Mf) / 100), fmt(Wi * (100 - Mi) / (100 - Mf) * 0.95)], i, 'Mass balance: W_i × (100 - M_i) = W_f × (100 - M_f). The dry matter (100 - M) remains constant during drying.', [`W_f = ${Wi} × (100 - ${Mi}) / (100 - ${Mf}) = ${Wf} kg`], 'W_i × (100 - M_i) = W_f × (100 - M_f)', 'Dry matter conserved: DM = W_i × (100 - MC_i)/100 = W_f × (100 - MC_f)/100. Solve: W_f = W_i × (100 - MC_i) / (100 - MC_f). Water removed = W_i - W_f. Uses equilibrium moisture content concept.');
   }
 })();
 
@@ -682,7 +684,7 @@ const fuelt = 'diesel|gasoline|LPG|biogas|rice hull'.split('|');
     const rate = fmt(water / t);
     const l = pick(locsC, i), c = pick(cropsC, Math.floor(i / 6)), v = pick(vartyC, Math.floor(i / 5));
     const q = `A dryer in ${l} dries ${c} (${v}) from ${Mi}% to ${Mf}% moisture in ${t} hours. Batch size is ${Wi} kg. Heater uses ${fuelt[Math.floor(i / 5)]} at ${pick([5, 8, 10, 12], i)} L/h. Ambient temperature is ${pick([28, 30, 32, 35], i)}°C. Plenum temperature is ${pick([45, 50, 55, 60], i)}°C. What is the moisture removal rate in kg/h?`;
-    pushQ(arrC, 'C', 'post-harvest', 'Moisture Removal Rate', 'hard', q, rate, [fmt(water), fmt(water / t * 1.2), fmt(water / t * 0.8)], i, 'Water removed = W_i - W_f. Removal rate = Water removed / Time. First find final weight using dry matter balance: W_f = W_i × (100 - Mi) / (100 - Mf).', [`W_f = ${Wi} × (100 - ${Mi}) / (100 - ${Mf}) = ${fmt(Wi * (100 - Mi) / (100 - Mf))} kg`, `Water removed = ${Wi} - ${fmt(Wi * (100 - Mi) / (100 - Mf))} = ${water} kg`, `Rate = ${water} / ${t} = ${rate} kg/h`], 'Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t');
+    pushQ(arrC, 'C', 'post-harvest', 'Moisture Removal Rate', 'hard', q, rate, [fmt(water), fmt(water / t * 1.2), fmt(water / t * 0.8)], i, 'Water removed = W_i - W_f. Removal rate = Water removed / Time. First find final weight using dry matter balance: W_f = W_i × (100 - Mi) / (100 - Mf).', [`W_f = ${Wi} × (100 - ${Mi}) / (100 - ${Mf}) = ${fmt(Wi * (100 - Mi) / (100 - Mf))} kg`, `Water removed = ${Wi} - ${fmt(Wi * (100 - Mi) / (100 - Mf))} = ${water} kg`, `Rate = ${water} / ${t} = ${rate} kg/h`], 'Moisture removal = (W_i × (M_i - M_f)) / (100 - M_f) / t', 'Dry matter is conserved: DM = W_i × (1 - M_i/100) = W_f × (1 - M_f/100). Solve for W_f = W_i × (100 - M_i) / (100 - M_f). Water removed = W_i - W_f. Removal rate = Water removed / drying time.');
   }
 })();
 
@@ -708,7 +710,7 @@ const fuelt = 'diesel|gasoline|LPG|biogas|rice hull'.split('|');
     const Q = fmt(m * Cp * (T_h - T_c));
     const l = pick(locsC, i), c = pick(cropsC, Math.floor(i / 6));
     const q = `A ${c} processing plant in ${l} heats ${m} kg of product from ${T_c}°C to ${T_h}°C. Specific heat is ${Cp} kJ/kg°C. The heat exchanger uses ${pick(['steam', 'hot water', 'thermal oil'], Math.floor(i / 10))} at ${pick([100, 120, 150, 180], i)}°C. Processing time is ${pick([30, 45, 60, 90], i)} minutes. What is the sensible heat required in kJ?`;
-    pushQ(arrC, 'C', 'post-harvest', 'Sensible Heat', 'average', q, Q, [fmt(m * Cp * (T_h - T_c) * 0.8), fmt(m * (T_h - T_c)), fmt(m * Cp)], i, 'Sensible heat Q = m × Cp × ΔT, where m = mass (kg), Cp = specific heat (kJ/kg°C), ΔT = temperature change (°C).', [`Q = ${m} × ${Cp} × (${T_h} - ${T_c}) = ${Q} kJ`], 'Q = m × Cp × ΔT');
+    pushQ(arrC, 'C', 'post-harvest', 'Sensible Heat', 'average', q, Q, [fmt(m * Cp * (T_h - T_c) * 0.8), fmt(m * (T_h - T_c)), fmt(m * Cp)], i, 'Sensible heat Q = m × Cp × ΔT, where m = mass (kg), Cp = specific heat (kJ/kg°C), ΔT = temperature change (°C).', [`Q = ${m} × ${Cp} × (${T_h} - ${T_c}) = ${Q} kJ`], 'Q = m × Cp × ΔT', 'Q = m × Cp × ΔT. Sensible heat required to raise temperature from T₁ to T₂. No phase change. If phase change occurs, add latent heat: Q = m × λ. Cp = specific heat capacity in kJ/(kg·°C).');
   }
 })();
 
@@ -783,7 +785,7 @@ const fuelt = 'diesel|gasoline|LPG|biogas|rice hull'.split('|');
     const V_bg = fmt(total_m * 1000 * yield_r);
     const l = pick(locsC, i), anim = pick(['dairy cattle', 'beef cattle', 'swine', 'poultry'], Math.floor(i / 8));
     const q = `A ${anim} farm in ${l} with ${n_an} heads produces ${manure} kg manure per head daily. Biogas yield is ${yield_r} m³/kg manure. The digester operates at ${pick([28, 32, 35, 38], i)}°C with ${pick([20, 25, 30, 35], i)} days retention time. Manure TS content is ${pick([15, 18, 20, 25], i)}%. What is the daily biogas production in m³?`;
-    pushQ(arrC, 'C', 'post-harvest', 'Manure Biogas', 'hard', q, V_bg, [fmt(total_m * 1000 * yield_r * 1.2), fmt(total_m * 1000), fmt(n_an * manure * 1000)], i, 'Biogas production = Number of animals × Manure per animal × Biogas yield per kg manure. Total manure = N × manure per head.', [`Total manure = ${n_an} × ${manure} = ${total_m} kg`, `Biogas = ${total_m} × 1000 × ${yield_r} = ${V_bg} m³/day`], 'V_biogas = N × M_per_head × Y_biogas');
+    pushQ(arrC, 'C', 'post-harvest', 'Manure Biogas', 'hard', q, V_bg, [fmt(total_m * 1000 * yield_r * 1.2), fmt(total_m * 1000), fmt(n_an * manure * 1000)], i, 'Biogas production = Number of animals × Manure per animal × Biogas yield per kg manure. Total manure = N × manure per head.', [`Total manure = ${n_an} × ${manure} = ${total_m} kg`, `Biogas = ${total_m} × 1000 × ${yield_r} = ${V_bg} m³/day`], 'V_biogas = N × M_per_head × Y_biogas', 'Total manure = N_animals × manure_per_head. Volatile solids (VS) = total manure × VS_% (typically 75-85% of dry matter). Biogas = VS × biogas_yield (m³/kg VS). Methane = biogas × CH₄% (typically 55-65%).');
   }
 })();
 
@@ -820,7 +822,7 @@ const fuelt = 'diesel|gasoline|LPG|biogas|rice hull'.split('|');
     const V_total = fmt(V_day * t_ret * 1.2);
     const l = pick(locsC, i), c = pick(cropsC, Math.floor(i / 6));
     const q = `A ${c} fermenter in ${l} processes ${M} kg daily with substrate density ${rho_s} kg/m³. Retention time is ${t_ret} days. Headspace allowance is 20%. Operating temperature is ${pick([30, 35, 37, 40], i)}°C. pH is maintained at ${pick([5.5, 6.0, 6.5, 7.0], i)}. What is the total fermenter volume in m³?`;
-    pushQ(arrC, 'C', 'post-harvest', 'Fermenter Volume', 'hard', q, V_total, [fmt(V_day * t_ret), fmt(V_day * t_ret * 1.5), fmt(V_day * 1.2)], i, 'Fermenter volume = Daily substrate volume × Retention time × Headspace factor. Daily volume = Mass / Density. Typical headspace allowance is 20-30%.', [`V_daily = ${M} × 1000 / ${rho_s} = ${V_day} m³`, `V_total = ${V_day} × ${t_ret} × 1.2 = ${V_total} m³`], 'V = (M/ρ) × t_ret × (1 + headspace)');
+    pushQ(arrC, 'C', 'post-harvest', 'Fermenter Volume', 'hard', q, V_total, [fmt(V_day * t_ret), fmt(V_day * t_ret * 1.5), fmt(V_day * 1.2)], i, 'Fermenter volume = Daily substrate volume × Retention time × Headspace factor. Daily volume = Mass / Density. Typical headspace allowance is 20-30%.', [`V_daily = ${M} × 1000 / ${rho_s} = ${V_day} m³`, `V_total = ${V_day} × ${t_ret} × 1.2 = ${V_total} m³`], 'V = (M/ρ) × t_ret × (1 + headspace)', 'Daily substrate volume = Mass / Density. V_daily = M (kg) / ρ (kg/m³). Fermenter = V_daily × HRT × headspace_factor. HRT (hydraulic retention time) = 15-30 days for mesophilic. Headspace 20-30% for gas collection.');
   }
 })();
 
@@ -862,7 +864,7 @@ const fuelt = 'diesel|gasoline|LPG|biogas|rice hull'.split('|');
     const i1 = pick(['corn', 'rice bran', 'wheat middlings', 'cassava'], Math.floor(i / 8));
     const i2 = pick(['soybean meal', 'fish meal', 'meat and bone meal', 'copra meal'], Math.floor(i / 8));
     const q = `A feed mill in ${l} formulates ${anim} feed with ${target}% CP target using ${i1} (${P1}% CP) and ${i2} (${P2}% CP). Batch size is ${pick([500, 1000, 2000], i)} kg. Added vitamins/minerals at ${pick([2, 3, 5], i)}%. ${i1} costs P${pick([12, 15, 18], i)}/kg and ${i2} costs P${pick([25, 30, 35, 40], i)}/kg. What is the mixing ratio of ${i1} to ${i2}?`;
-    pushQ(arrC, 'C', 'post-harvest', 'Feed Formulation', 'hard', q, fmt(R), [fmt(R * 1.3), fmt(R * 0.7), fmt(1 / R)], i, 'Pearson\'s square (algebraic method): Ratio = (CP_target - CP_ingredient1) / (CP_ingredient2 - CP_target). This gives the proportion of ingredient1 to ingredient2.', [`Ratio = (${target} - ${P1}) / (${P2} - ${target}) = ${fmt(R)}`], 'R = (T - C₁) / (C₂ - T)');
+    pushQ(arrC, 'C', 'post-harvest', 'Feed Formulation', 'hard', q, fmt(R), [fmt(R * 1.3), fmt(R * 0.7), fmt(1 / R)], i, 'Pearson\'s square (algebraic method): Ratio = (CP_target - CP_ingredient1) / (CP_ingredient2 - CP_target). This gives the proportion of ingredient1 to ingredient2.', [`Ratio = (${target} - ${P1}) / (${P2} - ${target}) = ${fmt(R)}`], 'R = (T - C₁) / (C₂ - T)', 'Pearson square method: Draw a square. Target CP in centre. CP of ingredient1 (high) at top-left, CP of ingredient2 (low) at bottom-left. Subtract diagonally across the square. Parts of each = absolute differences. Ratio = (T - P₂) / (P₁ - T).');
   }
 })();
 
@@ -885,7 +887,7 @@ const fuelt = 'diesel|gasoline|LPG|biogas|rice hull'.split('|');
     const m_air = fmt(water / ((w_out - w_in) / 1000));
     const l = pick(locsC, i), c = pick(cropsC, Math.floor(i / 6));
     const q = `A dryer in ${l} removes ${water} kg water/h from ${c}. Inlet air humidity is ${w_in} g/kg, outlet air humidity is ${w_out} g/kg. Drying temperature is ${pick([45, 50, 55, 60], i)}°C. Ambient conditions are ${pick([28, 30, 32], i)}°C and ${pick([70, 75, 80], i)}% RH. What is the required dry air flow rate in kg/h?`;
-    pushQ(arrC, 'C', 'post-harvest', 'Drying Air Requirement', 'hard', q, m_air, [fmt(water / ((w_out - w_in) / 1000) * 1.2), fmt(water / ((w_out - w_in) / 1000) * 0.8), fmt(water * 1000 / (w_out - w_in))], i, 'Dry air flow m_air = Water removed / (Humidity difference). The humidity difference (w_out - w_in) is the moisture pickup capacity of the air.', [`m_air = ${water} / ((${w_out} - ${w_in}) / 1000) = ${m_air} kg/h`], 'm_air = m_water / (ω_out - ω_in)');
+    pushQ(arrC, 'C', 'post-harvest', 'Drying Air Requirement', 'hard', q, m_air, [fmt(water / ((w_out - w_in) / 1000) * 1.2), fmt(water / ((w_out - w_in) / 1000) * 0.8), fmt(water * 1000 / (w_out - w_in))], i, 'Dry air flow m_air = Water removed / (Humidity difference). The humidity difference (w_out - w_in) is the moisture pickup capacity of the air.', [`m_air = ${water} / ((${w_out} - ${w_in}) / 1000) = ${m_air} kg/h`], 'm_air = m_water / (ω_out - ω_in)', 'Mass balance: m_air × (w_out - w_in) = m_water. Rearranged: m_air = m_water / (w_out - w_in). Where w is absolute humidity (kg water/kg dry air). If given in g/kg, divide by 1000. The humidity difference is the moisture pickup capacity of air.');
   }
 })();
 
@@ -898,7 +900,7 @@ const fuelt = 'diesel|gasoline|LPG|biogas|rice hull'.split('|');
     const LMTD = fmt((dT1 - dT2) / Math.log(dT1 / dT2));
     const l = pick(locsC, i), c = pick(cropsC, Math.floor(i / 6));
     const q = `A heat exchanger in a ${c} processing plant in ${l} has hot fluid entering at ${T_hi}°C and leaving at ${T_ho}°C. Cold fluid enters at ${T_ci}°C and leaves at ${T_co}°C. Flow arrangement is ${pick(['counter-flow', 'parallel-flow'], Math.floor(i / 15))}. Heat transfer area is ${pick([5, 10, 15, 20], i)} m². Overall U = ${pick([200, 300, 400, 500], i)} W/m²K. What is the LMTD in °C?`;
-    pushQ(arrC, 'C', 'post-harvest', 'LMTD', 'hard', q, LMTD, [fmt((dT1 + dT2) / 2), fmt(dT1 - dT2), fmt((dT1 + dT2) * dT1 / (dT1 + dT2))], i, 'LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hi - T_co, ΔT₂ = T_ho - T_ci. LMTD accounts for varying temperature difference along the heat exchanger.', [`ΔT₁ = ${T_hi} - ${T_co} = ${dT1}°C`, `ΔT₂ = ${T_ho} - ${T_ci} = ${dT2}°C`, `LMTD = (${dT1} - ${dT2}) / ln(${dT1}/${dT2}) = ${LMTD}°C`], 'LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)');
+    pushQ(arrC, 'C', 'post-harvest', 'LMTD', 'hard', q, LMTD, [fmt((dT1 + dT2) / 2), fmt(dT1 - dT2), fmt((dT1 + dT2) * dT1 / (dT1 + dT2))], i, 'LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hi - T_co, ΔT₂ = T_ho - T_ci. LMTD accounts for varying temperature difference along the heat exchanger.', [`ΔT₁ = ${T_hi} - ${T_co} = ${dT1}°C`, `ΔT₂ = ${T_ho} - ${T_ci} = ${dT2}°C`, `LMTD = (${dT1} - ${dT2}) / ln(${dT1}/${dT2}) = ${LMTD}°C`], 'LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)', 'LMTD = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂) for counter-flow. ΔT₁ = T_hot_in - T_cold_out, ΔT₂ = T_hot_out - T_cold_in. For parallel flow: ΔT₁ = T_hi - T_ci, ΔT₂ = T_ho - T_co. LMTD accounts for log-mean temperature difference along exchanger.');
   }
 })();
 
