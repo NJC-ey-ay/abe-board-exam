@@ -68,6 +68,7 @@ export function MathFormula({ formula, ...props }: { formula: string; display?: 
     .replace(/∂/g, '\\partial ')
     .replace(/∞/g, '\\infty ')
     .replace(/ᵢ/g, '_i')
+    .replace(/_(?=[A-Za-z])(\w+)/g, '_{$1}')
     .replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿ]+/g, (m: string) => {
       const map: Record<string, string> = {'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁺':'+','⁻':'-','⁼':'=','⁽':'(','⁾':')','ⁿ':'n'};
       return '^{' + m.split('').map(c => map[c] || c).join('') + '}';
