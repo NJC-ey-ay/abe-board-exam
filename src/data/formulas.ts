@@ -1,840 +1,180 @@
-// Comprehensive Formula Reference for ABE Board Exam
-// All formulas organized by topic with descriptions
-
 export interface Formula {
-  id: string;
   name: string;
   formula: string;
-  description: string;
-  topic: string;
-  area: 'A' | 'B' | 'C';
-  constants?: { symbol: string; value: string; description: string }[];
-  application?: string;
+  variables: { symbol: string; meaning: string }[];
+  notes?: string;
 }
 
-export const formulas: Formula[] = [
-  // ==================== AREA A: POWER, MACHINERY & ENGINEERING ====================
+export interface FormulaCategory {
+  area: string;
+  areaCode: string;
+  color: string;
+  topics: { topic: string; formulas: Formula[] }[];
+}
 
-  // Fluid Mechanics (also used in Area B)
+export const areaFormulas: FormulaCategory[] = [
   {
-    id: 'fluid-001',
-    name: 'Hydrostatic Pressure',
-    formula: 'P = ρgh',
-    description: 'Pressure at a depth in a fluid',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    constants: [
-      { symbol: 'ρ', value: 'density (kg/m³)', description: 'fluid density' },
-      { symbol: 'g', value: '9.81 m/s²', description: 'gravitational acceleration' },
-      { symbol: 'h', value: 'm', description: 'depth from surface' }
+    area: 'Power, Energy & Machinery',
+    areaCode: 'A',
+    color: 'primary',
+    topics: [
+      {
+        topic: 'Field Capacity & Performance',
+        formulas: [
+          { name: 'Effective Field Capacity', formula: 'C = (W × S × E) / 10', variables: [{ symbol: 'C', meaning: 'Effective field capacity (ha/h)' }, { symbol: 'W', meaning: 'Working width (m)' }, { symbol: 'S', meaning: 'Travel speed (km/h)' }, { symbol: 'E', meaning: 'Field efficiency (decimal)' }] },
+          { name: 'Theoretical Field Capacity', formula: 'C_t = (W × S) / 10', variables: [{ symbol: 'C_t', meaning: 'Theoretical field capacity (ha/h)' }, { symbol: 'W', meaning: 'Working width (m)' }, { symbol: 'S', meaning: 'Travel speed (km/h)' }] },
+          { name: 'Field Efficiency', formula: 'E = C_a / C_t × 100%', variables: [{ symbol: 'E', meaning: 'Field efficiency (%)' }, { symbol: 'C_a', meaning: 'Actual field capacity (ha/h)' }, { symbol: 'C_t', meaning: 'Theoretical field capacity (ha/h)' }] },
+          { name: 'Multi-row Planter Capacity', formula: 'C = (N × Sp × S × E) / 10', variables: [{ symbol: 'C', meaning: 'Effective capacity (ha/h)' }, { symbol: 'N', meaning: 'Number of rows' }, { symbol: 'Sp', meaning: 'Row spacing (m)' }, { symbol: 'S', meaning: 'Speed (km/h)' }, { symbol: 'E', meaning: 'Efficiency (decimal)' }] },
+          { name: 'Total Harvest Output', formula: 'O = C × Y × t', variables: [{ symbol: 'O', meaning: 'Total harvest output (t)' }, { symbol: 'C', meaning: 'Field capacity (ha/h)' }, { symbol: 'Y', meaning: 'Crop yield (t/ha)' }, { symbol: 't', meaning: 'Operating time (h)' }] },
+        ],
+      },
+      {
+        topic: 'Engine Performance',
+        formulas: [
+          { name: 'Drawbar Power', formula: 'P_db = (F × S) / 3.6', variables: [{ symbol: 'P_db', meaning: 'Drawbar power (kW)' }, { symbol: 'F', meaning: 'Draft force (kN)' }, { symbol: 'S', meaning: 'Speed (km/h)' }], notes: '3.6 converts km/h to m/s and kN·m/s to kW' },
+          { name: 'PTO Power', formula: 'P_PTO = BP × η_trans', variables: [{ symbol: 'P_PTO', meaning: 'PTO power (kW)' }, { symbol: 'BP', meaning: 'Brake power (kW)' }, { symbol: 'η_trans', meaning: 'Transmission efficiency (decimal)' }] },
+          { name: 'Indicated Power (4-stroke)', formula: 'IP = (MEP × L × A × N × n) / 60,000', variables: [{ symbol: 'IP', meaning: 'Indicated power (kW)' }, { symbol: 'MEP', meaning: 'Mean effective pressure (kPa)' }, { symbol: 'L', meaning: 'Stroke length (m)' }, { symbol: 'A', meaning: 'Piston area (m²)' }, { symbol: 'N', meaning: 'Engine speed (RPM)' }, { symbol: 'n', meaning: 'Number of cylinders' }], notes: '60,000 converts to kW; 4-stroke uses 60,000, 2-stroke uses 30,000' },
+          { name: 'Brake Power', formula: 'BP = IP - FP', variables: [{ symbol: 'BP', meaning: 'Brake power (kW)' }, { symbol: 'IP', meaning: 'Indicated power (kW)' }, { symbol: 'FP', meaning: 'Friction power (kW)' }] },
+          { name: 'Mechanical Efficiency', formula: 'η_mech = BP / IP × 100%', variables: [{ symbol: 'η_mech', meaning: 'Mechanical efficiency (%)' }, { symbol: 'BP', meaning: 'Brake power (kW)' }, { symbol: 'IP', meaning: 'Indicated power (kW)' }] },
+        ],
+      },
+      {
+        topic: 'Engine Geometry & Combustion',
+        formulas: [
+          { name: 'Total Engine Displacement', formula: 'V_d = (π/4) × D² × L × n', variables: [{ symbol: 'V_d', meaning: 'Total displacement (cm³ or L)' }, { symbol: 'D', meaning: 'Cylinder bore (cm)' }, { symbol: 'L', meaning: 'Stroke length (cm)' }, { symbol: 'n', meaning: 'Number of cylinders' }] },
+          { name: 'Compression Ratio', formula: 'CR = (V_d + V_c) / V_c', variables: [{ symbol: 'CR', meaning: 'Compression ratio' }, { symbol: 'V_d', meaning: 'Displacement volume (cm³)' }, { symbol: 'V_c', meaning: 'Clearance volume (cm³)' }] },
+          { name: 'Displacement from CR', formula: 'V_d = V_c × (CR - 1)', variables: [{ symbol: 'V_d', meaning: 'Displacement (cm³)' }, { symbol: 'V_c', meaning: 'Clearance volume (cm³)' }, { symbol: 'CR', meaning: 'Compression ratio' }] },
+        ],
+      },
+      {
+        topic: 'Power Transmission',
+        formulas: [
+          { name: 'Overall Efficiency Chain', formula: 'η_total = η₁ × η₂ × η₃ × ... × ηₙ', variables: [{ symbol: 'η_total', meaning: 'Overall efficiency' }, { symbol: 'η_i', meaning: 'Individual stage efficiency (decimal)' }] },
+          { name: 'Power Train Efficiency', formula: 'η = η_trans × η_drive × η_tractive', variables: [{ symbol: 'η_trans', meaning: 'Transmission efficiency' }, { symbol: 'η_drive', meaning: 'Final drive efficiency' }, { symbol: 'η_tractive', meaning: 'Track/wheel efficiency' }] },
+        ],
+      },
+      {
+        topic: 'Fuel & Heat',
+        formulas: [
+          { name: 'Fuel Consumption (Volume)', formula: 'V = (BP × SFC) / ρ', variables: [{ symbol: 'V', meaning: 'Fuel consumption (L/h)' }, { symbol: 'BP', meaning: 'Brake power (HP or kW)' }, { symbol: 'SFC', meaning: 'Specific fuel consumption (kg/HP-h or kg/kW-h)' }, { symbol: 'ρ', meaning: 'Fuel density (kg/L)' }] },
+          { name: 'Heat Input from Fuel', formula: 'Q_in = BP × SFC × CV', variables: [{ symbol: 'Q_in', meaning: 'Heat input (MJ/h)' }, { symbol: 'BP', meaning: 'Brake power' }, { symbol: 'SFC', meaning: 'Specific fuel consumption' }, { symbol: 'CV', meaning: 'Calorific value (MJ/kg)' }] },
+          { name: 'Engine Heat Balance', formula: 'Q_fuel = Q_brake + Q_cool + Q_exhaust + Q_friction', variables: [{ symbol: 'Q_fuel', meaning: 'Total fuel heat energy' }, { symbol: 'Q_brake', meaning: 'Useful brake work' }, { symbol: 'Q_cool', meaning: 'Cooling system losses' }, { symbol: 'Q_exhaust', meaning: 'Exhaust losses' }, { symbol: 'Q_friction', meaning: 'Friction losses' }] },
+          { name: 'Thermal Efficiency', formula: 'η_th = W_out / Q_in × 100%', variables: [{ symbol: 'η_th', meaning: 'Thermal efficiency (%)' }, { symbol: 'W_out', meaning: 'Useful work output' }, { symbol: 'Q_in', meaning: 'Heat energy input' }] },
+        ],
+      },
+      {
+        topic: 'Implement Draft',
+        formulas: [
+          { name: 'Multi-disc Plow Draft', formula: 'D = n × w × d × K', variables: [{ symbol: 'D', meaning: 'Total draft (kN)' }, { symbol: 'n', meaning: 'Number of discs' }, { symbol: 'w', meaning: 'Width per disc (m)' }, { symbol: 'd', meaning: 'Depth (m)' }, { symbol: 'K', meaning: 'Soil specific resistance (kN/m²)' }] },
+          { name: 'PTO Pump Power', formula: 'P_hyd = P_PTO × η_pump', variables: [{ symbol: 'P_hyd', meaning: 'Hydraulic power output' }, { symbol: 'P_PTO', meaning: 'PTO power input' }, { symbol: 'η_pump', meaning: 'Pump efficiency (decimal)' }] },
+        ],
+      },
     ],
-    application: 'Calculating pressure at the bottom of dams, tanks, submerged surfaces'
   },
   {
-    id: 'fluid-002',
-    name: 'Bernoulli\'s Equation',
-    formula: '\\frac{P_1}{ρg} + \\frac{v_1^2}{2g} + z_1 = \\frac{P_2}{ρg} + \\frac{v_2^2}{2g} + z_2',
-    description: 'Conservation of energy in fluid flow',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    application: 'Flow measurement, pump calculations, pipeline analysis'
-  },
-  {
-    id: 'fluid-003',
-    name: 'Continuity Equation',
-    formula: 'Q = A × v = A_1 v_1 = A_2 v_2',
-    description: 'Conservation of mass in steady flow',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    application: 'Flow rates in pipes, channel design'
-  },
-  {
-    id: 'fluid-004',
-    name: 'Reynolds Number',
-    formula: 'Re = \\frac{ρvD}{μ} = \\frac{vD}{ν}',
-    description: 'Determines flow regime (laminar/turbulent)',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    constants: [
-      { symbol: 'Re < 2000', value: 'Laminar', description: 'smooth flow' },
-      { symbol: 'Re > 4000', value: 'Turbulent', description: 'chaotic flow' }
+    area: 'Land & Water Resources',
+    areaCode: 'B',
+    color: 'green',
+    topics: [
+      {
+        topic: 'Irrigation & Pumping',
+        formulas: [
+          { name: 'Application Rate (Sprinkler)', formula: 'AR = (q × 3600) / (S_l × S_s)', variables: [{ symbol: 'AR', meaning: 'Application rate (mm/h)' }, { symbol: 'q', meaning: 'Flow rate per sprinkler (L/s)' }, { symbol: 'S_l', meaning: 'Lateral spacing (m)' }, { symbol: 'S_s', meaning: 'Sprinkler spacing (m)' }], notes: '3600 converts L/s to L/h; 1 L/m² = 1 mm' },
+          { name: 'Sprinkler Square Spacing', formula: 'S = √(q × 3600 / AR)', variables: [{ symbol: 'S', meaning: 'Sprinkler spacing (m)' }, { symbol: 'q', meaning: 'Flow rate (L/s)' }, { symbol: 'AR', meaning: 'Desired application rate (mm/h)' }] },
+          { name: 'Pumping Time', formula: 'T = (A × d × 10) / (E × Q)', variables: [{ symbol: 'T', meaning: 'Pumping time (h)' }, { symbol: 'A', meaning: 'Area (ha)' }, { symbol: 'd', meaning: 'Net depth (mm)' }, { symbol: 'E', meaning: 'System efficiency (decimal)' }, { symbol: 'Q', meaning: 'Flow rate (L/s)' }], notes: '10 converts ha·mm to m³' },
+          { name: 'Irrigation Efficiency', formula: 'E_i = (W_s / W_d) × 100%', variables: [{ symbol: 'E_i', meaning: 'Irrigation efficiency (%)' }, { symbol: 'W_s', meaning: 'Water stored in root zone' }, { symbol: 'W_d', meaning: 'Water delivered' }] },
+          { name: 'Gross Irrigation Depth', formula: 'd_g = d_n / E', variables: [{ symbol: 'd_g', meaning: 'Gross depth (mm)' }, { symbol: 'd_n', meaning: 'Net depth (mm)' }, { symbol: 'E', meaning: 'Application efficiency (decimal)' }] },
+        ],
+      },
+      {
+        topic: 'Hydrology & Runoff',
+        formulas: [
+          { name: 'Annual Runoff Volume', formula: 'V = C × P × A', variables: [{ symbol: 'V', meaning: 'Runoff volume (m³)' }, { symbol: 'C', meaning: 'Runoff coefficient' }, { symbol: 'P', meaning: 'Annual rainfall (m)' }, { symbol: 'A', meaning: 'Catchment area (m²)' }] },
+          { name: 'SCS Curve Number Runoff', formula: 'Q = (P - Ia)² / (P - Ia + S), P > Ia', variables: [{ symbol: 'Q', meaning: 'Runoff depth (mm)' }, { symbol: 'P', meaning: 'Rainfall depth (mm)' }, { symbol: 'Ia', meaning: 'Initial abstraction = 0.2S (mm)' }, { symbol: 'S', meaning: 'Potential retention = 25400/CN - 254 (mm)' }] },
+          { name: 'Potential Retention (SCS)', formula: 'S = 25400/CN - 254', variables: [{ symbol: 'S', meaning: 'Potential retention (mm)' }, { symbol: 'CN', meaning: 'Curve Number (30-100)' }] },
+          { name: 'Rational Method', formula: 'Q_p = C × I × A / 360', variables: [{ symbol: 'Q_p', meaning: 'Peak runoff (m³/s)' }, { symbol: 'C', meaning: 'Runoff coefficient' }, { symbol: 'I', meaning: 'Rainfall intensity (mm/h)' }, { symbol: 'A', meaning: 'Catchment area (ha)' }] },
+        ],
+      },
+      {
+        topic: 'Soil Erosion & Conservation',
+        formulas: [
+          { name: 'Universal Soil Loss Equation', formula: 'A = R × K × LS × C × P', variables: [{ symbol: 'A', meaning: 'Annual soil loss (t/ha/yr)' }, { symbol: 'R', meaning: 'Rainfall erosivity factor' }, { symbol: 'K', meaning: 'Soil erodibility factor' }, { symbol: 'LS', meaning: 'Slope length-gradient factor' }, { symbol: 'C', meaning: 'Cover management factor' }, { symbol: 'P', meaning: 'Support practice factor' }] },
+        ],
+      },
+      {
+        topic: 'Channel & Pipe Flow',
+        formulas: [
+          { name: "Manning's Equation (Velocity)", formula: 'v = (1/n) × R^(2/3) × √S', variables: [{ symbol: 'v', meaning: 'Flow velocity (m/s)' }, { symbol: 'n', meaning: "Manning's roughness coefficient" }, { symbol: 'R', meaning: 'Hydraulic radius (m)' }, { symbol: 'S', meaning: 'Channel slope (m/m)' }] },
+          { name: "Manning's Equation (Flow)", formula: 'Q = (1/n) × A × R^(2/3) × √S', variables: [{ symbol: 'Q', meaning: 'Flow rate (m³/s)' }, { symbol: 'A', meaning: 'Cross-sectional area (m²)' }, { symbol: 'n', meaning: "Manning's roughness" }, { symbol: 'R', meaning: 'Hydraulic radius (m)' }, { symbol: 'S', meaning: 'Slope (m/m)' }] },
+          { name: 'Hydraulic Radius', formula: 'R = A / P', variables: [{ symbol: 'R', meaning: 'Hydraulic radius (m)' }, { symbol: 'A', meaning: 'Flow area (m²)' }, { symbol: 'P', meaning: 'Wetted perimeter (m)' }] },
+          { name: 'Rectangular Channel Area', formula: 'A = b × y', variables: [{ symbol: 'A', meaning: 'Flow area (m²)' }, { symbol: 'b', meaning: 'Channel width (m)' }, { symbol: 'y', meaning: 'Flow depth (m)' }] },
+          { name: 'Rectangular Channel Wetted Perimeter', formula: 'P = b + 2y', variables: [{ symbol: 'P', meaning: 'Wetted perimeter (m)' }, { symbol: 'b', meaning: 'Channel width (m)' }, { symbol: 'y', meaning: 'Flow depth (m)' }] },
+        ],
+      },
+      {
+        topic: 'Flood & Risk Analysis',
+        formulas: [
+          { name: 'Flood Risk Probability', formula: 'Risk = 1 - (1 - 1/T)^n', variables: [{ symbol: 'Risk', meaning: 'Probability of exceedance in n years' }, { symbol: 'T', meaning: 'Return period (years)' }, { symbol: 'n', meaning: 'Design life (years)' }] },
+          { name: 'Return Period', formula: 'T = (n + 1) / m', variables: [{ symbol: 'T', meaning: 'Return period (years)' }, { symbol: 'n', meaning: 'Number of years of record' }, { symbol: 'm', meaning: 'Rank of event (1 = largest)' }] },
+        ],
+      },
+      {
+        topic: 'Crop Water & Evapotranspiration',
+        formulas: [
+          { name: 'Crop Evapotranspiration', formula: 'ET_c = K_c × ET_o', variables: [{ symbol: 'ET_c', meaning: 'Crop evapotranspiration (mm/day)' }, { symbol: 'K_c', meaning: 'Crop coefficient' }, { symbol: 'ET_o', meaning: 'Reference evapotranspiration (mm/day)' }] },
+          { name: 'Water Requirement (Volume)', formula: 'V_w = ET_c × A', variables: [{ symbol: 'V_w', meaning: 'Water volume required (m³)' }, { symbol: 'ET_c', meaning: 'Crop ET (m/day)' }, { symbol: 'A', meaning: 'Area (m²)' }] },
+        ],
+      },
     ],
-    application: 'Pipe flow classification, pipe roughness selection'
   },
   {
-    id: 'fluid-005',
-    name: 'Darcy-Weisbach Equation',
-    formula: 'h_f = f \\frac{L}{D} \\frac{v^2}{2g}',
-    description: 'Head loss due to friction in pipes',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    application: 'Pipeline design, pumping requirements'
-  },
-  {
-    id: 'fluid-006',
-    name: 'Pump Power',
-    formula: 'P = ρgQH/η',
-    description: 'Power required by a pump',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    application: 'Pump sizing, motor selection'
-  },
-  {
-    id: 'fluid-007',
-    name: 'Specific Speed (Pump)',
-    formula: 'N_s = \\frac{N\\sqrt{Q}}{H^{0.75}}',
-    description: 'Characterizes pump type',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    application: 'Pump type selection'
-  },
-  {
-    id: 'fluid-008',
-    name: 'Weir Flow Rate',
-    formula: 'Q = C_d × L × H^{1.5}',
-    description: 'Flow over a weir',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    application: 'Measuring flow in open channels'
-  },
-  {
-    id: 'fluid-009',
-    name: 'Manning\'s Equation',
-    formula: 'V = (1/n) × R^{0.67} × S^{0.5}',
-    description: 'Open channel flow velocity',
-    topic: 'Fluid Mechanics',
-    area: 'A',
-    constants: [
-      { symbol: 'n', value: 'Manning\'s roughness', description: 'channel roughness coefficient' },
-      { symbol: 'R', value: 'A/P', description: 'hydraulic radius' },
-      { symbol: 'S', value: 'bed slope', description: 'energy slope' }
+    area: 'Structures, Environment & Bioprocess',
+    areaCode: 'C',
+    color: 'amber',
+    topics: [
+      {
+        topic: 'Drying & Moisture',
+        formulas: [
+          { name: 'Moisture Content (Wet Basis)', formula: 'MC_wb = (W_w / W_t) × 100%', variables: [{ symbol: 'MC_wb', meaning: 'Moisture content wet basis (%)' }, { symbol: 'W_w', meaning: 'Weight of water (kg)' }, { symbol: 'W_t', meaning: 'Total weight (kg)' }] },
+          { name: 'Moisture Content (Dry Basis)', formula: 'MC_db = (W_w / W_d) × 100%', variables: [{ symbol: 'MC_db', meaning: 'Moisture content dry basis (%)' }, { symbol: 'W_w', meaning: 'Weight of water (kg)' }, { symbol: 'W_d', meaning: 'Dry matter weight (kg)' }] },
+          { name: 'Dry Matter Conservation', formula: 'W_f = W_i × (100 - MC_i) / (100 - MC_f)', variables: [{ symbol: 'W_f', meaning: 'Final weight (kg)' }, { symbol: 'W_i', meaning: 'Initial weight (kg)' }, { symbol: 'MC_i', meaning: 'Initial moisture content (%)' }, { symbol: 'MC_f', meaning: 'Final moisture content (%)' }] },
+          { name: 'Water Removed During Drying', formula: 'W_rem = W_i - W_f', variables: [{ symbol: 'W_rem', meaning: 'Water removed (kg)' }, { symbol: 'W_i', meaning: 'Initial weight (kg)' }, { symbol: 'W_f', meaning: 'Final weight (kg)' }] },
+          { name: 'Moisture Removal Rate', formula: 'MR = W_rem / t', variables: [{ symbol: 'MR', meaning: 'Moisture removal rate (kg/h)' }, { symbol: 'W_rem', meaning: 'Water removed (kg)' }, { symbol: 't', meaning: 'Drying time (h)' }] },
+          { name: 'Drying Air Required', formula: 'm_air = m_water / (w_out - w_in)', variables: [{ symbol: 'm_air', meaning: 'Mass of dry air (kg)' }, { symbol: 'm_water', meaning: 'Water to remove (kg)' }, { symbol: 'w_out', meaning: 'Exit air humidity (kg/kg)' }, { symbol: 'w_in', meaning: 'Inlet air humidity (kg/kg)' }] },
+        ],
+      },
+      {
+        topic: 'Heat Transfer',
+        formulas: [
+          { name: 'Sensible Heat', formula: 'Q = m × Cp × ΔT', variables: [{ symbol: 'Q', meaning: 'Heat energy (kJ)' }, { symbol: 'm', meaning: 'Mass (kg)' }, { symbol: 'Cp', meaning: 'Specific heat capacity (kJ/kg·°C)' }, { symbol: 'ΔT', meaning: 'Temperature change (°C)' }] },
+          { name: 'Latent Heat', formula: 'Q = m × λ', variables: [{ symbol: 'Q', meaning: 'Heat energy (kJ)' }, { symbol: 'm', meaning: 'Mass (kg)' }, { symbol: 'λ', meaning: 'Latent heat of vaporization (kJ/kg)' }] },
+          { name: 'Log Mean Temperature Difference', formula: 'ΔT_lm = (ΔT₁ - ΔT₂) / ln(ΔT₁/ΔT₂)', variables: [{ symbol: 'ΔT_lm', meaning: 'LMTD (°C)' }, { symbol: 'ΔT₁', meaning: 'Temperature difference at one end (°C)' }, { symbol: 'ΔT₂', meaning: 'Temperature difference at other end (°C)' }] },
+          { name: 'Heat Exchanger Duty', formula: 'Q = U × A × ΔT_lm', variables: [{ symbol: 'Q', meaning: 'Heat transfer rate (W or kJ/h)' }, { symbol: 'U', meaning: 'Overall heat transfer coefficient' }, { symbol: 'A', meaning: 'Heat transfer area (m²)' }, { symbol: 'ΔT_lm', meaning: 'LMTD (°C)' }] },
+        ],
+      },
+      {
+        topic: 'Biogas & Fermentation',
+        formulas: [
+          { name: 'Volatile Solids Loading', formula: 'VS = N × M × F_vs', variables: [{ symbol: 'VS', meaning: 'Volatile solids per day (kg)' }, { symbol: 'N', meaning: 'Number of animals' }, { symbol: 'M', meaning: 'Manure per animal (kg/day)' }, { symbol: 'F_vs', meaning: 'Volatile solids fraction (decimal)' }] },
+          { name: 'Biogas Production', formula: 'V_biogas = VS × Y', variables: [{ symbol: 'V_biogas', meaning: 'Biogas volume (m³/day)' }, { symbol: 'VS', meaning: 'Volatile solids (kg/day)' }, { symbol: 'Y', meaning: 'Biogas yield (m³/kg VS)' }] },
+          { name: 'Methane Content', formula: 'V_CH₄ = V_biogas × %CH₄', variables: [{ symbol: 'V_CH₄', meaning: 'Methane volume (m³/day)' }, { symbol: 'V_biogas', meaning: 'Total biogas (m³/day)' }, { symbol: '%CH₄', meaning: 'Methane percentage (typically 55-65%)' }] },
+          { name: 'Fermenter Volume', formula: 'V_f = V_d × HRT × H_f', variables: [{ symbol: 'V_f', meaning: 'Fermenter volume (m³)' }, { symbol: 'V_d', meaning: 'Daily substrate volume (m³/day)' }, { symbol: 'HRT', meaning: 'Hydraulic retention time (days)' }, { symbol: 'H_f', meaning: 'Headspace factor (1.2-1.3)' }] },
+        ],
+      },
+      {
+        topic: 'Feed & Food Processing',
+        formulas: [
+          { name: "Pearson's Square (Feed Formulation)", formula: 'Parts_H / Parts_L = (T - P_L) / (P_H - T)', variables: [{ symbol: 'Parts_H', meaning: 'Parts of high-CP ingredient' }, { symbol: 'Parts_L', meaning: 'Parts of low-CP ingredient' }, { symbol: 'T', meaning: 'Target CP (%)' }, { symbol: 'P_H', meaning: 'High ingredient CP (%)' }, { symbol: 'P_L', meaning: 'Low ingredient CP (%)' }] },
+        ],
+      },
+      {
+        topic: 'Structures & Ventilation',
+        formulas: [
+          { name: 'Ventilation Rate', formula: 'Q_v = V × ACH', variables: [{ symbol: 'Q_v', meaning: 'Ventilation rate (m³/h)' }, { symbol: 'V', meaning: 'Room volume (m³)' }, { symbol: 'ACH', meaning: 'Air changes per hour' }] },
+          { name: 'Psychrometric Relative Humidity', formula: 'RH = (w / w_s) × 100%', variables: [{ symbol: 'RH', meaning: 'Relative humidity (%)' }, { symbol: 'w', meaning: 'Actual humidity ratio (kg/kg)' }, { symbol: 'w_s', meaning: 'Saturation humidity ratio (kg/kg)' }] },
+          { name: 'Structural Compressive Stress', formula: 'σ = F / A', variables: [{ symbol: 'σ', meaning: 'Compressive stress (Pa or kPa)' }, { symbol: 'F', meaning: 'Applied force (N)' }, { symbol: 'A', meaning: 'Cross-sectional area (m²)' }] },
+        ],
+      },
     ],
-    application: 'Open channel design, canal capacity'
   },
-
-  // Thermodynamics
-  {
-    id: 'thermo-001',
-    name: 'First Law of Thermodynamics',
-    formula: 'Q = ΔU + W',
-    description: 'Energy conservation',
-    topic: 'Thermodynamics',
-    area: 'A',
-    application: 'Heat engines, refrigeration cycles'
-  },
-  {
-    id: 'thermo-002',
-    name: 'Heat Transfer (Conduction)',
-    formula: 'Q̇ = kA(ΔT/L)',
-    description: 'Fourier\'s law of heat conduction',
-    topic: 'Thermodynamics',
-    area: 'A',
-    application: 'Insulation design, heat exchangers'
-  },
-  {
-    id: 'thermo-003',
-    name: 'Heat Transfer (Convection)',
-    formula: 'Q̇ = hAΔT',
-    description: 'Newton\'s law of cooling',
-    topic: 'Thermodynamics',
-    area: 'A',
-    application: 'Cooling of structures, engines'
-  },
-  {
-    id: 'thermo-004',
-    name: 'Thermal Efficiency',
-    formula: 'η = W/Q_H = 1 - Q_L/Q_H',
-    description: 'Heat engine efficiency',
-    topic: 'Thermodynamics',
-    area: 'A',
-    application: 'Evaluating engine performance'
-  },
-  {
-    id: 'thermo-005',
-    name: 'COP (Refrigerator)',
-    formula: 'COP_R = Q_L/W_{in} = Q_L/(Q_H - Q_L)',
-    description: 'Coefficient of Performance',
-    topic: 'Thermodynamics',
-    area: 'A',
-    application: 'Refrigeration system evaluation'
-  },
-  {
-    id: 'thermo-006',
-    name: 'Overall Heat Transfer Coefficient',
-    formula: '1/U = 1/h_i + L/k + 1/h_o',
-    description: 'Combined heat transfer through layers',
-    topic: 'Thermodynamics',
-    area: 'A',
-    application: 'Composite wall heat transfer'
-  },
-
-  // Internal Combustion Engine
-  {
-    id: 'ice-001',
-    name: 'Indicated Horsepower',
-    formula: 'IP = (P_L × L × A × N) / 2',
-    description: 'Power developed in cylinder',
-    topic: 'ICE',
-    area: 'A',
-    application: 'Engine power calculation'
-  },
-  {
-    id: 'ice-002',
-    name: 'Brake Horsepower',
-    formula: 'BHP = (2π × N × T) / 33000',
-    description: 'Useful power output',
-    topic: 'ICE',
-    area: 'A',
-    application: 'Engine rating'
-  },
-  {
-    id: 'ice-003',
-    name: 'Mechanical Efficiency',
-    formula: 'η_m = BHP/IHP',
-    description: 'Mechanical losses in engine',
-    topic: 'ICE',
-    area: 'A',
-    application: 'Engine efficiency evaluation'
-  },
-  {
-    id: 'ice-004',
-    name: 'Volumetric Efficiency',
-    formula: 'η_v = (\\text{Actual air intake})/(\\text{Displacement volume}) \\times 100%',
-    description: 'Engine aspiration efficiency',
-    topic: 'ICE',
-    area: 'A',
-    application: 'Supercharger/turbocharger evaluation'
-  },
-  {
-    id: 'ice-005',
-    name: 'Specific Fuel Consumption',
-    formula: 'SFC = \\text{Fuel consumption (kg/hr)} / BHP',
-    description: 'Fuel efficiency measure',
-    topic: 'ICE',
-    area: 'A',
-    application: 'Engine fuel economy'
-  },
-  {
-    id: 'ice-006',
-    name: 'Displacement Volume',
-    formula: 'V_d = (π/4) × D² × L × n',
-    description: 'Total cylinder volume displaced',
-    topic: 'ICE',
-    area: 'A',
-    application: 'Engine sizing'
-  },
-
-  // Power and Machinery
-  {
-    id: 'power-001',
-    name: 'Belt Tension Ratio',
-    formula: 'T₁/T₂ = e^(μθ)',
-    description: 'Belt drive tension relationship',
-    topic: 'Power Transmission',
-    area: 'A',
-    application: 'Belt drive design'
-  },
-  {
-    id: 'power-002',
-    name: 'Gear Ratio',
-    formula: 'GR = N₁/N₂ = T₂/T₁ = D₂/D₁',
-    description: 'Speed and torque relationship',
-    topic: 'Power Transmission',
-    area: 'A',
-    application: 'Gearbox design'
-  },
-  {
-    id: 'power-003',
-    name: 'Tractive Effort',
-    formula: 'TE = W × μ',
-    description: 'Pulling force from wheels',
-    topic: 'Tractor Mechanics',
-    area: 'A',
-    constants: [{ symbol: 'μ', value: '0.6-0.9', description: 'traction coefficient on concrete' }],
-    application: 'Tractor performance'
-  },
-  {
-    id: 'power-004',
-    name: 'Drawbar Power',
-    formula: 'DBP = TE × V / 375',
-    description: 'Power available for pulling',
-    topic: 'Tractor Mechanics',
-    area: 'A',
-    application: 'Field performance calculation'
-  },
-
-  // Engineering Economy
-  {
-    id: 'econ-001',
-    name: 'Present Worth',
-    formula: 'PW = F/(1+i)^n',
-    description: 'Future value to present value',
-    topic: 'Engineering Economy',
-    area: 'A',
-    application: 'Project evaluation'
-  },
-  {
-    id: 'econ-002',
-    name: 'Future Worth',
-    formula: 'F = P(1+i)^n',
-    description: 'Present to future value',
-    topic: 'Engineering Economy',
-    area: 'A',
-    application: 'Investment growth'
-  },
-  {
-    id: 'econ-003',
-    name: 'Annual Worth',
-    formula: 'A = P × [i(1+i)^n]/[(1+i)^n - 1]',
-    description: 'Uniform annual equivalent',
-    topic: 'Engineering Economy',
-    area: 'A',
-    application: 'Loan amortization, project comparison'
-  },
-  {
-    id: 'econ-004',
-    name: 'Benefit-Cost Ratio',
-    formula: 'B/C = \\text{Benefits}/\\text{Costs}',
-    description: 'Project viability measure',
-    topic: 'Engineering Economy',
-    area: 'A',
-    application: 'Public project evaluation'
-  },
-  {
-    id: 'econ-005',
-    name: 'Straight-Line Depreciation',
-    formula: 'D = (\\text{Cost} - \\text{Salvage}) / \\text{Life}',
-    description: 'Annual depreciation expense',
-    topic: 'Engineering Economy',
-    area: 'A',
-    application: 'Asset valuation'
-  },
-
-  // ==================== AREA B: LAND AND WATER RESOURCES ====================
-
-  // Hydrology
-  {
-    id: 'hydro-001',
-    name: 'Runoff Volume (SCS CN)',
-    formula: 'Q = (P - I_a)² / (P - I_a + S)',
-    description: 'SCS Curve Number method',
-    topic: 'Hydrology',
-    area: 'B',
-    constants: [
-      { symbol: 'I_a', value: '0.2S', description: 'initial abstraction' },
-      { symbol: 'S', value: '(1000/CN) - 10', description: 'potential max retention' }
-    ],
-    application: 'Storm runoff estimation'
-  },
-  {
-    id: 'hydro-002',
-    name: 'Rational Method',
-    formula: 'Q = CiA',
-    description: 'Peak runoff rate',
-    topic: 'Hydrology',
-    area: 'B',
-    constants: [
-      { symbol: 'C', value: 'runoff coefficient', description: 'depends on land use' },
-      { symbol: 'i', value: 'intensity', description: 'rainfall intensity' },
-      { symbol: 'A', value: 'area', description: 'watershed area' }
-    ],
-    application: 'Urban drainage design'
-  },
-  {
-    id: 'hydro-003',
-    name: 'Rainfall Intensity',
-    formula: 'i = a/(t + b)^c',
-    description: 'IDF relationship',
-    topic: 'Hydrology',
-    area: 'B',
-    application: 'Storm drainage design'
-  },
-  {
-    id: 'hydro-004',
-    name: 'Water Balance',
-    formula: 'P = R + ET + DS',
-    description: 'Hydrologic cycle equation',
-    topic: 'Hydrology',
-    area: 'B',
-    application: 'Watershed budgeting'
-  },
-  {
-    id: 'hydro-005',
-    name: 'Darcy\'s Law (Groundwater)',
-    formula: 'Q = K × A × i',
-    description: 'Groundwater flow',
-    topic: 'Hydrology',
-    area: 'B',
-    application: 'Well yield, aquifer testing'
-  },
-  {
-    id: 'hydro-006',
-    name: 'Specific Yield',
-    formula: 'S_y = V_w / V_t',
-    description: 'Aquifer storage capacity',
-    topic: 'Hydrology',
-    area: 'B',
-    application: 'Groundwater resource evaluation'
-  },
-
-  // Irrigation and Drainage
-  {
-    id: 'irr-001',
-    name: 'Crop Water Requirement',
-    formula: 'ET_c = K_c × ET_o',
-    description: 'Crop evapotranspiration',
-    topic: 'Irrigation',
-    area: 'B',
-    application: 'Irrigation scheduling'
-  },
-  {
-    id: 'irr-002',
-    name: 'Irrigation Efficiency',
-    formula: '\\text{Efficacy} = (\\text{Water stored})/(\\text{Water applied})',
-    description: 'Overall irrigation efficiency',
-    topic: 'Irrigation',
-    area: 'B',
-    application: 'Irrigation system evaluation'
-  },
-  {
-    id: 'irr-003',
-    name: 'Net Irrigation Requirement',
-    formula: 'NIR = ET_c - P_e - GW',
-    description: 'Net water needed by crop',
-    topic: 'Irrigation',
-    area: 'B',
-    application: 'Irrigation planning'
-  },
-  {
-    id: 'irr-004',
-    name: 'Gross Irrigation Requirement',
-    formula: 'GIR = NIR / \\text{Efficiency}',
-    description: 'Total water to apply',
-    topic: 'Irrigation',
-    area: 'B',
-    application: 'Water source sizing'
-  },
-  {
-    id: 'irr-005',
-    name: 'Sprinkler Application Rate',
-    formula: 'I = q / A',
-    description: 'Water application rate',
-    topic: 'Irrigation',
-    area: 'B',
-    application: 'Sprinkler system design'
-  },
-  {
-    id: 'irr-006',
-    name: 'Drip Irrigation Frequency',
-    formula: 'f = nS_dS_l / (q × E_a × 1000)',
-    description: 'Time between irrigations',
-    topic: 'Irrigation',
-    area: 'B',
-    application: 'Drip system scheduling'
-  },
-  {
-    id: 'irr-007',
-    name: 'Soil Infiltration Rate',
-    formula: 'f = f_c + (f_o - f_c)e^(-kt)',
-    description: 'Kostiakov infiltration model',
-    topic: 'Irrigation',
-    area: 'B',
-    application: 'Basin irrigation design'
-  },
-
-  // Soil Mechanics
-  {
-    id: 'soil-001',
-    name: 'Soil Bulk Density',
-    formula: 'ρ_b = M_s / V_t',
-    description: 'Dry soil mass per total volume',
-    topic: 'Soil Properties',
-    area: 'B',
-    application: 'Soil compaction, porosity'
-  },
-  {
-    id: 'soil-002',
-    name: 'Porosity',
-    formula: 'n = (V_v / V_t) × 100%',
-    description: 'Void space percentage',
-    topic: 'Soil Properties',
-    area: 'B',
-    application: 'Soil structure evaluation'
-  },
-  {
-    id: 'soil-003',
-    name: 'Soil Moisture Content',
-    formula: 'θ = (W_w - W_d) / W_d × 100%',
-    description: 'Water content by weight',
-    topic: 'Soil Properties',
-    area: 'B',
-    application: 'Irrigation scheduling'
-  },
-  {
-    id: 'soil-004',
-    name: 'Hydraulic Conductivity',
-    formula: 'K = QL/(AΔh)',
-    description: 'Darcy\'s law for soil',
-    topic: 'Soil Properties',
-    area: 'B',
-    application: 'Drainage design'
-  },
-
-  // ==================== AREA C: STRUCTURES, ENVIRONMENT, BIOPROCESS ====================
-
-  // Strength of Materials
-  {
-    id: 'strength-001',
-    name: 'Normal Stress',
-    formula: 'σ = P/A',
-    description: 'Axial stress',
-    topic: 'Strength of Materials',
-    area: 'C',
-    application: 'Structural member design'
-  },
-  {
-    id: 'strength-002',
-    name: 'Shear Stress',
-    formula: 'τ = V/A',
-    description: 'Shear force stress',
-    topic: 'Strength of Materials',
-    area: 'C',
-    application: 'Bolted/jointed connections'
-  },
-  {
-    id: 'strength-003',
-    name: 'Bending Stress',
-    formula: 'σ = My/I',
-    description: 'Flexural stress',
-    topic: 'Strength of Materials',
-    area: 'C',
-    application: 'Beam design'
-  },
-  {
-    id: 'strength-004',
-    name: 'Moment of Inertia',
-    formula: 'I = ΣAd²',
-    description: 'Section property for bending',
-    topic: 'Strength of Materials',
-    area: 'C',
-    application: 'Structural member selection'
-  },
-  {
-    id: 'strength-005',
-    name: 'Section Modulus',
-    formula: 'Z = I/y',
-    description: 'Strength section property',
-    topic: 'Strength of Materials',
-    area: 'C',
-    application: 'Beam capacity'
-  },
-  {
-    id: 'strength-006',
-    name: 'Beam Deflection',
-    formula: 'δ = PL³/3EI (cantilever)',
-    description: 'Elastic beam deflection',
-    topic: 'Strength of Materials',
-    area: 'C',
-    application: 'Serviceability checks'
-  },
-  {
-    id: 'strength-007',
-    name: 'Euler\'s Buckling Load',
-    formula: 'P_{cr} = π²EI/(KL)²',
-    description: 'Critical buckling load',
-    topic: 'Strength of Materials',
-    area: 'C',
-    application: 'Column design'
-  },
-  {
-    id: 'strength-008',
-    name: 'Strain',
-    formula: 'ε = δ/L = σ/E',
-    description: 'Linear strain',
-    topic: 'Strength of Materials',
-    area: 'C',
-    application: 'Material deformation'
-  },
-
-  // Structural Analysis
-  {
-    id: 'struct-001',
-    name: 'Bending Moment (Simply Supported)',
-    formula: 'M_{max} = PL/4',
-    description: 'Max moment at center load',
-    topic: 'Structural Analysis',
-    area: 'C',
-    application: 'Simply supported beam design'
-  },
-  {
-    id: 'struct-002',
-    name: 'Shear Force',
-    formula: 'V = P/2',
-    description: 'Max shear at supports',
-    topic: 'Structural Analysis',
-    area: 'C',
-    application: 'Beam shear design'
-  },
-  {
-    id: 'struct-003',
-    name: 'Fixed Beam End Moments',
-    formula: 'M = PL/8',
-    description: 'Fixed end moments',
-    topic: 'Structural Analysis',
-    area: 'C',
-    application: 'Continuous beam analysis'
-  },
-  {
-    id: 'struct-004',
-    name: 'Cantilever Deflection',
-    formula: 'δ_{max} = 5wL⁴/384EI',
-    description: 'Uniformly distributed load',
-    topic: 'Structural Analysis',
-    area: 'C',
-    application: 'Roof deflection'
-  },
-
-  // Psychrometrics
-  {
-    id: 'psych-001',
-    name: 'Humidity Ratio',
-    formula: 'W = 0.622 × P_v / (P - P_v)',
-    description: 'Mass of water per mass of dry air',
-    topic: 'Psychrometrics',
-    area: 'C',
-    application: 'Air conditioning calculations'
-  },
-  {
-    id: 'psych-002',
-    name: 'Relative Humidity',
-    formula: 'φ = P_v / P_{vs} × 100%',
-    description: 'Actual to saturation vapor pressure',
-    topic: 'Psychrometrics',
-    area: 'C',
-    application: 'Comfort assessment'
-  },
-  {
-    id: 'psych-003',
-    name: 'Enthalpy',
-    formula: 'h = 1.005T + W(2501 + 1.88T)',
-    description: 'Specific enthalpy of moist air',
-    topic: 'Psychrometrics',
-    area: 'C',
-    application: 'Cooling/heating load'
-  },
-  {
-    id: 'psych-004',
-    name: 'Dew Point Temperature',
-    formula: 'T_d = [243.5 × ln(RH/100) + (17.67 × T)] / [17.67 - ln(RH/100)]',
-    description: 'Temperature at which dew forms',
-    topic: 'Psychrometrics',
-    area: 'C',
-    application: 'Condensation prediction'
-  },
-
-  // Food Processing
-  {
-    id: 'food-001',
-    name: 'Drying Rate',
-    formula: 'dm/dt = -h_m × A × ρ × (Y - Y_{eq})',
-    description: 'Moisture removal rate',
-    topic: 'Food Processing',
-    area: 'C',
-    application: 'Grain drying design'
-  },
-  {
-    id: 'food-002',
-    name: 'Fick\'s Law of Diffusion',
-    formula: 'N = -D × dC/dx',
-    description: 'Mass transfer rate',
-    topic: 'Food Processing',
-    area: 'C',
-    application: 'Drying, absorption processes'
-  },
-  {
-    id: 'food-003',
-    name: 'Shelf Life',
-    formula: 't = ln(S_0/S) / k',
-    description: 'Time to reach safe quality',
-    topic: 'Food Processing',
-    area: 'C',
-    application: 'Product storage life'
-  },
-  {
-    id: 'food-004',
-    name: 'Thermal Death Time',
-    formula: 't = (2.303/k) × log(N_0/N)',
-    description: 'Sterilization time',
-    topic: 'Food Processing',
-    area: 'C',
-    application: 'Pasteurization/sterilization'
-  },
-  {
-    id: 'food-005',
-    name: 'Refrigeration Load',
-    formula: 'Q = m × C_p × ΔT',
-    description: 'Heat removal requirement',
-    topic: 'Food Processing',
-    area: 'C',
-    application: 'Cold storage design'
-  },
-
-  // Bioprocess / Waste Management
-  {
-    id: 'bioprocess-001',
-    name: 'Methane Generation from Waste',
-    formula: 'CH_4 = \\text{Waste} \\times (1-\\text{moisture}) \\times \\text{VS}_{\\text{content}} \\times \\text{Yield} \\times {CH_4}_{\\text{fraction}}',
-    description: 'Methane production from anaerobic digestion',
-    topic: 'Bioprocess Engineering',
-    area: 'C',
-    constants: [
-      { symbol: 'Waste', value: 'kg/year', description: 'total waste input' },
-      { symbol: 'moisture', value: 'decimal (0-1)', description: 'moisture content of waste' },
-      { symbol: 'VS_content', value: 'decimal (0-1)', description: 'volatile solids fraction' },
-      { symbol: 'Yield', value: 'm³ CH₄/kg VS', description: 'methane yield per kg VS' },
-      { symbol: 'CH₄_fraction', value: '~0.5–0.7', description: 'methane fraction in biogas' }
-    ],
-    application: 'Landfill gas estimation, biogas plant design'
-  },
-
-  // MATHEMATICS (used across all areas)
-  {
-    id: 'math-001',
-    name: 'Quadratic Formula',
-    formula: 'x = (-b ± √(b² - 4ac)) / 2a',
-    description: 'Solution to ax² + bx + c = 0',
-    topic: 'Algebra',
-    area: 'B',
-    application: 'Solving quadratic equations'
-  },
-  {
-    id: 'math-002',
-    name: 'Derivative (Power Rule)',
-    formula: 'd/dx(xⁿ) = n·xⁿ⁻¹',
-    description: 'Differentiation',
-    topic: 'Calculus',
-    area: 'B',
-    application: 'Rate problems, optimization'
-  },
-  {
-    id: 'math-003',
-    name: 'Integration (Power Rule)',
-    formula: '∫xⁿdx = xⁿ⁺¹/(n+1) + C',
-    description: 'Integration for n ≠ -1',
-    topic: 'Calculus',
-    area: 'B',
-    application: 'Areas, volumes, work'
-  },
-  {
-    id: 'math-004',
-    name: 'Trigonometric Identity',
-    formula: 'sin²θ + cos²θ = 1',
-    description: 'Fundamental identity',
-    topic: 'Trigonometry',
-    area: 'B',
-    application: 'Simplifying expressions'
-  },
-  {
-    id: 'math-005',
-    name: 'Law of Sines',
-    formula: 'a/sinA = b/sinB = c/sinC',
-    description: 'Triangle side-angle relationship',
-    topic: 'Trigonometry',
-    area: 'B',
-    application: 'Oblique triangle solutions'
-  },
-  {
-    id: 'math-006',
-    name: 'Law of Cosines',
-    formula: 'c² = a² + b² - 2ab·cosC',
-    description: 'Triangle side relationship',
-    topic: 'Trigonometry',
-    area: 'B',
-    application: 'Side/angle calculations'
-  },
-  {
-    id: 'math-007',
-    name: 'Mean',
-    formula: 'x̄ = Σxᵢ/n',
-    description: 'Average value',
-    topic: 'Statistics',
-    area: 'B',
-    application: 'Data analysis'
-  },
-  {
-    id: 'math-008',
-    name: 'Standard Deviation',
-    formula: 'σ = √[Σ(xᵢ - x̄)²/(n-1)]',
-    description: 'Spread measure',
-    topic: 'Statistics',
-    area: 'B',
-    application: 'Variability assessment'
-  },
-  {
-    id: 'math-009',
-    name: 'Z-Score',
-    formula: 'z = (x - μ)/σ',
-    description: 'Standardized score',
-    topic: 'Statistics',
-    area: 'B',
-    application: 'Normal distribution'
-  },
-  {
-    id: 'math-010',
-    name: 'Permutation',
-    formula: 'P(n,r) = n!/(n-r)!',
-    description: 'Arrangement count',
-    topic: 'Combinatorics',
-    area: 'B',
-    application: 'Probability calculations'
-  },
-  {
-    id: 'math-011',
-    name: 'Combination',
-    formula: 'C(n,r) = n!/[r!(n-r)!]',
-    description: 'Selection count',
-    topic: 'Combinatorics',
-    area: 'B',
-    application: 'Probability calculations'
-  },
-  {
-    id: 'math-012',
-    name: 'First Order ODE',
-    formula: 'dy/dx + Py = Q',
-    description: 'Linear differential equation',
-    topic: 'Differential Equations',
-    area: 'B',
-    application: 'Engineering systems'
-  },
-  {
-    id: 'math-013',
-    name: 'Area Between Curves',
-    formula: 'A = ∫[a,b] (f(x) - g(x))dx',
-    description: 'Calculus area',
-    topic: 'Calculus',
-    area: 'B',
-    application: 'Geometric problems'
-  }
 ];
-
-export const formulasByTopic = formulas.reduce((acc, formula) => {
-  if (!acc[formula.topic]) {
-    acc[formula.topic] = [];
-  }
-  acc[formula.topic].push(formula);
-  return acc;
-}, {} as Record<string, Formula[]>);
-
-export const formulasByArea = {
-  A: formulas.filter(formula => formula.area === 'A'),
-  B: formulas.filter(formula => formula.area === 'B'),
-  C: formulas.filter(formula => formula.area === 'C')
-};
-
-export function getFormulasByTopic(topic: string): Formula[] {
-  return formulasByTopic[topic] || [];
-}
-
-export function getAllTopics(): string[] {
-  return [...new Set(formulas.map(formula => formula.topic))].sort();
-}
