@@ -1,191 +1,124 @@
 import Link from 'next/link';
 import { tosStructure } from '@/data/tos';
 
+const areaMeta = {
+  A: { bg: 'bg-primary-100 dark:bg-primary-900/50', text: 'text-primary-700 dark:text-primary-300', tag: 'bg-primary-600/10 text-primary-700 dark:text-primary-300' },
+  B: { bg: 'bg-green-100 dark:bg-green-900/50', text: 'text-green-700 dark:text-green-300', tag: 'bg-green-600/10 text-green-700 dark:text-green-300' },
+  C: { bg: 'bg-amber-100 dark:bg-amber-900/50', text: 'text-amber-700 dark:text-amber-300', tag: 'bg-amber-600/10 text-amber-700 dark:text-amber-300' },
+};
+
 export default function Home() {
-  // Count questions by area (simulated - would use comprehensive-questions.ts in full implementation)
-  const areaQuestionCounts = { A: 50, B: 50, C: 60 };
+  const areas = ['A', 'B', 'C'] as const;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-primary-700 to-primary-900 text-white rounded-2xl p-8 mb-8">
-        <h2 className="text-3xl font-bold mb-4">ABE Board Exam Preparation</h2>
-        <p className="text-primary-100 text-lg mb-6">
-          Comprehensive practice based on PRC ABELE-TOS. 100-item tests with step-by-step solutions, formula references, and weak point tracking.
+    <div>
+      <div className="bg-primary-700 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-20 md:py-28">
+          <div className="max-w-2xl">
+            <p className="text-primary-200 text-sm font-medium mb-3 tracking-widest uppercase">
+              PRC ABELE-TOS Based
+            </p>
+            <h1 className="text-4xl md:text-5xl font-display leading-tight mb-4">
+              ABE Board Exam<br />Preparation
+            </h1>
+            <p className="text-lg text-primary-100 leading-relaxed mb-8">
+              2,000+ questions across three TOS areas. Step-by-step solutions, formula references, and mock tests that simulate the actual board exam.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/practice" className="bg-white text-primary-800 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition text-sm">
+                Start Mock Test
+              </Link>
+              <Link href="/practice?tab=formulas" className="border border-primary-400 text-primary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition text-sm">
+                Formula Reference
+              </Link>
+              <Link href="/practice?tab=reference" className="border border-primary-400 text-primary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition text-sm">
+                TOS Guide
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-primary-800 border-t border-primary-600">
+        <div className="max-w-6xl mx-auto px-4 py-5">
+          <div className="flex flex-wrap gap-8 md:gap-16 justify-center md:justify-start">
+            <div><span className="text-2xl font-bold text-white">2,075+</span> <span className="text-primary-200 text-sm ml-1">questions</span></div>
+            <div><span className="text-2xl font-bold text-white">3</span> <span className="text-primary-200 text-sm ml-1">TOS areas</span></div>
+            <div><span className="text-2xl font-bold text-white">100</span> <span className="text-primary-200 text-sm ml-1">items per test</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-3xl font-display mb-2">Examination Areas</h2>
+        <p className="text-gray-500 dark:text-gray-400 mb-10 max-w-xl">
+          Three broad subject areas based on the PRC ABELE-TOS breakdown.
         </p>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            href="/practice"
-            className="bg-white dark:bg-slate-700 text-primary-700 dark:text-primary-300 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 dark:hover:bg-primary-900/50 transition"
-          >
-            Start Mock Test
-          </Link>
-          <Link
-            href="/practice?tab=formulas"
-            className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-500 transition"
-          >
-            Formula Reference
-          </Link>
-          <Link
-            href="/practice?tab=formulas"
-            className="bg-primary-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition"
-          >
-            Formulas
-          </Link>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {areas.map((code, i) => {
+            const subject = tosStructure[`subject${code}` as keyof typeof tosStructure];
+            const meta = areaMeta[code];
+            return (
+              <Link
+                key={code}
+                href={`/quiz?area=${code}`}
+                className={`group bg-white dark:bg-slate-800 rounded-2xl shadow-sm border dark:border-slate-700 hover:shadow-lg transition-all p-6 ${
+                  i === 1 ? 'md:mt-8' : i === 2 ? 'md:mt-4' : ''
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-10 h-10 ${meta.bg} ${meta.text} rounded-xl flex items-center justify-center font-bold text-lg`}>
+                    {code}
+                  </div>
+                  <div className="text-xs text-gray-400">
+                    <span className={`inline-block px-2 py-0.5 rounded ${meta.tag}`}>
+                      {subject?.percentage}% of exam
+                    </span>
+                  </div>
+                </div>
+                <h3 className="font-display text-lg mb-2 leading-snug">{subject?.name?.split('(')[0]?.trim() || `Area ${code}`}</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                  {code === 'A' ? 'Internal combustion engines, tractors, field capacity, drawbar power, fuel consumption, PAES standards, mechanization planning, automation, laws.' :
+                   code === 'B' ? 'Hydrology, irrigation, drainage, USLE, SCS curve number, Manning flow, flood risk, crop evapotranspiration, pumps, soil conservation.' :
+                   'Farm structures, drying, moisture content, heat transfer, biogas, fermenter design, feed formulation, ventilation, food processing.'}
+                </p>
+              </Link>
+            );
+          })}
         </div>
       </div>
 
-      {/* Area Distribution */}
-      <div className="mb-8">
-        <h3 className="text-xl font-bold mb-4">Examination Structure (TOS Based)</h3>
-        <div className="grid md:grid-cols-3 gap-4">
-          <div className="bg-white rounded-xl dark:bg-slate-800 p-6 shadow-sm border dark:border-slate-700-2 border-r-4 border-b-4 border-primary-500">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-3xl font-bold text-primary-600 dark:text-primary-400">32%</span>
-              <span className="bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 px-3 py-1 rounded-full text-sm">Area A</span>
+      <div className="bg-gray-100 dark:bg-slate-800/50 border-t border-b dark:border-slate-700">
+        <div className="max-w-6xl mx-auto px-4 py-16">
+          <h2 className="text-3xl font-display mb-2">How it works</h2>
+          <p className="text-gray-500 dark:text-gray-400 mb-10 max-w-xl">
+            Three study modes designed for board exam preparation.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <span className="text-3xl font-display text-primary-600 dark:text-primary-400 block mb-3">01</span>
+              <h3 className="font-display text-lg mb-2">Mock Tests</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                100 randomly selected questions per area. Marks the tough ones and tracks weak topics.
+              </p>
             </div>
-            <h4 className="font-semibold mb-2">Power, Energy & Machinery</h4>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
-              Agricultural and Biosystems Power Engineering, Mechanization, Machinery Testing, Automation, Project Management, and Laws
-            </p>
-            <div className="text-xs text-gray-500 dark:text-gray-400">{areaQuestionCounts.A}+ Questions</div>
-          </div>
-          <div className="bg-white rounded-xl dark:bg-slate-800 p-6 shadow-sm border dark:border-slate-700-2 border-r-4 border-b-4 border-green-500">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-3xl font-bold text-green-600 dark:text-green-400">32%</span>
-              <span className="bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-sm">Area B</span>
+            <div>
+              <span className="text-3xl font-display text-primary-600 dark:text-primary-400 block mb-3">02</span>
+              <h3 className="font-display text-lg mb-2">Step-by-Step Solutions</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                Every question includes key concept, worked steps, formula, and derivation.
+              </p>
             </div>
-            <h4 className="font-semibold mb-2">Land & Water Resources</h4>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
-              Hydrology, Irrigation & Drainage, Soil & Water Conservation, Aquaculture, Agricultural Sciences, Mathematics
-            </p>
-            <div className="text-xs text-gray-500 dark:text-gray-400">{areaQuestionCounts.B}+ Questions</div>
-          </div>
-          <div className="bg-white rounded-xl dark:bg-slate-800 p-6 shadow-sm border dark:border-slate-700-2 border-r-4 border-b-4 border-amber-500">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-3xl font-bold text-amber-600 dark:text-amber-400">36%</span>
-              <span className="bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 px-3 py-1 rounded-full text-sm">Area C</span>
+            <div>
+              <span className="text-3xl font-display text-primary-600 dark:text-primary-400 block mb-3">03</span>
+              <h3 className="font-display text-lg mb-2">Formula Reference</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                60+ formulas by TOS area with variable definitions, rendered in LaTeX.
+              </p>
             </div>
-            <h4 className="font-semibold mb-2">Structures & Bioprocess</h4>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
-              Agricultural Buildings, Farm Electrification, Environment Engineering, Bioprocess Engineering, Food Engineering
-            </p>
-            <div className="text-xs text-gray-500 dark:text-gray-400">{areaQuestionCounts.C}+ Questions</div>
           </div>
         </div>
-      </div>
-
-      {/* Mock Tests */}
-      <div className="mb-8">
-        <h3 className="text-xl font-bold mb-4">Mock Tests by Area</h3>
-        <div className="grid md:grid-cols-4 gap-4">
-          <Link
-            href="/quiz?area=A"
-            className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-5 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition text-center"
-          >
-            <div className="text-2xl font-bold text-primary-700 dark:text-primary-300">A</div>
-            <div className="text-sm text-primary-700 dark:text-primary-300 font-medium">100-Item Mock Test</div>
-          </Link>
-          <Link
-            href="/quiz?area=B"
-            className="bg-green-50 dark:bg-green-900/30 rounded-xl p-5 hover:bg-green-100 dark:hover:bg-green-900/50 transition text-center"
-          >
-            <div className="text-2xl font-bold text-green-700 dark:text-green-300">B</div>
-            <div className="text-sm text-green-700 dark:text-green-300 font-medium">100-Item Mock Test</div>
-          </Link>
-          <Link
-            href="/quiz?area=C"
-            className="bg-amber-50 dark:bg-amber-900/30 rounded-xl p-5 hover:bg-amber-100 dark:hover:bg-amber-900/50 transition text-center"
-          >
-            <div className="text-2xl font-bold text-amber-700 dark:text-amber-300">C</div>
-            <div className="text-sm text-amber-700 dark:text-amber-300 font-medium">100-Item Mock Test</div>
-          </Link>
-          <Link
-            href="/practice"
-            className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-5 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition text-center"
-          >
-            <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">📋</div>
-            <div className="text-sm text-blue-700 dark:text-blue-300 font-medium">Formulas &amp; TOS</div>
-          </Link>
-        </div>
-      </div>
-
-      {/* Difficulty Levels */}
-      <div className="mb-8">
-        <h3 className="text-xl font-bold mb-4">Difficulty Levels</h3>
-        <div className="grid md:grid-cols-3 gap-4">
-          <div className="bg-green-50 dark:bg-green-900/30 rounded-xl p-5 border border-green-200 dark:border-green-800">
-            <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">🟢 Easy</h4>
-            <p className="text-sm text-green-700 dark:text-green-300">
-              Same concept, changing given values. Practice problems to master basic understanding and formula application.
-            </p>
-          </div>
-          <div className="bg-amber-50 dark:bg-amber-900/30 rounded-xl p-5 border border-amber-200 dark:border-amber-800">
-            <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">🟡 Average</h4>
-            <p className="text-sm text-amber-700 dark:text-amber-300">
-              Includes logic application. Multi-step solutions, slight difficulty increase, real-world contexts.
-            </p>
-          </div>
-          <div className="bg-red-50 dark:bg-red-900/30 rounded-xl p-5 border border-red-200 dark:border-red-800">
-            <h4 className="font-semibold text-red-800 dark:text-red-200 mb-2">🔴 Hard</h4>
-            <p className="text-sm text-red-700 dark:text-red-300">
-              Situational problems with missing constants. Tests critical thinking and engineering judgment.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Features */}
-      <div className="grid md:grid-cols-3 gap-4">
-        <div className="bg-white rounded-xl dark:bg-slate-800 p-5 shadow-sm border dark:border-slate-700">
-          <div className="text-2xl mb-2">📝</div>
-          <h4 className="font-semibold mb-1">100-Item Mock Tests</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Area-specific board exam simulation</p>
-        </div>
-        <div className="bg-white rounded-xl dark:bg-slate-800 p-5 shadow-sm border dark:border-slate-700">
-          <div className="text-2xl mb-2">✓</div>
-          <h4 className="font-semibold mb-1">Step-by-Step Solutions</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Detailed explanations for both correct and wrong answers</p>
-        </div>
-        <div className="bg-white rounded-xl dark:bg-slate-800 p-5 shadow-sm border dark:border-slate-700">
-          <div className="text-2xl mb-2">📐</div>
-          <h4 className="font-semibold mb-1">Formula Reference</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Complete formula guide with descriptions</p>
-        </div>
-      </div>
-
-      {/* TOS Reference Summary */}
-      <div className="mt-8 bg-gray-50 dark:bg-slate-800/50 rounded-xl p-6">
-        <h3 className="font-bold mb-4 dark:text-gray-200">TOS Topics Reference</h3>
-        <div className="grid md:grid-cols-3 gap-6 text-sm">
-          <div>
-            <h4 className="font-semibold text-primary-700 dark:text-primary-300 mb-2">Area A Topics:</h4>
-            <ul className="space-y-1 text-gray-600 dark:text-gray-300">
-              {tosStructure.subjectA.subTopics.slice(0, 4).map(topic => (
-                <li key={topic.id}>• {topic.name.split('(')[0].trim()}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-green-700 dark:text-green-300 mb-2">Area B Topics:</h4>
-            <ul className="space-y-1 text-gray-600 dark:text-gray-300">
-              {tosStructure.subjectB.subTopics.slice(0, 4).map(topic => (
-                <li key={topic.id}>• {topic.name.split('(')[0].trim()}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-amber-700 dark:text-amber-300 mb-2">Area C Topics:</h4>
-            <ul className="space-y-1 text-gray-600 dark:text-gray-300">
-              {tosStructure.subjectC.subTopics.slice(0, 4).map(topic => (
-                <li key={topic.id}>• {topic.name.split('(')[0].trim()}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <Link href="/practice?tab=reference" className="text-primary-600 dark:text-primary-400 text-sm hover:underline mt-4 inline-block">
-          View full TOS →
-        </Link>
       </div>
     </div>
   );

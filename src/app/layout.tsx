@@ -28,25 +28,27 @@ export default function RootLayout({
         `}} />
         <ThemeProvider>
           <div className="flex flex-col min-h-screen">
-            <header className="bg-primary-700 dark:bg-primary-900 text-white shadow-lg">
-              <div className="max-w-7xl mx-auto px-4 py-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
-                      <span className="text-xl font-bold">ABE</span>
+            <header className="bg-primary-700 dark:bg-primary-900 text-white">
+              <div className="max-w-7xl mx-auto px-4">
+                <div className="flex items-center justify-between py-3 border-b border-primary-600">
+                  <a href="/" className="flex items-center gap-3">
+                    <div className="w-9 h-9 bg-white/15 rounded-lg flex items-center justify-center shrink-0">
+                      <span className="text-base font-bold">ABE</span>
                     </div>
-                    <div className="min-w-0">
-                      <h1 className="text-lg sm:text-xl font-bold truncate">ABE Study</h1>
-                      <p className="text-xs text-primary-200 dark:text-primary-300 hidden sm:block">Board Exam Preparation</p>
+                    <div>
+                      <div className="font-display text-base leading-tight">ABE Study</div>
+                      <div className="text-[11px] text-primary-300 leading-tight hidden sm:block">Board Exam Preparation</div>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <nav className="hidden md:flex gap-6 text-sm items-center">
-                      <a href="/" className="hover:text-primary-200 transition whitespace-nowrap">Home</a>
-                      <a href="/practice" className="hover:text-primary-200 transition whitespace-nowrap">Mock Test</a>
-                      <a href="/conversions" className="hover:text-primary-200 transition whitespace-nowrap">Conversions</a>
-                      <ThemeToggle />
+                  </a>
+                  <div className="flex items-center gap-1">
+                    <nav className="hidden md:flex items-center gap-1">
+                      <a href="/" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Home</a>
+                      <a href="/practice" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Mock Test</a>
+                      <a href="/conversions" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Conversions</a>
                     </nav>
+                    <div className="ml-2 pl-2 border-l border-primary-600">
+                      <ThemeToggle />
+                    </div>
                     <MobileNav />
                   </div>
                 </div>
@@ -55,12 +57,14 @@ export default function RootLayout({
             <main className="flex-1">
               {children}
             </main>
-            <footer className="bg-gray-800 dark:bg-gray-950 text-gray-300 py-6 mt-12 relative">
-              <div className="max-w-7xl mx-auto px-4 text-center">
-                <p className="text-sm">ABE Study - Agricultural and Biosystems Engineering Board Exam Preparation</p>
-                <p className="text-xs mt-1 text-gray-500 dark:text-gray-600">Based on PRC ABELE-TOS Guidelines</p>
+            <footer className="bg-gray-800 dark:bg-gray-950 text-gray-400 py-8 mt-12 relative">
+              <div className="max-w-7xl mx-auto px-4">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+                  <p className="text-sm">ABE Study — Agricultural and Biosystems Engineering Board Exam Prep</p>
+                  <p className="text-xs text-gray-500">PRC ABELE-TOS Based</p>
+                </div>
               </div>
-              <p className="absolute bottom-1 right-3 text-[10px] text-gray-500/60 dark:text-gray-500/60 select-none pointer-events-none">NJC</p>
+              <p className="absolute bottom-1 right-3 text-[10px] text-gray-500/40 select-none pointer-events-none">NJC</p>
             </footer>
           </div>
         </ThemeProvider>
