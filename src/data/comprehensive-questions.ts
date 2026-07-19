@@ -2,6 +2,8 @@
 // Based on recalled Sept 2022 ABELE board exam patterns
 // Key styles: definitions, equipment specs, PAES standards, applied computations, laws/nomenclature
 
+import { addFormulaQuestions } from './formula-questions';
+
 export type Difficulty = 'easy' | 'average' | 'hard';
 export type Area = 'A' | 'B' | 'C';
 
@@ -1619,3 +1621,5 @@ export const areaCQuestions: Question[] = [
     weakPoints: ['Refrigeration units', 'TR conversion']
   },
 ];
+
+addFormulaQuestions(areaAQuestions, areaBQuestions, areaCQuestions);
