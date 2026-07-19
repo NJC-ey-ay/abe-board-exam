@@ -1,14 +1,43 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import 'katex/dist/katex.min.css';
 import { ThemeProvider } from '@/lib/theme-provider';
 import ThemeToggle from './theme-toggle';
 import MobileNav from './mobile-nav';
+import MixpanelTracker from './mixpanel-tracker';
+
+const APP_NAME = 'ABE Study';
+const APP_DEFAULT_TITLE = 'ABE Study - Agricultural and Biosystems Engineering Board Exam Prep';
+const APP_DESCRIPTION = 'Comprehensive study tool for ABE board exam preparation with practice questions, step-by-step solutions, and unit conversion practice.';
 
 export const metadata: Metadata = {
-  title: 'ABE Study - Agricultural and Biosystems Engineering Board Exam Prep',
-  description: 'Comprehensive study tool for ABE board exam preparation with practice questions, step-by-step solutions, and unit conversion practice.',
+  applicationName: APP_NAME,
+  title: APP_DEFAULT_TITLE,
+  description: APP_DESCRIPTION,
   icons: { icon: '/icon.svg' },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: APP_NAME,
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    siteName: APP_NAME,
+    title: APP_DEFAULT_TITLE,
+    description: APP_DESCRIPTION,
+  },
+  twitter: {
+    card: 'summary',
+    title: APP_DEFAULT_TITLE,
+    description: APP_DESCRIPTION,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#1d4ed8',
 };
 
 export default function RootLayout({
@@ -18,6 +47,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+          <head>
+            <meta name="mobile-web-app-capable" content="yes" />
+          </head>
       <body className="antialiased min-h-screen bg-gray-50 dark:bg-slate-900 dark:text-gray-100" style={{ scrollbarGutter: 'stable' }}>
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
@@ -27,6 +59,7 @@ export default function RootLayout({
           })();
         `}} />
         <ThemeProvider>
+          <MixpanelTracker />
           <div className="flex flex-col min-h-screen">
             <header className="bg-primary-700 dark:bg-primary-900 text-white">
               <div className="max-w-7xl mx-auto px-4">
@@ -44,6 +77,7 @@ export default function RootLayout({
                     <nav className="hidden md:flex items-center gap-1">
                       <a href="/" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Home</a>
                       <a href="/practice" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Mock Test</a>
+                      <a href="/paes" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">PAES Standards</a>
                       <a href="/conversions" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Conversions</a>
                     </nav>
                     <div className="ml-2 pl-2 border-l border-primary-600">

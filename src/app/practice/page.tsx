@@ -1,13 +1,14 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { MathFormula } from '@/lib/math-renderer';
 import { areaFormulas, type FormulaCategory } from '@/data/formulas';
 import { tosStructure, getSubjectByCode } from '@/data/tos';
+import { keywordFormulas, findFormulasByKeyword } from '@/data/formula-keywords';
 
-type TabType = 'mock-test' | 'formulas' | 'reference';
+type TabType = 'mock-test' | 'formulas' | 'reference' | 'keywords';
 
 function PracticeContent() {
   const searchParams = useSearchParams();
@@ -15,25 +16,30 @@ function PracticeContent() {
   const [activeTab, setActiveTab] = useState<TabType>(initialTab);
   const [formulaArea, setFormulaArea] = useState<string>('A');
   const [tosArea, setTosArea] = useState<string>('A');
+  const [keywordSearch, setKeywordSearch] = useState('');
 
   const activeFormulas = areaFormulas.find(f => f.areaCode === formulaArea) || areaFormulas[0];
   const activeTosSubject = getSubjectByCode(tosArea);
+  const filteredKeywords = keywordSearch
+    ? findFormulasByKeyword(keywordSearch)
+    : keywordFormulas;
 
   const tabs: { key: TabType; label: string }[] = [
     { key: 'mock-test', label: 'Mock Test' },
     { key: 'formulas', label: 'Formula Reference' },
+    { key: 'keywords', label: 'Keyword Reference' },
     { key: 'reference', label: 'TOS Reference' },
   ];
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
       {/* Tab Bar */}
-      <div className="flex gap-1 mb-8 bg-gray-100 dark:bg-slate-800 rounded-xl p-1">
+      <div className="flex gap-1 mb-8 bg-gray-100 dark:bg-slate-800 rounded-xl p-1 overflow-x-auto">
         {tabs.map(t => (
           <button
             key={t.key}
             onClick={() => setActiveTab(t.key)}
-            className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition ${
+            className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition whitespace-nowrap ${
               activeTab === t.key
                 ? 'bg-white dark:bg-slate-700 shadow text-primary-700 dark:text-primary-300'
                 : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
@@ -166,6 +172,101 @@ function PracticeContent() {
                     </div>
                   ))}
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Keyword Reference Tab */}
+      {activeTab === 'keywords' && (
+        <div>
+          <h1 className="text-3xl font-bold mb-2">Keyword Formula Reference</h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
+            Search keywords you see in a problem to find the right formula to use.
+          </p>
+
+          <div className="mb-6">
+            <input
+              type="text"
+              value={keywordSearch}
+              onChange={e => setKeywordSearch(e.target.value)}
+              placeholder="Search keywords... e.g. field capacity, runoff, moisture content, Manning"
+              className="w-full px-4 py-3 rounded-xl border dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+            />
+          </div>
+
+          {!keywordSearch && (
+            <div className="flex gap-2 mb-6 flex-wrap">
+              {['A', 'B', 'C'].map(area => (
+                <button
+                  key={area}
+                  onClick={() => {
+                    const first = keywordFormulas.find(f => f.area === area);
+                    if (first) {
+                      setKeywordSearch('');
+                      setTimeout(() => {
+                        document.getElementById(`keyword-${area}-0`)?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  }}
+                  className="px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600 transition"
+                >
+                  Area {area}
+                </button>
+              ))}
+              <span className="text-sm text-gray-400 self-center ml-2">{keywordFormulas.length} entries</span>
+            </div>
+          )}
+
+          {filteredKeywords.length === 0 && (
+            <div className="text-center py-12 text-gray-500">
+              No formulas match &quot;{keywordSearch}&quot;. Try a different keyword.
+            </div>
+          )}
+
+          <div className="space-y-3">
+            {filteredKeywords.map((kf, i) => (
+              <div
+                key={i}
+                id={`keyword-${kf.area}-${i}`}
+                className="bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-4"
+              >
+                <div className="flex items-start gap-2 mb-2">
+                  <div className="flex flex-wrap gap-1.5 flex-1">
+                    {kf.keywords.map(kw => (
+                      <span
+                        key={kw}
+                        className="inline-block bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-xs px-2 py-0.5 rounded-full font-medium"
+                      >
+                        {kw}
+                      </span>
+                    ))}
+                  </div>
+                  <span className={`text-xs font-bold px-2 py-0.5 rounded shrink-0 ${
+                    kf.area === 'A' ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300' :
+                    kf.area === 'B' ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300' :
+                    'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300'
+                  }`}>
+                    {kf.area}
+                  </span>
+                </div>
+                <div className="font-semibold text-sm text-gray-800 dark:text-gray-200 mb-1">
+                  {kf.formulaName}
+                </div>
+                <div className="mb-2">
+                  <MathFormula formula={kf.formula} display />
+                </div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  <span className="font-medium text-gray-700 dark:text-gray-300">When to use: </span>
+                  {kf.whenToUse}
+                </div>
+                {kf.example && (
+                  <div className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-medium text-gray-700 dark:text-gray-300">Example: </span>
+                    {kf.example}
+                  </div>
+                )}
               </div>
             ))}
           </div>

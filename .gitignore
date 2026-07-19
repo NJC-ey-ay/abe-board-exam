@@ -6,3 +6,7 @@ out/
 .env*.local
 
 .vercel
+
+# Serwist
+public/sw*
+public/swe-worker*

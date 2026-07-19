@@ -3,12 +3,25 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { areaAQuestions, areaBQuestions, areaCQuestions } from '@/data/comprehensive-questions';
-import { generatedAreaAQuestions, generatedAreaBQuestions, generatedAreaCQuestions } from '@/data/generated-questions';
-import { bulkAreaAQuestions, bulkAreaBQuestions, bulkAreaCQuestions } from '@/data/bulk-questions';
 import type { Question, Area, Difficulty } from '@/data/comprehensive-questions';
 import { shuffleQuestions } from '@/lib/shuffle';
 import { MathRenderer, MathFormula } from '@/lib/math-renderer';
+
+async function loadQuestionsForArea(area: Area): Promise<Question[]> {
+  const [comp, gen, bulk, llmA, llmB, llmC] = await Promise.all([
+    import('@/data/comprehensive-questions'),
+    import('@/data/generated-questions'),
+    import('@/data/bulk-questions'),
+    import('@/data/llm-questions-area-a'),
+    import('@/data/llm-questions-area-b'),
+    import('@/data/llm-questions-area-c'),
+  ]);
+  if (area === 'A') return [...comp.areaAQuestions, ...gen.generatedAreaAQuestions, ...bulk.bulkAreaAQuestions, ...llmA.llmAreaAQuestions];
+  if (area === 'B') return [...comp.areaBQuestions, ...gen.generatedAreaBQuestions, ...bulk.bulkAreaBQuestions, ...llmB.llmAreaBQuestions];
+  return [...comp.areaCQuestions, ...gen.generatedAreaCQuestions, ...bulk.bulkAreaCQuestions, ...llmC.llmAreaCQuestions];
+}
+
+const AREA_COUNTS: Record<string, number> = { A: 0, B: 0, C: 0 };
 
 function QuizContent() {
   const searchParams = useSearchParams();
@@ -17,6 +30,7 @@ function QuizContent() {
   const isSimulation = searchParams.get('type') === 'simulation';
 
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showSolution, setShowSolution] = useState(false);
@@ -26,29 +40,54 @@ function QuizContent() {
   const [showFormula, setShowFormula] = useState(false);
 
   useEffect(() => {
-    let questionPool: Question[] = [];
+    setIsLoading(true);
+    setQuizQuestions([]);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setShowSolution(false);
+    setSessionStats({ correct: 0, wrong: 0 });
+    setWeakPoints([]);
+    setFlaggedQuestions([]);
 
-    if (selectedArea) {
-      if (selectedArea === 'A') questionPool = [...areaAQuestions, ...generatedAreaAQuestions, ...bulkAreaAQuestions];
-      else if (selectedArea === 'B') questionPool = [...areaBQuestions, ...generatedAreaBQuestions, ...bulkAreaBQuestions];
-      else if (selectedArea === 'C') questionPool = [...areaCQuestions, ...generatedAreaCQuestions, ...bulkAreaCQuestions];
-    } else {
-      questionPool = [...areaAQuestions, ...areaBQuestions, ...areaCQuestions, ...generatedAreaAQuestions, ...generatedAreaBQuestions, ...generatedAreaCQuestions, ...bulkAreaAQuestions, ...bulkAreaBQuestions, ...bulkAreaCQuestions];
+    async function load() {
+      let pool: Question[] = [];
+      if (selectedArea && ['A', 'B', 'C'].includes(selectedArea)) {
+        pool = await loadQuestionsForArea(selectedArea);
+      }
+      if (selectedDifficulty) {
+        pool = pool.filter(q => q.difficulty === selectedDifficulty);
+      }
+      const shuffled = shuffleQuestions(pool).slice(0, 100);
+      if (!AREA_COUNTS[selectedArea || 'A']) {
+        AREA_COUNTS.A = (await import('@/data/comprehensive-questions')).areaAQuestions.length;
+        AREA_COUNTS.B = (await import('@/data/comprehensive-questions')).areaBQuestions.length;
+        AREA_COUNTS.C = (await import('@/data/comprehensive-questions')).areaCQuestions.length;
+      }
+      setQuizQuestions(shuffled);
+      setIsLoading(false);
     }
-
-    if (selectedDifficulty) {
-      questionPool = questionPool.filter(question => question.difficulty === selectedDifficulty);
-    }
-
-    questionPool = shuffleQuestions(questionPool).slice(0, 100);
-    setQuizQuestions(questionPool);
+    load();
   }, [selectedArea, selectedDifficulty]);
+
+  if (isLoading) {
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-8">
+        <div className="text-center py-12">
+          <div className="animate-spin w-8 h-8 border-4 border-primary-600 border-t-transparent rounded-full mx-auto mb-4" />
+          <p className="text-gray-500">Loading questions...</p>
+          <Link href="/practice" className="text-primary-600 hover:underline mt-4 inline-block">
+            Go back to Mock Test selection
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   if (quizQuestions.length === 0) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-8">
         <div className="text-center py-12">
-          <p className="text-gray-500">Loading questions...</p>
+          <p className="text-gray-500">No questions found for this selection.</p>
           <Link href="/practice" className="text-primary-600 hover:underline mt-4 inline-block">
             Go back to Mock Test selection
           </Link>
@@ -156,9 +195,9 @@ function QuizContent() {
             <div className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-4 text-left">
               <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">By Area:</h4>
               <div className="space-y-1 text-sm">
-                <div>Area A: {areaAQuestions.length} questions available</div>
-                <div>Area B: {areaBQuestions.length} questions available</div>
-                <div>Area C: {areaCQuestions.length} questions available</div>
+                <div>Area A: {AREA_COUNTS.A} questions available</div>
+                <div>Area B: {AREA_COUNTS.B} questions available</div>
+                <div>Area C: {AREA_COUNTS.C} questions available</div>
               </div>
             </div>
             <div className="bg-purple-50 dark:bg-purple-900/30 rounded-xl p-4 text-left">
@@ -330,7 +369,6 @@ function QuizContent() {
                 </p>
               </div>
 
-              {/* Given */}
               {(currentQuestion.solution.given || currentQuestion.constants) && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">📋 Given</h4>
@@ -357,7 +395,6 @@ function QuizContent() {
                 </div>
               )}
 
-              {/* Formula */}
               {!isSimulation && currentQuestion.solution.formula && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">📐 Formula</h4>
@@ -367,7 +404,6 @@ function QuizContent() {
                 </div>
               )}
 
-              {/* Derive */}
               {currentQuestion.solution.derive && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">🔧 Derive</h4>
@@ -377,7 +413,6 @@ function QuizContent() {
                 </div>
               )}
 
-              {/* Steps: Substitute → Solve */}
               {currentQuestion.solution.steps && currentQuestion.solution.steps.length > 0 && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -423,9 +458,9 @@ function QuizContent() {
                         {weakPoint}
                       </span>
                     ))}
-            </div>
-          </div>
-          )}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 

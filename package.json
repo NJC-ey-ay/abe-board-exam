@@ -10,15 +10,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@serwist/core": "^9.5.11",
+    "@serwist/next": "^9.5.11",
+    "@serwist/sw": "^9.5.11",
     "clsx": "^2.1.1",
     "katex": "^0.16.47",
     "lucide-react": "^0.400.0",
+    "mixpanel-browser": "^2.81.0",
     "next": "^14.2.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
+    "@types/mixpanel-browser": "^2.60.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

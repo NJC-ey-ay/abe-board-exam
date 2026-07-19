@@ -12,6 +12,7 @@ export interface Question {
   area: Area;
   subTopic: string;
   topic: string;
+  type?: 'theory' | 'computation';
   difficulty: Difficulty;
   question: string;
   options: string[];
@@ -23,6 +24,7 @@ export interface Question {
     derive?: string;
     keyConcept: string;
     commonMistakes?: string[];
+    extraneousGivens?: string[];
     constants?: { symbol: string; value: string; description: string }[];
     weakPoints?: string[];
   };
