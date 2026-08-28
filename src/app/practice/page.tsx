@@ -1,14 +1,17 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { MathFormula } from '@/lib/math-renderer';
 import { areaFormulas, type Formula } from '@/data/formulas';
 import { tosStructure, getSubjectByCode } from '@/data/tos';
 import { keywordFormulas, findFormulasByKeyword } from '@/data/formula-keywords';
+import { getDrillsByArea, getDrillQuestions } from '@/data/formula-drills';
+import { DrillRunner, type DrillMetaView } from '@/components/DrillRunner';
+import type { Question } from '@/data/comprehensive-questions';
 
-type TabType = 'mock-test' | 'formulas' | 'reference' | 'keywords';
+type TabType = 'mock-test' | 'formulas' | 'reference' | 'keywords' | 'drills';
 
 function findFormulaById(id: string): Formula | null {
   for (const category of areaFormulas) {
@@ -27,6 +30,24 @@ function PracticeContent() {
   const [formulaArea, setFormulaArea] = useState<string>('A');
   const [tosArea, setTosArea] = useState<string>('A');
   const [keywordSearch, setKeywordSearch] = useState('');
+  const [drillArea, setDrillArea] = useState<'A' | 'B' | 'C'>('A');
+  const [activeDrill, setActiveDrill] = useState<DrillMetaView | null>(null);
+  const [drillQuestions, setDrillQuestions] = useState<Question[]>([]);
+  const [drillKey, setDrillKey] = useState(0);
+
+  const drillMetas = getDrillsByArea(drillArea);
+
+  useEffect(() => {
+    if (activeDrill) {
+      setDrillQuestions(getDrillQuestions(activeDrill.formulaId));
+    }
+  }, [activeDrill]);
+
+  const resetDrill = () => {
+    setActiveDrill(null);
+    setDrillQuestions([]);
+    setDrillKey(k => k + 1);
+  };
 
   const activeFormulas = areaFormulas.find(f => f.areaCode === formulaArea) || areaFormulas[0];
   const activeTosSubject = getSubjectByCode(tosArea);
@@ -39,6 +60,7 @@ function PracticeContent() {
     { key: 'formulas', label: 'Formula Reference' },
     { key: 'keywords', label: 'Keyword Reference' },
     { key: 'reference', label: 'TOS Reference' },
+    { key: 'drills', label: 'Equation Practice' },
   ];
 
   return (
@@ -344,6 +366,68 @@ function PracticeContent() {
                 </div>
               ))}
             </div>
+          )}
+        </div>
+      )}
+
+      {/* Equation Practice Tab */}
+      {activeTab === 'drills' && (
+        <div>
+          {activeDrill ? (
+            <DrillRunner
+              key={drillKey}
+              questions={drillQuestions}
+              formulaName={activeDrill.name}
+              formula={activeDrill.formula}
+              onExit={resetDrill}
+            />
+          ) : (
+            <>
+              <h1 className="text-3xl font-bold mb-2">Equation Practice</h1>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Pick a formula and drill 10 multiple-choice computation problems with full step-by-step solutions.
+              </p>
+
+              <div className="flex gap-2 mb-6">
+                {(['A', 'B', 'C'] as const).map(area => (
+                  <button
+                    key={area}
+                    onClick={() => setDrillArea(area)}
+                    className={`px-5 py-2 rounded-lg text-sm font-semibold transition ${
+                      drillArea === area
+                        ? 'bg-primary-600 text-white shadow'
+                        : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600'
+                    }`}
+                  >
+                    Area {area}
+                  </button>
+                ))}
+              </div>
+
+              <div className="text-sm text-gray-500 mb-4">
+                {drillMetas.length} formulas with drills available in Area {drillArea}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {drillMetas.map(meta => (
+                  <button
+                    key={meta.formulaId}
+                    onClick={() => setActiveDrill(meta)}
+                    className="group bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-4 text-left hover:shadow-lg hover:border-primary-400 transition"
+                  >
+                    <div className="font-semibold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-primary-700 dark:group-hover:text-primary-300">
+                      {meta.name}
+                    </div>
+                    <div className="mb-3 overflow-x-auto">
+                      <MathFormula formula={meta.formula} display />
+                    </div>
+                    <div className="inline-flex items-center gap-2 bg-primary-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full group-hover:bg-primary-700 transition">
+                      Start {meta.questionCount}-question drill
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </>
           )}
         </div>
       )}
