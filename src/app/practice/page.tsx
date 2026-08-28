@@ -4,11 +4,21 @@ import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { MathFormula } from '@/lib/math-renderer';
-import { areaFormulas, type FormulaCategory } from '@/data/formulas';
+import { areaFormulas, type Formula } from '@/data/formulas';
 import { tosStructure, getSubjectByCode } from '@/data/tos';
 import { keywordFormulas, findFormulasByKeyword } from '@/data/formula-keywords';
 
 type TabType = 'mock-test' | 'formulas' | 'reference' | 'keywords';
+
+function findFormulaById(id: string): Formula | null {
+  for (const category of areaFormulas) {
+    for (const topic of category.topics) {
+      const found = topic.formulas.find(f => f.id === id);
+      if (found) return found;
+    }
+  }
+  return null;
+}
 
 function PracticeContent() {
   const searchParams = useSearchParams();
@@ -226,49 +236,61 @@ function PracticeContent() {
           )}
 
           <div className="space-y-3">
-            {filteredKeywords.map((kf, i) => (
-              <div
-                key={i}
-                id={`keyword-${kf.area}-${i}`}
-                className="bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-4"
-              >
-                <div className="flex items-start gap-2 mb-2">
-                  <div className="flex flex-wrap gap-1.5 flex-1">
-                    {kf.keywords.map(kw => (
-                      <span
-                        key={kw}
-                        className="inline-block bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-xs px-2 py-0.5 rounded-full font-medium"
-                      >
-                        {kw}
-                      </span>
-                    ))}
+            {filteredKeywords.map((kf, i) => {
+              const fm = findFormulaById(kf.formulaId);
+              return (
+                <div
+                  key={i}
+                  id={`keyword-${kf.area}-${i}`}
+                  className="bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-4"
+                >
+                  <div className="flex items-start gap-2 mb-2">
+                    <div className="flex flex-wrap gap-1.5 flex-1">
+                      {kf.keywords.map(kw => (
+                        <span
+                          key={kw}
+                          className="inline-block bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-xs px-2 py-0.5 rounded-full font-medium"
+                        >
+                          {kw}
+                        </span>
+                      ))}
+                    </div>
+                    <span className={`text-xs font-bold px-2 py-0.5 rounded shrink-0 ${
+                      kf.area === 'A' ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300' :
+                      kf.area === 'B' ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300' :
+                      'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300'
+                    }`}>
+                      {kf.area}
+                    </span>
                   </div>
-                  <span className={`text-xs font-bold px-2 py-0.5 rounded shrink-0 ${
-                    kf.area === 'A' ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300' :
-                    kf.area === 'B' ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300' :
-                    'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300'
-                  }`}>
-                    {kf.area}
-                  </span>
-                </div>
-                <div className="font-semibold text-sm text-gray-800 dark:text-gray-200 mb-1">
-                  {kf.formulaName}
-                </div>
-                <div className="mb-2">
-                  <MathFormula formula={kf.formula} display />
-                </div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  <span className="font-medium text-gray-700 dark:text-gray-300">When to use: </span>
-                  {kf.whenToUse}
-                </div>
-                {kf.example && (
-                  <div className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                    <span className="font-medium text-gray-700 dark:text-gray-300">Example: </span>
-                    {kf.example}
+                  <div className="font-semibold text-sm text-gray-800 dark:text-gray-200 mb-1">
+                    {kf.formulaName}
+                    {fm && fm.name !== kf.formulaName && (
+                      <span className="ml-1 text-xs font-normal text-gray-400">({fm.name})</span>
+                    )}
                   </div>
-                )}
-              </div>
-            ))}
+                  <div className="mb-2">
+                    {fm ? (
+                      <MathFormula formula={fm.formula} display />
+                    ) : (
+                      <div className="text-sm text-amber-600 dark:text-amber-400">
+                        Formula moved — see the Formula Reference tab for this entry.
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-medium text-gray-700 dark:text-gray-300">When to use: </span>
+                    {kf.whenToUse}
+                  </div>
+                  {kf.example && (
+                    <div className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                      <span className="font-medium text-gray-700 dark:text-gray-300">Example: </span>
+                      {kf.example}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

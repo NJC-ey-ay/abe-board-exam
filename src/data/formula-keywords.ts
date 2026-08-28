@@ -1,7 +1,7 @@
 export interface KeywordFormula {
+  formulaId: string;
   keywords: string[];
   formulaName: string;
-  formula: string;
   area: string;
   whenToUse: string;
   example?: string;
@@ -10,657 +10,466 @@ export interface KeywordFormula {
 export const keywordFormulas: KeywordFormula[] = [
   // === AREA A: POWER, ENERGY & MACHINERY ===
   {
-    keywords: ['field capacity', 'effective field capacity', 'hectares per hour', 'area per time'],
+    formulaId: 'a-efc',
+    keywords: ['effective field capacity', 'hectares per hour', 'area per time', 'efc'],
     formulaName: 'Effective Field Capacity',
-    formula: 'C = (W \\times S \\times E) / 10',
     area: 'A',
-    whenToUse: 'Given working width (m), speed (km/h), and field efficiency',
-    example: 'Tractor pulling 2.0m tiller at 5 km/h, 80% efficiency → C = (2×5×0.8)/10 = 0.80 ha/h'
+    whenToUse: 'Working width (m) × speed (km/h) × efficiency ÷ 10. Efficiency must be decimal (e.g. 80% = 0.8), never 80.',
+    example: '2.0 m tiller at 5 km/h, 80% → C = (2 × 5 × 0.8) / 10 = 0.80 ha/h',
   },
   {
-    keywords: ['theoretical field capacity', 'maximum capacity', 'ideal capacity'],
+    formulaId: 'a-tfc',
+    keywords: ['theoretical field capacity', 'maximum capacity', '100% efficiency', 'ideal capacity'],
     formulaName: 'Theoretical Field Capacity',
-    formula: 'C_t = (W \\times S) / 10',
     area: 'A',
-    whenToUse: 'Given working width and speed, assuming 100% efficiency'
+    whenToUse: 'Subtract time losses (turns, refills, breakdowns) from the theoretical value. TFC assumes E = 1.',
+    example: 'At 4 m width, 6 km/h → TFC = 4 × 6 / 10 = 2.4 ha/h (with E=0.8 → 1.92 ha/h actual)',
   },
   {
-    keywords: ['field efficiency', 'efficiency percentage', 'actual vs theoretical'],
-    formulaName: 'Field Efficiency',
-    formula: 'E = C_a / C_t \\times 100\\%',
-    area: 'A',
-    whenToUse: 'Given actual and theoretical field capacities to find efficiency'
-  },
-  {
-    keywords: ['drawbar power', 'power at the drawbar', 'pull force speed'],
-    formulaName: 'Drawbar Power',
-    formula: 'P_{db} = (F \\times S) / 3.6',
-    area: 'A',
-    whenToUse: 'Given draft force (kN) and travel speed (km/h) to find power at drawbar'
-  },
-  {
-    keywords: ['PTO power', 'power take-off', 'transmission efficiency'],
-    formulaName: 'PTO Power',
-    formula: 'P_{PTO} = BP \\times \\eta_{trans}',
-    area: 'A',
-    whenToUse: 'Given brake power and transmission efficiency to find PTO output'
-  },
-  {
-    keywords: ['indicated power', 'engine power from cylinders', 'MEP', 'mean effective pressure'],
+    formulaId: 'a-indicated-power',
+    keywords: ['indicated power', 'mean effective pressure', 'MEP', 'engine geometry power', '4 stroke 2 stroke'],
     formulaName: 'Indicated Power (4-stroke)',
-    formula: 'IP = (MEP \\times L \\times A \\times N \\times n) / 60000',
     area: 'A',
-    whenToUse: 'Given engine geometry and MEP to find indicated power; 60000 for 4-stroke, 30000 for 2-stroke'
+    whenToUse: 'Engine power from MEP, displacement, and RPM. Constant is 60,000 for 4-stroke, 30,000 for 2-stroke.',
+    example: 'MEP 800 kPa, Vd 2 L, 2400 rpm, 4-stroke → IP = 800 × 2 × 2400 / 60000 = 64 kW',
   },
   {
-    keywords: ['brake power', 'output power', 'shaft power', 'BHP'],
+    formulaId: 'a-brake-power',
+    keywords: ['brake power', 'BHP', 'friction power', 'BMEP', 'shaft output'],
     formulaName: 'Brake Power',
-    formula: 'BP = IP - FP',
     area: 'A',
-    whenToUse: 'Given indicated power and friction power losses'
+    whenToUse: 'BP = IP − FP, or BHP = IP × η_mec. From BMEP on a 4-stroke, divide by (2 × 60000) because power is produced once per 2 revolutions.',
+    example: 'IP 64 kW, FP 12 kW → BP = 52 kW. From BMEP: BHP = (BMEP·Vd·N)/(2×60000)',
   },
   {
-    keywords: ['mechanical efficiency', 'engine efficiency'],
+    formulaId: 'a-mech-efficiency',
+    keywords: ['mechanical efficiency', 'brake over indicated', 'engine efficiency'],
     formulaName: 'Mechanical Efficiency',
-    formula: '\\eta_{mech} = BP / IP \\times 100\\%',
     area: 'A',
-    whenToUse: 'Given brake and indicated power to find mechanical efficiency'
+    whenToUse: 'Divide brake power by indicated power. Typical diesel engines: 80–90%.',
   },
   {
-    keywords: ['displacement', 'engine displacement', 'bore stroke cylinders', 'swept volume'],
+    formulaId: 'a-power-torque',
+    keywords: ['torque', '9549', '9550', 'power speed torque', 'engine torque'],
+    formulaName: 'Power–Torque Relationship',
+    area: 'A',
+    whenToUse: 'kW and RPM → N·m uses 9549. If power is in hp, use T = 9550 P / N. Distinguish by the power unit.',
+    example: '100 kW @ 2000 rpm → T = 9549 × 100 / 2000 = 477.5 N·m',
+  },
+  {
+    formulaId: 'a-displacement',
+    keywords: ['displacement', 'swept volume', 'bore stroke', 'engine volume', 'cc liters'],
     formulaName: 'Total Engine Displacement',
-    formula: 'V_d = (\\pi/4) \\times D^2 \\times L \\times n',
     area: 'A',
-    whenToUse: 'Given bore (cm), stroke (cm), and cylinder count'
+    whenToUse: 'Bore and stroke in cm → cm³. Convert to liters by ÷1000 before using in IP/BHP if those need liters.',
+    example: '4 cyl, bore 10 cm, stroke 12 cm → Vd = 4 × (π/4)(10²)(12) = 3769.9 cm³ = 3.77 L',
   },
   {
-    keywords: ['compression ratio', 'CR', 'clearance volume'],
+    formulaId: 'a-compression-ratio',
+    keywords: ['compression ratio', 'clearance volume', 'CR'],
     formulaName: 'Compression Ratio',
-    formula: 'CR = (V_d + V_c) / V_c',
     area: 'A',
-    whenToUse: 'Given displacement and clearance volume'
+    whenToUse: 'CR = (Vd + Vc)/Vc. Add clearance volume to displacement — never use Vd alone in the numerator.',
+    example: 'Vd 400 cc, Vc 50 cc → CR = (400+50)/50 = 9:1',
   },
   {
-    keywords: ['fuel consumption', 'fuel rate', 'liters per hour'],
-    formulaName: 'Fuel Consumption (Volume)',
-    formula: 'V = (BP \\times SFC) / \\rho',
+    formulaId: 'a-drawbar-power',
+    keywords: ['drawbar power', 'draft force speed', 'pull power', '3.6'],
+    formulaName: 'Drawbar Power',
     area: 'A',
-    whenToUse: 'Given brake power, specific fuel consumption (kg/kW·h), and fuel density (kg/L)'
+    whenToUse: 'Force in kN and speed in km/h → kW. The 3.6 converts km/h to m/s.',
+    example: '15 kN at 5 km/h → P = 15 × 5 / 3.6 = 20.83 kW',
   },
   {
-    keywords: ['thermal efficiency', 'heat to work', 'fuel energy conversion'],
-    formulaName: 'Thermal Efficiency',
-    formula: '\\eta_{th} = W_{out} / Q_{in} \\times 100\\%',
+    formulaId: 'a-sfc',
+    keywords: ['specific fuel consumption', 'SFC', 'kg per kwh', 'fuel economy'],
+    formulaName: 'Specific Fuel Consumption',
     area: 'A',
-    whenToUse: 'Given useful work output and total heat energy input'
+    whenToUse: 'Mass of fuel per unit of power per hour (kg/kW·h). Track units — SFC very often given as g/kW·h (÷1000).',
+    example: '6 kg consumed in 2 h at 40 kW → SFC = 6/(40×2) = 0.075 kg/kW·h = 75 g/kW·h',
   },
   {
-    keywords: ['draft force', 'implement pull', 'soil resistance', 'plow force'],
-    formulaName: 'Multi-disc Plow Draft',
-    formula: 'D = n \\times w \\times d \\times K',
-    area: 'A',
-    whenToUse: 'Given disc count, width/disc, depth, and soil resistance (kN/m²)'
-  },
-  {
-    keywords: ['overall efficiency', 'combined efficiency', 'efficiency chain'],
-    formulaName: 'Overall Efficiency Chain',
-    formula: '\\eta_{total} = \\eta_1 \\times \\eta_2 \\times \\eta_3 \\times ... \\times \\eta_n',
-    area: 'A',
-    whenToUse: 'Given multiple efficiency stages connected in series'
-  },
-  {
-    keywords: ['multi-row planter', 'planter capacity', 'seed drill capacity'],
-    formulaName: 'Multi-row Planter Capacity',
-    formula: 'C = (N \\times Sp \\times S \\times E) / 10',
-    area: 'A',
-    whenToUse: 'Given row count, row spacing (m), speed (km/h), and efficiency'
-  },
-  {
-    keywords: ['total harvest', 'crop yield output', 'harvest production'],
-    formulaName: 'Total Harvest Output',
-    formula: 'O = C \\times Y \\times t',
-    area: 'A',
-    whenToUse: 'Given field capacity (ha/h), yield (t/ha), and operating time (h)'
-  },
-  {
-    keywords: ['heat input', 'fuel energy input', 'calorific value'],
+    formulaId: 'a-heat-input',
+    keywords: ['heat input', 'calorific value', 'fuel energy', 'CV', '42 MJ'],
     formulaName: 'Heat Input from Fuel',
-    formula: 'Q_{in} = BP \\times SFC \\times CV',
     area: 'A',
-    whenToUse: 'Given brake power, specific fuel consumption, and fuel calorific value',
-    example: 'Engine at 100 kW, SFC = 0.25 kg/kW·h, CV = 42 MJ/kg → Q = 100 × 0.25 × 42 = 1050 MJ/h'
+    whenToUse: 'Mass flow (BP × SFC) × heating value. Diesel CV ≈ 42 MJ/kg.',
+    example: '100 kW, SFC 0.25, CV 42 → Q = 100 × 0.25 × 42 = 1050 MJ/h',
   },
   {
-    keywords: ['engine heat balance', 'heat distribution'],
-    formulaName: 'Engine Heat Balance',
-    formula: 'Q_{fuel} = Q_{brake} + Q_{cool} + Q_{exhaust} + Q_{friction}',
+    formulaId: 'a-dbhp',
+    keywords: ['drawbar horsepower', 'drawbar pull newtons', 'hp 745.7'],
+    formulaName: 'Drawbar Horsepower',
     area: 'A',
-    whenToUse: 'Given heat losses to determine fuel energy required or vice versa'
+    whenToUse: 'Pull in N, speed in m/s → hp with 745.7. If pull is in lb and speed in mph, use 375 instead.',
   },
   {
-    keywords: ['power train efficiency', 'transmission drive tractive'],
-    formulaName: 'Power Train Efficiency',
-    formula: '\\eta = \\eta_{trans} \\times \\eta_{drive} \\times \\eta_{tractive}',
-    area: 'A',
-    whenToUse: 'Given individual drivetrain component efficiencies'
-  },
-  {
-    keywords: ['hydraulic power', 'pump power', 'PTO pump'],
-    formulaName: 'PTO Pump Power',
-    formula: 'P_{hyd} = P_{PTO} \\times \\eta_{pump}',
-    area: 'A',
-    whenToUse: 'Given PTO power and pump efficiency to find hydraulic output'
-  },
-
-  // Fluid Mechanics
-  {
-    keywords: ['hydrostatic pressure', 'P = rho g h', 'fluid pressure at depth', 'water pressure'],
-    formulaName: 'Hydrostatic Pressure',
-    formula: 'P = \\rho g h',
-    area: 'A',
-    whenToUse: 'Given fluid density, gravity, and depth to find pressure at a point in a fluid',
-    example: 'h = 10 m, ρ = 1000, g = 9.81 → P = 1000 × 9.81 × 10 = 98.1 kPa'
-  },
-  {
-    keywords: ['continuity equation', 'pipe flow velocity', 'A1v1 = A2v2', 'mass conservation', 'flow rate'],
-    formulaName: 'Continuity Equation',
-    formula: 'A_1 v_1 = A_2 v_2',
-    area: 'A',
-    whenToUse: 'Given pipe diameters/areas and velocity at one section to find velocity at another'
-  },
-  {
-    keywords: ['pump power', 'hydraulic power', 'rho g Q H', 'water pump sizing'],
-    formulaName: 'Pump Power',
-    formula: 'P = \\rho g Q H / \\eta',
-    area: 'A',
-    whenToUse: 'Given flow rate, total head, fluid density, and pump efficiency to find required power'
-  },
-  // Thermodynamics
-  {
-    keywords: ["fourier's law", 'heat conduction', 'conductive heat transfer', 'k A delta T over L'],
-    formulaName: "Fourier's Law (Conduction)",
-    formula: '\\dot{Q} = kA \\times \\Delta T / L',
-    area: 'A',
-    whenToUse: 'Given thermal conductivity, area, temperature difference, and thickness for conduction rate'
-  },
-  {
-    keywords: ['refrigeration COP', 'coefficient of performance', 'cooling efficiency', 'refrigeration cycle'],
-    formulaName: 'Refrigeration COP',
-    formula: 'COP = Q_L / W_{in}',
-    area: 'A',
-    whenToUse: 'Given heat removed from cold space and work input for refrigeration system performance'
-  },
-  {
-    keywords: ['carnot efficiency', 'maximum efficiency', 'heat engine efficiency', 'ideal cycle', 'thermal efficiency limit'],
+    formulaId: 'a-carnot',
+    keywords: ['carnot', 'maximum efficiency', 'hot reservoir cold reservoir', 'kelvin'],
     formulaName: 'Carnot Efficiency',
-    formula: '\\eta = 1 - T_C / T_H',
     area: 'A',
-    whenToUse: 'Given hot and cold reservoir temperatures (K) for maximum theoretical heat engine efficiency'
-  },
-  // Engine Performance
-  {
-    keywords: ['power torque relationship', 'torque from power', '9549', 'engine torque', 'torque RPM'],
-    formulaName: 'Power-Torque Relationship',
-    formula: 'T = 9549 \\times P / N',
-    area: 'A',
-    whenToUse: 'Given power (kW) and rotational speed (RPM) to find engine torque (N·m)'
-  },
-  // Engineering Economy
-  {
-    keywords: ['simple interest', 'interest calculation', 'principal interest time', 'P(1+rt)'],
-    formulaName: 'Simple Interest',
-    formula: 'A = P(1 + rt)',
-    area: 'A',
-    whenToUse: 'Given principal, annual interest rate, and time (years) for total amount with simple interest'
+    whenToUse: 'Temperatures MUST be in Kelvin (K = °C + 273). Never use °C directly.',
+    example: 'TH 500 K (227°C), TC 300 K → η = 1 − 300/500 = 40%',
   },
   {
-    keywords: ['present worth', 'present value', 'discounting', 'PV formula', 'P = F/(1+i)^n'],
-    formulaName: 'Present Worth',
-    formula: 'PW = F / (1 + i)^n',
+    formulaId: 'a-npv',
+    keywords: ['net present value', 'NPV', 'cash flow discount', 'investment appraisal'],
+    formulaName: 'Net Present Value',
     area: 'A',
-    whenToUse: 'Given future value, discount rate, and number of periods for present worth'
+    whenToUse: 'Present value of future cash flows MINUS initial investment. NPV > 0 means acceptable.',
   },
   {
-    keywords: ['straight line depreciation', 'depreciation', 'asset value', 'salvage value', 'annual depreciation'],
-    formulaName: 'Straight-line Depreciation',
-    formula: 'D = (C - S) / n',
+    formulaId: 'a-payback',
+    keywords: ['payback period', 'PBP', 'recovery time', 'capital recovery time'],
+    formulaName: 'Payback Period',
     area: 'A',
-    whenToUse: 'Given initial cost, salvage value, and useful life for annual depreciation amount'
-  },
-  {
-    keywords: ['break even point', 'BEP', 'breakeven quantity', 'fixed cost variable cost', 'cost analysis'],
-    formulaName: 'Break-even Point',
-    formula: 'BEP = FC / (P - VC)',
-    area: 'A',
-    whenToUse: 'Given fixed costs, price per unit, and variable cost per unit for break-even quantity'
-  },
-  {
-    keywords: ['capital recovery', 'annual worth', 'CRF', 'A/P factor', 'annual equivalent cost'],
-    formulaName: 'Capital Recovery',
-    formula: 'AW = P \\times i(1+i)^n / ((1+i)^n - 1)',
-    area: 'A',
-    whenToUse: 'Given present investment, interest rate, and periods to find annual cost/recovery amount'
-  },
-  // PAES Performance Standards
-  {
-    keywords: ['threshing efficiency', 'PAES thresher', 'grain threshing', 'percentage threshed'],
-    formulaName: 'Threshing Efficiency',
-    formula: '\\eta_{thresh} = (M_t / M_{total}) \\times 100\\%',
-    area: 'A',
-    whenToUse: 'Given mass of threshed grain and total grain input for mechanical thresher performance'
-  },
-  {
-    keywords: ['drying efficiency', 'PAES dryer', 'water evaporated', 'drying performance'],
-    formulaName: 'Drying Efficiency',
-    formula: '\\eta_{dry} = (W_{evap} / W_{theo}) \\times 100\\%',
-    area: 'A',
-    whenToUse: 'Given actual and theoretical water removal for mechanical dryer efficiency assessment'
-  },
-  {
-    keywords: ['grain damage', 'PAES damage', 'percentage damaged', 'thresher damage', 'broken grains'],
-    formulaName: 'Grain Damage',
-    formula: 'Damage\\% = (M_{damaged} / M_{total}) \\times 100\\%',
-    area: 'A',
-    whenToUse: 'Given mass of damaged grains and total mass for thresher/miller performance evaluation',
-    example: 'PAES limit: paddy ≤ 1%, corn ≤ 2% for mechanical threshers'
-  },
-  {
-    keywords: ['germination rate', 'seed germination', 'percentage germination', 'seed viability'],
-    formulaName: 'Germination Rate',
-    formula: 'Germ\\% = (N_{germ} / N_{total}) \\times 100\\%',
-    area: 'A',
-    whenToUse: 'Given number of germinated seeds and total seeds tested for seed quality assessment'
-  },
-  {
-    keywords: ['transplanting efficiency', 'PAES transplanter', 'hills with plants', 'mechanical transplanting'],
-    formulaName: 'Transplanting Efficiency',
-    formula: '\\eta_{trans} = (H_{plants} / H_{total}) \\times 100\\%',
-    area: 'A',
-    whenToUse: 'Given hills with established plants and total hills transplanted for transplanter evaluation'
+    whenToUse: 'Initial investment ÷ annual net savings. Not the same as capital recovery (interest-adjusted).',
+    example: '₱500k investment, ₱125k/yr savings → PBP = 4 years',
   },
 
   // === AREA B: LAND & WATER RESOURCES ===
   {
-    keywords: ['application rate', 'sprinkler rate', 'irrigation rate', 'mm per hour'],
+    formulaId: 'b-sprinkler-rate',
+    keywords: ['sprinkler application rate', 'mm per hour', 'lateral spacing', 'sprinkler spacing'],
     formulaName: 'Sprinkler Application Rate',
-    formula: 'AR = (q \\times 3600) / (S_l \\times S_s)',
     area: 'B',
-    whenToUse: 'Given sprinkler flow (L/s) and lateral/sprinkler spacing (m)'
+    whenToUse: 'Flow per sprinkler (L/s) × 3600 ÷ (spacing product). Ensure flow and spacings are consistent units.',
+    example: 'q 0.5 L/s, S_l 12 m, S_s 12 m → AR = 0.5×3600/144 = 12.5 mm/h',
   },
   {
-    keywords: ['pumping time', 'irrigation time', 'hours to irrigate'],
+    formulaId: 'b-pumping-time',
+    keywords: ['pumping time', 'hours irrigate', 'area depth flow', 'irrigation duration'],
     formulaName: 'Pumping Time',
-    formula: 'T = (A \\times d \\times 10) / (E \\times Q)',
     area: 'B',
-    whenToUse: 'Given area (ha), net depth (mm), system efficiency, and flow rate (L/s)'
+    whenToUse: 'Area (ha) × depth (mm) × 10 ÷ (efficiency × flow L/s). The ×10 converts ha·mm to m³.',
+    example: '5 ha at 80 mm, E 0.8, Q 20 L/s → T = 5×80×10/(0.8×20) = 250 h',
   },
   {
-    keywords: ['irrigation efficiency', 'water application efficiency', 'efficiency of irrigation'],
-    formulaName: 'Irrigation Efficiency',
-    formula: 'E_i = (W_s / W_d) \\times 100\\%',
+    formulaId: 'b-total-irrigation',
+    keywords: ['total irrigation water', 'gross volume', 'crop water requirement efficiency', 'irrigation scheduling volume'],
+    formulaName: 'Total Irrigation Water',
     area: 'B',
-    whenToUse: 'Given water stored in root zone and total water delivered'
+    whenToUse: 'Net crop water needs minus effective rainfall, inflated for system efficiency. Keep ET as m/day with area m² for m³.',
   },
   {
-    keywords: ['gross irrigation depth', 'total water needed', 'gross depth'],
-    formulaName: 'Gross Irrigation Depth',
-    formula: 'd_g = d_n / E',
+    formulaId: 'b-irrigation-interval',
+    keywords: ['irrigation interval', 'days between irrigation', 'allowable depletion', 'consumptive use'],
+    formulaName: 'Irrigation Interval',
     area: 'B',
-    whenToUse: 'Given net depth required and application efficiency'
+    whenToUse: 'Allowable depletion depth (mm) ÷ daily consumptive use (mm/day). This is the max days between irrigations.',
+    example: 'D_ad 60 mm, CU 5 mm/day → irrigate every 12 days',
   },
   {
-    keywords: ['annual runoff', 'runoff volume', 'catchment runoff'],
-    formulaName: 'Annual Runoff Volume',
-    formula: 'V = C \\times P \\times A',
+    formulaId: 'b-lime',
+    keywords: ['lime requirement', 'agricultural lime', 'pH adjustment', 'raise soil pH', 'tons lime'],
+    formulaName: 'Agricultural Lime Requirement',
     area: 'B',
-    whenToUse: 'Given runoff coefficient (C), annual rainfall (m), and catchment area (m²)',
-    example: 'C=0.3, P=1.5m, A=100 ha → V = 0.3 × 1.5 × 1,000,000 = 450,000 m³'
+    whenToUse: 'Based on 0.5 t/ha to raise pH 0.1 unit; scale by area and purity. Multiple problem variants collapse to this.',
+    example: 'pH 5.4→6.4 (Δ1.0), 2 ha, pure lime → AL = 0.5×1.0×2/0.1 = 10 t',
   },
   {
-    keywords: ['SCS curve number', 'CN runoff', 'rainfall runoff', 'NRCS method'],
+    formulaId: 'b-fertilizer',
+    keywords: ['fertilizer amount', 'fertilizer material', 'nutrient requirement', '%N', '21-0-0', '46-0-0'],
+    formulaName: 'Fertilizer Material Required',
+    area: 'B',
+    whenToUse: 'Convert nutrient requirement into commercial fertilizer: requirement × 100 ÷ % nutrient. N rates are per ha.',
+    example: '60 kg N/ha with urea (46%): M = 60 × 100 / 46 = 130.4 kg urea',
+  },
+  {
+    formulaId: 'b-nutrient-applied',
+    keywords: ['nutrient applied', 'nutrient content', 'fertilizer analysis', 'kg nutrient'],
+    formulaName: 'Nutrient Content of Fertilizer Applied',
+    area: 'B',
+    whenToUse: 'Inverse of fertilizer material: material amount × % nutrient / 100.',
+    example: '200 kg 14-14-14 → N = 200 × 14/100 = 28 kg N',
+  },
+  {
+    formulaId: 'b-base-saturation',
+    keywords: ['base saturation', '%BS', 'CEC', 'exchangeable cations', 'soil fertility'],
+    formulaName: 'Percent Base Saturation',
+    area: 'B',
+    whenToUse: 'Sum of exchangeable bases (Ca, Mg, K, Na) divided by CEC. Distinguish from exchangeable acidity.',
+  },
+  {
+    formulaId: 'b-scs-retention',
+    keywords: ['SCS', 'curve number', '25400', 'potential retention', 'maximum retention'],
+    formulaName: 'SCS Potential Retention',
+    area: 'B',
+    whenToUse: 'Convert CN to S in mm: S = 25400/CN − 254. Then used inside the SCS runoff equation.',
+    example: 'CN 70 → S = 25400/70 − 254 = 108.9 mm',
+  },
+  {
+    formulaId: 'b-scs-runoff',
+    keywords: ['SCS runoff', 'curve number runoff', 'rainfall runoff', 'Ia 0.2S'],
     formulaName: 'SCS Curve Number Runoff',
-    formula: 'Q = (P - Ia)^2 / (P - Ia + S)',
     area: 'B',
-    whenToUse: 'Given rainfall (P) and curve number to estimate runoff depth; Ia = 0.2S, S = 25400/CN - 254'
+    whenToUse: 'Runoff depth from P and S. Initial abstraction Ia = 0.2S; only valid when P > Ia, otherwise Q = 0.',
   },
   {
-    keywords: ['potential retention', 'S value', 'maximum retention'],
-    formulaName: 'Potential Retention (SCS)',
-    formula: 'S = 25400/CN - 254',
+    formulaId: 'b-rational',
+    keywords: ['rational method', 'peak runoff', 'peak discharge', 'runoff intensity', 'c i a 360'],
+    formulaName: 'Rational Method (Peak Runoff)',
     area: 'B',
-    whenToUse: 'Given curve number (30-100) to find potential retention in mm'
+    whenToUse: 'C × I (mm/h) × A (ha) ÷ 360 → m³/s. Area must be ha, not m².',
+    example: 'C 0.5, I 50 mm/h, A 20 ha → Q = 0.5 × 50 × 20 / 360 = 1.39 m³/s',
   },
   {
-    keywords: ['rational method', 'peak runoff', 'peak discharge', 'storm runoff'],
-    formulaName: 'Rational Method',
-    formula: 'Q_p = C \\times I \\times A / 360',
+    formulaId: 'b-runoff-coefficient',
+    keywords: ['runoff coefficient', 'C value', 'runoff rainfall ratio'],
+    formulaName: 'Runoff Coefficient',
     area: 'B',
-    whenToUse: 'For peak runoff from small watersheds; given C, intensity (mm/h), area (ha)',
-    example: 'C=0.5, I=50 mm/h, A=20 ha → Q = 0.5 × 50 × 20 / 360 = 1.39 m³/s'
+    whenToUse: 'Runoff ÷ rainfall for the same event. Higher for impervious/compacted soil, lower for vegetated.',
   },
   {
-    keywords: ['USLE', 'soil loss', 'erosion', 'universal soil loss equation'],
-    formulaName: 'Universal Soil Loss Equation (USLE)',
-    formula: 'A = R \\times K \\times LS \\times C \\times P',
+    formulaId: 'b-manning-q',
+    keywords: ['manning discharge', 'manning flow rate', 'open channel Q', 'roughness flow'],
+    formulaName: "Manning's Equation (Discharge)",
     area: 'B',
-    whenToUse: 'Given rainfall erosivity (R), soil erodibility (K), slope (LS), cover (C), and practice (P) factors',
-    example: 'R=250, K=0.3, LS=1.5, C=0.5, P=0.8 → A = 250×0.3×1.5×0.5×0.8 = 45 t/ha·yr'
+    whenToUse: 'Multiplying the velocity form by the area. US units use 1.49/n; metric uses 1/n.',
   },
   {
-    keywords: ["manning's equation", "manning velocity", "open channel velocity", "channel flow"],
+    formulaId: 'b-manning-v',
+    keywords: ['manning velocity', "manning's formula", 'v 1/n r 2/3', 'open channel velocity'],
     formulaName: "Manning's Equation (Velocity)",
-    formula: 'v = (1/n) \\times R^{2/3} \\times \\sqrt{S}',
     area: 'B',
-    whenToUse: 'Given Manning\'s n, hydraulic radius (m), and channel slope (m/m) for open channel velocity'
+    whenToUse: 'Hydraulic radius R^(2/3) times √S divided by n. Compute R = A/P first.',
+    example: 'R 0.75 m, S 0.001, n 0.025 → v = (1/0.025)(0.75)^(2/3)(√0.001) ≈ 1.06 m/s',
   },
   {
-    keywords: ["manning's discharge", "manning flow rate", "channel discharge", "open channel Q"],
-    formulaName: "Manning's Equation (Flow)",
-    formula: 'Q = (1/n) \\times A \\times R^{2/3} \\times \\sqrt{S}',
+    formulaId: 'b-continuity',
+    keywords: ['Q equals A V', 'discharge area velocity', 'flow rate velocity', 'pipe flow'],
+    formulaName: 'Continuity / Discharge–Velocity–Area',
     area: 'B',
-    whenToUse: 'Given Manning\'s n, cross-sectional area, hydraulic radius, and slope for discharge'
+    whenToUse: 'Given two of {Q, A, V} find the third — the single most-used flow relation.',
   },
   {
-    keywords: ['hydraulic radius', 'area over wetted perimeter'],
-    formulaName: 'Hydraulic Radius',
-    formula: 'R = A / P',
-    area: 'B',
-    whenToUse: 'Given flow area and wetted perimeter for open channel calculations'
-  },
-  {
-    keywords: ['flood risk', 'exceedance probability', 'return period', 'design life flood'],
-    formulaName: 'Flood Risk Probability',
-    formula: 'Risk = 1 - (1 - 1/T)^n',
-    area: 'B',
-    whenToUse: 'Given return period (T) and design life (n years) to find flood exceedance probability'
-  },
-  {
-    keywords: ['return period', 'recurrence interval', 'flood frequency'],
-    formulaName: 'Return Period',
-    formula: 'T = (n + 1) / m',
-    area: 'B',
-    whenToUse: 'Given years of record (n) and event rank (m); rank 1 = largest event'
-  },
-  {
-    keywords: ['crop evapotranspiration', 'ETc', 'crop water need', 'consumptive use'],
-    formulaName: 'Crop Evapotranspiration',
-    formula: 'ET_c = K_c \\times ET_o',
-    area: 'B',
-    whenToUse: 'Given crop coefficient (Kc) and reference evapotranspiration (ETo, mm/day)'
-  },
-  {
-    keywords: ['water requirement volume', 'crop water volume', 'irrigation volume'],
-    formulaName: 'Water Requirement (Volume)',
-    formula: 'V_w = ET_c \\times A',
-    area: 'B',
-    whenToUse: 'Given crop ET (m/day) and area (m²) for total water volume needed'
-  },
-  {
-    keywords: ['rectangular channel area', 'flow area rectangle'],
-    formulaName: 'Rectangular Channel Area',
-    formula: 'A = b \\times y',
-    area: 'B',
-    whenToUse: 'Given channel width (b) and flow depth (y) for rectangular section'
-  },
-  {
-    keywords: ['wetted perimeter rectangle'],
-    formulaName: 'Rectangular Channel Wetted Perimeter',
-    formula: 'P = b + 2y',
-    area: 'B',
-    whenToUse: 'Given channel width (b) and flow depth (y) for rectangular section'
-  },
-
-  {
-    keywords: ['drip irrigation', 'trickle irrigation', 'irrigation time', 'emitter flow', 'drip scheduling'],
-    formulaName: 'Drip Irrigation Time',
-    formula: 't = ET \\times S_p \\times S_l / q_e',
-    area: 'B',
-    whenToUse: 'Given evapotranspiration (mm/day), plant/lateral spacing (m), and emitter flow (L/h) for drip scheduling'
-  },
-  {
-    keywords: ['gumbel', 'flood frequency', 'extreme value', 'T-year flood', 'flood discharge'],
+    formulaId: 'b-gumbel',
+    keywords: ['gumbel', 'flood frequency', 'T-year flood', 'frequency factor', 'extreme event'],
     formulaName: 'Gumbel Flood Frequency',
-    formula: 'Q_T = \\bar{x} + K\\sigma',
     area: 'B',
-    whenToUse: 'Given mean annual flood, standard deviation, and Gumbel frequency factor for T-year flood estimate'
+    whenToUse: 'Mean + K·σ. K is a function of return period — given in tables, not computed.',
   },
   {
-    keywords: ['soil moisture', 'gravimetric moisture', 'water content soil', 'wet dry mass', 'moisture content soil'],
+    formulaId: 'b-flood-risk',
+    keywords: ['flood risk', 'exceedance probability', '1 - (1 - 1/T)^n', 'design life', 'return period risk'],
+    formulaName: 'Flood Risk / Exceedance Probability',
+    area: 'B',
+    whenToUse: 'Probability a T-year flood is exceeded at least once in n years. For T=50, n=50 the risk ≈ 63% (not 100%).',
+    example: 'T 20, design life 30 → P = 1 − (1 − 0.05)^30 ≈ 78.5%',
+  },
+  {
+    formulaId: 'b-return-period',
+    keywords: ['return period', 'recurrence interval', 'rank flood', 'n+1 over m'],
+    formulaName: 'Return Period',
+    area: 'B',
+    whenToUse: 'Rank the floods largest = 1, then T = (n+1)/m. Alternative simple form: T = n/m.',
+  },
+  {
+    formulaId: 'b-gravimetric-mc',
+    keywords: ['gravimetric moisture', 'soil moisture content', 'wet dry soil mass', 'water content soil'],
     formulaName: 'Gravimetric Moisture Content',
-    formula: 'w = (M_w - M_d) / M_d \\times 100\\%',
     area: 'B',
-    whenToUse: 'Given wet and oven-dry soil masses to determine gravimetric water content',
-    example: 'Wet soil = 150 g, dry = 120 g → w = (150-120)/120 × 100 = 25%'
+    whenToUse: 'Water mass based on DRY mass in the denominator: (Mw − Md)/Md × 100. Different from wet-basis in Area C.',
+    example: '150 g wet, 120 g dry → w = (150−120)/120 × 100 = 25%',
   },
   {
-    keywords: ['void ratio', 'soil saturation', 'degree of saturation', 'specific gravity soil', 'Gs gamma', 'soil compaction'],
-    formulaName: 'Void Ratio & Saturation',
-    formula: 'e = (G_s \\gamma_w / \\gamma_d) - 1,  S = wG_s / e',
+    formulaId: 'b-void-ratio',
+    keywords: ['void ratio', 'degree of saturation', 'specific gravity soil', 'Gs gamma', 'S w Gs over e'],
+    formulaName: 'Void Ratio & Degree of Saturation',
     area: 'B',
-    whenToUse: 'Given specific gravity, unit weights, and moisture content to find void ratio and saturation'
+    whenToUse: 'First find e from unit weights, then S = w·Gs/e. e is dimensionless; use moisture as decimal.',
+  },
+  {
+    formulaId: 'b-darcy',
+    keywords: ['darcy', 'hydraulic conductivity', 'groundwater flow', 'Q K i A'],
+    formulaName: "Darcy's Law",
+    area: 'B',
+    whenToUse: 'Flow through porous media = K × gradient × area. Gradient = head loss ÷ flow length.',
+  },
+  {
+    formulaId: 'b-fcr',
+    keywords: ['feed conversion', 'FCR', 'feed fish ratio', 'aquaculture feed'],
+    formulaName: 'Feed Conversion Ratio (FCR)',
+    area: 'B',
+    whenToUse: 'Feed given ÷ weight gained. Lower FCR = more efficient. Above 1 usually.',
+    example: '100 kg feed, 40 kg gain → FCR = 2.5',
+  },
+  {
+    formulaId: 'b-biomass',
+    keywords: ['biomass aquaculture', 'total weight stock', 'fish population weight'],
+    formulaName: 'Total Biomass',
+    area: 'B',
+    whenToUse: 'Number of animals × average body weight. Feeds into daily feed and stocking problems.',
   },
 
   // === AREA C: STRUCTURES, ENVIRONMENT & BIOPROCESS ===
   {
-    keywords: ['moisture content wet basis', 'MC wet basis', 'water percentage wet'],
+    formulaId: 'c-mc-wet',
+    keywords: ['moisture content wet basis', 'MC wet basis', 'water total weight', 'percent water'],
     formulaName: 'Moisture Content (Wet Basis)',
-    formula: 'MC_{wb} = (W_w / W_t) \\times 100\\%',
     area: 'C',
-    whenToUse: 'Given weight of water and total weight for wet basis moisture content',
-    example: '100 kg grain, 20 kg water → MC_wb = (20/100)×100 = 20%'
+    whenToUse: 'Water ÷ TOTAL weight × 100. Use when moisture is quoted as "MC of grain" (usually wet basis).',
+    example: '100 kg sample, 20 kg water → MC_wb = 20/100 × 100 = 20%',
   },
   {
-    keywords: ['moisture content dry basis', 'MC dry basis'],
+    formulaId: 'c-mc-dry',
+    keywords: ['moisture content dry basis', 'MC dry basis', 'water dry matter'],
     formulaName: 'Moisture Content (Dry Basis)',
-    formula: 'MC_{db} = (W_w / W_d) \\times 100\\%',
     area: 'C',
-    whenToUse: 'Given weight of water and dry matter weight for dry basis moisture content'
+    whenToUse: 'Water ÷ DRY MATTER weight × 100. Common in drying studies; can exceed 100%.',
+    example: '80 kg water on 100 kg dry matter → MC_db = 80% (vs 44.4% wet basis)',
   },
   {
-    keywords: ['dry matter conservation', 'final weight drying', 'weight after drying', 'shrinkage'],
-    formulaName: 'Dry Matter Conservation',
-    formula: 'W_f = W_i \\times (100 - MC_i) / (100 - MC_f)',
+    formulaId: 'c-dry-matter-conservation',
+    keywords: ['dry matter conservation', 'shrinkage', 'final weight', 'drying weight', 'moisture removal target'],
+    formulaName: 'Dry Matter Conservation (Shrinkage)',
     area: 'C',
-    whenToUse: 'Given initial weight and initial/final moisture content (wet basis) to find final weight',
-    example: '1000 kg at 25% MC dried to 14% → W_f = 1000 × (100-25)/(100-14) = 872 kg'
+    whenToUse: 'Dry matter stays constant: W_i(100 − MC_i)/(100 − MC_f). Moisture bases must match (both wet basis).',
+    example: '1000 kg at 25% → 14%: W_f = 1000 × 75/86 = 872.1 kg',
   },
   {
-    keywords: ['water removed', 'drying water loss', 'moisture removed'],
+    formulaId: 'c-water-removed',
+    keywords: ['water removed drying', 'water loss drying', 'initial minus final'],
     formulaName: 'Water Removed During Drying',
-    formula: 'W_{rem} = W_i - W_f',
     area: 'C',
-    whenToUse: 'Given initial and final weight to find water removed'
+    whenToUse: 'Initial − final weight. When moisture contents differ by basis, convert first.',
   },
   {
-    keywords: ['moisture removal rate', 'drying rate', 'kg per hour drying'],
-    formulaName: 'Moisture Removal Rate',
-    formula: 'MR = W_{rem} / t',
+    formulaId: 'c-tons-refrigeration',
+    keywords: ['tons of refrigeration', 'TR', '3.517', 'cooling capacity', '12,000 BTU'],
+    formulaName: 'Tons of Refrigeration',
     area: 'C',
-    whenToUse: 'Given water removed (kg) and drying time (h) to find removal rate'
+    whenToUse: 'kW → TR divide by 3.517. 1 TR = 3.517 kW = 12,000 BTU/h. Watch whether load is kW or BTU/h.',
+    example: '70 kW load → TR = 70/3.517 = 19.9 TR ≈ 20 TR',
   },
   {
-    keywords: ['drying air required', 'air mass drying', 'drying air quantity'],
-    formulaName: 'Drying Air Required',
-    formula: 'm_{air} = m_{water} / (w_{out} - w_{in})',
+    formulaId: 'c-condensing-hp',
+    keywords: ['condensing unit', 'compressor hp', 'BTU per hour', '2545', 'hp refrigeration'],
+    formulaName: 'Condensing Unit Capacity',
     area: 'C',
-    whenToUse: 'Given water to remove and inlet/exit air humidity ratios'
+    whenToUse: 'Cooling load in BTU/h ÷ 2545 → compressor hp.',
+    example: '50,900 BTU/h → hp = 50900/2545 = 20 hp',
   },
   {
-    keywords: ['sensible heat', 'temperature change heat', 'Q=mcΔT', 'heating energy'],
-    formulaName: 'Sensible Heat',
-    formula: 'Q = m \\times Cp \\times \\Delta T',
-    area: 'C',
-    whenToUse: 'Given mass (kg), specific heat (kJ/kg·°C), and temperature change to find heat energy'
-  },
-  {
-    keywords: ['latent heat', 'vaporization heat', 'phase change heat', 'evaporation energy'],
-    formulaName: 'Latent Heat',
-    formula: 'Q = m \\times \\lambda',
-    area: 'C',
-    whenToUse: 'Given mass (kg) and latent heat of vaporization (kJ/kg) for phase change energy'
-  },
-  {
-    keywords: ['LMTD', 'log mean temperature difference', 'heat exchanger delta T'],
-    formulaName: 'Log Mean Temperature Difference',
-    formula: '\\Delta T_{lm} = (\\Delta T_1 - \\Delta T_2) / \\ln(\\Delta T_1/\\Delta T_2)',
-    area: 'C',
-    whenToUse: 'Given temperature differences at both ends of a heat exchanger'
-  },
-  {
-    keywords: ['heat exchanger duty', 'heat transfer rate', 'UA LMTD', 'heat exchanger sizing'],
-    formulaName: 'Heat Exchanger Duty',
-    formula: 'Q = U \\times A \\times \\Delta T_{lm}',
-    area: 'C',
-    whenToUse: 'Given overall heat transfer coefficient (U), area (A), and LMTD'
-  },
-  {
-    keywords: ['volatile solids loading', 'VS loading', 'manure volatile solids'],
-    formulaName: 'Volatile Solids Loading',
-    formula: 'VS = N \\times M \\times F_{vs}',
-    area: 'C',
-    whenToUse: 'Given animal count, manure/animal/day, and volatile solids fraction for biogas sizing'
-  },
-  {
-    keywords: ['biogas production', 'biogas volume', 'methane yield'],
-    formulaName: 'Biogas Production',
-    formula: 'V_{biogas} = VS \\times Y',
-    area: 'C',
-    whenToUse: 'Given volatile solids (kg/day) and biogas yield (m³/kg VS)'
-  },
-  {
-    keywords: ['methane content', 'CH4 volume', 'methane percentage'],
-    formulaName: 'Methane Content',
-    formula: 'V_{CH_4} = V_{biogas} \\times \\%CH_4',
-    area: 'C',
-    whenToUse: 'Given total biogas volume and methane percentage (typically 55-65%)'
-  },
-  {
-    keywords: ['fermenter volume', 'digester volume', 'biogas tank size', 'HRT digester'],
-    formulaName: 'Fermenter Volume',
-    formula: 'V_f = V_d \\times HRT \\times H_f',
-    area: 'C',
-    whenToUse: 'Given daily substrate volume (m³/day), hydraulic retention time (days), and headspace factor (1.2-1.3)'
-  },
-  {
-    keywords: ["pearson's square", 'feed formulation', 'ration balancing', 'protein mixing'],
-    formulaName: "Pearson's Square",
-    formula: 'Parts_H / Parts_L = (T - P_L) / (P_H - T)',
-    area: 'C',
-    whenToUse: 'Given target protein % (T), high ingredient protein (PH), and low ingredient protein (PL) for feed mixing'
-  },
-  {
-    keywords: ['ventilation rate', 'air changes', 'room ventilation', 'ACH'],
-    formulaName: 'Ventilation Rate',
-    formula: 'Q_v = V \\times ACH',
-    area: 'C',
-    whenToUse: 'Given room volume (m³) and air changes per hour for ventilation fan sizing'
-  },
-  {
-    keywords: ['relative humidity', 'RH psychrometric', 'humidity ratio'],
-    formulaName: 'Psychrometric Relative Humidity',
-    formula: 'RH = (w / w_s) \\times 100\\%',
-    area: 'C',
-    whenToUse: 'Given actual humidity ratio and saturation humidity ratio at same temperature'
-  },
-  {
-    keywords: ['compressive stress', 'structural stress', 'force over area', 'column stress'],
-    formulaName: 'Structural Compressive Stress',
-    formula: '\\sigma = F / A',
-    area: 'C',
-    whenToUse: 'Given applied force (N) and cross-sectional area (m²) for structural member design'
-  },
-  {
-    keywords: ['refrigeration ton', 'TR conversion', 'ton of refrigeration', 'cooling capacity', '3.517'],
-    formulaName: 'Refrigeration Ton Conversion',
-    formula: 'TR = Q_{cooling} / 3.517',
-    area: 'C',
-    whenToUse: 'Given cooling load in kW to convert to tons of refrigeration (1 TR = 3.517 kW)'
-  },
-  {
-    keywords: ['D-value', 'thermal death time', 'decimal reduction', 'microbial reduction', 'sterilization time'],
+    formulaId: 'c-dvalue',
+    keywords: ['D-value', 'thermal death time', 'decimal reduction', 'log10 count', 'sterilization min'],
     formulaName: 'D-value (Thermal Death Time)',
-    formula: 't = D \\times \\log(N_0 / N)',
     area: 'C',
-    whenToUse: 'Given D-value, initial and final microbial counts to find thermal process time'
+    whenToUse: 'Time for one 90% (1 log) reduction. t = D × log(N0/N). Time-to-reduce problems.',
+    example: 'D 2.5 min, reduce 10⁶ → 10³ → t = 2.5 × log(10⁶/10³) = 2.5 × 3 = 7.5 min',
   },
   {
-    keywords: ['12D concept', 'commercial sterility', 'botulinum cook', 'F value', 'sterilization value', '12 log reduction'],
+    formulaId: 'c-12d',
+    keywords: ['12D', 'botulinum', 'commercial sterility', 'F value', 'F0', 'log reduction'],
     formulaName: '12D Concept (Commercial Sterility)',
-    formula: 'F = D \\times (\\log N_0 - \\log N)',
     area: 'C',
-    whenToUse: 'Given D-value and log reduction required (12 for C. botulinum) for commercial sterilization',
-    example: 'D = 1.5 min, 12D → F = 1.5 × 12 = 18 min at 121°C'
+    whenToUse: 'F = D × (log N0 − log N). Use 12 log reductions for C. botulinum in low-acid foods.',
+    example: 'D 1.5 min at 121°C, 12D → F = 1.5 × 12 = 18 min',
   },
   {
-    keywords: ['biogas energy', 'biogas calorific value', 'methane energy', 'biogas heat', 'LHV methane'],
-    formulaName: 'Biogas Energy Content',
-    formula: 'E = V_{biogas} \\times CH_4\\% \\times LHV',
+    formulaId: 'c-zvalue',
+    keywords: ['z-value', 'temperature coefficient', '10 delta T over z', 'process equivalence'],
+    formulaName: 'z-value / Thermal Process Equivalence',
     area: 'C',
-    whenToUse: 'Given biogas volume, methane fraction, and lower heating value for energy content'
+    whenToUse: 'Factor by which process time changes for a 10°C (z=10) temperature change. Compare with D-value scaling.',
   },
   {
-    keywords: ['complete biogas', 'biogas from waste', 'livestock biogas', 'animal waste biogas', 'biogas estimation'],
-    formulaName: 'Complete Biogas from Waste',
-    formula: 'V_{biogas} = N \\times W \\times rate \\times (1 - MC) \\times VS \\times yield',
+    formulaId: 'c-lmtd',
+    keywords: ['LMTD', 'log mean temperature difference', 'heat exchanger delta t', 'counterflow'],
+    formulaName: 'Log Mean Temperature Difference',
     area: 'C',
-    whenToUse: 'Given animal count, waste/animal, collection rate, MC, VS fraction, and yield for total biogas'
+    whenToUse: 'ΔT1 and ΔT2 are the temperature differences at each end of the exchanger. Guard against dividing by zero when equal.',
   },
   {
-    keywords: ['bending stress', 'flexure formula', 'Mc/I', 'beam bending', 'moment of inertia', 'flexural stress'],
-    formulaName: 'Bending Stress',
-    formula: '\\sigma = Mc / I',
+    formulaId: 'c-heat-exchanger',
+    keywords: ['heat exchanger duty', 'U A LMTD', 'transfer rate', 'heat area sizing'],
+    formulaName: 'Heat Exchanger Duty',
     area: 'C',
-    whenToUse: 'Given bending moment, distance from neutral axis, and moment of inertia for beam stress'
+    whenToUse: 'Q = U × A × ΔT_lm. Rearranges for area (the usual sizing question).',
   },
   {
-    keywords: ['eccentric loading', 'combined stress', 'axial plus bending', 'P/A plus My/I', 'eccentric column'],
-    formulaName: 'Eccentric Loading',
-    formula: '\\sigma = P/A \\pm My/I',
+    formulaId: 'c-saturation-vapor',
+    keywords: ['saturation vapor pressure', 'magnus', '0.6108', '17.27', 'psychrometric es'],
+    formulaName: 'Saturation Vapor Pressure (Magnus)',
     area: 'C',
-    whenToUse: 'Given axial load, area, moment, distance from centroid, and inertia for combined stress'
+    whenToUse: 'T in °C, result in kPa. Temperature must be inside the exponent with its own constant (237.3).',
+    example: 'T 30°C → P_vs = 0.6108 exp(17.27·30/(30+237.3)) ≈ 4.24 kPa',
   },
   {
-    keywords: ['saturation vapor pressure', 'magnus formula', 'vapor pressure temperature', 'psychrometric Pvs'],
-    formulaName: 'Saturation Vapor Pressure',
-    formula: 'P_{vs} = 0.6108 \\times \\exp(17.27T / (T + 237.3))',
-    area: 'C',
-    whenToUse: 'Given air temperature (°C) to find saturation vapor pressure (kPa) using Magnus formula'
-  },
-  {
-    keywords: ['moist air enthalpy', 'psychrometric enthalpy', 'humid air energy', 'h = 1.005T + W(2501+1.88T)'],
+    formulaId: 'c-moist-enthalpy',
+    keywords: ['moist air enthalpy', 'psychrometric enthalpy', '1.005', '2501', 'humidity ratio enthalpy'],
     formulaName: 'Moist Air Enthalpy',
-    formula: 'h = 1.005T + W(2501 + 1.88T)',
     area: 'C',
-    whenToUse: 'Given dry-bulb temperature (°C) and humidity ratio (kg/kg) for moist air specific enthalpy'
+    whenToUse: 'Sensible (1.005 T) + latent (W·2501 at 0°C) + water vapor sensible (1.88T). W in kg/kg dry air.',
   },
   {
-    keywords: ['shear moment diagram', 'V = dM/dx', 'shear force bending moment', 'beam relationships'],
-    formulaName: 'Shear & Moment Relationship',
-    formula: 'V = dM/dx,  M(x) = \\int V dx',
+    formulaId: 'c-electric-power',
+    keywords: ['electric power', 'VI', 'I squared R', 'V squared over R', 'wattage'],
+    formulaName: 'Electric Power',
     area: 'C',
-    whenToUse: 'Given shear force diagram to construct bending moment diagram (or vice versa) for beams'
+    whenToUse: 'Any of the three forms; pick based on which two of P, V, I, R are known.',
+    example: '220 V, 10 A → P = 2200 W',
   },
   {
-    keywords: ['fixed end moment', 'FEM', 'wL^2/12', 'PL/8', 'fixed beam', 'moment distribution'],
-    formulaName: 'Fixed-end Moments',
-    formula: 'M_F = wL^2/12,  M_F = PL/8',
+    formulaId: 'c-electric-energy',
+    keywords: ['electric energy', 'kWh', 'power time', 'energy consumption bill'],
+    formulaName: 'Electric Energy',
     area: 'C',
-    whenToUse: 'Given uniform load (w) or point load (P) and span (L) for fixed-end beam moments'
+    whenToUse: 'Power × time. kWh requires kW and hours: W ÷ 1000 first.',
+    example: '1.5 kW heater, 6 h/day → 9 kWh/day',
   },
   {
-    keywords: ['simply supported beam', 'beam reaction', 'R = P/2', 'support reaction', 'midspan load'],
-    formulaName: 'Simply Supported Reaction',
-    formula: 'R_A = R_B = P/2',
+    formulaId: 'c-capacitor',
+    keywords: ['capacitor energy', 'capacitance voltage', '0.5 CV squared', '2E over V squared'],
+    formulaName: 'Capacitor Energy',
     area: 'C',
-    whenToUse: 'Given concentrated load at midspan for reactions at each support of a simple beam'
+    whenToUse: 'Especially the rearranged forms to find C = 2E/V² (given energy) or V from E and C.',
   },
   {
-    keywords: ['milling recovery', 'rice milling', 'paddy to rice', 'PAES recovery', 'milling yield', 'percent recovery'],
-    formulaName: 'Milling Recovery',
-    formula: 'Recovery\\% = (M_{milled} / M_{paddy}) \\times 100\\%',
+    formulaId: 'c-transformer',
+    keywords: ['transformer', 'turns ratio', 'voltage ratio', 'primary secondary', 'step up step down', 'Is Ip'],
+    formulaName: 'Transformer Relations',
     area: 'C',
-    whenToUse: 'Given mass of milled rice and paddy input for rice mill performance',
-    example: '1000 kg paddy → 650 kg rice = 65% recovery (PAES typical: 60-68%)'
+    whenToUse: 'Voltage and turns are proportional; current is INVERSE to the same ratio. Find the unknown via the cross-relation.',
+    example: 'Vp 220 V, Np 200, Ns 40 → Vs = 220 × 40/200 = 44 V',
+  },
+  {
+    formulaId: 'c-reactance',
+    keywords: ['inductive reactance', 'impedance', 'XL', '2 pi f L', 'RLC'],
+    formulaName: 'Reactance & Impedance',
+    area: 'C',
+    whenToUse: 'Inductive reactance grows with frequency; impedance is the vector sum of R and X (Pythagorean).',
+  },
+  {
+    formulaId: 'c-power-factor',
+    keywords: ['power factor', 'cos theta', 'kW kVA', 'apparent power', 'PF'],
+    formulaName: 'Power Factor',
+    area: 'C',
+    whenToUse: 'Real power (kW) ÷ apparent power (kVA). kVA = kW ÷ PF when sizing generators/transformers.',
+    example: '10 kW at PF 0.8 → S = 10/0.8 = 12.5 kVA',
+  },
+  {
+    formulaId: 'c-ventilation',
+    keywords: ['ventilation', 'air changes per hour', 'ACH', 'room volume', 'fan sizing'],
+    formulaName: 'Ventilation Rate',
+    area: 'C',
+    whenToUse: 'Room volume × ACH. Watch units: volume m³ × ACH = m³/h; convert to L/s for fan specs.',
+  },
+  {
+    formulaId: 'c-circle-area',
+    keywords: ['circle area', 'pi d squared over 4', 'tank diameter area', 'silo area'],
+    formulaName: 'Circle Area',
+    area: 'C',
+    whenToUse: 'From DIAMETER use πd²/4; from radius use πr². Frequently needed before cylinder volume for tanks/silos.',
+    example: 'd 2 m → A = π(2²)/4 = 3.14 m²',
+  },
+  {
+    formulaId: 'c-cylinder-volume',
+    keywords: ['cylinder volume', 'tank volume', 'silo capacity', 'pi d squared over 4 height'],
+    formulaName: 'Cylinder Volume',
+    area: 'C',
+    whenToUse: 'Cross-section × height. Pairs with density to get storage mass: M = ρV.',
+    example: 'd 2 m, h 5 m → V = 3.14 × 5 = 15.7 m³',
   },
 ];
 
