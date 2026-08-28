@@ -225,35 +225,35 @@ export const areaAQuestions: Question[] = [
   {
     id: 'A-paes-e002',
     area: 'A', subTopic: 'paes', topic: 'PAES Standards', difficulty: 'easy',
-    question: 'What is the minimum drying efficiency requirement for a grain dryer under PAES?',
-    options: ['60%', '70%', '50%', '80%'],
+    question: 'What is the minimum drying (field) efficiency required for a mechanical grain dryer under PAES?',
+    options: ['65%', '70%', '50%', '80%'],
     correctAnswer: 0,
     solution: {
-      steps: ['PAES requires minimum grain dryer efficiency of 60%'],
-      keyConcept: 'PAES 404 series covers grain drying equipment with minimum efficiency standards for mechanical dryers.'
+      steps: ['PAES 201/202 requires a minimum grain dryer efficiency of 65%'],
+      keyConcept: 'PAES 201/202 (Heated Air Mechanical Grain Dryer) set the minimum efficiency standards for mechanical dryers.'
     },
     weakPoints: ['PAES equipment requirements', 'Dryer standards']
   },
   {
     id: 'A-paes-e003',
     area: 'A', subTopic: 'paes', topic: 'PAES Standards', difficulty: 'easy',
-    question: 'What PAES series covers agricultural machinery for land preparation?',
-    options: ['PAES 401', 'PAES 402', 'PAES 403', 'PAES 404'],
+    question: 'Which PAES standard sets the specifications for mechanical rice threshers?',
+    options: ['PAES 204', 'PAES 122', 'PAES 151', 'PAES 114'],
     correctAnswer: 0,
     solution: {
-      steps: ['PAES 401 series covers machinery for land preparation and tillage'],
-      keyConcept: 'PAES series: 401 (Land Preparation), 402 (Planting/Transplanting), 403 (Crop Care/Maintenance), 404 (Harvesting/Post-Harvest).'
+      steps: ['PAES 204 = Mechanical Rice Thresher - Specifications'],
+      keyConcept: 'PAES 204 specifies mechanical rice threshers; PAES 205 is its method of test.'
     },
-    weakPoints: ['PAES numbering system', 'Machinery classification']
+    weakPoints: ['PAES standard IDs', 'Machinery classification']
   },
   {
     id: 'A-paes-e004',
     area: 'A', subTopic: 'paes', topic: 'PAES Standards', difficulty: 'easy',
     question: 'Under PAES, what is the maximum allowable noise level for agricultural machinery?',
     options: ['90 dB(A)', '85 dB(A)', '95 dB(A)', '100 dB(A)'],
-    correctAnswer: 0,
+    correctAnswer: 2,
     solution: {
-      steps: ['PAES limits noise to 90 dB(A) maximum for agricultural machinery'],
+      steps: ['PAES limits agricultural machinery noise to a maximum of 95 dB(A)'],
       keyConcept: 'Noise standards protect operator hearing and comply with occupational safety requirements.'
     },
     weakPoints: ['Noise standards', 'Operator safety']
@@ -261,28 +261,28 @@ export const areaAQuestions: Question[] = [
   {
     id: 'A-paes-e005',
     area: 'A', subTopic: 'paes', topic: 'PAES Standards', difficulty: 'easy',
-    question: 'PAES 403 series covers what category of agricultural machinery?',
-    options: ['Crop care and maintenance', 'Land preparation', 'Planting and transplanting', 'Harvesting and post-harvest'],
+    question: 'Which PAES standard specifies mechanical rice transplanters?',
+    options: ['PAES 151', 'PAES 120', 'PAES 122', 'PAES 105'],
     correctAnswer: 0,
     solution: {
-      steps: ['PAES 403 = Crop care and maintenance machinery'],
-      keyConcept: 'Crop care includes sprayers, weeders, fertiliser applicators, and other maintenance equipment.'
+      steps: ['PAES 151 = Mechanical Rice Transplanter - Specifications'],
+      keyConcept: 'PAES 151 specifies mechanical rice transplanters; PAES 152 is its method of test.'
     },
-    weakPoints: ['PAES numbering system']
+    weakPoints: ['PAES standard IDs']
   },
 
   // === PAES STANDARDS - AVERAGE ===
   {
     id: 'A-paes-a001',
     area: 'A', subTopic: 'paes', topic: 'PAES Standards', difficulty: 'average',
-    question: 'What is the minimum seed germination rate required for a precision seeder tested under PAES?',
-    options: ['85%', '90%', '75%', '80%'],
+    question: 'A rice precision seeder is evaluated for germination, seed spacing uniformity, and seed damage. Under which PAES standard is a rice precision seeder specified?',
+    options: ['PAES 171', 'PAES 102', 'PAES 204', 'PAES 112'],
     correctAnswer: 0,
     solution: {
-      steps: ['PAES requires minimum 85% germination rate for precision seeders'],
-      keyConcept: 'Precision seeders must meet germination, spacing uniformity, and seed damage standards under PAES 402.'
+      steps: ['PAES 171 = Rice Precision Seeder - Specifications'],
+      keyConcept: 'Rice precision seeders are specified under PAES 171 (and tested under PAES 172); PAES 122/123 also cover seeders and planters.'
     },
-    weakPoints: ['Seeder standards', 'Germination requirements']
+    weakPoints: ['Seeder standards', 'PAES standard IDs']
   },
   {
     id: 'A-paes-a002',
@@ -299,24 +299,24 @@ export const areaAQuestions: Question[] = [
   {
     id: 'A-paes-a003',
     area: 'A', subTopic: 'paes', topic: 'PAES Standards', difficulty: 'average',
-    question: 'PAES 404 series covers what category of agricultural machinery?',
-    options: ['Harvesting and post-harvest machinery', 'Land preparation machinery', 'Crop care machinery', 'Planting machinery'],
+    question: 'Which PAES standard sets the specifications for rice combine harvesters (post-harvest machinery)?',
+    options: ['PAES 224', 'PAES 120', 'PAES 151', 'PAES 171'],
     correctAnswer: 0,
     solution: {
-      steps: ['PAES 404 = Harvesting and post-harvest machinery'],
-      keyConcept: 'Includes reapers, threshers, dryers, mills, and other post-production equipment.'
+      steps: ['PAES 224 = Rice Combine Harvester - Specifications (post-harvest machinery)'],
+      keyConcept: 'Rice combine harvesters are specified under PAES 224 and tested under PAES 225.'
     },
-    weakPoints: ['PAES numbering system']
+    weakPoints: ['PAES standard IDs', 'Post-harvest machinery']
   },
   {
     id: 'A-paes-a004',
     area: 'A', subTopic: 'paes', topic: 'PAES Standards', difficulty: 'average',
-    question: 'What is the minimum allowable percentage of grain damage for a thresher tested under PAES?',
-    options: ['Not to exceed 3% damaged grains', 'Not to exceed 5% damaged grains', 'Not to exceed 1% damaged grains', 'Not to exceed 10% damaged grains'],
+    question: 'What is the maximum allowable percentage of mechanically damaged grain for a thresher tested under PAES?',
+    options: ['Not to exceed 2% damaged grains', 'Not to exceed 5% damaged grains', 'Not to exceed 1% damaged grains', 'Not to exceed 10% damaged grains'],
     correctAnswer: 0,
     solution: {
-      steps: ['PAES limits thresher grain damage to a maximum of 3%'],
-      keyConcept: 'Grain damage includes cracked, broken, or deformed kernels. Lower is better to maintain market quality.'
+      steps: ['PAES limits mechanically damaged grain to a maximum of 2%'],
+      keyConcept: 'Mechanically damaged grain includes cracked, broken, or deformed kernels. PAES 204/205 limit grain damage to a maximum of 2% to maintain market quality.'
     },
     weakPoints: ['Post-harvest standards', 'Grain quality']
   },

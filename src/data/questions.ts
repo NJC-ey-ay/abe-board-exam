@@ -106,15 +106,15 @@ export const questions: Question[] = [
     id: 'power-005',
     subject: 'power',
     topic: 'PAES Standards',
-    question: 'PAES 404 series covers what category of agricultural machinery?',
-    options: ['Harvesting and post-harvest machinery', 'Land preparation machinery', 'Crop care machinery', 'Planting machinery'],
+    question: 'Which PAES standard sets the specifications for mechanical rice threshers?',
+    options: ['PAES 204', 'PAES 122', 'PAES 151', 'PAES 114'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: 'Harvesting and post-harvest machinery',
-      whyCorrect: 'PAES 401 = Land Prep, 402 = Planting, 403 = Crop Care, 404 = Harvesting/Post-Harvest.',
-      solution: ['PAES series: 401 (Land Preparation), 402 (Planting), 403 (Crop Care), 404 (Harvesting/Post-Harvest)']
+      correctAnswer: 'PAES 204',
+      whyCorrect: 'PAES 204 specifies mechanical rice threshers; PAES 205 is its method of test.',
+      solution: ['PAES 204 = Mechanical Rice Thresher - Specifications']
     },
-    weakPoints: ['PAES numbering'],
+    weakPoints: ['PAES standard IDs'],
     difficulty: 'easy',
     month: 1
   },
@@ -123,12 +123,12 @@ export const questions: Question[] = [
     subject: 'power',
     topic: 'PAES Standards',
     question: 'What is the minimum drying efficiency required for a grain dryer under PAES?',
-    options: ['60%', '70%', '50%', '80%'],
+    options: ['65%', '70%', '50%', '80%'],
     correctAnswer: 0,
     explanation: {
-      correctAnswer: '60%',
-      whyCorrect: 'PAES requires minimum 60% drying efficiency for mechanical grain dryers to be certified.',
-      solution: ['PAES 404 series specifies minimum 60% drying efficiency for grain dryers.']
+      correctAnswer: '65%',
+      whyCorrect: 'PAES 201/202 require a minimum grain dryer efficiency of 65% for certification.',
+      solution: ['PAES 201/202 (Heated Air Mechanical Grain Dryer) specifies a minimum efficiency of 65%.']
     },
     weakPoints: ['Dryer standards'],
     difficulty: 'easy',

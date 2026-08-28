@@ -303,11 +303,11 @@ export const generatedAreaAQuestions: Question[] = [
     subTopic: 'agri-machinery',
     topic: 'PAES Standards',
     difficulty: 'average',
-    question: 'Under PAES 402, what is the minimum transplanting efficiency for an automatic rice transplanter?',
-    options: ['90%', '95%', '85%', '80%'],
+    question: 'Under PAES 151 (Mechanical Rice Transplanter), what is the minimum field efficiency required for a mechanical rice transplanter?',
+    options: ['80%', '90%', '95%', '85%'],
     correctAnswer: 0,
     solution: {
-      keyConcept: 'PAES 402 for rice transplanter requires minimum 90% transplanting efficiency with ≤5% missing hills.',
+      keyConcept: 'PAES 151 requires a minimum field efficiency of 80% for mechanical rice transplanters, with seedling damage of less than 10%.',
       steps: ['Identify the concept', 'Recall the definition', 'Select the correct answer']
     },
     weakPoints: ['PAES Standards', 'Transplanter requirements']
@@ -318,11 +318,11 @@ export const generatedAreaAQuestions: Question[] = [
     subTopic: 'agri-machinery',
     topic: 'PAES Standards',
     difficulty: 'average',
-    question: 'What is the minimum threshing efficiency required for a rice thresher under PAES 404?',
-    options: ['98%', '95%', '99%', '90%'],
+    question: 'Under PAES 204 (Mechanical Rice Thresher), what is the minimum threshing recovery required for a mechanical rice thresher?',
+    options: ['97%', '90%', '95%', '85%'],
     correctAnswer: 0,
     solution: {
-      keyConcept: 'PAES 404 requires minimum 98% threshing efficiency for rice threshers with ≤3% grain damage.',
+      keyConcept: 'PAES 204 requires a minimum threshing recovery of 97% for mechanical rice threshers, with total machine loss of not more than 3% and mechanically damaged grain of not more than 2%.',
       steps: ['Identify the concept', 'Recall the definition', 'Select the correct answer']
     },
     weakPoints: ['PAES Standards', 'Thresher requirements']

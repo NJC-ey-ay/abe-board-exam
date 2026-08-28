@@ -245,7 +245,7 @@ export function addFormulaQuestions(areaA: Question[], areaB: Question[], areaC:
     given: 'Total grain input = {v0} kg\nThreshed grain = {v1} kg',
     steps: ['η = (M_threshed / M_total) × 100%', 'η = ({v1} / {v0}) × 100%', 'η = {r0}%'],
     formula: 'η_thresh = (M_t / M_total) × 100%',
-    keyConcept: 'PAES requires ≥ 98% threshing efficiency. Efficiency drops with incorrect cylinder speed, concave clearance, or feed rate.',
+    keyConcept: 'PAES 204/205 requires a minimum threshing recovery of 97% and a total machine loss of not more than 3%. Efficiency drops with incorrect cylinder speed, concave clearance, or feed rate.',
     commonMistakes: ['Dividing total by threshed', 'Forgetting to multiply by 100', 'Using loss instead of recovery'],
     weakPoints: ['PAES threshing standard', 'Efficiency calculation']
   }, [[100, 99], [200, 197], [150, 148], [80, 79], [250, 248], [120, 118], [300, 297], [90, 89], [180, 176], [220, 218],

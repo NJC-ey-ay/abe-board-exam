@@ -34,14 +34,23 @@ function PracticeContent() {
   const [activeDrill, setActiveDrill] = useState<DrillMetaView | null>(null);
   const [drillQuestions, setDrillQuestions] = useState<Question[]>([]);
   const [drillKey, setDrillKey] = useState(0);
+  const [drillSeed, setDrillSeed] = useState(() => Math.floor(Math.random() * 4294967296));
 
   const drillMetas = getDrillsByArea(drillArea);
 
   useEffect(() => {
     if (activeDrill) {
-      setDrillQuestions(getDrillQuestions(activeDrill.formulaId));
+      // Fresh seed per drill = content changes every time a drill is started/refreshed.
+      setDrillQuestions(getDrillQuestions(activeDrill.formulaId, drillSeed));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeDrill]);
+
+  const startDrill = (meta: DrillMetaView) => {
+    setDrillSeed(Math.floor(Math.random() * 4294967296));
+    setActiveDrill(meta);
+    setDrillKey(k => k + 1);
+  };
 
   const resetDrill = () => {
     setActiveDrill(null);
@@ -412,7 +421,7 @@ function PracticeContent() {
                 {drillMetas.map(meta => (
                   <button
                     key={meta.formulaId}
-                    onClick={() => setActiveDrill(meta)}
+                    onClick={() => startDrill(meta)}
                     className="group bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-4 text-left hover:shadow-lg hover:border-primary-400 transition"
                   >
                     <div className="font-semibold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-primary-700 dark:group-hover:text-primary-300">

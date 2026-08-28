@@ -1,6 +1,7 @@
 import type { Question, Area, Difficulty } from './comprehensive-questions';
 import type { Formula } from './formulas';
 import { areaFormulas } from './formulas';
+import { enrichSpec } from './drill-content';
 
 export interface DrillVar {
   symbol: string;
@@ -10,6 +11,24 @@ export interface DrillVar {
   min: number;
   max: number;
   decimals: number;
+}
+
+export interface DecisionItem {
+  scenario: string;
+  question: string;
+  options: string[];
+  correct: number;
+  rationale: string;
+  paes?: string;
+}
+
+export interface MultiStepSpec {
+  firstUnit: string;
+  firstPhrase: string;
+  secondUnit: string;
+  secondPhrase: string;
+  second: (stage1: number, v: Record<string, number>) => number;
+  readError: (v: Record<string, number>, correct: number) => number;
 }
 
 export interface DrillSpec {
@@ -24,33 +43,58 @@ export interface DrillSpec {
   distractors: ((v: Record<string, number>, correct: number) => number)[];
   unit: string;
   round?: number;
+  // NEW: board-exam word-problem / decision support
+  context?: string;
+  unknownPhrase?: string;
+  verb?: string;
+  decision?: DecisionItem[];
+  multiStep?: MultiStepSpec;
 }
 
-// deterministic PRNG so builds are reproducible but varied
-let seed = 20260828;
-function rand(): number {
-  seed = (seed * 1664525 + 1013904223) >>> 0;
-  return seed / 4294967296;
+interface Rng {
+  rand: () => number;
+  randBetween: (min: number, max: number) => number;
+  pick: <T>(arr: T[]) => T;
+  shuffle: <T>(arr: T[]) => T[];
 }
-function randBetween(min: number, max: number): number {
-  return min + rand() * (max - min);
-}
-function pick<T>(arr: T[]): T {
-  return arr[Math.floor(rand() * arr.length)];
+
+// seeded PRNG so each call can produce different, reproducible content
+function createRng(seedValue: number): Rng {
+  let seed = seedValue >>> 0;
+  const rand = () => {
+    seed = (seed * 1664525 + 1013904223) >>> 0;
+    return seed / 4294967296;
+  };
+  const randBetween = (min: number, max: number) => min + rand() * (max - min);
+  const pick = <T,>(arr: T[]): T => arr[Math.floor(rand() * arr.length)];
+  const shuffle = <T,>(arr: T[]): T[] => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+  return { rand, randBetween, pick, shuffle };
 }
 function roundStep(v: number, decimals: number): number {
   const f = 10 ** decimals;
   return Math.round(v * f) / f;
 }
 
+// global default rng (used at module scope, resolved lazily per call)
+function defaultRng(): Rng {
+  return createRng(Math.floor(Math.random() * 4294967296));
+}
+
 // shared helper: build 3 distinct distractors from a list of candidate generators
-function distinctDistractors(correct: number, gens: ((c: number) => number)[], candidates: number): number[] {
+function distinctDistractors(rng: Rng, correct: number, gens: ((c: number) => number)[], candidates: number): number[] {
   const set = new Set<string>();
   const out: number[] = [];
   let guard = 0;
   while (out.length < candidates && guard < 800) {
     guard++;
-    const g = pick(gens);
+    const g = rng.pick(gens);
     let val = g(correct);
     if (!isFinite(val) || val === undefined) continue;
     if (Math.abs(val - correct) < 1e-9 * Math.max(1, Math.abs(correct))) continue;
@@ -63,7 +107,7 @@ function distinctDistractors(correct: number, gens: ((c: number) => number)[], c
   }
   // fallback fills
   while (out.length < candidates) {
-    out.push(correct + randBetween(0.5, 2) * (Math.abs(correct) + 1) * (rand() < 0.5 ? 1 : -1));
+    out.push(correct + rng.randBetween(0.5, 2) * (Math.abs(correct) + 1) * (rng.rand() < 0.5 ? 1 : -1));
   }
   return out;
 }
@@ -98,26 +142,107 @@ function pickDecimals(correct: number, others: number[], unit: string, baseRound
   return 6;
 }
 
-function buildQuestion(spec: DrillSpec, idSeq: number): Question {
-  const vals: Record<string, number> = {};
-  const givenLines: string[] = [];
-  const varLines: string[] = [];
-  for (const v of spec.vars) {
-    let val = roundStep(randBetween(v.min, v.max), v.decimals);
-    vals[v.ascii] = val;
-    const str = `${v.symbol} = ${val.toFixed(v.decimals)} ${v.unit}`.trim();
-    givenLines.push(str);
-    varLines.push(`- ${str}`);
-  }
-  const correct = spec.compute(vals);
+// ---- board-exam word-problem synthesis ----
 
-  // Build a set of 3 numerically-distinct distractors, retrying until they
-  // also format to distinct strings at the chosen precision.
+function fmtValue(n: number, decimals: number): string {
+  const r = roundStep(n, decimals);
+  return String(parseFloat(r.toFixed(decimals)));
+}
+
+// Build a natural-language sentence fragment for a given value in a given unit.
+function valFragment(n: number, decimals: number, unit: string, label: string): string {
+  const lbl = label.toLowerCase();
+  // Efficiency-like quantities (given as a decimal) read more naturally as a percent in a word problem.
+  if (unit === 'decimal' && /efficien|ratio|factor|decimal|portion|coeff|index/.test(lbl)) {
+    const pct = n * 100;
+    const dec = Math.max(0, decimals - 2);
+    return `${String(parseFloat(pct.toFixed(dec)))}%`;
+  }
+  const num = fmtValue(n, decimals);
+  if (!unit || unit === '' || unit === 'decimal') return num;
+  if (unit === '%') return `${num}%`;
+  return `${num} ${unit}`;
+}
+
+function article(word: string): string {
+  if (!word) return '';
+  const first = word.charAt(0).toLowerCase();
+  return /[aeiou]/.test(first) ? 'an ' : 'a ';
+}
+
+function prettyLabel(raw: string): string {
+  return raw;
+}
+
+// Map the "unknown" symbol to a natural English phrase describing the quantity.
+function unknownPhraseFor(spec: DrillSpec): string {
+  if (spec.unknownPhrase) return spec.unknownPhrase;
+  return `the value of ${spec.unknown}`;
+}
+
+function wordProblemQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, number>): string {
+  const context = spec.context?.trim() ?? 'an operation';
+  const unknownPhrase = unknownPhraseFor(spec);
+  const vars = spec.vars;
+  // Build a sentence listing the given values as facts embedded in the scenario.
+  const factList = vars
+    .map((v, i) => {
+      const frag = valFragment(vals[v.ascii], v.decimals, v.unit, v.label);
+      const label = prettyLabel(v.label);
+      const piece = `${article(label)}${label} of ${frag}`;
+      if (i === vars.length - 1 && vars.length > 1) {
+        return `and ${piece}`;
+      }
+      return piece;
+    })
+    .join(vars.length > 2 ? ', ' : ' ');
+
+  const subject = context.charAt(0).toUpperCase() + context.slice(1);
+  const verb = spec.verb ?? 'has';
+  const q = `${subject} ${verb} ${factList}. What is ${unknownPhrase}?`;
+  return q;
+}
+
+function decisionQuestion(spec: DrillSpec, rng: Rng): Question | null {
+  const decs = spec.decision;
+  if (!decs || decs.length === 0) return null;
+  const d = rng.pick(decs);
+  const options = rng.shuffle(d.options.map((o, i) => ({ o, i }))).map(x => x.o);
+  const correctIndexInShuffled = options.indexOf(d.options[d.correct]);
+  const formula = spec.formulaText;
+  const steps: string[] = [];
+  steps.push(d.paes ? `Per ${d.paes}, the governing performance requirement is applied to this situation.` : 'The adequacy of the result is judged against the stated requirement.');
+  steps.push('Compare the given/situation against the governing criterion.');
+  steps.push('Select the option that correctly reflects whether the requirement is satisfied.');
+  return {
+    id: `${spec.formulaId}-decision-${Math.floor(rng.rand() * 1e6)}`,
+    area: spec.area,
+    subTopic: 'equation-practice',
+    topic: spec.formulaId,
+    type: 'theory',
+    difficulty: rng.pick(['average', 'average', 'hard', 'hard'] as Difficulty[]),
+    question: `${d.scenario ? d.scenario + ' ' : ''}${d.question}`,
+    options,
+    correctAnswer: correctIndexInShuffled,
+    solution: {
+      given: `Situation: ${d.scenario || 'Decision scenario for ' + (spec.unknownPhrase || spec.unknown)}${d.paes ? `\nGoverning standard: ${d.paes}` : ''}`,
+      steps,
+      formula,
+      keyConcept: d.rationale,
+      commonMistakes: spec.mistakes,
+      weakPoints: [spec.formulaId],
+    },
+    weakPoints: [spec.formulaId],
+  };
+}
+
+// Build numeric options that are all distinct when formatted, returned as {formatted, correct}
+function buildChoices(spec: DrillSpec, rng: Rng, vals: Record<string, number>, correct: number): { choices: string[]; correctOption: string } {
   let choices: string[] = [];
   let guard = 0;
   while (guard < 60) {
     guard++;
-    const dist = distinctDistractors(correct, spec.distractors.map(gen => (c: number) => gen(vals, c)), 3);
+    const dist = distinctDistractors(rng, correct, spec.distractors.map(gen => (c: number) => gen(vals, c)), 3);
     const dec = pickDecimals(correct, dist, spec.unit, spec.round);
     const cands = [correct, ...dist];
     const formatted = cands.map(n => fmtOption(n, dec, spec.unit));
@@ -126,16 +251,123 @@ function buildQuestion(spec: DrillSpec, idSeq: number): Question {
       break;
     }
   }
-  const ord = [0, 1, 2, 3];
-  for (let i = ord.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [ord[i], ord[j]] = [ord[j], ord[i]];
+  return { choices, correctOption: choices[0] ?? '' };
+}
+
+function multiStepQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, number>, idSeq: number): Question {
+  const ms = spec.multiStep!;
+  const stage1 = spec.compute(vals);
+  const correct = ms.second(stage1, vals);
+  // Build the word problem asking for the FIRST stage, then the derived second stage.
+  const stage1Phrase = ms.firstPhrase || unknownPhraseFor(spec);
+  const factList = spec.vars
+    .map((v, i) => {
+      const frag = valFragment(vals[v.ascii], v.decimals, v.unit, v.label);
+      const piece = `${article(v.label)}${v.label} of ${frag}`;
+      return i === spec.vars.length - 1 && spec.vars.length > 1 ? `and ${piece}` : piece;
+    })
+    .join(spec.vars.length > 2 ? ', ' : ' ');
+  const subject = (spec.context ?? 'an operation').charAt(0).toUpperCase() + (spec.context ?? 'an operation').slice(1);
+  const question =
+    `${subject} ${spec.verb ?? 'has'} ${factList}. First find ${stage1Phrase}, ` +
+    `then determine ${ms.secondPhrase}.`;
+  // Stage-2 distractors as simple variations of the derived result (the base
+  // formula distractors target the stage-1 quantity and would be too far off).
+  const msGens = [
+    (c: number) => c * 1.1,
+    (c: number) => c * 0.9,
+    (c: number) => c * 0.5,
+    (c: number) => c * 1.5,
+    (c: number) => c + (ms.readError ? ms.readError(vals, c) : 0),
+    (c: number) => c - (ms.readError ? ms.readError(vals, c) : 0),
+  ];
+  let choices: string[] = [];
+  let dec = pickDecimals(correct, [], ms.secondUnit, spec.round);
+  let guard = 0;
+  while (guard < 60) {
+    guard++;
+    const dist = distinctDistractors(rng, correct, msGens, 3);
+    const cands = [correct, ...dist];
+    const formatted = cands.map(n => fmtOption(n, dec, ms.secondUnit));
+    if (new Set(formatted).size === 4) {
+      choices = formatted;
+      break;
+    }
+    dec++;
   }
+  const correctOption = choices[0] ?? '';
+  const ord = rng.shuffle([0, 1, 2, 3]);
+  const finalOptions = ord.map(i => choices[i]);
+  const finalCorrect = ord.indexOf(0);
+  const formula = spec.formulaText;
+  return {
+    id: `${spec.formulaId}-ms-${idSeq}`,
+    area: spec.area,
+    subTopic: 'equation-practice',
+    topic: spec.formulaId,
+    type: 'computation',
+    difficulty: 'hard',
+    question,
+    options: finalOptions,
+    correctAnswer: finalCorrect,
+    solution: {
+      given: `Stage 1: ${stage1Phrase} = ${smartRound(stage1)} ${ms.firstUnit}\nThen ${ms.secondPhrase}. ${spec.vars
+        .map((v, i) => `${v.symbol} = ${vals[v.ascii].toFixed(v.decimals)} ${v.unit}`.trim())
+        .join('; ')}`,
+      steps: [
+        `Step 1 — compute ${stage1Phrase}: ${formula}`,
+        `Step 1 result: ${smartRound(stage1)} ${ms.firstUnit}`,
+        `Step 2 — derive ${ms.secondPhrase} from the Step 1 result and the given data.`,
+        `Step 2 result: ${correctOption}`,
+      ],
+      formula,
+      keyConcept: spec.keyConcept,
+      commonMistakes: spec.mistakes,
+      weakPoints: [spec.formulaId],
+    },
+    weakPoints: [spec.formulaId],
+  };
+}
+
+function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng): Question {
+  // Every 4th question in the set is a decision question when one is defined.
+  if (spec.decision && spec.decision.length > 0 && idSeq % 4 === 3) {
+    const dq = decisionQuestion(spec, rng);
+    if (dq) return dq;
+  }
+
+  const vals: Record<string, number> = {};
+  const givenLines: string[] = [];
+  const varLines: string[] = [];
+  for (const v of spec.vars) {
+    let val = roundStep(rng.randBetween(v.min, v.max), v.decimals);
+    vals[v.ascii] = val;
+    const str = `${v.symbol} = ${val.toFixed(v.decimals)} ${v.unit}`.trim();
+    givenLines.push(str);
+    varLines.push(`- ${str}`);
+  }
+
+  // Multi-step derived-input question when defined (spread through the set).
+  if (spec.multiStep && idSeq % 3 === 1) {
+    return multiStepQuestion(spec, rng, vals, idSeq);
+  }
+
+  const correct = spec.compute(vals);
+
+  // Build a set of 3 numerically-distinct distractors, retrying until they
+  // also format to distinct strings at the chosen precision.
+  const { choices, correctOption } = buildChoices(spec, rng, vals, correct);
+  const ord = rng.shuffle([0, 1, 2, 3]);
   const finalOptions = ord.map(i => choices[i]);
   const finalCorrect = ord.indexOf(0);
 
   const formula = spec.formulaText;
-  const question = `Using the formula ${formula}:\n${varLines.join('\n')}\nWhat is the value of ${spec.unknown}?`;
+
+  // Word-problem narrative when a context is provided; otherwise fall back to the
+  // classic "using the formula" presentation.
+  const question = spec.context
+    ? wordProblemQuestion(spec, rng, vals)
+    : `Using the formula ${formula}:\n${varLines.join('\n')}\nWhat is the value of ${spec.unknown}?`;
 
   return {
     id: `${spec.formulaId}-drill-${idSeq}`,
@@ -143,7 +375,7 @@ function buildQuestion(spec: DrillSpec, idSeq: number): Question {
     subTopic: 'equation-practice',
     topic: spec.formulaId,
     type: 'computation',
-    difficulty: pick(['easy', 'average', 'average', 'hard'] as Difficulty[]),
+    difficulty: rng.pick(['easy', 'average', 'average', 'hard'] as Difficulty[]),
     question,
     options: finalOptions,
     correctAnswer: finalCorrect,
@@ -153,7 +385,7 @@ function buildQuestion(spec: DrillSpec, idSeq: number): Question {
         `Write the formula: ${formula}`,
         'Substitute the given values:',
         ...varLines,
-        `Evaluate: ${choices[0]}`,
+        `Evaluate: ${correctOption}`,
       ],
       formula,
       keyConcept: spec.keyConcept,
@@ -2819,10 +3051,12 @@ export function getDrillsByArea(areaCode: string): DrillMeta[] {
     });
 }
 
-export function getDrillQuestions(formulaId: string): Question[] {
-  const spec = specs.find(s => s.formulaId === formulaId);
-  if (!spec) return [];
+export function getDrillQuestions(formulaId: string, seed?: number): Question[] {
+  const base = specs.find(s => s.formulaId === formulaId);
+  if (!base) return [];
+  const spec = enrichSpec(base);
+  const rng = createRng(seed ?? Math.floor(Math.random() * 4294967296));
   const out: Question[] = [];
-  for (let i = 0; i < 10; i++) out.push(buildQuestion(spec, i));
+  for (let i = 0; i < 10; i++) out.push(buildQuestion(spec, i, rng));
   return out;
 }
