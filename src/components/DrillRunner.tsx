@@ -30,9 +30,13 @@ export function DrillRunner({
   const [showSolution, setShowSolution] = useState(false);
   const [stats, setStats] = useState({ correct: 0, wrong: 0 });
 
-  const current = questions[currentIndex];
-  const isCorrect = selectedAnswer === current.correctAnswer;
-  const hasAnswered = selectedAnswer !== null;
+  if (questions.length === 0) {
+    return (
+      <div className="max-w-5xl mx-auto px-4 py-16 text-center text-gray-500">
+        Generating drill questions...
+      </div>
+    );
+  }
 
   const handleSelect = (index: number) => {
     if (hasAnswered) return;
@@ -101,6 +105,10 @@ export function DrillRunner({
       </div>
     );
   }
+
+  const current = questions[currentIndex];
+  const hasAnswered = selectedAnswer !== null;
+  const isCorrect = hasAnswered && selectedAnswer === current.correctAnswer;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-6">
