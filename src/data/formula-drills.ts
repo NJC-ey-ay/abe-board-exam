@@ -2,6 +2,7 @@ import type { Question, Area, Difficulty } from './comprehensive-questions';
 import type { Formula } from './formulas';
 import { areaFormulas } from './formulas';
 import { enrichSpec } from './drill-content';
+import { poolTheoryForFormula } from './drill-mock-link';
 
 export interface DrillVar {
   symbol: string;
@@ -31,6 +32,28 @@ export interface MultiStepSpec {
   readError: (v: Record<string, number>, correct: number) => number;
 }
 
+// Describes how a variable can be presented in an alternate (English/imperial)
+// unit so the student must first convert to the formula's native unit.
+export interface VarConversion {
+  ascii: string;             // variable key in vals (matches DrillVar.ascii)
+  unit: string;              // English display unit label, e.g. 'ft', 'mph'
+  factor: number;            // display = nativeValue × factor (i.e. 1 native unit = factor English units)
+  fromUnit?: string;         // native unit label (defaults to the DrillVar.unit)
+  displayDecimals?: number;  // decimal precision for the display value (defaults to the DrillVar.decimals)
+}
+
+// A conversion actually applied to a generated question (used to build the solution step).
+interface AppliedConversion {
+  symbol: string;
+  label: string;
+  display: number;       // value as shown in the word problem (English units)
+  displayDecimals: number;
+  unit: string;          // English unit
+  native: number;        // value in the formula's native unit
+  nativeUnit: string;    // native unit
+  toNative: number;      // multiply the English value by this to get the native value (1/factor)
+}
+
 export interface DrillSpec {
   formulaId: string;
   area: Area;
@@ -49,6 +72,9 @@ export interface DrillSpec {
   verb?: string;
   decision?: DecisionItem[];
   multiStep?: MultiStepSpec;
+  // Alternate (English) units for selected variables, so word problems can ask
+  // the student to convert units before applying the formula.
+  conversions?: VarConversion[];
 }
 
 interface Rng {
@@ -170,6 +196,60 @@ function article(word: string): string {
   return /[aeiou]/.test(first) ? 'an ' : 'a ';
 }
 
+// Build one natural-language fact piece for a variable, optionally presented in
+// an alternate (English) unit. Returns the fragment to print plus, when a
+// conversion was applied, an AppliedConversion record for the solution.
+function buildVarFragment(spec: DrillSpec, v: DrillVar, value: number, useEnglish: boolean): { frag: string; applied?: AppliedConversion } {
+  const conv = spec.conversions?.find(c => c.ascii === v.ascii);
+  if (conv && useEnglish) {
+    const displayDecimals = conv.displayDecimals ?? v.decimals;
+    const display = roundStep(value * conv.factor, displayDecimals);
+    const num = fmtValue(display, displayDecimals);
+    const frag = `${num} ${conv.unit}`;
+    return {
+      frag,
+      applied: {
+        symbol: v.symbol,
+        label: v.label,
+        display,
+        displayDecimals,
+        unit: conv.unit,
+        native: value,
+        nativeUnit: conv.fromUnit ?? v.unit,
+        toNative: 1 / conv.factor,
+      },
+    };
+  }
+  return { frag: valFragment(value, v.decimals, v.unit, v.label) };
+}
+
+// Build the natural-language fact list for the word problem, collecting any
+// unit-conversion steps that were applied along the way.
+function buildFacts(spec: DrillSpec, vals: Record<string, number>, useEnglish: boolean): { factList: string; conversions: AppliedConversion[] } {
+  const pieces: string[] = [];
+  const conversions: AppliedConversion[] = [];
+  spec.vars.forEach((v, i) => {
+    const { frag, applied } = buildVarFragment(spec, v, vals[v.ascii], useEnglish);
+    const label = prettyLabel(v.label);
+    const piece = `${article(label)}${label} of ${frag}`;
+    pieces.push(i === spec.vars.length - 1 && spec.vars.length > 1 ? `and ${piece}` : piece);
+    if (applied) conversions.push(applied);
+  });
+  return { factList: pieces.join(spec.vars.length > 2 ? ', ' : ' '), conversions };
+}
+
+// Solution lines describing each applied unit conversion.
+function conversionStepLines(conversions: AppliedConversion[]): string[] {
+  if (conversions.length === 0) return [];
+  const lines = conversions.map(c => {
+    const displayStr = `${fmtValue(c.display, c.displayDecimals)} ${c.unit}`;
+    const nativeStr = `${fmtValue(roundStep(c.native, c.displayDecimals), c.displayDecimals)} ${c.nativeUnit}`;
+    const mult = parseFloat(roundStep(c.toNative, 6).toFixed(6));
+    return `${c.label} (${c.symbol}): convert ${displayStr} → ${c.nativeUnit} (${displayStr} × ${mult} = ${nativeStr})`;
+  });
+  return ['The given values are in English units; convert them to the formula\u2019s units first.', ...lines];
+}
+
 function prettyLabel(raw: string): string {
   return raw;
 }
@@ -180,33 +260,20 @@ function unknownPhraseFor(spec: DrillSpec): string {
   return `the value of ${spec.unknown}`;
 }
 
-function wordProblemQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, number>): string {
+function wordProblemQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, number>, useEnglish: boolean): { question: string; conversions: AppliedConversion[] } {
   const context = spec.context?.trim() ?? 'an operation';
   const unknownPhrase = unknownPhraseFor(spec);
-  const vars = spec.vars;
-  // Build a sentence listing the given values as facts embedded in the scenario.
-  const factList = vars
-    .map((v, i) => {
-      const frag = valFragment(vals[v.ascii], v.decimals, v.unit, v.label);
-      const label = prettyLabel(v.label);
-      const piece = `${article(label)}${label} of ${frag}`;
-      if (i === vars.length - 1 && vars.length > 1) {
-        return `and ${piece}`;
-      }
-      return piece;
-    })
-    .join(vars.length > 2 ? ', ' : ' ');
+  const { factList, conversions } = buildFacts(spec, vals, useEnglish);
 
   const subject = context.charAt(0).toUpperCase() + context.slice(1);
   const verb = spec.verb ?? 'has';
   const q = `${subject} ${verb} ${factList}. What is ${unknownPhrase}?`;
-  return q;
+  return { question: q, conversions };
 }
 
-function decisionQuestion(spec: DrillSpec, rng: Rng): Question | null {
-  const decs = spec.decision;
-  if (!decs || decs.length === 0) return null;
-  const d = rng.pick(decs);
+// Build a theory Question from a specific hand-authored decision item (distinct
+// per item, so multiple decision scenarios never collapse into one duplicate).
+function buildDecisionFrom(spec: DrillSpec, rng: Rng, d: DecisionItem, tag: string): Question {
   const options = rng.shuffle(d.options.map((o, i) => ({ o, i }))).map(x => x.o);
   const correctIndexInShuffled = options.indexOf(d.options[d.correct]);
   const formula = spec.formulaText;
@@ -215,7 +282,7 @@ function decisionQuestion(spec: DrillSpec, rng: Rng): Question | null {
   steps.push('Compare the given/situation against the governing criterion.');
   steps.push('Select the option that correctly reflects whether the requirement is satisfied.');
   return {
-    id: `${spec.formulaId}-decision-${Math.floor(rng.rand() * 1e6)}`,
+    id: `${spec.formulaId}-decision-${tag}-${Math.floor(rng.rand() * 1e6)}`,
     area: spec.area,
     subTopic: 'equation-practice',
     topic: spec.formulaId,
@@ -236,6 +303,92 @@ function decisionQuestion(spec: DrillSpec, rng: Rng): Question | null {
   };
 }
 
+// A safe, formula-specific "what does this symbol represent?" theory question
+// derived entirely from the formula's own variable metadata (no external data).
+function definitionTheoryQuestion(spec: DrillSpec, v: DrillVar, slot: number, rng: Rng): Question {
+  const formula = spec.formulaText;
+  const lbl = `${v.label}${v.unit ? ` (${v.unit})` : ''}`;
+  const correctLabel = lbl;
+  const used = new Set<string>([correctLabel.toLowerCase()]);
+  const options: string[] = [correctLabel];
+  for (const s of spec.vars) {
+    if (s.ascii === v.ascii) continue;
+    const x = `${s.label}${s.unit ? ` (${s.unit})` : ''}`;
+    if (!used.has(x.toLowerCase())) { used.add(x.toLowerCase()); options.push(x); }
+  }
+  const genericPool = [
+    'the total time of the operation', 'the amount of energy consumed',
+    'the density of the material', 'the pressure head of the system',
+    'the flow velocity through the system', 'the cross-sectional area of the flow path',
+    'the temperature difference across the system', 'the mass flow rate',
+    'the force applied to the system', 'the volume displaced by the system',
+  ];
+  for (const g of genericPool) {
+    if (options.length >= 4) break;
+    const s = g.replace(/^the /, '');
+    if (!used.has(s.toLowerCase())) { used.add(s.toLowerCase()); options.push(s); }
+  }
+  const correct = options[0];
+  const ordered = rng.shuffle(options);
+  const correctIndexInShuffled = ordered.indexOf(correct);
+  return {
+    id: `${spec.formulaId}-theory-def-${slot}-${Math.floor(rng.rand() * 1e6)}`,
+    area: spec.area,
+    subTopic: 'equation-practice',
+    topic: spec.formulaId,
+    type: 'theory',
+    difficulty: 'average',
+    question: `In the formula ${formula}, what does the symbol ${v.symbol} represent?`,
+    options: ordered,
+    correctAnswer: correctIndexInShuffled,
+    solution: {
+      given: `Formula: ${formula}\nSymbol: ${v.symbol}`,
+      steps: [
+        `The symbol ${v.symbol} denotes the quantity ${v.label} in this formula.`,
+        `Matching the symbol to its definition (${v.label}) and unit${v.unit ? ` (${v.unit})` : ''} identifies the correct quantity.`,
+      ],
+      formula,
+      keyConcept: spec.keyConcept,
+      commonMistakes: spec.mistakes,
+      weakPoints: [spec.formulaId],
+    },
+    weakPoints: [spec.formulaId],
+  };
+}
+
+// Build a pool of distinct, exam-style theory questions for a formula by combining
+// (1) the formula's own authored decisions, (2) real mock-pool questions matched
+// by topic/area, and (3) its variable-definition questions (fallback). Dedupes on
+// question text so a session never repeats the same theory question. Priority is
+// chosen so decisions/pool content (richer) fill first and plain definitions only
+// appear when richer theory is exhausted.
+function buildTheoryPool(spec: DrillSpec, rng: Rng): Question[] {
+  const result: { rich: Question[]; fallback: Question[] } = { rich: [], fallback: [] };
+  const seen = new Set<string>();
+  const add = (bucket: 'rich' | 'fallback', q: Question) => {
+    const key = (q.question || '').trim();
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    result[bucket].push(q);
+  };
+
+  for (const d of spec.decision ?? []) add('rich', buildDecisionFrom(spec, rng, d, `d${result.rich.length}`));
+  for (const q of poolTheoryForFormula(spec.formulaId, spec.area)) {
+    add('rich', { ...q, subTopic: 'equation-practice', topic: spec.formulaId, weakPoints: [spec.formulaId, ...(q.weakPoints ?? [])] });
+  }
+  for (let di = 0; di < spec.vars.length; di++) {
+    add('fallback', definitionTheoryQuestion(spec, spec.vars[di], di, rng));
+  }
+  const rich = rng.shuffle(result.rich);
+  const fallback = rng.shuffle(result.fallback);
+  const out = rich.slice(0, 3);
+  if (out.length < 3) {
+    for (const q of fallback) { if (out.length === 3) break; out.push(q); }
+  }
+  return out;
+}
+
+
 // Build numeric options that are all distinct when formatted, returned as {formatted, correct}
 function buildChoices(spec: DrillSpec, rng: Rng, vals: Record<string, number>, correct: number): { choices: string[]; correctOption: string } {
   let choices: string[] = [];
@@ -254,19 +407,13 @@ function buildChoices(spec: DrillSpec, rng: Rng, vals: Record<string, number>, c
   return { choices, correctOption: choices[0] ?? '' };
 }
 
-function multiStepQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, number>, idSeq: number): Question {
+function multiStepQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, number>, idSeq: number, useEnglish: boolean): Question {
   const ms = spec.multiStep!;
   const stage1 = spec.compute(vals);
   const correct = ms.second(stage1, vals);
   // Build the word problem asking for the FIRST stage, then the derived second stage.
   const stage1Phrase = ms.firstPhrase || unknownPhraseFor(spec);
-  const factList = spec.vars
-    .map((v, i) => {
-      const frag = valFragment(vals[v.ascii], v.decimals, v.unit, v.label);
-      const piece = `${article(v.label)}${v.label} of ${frag}`;
-      return i === spec.vars.length - 1 && spec.vars.length > 1 ? `and ${piece}` : piece;
-    })
-    .join(spec.vars.length > 2 ? ', ' : ' ');
+  const { factList, conversions } = buildFacts(spec, vals, useEnglish);
   const subject = (spec.context ?? 'an operation').charAt(0).toUpperCase() + (spec.context ?? 'an operation').slice(1);
   const question =
     `${subject} ${spec.verb ?? 'has'} ${factList}. First find ${stage1Phrase}, ` +
@@ -315,6 +462,7 @@ function multiStepQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, numbe
         .map((v, i) => `${v.symbol} = ${vals[v.ascii].toFixed(v.decimals)} ${v.unit}`.trim())
         .join('; ')}`,
       steps: [
+        ...conversionStepLines(conversions),
         `Step 1 — compute ${stage1Phrase}: ${formula}`,
         `Step 1 result: ${smartRound(stage1)} ${ms.firstUnit}`,
         `Step 2 — derive ${ms.secondPhrase} from the Step 1 result and the given data.`,
@@ -329,11 +477,11 @@ function multiStepQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, numbe
   };
 }
 
-function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng): Question {
-  // Every 4th question in the set is a decision question when one is defined.
-  if (spec.decision && spec.decision.length > 0 && idSeq % 4 === 3) {
-    const dq = decisionQuestion(spec, rng);
-    if (dq) return dq;
+function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng, role: 'convert' | 'si' | 'theory', theoryForSlot?: Question): Question {
+  // Theory roles are supplied a distinct, exam-style theory question pre-selected
+  // for this session (never repeated). Fall back to a computation if none given.
+  if (role === 'theory') {
+    if (theoryForSlot) return theoryForSlot;
   }
 
   const vals: Record<string, number> = {};
@@ -347,9 +495,13 @@ function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng): Question {
     varLines.push(`- ${str}`);
   }
 
-  // Multi-step derived-input question when defined (spread through the set).
+  // English-unit givens only when this slot is a 'convert' role.
+  const useEnglish = role === 'convert';
+
+  // Multi-step derived-input question when defined (a computation question; unit
+  // mode still follows the role).
   if (spec.multiStep && idSeq % 3 === 1) {
-    return multiStepQuestion(spec, rng, vals, idSeq);
+    return multiStepQuestion(spec, rng, vals, idSeq, useEnglish);
   }
 
   const correct = spec.compute(vals);
@@ -365,9 +517,15 @@ function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng): Question {
 
   // Word-problem narrative when a context is provided; otherwise fall back to the
   // classic "using the formula" presentation.
-  const question = spec.context
-    ? wordProblemQuestion(spec, rng, vals)
-    : `Using the formula ${formula}:\n${varLines.join('\n')}\nWhat is the value of ${spec.unknown}?`;
+  let conversions: AppliedConversion[] = [];
+  let question: string;
+  if (spec.context) {
+    const wp = wordProblemQuestion(spec, rng, vals, useEnglish);
+    question = wp.question;
+    conversions = wp.conversions;
+  } else {
+    question = `Using the formula ${formula}:\n${varLines.join('\n')}\nWhat is the value of ${spec.unknown}?`;
+  }
 
   return {
     id: `${spec.formulaId}-drill-${idSeq}`,
@@ -382,6 +540,7 @@ function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng): Question {
     solution: {
       given: givenLines.join('\n'),
       steps: [
+        ...conversionStepLines(conversions),
         `Write the formula: ${formula}`,
         'Substitute the given values:',
         ...varLines,
@@ -433,6 +592,10 @@ add(
       { symbol: 'S', ascii: 'S', label: 'speed', unit: 'km/h', min: 3, max: 9, decimals: 0 },
       { symbol: 'E', ascii: 'E', label: 'field efficiency', unit: 'decimal', min: 0.6, max: 0.9, decimals: 2 },
     ],
+    conversions: [
+      { ascii: 'W', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+      { ascii: 'S', unit: 'mph', factor: 0.6214, fromUnit: 'km/h' },
+    ],
     compute: v => (v.W * v.S * v.E) / 10,
     keyConcept: 'Effective field capacity = working width × speed × field efficiency, divided by 10.',
     mistakes: ['Using efficiency as a percent (80) instead of decimal (0.8)', 'Omitting the /10', 'Using speed in m/min instead of km/h'],
@@ -445,6 +608,10 @@ add(
     vars: [
       { symbol: 'W', ascii: 'W', label: 'working width', unit: 'm', min: 1.5, max: 8.0, decimals: 1 },
       { symbol: 'S', ascii: 'S', label: 'speed', unit: 'km/h', min: 3, max: 10, decimals: 0 },
+    ],
+    conversions: [
+      { ascii: 'W', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+      { ascii: 'S', unit: 'mph', factor: 0.6214, fromUnit: 'km/h' },
     ],
     compute: v => (v.W * v.S) / 10,
     keyConcept: 'Theoretical field capacity is capacity at 100% efficiency, with no time losses.',
@@ -473,6 +640,10 @@ add(
       { symbol: 'S_p', ascii: 'Sp', label: 'row spacing', unit: 'm', min: 0.5, max: 1.0, decimals: 2 },
       { symbol: 'S', ascii: 'S', label: 'speed', unit: 'km/h', min: 4, max: 9, decimals: 0 },
       { symbol: 'E', ascii: 'E', label: 'efficiency', unit: 'decimal', min: 0.6, max: 0.9, decimals: 2 },
+    ],
+    conversions: [
+      { ascii: 'Sp', unit: 'in', factor: 39.37, fromUnit: 'm' },
+      { ascii: 'S', unit: 'mph', factor: 0.6214, fromUnit: 'km/h' },
     ],
     compute: v => (v.N * v.Sp * v.S * v.E) / 10,
     keyConcept: 'Multi-row planter capacity = rows × row spacing × speed × efficiency, ÷ 10.',
@@ -594,6 +765,10 @@ add(
       { symbol: 'F', ascii: 'F', label: 'draft force', unit: 'kN', min: 20, max: 80, decimals: 0 },
       { symbol: 'S', ascii: 'S', label: 'travel speed', unit: 'km/h', min: 3, max: 9, decimals: 1 },
     ],
+    conversions: [
+      { ascii: 'F', unit: 'lbf', factor: 224.8, fromUnit: 'kN' },
+      { ascii: 'S', unit: 'mph', factor: 0.6214, fromUnit: 'km/h' },
+    ],
     compute: v => (v.F * v.S) / 3.6,
     keyConcept: 'Drawbar power (kW) = draft (kN) × speed (km/h) ÷ 3.6.',
     mistakes: ['Forgetting /3.6', 'Using force in N instead of kN', 'Unit mismatch'],
@@ -606,6 +781,10 @@ add(
     vars: [
       { symbol: 'F', ascii: 'F', label: 'drawbar pull', unit: 'N', min: 20000, max: 80000, decimals: 0 },
       { symbol: 'S', ascii: 'S', label: 'speed', unit: 'm/s', min: 1, max: 3, decimals: 1 },
+    ],
+    conversions: [
+      { ascii: 'F', unit: 'lbf', factor: 0.2248, fromUnit: 'N' },
+      { ascii: 'S', unit: 'mph', factor: 2.237, fromUnit: 'm/s' },
     ],
     compute: v => (v.F * v.S) / 745.7,
     keyConcept: 'Drawbar horsepower = pull (N) × speed (m/s) ÷ 745.7.',
@@ -714,6 +893,10 @@ add(
       { symbol: 'B', ascii: 'B', label: 'cylinder bore', unit: 'cm', min: 8, max: 14, decimals: 1 },
       { symbol: 'L', ascii: 'L', label: 'stroke length', unit: 'cm', min: 8, max: 15, decimals: 1 },
     ],
+    conversions: [
+      { ascii: 'B', unit: 'in', factor: 0.3937, fromUnit: 'cm' },
+      { ascii: 'L', unit: 'in', factor: 0.3937, fromUnit: 'cm' },
+    ],
     compute: v => v.n * (Math.PI / 4) * v.B * v.B * v.L,
     keyConcept: 'Displacement = cylinders × (π/4) × bore² × stroke.',
     mistakes: ['Forgetting π/4', 'Squaring stroke instead of bore', 'Forgetting to multiply by cylinder count'],
@@ -740,6 +923,9 @@ add(
       { symbol: 'V_c', ascii: 'Vc', label: 'clearance volume', unit: 'cm³', min: 60, max: 130, decimals: 0 },
       { symbol: 'CR', ascii: 'CR', label: 'compression ratio', unit: '', min: 8, max: 18, decimals: 1 },
     ],
+    conversions: [
+      { ascii: 'Vc', unit: 'in³', factor: 0.061024, fromUnit: 'cm³' },
+    ],
     compute: v => v.Vc * (v.CR - 1),
     keyConcept: 'Displacement = clearance × (compression ratio − 1).',
     mistakes: ['Using CR instead of CR−1', 'Adding instead of subtracting 1', 'Multiplying then adding'],
@@ -752,6 +938,10 @@ add(
     vars: [
       { symbol: 'V_t', ascii: 'Vt', label: 'total cylinder volume', unit: 'cm³', min: 600, max: 1000, decimals: 0 },
       { symbol: 'V_d', ascii: 'Vd', label: 'displacement volume', unit: 'cm³', min: 400, max: 800, decimals: 0 },
+    ],
+    conversions: [
+      { ascii: 'Vt', unit: 'in³', factor: 0.061024, fromUnit: 'cm³' },
+      { ascii: 'Vd', unit: 'in³', factor: 0.061024, fromUnit: 'cm³' },
     ],
     compute: v => v.Vt - v.Vd,
     keyConcept: 'Clearance volume = total volume minus displacement.',
@@ -850,6 +1040,11 @@ add(
       { symbol: 'd', ascii: 'd', label: 'working depth', unit: 'm', min: 0.15, max: 0.4, decimals: 2 },
       { symbol: 'K', ascii: 'K', label: 'soil specific resistance', unit: 'kN/m²', min: 50, max: 120, decimals: 0 },
     ],
+    conversions: [
+      { ascii: 'w', unit: 'in', factor: 39.37, fromUnit: 'm' },
+      { ascii: 'd', unit: 'in', factor: 39.37, fromUnit: 'm' },
+      { ascii: 'K', unit: 'psi', factor: 0.145, fromUnit: 'kN/m²' },
+    ],
     compute: v => v.n * v.w * v.d * v.K,
     keyConcept: 'Disc plow draft = bottoms × width × depth × soil resistance.',
     mistakes: ['Omitting a factor', 'Unit mismatch (width in cm)', 'Adding factors'],
@@ -889,6 +1084,10 @@ add(
       { symbol: 'ρ', ascii: 'rho', label: 'fluid density', unit: 'kg/m³', min: 800, max: 1200, decimals: 0 },
       { symbol: 'h', ascii: 'h', label: 'depth', unit: 'm', min: 2, max: 20, decimals: 1 },
     ],
+    conversions: [
+      { ascii: 'rho', unit: 'lb/ft³', factor: 0.0624, fromUnit: 'kg/m³' },
+      { ascii: 'h', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+    ],
     compute: v => v.rho * 9.81 * v.h,
     keyConcept: 'Hydrostatic pressure = density × gravity × depth.',
     mistakes: ['Forgetting g = 9.81', 'Omitting density', 'Unit confusion'],
@@ -916,6 +1115,9 @@ add(
       { symbol: 'Q', ascii: 'Q', label: 'flow rate', unit: 'm³/s', min: 0.01, max: 0.1, decimals: 3 },
       { symbol: 'H', ascii: 'H', label: 'total head', unit: 'm', min: 5, max: 30, decimals: 0 },
       { symbol: 'η', ascii: 'et', label: 'pump efficiency', unit: 'decimal', min: 0.6, max: 0.9, decimals: 2 },
+    ],
+    conversions: [
+      { ascii: 'H', unit: 'ft', factor: 3.281, fromUnit: 'm' },
     ],
     compute: v => (1000 * 9.81 * v.Q * v.H) / v.et,
     keyConcept: 'Pump power = ρ g Q H ÷ efficiency (ρ = 1000 kg/m³ for water).',
@@ -1196,6 +1398,10 @@ add(
       { symbol: 'S_l', ascii: 'Sl', label: 'lateral spacing', unit: 'm', min: 12, max: 24, decimals: 0 },
       { symbol: 'S_s', ascii: 'Ss', label: 'sprinkler spacing', unit: 'm', min: 12, max: 24, decimals: 0 },
     ],
+    conversions: [
+      { ascii: 'Sl', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+      { ascii: 'Ss', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+    ],
     compute: v => (v.q * 3600) / (v.Sl * v.Ss),
     keyConcept: 'Sprinkler application rate = flow×3600 ÷ (lateral spacing × sprinkler spacing).',
     mistakes: ['Forgetting the 3600', 'Multiplying spacings into numerator', 'Unit confusion'],
@@ -1238,6 +1444,10 @@ add(
       { symbol: 'd', ascii: 'd', label: 'net depth applied', unit: 'mm', min: 30, max: 100, decimals: 0 },
       { symbol: 'E', ascii: 'E', label: 'system efficiency', unit: 'decimal', min: 0.6, max: 0.9, decimals: 2 },
       { symbol: 'Q', ascii: 'Q', label: 'flow rate', unit: 'L/s', min: 10, max: 60, decimals: 0 },
+    ],
+    conversions: [
+      { ascii: 'A', unit: 'acre', factor: 2.471, fromUnit: 'ha' },
+      { ascii: 'd', unit: 'in', factor: 0.03937, fromUnit: 'mm' },
     ],
     compute: v => (v.A * v.d * 10) / (v.E * v.Q),
     keyConcept: 'Pumping time = area×depth×10 ÷ (efficiency × flow).',
@@ -1446,6 +1656,10 @@ add(
       { symbol: 'I', ascii: 'I', label: 'rainfall intensity', unit: 'mm/h', min: 20, max: 80, decimals: 0 },
       { symbol: 'A', ascii: 'A', label: 'catchment area', unit: 'ha', min: 5, max: 100, decimals: 0 },
     ],
+    conversions: [
+      { ascii: 'I', unit: 'in/h', factor: 0.03937, fromUnit: 'mm/h' },
+      { ascii: 'A', unit: 'acre', factor: 2.471, fromUnit: 'ha' },
+    ],
     compute: v => (v.C * v.I * v.A) / 360,
     keyConcept: 'Rational method peak runoff = C×I×A ÷ 360 (A in ha, I in mm/h).',
     mistakes: ['Forgetting /360', 'Using A in m² directly', 'Unit mismatch'],
@@ -1459,6 +1673,9 @@ add(
       { symbol: 'K', ascii: 'K', label: 'hydraulic conductivity', unit: 'm/s', min: 0.00001, max: 0.001, decimals: 6 },
       { symbol: 'i', ascii: 'i', label: 'hydraulic gradient', unit: '', min: 0.1, max: 1.0, decimals: 2 },
       { symbol: 'A', ascii: 'A', label: 'cross-sectional area', unit: 'm²', min: 1, max: 20, decimals: 1 },
+    ],
+    conversions: [
+      { ascii: 'A', unit: 'ft²', factor: 10.764, fromUnit: 'm²' },
     ],
     compute: v => v.K * v.i * v.A,
     keyConcept: 'Darcy flow = hydraulic conductivity × gradient × area.',
@@ -1490,6 +1707,9 @@ add(
       { symbol: 'R', ascii: 'R', label: 'radius of influence', unit: 'm', min: 100, max: 300, decimals: 0 },
       { symbol: 'r', ascii: 'r', label: 'well radius', unit: 'm', min: 0.1, max: 0.5, decimals: 2 },
     ],
+    conversions: [
+      { ascii: 'K', unit: 'ft/day', factor: 3.281, fromUnit: 'm/day' },
+    ],
     compute: v => (v.Q / (2 * Math.PI * v.K)) * Math.log(v.R / v.r),
     keyConcept: 'Thiem drawdown = (Q ÷ 2πK) × ln(R/r); Q must match K units.',
     mistakes: ['Using log10 instead of ln', 'Reversing R/r', 'Unit mismatch between Q and K'],
@@ -1504,6 +1724,9 @@ add(
       { symbol: 'h', ascii: 'h', label: 'flow thickness', unit: 'm', min: 5, max: 20, decimals: 0 },
       { symbol: 'r', ascii: 'r', label: 'well radius', unit: 'm', min: 0.1, max: 0.5, decimals: 2 },
       { symbol: 'R', ascii: 'R', label: 'radius of influence', unit: 'm', min: 100, max: 300, decimals: 0 },
+    ],
+    conversions: [
+      { ascii: 'K', unit: 'ft/day', factor: 3.281, fromUnit: 'm/day' },
     ],
     compute: v => (v.K * Math.PI * v.h * v.r) / Math.log(v.R / v.r),
     keyConcept: 'Steady well discharge = Kπhr ÷ ln(R/r).',
@@ -1575,6 +1798,10 @@ add(
       { symbol: 'M_w', ascii: 'Mw', label: 'wet soil mass', unit: 'g', min: 80, max: 200, decimals: 0 },
       { symbol: 'M_d', ascii: 'Md', label: 'oven-dry mass', unit: 'g', min: 60, max: 160, decimals: 0 },
     ],
+    conversions: [
+      { ascii: 'Mw', unit: 'oz', factor: 0.035274, fromUnit: 'g' },
+      { ascii: 'Md', unit: 'oz', factor: 0.035274, fromUnit: 'g' },
+    ],
     compute: v => ((v.Mw - v.Md) / v.Md) * 100,
     keyConcept: 'Gravimetric moisture = (wet−dry) ÷ dry × 100%.',
     mistakes: ['Using wet mass as denominator', 'Forgetting ×100', 'Forgetting to subtract dry'],
@@ -1587,6 +1814,10 @@ add(
     vars: [
       { symbol: 'M_w', ascii: 'Mw', label: 'fresh sample mass', unit: 'g', min: 50, max: 150, decimals: 0 },
       { symbol: 'M_d', ascii: 'Md', label: 'oven-dry mass', unit: 'g', min: 35, max: 120, decimals: 0 },
+    ],
+    conversions: [
+      { ascii: 'Mw', unit: 'oz', factor: 0.035274, fromUnit: 'g' },
+      { ascii: 'Md', unit: 'oz', factor: 0.035274, fromUnit: 'g' },
     ],
     compute: v => ((v.Mw - v.Md) / v.Md) * 100,
     keyConcept: 'Organic matter = (fresh−dry) ÷ dry × 100% (loss on ignition basis).',
@@ -1626,6 +1857,10 @@ add(
     vars: [
       { symbol: 'm', ascii: 'm', label: 'mass', unit: 'kg', min: 100, max: 1000, decimals: 0 },
       { symbol: 'V', ascii: 'V', label: 'volume', unit: 'm³', min: 0.1, max: 1.0, decimals: 2 },
+    ],
+    conversions: [
+      { ascii: 'm', unit: 'lb', factor: 2.205, fromUnit: 'kg' },
+      { ascii: 'V', unit: 'ft³', factor: 35.315, fromUnit: 'm³' },
     ],
     compute: v => v.m / v.V,
     keyConcept: 'Density = mass ÷ volume.',
@@ -2223,6 +2458,10 @@ add(
       { symbol: 'W_w', ascii: 'Ww', label: 'weight of water', unit: 'kg', min: 20, max: 80, decimals: 0 },
       { symbol: 'W_t', ascii: 'Wt', label: 'total weight', unit: 'kg', min: 100, max: 200, decimals: 0 },
     ],
+    conversions: [
+      { ascii: 'Ww', unit: 'lb', factor: 2.205, fromUnit: 'kg' },
+      { ascii: 'Wt', unit: 'lb', factor: 2.205, fromUnit: 'kg' },
+    ],
     compute: v => (v.Ww / v.Wt) * 100,
     keyConcept: 'Wet-basis moisture = water weight ÷ total weight × 100%.',
     mistakes: ['Using dry weight as denominator', 'Forgetting ×100', 'Reversing ratio'],
@@ -2235,6 +2474,10 @@ add(
     vars: [
       { symbol: 'W_w', ascii: 'Ww', label: 'weight of water', unit: 'kg', min: 20, max: 80, decimals: 0 },
       { symbol: 'W_d', ascii: 'Wd', label: 'dry matter weight', unit: 'kg', min: 60, max: 120, decimals: 0 },
+    ],
+    conversions: [
+      { ascii: 'Ww', unit: 'lb', factor: 2.205, fromUnit: 'kg' },
+      { ascii: 'Wd', unit: 'lb', factor: 2.205, fromUnit: 'kg' },
     ],
     compute: v => (v.Ww / v.Wd) * 100,
     keyConcept: 'Dry-basis moisture = water weight ÷ dry matter weight × 100%.',
@@ -2996,6 +3239,9 @@ add(
     vars: [
       { symbol: 'r', ascii: 'r', label: 'radius', unit: 'm', min: 0.5, max: 5, decimals: 1 },
     ],
+    conversions: [
+      { ascii: 'r', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+    ],
     compute: v => Math.PI * v.r * v.r,
     keyConcept: 'Circle area = πr².',
     mistakes: ['Not squaring radius', 'Using diameter squared', 'Multiplying by 2πr'],
@@ -3008,6 +3254,10 @@ add(
     vars: [
       { symbol: 'r', ascii: 'r', label: 'radius', unit: 'm', min: 0.5, max: 3, decimals: 1 },
       { symbol: 'h', ascii: 'h', label: 'height', unit: 'm', min: 1, max: 6, decimals: 1 },
+    ],
+    conversions: [
+      { ascii: 'r', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+      { ascii: 'h', unit: 'ft', factor: 3.281, fromUnit: 'm' },
     ],
     compute: v => Math.PI * v.r * v.r * v.h,
     keyConcept: 'Cylinder volume = πr²h.',
@@ -3056,7 +3306,25 @@ export function getDrillQuestions(formulaId: string, seed?: number): Question[] 
   if (!base) return [];
   const spec = enrichSpec(base);
   const rng = createRng(seed ?? Math.floor(Math.random() * 4294967296));
+  // Fixed session structure: 5 English-unit (convert) problems, 2 SI problems,
+  // 3 formula-specific theory questions, shuffled so positions change each session.
+  const roles: ('convert' | 'si' | 'theory')[] = [
+    'convert', 'convert', 'convert', 'convert', 'convert',
+    'si', 'si',
+    'theory', 'theory', 'theory',
+  ];
+  const order = rng.shuffle(roles);
+  // Pre-select 3 DISTINCT theory questions for this session so they never repeat.
+  const theoryPool = buildTheoryPool(spec, rng);
   const out: Question[] = [];
-  for (let i = 0; i < 10; i++) out.push(buildQuestion(spec, i, rng));
+  let theoryIdx = 0;
+  for (let i = 0; i < 10; i++) {
+    if (order[i] === 'theory') {
+      out.push(theoryPool[theoryIdx % Math.max(theoryPool.length, 1)]);
+      theoryIdx++;
+    } else {
+      out.push(buildQuestion(spec, i, rng, order[i]));
+    }
+  }
   return out;
 }
