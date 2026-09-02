@@ -38,6 +38,22 @@ export const formulaTopics: Record<string, string[]> = {
   'c-mc-dry': ['Drying', 'Processing'],
   'c-circle-area': ['Design', 'Terminology'],
   'c-cylinder-volume': ['Design', 'Terminology'],
+  'chain-field-capacity': ['Field Capacity', 'Operational Knowledge'],
+  'chain-harvest': ['Field Capacity', 'Machine Capacity'],
+  'chain-engine-power': ['Engine Performance', 'Brake Power & Draft'],
+  'chain-drawbar': ['Brake Power & Draft', 'Engine Performance'],
+  'chain-threshing': ['Threshing', 'Machine Capacity'],
+  'chain-thermal': ['Engine Performance', 'Fuel Consumption'],
+  'chain-powertrain': ['Engine Performance', 'Power Transmission'],
+  'chain-irrigation': ['Irrigation Design', 'Water Requirement'],
+  'chain-scs': ['Runoff', 'Rainfall Analysis'],
+  'chain-reservoir': ['Soil Erosion', 'Conservation'],
+  'chain-manning': ['Channel Flow', 'Hydraulics'],
+  'chain-soil-moisture': ['Soil Moisture', 'Terminology'],
+  'chain-drying': ['Drying', 'Processing'],
+  'chain-heat': ['Heat Transfer', 'Thermodynamics'],
+  'chain-biogas': ['Bioprocess', 'Waste Management'],
+  'chain-electrical': ['Electrical Power', 'Farm Electrification'],
 };
 
 function poolForArea(area: Area): Question[] {

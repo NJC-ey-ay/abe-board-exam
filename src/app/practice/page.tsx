@@ -210,6 +210,28 @@ function PracticeContent() {
                           {fm.notes}
                         </div>
                       )}
+                      {fm.workedExample && (
+                        <div className="mt-3 border-t border-gray-200 dark:border-slate-700 pt-3">
+                          <div className="text-xs font-semibold text-primary-700 dark:text-primary-300 mb-1">
+                            Worked Example
+                          </div>
+                          <div className="text-xs text-gray-600 dark:text-gray-300 mb-2">
+                            {fm.workedExample.scenario}
+                          </div>
+                          <ol className="space-y-1">
+                            {fm.workedExample.steps.map((s, i) => (
+                              <li key={i} className="text-xs text-gray-600 dark:text-gray-300">
+                                <span className="font-semibold">Step {i + 1}:</span>{' '}
+                                <MathFormula formula={s.formula} /> ={' '}
+                                <span className="font-mono font-semibold">{s.result}</span>
+                              </li>
+                            ))}
+                          </ol>
+                          <div className="mt-2 text-xs text-gray-700 dark:text-gray-200 font-medium">
+                            {fm.workedExample.answer}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

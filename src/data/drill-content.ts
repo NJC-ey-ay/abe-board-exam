@@ -1,4 +1,4 @@
-import type { DecisionItem, DrillSpec, MultiStepSpec } from './formula-drills';
+import type { ChainSpec, DecisionItem, DrillSpec, MultiStepSpec } from './formula-drills';
 
 export interface DrillEnrichment {
   context?: string;
@@ -6,6 +6,7 @@ export interface DrillEnrichment {
   verb?: string;
   decision?: DecisionItem[];
   multiStep?: MultiStepSpec;
+  chain?: ChainSpec;
 }
 
 // Per-formula board-exam content enrichment: word-problem scenarios, natural-language
@@ -1290,5 +1291,6 @@ export function enrichSpec(spec: DrillSpec): DrillSpec {
     verb: e.verb ?? spec.verb,
     decision: e.decision ?? spec.decision,
     multiStep: e.multiStep ?? spec.multiStep,
+    chain: e.chain ?? spec.chain,
   };
 }

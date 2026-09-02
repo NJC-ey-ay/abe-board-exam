@@ -32,6 +32,25 @@ export interface MultiStepSpec {
   readError: (v: Record<string, number>, correct: number) => number;
 }
 
+// A single step in a chained multi-part word problem. Each stage's `compute`
+// receives the numeric results of all prior stages (results[0..i-1]) plus the
+// generated variable map, so later answers genuinely build on earlier ones.
+export interface ChainStage {
+  unit: string;                 // e.g. 'ha/h', '%'
+  phrase: string;               // natural-language unknown, e.g. 'the theoretical field capacity'
+  formulaText: string;          // step formula, e.g. 'C_t = (W × S) / 10'
+  compute: (results: number[], vals: Record<string, number>) => number;
+  decimals?: number;            // display precision for this stage's result (default 3)
+}
+
+// A chained multi-part word problem: one narrative + several linked sub-parts.
+export interface ChainSpec {
+  // The quantity the single final MCQ asks for; must reference one of the stages.
+  finalStage: number;           // index into `stages` of the value the student must pick
+  stageLabel?: (i: number) => string;  // e.g. 'Part 1', 'Part 2'
+  stages: ChainStage[];
+}
+
 // Describes how a variable can be presented in an alternate (English/imperial)
 // unit so the student must first convert to the formula's native unit.
 export interface VarConversion {
@@ -56,6 +75,7 @@ interface AppliedConversion {
 
 export interface DrillSpec {
   formulaId: string;
+  name?: string;               // optional display name (used when no formula entry exists)
   area: Area;
   unknown: string;
   vars: DrillVar[];
@@ -72,6 +92,7 @@ export interface DrillSpec {
   verb?: string;
   decision?: DecisionItem[];
   multiStep?: MultiStepSpec;
+  chain?: ChainSpec;
   // Alternate (English) units for selected variables, so word problems can ask
   // the student to convert units before applying the formula.
   conversions?: VarConversion[];
@@ -477,6 +498,104 @@ function multiStepQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, numbe
   };
 }
 
+// Build a chained multi-part word problem: one narrative with several linked
+// sub-parts (each result feeds the next). The single MCQ asks for the stage
+// identified by chain.finalStage; the solution reveals the whole chain.
+function chainQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, number>, idSeq: number, useEnglish: boolean): Question {
+  const chain = spec.chain!;
+  const { factList, conversions } = buildFacts(spec, vals, useEnglish);
+  const subject = (spec.context ?? 'an operation').charAt(0).toUpperCase() + (spec.context ?? 'an operation').slice(1);
+  const verb = spec.verb ?? 'has';
+
+  // Compute every stage in order, threading prior results forward.
+  const results: number[] = [];
+  for (const st of chain.stages) {
+    results.push(st.compute(results, vals));
+  }
+
+  const finalIdx = chain.finalStage;
+  const finalVal = results[finalIdx];
+  const finalUnit = chain.stages[finalIdx].unit;
+  const finalDec = chain.stages[finalIdx].decimals ?? spec.round ?? 3;
+
+  // Distractors for the final (picked) stage only.
+  const gens = [
+    (c: number) => c * 1.1,
+    (c: number) => c * 0.9,
+    (c: number) => c * 0.5,
+    (c: number) => c * 1.5,
+    (c: number) => c * 0.8,
+    (c: number) => c * 1.2,
+  ];
+  let choices: string[] = [];
+  let dec = finalDec;
+  let guard = 0;
+  while (guard < 60) {
+    guard++;
+    const dist = distinctDistractors(rng, finalVal, gens, 3);
+    const cands = [finalVal, ...dist];
+    const formatted = cands.map(n => fmtOption(n, dec, finalUnit));
+    if (new Set(formatted).size === 4) {
+      choices = formatted;
+      break;
+    }
+    dec++;
+  }
+  const correctOption = choices[0] ?? '';
+  const ord = rng.shuffle([0, 1, 2, 3]);
+  const finalOptions = ord.map(i => choices[i]);
+  const finalCorrect = ord.indexOf(0);
+
+  const label = chain.stageLabel ?? ((i: number) => `Part ${i + 1}`);
+  const parts = chain.stages
+    .map((s, i) => `${label(i)}: find ${s.phrase} (${s.unit})`)
+    .join(' → ');
+
+  const question =
+    `${subject} ${verb} ${factList}. Work through the linked steps in order. ` +
+    `${parts}. \n\nFinal answer: what is ${chain.stages[finalIdx].phrase}?`;
+
+  const stepLines: string[] = [
+    ...conversionStepLines(conversions),
+  ];
+  chain.stages.forEach((s, i) => {
+    const res = smartRound(results[i]);
+    const prior = i === 0
+      ? 'Start with the given values.'
+      : `Use the result ${smartRound(results[i - 1])} ${chain.stages[i - 1].unit} from ${label(i - 1)}.`;
+    stepLines.push(
+      `${label(i)} — ${s.phrase}:`,
+      `  ${prior}`,
+      `  Formula: ${s.formulaText}`,
+      `  Result: ${res} ${s.unit}`,
+    );
+  });
+  stepLines.push(`Final answer: ${correctOption}`);
+
+  return {
+    id: `${spec.formulaId}-chain-${idSeq}`,
+    area: spec.area,
+    subTopic: 'equation-practice',
+    topic: spec.formulaId,
+    type: 'computation',
+    difficulty: 'hard',
+    question,
+    options: finalOptions,
+    correctAnswer: finalCorrect,
+    solution: {
+      given: `Linked step problem. ${spec.vars
+        .map((v, i) => `${v.symbol} = ${vals[v.ascii].toFixed(v.decimals)} ${v.unit}`.trim())
+        .join('; ')}`,
+      steps: stepLines,
+      formula: chain.stages.map((s, i) => `${label(i)}: ${s.formulaText}`).join('\n'),
+      keyConcept: spec.keyConcept,
+      commonMistakes: spec.mistakes,
+      weakPoints: [spec.formulaId],
+    },
+    weakPoints: [spec.formulaId],
+  };
+}
+
 function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng, role: 'convert' | 'si' | 'theory', theoryForSlot?: Question): Question {
   // Theory roles are supplied a distinct, exam-style theory question pre-selected
   // for this session (never repeated). Fall back to a computation if none given.
@@ -497,6 +616,11 @@ function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng, role: 'convert'
 
   // English-unit givens only when this slot is a 'convert' role.
   const useEnglish = role === 'convert';
+
+  // Chained multi-part word problem (computation; unit mode still follows role).
+  if (spec.chain) {
+    return chainQuestion(spec, rng, vals, idSeq, useEnglish);
+  }
 
   // Multi-step derived-input question when defined (a computation question; unit
   // mode still follows the role).
@@ -3292,12 +3416,457 @@ add(
   },
 );
 
+// ---------------------------------------------------------------------------
+// CHAINED MULTI-PART WORD PROBLEMS
+// Each spec is one narrative with several linked sub-parts (each result feeds
+// the next). The MCQ asks for the `finalStage` value; the solution reveals the
+// full chain. These complement (do not replace) the single-formula drills.
+// ---------------------------------------------------------------------------
+add(
+  {
+    formulaId: 'chain-field-capacity', name: 'Field Capacity Chain (TFC → EFC → E)',
+    area: 'A', unknown: 'E',
+    formulaText: 'C_a = C_t × E', unit: '%', round: 1,
+    context: 'a self-propelled combine harvester cutting a rice paddy',
+    verb: 'operates with',
+    vars: [
+      { symbol: 'W', ascii: 'W', label: 'working width', unit: 'm', min: 1.5, max: 6.0, decimals: 1 },
+      { symbol: 'S', ascii: 'S', label: 'travel speed', unit: 'km/h', min: 3, max: 9, decimals: 0 },
+      { symbol: 'E', ascii: 'E', label: 'field efficiency', unit: 'decimal', min: 0.6, max: 0.9, decimals: 2 },
+    ],
+    conversions: [
+      { ascii: 'W', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+      { ascii: 'S', unit: 'mph', factor: 0.6214, fromUnit: 'km/h' },
+    ],
+    compute: v => ((v.W * v.S * v.E) / 10) / ((v.W * v.S) / 10) * 100,
+    keyConcept: 'Theoretical capacity assumes 100% efficiency; effective capacity = theoretical × efficiency; field efficiency = effective ÷ theoretical × 100%.',
+    mistakes: ['Using efficiency as % instead of decimal', 'Applying efficiency to TFC to get E', 'Omitting the /10 constant'],
+    distractors: [v => (v.W * v.S * v.E) / 10, v => (v.W * v.S) / 10, v => (v.W * v.S * v.E) / 10 * 1.1],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'ha/h', phrase: 'the theoretical field capacity', formulaText: 'C_t = (W × S) / 10', compute: (r, v) => (v.W * v.S) / 10 },
+        { unit: 'ha/h', phrase: 'the effective field capacity', formulaText: 'C_a = C_t × E', compute: (r, v) => r[0] * v.E },
+        { unit: '%', phrase: 'the field efficiency', formulaText: 'E = (C_a / C_t) × 100%', compute: (r) => (r[1] / r[0]) * 100, decimals: 1 },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-harvest', name: 'Harvest Output Chain (capacity → area → output)',
+    area: 'A', unknown: 'O',
+    formulaText: 'O = C × Y × t', unit: 't', round: 1,
+    context: 'a rice combine harvester working a mature field',
+    verb: 'operates with',
+    vars: [
+      { symbol: 'W', ascii: 'W', label: 'cutting width', unit: 'm', min: 1.5, max: 5.0, decimals: 1 },
+      { symbol: 'S', ascii: 'S', label: 'travel speed', unit: 'km/h', min: 3, max: 8, decimals: 0 },
+      { symbol: 'E', ascii: 'E', label: 'field efficiency', unit: 'decimal', min: 0.65, max: 0.9, decimals: 2 },
+      { symbol: 'Y', ascii: 'Y', label: 'crop yield', unit: 't/ha', min: 3, max: 7, decimals: 1 },
+      { symbol: 't', ascii: 't', label: 'operating time', unit: 'h', min: 6, max: 10, decimals: 0 },
+    ],
+    conversions: [
+      { ascii: 'W', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+      { ascii: 'S', unit: 'mph', factor: 0.6214, fromUnit: 'km/h' },
+    ],
+    compute: v => ((v.W * v.S * v.E) / 10) * v.Y * v.t,
+    keyConcept: 'Field capacity determines area covered per hour; total output = capacity × yield × time.',
+    mistakes: ['Forgetting to multiply by yield or time', 'Using TFC instead of EFC', 'Mixing t/ha and ha/h units'],
+    distractors: [v => ((v.W * v.S * v.E) / 10) * v.t, v => ((v.W * v.S) / 10) * v.Y * v.t, v => ((v.W * v.S * v.E) / 10) * v.Y * v.t * 1.1],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'ha/h', phrase: 'the effective field capacity', formulaText: 'C_a = (W × S × E) / 10', compute: (r, v) => (v.W * v.S * v.E) / 10 },
+        { unit: 'ha', phrase: 'the total area harvested', formulaText: 'A = C_a × t', compute: (r, v) => r[0] * v.t },
+        { unit: 't', phrase: 'the total harvest output', formulaText: 'O = A × Y', compute: (r, v) => r[1] * v.Y },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-engine-power', name: 'Engine Power Chain (IP → BP → η)',
+    area: 'A', unknown: 'η_mec',
+    formulaText: 'BP = IP − FP', unit: '%', round: 1,
+    context: 'a diesel engine being evaluated on a test bench',
+    verb: 'delivers',
+    vars: [
+      { symbol: 'IP', ascii: 'IP', label: 'indicated power', unit: 'kW', min: 50, max: 150, decimals: 1 },
+      { symbol: 'FP', ascii: 'FP', label: 'friction power', unit: 'kW', min: 5, max: 30, decimals: 1 },
+    ],
+    compute: v => ((v.IP - v.FP) / v.IP) * 100,
+    keyConcept: 'Brake power = indicated minus friction; mechanical efficiency = brake ÷ indicated × 100%.',
+    mistakes: ['Adding instead of subtracting friction power', 'Reversing the efficiency ratio', 'Forgetting ×100'],
+    distractors: [v => ((v.IP + v.FP) / v.IP) * 100, v => (v.IP - v.FP), v => ((v.IP - v.FP) / v.IP) * 100 * 1.05],
+    chain: {
+      finalStage: 1,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'kW', phrase: 'the brake power', formulaText: 'BP = IP − FP', compute: (r, v) => v.IP - v.FP },
+        { unit: '%', phrase: 'the mechanical efficiency', formulaText: 'η = (BP / IP) × 100%', compute: (r, v) => (r[0] / v.IP) * 100, decimals: 1 },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-drawbar', name: 'Drawbar Power Chain (draft → kW → hp)',
+    area: 'A', unknown: 'DBHP',
+    formulaText: 'P_db = (D × S) / 3.6', unit: 'hp', round: 2,
+    context: 'a tractor pulling a moldboard plow through firm soil',
+    verb: 'operates with',
+    vars: [
+      { symbol: 'n', ascii: 'n', label: 'number of bottoms', unit: '', min: 2, max: 5, decimals: 0 },
+      { symbol: 'w', ascii: 'w', label: 'width per bottom', unit: 'm', min: 0.3, max: 0.5, decimals: 2 },
+      { symbol: 'd', ascii: 'd', label: 'working depth', unit: 'm', min: 0.18, max: 0.35, decimals: 2 },
+      { symbol: 'K', ascii: 'K', label: 'soil specific resistance', unit: 'kN/m²', min: 50, max: 100, decimals: 0 },
+      { symbol: 'S', ascii: 'S', label: 'travel speed', unit: 'km/h', min: 4, max: 8, decimals: 1 },
+    ],
+    conversions: [
+      { ascii: 'w', unit: 'in', factor: 39.37, fromUnit: 'm' },
+      { ascii: 'd', unit: 'in', factor: 39.37, fromUnit: 'm' },
+      { ascii: 'S', unit: 'mph', factor: 0.6214, fromUnit: 'km/h' },
+    ],
+    compute: v => ((v.n * v.w * v.d * v.K) * v.S) / 3.6 / 0.7457,
+    keyConcept: 'Plow draft = bottoms × width × depth × soil resistance; drawbar power = draft × speed ÷ 3.6; 1 kW = 1.341 hp.',
+    mistakes: ['Omitting a plow factor', 'Forgetting /3.6', 'Converting kW to hp wrongly'],
+    distractors: [v => ((v.n * v.w * v.d * v.K) * v.S) / 3.6, v => ((v.n * v.w * v.d * v.K) * v.S) / 3.6 * 1.341, v => ((v.n * v.w * v.d * v.K) * v.S) / 3.6 / 0.7457 * 1.1],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'kN', phrase: 'the total draft', formulaText: 'D = n × w × d × K', compute: (r, v) => v.n * v.w * v.d * v.K },
+        { unit: 'kW', phrase: 'the drawbar power', formulaText: 'P_db = (D × S) / 3.6', compute: (r, v) => (r[0] * v.S) / 3.6 },
+        { unit: 'hp', phrase: 'the drawbar horsepower', formulaText: 'HP = P_db / 0.7457', compute: (r) => r[1] / 0.7457 },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-threshing', name: 'Threshing Performance Chain (capacity → recovery → η)',
+    area: 'A', unknown: 'η_t',
+    formulaText: 'η_t = W_g / (W_g + L) × 100%', unit: '%', round: 1,
+    context: 'a thresher being evaluated on a batch of palay',
+    verb: 'has',
+    vars: [
+      { symbol: 'W_g', ascii: 'Wg', label: 'grain output', unit: 'kg', min: 800, max: 3000, decimals: 0 },
+      { symbol: 'T_t', ascii: 'Tt', label: 'threshing time', unit: 'h', min: 1, max: 4, decimals: 1 },
+      { symbol: 'L', ascii: 'L', label: 'total grain loss', unit: 'kg', min: 20, max: 120, decimals: 0 },
+    ],
+    compute: v => (v.Wg / (v.Wg + v.L)) * 100,
+    keyConcept: 'Thresher capacity = grain output ÷ time; total grain input = output + loss; threshing efficiency = output ÷ input × 100%.',
+    mistakes: ['Omitting loss from total input', 'Forgetting ×100', 'Using capacity instead of efficiency'],
+    distractors: [v => (v.Wg / v.L) * 100, v => (v.Wg / (v.Wg + v.L)), v => (v.Wg / (v.Wg + v.L)) * 100 * 1.1],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'kg/h', phrase: 'the thresher capacity', formulaText: 'C = W_g / T_t', compute: (r, v) => v.Wg / v.Tt },
+        { unit: 'kg', phrase: 'the total grain input', formulaText: 'W_total = W_g + L', compute: (r, v) => v.Wg + v.L },
+        { unit: '%', phrase: 'the threshing efficiency', formulaText: 'η = (W_g / W_total) × 100%', compute: (r, v) => (v.Wg / r[1]) * 100, decimals: 1 },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-thermal', name: 'Engine Thermal Chain (fuel → heat → η)',
+    area: 'A', unknown: 'η_th',
+    formulaText: 'η_th = (BP × 3.6) / Q_in × 100%', unit: '%', round: 1,
+    context: 'an engine running at rated load',
+    verb: 'operates with',
+    vars: [
+      { symbol: 'BP', ascii: 'BP', label: 'brake power', unit: 'kW', min: 40, max: 120, decimals: 0 },
+      { symbol: 'SFC', ascii: 'SFC', label: 'specific fuel consumption', unit: 'kg/kW·h', min: 0.2, max: 0.35, decimals: 2 },
+      { symbol: 'CV', ascii: 'CV', label: 'fuel calorific value', unit: 'MJ/kg', min: 40, max: 45, decimals: 1 },
+    ],
+    compute: v => ((v.BP * 3.6) / (v.BP * v.SFC * v.CV)) * 100,
+    keyConcept: 'Fuel flow = BP × SFC; heat input = fuel flow × CV; thermal efficiency = useful work (3.6 MJ per kWh) ÷ heat input × 100%.',
+    mistakes: ['Forgetting the 3.6 kW→MJ/h factor', 'Forgetting ×100', 'Using SFC without BP'],
+    distractors: [v => (v.BP * 3.6) / (v.BP * v.SFC * v.CV), v => ((v.BP * v.SFC * v.CV) / (v.BP * 3.6)) * 100, v => ((v.BP * 3.6) / (v.BP * v.SFC * v.CV)) * 100 * 1.1],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'kg/h', phrase: 'the fuel flow rate', formulaText: 'm = BP × SFC', compute: (r, v) => v.BP * v.SFC },
+        { unit: 'MJ/h', phrase: 'the heat energy input', formulaText: 'Q_in = m × CV', compute: (r, v) => r[0] * v.CV },
+        { unit: '%', phrase: 'the thermal efficiency', formulaText: 'η = (BP × 3.6 / Q_in) × 100%', compute: (r, v) => ((v.BP * 3.6) / r[1]) * 100, decimals: 1 },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-powertrain', name: 'Power-Train Chain (BP → PTO → hydraulic)',
+    area: 'A', unknown: 'P_hyd',
+    formulaText: 'P_hyd = P_PTO × η_pump', unit: 'kW', round: 2,
+    context: 'a tractor powering a hydraulic implement through its PTO',
+    verb: 'develops',
+    vars: [
+      { symbol: 'BP', ascii: 'BP', label: 'brake power', unit: 'kW', min: 40, max: 120, decimals: 1 },
+      { symbol: 'etr', ascii: 'etr', label: 'transmission efficiency', unit: 'decimal', min: 0.85, max: 0.95, decimals: 2 },
+      { symbol: 'ep', ascii: 'ep', label: 'pump efficiency', unit: 'decimal', min: 0.7, max: 0.9, decimals: 2 },
+    ],
+    compute: v => v.BP * v.etr * v.ep,
+    keyConcept: 'PTO power = brake power × transmission efficiency; hydraulic power = PTO × pump efficiency.',
+    mistakes: ['Using efficiencies as % instead of decimal', 'Dividing instead of multiplying', 'Adding efficiencies'],
+    distractors: [v => v.BP * v.etr, v => v.BP / (v.etr * v.ep), v => v.BP * v.etr * v.ep * 1.1],
+    chain: {
+      finalStage: 1,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'kW', phrase: 'the PTO power', formulaText: 'P_PTO = BP × η_trans', compute: (r, v) => v.BP * v.etr },
+        { unit: 'kW', phrase: 'the hydraulic power delivered', formulaText: 'P_hyd = P_PTO × η_pump', compute: (r, v) => r[0] * v.ep },
+      ],
+    },
+  },
+);
+
+// ---------------------------------------------------------------------------
+// CHAINED MULTI-PART WORD PROBLEMS — AREAS B & C
+// ---------------------------------------------------------------------------
+add(
+  {
+    formulaId: 'chain-irrigation', name: 'Irrigation Scheduling Chain (net → gross depth)',
+    area: 'B', unknown: 'd_g',
+    formulaText: 'd_g = d_n / E', unit: 'mm', round: 1,
+    context: 'an irrigation system supplying a crop field',
+    verb: 'has',
+    vars: [
+      { symbol: 'ETc', ascii: 'ETc', label: 'crop evapotranspiration', unit: 'mm', min: 70, max: 150, decimals: 0 },
+      { symbol: 'Pe', ascii: 'Pe', label: 'effective rainfall', unit: 'mm', min: 10, max: 60, decimals: 0 },
+      { symbol: 'E', ascii: 'E', label: 'application efficiency', unit: 'decimal', min: 0.6, max: 0.9, decimals: 2 },
+    ],
+    conversions: [
+      { ascii: 'ETc', unit: 'in', factor: 0.03937, fromUnit: 'mm' },
+      { ascii: 'Pe', unit: 'in', factor: 0.03937, fromUnit: 'mm' },
+    ],
+    compute: v => (v.ETc - v.Pe) / v.E,
+    keyConcept: 'Net irrigation depth = crop ET − effective rainfall; gross depth = net ÷ application efficiency (to account for losses).',
+    mistakes: ['Adding rainfall instead of subtracting', 'Multiplying by efficiency instead of dividing', 'Using gross as net'],
+    distractors: [v => (v.ETc - v.Pe), v => (v.ETc + v.Pe) / v.E, v => (v.ETc - v.Pe) / v.E * 1.1],
+    chain: {
+      finalStage: 1,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'mm', phrase: 'the net irrigation depth required', formulaText: 'd_n = ET_c − P_e', compute: (r, v) => v.ETc - v.Pe },
+        { unit: 'mm', phrase: 'the gross depth of water to apply', formulaText: 'd_g = d_n / E', compute: (r, v) => r[0] / v.E },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-scs', name: 'SCS Runoff Chain (CN → S → Q)',
+    area: 'B', unknown: 'Q',
+    formulaText: 'Q = (P − 0.2S)² / (P + 0.8S)', unit: 'mm', round: 1,
+    context: 'a small watershed with an SCS curve number',
+    verb: 'has',
+    vars: [
+      { symbol: 'CN', ascii: 'CN', label: 'curve number', unit: '', min: 50, max: 90, decimals: 0 },
+      { symbol: 'P', ascii: 'P', label: 'rainfall depth', unit: 'mm', min: 60, max: 140, decimals: 0 },
+    ],
+    conversions: [
+      { ascii: 'P', unit: 'in', factor: 0.03937, fromUnit: 'mm' },
+    ],
+    compute: v => { const S = 25400 / v.CN - 254; return Math.pow(v.P - 0.2 * S, 2) / (v.P + 0.8 * S); },
+    keyConcept: 'SCS retention S = 25400/CN − 254; initial abstraction I_a = 0.2S; runoff Q = (P − I_a)² / (P − I_a + S).',
+    mistakes: ['Forgetting the −254 in S', 'Using 0.8S instead of 0.2S for Ia', 'Unit mismatch (mm vs in)'],
+    distractors: [v => 25400 / v.CN - 254, v => Math.pow(v.P - 0.2 * (25400 / v.CN - 254), 2) / v.P, v => { const S = 25400 / v.CN - 254; return Math.pow(v.P - 0.2 * S, 2) / (v.P + 0.8 * S) * 1.1; }],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'mm', phrase: 'the potential retention S', formulaText: 'S = 25400/CN − 254', compute: (r, v) => 25400 / v.CN - 254 },
+        { unit: 'mm', phrase: 'the initial abstraction I_a = 0.2S', formulaText: 'I_a = 0.2 × S', compute: (r) => 0.2 * r[0] },
+        { unit: 'mm', phrase: 'the runoff depth Q', formulaText: 'Q = (P − I_a)² / (P − I_a + S)', compute: (r, v) => Math.pow(v.P - r[1], 2) / (v.P - r[1] + r[0]) },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-reservoir', name: 'Soil Erosion Chain (USLE → total loss)',
+    area: 'B', unknown: 'L',
+    formulaText: 'L = A × (R·K·LS·C·P)', unit: 't', round: 1,
+    context: 'a sloping catchment studied for soil erosion',
+    verb: 'has',
+    vars: [
+      { symbol: 'R', ascii: 'R', label: 'rainfall erosivity', unit: '', min: 200, max: 400, decimals: 0 },
+      { symbol: 'K', ascii: 'K', label: 'soil erodibility', unit: '', min: 0.1, max: 0.4, decimals: 2 },
+      { symbol: 'LS', ascii: 'LS', label: 'slope length-gradient', unit: '', min: 1, max: 3, decimals: 1 },
+      { symbol: 'C', ascii: 'C', label: 'cover management factor', unit: '', min: 0.1, max: 0.5, decimals: 2 },
+      { symbol: 'P', ascii: 'P', label: 'support practice factor', unit: '', min: 0.5, max: 1.0, decimals: 2 },
+      { symbol: 'A', ascii: 'A', label: 'catchment area', unit: 'ha', min: 2, max: 30, decimals: 0 },
+    ],
+    compute: v => v.R * v.K * v.LS * v.C * v.P * v.A,
+    keyConcept: 'USLE gives soil loss rate (t/ha/yr) = R·K·LS·C·P; total annual loss = rate × area.',
+    mistakes: ['Omitting a USLE factor', 'Treating rate as total loss', 'Unit mismatch'],
+    distractors: [v => v.R * v.K * v.LS * v.C * v.P, v => v.R * v.K * v.LS * v.C * v.P * v.A * 1.1, v => v.R * v.K * v.LS * v.C * v.P / v.A],
+    chain: {
+      finalStage: 1,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 't/ha/yr', phrase: 'the average annual soil loss rate', formulaText: 'A_l = R × K × LS × C × P', compute: (r, v) => v.R * v.K * v.LS * v.C * v.P },
+        { unit: 't', phrase: 'the total annual soil loss', formulaText: 'L = A_l × A', compute: (r, v) => r[0] * v.A },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-manning', name: 'Open-Channel Flow Chain (geometry → R → v → Q)',
+    area: 'B', unknown: 'Q',
+    formulaText: 'Q = A × (1/n) R^(2/3) √S', unit: 'm³/s', round: 2,
+    context: 'a rectangular irrigation canal carrying water',
+    verb: 'has',
+    vars: [
+      { symbol: 'b', ascii: 'b', label: 'channel width', unit: 'm', min: 1, max: 4, decimals: 1 },
+      { symbol: 'y', ascii: 'y', label: 'flow depth', unit: 'm', min: 0.5, max: 2.0, decimals: 1 },
+      { symbol: 'n', ascii: 'n', label: 'Manning roughness', unit: '', min: 0.015, max: 0.035, decimals: 3 },
+      { symbol: 'S', ascii: 'S', label: 'channel slope', unit: 'm/m', min: 0.001, max: 0.005, decimals: 3 },
+    ],
+    conversions: [
+      { ascii: 'b', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+      { ascii: 'y', unit: 'ft', factor: 3.281, fromUnit: 'm' },
+    ],
+    compute: v => { const A = v.b * v.y; const P = v.b + 2 * v.y; const R = A / P; const vel = (1 / v.n) * Math.pow(R, 2 / 3) * Math.sqrt(v.S); return A * vel; },
+    keyConcept: 'Area = width×depth; wetted perimeter = width + 2×depth; hydraulic radius = A/P; Manning velocity = (1/n)R^(2/3)√S; discharge = area × velocity.',
+    mistakes: ['Forgetting the +2y in perimeter', 'Using full perimeter 2b+2y', 'Wrong Manning exponents'],
+    distractors: [v => { const P = v.b + v.y; const R = (v.b * v.y) / P; return (1 / v.n) * Math.pow(R, 2 / 3) * Math.sqrt(v.S); }, v => { const A = v.b * v.y; return A * (1 / v.n) * Math.pow((v.b * v.y) / (v.b + 2 * v.y), 2 / 3) * Math.sqrt(v.S) * 1.1; }, v => (v.b * v.y)],
+    chain: {
+      finalStage: 4,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'm²', phrase: 'the flow area', formulaText: 'A = b × y', compute: (r, v) => v.b * v.y },
+        { unit: 'm', phrase: 'the wetted perimeter', formulaText: 'P = b + 2y', compute: (r, v) => v.b + 2 * v.y },
+        { unit: 'm', phrase: 'the hydraulic radius', formulaText: 'R = A / P', compute: (r) => r[0] / r[1] },
+        { unit: 'm/s', phrase: 'the mean velocity', formulaText: 'v = (1/n) R^(2/3) √S', compute: (r, v) => (1 / v.n) * Math.pow(r[2], 2 / 3) * Math.sqrt(v.S) },
+        { unit: 'm³/s', phrase: 'the discharge', formulaText: 'Q = A × v', compute: (r) => r[0] * r[3] },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-soil-moisture', name: 'Soil Moisture Chain (MC → density → volumetric)',
+    area: 'B', unknown: 'θ_v',
+    formulaText: 'θ_v = θ_g × ρ_b', unit: 'm³/m³', round: 3,
+    context: 'a soil core sample taken for moisture analysis',
+    verb: 'has',
+    vars: [
+      { symbol: 'Mw', ascii: 'Mw', label: 'wet soil mass', unit: 'g', min: 100, max: 200, decimals: 0 },
+      { symbol: 'Md', ascii: 'Md', label: 'oven-dry mass', unit: 'g', min: 80, max: 160, decimals: 0 },
+      { symbol: 'Vt', ascii: 'Vt', label: 'bulk volume', unit: 'cm³', min: 100, max: 150, decimals: 0 },
+    ],
+    compute: v => ((v.Mw - v.Md) / v.Md) * (v.Md / v.Vt),
+    keyConcept: 'Gravimetric MC = (wet−dry)/dry; bulk density = dry mass/volume; volumetric moisture = gravimetric × bulk density.',
+    mistakes: ['Using wet mass as dry denominator', 'Using particle density instead of bulk density', 'Mixing m³/m³ with %'],
+    distractors: [v => ((v.Mw - v.Md) / v.Md), v => (v.Md / v.Vt), v => ((v.Mw - v.Md) / v.Md) * (v.Md / v.Vt) * 1.1],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'decimal', phrase: 'the gravimetric water content', formulaText: 'θ_g = (M_w − M_d) / M_d', compute: (r, v) => (v.Mw - v.Md) / v.Md, decimals: 3 },
+        { unit: 'g/cm³', phrase: 'the bulk density', formulaText: 'ρ_b = M_d / V_t', compute: (r, v) => v.Md / v.Vt },
+        { unit: 'm³/m³', phrase: 'the volumetric water content', formulaText: 'θ_v = θ_g × ρ_b', compute: (r) => r[0] * r[1], decimals: 3 },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-drying', name: 'Grain Drying Chain (dry matter → water removed)',
+    area: 'C', unknown: 'W_rem',
+    formulaText: 'W_rem = W_i − W_f', unit: 'kg', round: 1,
+    context: 'a batch of freshly harvested paddy being dried',
+    verb: 'has',
+    vars: [
+      { symbol: 'Wi', ascii: 'Wi', label: 'initial weight', unit: 'kg', min: 1000, max: 5000, decimals: 0 },
+      { symbol: 'MCi', ascii: 'MCi', label: 'initial moisture content', unit: '%', min: 20, max: 30, decimals: 0 },
+      { symbol: 'MCf', ascii: 'MCf', label: 'final moisture content', unit: '%', min: 12, max: 16, decimals: 0 },
+    ],
+    compute: v => v.Wi - v.Wi * (100 - v.MCi) / (100 - v.MCf),
+    keyConcept: 'Dry matter is conserved: W_f = W_i × (100−MC_i)/(100−MC_f); water removed = initial − final weight.',
+    mistakes: ['Reversing the dry-matter ratio', 'Using moisture % directly without 100−', 'Subtracting wet weights wrongly'],
+    distractors: [v => v.Wi * (100 - v.MCf) / (100 - v.MCi), v => v.Wi * (v.MCi / v.MCf), v => v.Wi - v.Wi * (100 - v.MCi) / (100 - v.MCf) * 1.1],
+    chain: {
+      finalStage: 1,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'kg', phrase: 'the final (dry) weight', formulaText: 'W_f = W_i × (100 − MC_i)/(100 − MC_f)', compute: (r, v) => v.Wi * (100 - v.MCi) / (100 - v.MCf) },
+        { unit: 'kg', phrase: 'the water removed during drying', formulaText: 'W_rem = W_i − W_f', compute: (r, v) => v.Wi - r[0] },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-heat', name: 'Heating Load Chain (sensible → latent → total)',
+    area: 'C', unknown: 'Q_t',
+    formulaText: 'Q_t = m·C_p·ΔT + m·λ', unit: 'kJ', round: 0,
+    context: 'a water batch heated for food processing',
+    verb: 'has',
+    vars: [
+      { symbol: 'm', ascii: 'm', label: 'mass of material', unit: 'kg', min: 10, max: 60, decimals: 0 },
+      { symbol: 'Cp', ascii: 'Cp', label: 'specific heat', unit: 'kJ/kg·°C', min: 2.0, max: 4.2, decimals: 2 },
+      { symbol: 'dT', ascii: 'dT', label: 'temperature rise', unit: '°C', min: 20, max: 80, decimals: 0 },
+      { symbol: 'lam', ascii: 'lam', label: 'latent heat of vaporization', unit: 'kJ/kg', min: 2000, max: 2500, decimals: 0 },
+    ],
+    compute: v => v.m * v.Cp * v.dT + v.m * v.lam,
+    keyConcept: 'Sensible heat = m·Cp·ΔT; latent heat = m·λ; total heat = sensible + latent.',
+    mistakes: ['Omitting the latent term', 'Omitting the sensible term', 'Multiplying the two terms together'],
+    distractors: [v => v.m * v.Cp * v.dT, v => v.m * v.lam, v => v.m * v.Cp * v.dT * v.lam],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'kJ', phrase: 'the sensible heat', formulaText: 'Q_s = m × C_p × ΔT', compute: (r, v) => v.m * v.Cp * v.dT },
+        { unit: 'kJ', phrase: 'the latent heat', formulaText: 'Q_l = m × λ', compute: (r, v) => v.m * v.lam },
+        { unit: 'kJ', phrase: 'the total heat required', formulaText: 'Q_t = Q_s + Q_l', compute: (r) => r[0] + r[1] },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-biogas', name: 'Biogas Energy Chain (VS → volume → methane → energy)',
+    area: 'C', unknown: 'E',
+    formulaText: 'E = V_CH4 × CV', unit: 'MJ', round: 1,
+    context: 'an anaerobic digester processing farm manure',
+    verb: 'produces gas from',
+    vars: [
+      { symbol: 'VS', ascii: 'VS', label: 'volatile solids fed', unit: 'kg', min: 50, max: 500, decimals: 0 },
+      { symbol: 'yield', ascii: 'yield', label: 'biogas yield', unit: 'm³/kg VS', min: 0.2, max: 0.6, decimals: 2 },
+      { symbol: 'CH4f', ascii: 'CH4f', label: 'methane fraction', unit: 'decimal', min: 0.5, max: 0.7, decimals: 2 },
+      { symbol: 'CV', ascii: 'CV', label: 'methane calorific value', unit: 'MJ/m³', min: 35, max: 40, decimals: 0 },
+    ],
+    compute: v => v.VS * v.yield * v.CH4f * v.CV,
+    keyConcept: 'Biogas volume = volatile solids × yield; methane volume = biogas × methane fraction; energy = methane volume × calorific value.',
+    mistakes: ['Applying methane fraction to energy instead of volume', 'Omitting a factor', 'Using biogas CV instead of methane CV'],
+    distractors: [v => v.VS * v.yield * v.CH4f, v => v.VS * v.yield * v.CV, v => v.VS * v.yield * v.CH4f * v.CV * 1.1],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'm³', phrase: 'the biogas volume produced', formulaText: 'V_b = VS × yield', compute: (r, v) => v.VS * v.yield },
+        { unit: 'm³', phrase: 'the methane volume', formulaText: 'V_CH4 = V_b × CH4_fraction', compute: (r, v) => r[0] * v.CH4f },
+        { unit: 'MJ', phrase: 'the recoverable energy', formulaText: 'E = V_CH4 × CV', compute: (r, v) => r[1] * v.CV },
+      ],
+    },
+  },
+  {
+    formulaId: 'chain-electrical', name: 'Electrical Energy Cost Chain (P → energy → cost)',
+    area: 'C', unknown: 'cost',
+    formulaText: 'cost = P × t × rate', unit: 'PHP', round: 2,
+    context: 'an electric motor running a processing unit',
+    verb: 'operates with',
+    vars: [
+      { symbol: 'V', ascii: 'V', label: 'supply voltage', unit: 'V', min: 110, max: 440, decimals: 0 },
+      { symbol: 'I', ascii: 'I', label: 'current draw', unit: 'A', min: 5, max: 30, decimals: 0 },
+      { symbol: 't', ascii: 't', label: 'operating time', unit: 'h', min: 4, max: 12, decimals: 0 },
+      { symbol: 'rate', ascii: 'rate', label: 'electricity rate', unit: 'PHP/kWh', min: 8, max: 15, decimals: 2 },
+    ],
+    compute: v => (v.V * v.I / 1000) * v.t * v.rate,
+    keyConcept: 'Power = V×I (W); energy = power × time (kWh); cost = energy × rate.',
+    mistakes: ['Forgetting to convert W to kW (/1000)', 'Multiplying by time before converting', 'Using V×I as kW directly'],
+    distractors: [v => v.V * v.I * v.t * v.rate, v => (v.V * v.I / 1000) * v.t, v => (v.V * v.I / 1000) * v.t * v.rate * 1.1],
+    chain: {
+      finalStage: 2,
+      stageLabel: i => `Step ${i + 1}`,
+      stages: [
+        { unit: 'kW', phrase: 'the electrical power draw', formulaText: 'P = V × I / 1000', compute: (r, v) => (v.V * v.I) / 1000 },
+        { unit: 'kWh', phrase: 'the electrical energy consumed', formulaText: 'E = P × t', compute: (r, v) => r[0] * v.t },
+        { unit: 'PHP', phrase: 'the electricity cost', formulaText: 'cost = E × rate', compute: (r, v) => r[1] * v.rate },
+      ],
+    },
+  },
+);
+
 export function getDrillsByArea(areaCode: string): DrillMeta[] {
   return specs
     .filter(s => s.area === areaCode)
     .map(s => {
       const f = findFormula(s.formulaId);
-      return { formulaId: s.formulaId, name: f?.name || s.formulaId, formula: f?.formula || s.formulaText, area: s.area, questionCount: 10 };
+      return { formulaId: s.formulaId, name: f?.name || s.name || s.formulaId, formula: f?.formula || s.formulaText, area: s.area, questionCount: 10 };
     });
 }
 

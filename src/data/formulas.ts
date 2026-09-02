@@ -4,6 +4,7 @@ export interface Formula {
   formula: string;
   variables: { symbol: string; meaning: string }[];
   notes?: string;
+  workedExample?: { scenario: string; steps: { formula: string; result: string }[]; answer: string };
 }
 
 export interface FormulaCategory {
@@ -33,6 +34,15 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'E', meaning: 'Field efficiency (decimal)' },
             ],
             notes: 'Also written EFC = TFC × E. If speed is in m/min use C_a = (W × S × 60) / 10000.',
+            workedExample: {
+              scenario: 'A tractor pulls a 2.0 m wide tiller at 6 km/h with 82% field efficiency.',
+              steps: [
+                { formula: 'C_t = \\frac{W \\cdot S}{10} = \\frac{2.0 \\cdot 6}{10}', result: '1.20 ha/h' },
+                { formula: 'C_a = C_t \\cdot E = 1.20 \\times 0.82', result: '0.98 ha/h' },
+                { formula: 'E = \\frac{C_a}{C_t} \\times 100\\% = \\frac{0.98}{1.20} \\times 100\\%', result: '82%' },
+              ],
+              answer: 'Theoretical 1.20 ha/h, effective 0.98 ha/h, field efficiency 82%.',
+            },
           },
           {
             id: 'a-tfc',
@@ -110,6 +120,28 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'V', meaning: 'Total fuel consumed (L)' },
               { symbol: 'A', meaning: 'Area worked (ha)' },
             ],
+          },
+          {
+            id: 'chain-field-capacity',
+            name: 'Field Capacity Chain (TFC → EFC → E)',
+            formula: 'C_t = \\frac{W S}{10},\\; C_a = C_t E,\\; E = \\frac{C_a}{C_t} \\times 100\\%',
+            variables: [
+              { symbol: 'C_t', meaning: 'Theoretical field capacity (ha/h)' },
+              { symbol: 'C_a', meaning: 'Effective field capacity (ha/h)' },
+              { symbol: 'E', meaning: 'Field efficiency (%)' },
+              { symbol: 'W', meaning: 'Working width (m)' },
+              { symbol: 'S', meaning: 'Travel speed (km/h)' },
+            ],
+            notes: 'Given width, speed and efficiency: find TFC, then EFC = TFC × E, then E = EFC/TFC. EFC is always ≤ TFC because of time losses.',
+            workedExample: {
+              scenario: 'A 1.8 m rotary tiller at 5 km/h, 85% field efficiency.',
+              steps: [
+                { formula: 'C_t = \\frac{1.8 \\times 5}{10}', result: '0.90 ha/h' },
+                { formula: 'C_a = 0.90 \\times 0.85', result: '0.765 ha/h' },
+                { formula: 'E = \\frac{0.765}{0.90} \\times 100\\%', result: '85%' },
+              ],
+              answer: 'TFC 0.90 ha/h, EFC 0.77 ha/h, field efficiency 85%.',
+            },
           },
         ],
       },
