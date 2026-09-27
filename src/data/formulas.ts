@@ -2035,6 +2035,8 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'T', meaning: 'Torque' },
               { symbol: 'N', meaning: 'Rotational speed, rpm' },
             ],
+            notes:
+              'SOURCE NOTE: printed as hp = 2*pi*T*N with no divisor, which overstates the result by 44,760x when T is in N-m and N in rpm. Working power is W = 2*pi*T*N/60, so hp = 2*pi*T*N/(60*746) = 2*pi*T*N/44,760. Transcribed as printed; the drill supplies the 44,760 divisor.',
           },
           {
             id: 'c-motor-hp-from-engine',
