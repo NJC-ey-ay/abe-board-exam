@@ -1571,5 +1571,125 @@
       "expected": 16.466153846153848,
       "tolerance": 1e-9
     }
+  ],
+  "b-gumbel-return-period": [
+    {
+      "_note": "Record 52 years, event ranked 2nd. N/(N-m+1) = 52/51 = 1.0196078431; ln = 0.0194180859; ln of that = -3.9415503865. Bracket 0.5772 - 3.9415503865 = -3.3643503865, times -sqrt(6)/pi = -0.7796968, gives K = +2.6231732346. The two nested logs cancelling is the whole point: a short inner log is what makes K large, which is why a 2nd-ranked event on a 52-year record carries a bigger departure than a 10th-ranked one. X_T = 380 + 2.6231732346 x 140 = 747.2442528 mm, rounding to 747. Rank 1 is excluded from the spec because it drives the inner log to zero and K to infinity.",
+      "vals": {
+        "N": 52,
+        "m": 2,
+        "mean": 380,
+        "sd": 140
+      },
+      "expected": 747.2442528441346,
+      "tolerance": 0.000001
+    },
+    {
+      "_note": "Short record, deep rank: N/(N-m+1) = 30/21 = 1.4285714286; ln = 0.3566749439; ln of that = -1.0309304332. Bracket 0.5772 - 1.0309304332 = -0.4537304332, times -0.7796968 gives K = +0.3537721674, the low end of the spec range. X_T = 520 + 0.3537721674 x 95 = 553.6083559 mm, rounding to 554. A 30-year record cannot resolve a 100-year event, which is exactly why the factor collapses toward 0.35 here. Tolerance stated because the value passes through two nested logarithms and the exact hand arithmetic is only good to about six figures.",
+      "vals": {
+        "N": 30,
+        "m": 10,
+        "mean": 520,
+        "sd": 95
+      },
+      "expected": 553.6083558988415,
+      "tolerance": 0.000001
+    }
+  ],
+  "b-drop-spillway-capacity": [
+    {
+      "_note": "C L h^1.5 = 1.7 x 6 x 0.45^1.5. sqrt(0.45) = 0.6708204, so 0.45^1.5 = 0.3018692. 1.7 x 6 = 10.2, times 0.3018692 = 3.0790658 m3/s. Cross-check on the exponent: doubling the head here to 0.90 m gives 1.7 x 6 x 0.853815 = 8.7093, a factor of 2.828, which is 2^1.5 and confirms the three-halves power rather than a linear or quadratic one.",
+      "vals": {
+        "c": 1.7,
+        "L": 6,
+        "h": 0.45
+      },
+      "expected": 3.0790658,
+      "tolerance": 1e-7
+    },
+    {
+      "_note": "1.55 x 2.5 x 0.8^1.5. 0.8^1.5 = 0.8 x 0.8944272 = 0.7155418. 1.55 x 2.5 = 3.875, times 0.7155418 = 2.7727244 m3/s. The head here is near the top of the spec range, where the h^2 distractor is 0.894x rather than far away, which is the case the cap at h = 0.9 exists to keep clear of the 1% band.",
+      "vals": {
+        "c": 1.55,
+        "L": 2.5,
+        "h": 0.8
+      },
+      "expected": 2.7727244,
+      "tolerance": 1e-7
+    }
+  ],
+  "b-dam-top-width": [
+    {
+      "_note": "0.55 sqrt(12) + 1. sqrt(12) = 3.4641016, x 0.55 = 1.9052559, + 1 = 2.9052559 m. Order-of-magnitude check: a 12 m embankment gets a 2.9 m crest, not 7.6 m as a linear rule would give.",
+      "vals": {
+        "H": 12
+      },
+      "expected": 2.9052559,
+      "tolerance": 1e-7
+    },
+    {
+      "_note": "0.55 sqrt(3.5) + 1. sqrt(3.5) = 1.8708287, x 0.55 = 1.0289558, + 1 = 2.0289558 m. The low-height case, where the additive metre is a third of the answer and dropping it is badly wrong. This is the case that justifies keeping the +1 term in the spec at all.",
+      "vals": {
+        "H": 3.5
+      },
+      "expected": 2.0289558,
+      "tolerance": 1e-7
+    }
+  ],
+  "b-wave-height": [
+    {
+      "_note": "0.014 sqrt(20). sqrt(20) = 4.4721360, x 0.014 = 0.0626099 m, i.e. 6.26 cm of crest allowance for a 20 km fetch. Sanity: the same fetch in metres with the same 0.014 gives 0.00198 m, which is 31.6 times smaller and is the unit error the spec is built around. sqrt(1000) = 31.6228 confirms the ratio exactly.",
+      "vals": {
+        "D_f": 20
+      },
+      "expected": 0.0626099,
+      "tolerance": 1e-8
+    },
+    {
+      "_note": "0.014 sqrt(6.5). sqrt(6.5) = 2.5495098, x 0.014 = 0.0356931 m, i.e. 3.57 cm. A short fetch gives a small allowance, as the square root requires: 6.5 km is a third of 20 km but only 0.57 of the allowance, since 6.5/20 = 0.325 and sqrt(0.325) = 0.570.",
+      "vals": {
+        "D_f": 6.5
+      },
+      "expected": 0.03569313659514949,
+      "tolerance": 1e-8
+    }
+  ],
+  "b-orifice-velocity": [
+    {
+      "_note": "sqrt(2 x 9.81 x 0.85) = sqrt(16.677) = 4.0837482782 m/s. Check against ft/s: 4.0837482782 x 3.28084 = 13.398125 ft/s, a credible jet velocity for a sluice gate. Doubling the head to 1.70 m gives sqrt(33.354) = 5.7752981, a factor of exactly sqrt(2) = 1.41421, which is the square root and not the doubling a linear rule would predict. An earlier hand value of 4.0837468 was wrong in the sixth decimal; the gate caught it, and the full-precision figure above is the one asserted.",
+      "vals": {
+        "h": 0.85
+      },
+      "expected": 4.083748278236552,
+      "tolerance": 1e-7
+    },
+    {
+      "_note": "sqrt(2 x 9.81 x 0.12) = sqrt(2.3544) = 1.5344054223 m/s. The low-head case, where the same 0.5 m3/s pipe would be running at a trickle. As a cross-check on the square-root dependence, h = 0.12 is 0.12/0.85 = 0.1411765 of the first case, and the velocity should be sqrt(0.1411765) = 0.3757358 of it: 4.0837482782 x 0.3757358 = 1.5344054, which matches. An earlier hand value of 1.5344063 was wrong in the seventh decimal and the gate caught it.",
+      "vals": {
+        "h": 0.12
+      },
+      "expected": 1.5344054223053307,
+      "tolerance": 1e-12
+    }
+  ],
+  "b-orifice-discharge": [
+    {
+      "_note": "0.6 x 0.005 x sqrt(2 x 9.81 x 0.30) = 0.003 x sqrt(5.886) = 0.003 x 2.4261079943 = 0.0072783240 m3/s, i.e. 7.278 lps. The unit check from the SOURCE NOTE: the same orifice as 50 cm2 under 30 cm of head, fed into the PRINTED variable list units with the printed 0.6, gives 0.6 x 50 x sqrt(2 x 9.81 x 30) = 30 x 24.2610799 = 727.8324, exactly 100x this figure. The 100 is 1e4 for cm2 against m2, times 1e-2 for cm against m, times 1e3 for lps against m3/s. Keeping the printed sqrt(2 g h) form but working in the printed cm and lps units, the coefficient that gives the right answer is 0.006: 0.006 x 50 x 24.2610799 = 7.2783 lps, matching. The drill asserts the SI result, which uses the printed 0.6 unchanged.",
+      "vals": {
+        "A": 0.005,
+        "h": 0.3
+      },
+      "expected": 0.007278324,
+      "tolerance": 1e-9
+    },
+    {
+      "_note": "0.6 x 0.02 x sqrt(2 x 9.81 x 0.75) = 0.012 x sqrt(14.715) = 0.012 x 3.8360135558 = 0.0460321627 m3/s, i.e. 46.03 lps. The area is 4x the first case and the head is 2.5x, so the discharge should rise by 4 x sqrt(2.5) = 4 x 1.5811388 = 6.3245553; measured, 0.0460321627 / 0.0072783240 = 6.3246, which confirms the square-root dependence on head rather than a linear one. An earlier hand value of 0.0460247 came from a mis-squared square root and was rejected by the gate.",
+      "vals": {
+        "A": 0.02,
+        "h": 0.75
+      },
+      "expected": 0.046032162669159916,
+      "tolerance": 1e-12
+    }
   ]
 }

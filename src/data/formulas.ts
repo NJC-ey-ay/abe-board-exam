@@ -1683,6 +1683,22 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'h', meaning: 'Head, cm' },
               { symbol: 'g', meaning: 'Gravitational acceleration' },
             ],
+            // SOURCE NOTE: the printed 0.6 coefficient belongs to the SI form,
+            // where A is in m2 and h in m and Q comes out in m3/s. The printed
+            // variable list instead gives A in cm2, h in cm and Q in lps, and
+            // those three do not work with 0.6: substituting A = 50 cm2 and
+            // h = 30 cm gives 0.6 x 50 x sqrt(2 x 9.81 x 30) = 727.83, which is
+            // 100x the correct 7.28 lps. The reason is that A in cm2 is 1e4
+            // times A in m2 and h in cm is 1e-2 times h in m, so the printed
+            // expression is 1e4 x 1e-2 = 1e2 times too large in m3/s, and a
+            // further 1e3 short of lps, leaving a net factor of 100. The
+            // dimensionally correct coefficient for the printed cm and lps
+            // basis, keeping the printed sqrt(2 g h) intact, is 0.006, since
+            // Q (lps) = 0.006 A (cm2) sqrt(2 g h (cm)); the same relation
+            // written against the square root of the head alone is
+            // Q (lps) = 0.02658 A (cm2) sqrt(h (cm)). The drill therefore
+            // declares A in m2 and h in m and reports m3/s, which uses the
+            // printed 0.6 unchanged. Transcribed as printed.
           },
         ],
       },
