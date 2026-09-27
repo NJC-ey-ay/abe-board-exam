@@ -1183,5 +1183,97 @@
       },
       "expected": 116.26822103078162
     }
+  ],
+  "b-soil-total-volume": [
+    {
+      "_note": "200 + 500 + 1500 = 2200 cm3. Cross-check from the other side: the void part is 200 + 500 = 700 and the solid part 1500, and 700 + 1500 = 2200, so the three-phase total agrees with void + solid.",
+      "vals": {
+        "VA": 200,
+        "VW": 500,
+        "VS": 1500
+      },
+      "expected": 2200
+    }
+  ],
+  "b-soil-volume-of-voids": [
+    {
+      "_note": "300 + 450 = 750 cm3. The 1500 cm3 core of the porosity case then holds 750 of voids and 750 of solids, so e = 750/750 = 1.0 - the boundary of a very loose sand, consistent with a high 0.5 porosity rather than a contradiction.",
+      "vals": {
+        "VA": 300,
+        "VW": 450
+      },
+      "expected": 750
+    }
+  ],
+  "b-soil-weight": [
+    {
+      "_note": "0.3 + 450 + 1000 = 1450.3 g. The 0.3 g of air is 0.02% of the total, so dropping it shifts the answer by less than a gram and cannot be seen in any rendered option. That is why it is recorded in `mistakes` instead of being offered as a distractor, where it would collide with the correct value after rounding.",
+      "vals": {
+        "WA": 0.3,
+        "WW": 450,
+        "WS": 1000
+      },
+      "expected": 1450.3
+    }
+  ],
+  "b-porosity": [
+    {
+      "_note": "450/1500 = 0.3. Cross-check with the density form 1 - D_b/D_p: for 0.3 it needs D_b/D_p = 0.7, so D_b = 0.7 x 2.65 = 1.855 g/cm3, which is loose for a cultivated soil and consistent with the 0.3 porosity the handbook quotes for a sandy loam.",
+      "vals": {
+        "VV": 450,
+        "VT": 1500
+      },
+      "expected": 0.3
+    }
+  ],
+  "b-moisture-content-wet-basis": [
+    {
+      "_note": "75/300 = 0.25, so 0.25 x 100 = 25.0%. The dry basis on the same sample is 75/(300 - 75) x 100 = 33.3%, which is the 1/(1 - 0.25) = 1.333x relationship. The two bases differ by a third here, so the dry-basis distractor stays clearly distinct after rounding.",
+      "vals": {
+        "WW": 75,
+        "WT": 300
+      },
+      "expected": 25
+    }
+  ],
+  "b-particle-density": [
+    {
+      "_note": "300/120 = 2.5 g/cm3. Textbook quartz is 2.65; 2.5 is on the low side and is what a soil carrying clay or organic matter gives, since both pull the average down. Dividing by the bulk volume instead would have returned 1.4, the apparent specific gravity of the other case.",
+      "vals": {
+        "WS": 300,
+        "VS": 120
+      },
+      "expected": 2.5
+    }
+  ],
+  "b-void-ratio": [
+    {
+      "_note": "480/1200 = 0.4. Consistency check by converting to porosity: n = e/(1 + e) = 0.4/1.4 = 0.2857, and the same sample read as a porosity gives 480/(480 + 1200) = 0.2857. The two agree to four decimals, so e is not a mislabelled n.",
+      "vals": {
+        "VV": 480,
+        "VS": 1200
+      },
+      "expected": 0.4
+    }
+  ],
+  "b-apparent-specific-gravity": [
+    {
+      "_note": "1.40/1.00 = 1.4. Paired with the real specific gravity of 2.65 the porosity is 1 - 1.4/2.65 = 0.4717, a normal sandy loam, which is the physical sanity check on both densities at once.",
+      "vals": {
+        "Db": 1.4,
+        "Dw": 1
+      },
+      "expected": 1.4
+    }
+  ],
+  "b-real-specific-gravity": [
+    {
+      "_note": "2.65/1.00 = 2.65, the textbook value for quartz. The divisor is the sampled water density and not a written 1.0, so a D_w of 0.99 would give 2.6768 - the 1% shift the water-density range exists to exercise, and the reason the two specific gravities are separate formulas.",
+      "vals": {
+        "Dp": 2.65,
+        "Dw": 1
+      },
+      "expected": 2.65
+    }
   ]
 }

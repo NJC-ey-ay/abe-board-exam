@@ -9,6 +9,7 @@ import { areaAFarmSpecs } from './drill-specs-area-a-farm';
 import { areaAEngineEconSpecs } from './drill-specs-area-a-ee';
 import { areaBChannelSpecs } from './drill-specs-area-b-channel';
 import { areaBRunoffSpecs } from './drill-specs-area-b-runoff';
+import { areaBSoilSpecs } from './drill-specs-area-b-soil';
 
 export interface DrillVar {
   symbol: string;
@@ -1169,6 +1170,7 @@ add(...areaAFarmSpecs);
 add(...areaAEngineEconSpecs);
 add(...areaBChannelSpecs);
 add(...areaBRunoffSpecs);
+add(...areaBSoilSpecs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS

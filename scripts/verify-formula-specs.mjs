@@ -166,7 +166,12 @@ function optionPlausibility(options, correctIndex) {
 
 // "a furrow of ... a furrow of ..." - a label reused inside one sentence means
 // the generated narrative was stitched together rather than written.
-const DUPLICATE_LABEL = /\ba ([a-z][a-z -]{3,30}?) of [^,.?]*\ba \1 of\b/i;
+//
+// The label must be at least two words. A single repeated noun is usually
+// correct domain vocabulary rather than sloppy stitching: soil mechanics
+// variables are genuinely named "volume of voids" and "volume of solid
+// particles", and a one-word pattern fired on all of them.
+const DUPLICATE_LABEL = /\ba ([a-z]+ [a-z -]{2,30}?) of [^,.?]*\ba \1 of\b/i;
 
 const failures = [];
 const warnings = [];
