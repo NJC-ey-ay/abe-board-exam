@@ -2,7 +2,7 @@ import type { Question, Area, Difficulty } from './comprehensive-questions';
 import type { Formula } from './formulas';
 import { areaFormulas } from './formulas';
 import { enrichSpec } from './drill-content';
-import { poolTheoryForFormula } from './drill-mock-link';
+import { areaAMechSpecs } from './drill-specs-area-a-mech';
 
 export interface DrillVar {
   symbol: string;
@@ -282,9 +282,15 @@ function conversionStepLines(conversions: AppliedConversion[]): string[] {
     // Print the result of the multiplication that is actually shown, rather than
     // a separately-rounded copy of the pre-conversion value. Otherwise the line
     // reads "2 in/h x 25.4 = 46 mm/h", which does not add up.
-    const product = c.display * c.toNative;
-    const nativeStr = `${fmtValue(product, c.displayDecimals)} ${c.nativeUnit}`;
+    //
+    // The multiplier is rounded to 6 dp for printing, and the printed product is
+    // then taken with that *printed* multiplier. Using the full-precision value
+    // instead can make the two disagree in the last displayed digit
+    // ("312.73 x 1.355818 = 424.01" not multiplying out), and a student who
+    // redoes the sum with a pocket calculator is right to doubt the line.
     const mult = parseFloat(roundStep(c.toNative, 6).toFixed(6));
+    const product = c.display * mult;
+    const nativeStr = `${fmtValue(product, c.displayDecimals)} ${c.nativeUnit}`;
     return `${c.label} (${c.symbol}): convert ${displayStr} → ${c.nativeUnit} (${displayStr} × ${mult} = ${nativeStr})`;
   });
   return ['The given values are in English units; convert them to the formula\u2019s units first.', ...lines];
@@ -309,123 +315,6 @@ function wordProblemQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, num
   const verb = spec.verb ?? 'has';
   const q = `${subject} ${verb} ${factList}. What is ${unknownPhrase}?`;
   return { question: q, conversions };
-}
-
-// Build a theory Question from a specific hand-authored decision item (distinct
-// per item, so multiple decision scenarios never collapse into one duplicate).
-function buildDecisionFrom(spec: DrillSpec, rng: Rng, d: DecisionItem, tag: string): Question {
-  const options = rng.shuffle(d.options.map((o, i) => ({ o, i }))).map(x => x.o);
-  const correctIndexInShuffled = options.indexOf(d.options[d.correct]);
-  const formula = spec.formulaText;
-  const steps: string[] = [];
-  steps.push(d.paes ? `Per ${d.paes}, the governing performance requirement is applied to this situation.` : 'The adequacy of the result is judged against the stated requirement.');
-  steps.push('Compare the given/situation against the governing criterion.');
-  steps.push('Select the option that correctly reflects whether the requirement is satisfied.');
-  return {
-    id: `${spec.formulaId}-decision-${tag}-${Math.floor(rng.rand() * 1e6)}`,
-    area: spec.area,
-    subTopic: 'equation-practice',
-    topic: spec.formulaId,
-    type: 'theory',
-    difficulty: rng.pick(['average', 'average', 'hard', 'hard'] as Difficulty[]),
-    question: `${d.scenario ? d.scenario + ' ' : ''}${d.question}`,
-    options,
-    correctAnswer: correctIndexInShuffled,
-    solution: {
-      given: `Situation: ${d.scenario || 'Decision scenario for ' + (spec.unknownPhrase || spec.unknown)}${d.paes ? `\nGoverning standard: ${d.paes}` : ''}`,
-      steps,
-      formula,
-      keyConcept: d.rationale,
-      commonMistakes: spec.mistakes,
-      weakPoints: [spec.formulaId],
-    },
-    weakPoints: [spec.formulaId],
-  };
-}
-
-// A safe, formula-specific "what does this symbol represent?" theory question
-// derived entirely from the formula's own variable metadata (no external data).
-function definitionTheoryQuestion(spec: DrillSpec, v: DrillVar, slot: number, rng: Rng): Question {
-  const formula = spec.formulaText;
-  const lbl = `${v.label}${v.unit ? ` (${v.unit})` : ''}`;
-  const correctLabel = lbl;
-  const used = new Set<string>([correctLabel.toLowerCase()]);
-  const options: string[] = [correctLabel];
-  for (const s of spec.vars) {
-    if (s.ascii === v.ascii) continue;
-    const x = `${s.label}${s.unit ? ` (${s.unit})` : ''}`;
-    if (!used.has(x.toLowerCase())) { used.add(x.toLowerCase()); options.push(x); }
-  }
-  const genericPool = [
-    'the total time of the operation', 'the amount of energy consumed',
-    'the density of the material', 'the pressure head of the system',
-    'the flow velocity through the system', 'the cross-sectional area of the flow path',
-    'the temperature difference across the system', 'the mass flow rate',
-    'the force applied to the system', 'the volume displaced by the system',
-  ];
-  for (const g of genericPool) {
-    if (options.length >= 4) break;
-    const s = g.replace(/^the /, '');
-    if (!used.has(s.toLowerCase())) { used.add(s.toLowerCase()); options.push(s); }
-  }
-  const correct = options[0];
-  const ordered = rng.shuffle(options);
-  const correctIndexInShuffled = ordered.indexOf(correct);
-  return {
-    id: `${spec.formulaId}-theory-def-${slot}-${Math.floor(rng.rand() * 1e6)}`,
-    area: spec.area,
-    subTopic: 'equation-practice',
-    topic: spec.formulaId,
-    type: 'theory',
-    difficulty: 'average',
-    question: `In the formula ${formula}, what does the symbol ${v.symbol} represent?`,
-    options: ordered,
-    correctAnswer: correctIndexInShuffled,
-    solution: {
-      given: `Formula: ${formula}\nSymbol: ${v.symbol}`,
-      steps: [
-        `The symbol ${v.symbol} denotes the quantity ${v.label} in this formula.`,
-        `Matching the symbol to its definition (${v.label}) and unit${v.unit ? ` (${v.unit})` : ''} identifies the correct quantity.`,
-      ],
-      formula,
-      keyConcept: spec.keyConcept,
-      commonMistakes: spec.mistakes,
-      weakPoints: [spec.formulaId],
-    },
-    weakPoints: [spec.formulaId],
-  };
-}
-
-// Build a pool of distinct, exam-style theory questions for a formula by combining
-// (1) the formula's own authored decisions, (2) real mock-pool questions matched
-// by topic/area, and (3) its variable-definition questions (fallback). Dedupes on
-// question text so a session never repeats the same theory question. Priority is
-// chosen so decisions/pool content (richer) fill first and plain definitions only
-// appear when richer theory is exhausted.
-function buildTheoryPool(spec: DrillSpec, rng: Rng): Question[] {
-  const result: { rich: Question[]; fallback: Question[] } = { rich: [], fallback: [] };
-  const seen = new Set<string>();
-  const add = (bucket: 'rich' | 'fallback', q: Question) => {
-    const key = (q.question || '').trim();
-    if (!key || seen.has(key)) return;
-    seen.add(key);
-    result[bucket].push(q);
-  };
-
-  for (const d of spec.decision ?? []) add('rich', buildDecisionFrom(spec, rng, d, `d${result.rich.length}`));
-  for (const q of poolTheoryForFormula(spec.formulaId, spec.area)) {
-    add('rich', { ...q, subTopic: 'equation-practice', topic: spec.formulaId, weakPoints: [spec.formulaId, ...(q.weakPoints ?? [])] });
-  }
-  for (let di = 0; di < spec.vars.length; di++) {
-    add('fallback', definitionTheoryQuestion(spec, spec.vars[di], di, rng));
-  }
-  const rich = rng.shuffle(result.rich);
-  const fallback = rng.shuffle(result.fallback);
-  const out = rich.slice(0, 3);
-  if (out.length < 3) {
-    for (const q of fallback) { if (out.length === 3) break; out.push(q); }
-  }
-  return out;
 }
 
 
@@ -1242,6 +1131,13 @@ add(
 );
 
 // ---------------------------------------------------------------------------
+// AREA A — TOPIC FILES
+// The rest of Area A is authored in topic-grouped files so each group can be
+// verified and committed on its own. Each is a flat DrillSpec[] registered here.
+// ---------------------------------------------------------------------------
+add(...areaAMechSpecs);
+
+// ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS
 // Each spec is one narrative with several linked sub-parts (each result feeds
 // the next). The MCQ asks for the `finalStage` value; the solution reveals the
@@ -1278,25 +1174,19 @@ export function getDrillQuestions(formulaId: string, seed?: number): Question[] 
   if (!base) return [];
   const spec = enrichSpec(base);
   const rng = createRng(seed ?? Math.floor(Math.random() * 4294967296));
-  // Fixed session structure: 5 English-unit (convert) problems, 2 SI problems,
-  // 3 formula-specific theory questions, shuffled so positions change each session.
-  const roles: ('convert' | 'si' | 'theory')[] = [
-    'convert', 'convert', 'convert', 'convert', 'convert',
-    'si', 'si',
-    'theory', 'theory', 'theory',
+  // Fixed session structure: 10 computation word problems. Six require a unit
+  // conversion first and four are already in the formula's native units, so unit
+  // work is practised throughout without every question being a conversion.
+  // There are no theory slots: the brief is ten real-life, board-exam-style
+  // problems per formula.
+  const roles: ('convert' | 'si')[] = [
+    'convert', 'convert', 'convert', 'convert', 'convert', 'convert',
+    'si', 'si', 'si', 'si',
   ];
   const order = rng.shuffle(roles);
-  // Pre-select 3 DISTINCT theory questions for this session so they never repeat.
-  const theoryPool = buildTheoryPool(spec, rng);
   const out: Question[] = [];
-  let theoryIdx = 0;
   for (let i = 0; i < 10; i++) {
-    if (order[i] === 'theory') {
-      out.push(theoryPool[theoryIdx % Math.max(theoryPool.length, 1)]);
-      theoryIdx++;
-    } else {
-      out.push(buildQuestion(spec, i, rng, order[i]));
-    }
+    out.push(buildQuestion(spec, i, rng, order[i]));
   }
   return out;
 }
