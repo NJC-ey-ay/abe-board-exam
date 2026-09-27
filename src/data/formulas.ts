@@ -1028,7 +1028,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'D', meaning: 'Depth of water applied, cm' },
               { symbol: 'T', meaning: 'Time required to apply the water' },
             ],
-            notes: 'Also listed under Soil Moisture Management as "Water Applied" in the source handbook.',
+            notes: 'SOURCE NOTE: transcribed as printed, but the printed 2.78 is wrong for these units and the correct factor is 27.78, since Q (l/s) = 27.78 x A (ha) x D (cm) / T (h). The 2.78 is the factor for A in hectares with D in millimetres, so using it with a depth in cm understates the stream size by 10x. Also listed under Soil Moisture Management as "Water Applied" in the source handbook.',
           },
           {
             id: 'b-section-factor',
@@ -1107,7 +1107,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'I', meaning: 'Rainfall intensity' },
               { symbol: 'A', meaning: 'Catchment area' },
             ],
-            notes: 'C ranges 0.35 (bushy lands, 3–5% slope) to 0.99 (concrete pavement); C = 0 for sand.',
+            notes: 'C ranges 0.35 (bushy lands, 3–5% slope) to 0.99 (concrete pavement); C = 0 for sand. SOURCE NOTE: the handbook prints q = C I A with no constant, because the constant is carried by the units. With I in mm/day and A in hectares the peak rate in m3/s is 0.00278 C I A; the same rate in l/s is 2.78 C I A. A drill that reports 2.78 C I A is using the l/s form, not an error in the arithmetic.',
           },
           {
             id: 'b-runoff-volume',
@@ -1118,6 +1118,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'q', meaning: 'Peak runoff rate, m³/s (cms)' },
               { symbol: 'T', meaning: 'Duration of runoff, s' },
             ],
+            notes: 'SOURCE NOTE: transcribed as printed, but 0.278 is not consistent with the units printed alongside it. With q in m3/s and T in seconds, volume in m3 is simply q x T and the factor would be 1. The drill uses the dimensionally correct form Q (m3) = 3.6 x q (l/s) x T (h), which is 3600 seconds an hour divided by 1000 litres to a cubic metre. Do not mix the two bases: 2.78 C I A and 0.00278 C I A are the same Rational-Method rate in l/s and m3/s respectively.',
           },
           {
             id: 'b-kirpich-tc',
@@ -1527,6 +1528,10 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'D', meaning: 'Depth of water applied, cm' },
               { symbol: 'T', meaning: 'Time required to irrigate, hr' },
             ],
+            // Same printed constant, and the same error, as b-water-applied-depth
+            // under Open Channel Flow. The two ids differ only by the topic they
+            // are filed under and by redundant parentheses, so both carry the note.
+            notes: 'SOURCE NOTE: transcribed as printed, but the printed 2.78 is wrong for these units and the correct factor is 27.78, since Q (l/s) = 27.78 x A (ha) x D (cm) / T (h). The 2.78 is the factor for A in hectares with D in millimetres, so using it with a depth in cm understates the stream size by 10x. This is the same equation as b-water-applied-depth, filed under Soil Moisture Management instead of Open Channel Flow; the drill frames it as a root-zone water requirement rather than a conveyance stream.',
           },
         ],
       },
