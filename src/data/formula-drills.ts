@@ -7,6 +7,7 @@ import { areaAEnergySpecs } from './drill-specs-area-a-energy';
 import { areaATractorSpecs } from './drill-specs-area-a-tractor';
 import { areaAFarmSpecs } from './drill-specs-area-a-farm';
 import { areaAEngineEconSpecs } from './drill-specs-area-a-ee';
+import { areaBChannelSpecs } from './drill-specs-area-b-channel';
 
 export interface DrillVar {
   symbol: string;
@@ -912,23 +913,9 @@ add(
     distractors: [v => v.Md * v.Vt, v => v.Vt / v.Md, v => v.Md / v.Vt * 1.1, v => v.Md / v.Vt * 0.9],
   },
 
-{
-    formulaId: 'b-mannings-equation', area: 'B', unknown: 'v',
-    formulaText: 'v = (1/n) × R^(2/3) × sqrt(S)',
-    unit: 'm/s', round: 2,
-    vars: [
-      { symbol: 'n', ascii: 'n', label: 'Manning roughness', unit: '', min: 0.015, max: 0.035, decimals: 3 },
-      { symbol: 'R', ascii: 'R', label: 'hydraulic radius', unit: 'm', min: 0.5, max: 2.0, decimals: 2 },
-      { symbol: 'S', ascii: 'S', label: 'channel slope', unit: 'm/m', min: 0.001, max: 0.005, decimals: 3 },
-    ],
-    compute: v => (1 / v.n) * Math.pow(v.R, 2 / 3) * Math.sqrt(v.S),
-    context: 'a newly constructed concrete drainage canal in a barangay road project in Batangas',
-    verb: 'has',
-    unknownPhrase: 'the average flow velocity in the canal',
-    keyConcept: 'Manning velocity = (1/n) × R^(2/3) × √S.',
-    mistakes: ['Applying exponent to whole term wrongly', 'Using log', 'Forgetting the (1/n)'],
-    distractors: [v => (1 / v.n) * Math.pow(v.R, 1 / 2) * Math.pow(v.S, 2 / 3), v => v.n * Math.pow(v.R, 2 / 3) * Math.sqrt(v.S), v => (1 / v.n) * Math.pow(v.R, 2 / 3) * Math.sqrt(v.S) * 1.1, v => (1 / v.n) * Math.pow(v.R, 2 / 3) * Math.sqrt(v.S) * 0.9],
-  },
+// b-mannings-equation now lives in drill-specs-area-b-channel.ts, which carries
+// the SI/English constant split, the Philippine canal context and bounded
+// distractors. It replaced the inline stub that used to sit here.
 
 {
     formulaId: 'b-velocity-head', area: 'B', unknown: 'h_v',
@@ -1159,6 +1146,7 @@ add(...areaAEnergySpecs);
 add(...areaATractorSpecs);
 add(...areaAFarmSpecs);
 add(...areaAEngineEconSpecs);
+add(...areaBChannelSpecs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS
