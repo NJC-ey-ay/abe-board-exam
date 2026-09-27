@@ -4,6 +4,7 @@ import { areaFormulas } from './formulas';
 import { enrichSpec } from './drill-content';
 import { areaAMechSpecs } from './drill-specs-area-a-mech';
 import { areaAEnergySpecs } from './drill-specs-area-a-energy';
+import { areaATractorSpecs } from './drill-specs-area-a-tractor';
 
 export interface DrillVar {
   symbol: string;
@@ -1138,6 +1139,7 @@ add(
 // ---------------------------------------------------------------------------
 add(...areaAMechSpecs);
 add(...areaAEnergySpecs);
+add(...areaATractorSpecs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS

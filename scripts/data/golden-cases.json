@@ -661,5 +661,123 @@
       },
       "expected": 19.25
     }
+  ],
+  "a-drawbar-power": [
+    {
+      "_note": "F = 3.6 x 54/6 = 32.4 kN",
+      "vals": {
+        "DBP": 54,
+        "S": 6
+      },
+      "expected": 32.4
+    }
+  ],
+  "a-ihp-4stroke": [
+    {
+      "_note": "IHP = 120 x 0.5 x 6 x 1800 x 3 / 66000 = 1944000/66000",
+      "vals": {
+        "P": 120,
+        "L": 0.5,
+        "A": 6,
+        "N": 1800,
+        "n": 3
+      },
+      "expected": 29.4545454545455
+    }
+  ],
+  "a-ihp-2stroke": [
+    {
+      "_note": "IHP = 120 x 0.5 x 6 x 1800 x 3 / 33000 = 1944000/33000",
+      "vals": {
+        "P": 120,
+        "L": 0.5,
+        "A": 6,
+        "N": 1800,
+        "n": 3
+      },
+      "expected": 58.9090909090909
+    }
+  ],
+  "a-draft-power": [
+    {
+      "_note": "P = S d/375 = 4.5 x 1200 / 375 = 14.4 hp",
+      "vals": {
+        "S": 4.5,
+        "d": 1200
+      },
+      "expected": 14.4
+    }
+  ],
+  "a-field-efficiency-time-loss": [
+    {
+      "_note": "FE = 300/375 x 100 = 80 %",
+      "vals": {
+        "To": 300,
+        "Tn": 45,
+        "Ta": 30
+      },
+      "expected": 80
+    }
+  ],
+  "a-brake-horsepower": [
+    {
+      "_note": "BHP = 2 pi x 400 x 1200 / 33000",
+      "vals": {
+        "T": 400,
+        "N": 1200
+      },
+      "expected": 91.3917862862485
+    }
+  ],
+  "a-piston-displacement": [
+    {
+      "_note": "PD = (pi/4) x 89^2 x 102 x 4 / 1000 cm3",
+      "vals": {
+        "D": 89,
+        "L": 102,
+        "n": 4
+      },
+      "expected": 2538.22465172664
+    }
+  ],
+  "a-piston-displacement-rate": [
+    {
+      "_note": "PDR = 1500 x 2000 / 1000 = 3000 L/min",
+      "vals": {
+        "PD": 1500,
+        "N": 2000
+      },
+      "expected": 3000
+    }
+  ],
+  "a-piston-speed": [
+    {
+      "_note": "S_p = 2 x 3.5 x 1800 / 12 = 1050 ft/min",
+      "vals": {
+        "L": 3.5,
+        "N": 1800
+      },
+      "expected": 1050
+    }
+  ],
+  "a-fuel-consumption": [
+    {
+      "_note": "FC = 18/3 = 6 L/h",
+      "vals": {
+        "Vf": 18,
+        "t": 3
+      },
+      "expected": 6
+    }
+  ],
+  "a-rate-of-explosion": [
+    {
+      "_note": "ER = 1800/2 = 900 per min",
+      "vals": {
+        "N": 1800,
+        "C": 2
+      },
+      "expected": 900
+    }
   ]
 }
