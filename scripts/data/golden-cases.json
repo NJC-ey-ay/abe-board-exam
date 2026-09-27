@@ -1383,7 +1383,7 @@
         "e": 4
       },
       "expected": 0.8166666666666667,
-      "tolerance": 1e-6
+      "tolerance": 0.000001
     }
   ],
   "b-border-irrigation-stream": [
@@ -1393,6 +1393,182 @@
         "S": 2
       },
       "expected": 0.0014865088937534,
+      "tolerance": 1e-9
+    }
+  ],
+  "b-farm-irrigation-requirement": [
+    {
+      "_note": "CWR + LR - ERF = 420 + 45 - 130 = 335 mm. Rain is SUBTRACTED, so a bigger effective rainfall lowers the requirement; adding it instead would give 595, which is the first distractor. The leaching term still adds on top.",
+      "vals": {
+        "cwr": 420,
+        "lr": 45,
+        "erf": 130
+      },
+      "expected": 335
+    },
+    {
+      "_note": "640 + 25 - 85 = 580 mm. Same two-sign check as the first case: 85 of rain comes off, 25 of leaching goes on.",
+      "vals": {
+        "cwr": 640,
+        "lr": 25,
+        "erf": 85
+      },
+      "expected": 580
+    }
+  ],
+  "b-farm-water-requirement": [
+    {
+      "_note": "FIR + Losses = 320 + 140 = 460 mm. The total must exceed the requirement it serves by exactly the loss, so the bare 320 is one of the distractors and is 0.70x.",
+      "vals": {
+        "fir": 320,
+        "ls": 140
+      },
+      "expected": 460
+    },
+    {
+      "_note": "180 + 95 = 275 mm. Here the loss is 0.35 of the total, the low end of the 80..250 mm loss range against a 150..600 mm requirement.",
+      "vals": {
+        "fir": 180,
+        "ls": 95
+      },
+      "expected": 275
+    }
+  ],
+  "b-diversion-water-requirement": [
+    {
+      "_note": "FWR + CL = 480 + 210 = 690 mm. Conveyance loss is added as a depth, not applied as a percentage of the farm requirement.",
+      "vals": {
+        "fwr": 480,
+        "cl": 210
+      },
+      "expected": 690
+    },
+    {
+      "_note": "250 + 120 = 370 mm. The loss is nearly half the farm requirement, which is the point of the formula for a long unlined earth canal.",
+      "vals": {
+        "fwr": 250,
+        "cl": 120
+      },
+      "expected": 370
+    }
+  ],
+  "b-farm-turnout-requirement": [
+    {
+      "_note": "FWR + FDL = 560 + 115 = 675 mm. Third step in the chain (CWR -> FWR -> DWR -> FTR); each step adds the loss incurred past the previous point.",
+      "vals": {
+        "fwr": 560,
+        "fdl": 115
+      },
+      "expected": 675
+    },
+    {
+      "_note": "300 + 70 = 370 mm. 70 mm of ditch loss on a 300 mm requirement is a 0.23 ratio, near the low end.",
+      "vals": {
+        "fwr": 300,
+        "fdl": 70
+      },
+      "expected": 370
+    }
+  ],
+  "b-depth-readily-available-moisture": [
+    {
+      "_note": "Same printed product as b-net-application-depth. 0.32 - 0.14 = 0.18 plant-available fraction; x1.45 apparent specific gravity = 0.261; x0.60 m root zone = 0.1566 m; x0.45 allowable depletion = 0.070470 m, which rounds to 0.0705. Tolerance stated for the 4-dp rounding.",
+      "vals": {
+        "fc": 0.32,
+        "pwp": 0.14,
+        "as": 1.45,
+        "rzd": 0.6,
+        "mad": 0.45
+      },
+      "expected": 0.0705,
+      "tolerance": 0.0001
+    },
+    {
+      "_note": "0.30 - 0.12 = 0.18; x1.55 = 0.279; x0.90 m = 0.2511; x0.35 = 0.087885 m, rounds to 0.0879. Deliberately sampled away from the first case so the two do not share a root depth or depletion fraction.",
+      "vals": {
+        "fc": 0.3,
+        "pwp": 0.12,
+        "as": 1.55,
+        "rzd": 0.9,
+        "mad": 0.35
+      },
+      "expected": 0.0879,
+      "tolerance": 0.0001
+    }
+  ],
+  "b-application-rate": [
+    {
+      "_note": "12 lps over 0.8 ha = 15 lps/ha, and that is the unit the printed Q/A ratio actually returns. As a depth rate it would be 15 x 0.36 = 5.4 mm/hr, since 1 lps/ha is 3.6 m3/hr over 10,000 m2 = 0.36 mm/hr. The golden asserts 15, NOT 5.4: folding the 0.36 into the answer would contradict the printed formula. Same situation as the Rational Method entry, where the constant is carried by the units.",
+      "vals": {
+        "Q": 12,
+        "A": 0.8
+      },
+      "expected": 15
+    },
+    {
+      "_note": "4.5 lps over 1.25 ha = 3.6 lps/ha. The second case uses a lower flow and a larger area, so the rate falls well below the first.",
+      "vals": {
+        "Q": 4.5,
+        "A": 1.25
+      },
+      "expected": 3.6
+    }
+  ],
+  "b-water-requirement": [
+    {
+      "_note": "ET + P = 5.4 + 18.2 = 23.6 mm. Both terms are demands on the supply: water leaving through the leaves and surface, and water leaving through the bottom of the root zone. Percolation is added, never subtracted.",
+      "vals": {
+        "et": 5.4,
+        "p": 18.2
+      },
+      "expected": 23.6
+    },
+    {
+      "_note": "8.1 + 6.5 = 14.6 mm. Transpiration-dominated case, the mirror of the first where percolation dominates.",
+      "vals": {
+        "et": 8.1,
+        "p": 6.5
+      },
+      "expected": 14.6
+    }
+  ],
+  "b-evapotranspiration": [
+    {
+      "_note": "E + T = 4.2 + 6.8 = 11.0 mm/day. Transpiration exceeds evaporation here, so the canopy is closed.",
+      "vals": {
+        "e": 4.2,
+        "t": 6.8
+      },
+      "expected": 11
+    },
+    {
+      "_note": "6.5 + 3.1 = 9.6 mm/day. Evaporation exceeds transpiration, the early-season or sparse-canopy case. The total is close to the first case while the split is inverted, which is the point of the pair.",
+      "vals": {
+        "e": 6.5,
+        "t": 3.1
+      },
+      "expected": 9.6
+    }
+  ],
+  "b-water-applied": [
+    {
+      "_note": "Q = 2.78 (A D)/T with D in MILLIMETRES, which is the basis the printed 2.78 belongs to. 0.75 ha x 60 mm = 45 ha-mm. One ha-mm is 10 m3 = 10000 L, so 45 ha-mm = 450000 L; over 4 h = 14400 s that is exactly 31.25 L/s. The printed constant is the rounded form of 10000/3600 = 2.7778, so the formula returns 31.275 instead of 31.25. The golden asserts the FORMULA output, and the note records the exact figure so the 0.025 gap is never mistaken for a bug. If D were taken in cm the correct constant is 27.78 and 2.78 would give 3.1275, ten times low, which is the first distractor.",
+      "vals": {
+        "A": 0.75,
+        "D": 60,
+        "T": 4
+      },
+      "expected": 31.275,
+      "tolerance": 1e-9
+    },
+    {
+      "_note": "2.78 x (1.10 x 35)/6.5 = 2.78 x 38.5/6.5 = 107.03/6.5. Exact physics check: 1.10 ha x 35 mm = 38.5 ha-mm = 385000 L; over 6.5 h = 23400 s that is 16.4529914530 L/s, against 16.4661538462 from the rounded constant. Tolerance stated because the printed 2.78 is not exact.",
+      "vals": {
+        "A": 1.1,
+        "D": 35,
+        "T": 6.5
+      },
+      "expected": 16.466153846153848,
       "tolerance": 1e-9
     }
   ]
