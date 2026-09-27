@@ -6,6 +6,7 @@ import { areaAMechSpecs } from './drill-specs-area-a-mech';
 import { areaAEnergySpecs } from './drill-specs-area-a-energy';
 import { areaATractorSpecs } from './drill-specs-area-a-tractor';
 import { areaAFarmSpecs } from './drill-specs-area-a-farm';
+import { areaAEngineEconSpecs } from './drill-specs-area-a-ee';
 
 export interface DrillVar {
   symbol: string;
@@ -223,12 +224,26 @@ function valFragment(n: number, decimals: number, unit: string, label: string): 
   const num = fmtValue(n, decimals);
   if (!unit || unit === '' || unit === 'decimal') return num;
   if (unit === '%') return `${num}%`;
+  // Money runs to six figures in the engineering-economy drills, where a bare
+  // 700145 is unreadable. Only peso-denominated units are affected.
+  if (/^(\u20B1|peso)/i.test(unit)) {
+    return `${num.replace(/\B(?=(\d{3})+(?!\d))/g, ',')} ${unit}`;
+  }
   return `${num} ${unit}`;
 }
 
 function article(word: string): string {
   if (!word) return '';
   const first = word.charAt(0).toLowerCase();
+  if (first === 'u') {
+    // A leading "u" is a vowel sound only before m or a consonant-n, as in
+    // "an umbrella" or "an uncle". "a unit" and "a uniform" start with "yoo",
+    // so the naive vowel test printed "an useful life".
+    const second = word.charAt(1).toLowerCase();
+    const third = word.charAt(2).toLowerCase();
+    const vowelSounded = second === 'n' && third !== 'i';
+    return /[aeiou]/.test(first) && vowelSounded ? 'an ' : 'a ';
+  }
   return /[aeiou]/.test(first) ? 'an ' : 'a ';
 }
 
@@ -756,17 +771,17 @@ add(
 {
     formulaId: 'a-ee-simple-interest', area: 'A', unknown: 'A',
     formulaText: 'A = P × (1 + r×t)',
-    unit: '', round: 2,
+    unit: '₱', round: 2,
     vars: [
-      { symbol: 'P', ascii: 'P', label: 'principal', unit: '', min: 10000, max: 500000, decimals: 0 },
-      { symbol: 'r', ascii: 'r', label: 'annual interest rate', unit: 'decimal', min: 0.05, max: 0.15, decimals: 2 },
-      { symbol: 't', ascii: 't', label: 'time', unit: 'years', min: 1, max: 10, decimals: 0 },
+      { symbol: 'P', ascii: 'P', label: 'principal', unit: 'pesos', min: 10000, max: 500000, decimals: 0 },
+      { symbol: 'r', ascii: 'r', label: 'annual simple interest rate', unit: '', min: 0.05, max: 0.15, decimals: 2 },
+      { symbol: 't', ascii: 't', label: 'term', unit: 'years', min: 1, max: 10, decimals: 0 },
     ],
     compute: v => v.P * (1 + v.r * v.t),
     context: 'a rural lending cooperative in Quezon that approved a farm credit loan',
     verb: 'released',
     unknownPhrase: 'the total amount repayable at the end of the term',
-    keyConcept: 'Simple interest total = principal × (1 + rate × time).',
+     keyConcept: 'Simple interest total = principal x (1 + rate x time), with the rate entered as a decimal per year, so 0.05 is five percent. Nothing earned here is left to earn again, which is the whole difference from compound interest.',
     mistakes: ['Using rate as % instead of decimal', 'Omitting the +1', 'Adding interest to principal wrongly'],
     distractors: [v => v.P * (1 + v.r) * v.t, v => v.P * v.r * v.t, v => v.P * (1 + v.r * v.t) * 1.1, v => v.P * (1 + v.r * v.t) * 0.9],
   },
@@ -774,19 +789,20 @@ add(
   {
     formulaId: 'a-ee-straight-line-depreciation', area: 'A', unknown: 'D',
     formulaText: 'D = (C - S) / n',
-    unit: '', round: 0,
+    unit: '₱', round: 0,
     vars: [
-      { symbol: 'C', ascii: 'C', label: 'initial cost', unit: '', min: 100000, max: 1000000, decimals: 0 },
-      { symbol: 'S', ascii: 'S', label: 'salvage value', unit: '', min: 10000, max: 100000, decimals: 0 },
-      { symbol: 'n', ascii: 'n', label: 'useful life', unit: 'years', min: 5, max: 20, decimals: 0 },
+      { symbol: 'C', ascii: 'C', label: 'initial cost', unit: 'pesos', min: 100000, max: 1000000, decimals: 0 },
+      { symbol: 'S', ascii: 'S', label: 'salvage value', unit: 'pesos', min: 10000, max: 100000, decimals: 0 },
+      { symbol: 'n', ascii: 'n', label: 'service life', unit: 'years', min: 5, max: 20, decimals: 0 },
     ],
     compute: v => (v.C - v.S) / v.n,
-    context: 'a rice miller in Nueva Ecija depreciating a multi-purpose rice mill on a straight-line basis',
-    verb: 'is depreciating',
+    context: 'a rice miller in Nueva Ecija who bought a multi-purpose rice mill and writes it off on a straight-line basis',
+    verb: 'records',
     unknownPhrase: 'the annual straight-line depreciation of the mill',
-    keyConcept: 'Straight-line depreciation = (cost − salvage) ÷ useful life.',
+     keyConcept: 'Straight-line depreciation spreads the depreciable base evenly: the cost less the salvage value, divided by the useful life. The salvage is subtracted because that is the part of the cost that is never written off, and the charge is then the same in every year of the life.',
     mistakes: ['Not subtracting salvage', 'Multiplying instead of dividing', 'Reversing subtraction'],
-    distractors: [v => (v.C - v.S) * v.n, v => v.C / v.n, v => (v.C - v.S) / v.n * 1.1, v => (v.C - v.S) / v.n * 0.9],
+    // (C - S) * n was the old first option and is n squared times the answer, which runs past 100x for any life over ten years.
+    distractors: [v => v.C / v.n, v => v.C - v.S, v => (v.C - v.S) / (v.n + 1), v => (v.C - v.S) / (v.n - 1)],
   },
 
 );
@@ -1142,6 +1158,7 @@ add(...areaAMechSpecs);
 add(...areaAEnergySpecs);
 add(...areaATractorSpecs);
 add(...areaAFarmSpecs);
+add(...areaAEngineEconSpecs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS
