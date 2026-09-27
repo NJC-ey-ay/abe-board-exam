@@ -3,6 +3,7 @@ import type { Formula } from './formulas';
 import { areaFormulas } from './formulas';
 import { enrichSpec } from './drill-content';
 import { areaAMechSpecs } from './drill-specs-area-a-mech';
+import { areaAEnergySpecs } from './drill-specs-area-a-energy';
 
 export interface DrillVar {
   symbol: string;
@@ -1136,6 +1137,7 @@ add(
 // verified and committed on its own. Each is a flat DrillSpec[] registered here.
 // ---------------------------------------------------------------------------
 add(...areaAMechSpecs);
+add(...areaAEnergySpecs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS

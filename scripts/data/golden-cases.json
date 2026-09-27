@@ -525,5 +525,141 @@
       },
       "expected": 0.25
     }
+  ],
+  "a-wind-power-general": [
+    {
+      "_note": "0.625 A v^3 = 0.625 x 20 x 1000 W",
+      "vals": {
+        "A": 20,
+        "v": 10
+      },
+      "expected": 12500
+    }
+  ],
+  "a-wind-power-mechanical": [
+    {
+      "_note": "0.245 A v^3 = 0.245 x 40 x 512 W",
+      "vals": {
+        "A": 40,
+        "v": 8
+      },
+      "expected": 5017.6
+    }
+  ],
+  "a-wind-power-electrical": [
+    {
+      "_note": "0.10 A v^3 = 0.1 x 60 x 729 W",
+      "vals": {
+        "A": 60,
+        "v": 9
+      },
+      "expected": 4374
+    }
+  ],
+  "a-water-power-general": [
+    {
+      "_note": "H = P/(9.81 Q) = 250/4.905 m",
+      "vals": {
+        "P": 250,
+        "Q": 0.5
+      },
+      "expected": 50.9683995922528
+    }
+  ],
+  "a-water-power-si": [
+    {
+      "_note": "P = Q H 9.81 / eta = 0.4 x 30 x 9.81 / 0.8 kW",
+      "vals": {
+        "Q": 0.4,
+        "H": 30,
+        "e": 0.8
+      },
+      "expected": 147.15
+    }
+  ],
+  "a-water-power-english": [
+    {
+      "_note": "P = Q H/(8.8 eta) = 6 x 120 / 6.6 hp",
+      "vals": {
+        "Q": 6,
+        "H": 120,
+        "e": 0.75
+      },
+      "expected": 109.090909090909
+    }
+  ],
+  "a-mass-flow-rate": [
+    {
+      "_note": "Q_m = v A rho = 1.5 x 0.05 x 1000 kg/s",
+      "vals": {
+        "v": 1.5,
+        "A": 0.05,
+        "rho": 1000
+      },
+      "expected": 75
+    }
+  ],
+  "a-solar-power-output": [
+    {
+      "_note": "P_o = 1000 A E = 1000 x 45 x 0.105 W",
+      "vals": {
+        "A": 45,
+        "E": 0.105
+      },
+      "expected": 4725
+    }
+  ],
+  "a-solar-total-efficiency": [
+    {
+      "_note": "Eff = 0.85 x 0.90 x 0.80",
+      "vals": {
+        "Ep": 0.85,
+        "Et": 0.9,
+        "Em": 0.8
+      },
+      "expected": 0.612
+    }
+  ],
+  "a-solar-pump-horsepower": [
+    {
+      "_note": "HP = Q H SG/(3960 eta) = 48960/2574 = 19.02098",
+      "vals": {
+        "Q": 800,
+        "H": 60,
+        "SG": 1.02,
+        "Ef": 0.65
+      },
+      "expected": 19.020979020979
+    }
+  ],
+  "a-windpump-hydraulic-power": [
+    {
+      "_note": "P_h = 9.8 Q H = 9.8 x 25 x 40 W",
+      "vals": {
+        "Q": 25,
+        "H": 40
+      },
+      "expected": 9800
+    }
+  ],
+  "a-windpump-power-output": [
+    {
+      "_note": "V = cbrt(P_o/(0.1 A)) = cbrt(400) m/s",
+      "vals": {
+        "A": 30,
+        "Po": 1200
+      },
+      "expected": 7.36806299728077
+    }
+  ],
+  "a-windpump-solar-insolation": [
+    {
+      "_note": "I = P_o x T = 3.5 x 5.5 kWh/day",
+      "vals": {
+        "Po": 3.5,
+        "T": 5.5
+      },
+      "expected": 19.25
+    }
   ]
 }
