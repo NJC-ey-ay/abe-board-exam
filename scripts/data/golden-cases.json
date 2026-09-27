@@ -1275,5 +1275,68 @@
       },
       "expected": 2.65
     }
+  ],
+  "b-lsr-gross": [
+    {
+      "_note": "50 + 5 + 12 = 67 mm. Both losses are added, so the gross figure sits above the net one; the 17 mm of ET plus percolation is 34% of what the farmer asked for and 25% of what the pump must deliver, which is the gap a canal operator has to cover.",
+      "vals": {
+        "n": 50,
+        "et": 5,
+        "p": 12
+      },
+      "expected": 67
+    }
+  ],
+  "b-water-power": [
+    {
+      "_note": "9810 * 0.5 * 20 * 0.85 = 83,385 W = 83.385 kW. Step by step: 9810 * 0.5 = 4905 N/s per metre of head, times 20 m = 98,100 W of hydraulic power, times 0.85 for turbine efficiency = 83,385 W. Dropping k would give 98,100 W, which is the 1/k = 1.176x distractor.",
+      "vals": {
+        "Q": 0.5,
+        "H": 20,
+        "k": 0.85
+      },
+      "expected": 83385
+    }
+  ],
+  "b-total-dynamic-head": [
+    {
+      "_note": "12.0 + 0.45 + 3.2 + 8.0 = 23.65 m. Cross-check: the static lift is 12.0 of that, so the working losses (velocity + friction + pressure) add 11.65 m, slightly under half the total. A pump sized on the 12 m lift alone would be short by 11.65 m on this line.",
+      "vals": {
+        "hs": 12,
+        "hv": 0.45,
+        "hf": 3.2,
+        "hp": 8
+      },
+      "expected": 23.65
+    }
+  ],
+  "b-static-head": [
+    {
+      "_note": "25 - 6 = 19 m. The source water surface is 25 m above the pump and the junction of lateral and main is 6 m above the same pump, so the water surface stands 19 m above the junction. Adding instead of subtracting would give 31 m, which is the 31/19 = 1.63x distractor.",
+      "vals": {
+        "es": 25,
+        "ej": 6
+      },
+      "expected": 19
+    }
+  ],
+  "b-pressure-head": [
+    {
+      "_note": "196200/9810 = 20.0 m exactly. Physical check: 196.2 kPa is 2 atm, and the textbook height of a water column under 2 atm of pressure is 20 m, so the specific weight 9810 N/m3 and the answer agree with the standard atmosphere rather than only with themselves. Dividing by 1000 instead would give 196.2 m, the 9.81x distractor.",
+      "vals": {
+        "P": 196200
+      },
+      "expected": 20
+    }
+  ],
+  "b-friction-head": [
+    {
+      "_note": "2.5 + 0.35 = 2.85 m. The main carries the whole flow and so accounts for 2.5 of the 2.85 m, about 88%; the lateral is the remaining 0.35 m. That ratio is why keeping only the lateral cannot be offered as an option - it is 12% here and falls to 0.4% at the far end of the sampled ranges.",
+      "vals": {
+        "hm": 2.5,
+        "hl": 0.35
+      },
+      "expected": 2.85
+    }
   ]
 }
