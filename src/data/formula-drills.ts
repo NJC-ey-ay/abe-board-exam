@@ -161,9 +161,26 @@ function distinctDistractors(rng: Rng, correct: number, gens: ((c: number) => nu
       out.push(val);
     }
   }
-  // fallback fills
-  while (out.length < candidates) {
-    out.push(correct + rng.randBetween(0.5, 2) * (Math.abs(correct) + 1) * (rng.rand() < 0.5 ? 1 : -1));
+  // Fallback fills. A spec whose own generators all collapse onto the answer -
+  // typically because a variable range makes two of them identical, as happens
+  // when t = 1 makes mf/P and mf*t/P the same value - still has to yield three
+  // usable options.
+  //
+  // These are drawn inside the same band the quality gate enforces: positive,
+  // distinct, and between 1/8x and 8x the answer. The old fallback offset the
+  // answer by rng*(|correct|+1) with a random sign, which went negative for any
+  // small answer and blew past the plausibility band for any large one.
+  let fill = 0;
+  while (out.length < candidates && fill < 200) {
+    fill++;
+    const base = Math.abs(correct) || 1;
+    const val = base * (rng.rand() < 0.5 ? 1 / (1.5 + rng.rand() * 6.5) : 1.5 + rng.rand() * 6.5);
+    if (!isFinite(val) || val === 0) continue;
+    if (Math.abs(val - correct) < 1e-9 * Math.max(1, Math.abs(correct))) continue;
+    const k = val.toPrecision(7);
+    if (set.has(k)) continue;
+    set.add(k);
+    out.push(val);
   }
   return out;
 }
@@ -662,7 +679,7 @@ add(
     context: "a rice farmer's tractor working through a flooded paddy in Central Luzon",
     verb: 'is operating with',
     unknownPhrase: 'the theoretical field capacity of the tractor',
-    keyConcept: 'Theoretical field capacity is capacity at 100% efficiency, with no time losses.',
+    keyConcept: 'Theoretical field capacity is the rate a machine would achieve at 100% efficiency with no time losses, so it depends only on working width and speed. The /10 in the formula is not a loss allowance; it is the unit conversion that turns m x km/h into ha/h.',
     mistakes: ['Omitting the /10', 'Applying field efficiency (TFC is theoretical = 100% efficiency)', 'Unit confusion'],
     distractors: [v => v.W * v.S, v => (v.W * v.S) / 20, v => (v.W * v.S) / 10 * 0.8, v => (v.W * v.S) / 10 * 1.1],
   },
@@ -678,9 +695,12 @@ add(
     context: "a combine harvester finishing a palay harvest on a 6 ha field in Bulacan",
     verb: 'recorded',
     unknownPhrase: 'the field efficiency of the harvesting operation',
-    keyConcept: 'Field efficiency = actual ÷ theoretical capacity, × 100%.',
+    keyConcept: 'Field efficiency is actual capacity divided by theoretical capacity, reported as a percentage, and it is always below 100% because it accounts for time lost to turning, filling, weather and operator breaks. The capacity ratio is a fraction below one; the x100 is what turns it into a percentage.',
     mistakes: ['Forgetting ×100', 'Reversing the ratio (theoretical/actual)', 'Reporting a decimal instead of %'],
-    distractors: [v => (v.Ca / v.Ct), v => (v.Ct / v.Ca) * 100, v => (v.Ca / v.Ct) * 100 * 1.1, v => (v.Ca / v.Ct) * 90],
+    // The classic "forgot the x100" distractor is 1% of the answer by construction,
+    // so it cannot be offered as an option without making the question guessable.
+    // It stays in `mistakes` above, where it is shown as feedback instead.
+    distractors: [v => (v.Ct / v.Ca) * 100, v => (v.Ca / v.Ct) * 100 * 0.85, v => (v.Ca / v.Ct) * 100 * 1.15, v => (v.Ca / v.Ct) * 100 * 0.7],
   },
 
 {
@@ -695,7 +715,7 @@ add(
     context: "a four-wheel tractor powering a disc plow on a rice farm in Laguna",
     verb: 'has',
     unknownPhrase: 'the PTO power delivered to the plow',
-    keyConcept: 'PTO power = brake power × transmission efficiency.',
+    keyConcept: 'PTO power is what actually leaves the tractor PTO shaft, so it is always less than brake power: transmission efficiency converts part of the engine output into shaft output and the remainder is lost to friction in the gears, splines and universal joint. Enter efficiency as a decimal, so 0.92 is 92%.',
     mistakes: ['Using efficiency as % instead of decimal', 'Dividing instead of multiplying', 'Adding losses instead of applying efficiency'],
     distractors: [v => v.BP / v.etr, v => v.BP * (1 - v.etr), v => v.BP * v.etr * 1.1, v => v.BP * v.etr * 0.9],
   },
@@ -712,9 +732,9 @@ add(
     context: 'a small stationary diesel engine driving a farm pump during a shop test in Cavite',
     verb: 'has',
     unknownPhrase: 'the mechanical efficiency of the engine',
-    keyConcept: 'Mechanical efficiency = brake power ÷ indicated power × 100%.',
+    keyConcept: 'Mechanical efficiency compares brake power, the power actually delivered at the crankshaft flange, with indicated power, the power developed inside the cylinders from the fuel burned. The gap between them is friction and pumping loss, so a healthy diesel sits close to 80-90%.',
     mistakes: ['Forgetting ×100', 'Reversing ratio', 'Using fractional power difference'],
-    distractors: [v => v.BP / v.IP, v => (v.IP / v.BP) * 100, v => (v.BP / v.IP) * 100 * 1.05, v => ((v.IP - v.BP) / v.IP) * 100],
+    distractors: [v => (v.IP / v.BP) * 100, v => (v.BP / v.IP) * 100 * 0.9, v => (v.BP / v.IP) * 100 * 1.1, v => (v.BP / v.IP) * 100 * 0.75],
   },
 
 {
@@ -729,9 +749,9 @@ add(
     context: 'the diesel engine of a four-wheel tractor undergoing a compression test at a government testing laboratory',
     verb: 'has',
     unknownPhrase: 'the compression ratio of the engine',
-    keyConcept: 'Compression ratio = (displacement + clearance) ÷ clearance.',
+    keyConcept: 'Compression ratio compares the swept volume plus the clearance volume to the clearance volume alone, so it is always above 1 and is reported as :1. The clearance volume is the space left in the cylinder at top dead centre, so forgetting to add it understates the ratio by exactly 1.',
     mistakes: ['Forgetting to add clearance to displacement', 'Using V_d/V_c only', 'Reversing ratio'],
-    distractors: [v => v.Vd / v.Vc, v => (v.Vc / (v.Vd + v.Vc)), v => (v.Vd + v.Vc) / v.Vc * 1.1, v => (v.Vd + v.Vc) / v.Vc * 0.9],
+    distractors: [v => v.Vd / v.Vc, v => (v.Vd + v.Vc) / v.Vc * 1.15, v => (v.Vd + v.Vc) / v.Vc * 0.85, v => (v.Vd + v.Vc) / v.Vc / 2],
   },
 
 {
@@ -741,15 +761,19 @@ add(
     vars: [
       { symbol: 'm_f', ascii: 'mf', label: 'fuel mass consumed', unit: 'kg', min: 10, max: 50, decimals: 1 },
       { symbol: 'P', ascii: 'P', label: 'engine power', unit: 'kW', min: 40, max: 120, decimals: 0 },
-      { symbol: 't', ascii: 't', label: 'operating time', unit: 'h', min: 1, max: 5, decimals: 1 },
+      // min is 1.5 h, not 1 h: at t = 1 both mf/P and mf*t/P collapse onto the
+      // answer mf/(P*t), leaving the spec with a single distinct distractor.
+      { symbol: 't', ascii: 't', label: 'operating time', unit: 'h', min: 1.5, max: 5, decimals: 1 },
     ],
     compute: v => v.mf / (v.P * v.t),
     context: 'a diesel engine powering a pump during an irrigation run in Batangas',
     verb: 'recorded',
     unknownPhrase: 'the specific fuel consumption of the engine',
-    keyConcept: 'Specific fuel consumption = fuel mass ÷ (power × time).',
+    keyConcept: 'Specific fuel consumption divides the mass of fuel burned by the energy delivered, which is power multiplied by time, so it reports kg per kW-h. A lower SFC is a better engine. Dividing by power and by time separately gives the same result, since both belong in the denominator.',
     mistakes: ['Multiplying instead of dividing', 'Omitting time factor', 'Unit confusion'],
-    distractors: [v => v.mf * v.P * v.t, v => (v.mf * v.P) / v.t, v => v.mf / (v.P * v.t) * 1.1, v => v.mf / (v.P * v.t) / 1.1],
+    // mf * P * t was the old first option and is (P*t)^2 times the answer, which
+    // runs to thousands of times the answer across this range.
+    distractors: [v => v.mf / v.P, v => (v.mf * v.t) / v.P, v => v.mf / (v.P * v.t) * 1.1, v => v.mf / (v.P * v.t) * 0.9],
   },
 
 {
@@ -765,9 +789,13 @@ add(
     context: 'a lateral pipe in a rice irrigation system that narrows abruptly between two sections',
     verb: 'is carrying',
     unknownPhrase: 'the flow velocity in the narrower section',
-    keyConcept: 'Continuity: A₁v₁ = A₂v₂, so v₂ = A₁v₁/A₂.',
+    keyConcept: 'Continuity says the volume flow rate is the same everywhere in an incompressible fluid, so A1v1 = A2v2. Halving the area therefore doubles the velocity: velocity is directly proportional to the inverse of area. Both sections must be areas, never diameters.',
     mistakes: ['Solving for wrong variable', 'Multiplying areas instead of dividing', 'Using diameters instead of areas'],
-    distractors: [v => (v.A1 * v.v1) / v.A1, v => (v.A1 * v.v1) * v.A2, v => (v.A1 * v.v1) / v.A2 * 1.1, v => (v.A1 * v.v1) / v.A2 * 2],
+    // (A1*v1)*A2 was the old first option and lands three orders of magnitude
+    // below the answer whenever the areas are small. v1 on its own is the real
+    // mistake - ignoring the area change entirely - and stays in bounds because
+    // A1/A2 is itself bounded over these ranges.
+    distractors: [v => v.v1, v => (v.A1 * v.v1) / v.A2 * 1.1, v => (v.A1 * v.v1) / v.A2 * 0.9, v => (v.A1 * v.v1) / v.A2 * 1.25],
   },
 
 {
@@ -775,7 +803,7 @@ add(
     formulaText: 'A = P × (1 + r×t)',
     unit: '₱', round: 2,
     vars: [
-      { symbol: 'P', ascii: 'P', label: 'principal', unit: 'pesos', min: 10000, max: 500000, decimals: 0 },
+      { symbol: 'P', ascii: 'P', label: 'principal', unit: '₱', min: 10000, max: 500000, decimals: 0 },
       { symbol: 'r', ascii: 'r', label: 'annual simple interest rate', unit: '', min: 0.05, max: 0.15, decimals: 2 },
       { symbol: 't', ascii: 't', label: 'term', unit: 'years', min: 1, max: 10, decimals: 0 },
     ],
@@ -793,8 +821,8 @@ add(
     formulaText: 'D = (C - S) / n',
     unit: '₱', round: 0,
     vars: [
-      { symbol: 'C', ascii: 'C', label: 'initial cost', unit: 'pesos', min: 100000, max: 1000000, decimals: 0 },
-      { symbol: 'S', ascii: 'S', label: 'salvage value', unit: 'pesos', min: 10000, max: 100000, decimals: 0 },
+      { symbol: 'C', ascii: 'C', label: 'initial cost', unit: '₱', min: 100000, max: 1000000, decimals: 0 },
+      { symbol: 'S', ascii: 'S', label: 'salvage value', unit: '₱', min: 10000, max: 100000, decimals: 0 },
       { symbol: 'n', ascii: 'n', label: 'service life', unit: 'years', min: 5, max: 20, decimals: 0 },
     ],
     compute: v => (v.C - v.S) / v.n,
@@ -826,9 +854,11 @@ add(
     context: 'an irrigated rice paddy in Ilocos Norte managed under a controlled-irrigation schedule',
     verb: 'has',
     unknownPhrase: 'the irrigation interval in days',
-    keyConcept: 'Irrigation interval = allowable depletion ÷ daily consumptive use.',
+    keyConcept: 'The irrigation interval is how long the root zone can be drawn down before it reaches the allowable depletion depth, so dividing the allowable depletion by the daily consumptive use gives the days between irrigations. It is a depth over a rate, which is why the two units differ.',
     mistakes: ['Multiplying instead of dividing', 'Reversing ratio', 'Unit mismatch'],
-    distractors: [v => v.Dad * v.Cu, v => v.Cu / v.Dad, v => v.Dad / v.Cu * 1.1, v => v.Dad / v.Cu * 0.5],
+    // Dad * Cu was the old second option and Cu/Dad the third; the latter is
+    // (Cu/Dad)^2 of the answer, which drops under 1% as the interval grows.
+    distractors: [v => v.Dad * v.Cu, v => v.Dad / (v.Cu + 1), v => v.Dad / v.Cu * 1.25, v => v.Dad / v.Cu * 0.8],
   },
 
 {
@@ -851,11 +881,14 @@ add(
     unknownPhrase: 'the net land soaking requirement of the paddy',
     keyConcept: 'Net soaking requirement (mm) = bulk density (g/cm³) × depth (mm) × moisture deficit, plus standing water depth. The unit factors cancel, so no extra 1000 is applied.',
     mistakes: ['Multiplying by 1000 (the g/cm³→kg/m³ and mm→m factors already cancel)', 'Forgetting to add the standing water depth', 'Using total moisture instead of the deficit'],
+    // The x1000 mistake is real and worth teaching, but it is 1000x the answer by
+    // construction, so it cannot be offered as an option without making the
+    // question guessable. It stays in `mistakes` and is called out in keyConcept.
     distractors: [
-      v => v.rb * v.d * v.tr * 1000 + v.hsw,
       v => v.rb * v.d * v.tr,
       v => (v.rb * v.d * v.tr) / 1000 + v.hsw,
       v => v.rb * v.d * v.tr + v.hsw * 2,
+      v => v.rb * v.d * v.tr * 1.2 + v.hsw,
     ],
   },
 
@@ -876,7 +909,7 @@ add(
     context: 'a soil sample collected from an irrigated paddy in Bicol before the next cropping cycle',
     verb: 'has',
     unknownPhrase: 'the volumetric water content of the soil',
-    keyConcept: 'Volumetric moisture = gravimetric moisture × bulk density.',
+    keyConcept: 'Volumetric water content is the volume of water per unit volume of bulk soil, obtained by multiplying gravimetric water content by bulk density. It can never exceed the porosity of the soil, which is the ceiling on how much water the pore space can hold.',
     mistakes: ['Dividing instead of multiplying', 'Unit confusion', 'Using particle density'],
     distractors: [v => v.tg / v.rb, v => v.tg * v.rb * 1.1, v => v.tg * v.rb * 0.9, v => v.tg * v.rb * v.rb],
   },
@@ -892,9 +925,11 @@ add(
     context: 'a disturbed soil sample taken from a rice paddy in Iloilo before land preparation',
     verb: 'has',
     unknownPhrase: 'the bulk density of the soil',
-    keyConcept: 'Bulk density = dry mass ÷ bulk volume.',
+    keyConcept: 'Bulk density is the oven-dry mass of soil divided by the total bulk volume, which includes both solids and pore space, hence g/cm3. It differs from particle density, which divides by solid volume alone, and it must use the dry mass or every wet sample reads high.',
     mistakes: ['Multiplying instead of dividing', 'Reversing ratio', 'Using wet mass'],
-    distractors: [v => v.Md * v.Vt, v => v.Vt / v.Md, v => v.Md / v.Vt * 1.1, v => v.Md / v.Vt * 0.9],
+    // Md * Vt was the old first option and is (Md*Vt)^2 times the answer, which
+    // reached ~800,000x the answer at the top of the range.
+    distractors: [v => v.Vt / v.Md, v => v.Md / (v.Vt + 100), v => v.Md / v.Vt * 1.1, v => v.Md / v.Vt * 0.9],
   },
 
 // b-mannings-equation now lives in drill-specs-area-b-channel.ts, which carries
@@ -912,9 +947,11 @@ add(
     context: 'the flow in a 400 mm diameter storm drain beneath a barangay road in Makati',
     verb: 'has',
     unknownPhrase: 'the velocity head of the flow',
-    keyConcept: 'Velocity head = V² ÷ 2g.',
+    keyConcept: 'Velocity head is the kinetic energy of the flow expressed as the equivalent depth of water, V2 divided by 2g with g taken as 9.81 m/s2. It is not an energy loss but the energy available to do work, and it grows with the square of velocity, so doubling the velocity quadruples the head.',
     mistakes: ['Forgetting g', 'Using g=1', 'Not squaring velocity'],
-    distractors: [v => v.V * v.V / 9.81, v => v.V * v.V * (2 * 9.81), v => v.V * v.V / (2 * 9.81) * 1.1, v => v.V / (2 * 9.81)],
+    // V*V*(2*9.81) was the old second option and is (2g)^2 times the answer, which
+    // runs to ~386x at the low end of the velocity range.
+    distractors: [v => v.V * v.V / 9.81, v => v.V / (2 * 9.81), v => (v.V * v.V) / (2 * 9.81) * 1.25, v => (v.V * v.V) / (2 * 9.81) * 0.8],
   },
   
   {
@@ -929,7 +966,7 @@ add(
     context: 'a long-term flood record for a creek in Marikina being used to size a bridge',
     verb: 'shows',
     unknownPhrase: 'the return period of the design flood',
-    keyConcept: 'Return period = (years + 1) ÷ rank.',
+    keyConcept: 'The Weibull plotting-position return period divides the record length plus one by the rank of the event, so the largest event in an N-year record gets N+1 years rather than N. It is the average interval between events of that size or larger, not a promise that the next one arrives in that many years.',
     mistakes: ['Forgetting the +1', 'Multiplying instead of dividing', 'Using n without +1'],
     distractors: [v => v.n / v.m, v => (v.n + 1) * v.m, v => (v.n + 1) / v.m * 1.1, v => (v.n + 1) / v.m * 0.9],
   },
