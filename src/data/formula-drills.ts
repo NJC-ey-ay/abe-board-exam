@@ -8,6 +8,7 @@ import { areaATractorSpecs } from './drill-specs-area-a-tractor';
 import { areaAFarmSpecs } from './drill-specs-area-a-farm';
 import { areaAEngineEconSpecs } from './drill-specs-area-a-ee';
 import { areaBChannelSpecs } from './drill-specs-area-b-channel';
+import { areaBRunoffSpecs } from './drill-specs-area-b-runoff';
 
 export interface DrillVar {
   symbol: string;
@@ -858,27 +859,10 @@ add(
     ],
   },
 
-{
-    formulaId: 'b-rational-method', area: 'B', unknown: 'Q_p',
-    formulaText: 'Q_p = (C × I × A) / 360',
-    unit: 'm³/s', round: 2,
-    vars: [
-      { symbol: 'C', ascii: 'C', label: 'runoff coefficient', unit: '', min: 0.3, max: 0.8, decimals: 2 },
-      { symbol: 'I', ascii: 'I', label: 'rainfall intensity', unit: 'mm/h', min: 20, max: 80, decimals: 0 },
-      { symbol: 'A', ascii: 'A', label: 'catchment area', unit: 'ha', min: 5, max: 100, decimals: 0 },
-    ],
-    conversions: [
-      { ascii: 'I', unit: 'in/h', factor: 0.03937, fromUnit: 'mm/h' },
-      { ascii: 'A', unit: 'acre', factor: 2.471, fromUnit: 'ha' },
-    ],
-    compute: v => (v.C * v.I * v.A) / 360,
-    context: 'a 25 ha rice watershed in Quezon province during a design storm',
-    verb: 'has',
-    unknownPhrase: 'the peak runoff discharge from the watershed',
-    keyConcept: 'Rational method peak runoff = C×I×A ÷ 360 (A in ha, I in mm/h).',
-    mistakes: ['Forgetting /360', 'Using A in m² directly', 'Unit mismatch'],
-    distractors: [v => (v.C * v.I * v.A), v => (v.C * v.I * v.A) / 360 * 1.1, v => (v.C * v.I * v.A) / 360 * 0.9, v => (v.C * v.I * v.A) / 100],
-  },
+// b-rational-method now lives in drill-specs-area-b-runoff.ts. The stub that used
+// to sit here divided by 360, which is 360/2.78 times too large; the Rational
+// method is q = 2.78 C I A in L/s, or 0.00278 C I A in m3/s.
+
 
 {
     formulaId: 'b-volumetric-moisture-content', area: 'B', unknown: 'θ_v',
@@ -1147,6 +1131,7 @@ add(...areaATractorSpecs);
 add(...areaAFarmSpecs);
 add(...areaAEngineEconSpecs);
 add(...areaBChannelSpecs);
+add(...areaBRunoffSpecs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS
