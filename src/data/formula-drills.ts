@@ -195,6 +195,15 @@ function fmtValue(n: number, decimals: number): string {
   const r = roundStep(n, decimals);
   return String(parseFloat(r.toFixed(decimals)));
 }
+// Render a variable's native value for the walkthrough. A `decimal` unit is a
+// type marker, not a real unit, so printing "eta = 0.90 decimal" is noise - it
+// is dropped here. (In the word-problem narrative an efficiency-like variable
+// reads as a percentage instead, via valFragment below.)
+function nativeValueText(v: DrillVar, value: number): string {
+  const num = value.toFixed(v.decimals);
+  if (!v.unit || v.unit === 'decimal') return num;
+  return `${num} ${v.unit}`;
+}
 
 // Build a natural-language sentence fragment for a given value in a given unit.
 function valFragment(n: number, decimals: number, unit: string, label: string): string {
@@ -480,7 +489,7 @@ function multiStepQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, numbe
     correctAnswer: finalCorrect,
     solution: {
       given: `Stage 1: ${stage1Phrase} = ${smartRound(stage1)} ${ms.firstUnit}\nThen ${ms.secondPhrase}. ${spec.vars
-        .map((v, i) => `${v.symbol} = ${vals[v.ascii].toFixed(v.decimals)} ${v.unit}`.trim())
+        .map((v) => `${v.symbol} = ${nativeValueText(v, vals[v.ascii])}`)
         .join('; ')}`,
       steps: [
         ...conversionStepLines(conversions),
@@ -584,7 +593,7 @@ function chainQuestion(spec: DrillSpec, rng: Rng, vals: Record<string, number>, 
     correctAnswer: finalCorrect,
     solution: {
       given: `Linked step problem. ${spec.vars
-        .map((v, i) => `${v.symbol} = ${vals[v.ascii].toFixed(v.decimals)} ${v.unit}`.trim())
+        .map((v) => `${v.symbol} = ${nativeValueText(v, vals[v.ascii])}`)
         .join('; ')}`,
       steps: stepLines,
       formula: chain.stages.map((s, i) => `${label(i)}: ${s.formulaText}`).join('\n'),
@@ -609,7 +618,7 @@ function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng, role: 'convert'
   for (const v of spec.vars) {
     let val = roundStep(rng.randBetween(v.min, v.max), v.decimals);
     vals[v.ascii] = val;
-    const str = `${v.symbol} = ${val.toFixed(v.decimals)} ${v.unit}`.trim();
+    const str = `${v.symbol} = ${nativeValueText(v, val)}`;
     givenLines.push(str);
     varLines.push(`- ${str}`);
   }
@@ -1137,6 +1146,12 @@ add(
 
 );
 
+export function getAllDrillSpecs(): DrillSpec[] {
+  return specs;
+}
+export function getDrillSpec(formulaId: string): DrillSpec | undefined {
+  return specs.find(s => s.formulaId === formulaId);
+}
 export function getDrillsByArea(areaCode: string): DrillMeta[] {
   return specs
     .filter(s => s.area === areaCode)

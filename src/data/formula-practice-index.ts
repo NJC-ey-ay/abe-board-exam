@@ -22,6 +22,29 @@ import type { FormulaPracticeProblem } from './formulas-practice';
 // rather than attaching questions that belong to a different formula.
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// QUARANTINE — 2026-09-27
+//
+// The legacy bank (src/data/formulas-practice.json, 577 questions) is disabled.
+//
+// An audit of the 140 questions that these aliases used to expose found the
+// numerics unreliable. In an 8-question sample, 5 were wrong:
+//
+//   sensible heat        correct 12,540 kJ   stated 1,672 kJ
+//   theoretical capacity correct 2.0 ha/h    stated 0.25 ha/h
+//   compression ratio    correct 17.0        stated 16.0
+//   rational method      correct ~0.208 m3/s  stated 0.083 m3/s
+//   relative humidity    correct 48%         stated 60%
+//
+// Additional structural defects in the same bank: 57 questions leak the raw
+// "Option A: 0.5m" text into the option strings, and 1 has duplicate options.
+// Some questions are also positional-id artifacts of an invented formula set.
+//
+// These questions are kept on disk for reference but are no longer served. Set
+// this to true only alongside a per-question re-verification pass.
+// ---------------------------------------------------------------------------
+export const LEGACY_PROBLEMS_ENABLED = false;
+
 // Legacy problem label -> reference formula id. Every entry was reviewed by hand;
 // none of these is a fuzzy/heuristic match.
 const LEGACY_ALIASES: Record<string, string> = {
@@ -64,6 +87,13 @@ function buildProblemIndex(): Map<string, FormulaPracticeProblem[]> {
   const orphaned: FormulaPracticeProblem[] = [];
 
   for (const problem of formulaPracticeProblems) {
+    // Quarantined: see LEGACY_PROBLEMS_ENABLED above. Legacy problems are
+    // never attached to a reference formula, so every formula stays
+    // reference-only until verified specs replace them.
+    if (!LEGACY_PROBLEMS_ENABLED) {
+      orphaned.push(problem);
+      continue;
+    }
     const id = LEGACY_ALIASES[legacyKey(problem.area, problem.formulaName)];
     if (!id || !byFormulaId.has(id)) {
       orphaned.push(problem);
