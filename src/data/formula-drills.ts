@@ -14,6 +14,7 @@ import { areaBPumpingSpecs } from './drill-specs-area-b-pumping';
 import { areaBApplicationSpecs } from './drill-specs-area-b-application';
 import { areaBFarmWaterSpecs } from './drill-specs-area-b-farm-water';
 import { areaBStatisticsStructuresSpecs } from './drill-specs-area-b-statistics-structures';
+import { areaBWeirsFlumesOrificesSpecs } from './drill-specs-area-b-weirs-flumes-orifices';
 
 export interface DrillVar {
   symbol: string;
@@ -1198,6 +1199,7 @@ add(...areaBPumpingSpecs);
 add(...areaBApplicationSpecs);
 add(...areaBFarmWaterSpecs);
 add(...areaBStatisticsStructuresSpecs);
+add(...areaBWeirsFlumesOrificesSpecs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS

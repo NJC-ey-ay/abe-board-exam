@@ -1691,5 +1691,145 @@
       "expected": 0.046032162669159916,
       "tolerance": 1e-12
     }
+  ],
+  "b-weir-rectangular-no-contraction": [
+    {
+      "_note": "Q = 1.84 x 0.45 x 0.36^1.5. sqrt(0.36) = 0.6, so 0.36^1.5 = 0.216. 1.84 x 0.45 = 0.828, times 0.216 = 0.178848 m3/s. Exponent check: doubling the head to 0.72 m gives 1.84 x 0.45 x 0.6109402589 = 0.5058585344, a factor of 2.828427, which is 2^1.5 = 2.828427 rather than the 2 a linear rule would give. Applicability check: L = 0.45 m is under 2.7H = 0.972 m, so the no-contraction form is the correct one here.",
+      "vals": {
+        "L": 0.45,
+        "H": 0.36
+      },
+      "expected": 0.178848,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1.84 x 0.2 x 0.55^1.5. sqrt(0.55) = 0.7416198487, 0.55^1.5 = 0.4078909168. 1.84 x 0.2 = 0.368, times 0.4078909168 = 0.1501038574 m3/s. The narrow-crest end of the spec: L = 0.2 m against 2.7H = 1.485 m, so the contraction condition is satisfied with room to spare, which is what makes the plain form valid.",
+      "vals": {
+        "L": 0.2,
+        "H": 0.55
+      },
+      "expected": 0.15010385737881626,
+      "tolerance": 1e-12
+    }
+  ],
+  "b-weir-rectangular-contraction": [
+    {
+      "_note": "Effective length L - 0.2H = 0.95 - 0.2 x 0.27 = 0.95 - 0.054 = 0.896 m. sqrt(0.27) = 0.5196152423, 0.27^1.5 = 0.1402961154. 1.84 x 0.896 = 1.64864, times 0.1402961154 = 0.2312977877 m3/s. The 0.2H term: omitting it would give 1.84 x 0.95 x 0.1402961154 = 0.2452376097, a factor of 1.060268 on the answer. That gap is the whole reason the head range here is narrow - at 0.2H/L = 0.056842 the omission is worth about 5.684 per cent, comfortably distinguishable, whereas a much smaller head would make it round onto the correct option. Applicability: L = 0.95 m exceeds 2.7H = 0.729 m, so the contracted form applies.",
+      "vals": {
+        "L": 0.95,
+        "H": 0.27
+      },
+      "expected": 0.23129778771461867,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1 - 0.2 x 0.25 = 0.95 m effective length; 0.25^1.5 = 0.125; 1.84 x 0.95 x 0.125 = 0.2185 m3/s. Worst corner of the spec for the omitted-deduction distractor: 0.2H/L = 0.05 exactly, so forgetting the deduction inflates the answer by a factor of 1.052632, the smallest separation anywhere in the spec and still clear of the 1% band.",
+      "vals": {
+        "L": 1,
+        "H": 0.25
+      },
+      "expected": 0.2185,
+      "tolerance": 1e-12
+    }
+  ],
+  "b-weir-trapezoidal-cipolletti": [
+    {
+      "_note": "Q = 1.86 x 1.8 x 0.22^1.5. sqrt(0.22) = 0.469041576, 0.22^1.5 = 0.1031891467. 1.86 x 1.8 = 3.348, times 0.1031891467 = 0.3454772632 m3/s. Same arithmetic as the rectangular forms with the Cipolletti constant: at identical inputs the Cipolletti discharge is 1.86/1.84 = 1.01087 of the rectangular one, since the 4H:1L side slope trades a narrowed section against the cancellation of end contractions.",
+      "vals": {
+        "L": 1.8,
+        "H": 0.22
+      },
+      "expected": 0.34547726320555455,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1.86 x 0.75 x 0.3325537551 = 0.4639124883 m3/s, where 0.48^1.5 = 0.3325537551. The larger-head case; against the first Cipolletti case the length ratio is 0.416667 and the head ratio is 2.181818, and the predicted discharge ratio 1.86 x 0.416667 x 3.222759 = 1.342816 matches the measured 0.463912 / 0.345477, confirming the three-halves power.",
+      "vals": {
+        "L": 0.75,
+        "H": 0.48
+      },
+      "expected": 0.4639124882992481,
+      "tolerance": 1e-12
+    }
+  ],
+  "b-weir-triangular-vnotch": [
+    {
+      "_note": "Q = 1.4 x 0.3^2.5 = 1.4 x 0.3^2 x sqrt(0.3) = 1.4 x 0.09 x 0.5477225575 = 0.0690130422 m3/s, that is 69.013 lps. This is the exact case quoted in the SOURCE NOTE: with H in metres the printed form reproduces the physical flow, whereas the printed variable list says cm and the same expression on H = 30 gives 6901.3, a hundred times too large. Exponent decomposition check: the area term H^2 = 0.09 and the velocity term sqrt(H) = 0.5477225575, and the flow is strictly their product, which is why a squared-head answer would miss the velocity entirely.",
+      "vals": {
+        "H": 0.3
+      },
+      "expected": 0.06901304224565091,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1.4 x 0.08^2.5 = 1.4 x 0.00181019336 = 0.002534270704 m3/s, that is 2.5343 lps. The low-head end, and the reason the spec rounds to 6 decimal places: at 8 cm the flow is under a litre per second while at 30 cm it is 69.01 lps, so the two cases differ by a factor of 27.23 while the heads differ by only 3.75 - the sensitivity of the notch in a nutshell.",
+      "vals": {
+        "H": 0.08
+      },
+      "expected": 0.002534270703772586,
+      "tolerance": 1e-14
+    }
+  ],
+  "b-parshall-flume": [
+    {
+      "_note": "W = 0.3048 m is the standard 1 ft Parshall throat. W^0.026 = 0.3048^0.026 = 0.9695816532, so the exponent is 1.522 x 0.9695816532 = 1.4757032762, not a constant. Ha^E = 0.15^1.4757 = 0.0608352324. Q = 0.3048 x 0.0608352324 = 0.0185425788 m3/s, that is 18.54 lps. Read this against the SOURCE NOTE rather than as a real flume rating: the same inputs in centimetres send the printed expression to about 2756, and a genuine 1 ft Parshall at 15 cm passes on the order of 45 lps, so neither the centimetre reading nor this metre reading should be presented to a student as a calibrated discharge. The drill exercises the printed algebra.",
+      "vals": {
+        "W": 0.3048,
+        "Ha": 0.15
+      },
+      "expected": 0.0185425788444272,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The standard 5 ft throat. W^0.026 = 1.0110150234, exponent = 1.5387648656; Ha^E = 0.2256242432; Q = 1.524 x 0.2256242432 = 0.3438513466 m3/s, that is 343.9 lps. The width-dependent exponent is visible directly: against the 1 ft case the exponent rises from 1.475703 to 1.538765, and since 0.026 is such a small power on the width a five-fold increase in throat width moves the exponent by only 0.063062. That insensitivity is precisely why a flume rating cannot be scaled from one size to another.",
+      "vals": {
+        "W": 1.524,
+        "Ha": 0.38
+      },
+      "expected": 0.3438513466254546,
+      "tolerance": 1e-12
+    }
+  ],
+  "b-submerged-orifice": [
+    {
+      "_note": "2 g dh = 2 x 9.81 x 0.18 = 3.5316, sqrt = 1.8792551716 m/s. Q = 0.6 x 0.0125 x 1.8792551716 = 0.0075 x 1.8792551716 = 0.014094413787 m3/s, that is 14.094 lps. The submerged point, which is the whole difference from b-orifice-discharge: the driving head is the 0.18 m DIFFERENCE between the two levels. Had the same pipe been discharging freely under its full upstream head the flow would be larger, and the error of using the upstream level instead of the difference scales with the square root of the ratio of the two heads.",
+      "vals": {
+        "A": 0.0125,
+        "dh": 0.18
+      },
+      "expected": 0.014094413787029242,
+      "tolerance": 1e-14
+    },
+    {
+      "_note": "2 x 9.81 x 0.42 = 8.2404, sqrt = 2.8706096913; 0.6 x 0.045 = 0.027; Q = 0.077506461666 m3/s, that is 77.51 lps. Top corner of the spec. Cross-check on the square root: the area is 3.6x the first case and the head difference is 2.3333x, so the discharge should be 3.6 x sqrt(2.3333) = 5.499091; measured, 0.077506 / 0.014094 = 5.499091.",
+      "vals": {
+        "A": 0.045,
+        "dh": 0.42
+      },
+      "expected": 0.07750646166610885,
+      "tolerance": 1e-14
+    }
+  ],
+  "b-partly-filled-orifice": [
+    {
+      "_note": "sqrt(2 x 9.81 x 0.35) = sqrt(6.867) = 2.6204961362 m/s. Q = 0.62 x 0.024 x 2.6204961362 = 0.01488 x 2.6204961362 = 0.038992982507 m3/s, that is 38.99 lps. The coefficient is a sampled variable here rather than a fixed 0.6, which is the difference from b-orifice-discharge and b-submerged-orifice: at 0.62 this is a sharp-edged entry, and a re-entrant or bellmouth entry would carry closer to 0.8 and pass correspondingly more. Omitting C would give 0.06289190727, a factor of 1.612903.",
+      "vals": {
+        "C": 0.62,
+        "A": 0.024,
+        "h": 0.35
+      },
+      "expected": 0.03899298250711274,
+      "tolerance": 1e-14
+    },
+    {
+      "_note": "sqrt(2 x 9.81 x 0.85) = sqrt(16.677) = 4.0837482782; Q = 0.65 x 0.2858623795 = 0.18581054666 m3/s, that is 185.8 lps. Top corner. The three factors are deliberately spread across their ranges: C = 0.65 is the high end of the sharp-edged band, so the omitted-coefficient distractor is only 1.538462x here against 1.666667x at the low end, which is the tightest that option ever gets and still clear.",
+      "vals": {
+        "C": 0.65,
+        "A": 0.07,
+        "h": 0.85
+      },
+      "expected": 0.18581054665976313,
+      "tolerance": 1e-14
+    }
   ]
 }

@@ -1714,6 +1714,17 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'L', meaning: 'Length of weir, cm' },
               { symbol: 'H', meaning: 'Total head, cm' },
             ],
+            // SOURCE NOTE: 1.84 is the SI Francis constant, which belongs with L
+            // and H in METRES and Q in m3/s. The printed variable list instead
+            // gives L and H in cm and Q in lps, and that pairing is out by
+            // exactly 100: at L = 100 cm and H = 10 cm the printed form returns
+            // 5818.6 where the correct flow is 58.2 lps. The scaling is 1e4 for
+            // the linear length and 1e-3 for the three-halves head, against a
+            // 1e3 from m3/s to lps, leaving 1e2. The constant that works on the
+            // printed cm and lps basis is 0.0184, so
+            // Q (lps) = 0.0184 L (cm) H (cm)^1.5. The drill declares L and H in
+            // metres and reports m3/s, using the printed 1.84 unchanged.
+            // Transcribed as printed.
           },
           {
             id: 'b-weir-rectangular-contraction',
@@ -1724,6 +1735,15 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'L', meaning: 'Length of weir, cm' },
               { symbol: 'H', meaning: 'Total head, cm' },
             ],
+            // SOURCE NOTE: same 100x unit mismatch as the no-contraction form.
+            // 1.84 is the SI Francis constant, belonging with L and H in metres
+            // and Q in m3/s; on the printed cm and lps basis the working
+            // constant is 0.0184. The 0.2H end-contraction deduction needs no
+            // correction of its own, since it is subtracted from L in whatever
+            // units L is carried. The Francis applicability limits are honoured
+            // in the drill: this contracted form is the one that applies when L
+            // exceeds 2.7H, and the sampled ranges are chosen so that L > 2.7H
+            // holds across the whole sampling box. Transcribed as printed.
           },
           {
             id: 'b-weir-trapezoidal-cipolletti',
@@ -1734,6 +1754,14 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'L', meaning: 'Length of weir, cm' },
               { symbol: 'H', meaning: 'Total head, cm' },
             ],
+            // SOURCE NOTE: same 100x unit mismatch as the rectangular forms.
+            // 1.86 is the SI Cipolletti constant, belonging with L and H in
+            // metres and Q in m3/s; on the printed cm and lps basis the working
+            // constant is 0.0186. The 4H:1L side slope is the whole reason the
+            // constant exceeds 1.84: the side slopes narrow the section, and the
+            // Cipolletti proportion is chosen so that this loss exactly cancels
+            // the gain from having no end contractions, which is why no 0.2H
+            // deduction appears here. Transcribed as printed.
             notes: 'Cipolletti weir, 4H:1L side slope.',
           },
           {
@@ -1744,6 +1772,16 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'Q', meaning: 'Discharge, lps' },
               { symbol: 'H', meaning: 'Total head, cm' },
             ],
+            // SOURCE NOTE: same 100x unit mismatch as the rectangular forms.
+            // 1.4 is the SI 90-degree V-notch constant, belonging with H in
+            // metres and Q in m3/s; at H = 0.30 m the printed form gives
+            // 0.069013 m3/s, which is 69.0 lps and matches the physical flow,
+            // whereas feeding the printed H = 30 cm gives 6901.3, a hundred
+            // times too large. On the printed cm and lps basis the working
+            // constant is 0.014. The exponent is sound and needs no comment: the
+            // flow area of a 90 degree notch grows as H squared and the velocity
+            // as the square root of H, giving the two and a half power.
+            // Transcribed as printed.
             notes: '90° V-notch.',
           },
           {
@@ -1755,6 +1793,20 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'W', meaning: 'Throat width, cm' },
               { symbol: 'H_a', meaning: 'Head at the crest, cm' },
             ],
+            // SOURCE NOTE: the printed form carries no coefficient at all, and
+            // because W appears inside the exponent the form is dimensionally
+            // inhomogeneous, so there is no unit-independent constant to supply.
+            // Feeding the printed W and H_a in cm returns a figure roughly two
+            // orders of magnitude above the flow the flume actually passes: for
+            // a 1 ft (30.48 cm) throat at H_a = 15 cm the printed expression
+            // evaluates to about 2762, where a 1 ft Parshall flume at that head
+            // passes on the order of 45 lps. This particular power form also
+            // does not reproduce the standard Parshall ratings even in metres,
+            // so it should be read as a stand-in for the rated curve rather than
+            // as the rating itself. The drill declares W and H_a in metres and
+            // reports m3/s, keeps the printed expression unchanged, and says so
+            // in the keyConcept rather than silently substituting a
+            // coefficient. Transcribed as printed.
           },
           {
             id: 'b-submerged-orifice',
