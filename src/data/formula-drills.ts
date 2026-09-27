@@ -145,6 +145,9 @@ function distinctDistractors(rng: Rng, correct: number, gens: ((c: number) => nu
     let val = g(correct);
     if (!isFinite(val) || val === undefined) continue;
     if (Math.abs(val - correct) < 1e-9 * Math.max(1, Math.abs(correct))) continue;
+    // Skip distractors so small they print as a bare "0.00". A near-zero option
+    // beside a normal magnitude reads as a typo rather than a plausible mistake.
+    if (Math.abs(val) < 0.005 && Math.abs(correct) >= 0.005) continue;
     if (Math.abs(val) < 1e-9) val = 0;
     const key = val.toPrecision(7);
     if (!set.has(key)) {
@@ -232,7 +235,10 @@ function article(word: string): string {
 function buildVarFragment(spec: DrillSpec, v: DrillVar, value: number, useEnglish: boolean): { frag: string; applied?: AppliedConversion } {
   const conv = spec.conversions?.find(c => c.ascii === v.ascii);
   if (conv && useEnglish) {
-    const displayDecimals = conv.displayDecimals ?? v.decimals;
+    // Always keep at least 2 decimals on the English side. Rounding a converted
+    // value too coarsely (e.g. rainfall intensity to "2 in/h") destroys the
+    // value and makes the printed conversion arithmetic impossible to follow.
+    const displayDecimals = conv.displayDecimals ?? Math.max(v.decimals, 2);
     const display = roundStep(value * conv.factor, displayDecimals);
     const num = fmtValue(display, displayDecimals);
     const frag = `${num} ${conv.unit}`;
@@ -273,7 +279,11 @@ function conversionStepLines(conversions: AppliedConversion[]): string[] {
   if (conversions.length === 0) return [];
   const lines = conversions.map(c => {
     const displayStr = `${fmtValue(c.display, c.displayDecimals)} ${c.unit}`;
-    const nativeStr = `${fmtValue(roundStep(c.native, c.displayDecimals), c.displayDecimals)} ${c.nativeUnit}`;
+    // Print the result of the multiplication that is actually shown, rather than
+    // a separately-rounded copy of the pre-conversion value. Otherwise the line
+    // reads "2 in/h x 25.4 = 46 mm/h", which does not add up.
+    const product = c.display * c.toNative;
+    const nativeStr = `${fmtValue(product, c.displayDecimals)} ${c.nativeUnit}`;
     const mult = parseFloat(roundStep(c.toNative, 6).toFixed(6));
     return `${c.label} (${c.symbol}): convert ${displayStr} → ${c.nativeUnit} (${displayStr} × ${mult} = ${nativeStr})`;
   });
@@ -615,16 +625,26 @@ function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng, role: 'convert'
   const vals: Record<string, number> = {};
   const givenLines: string[] = [];
   const varLines: string[] = [];
+  // English-unit givens only when this slot is a 'convert' role.
+  const useEnglish = role === 'convert';
   for (const v of spec.vars) {
     let val = roundStep(rng.randBetween(v.min, v.max), v.decimals);
+    if (useEnglish) {
+      // Snap the native value to one that survives the round trip through the
+      // displayed English value. Otherwise the question can print a rounded
+      // "2 in/h" while the substitution silently uses a different number, and
+      // the walkthrough's conversion arithmetic will not add up.
+      const conv = spec.conversions?.find(c => c.ascii === v.ascii);
+      if (conv) {
+        const dispDec = conv.displayDecimals ?? Math.max(v.decimals, 2);
+        val = roundStep(roundStep(val * conv.factor, dispDec) / conv.factor, v.decimals);
+      }
+    }
     vals[v.ascii] = val;
     const str = `${v.symbol} = ${nativeValueText(v, val)}`;
     givenLines.push(str);
     varLines.push(`- ${str}`);
   }
-
-  // English-unit givens only when this slot is a 'convert' role.
-  const useEnglish = role === 'convert';
 
   // Chained multi-part word problem (computation; unit mode still follows role).
   if (spec.chain) {
@@ -730,6 +750,9 @@ add(
       { ascii: 'S', unit: 'mph', factor: 0.6214, fromUnit: 'km/h' },
     ],
     compute: v => (v.W * v.S) / 10,
+    context: "a rice farmer's tractor working through a flooded paddy in Central Luzon",
+    verb: 'is operating with',
+    unknownPhrase: 'the theoretical field capacity of the tractor',
     keyConcept: 'Theoretical field capacity is capacity at 100% efficiency, with no time losses.',
     mistakes: ['Omitting the /10', 'Applying field efficiency (TFC is theoretical = 100% efficiency)', 'Unit confusion'],
     distractors: [v => v.W * v.S, v => (v.W * v.S) / 20, v => (v.W * v.S) / 10 * 0.8, v => (v.W * v.S) / 10 * 1.1],
@@ -743,6 +766,9 @@ add(
       { symbol: 'C_t', ascii: 'Ct', label: 'theoretical capacity', unit: 'ha/h', min: 2.0, max: 8.0, decimals: 2 },
     ],
     compute: v => (v.Ca / v.Ct) * 100,
+    context: "a combine harvester finishing a palay harvest on a 6 ha field in Bulacan",
+    verb: 'recorded',
+    unknownPhrase: 'the field efficiency of the harvesting operation',
     keyConcept: 'Field efficiency = actual ÷ theoretical capacity, × 100%.',
     mistakes: ['Forgetting ×100', 'Reversing the ratio (theoretical/actual)', 'Reporting a decimal instead of %'],
     distractors: [v => (v.Ca / v.Ct), v => (v.Ct / v.Ca) * 100, v => (v.Ca / v.Ct) * 100 * 1.1, v => (v.Ca / v.Ct) * 90],
@@ -757,6 +783,9 @@ add(
       { symbol: 'η_trans', ascii: 'etr', label: 'transmission efficiency', unit: 'decimal', min: 0.85, max: 0.97, decimals: 2 },
     ],
     compute: v => v.BP * v.etr,
+    context: "a four-wheel tractor powering a disc plow on a rice farm in Laguna",
+    verb: 'has',
+    unknownPhrase: 'the PTO power delivered to the plow',
     keyConcept: 'PTO power = brake power × transmission efficiency.',
     mistakes: ['Using efficiency as % instead of decimal', 'Dividing instead of multiplying', 'Adding losses instead of applying efficiency'],
     distractors: [v => v.BP / v.etr, v => v.BP * (1 - v.etr), v => v.BP * v.etr * 1.1, v => v.BP * v.etr * 0.9],
@@ -771,6 +800,9 @@ add(
       { symbol: 'IP', ascii: 'IP', label: 'indicated power', unit: 'kW', min: 50, max: 140, decimals: 1 },
     ],
     compute: v => (v.BP / v.IP) * 100,
+    context: 'a small stationary diesel engine driving a farm pump during a shop test in Cavite',
+    verb: 'has',
+    unknownPhrase: 'the mechanical efficiency of the engine',
     keyConcept: 'Mechanical efficiency = brake power ÷ indicated power × 100%.',
     mistakes: ['Forgetting ×100', 'Reversing ratio', 'Using fractional power difference'],
     distractors: [v => v.BP / v.IP, v => (v.IP / v.BP) * 100, v => (v.BP / v.IP) * 100 * 1.05, v => ((v.IP - v.BP) / v.IP) * 100],
@@ -785,6 +817,9 @@ add(
       { symbol: 'V_c', ascii: 'Vc', label: 'clearance volume', unit: 'cm³', min: 60, max: 120, decimals: 0 },
     ],
     compute: v => (v.Vd + v.Vc) / v.Vc,
+    context: 'the diesel engine of a four-wheel tractor undergoing a compression test at a government testing laboratory',
+    verb: 'has',
+    unknownPhrase: 'the compression ratio of the engine',
     keyConcept: 'Compression ratio = (displacement + clearance) ÷ clearance.',
     mistakes: ['Forgetting to add clearance to displacement', 'Using V_d/V_c only', 'Reversing ratio'],
     distractors: [v => v.Vd / v.Vc, v => (v.Vc / (v.Vd + v.Vc)), v => (v.Vd + v.Vc) / v.Vc * 1.1, v => (v.Vd + v.Vc) / v.Vc * 0.9],
@@ -800,6 +835,9 @@ add(
       { symbol: 't', ascii: 't', label: 'operating time', unit: 'h', min: 1, max: 5, decimals: 1 },
     ],
     compute: v => v.mf / (v.P * v.t),
+    context: 'a diesel engine powering a pump during an irrigation run in Batangas',
+    verb: 'recorded',
+    unknownPhrase: 'the specific fuel consumption of the engine',
     keyConcept: 'Specific fuel consumption = fuel mass ÷ (power × time).',
     mistakes: ['Multiplying instead of dividing', 'Omitting time factor', 'Unit confusion'],
     distractors: [v => v.mf * v.P * v.t, v => (v.mf * v.P) / v.t, v => v.mf / (v.P * v.t) * 1.1, v => v.mf / (v.P * v.t) / 1.1],
@@ -815,6 +853,9 @@ add(
       { symbol: 'A_2', ascii: 'A2', label: 'area section 2', unit: 'm²', min: 0.005, max: 0.05, decimals: 3 },
     ],
     compute: v => (v.A1 * v.v1) / v.A2,
+    context: 'a lateral pipe in a rice irrigation system that narrows abruptly between two sections',
+    verb: 'is carrying',
+    unknownPhrase: 'the flow velocity in the narrower section',
     keyConcept: 'Continuity: A₁v₁ = A₂v₂, so v₂ = A₁v₁/A₂.',
     mistakes: ['Solving for wrong variable', 'Multiplying areas instead of dividing', 'Using diameters instead of areas'],
     distractors: [v => (v.A1 * v.v1) / v.A1, v => (v.A1 * v.v1) * v.A2, v => (v.A1 * v.v1) / v.A2 * 1.1, v => (v.A1 * v.v1) / v.A2 * 2],
@@ -830,6 +871,9 @@ add(
       { symbol: 't', ascii: 't', label: 'time', unit: 'years', min: 1, max: 10, decimals: 0 },
     ],
     compute: v => v.P * (1 + v.r * v.t),
+    context: 'a rural lending cooperative in Quezon that approved a farm credit loan',
+    verb: 'released',
+    unknownPhrase: 'the total amount repayable at the end of the term',
     keyConcept: 'Simple interest total = principal × (1 + rate × time).',
     mistakes: ['Using rate as % instead of decimal', 'Omitting the +1', 'Adding interest to principal wrongly'],
     distractors: [v => v.P * (1 + v.r) * v.t, v => v.P * v.r * v.t, v => v.P * (1 + v.r * v.t) * 1.1, v => v.P * (1 + v.r * v.t) * 0.9],
@@ -845,6 +889,9 @@ add(
       { symbol: 'n', ascii: 'n', label: 'useful life', unit: 'years', min: 5, max: 20, decimals: 0 },
     ],
     compute: v => (v.C - v.S) / v.n,
+    context: 'a rice miller in Nueva Ecija depreciating a multi-purpose rice mill on a straight-line basis',
+    verb: 'is depreciating',
+    unknownPhrase: 'the annual straight-line depreciation of the mill',
     keyConcept: 'Straight-line depreciation = (cost − salvage) ÷ useful life.',
     mistakes: ['Not subtracting salvage', 'Multiplying instead of dividing', 'Reversing subtraction'],
     distractors: [v => (v.C - v.S) * v.n, v => v.C / v.n, v => (v.C - v.S) / v.n * 1.1, v => (v.C - v.S) / v.n * 0.9],
@@ -866,6 +913,9 @@ add(
       { symbol: 'C_u', ascii: 'Cu', label: 'daily consumptive use', unit: 'mm/day', min: 4, max: 10, decimals: 1 },
     ],
     compute: v => v.Dad / v.Cu,
+    context: 'an irrigated rice paddy in Ilocos Norte managed under a controlled-irrigation schedule',
+    verb: 'has',
+    unknownPhrase: 'the irrigation interval in days',
     keyConcept: 'Irrigation interval = allowable depletion ÷ daily consumptive use.',
     mistakes: ['Multiplying instead of dividing', 'Reversing ratio', 'Unit mismatch'],
     distractors: [v => v.Dad * v.Cu, v => v.Cu / v.Dad, v => v.Dad / v.Cu * 1.1, v => v.Dad / v.Cu * 0.5],
@@ -881,10 +931,22 @@ add(
       { symbol: 'θ_r', ascii: 'tr', label: 'residual moisture deficit', unit: 'decimal', min: 0.1, max: 0.3, decimals: 2 },
       { symbol: 'h_sw', ascii: 'hsw', label: 'standing water depth', unit: 'mm', min: 20, max: 60, decimals: 0 },
     ],
-    compute: v => (v.rb * v.d * v.tr * 1000) / 1 + v.hsw,
-    keyConcept: 'Soaking requirement = bulk density×depth×moisture deficit (mm) + standing water.',
-    mistakes: ['Forgetting to convert g/cm³ & mm to consistent units', 'Adding moisture before multiplying', 'Omitting standing water'],
-    distractors: [v => v.rb * (v.d + v.hsw) * v.tr, v => v.rb * v.d * v.tr, v => (v.rb * v.d * v.tr * 1000) / 1 + v.hsw * 2, v => (v.rb * v.d * v.tr * 1000) / 1 - v.hsw],
+    // ρ_b (g/cm³) x d (mm) x θ_r already yields mm of water: 1 g/cm³ over 1 mm
+    // of depth is 1 kg/m², i.e. 1 mm of water. The g/cm³ -> kg/m³ x1000 and the
+    // mm -> m /1000 cancel exactly, so no extra factor belongs here. (An earlier
+    // version multiplied by 1000 and reported ~32,000 mm of soaking requirement.)
+    compute: v => v.rb * v.d * v.tr + v.hsw,
+    context: 'the wetting phase of a border irrigation on a rice paddy in Pampanga',
+    verb: 'has',
+    unknownPhrase: 'the net land soaking requirement of the paddy',
+    keyConcept: 'Net soaking requirement (mm) = bulk density (g/cm³) × depth (mm) × moisture deficit, plus standing water depth. The unit factors cancel, so no extra 1000 is applied.',
+    mistakes: ['Multiplying by 1000 (the g/cm³→kg/m³ and mm→m factors already cancel)', 'Forgetting to add the standing water depth', 'Using total moisture instead of the deficit'],
+    distractors: [
+      v => v.rb * v.d * v.tr * 1000 + v.hsw,
+      v => v.rb * v.d * v.tr,
+      v => (v.rb * v.d * v.tr) / 1000 + v.hsw,
+      v => v.rb * v.d * v.tr + v.hsw * 2,
+    ],
   },
 
 {
@@ -901,6 +963,9 @@ add(
       { ascii: 'A', unit: 'acre', factor: 2.471, fromUnit: 'ha' },
     ],
     compute: v => (v.C * v.I * v.A) / 360,
+    context: 'a 25 ha rice watershed in Quezon province during a design storm',
+    verb: 'has',
+    unknownPhrase: 'the peak runoff discharge from the watershed',
     keyConcept: 'Rational method peak runoff = C×I×A ÷ 360 (A in ha, I in mm/h).',
     mistakes: ['Forgetting /360', 'Using A in m² directly', 'Unit mismatch'],
     distractors: [v => (v.C * v.I * v.A), v => (v.C * v.I * v.A) / 360 * 1.1, v => (v.C * v.I * v.A) / 360 * 0.9, v => (v.C * v.I * v.A) / 100],
@@ -915,6 +980,9 @@ add(
       { symbol: 'ρ_b', ascii: 'rb', label: 'bulk density', unit: 'g/cm³', min: 1.2, max: 1.5, decimals: 2 },
     ],
     compute: v => v.tg * v.rb,
+    context: 'a soil sample collected from an irrigated paddy in Bicol before the next cropping cycle',
+    verb: 'has',
+    unknownPhrase: 'the volumetric water content of the soil',
     keyConcept: 'Volumetric moisture = gravimetric moisture × bulk density.',
     mistakes: ['Dividing instead of multiplying', 'Unit confusion', 'Using particle density'],
     distractors: [v => v.tg / v.rb, v => v.tg * v.rb * 1.1, v => v.tg * v.rb * 0.9, v => v.tg * v.rb * v.rb],
@@ -928,6 +996,9 @@ add(
       { symbol: 'V_t', ascii: 'Vt', label: 'bulk volume', unit: 'cm³', min: 750, max: 1000, decimals: 0 },
     ],
     compute: v => v.Md / v.Vt,
+    context: 'a disturbed soil sample taken from a rice paddy in Iloilo before land preparation',
+    verb: 'has',
+    unknownPhrase: 'the bulk density of the soil',
     keyConcept: 'Bulk density = dry mass ÷ bulk volume.',
     mistakes: ['Multiplying instead of dividing', 'Reversing ratio', 'Using wet mass'],
     distractors: [v => v.Md * v.Vt, v => v.Vt / v.Md, v => v.Md / v.Vt * 1.1, v => v.Md / v.Vt * 0.9],
@@ -943,6 +1014,9 @@ add(
       { symbol: 'S', ascii: 'S', label: 'channel slope', unit: 'm/m', min: 0.001, max: 0.005, decimals: 3 },
     ],
     compute: v => (1 / v.n) * Math.pow(v.R, 2 / 3) * Math.sqrt(v.S),
+    context: 'a newly constructed concrete drainage canal in a barangay road project in Batangas',
+    verb: 'has',
+    unknownPhrase: 'the average flow velocity in the canal',
     keyConcept: 'Manning velocity = (1/n) × R^(2/3) × √S.',
     mistakes: ['Applying exponent to whole term wrongly', 'Using log', 'Forgetting the (1/n)'],
     distractors: [v => (1 / v.n) * Math.pow(v.R, 1 / 2) * Math.pow(v.S, 2 / 3), v => v.n * Math.pow(v.R, 2 / 3) * Math.sqrt(v.S), v => (1 / v.n) * Math.pow(v.R, 2 / 3) * Math.sqrt(v.S) * 1.1, v => (1 / v.n) * Math.pow(v.R, 2 / 3) * Math.sqrt(v.S) * 0.9],
@@ -956,6 +1030,9 @@ add(
       { symbol: 'V', ascii: 'V', label: 'velocity', unit: 'm/s', min: 1, max: 5, decimals: 1 },
     ],
     compute: v => v.V * v.V / (2 * 9.81),
+    context: 'the flow in a 400 mm diameter storm drain beneath a barangay road in Makati',
+    verb: 'has',
+    unknownPhrase: 'the velocity head of the flow',
     keyConcept: 'Velocity head = V² ÷ 2g.',
     mistakes: ['Forgetting g', 'Using g=1', 'Not squaring velocity'],
     distractors: [v => v.V * v.V / 9.81, v => v.V * v.V * (2 * 9.81), v => v.V * v.V / (2 * 9.81) * 1.1, v => v.V / (2 * 9.81)],
@@ -966,10 +1043,13 @@ add(
     formulaText: 'T = (n + 1) / m',
     unit: 'years', round: 1,
     vars: [
-      { symbol: 'n', ascii: 'n', label: 'years of record', unit: '', min: 20, max: 60, decimals: 0 },
-      { symbol: 'm', ascii: 'm', label: 'rank of event', unit: '', min: 1, max: 5, decimals: 0 },
+      { symbol: 'n', ascii: 'n', label: 'record length', unit: 'years', min: 20, max: 60, decimals: 0 },
+      { symbol: 'm', ascii: 'm', label: 'event rank', unit: '', min: 1, max: 5, decimals: 0 },
     ],
     compute: v => (v.n + 1) / v.m,
+    context: 'a long-term flood record for a creek in Marikina being used to size a bridge',
+    verb: 'shows',
+    unknownPhrase: 'the return period of the design flood',
     keyConcept: 'Return period = (years + 1) ÷ rank.',
     mistakes: ['Forgetting the +1', 'Multiplying instead of dividing', 'Using n without +1'],
     distractors: [v => v.n / v.m, v => (v.n + 1) * v.m, v => (v.n + 1) / v.m * 1.1, v => (v.n + 1) / v.m * 0.9],
@@ -994,6 +1074,9 @@ add(
       { ascii: 'Wt', unit: 'lb', factor: 2.205, fromUnit: 'kg' },
     ],
     compute: v => (v.Ww / v.Wt) * 100,
+    context: 'a batch of freshly harvested palay being held in a drying shed in Nueva Ecija',
+    verb: 'has',
+    unknownPhrase: 'the moisture content of the batch on a wet basis',
     keyConcept: 'Wet-basis moisture = water weight ÷ total weight × 100%.',
     mistakes: ['Using dry weight as denominator', 'Forgetting ×100', 'Reversing ratio'],
     distractors: [v => v.Ww / v.Wt, v => (v.Ww / (v.Wt - v.Ww)) * 100, v => (v.Ww / v.Wt) * 100 * 1.1, v => (v.Wt / v.Ww) * 100],
@@ -1011,6 +1094,9 @@ add(
       { ascii: 'Wd', unit: 'lb', factor: 2.205, fromUnit: 'kg' },
     ],
     compute: v => (v.Ww / v.Wd) * 100,
+    context: 'a batch of copra spread on a solar dryer rack in Zamboanga del Sur',
+    verb: 'has',
+    unknownPhrase: 'the moisture content of the copra on a dry basis',
     keyConcept: 'Dry-basis moisture = water weight ÷ dry matter weight × 100%.',
     mistakes: ['Using total weight as denominator', 'Forgetting ×100', 'Reversing ratio'],
     distractors: [v => v.Ww / v.Wd, v => (v.Ww / (v.Wd + v.Ww)) * 100, v => (v.Ww / v.Wd) * 100 * 1.1, v => (v.Wd / v.Ww) * 100],
@@ -1025,6 +1111,9 @@ add(
       { symbol: 'M_paddy', ascii: 'Mp', label: 'mass of paddy input', unit: 'kg', min: 1000, max: 1500, decimals: 0 },
     ],
     compute: v => (v.Mm / v.Mp) * 100,
+    context: 'a small rice milling station in Oriental Mindoro that milled a batch of paddy',
+    verb: 'processed',
+    unknownPhrase: 'the milling recovery of the station',
     keyConcept: 'Milling recovery = milled rice ÷ paddy input × 100%.',
     mistakes: ['Forgetting ×100', 'Reversing ratio', 'Using byproduct mass'],
     distractors: [v => v.Mm / v.Mp, v => (v.Mp / v.Mm) * 100, v => (v.Mm / v.Mp) * 100 * 1.1, v => (v.Mm / v.Mp) * 90],
@@ -1040,6 +1129,9 @@ add(
       { symbol: 'ΔT', ascii: 'dT', label: 'temperature change', unit: '°C', min: 20, max: 80, decimals: 0 },
     ],
     compute: v => v.m * v.Cp * v.dT,
+    context: 'the cooling of a batch of rice bran in a receiving bin at a milling plant in Isabela',
+    verb: 'involves',
+    unknownPhrase: 'the sensible heat to be removed',
     keyConcept: 'Sensible heat = mass × specific heat × temperature change.',
     mistakes: ['Omitting a factor', 'Adding instead of multiplying', 'Unit mismatch'],
     distractors: [v => v.m * (v.Cp + v.dT), v => v.m * v.Cp * v.dT * 1.1, v => v.m * v.Cp * v.dT * 0.9, v => v.m * v.Cp * v.dT / 1000],
@@ -1054,6 +1146,9 @@ add(
       { symbol: 'W', ascii: 'W', label: 'humidity ratio', unit: 'kg/kg', min: 0.01, max: 0.03, decimals: 3 },
     ],
     compute: v => 1.005 * v.T + v.W * (2501 + 1.88 * v.T),
+    context: 'the supply air entering an evaporative cooling pad in a poultry house in Batangas',
+    verb: 'has',
+    unknownPhrase: 'the specific enthalpy of the incoming air',
     keyConcept: 'Moist air enthalpy = 1.005T + W(2501 + 1.88T).',
     mistakes: ['Forgetting the latent term', 'Using wrong W multiplier', 'Squaring T'],
     distractors: [v => 1.005 * v.T + v.W * 2501, v => v.W * (2501 + 1.88 * v.T), v => 1.005 * v.T + v.W * (2501 + 1.88 * v.T) * 1.1, v => 1.005 * v.T + v.W * (2501 + 1.88 * v.T) * 0.9],
@@ -1068,6 +1163,9 @@ add(
       { symbol: 'P_vs', ascii: 'Pvs', label: 'saturation vapor pressure', unit: 'kPa', min: 3, max: 6, decimals: 1 },
     ],
     compute: v => (v.Pv / v.Pvs) * 100,
+    context: 'the drying chamber of a banana dehydration plant in Davao',
+    verb: 'has',
+    unknownPhrase: 'the relative humidity of the air in the chamber',
     keyConcept: 'Relative humidity = actual vapor pressure ÷ saturation × 100%.',
     mistakes: ['Forgetting ×100', 'Reversing ratio', 'Reporting decimal'],
     distractors: [v => v.Pv / v.Pvs, v => (v.Pvs / v.Pv) * 100, v => (v.Pv / v.Pvs) * 100 * 1.1, v => (v.Pv / v.Pvs) * 90],
@@ -1082,6 +1180,9 @@ add(
       { symbol: 'R', ascii: 'R', label: 'resistance', unit: 'Ω', min: 5, max: 50, decimals: 0 },
     ],
     compute: v => v.I * v.R,
+    context: 'an LED lighting circuit installed in a barangay hall',
+    verb: 'has',
+    unknownPhrase: 'the voltage drop across the circuit',
     keyConcept: 'Ohms law: voltage = current × resistance.',
     mistakes: ['Dividing instead of multiplying', 'Reversing ratio', 'Omitting factor'],
     distractors: [v => v.I / v.R, v => v.R / v.I, v => v.I * v.R * 1.1, v => v.I * v.R * 0.9],
@@ -1095,6 +1196,9 @@ add(
       { symbol: 'I', ascii: 'I', label: 'current', unit: 'A', min: 2, max: 20, decimals: 1 },
     ],
     compute: v => v.V * v.I,
+    context: 'a water pump motor on a rural barangay supply',
+    verb: 'has',
+    unknownPhrase: 'the power drawn by the motor',
     keyConcept: 'Electric power = voltage × current.',
     mistakes: ['Dividing instead of multiplying', 'Using I²R incorrectly', 'Omitting factor'],
     distractors: [v => v.V / v.I, v => v.V * v.I * v.I / 100, v => v.V * v.I * 1.1, v => v.V * v.I * 0.9],
@@ -1104,10 +1208,13 @@ add(
     formulaText: 'E = P × t',
     unit: 'kWh', round: 2,
     vars: [
-      { symbol: 'P', ascii: 'P', label: 'power', unit: 'kW', min: 1, max: 10, decimals: 1 },
-      { symbol: 't', ascii: 't', label: 'time', unit: 'h', min: 4, max: 12, decimals: 0 },
+      { symbol: 'P', ascii: 'P', label: 'average power draw', unit: 'kW', min: 1, max: 10, decimals: 1 },
+      { symbol: 't', ascii: 't', label: 'operating time', unit: 'h', min: 4, max: 12, decimals: 0 },
     ],
     compute: v => v.P * v.t,
+    context: 'a solar-powered irrigation pump in a rice farm in Bohol that ran through the morning',
+    verb: 'recorded',
+    unknownPhrase: 'the electrical energy consumed during the run',
     keyConcept: 'Electric energy = power × time (kW × h = kWh).',
     mistakes: ['Dividing instead of multiplying', 'Unit mismatch (W vs kW)', 'Omitting factor'],
     distractors: [v => v.P / v.t, v => v.P * v.t * 1000, v => v.P * v.t * 1.1, v => v.P * v.t * 0.9],
@@ -1118,10 +1225,15 @@ add(
     formulaText: 'PF = P / S',
     unit: '', round: 3,
     vars: [
-      { symbol: 'P', ascii: 'P', label: 'real power', unit: 'kW', min: 50, max: 100, decimals: 0 },
-      { symbol: 'S', ascii: 'S', label: 'apparent power', unit: 'kVA', min: 60, max: 120, decimals: 0 },
+      // Real power can never exceed apparent power, so the ranges are kept apart
+      // (P up to 90 kW, S from 95 kVA) to keep the power factor at or below 1.
+      { symbol: 'P', ascii: 'P', label: 'real power', unit: 'kW', min: 50, max: 90, decimals: 0 },
+      { symbol: 'S', ascii: 'S', label: 'apparent power', unit: 'kVA', min: 95, max: 120, decimals: 0 },
     ],
     compute: v => v.P / v.S,
+    context: 'an induction motor driving a rice mill in Bulacan',
+    verb: 'is drawing',
+    unknownPhrase: 'the power factor of the motor',
     keyConcept: 'Power factor = real power ÷ apparent power.',
     mistakes: ['Reversing ratio', 'Multiplying instead of dividing', 'Using ×100'],
     distractors: [v => v.S / v.P, v => (v.P / v.S) * 100, v => v.P * v.S, v => v.P / v.S * 1.05],

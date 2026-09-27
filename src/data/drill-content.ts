@@ -1284,11 +1284,17 @@ export const drillContent: Record<string, DrillEnrichment> = {
 export function enrichSpec(spec: DrillSpec): DrillSpec {
   const e = drillContent[spec.formulaId];
   if (!e) return spec;
+  // A field the spec already defines wins. The spec is the reviewed source of
+  // truth (its wording, units and narrative are hand-checked against the
+  // handbook), whereas drillContent is supplementary - decision items, multi-step
+  // variants and chain problems. Letting drillContent override `context` used to
+  // silently discard hand-authored word problems for the 11 formulas whose IDs
+  // exist in both schemes.
   return {
     ...spec,
-    context: e.context ?? spec.context,
-    unknownPhrase: e.unknownPhrase ?? spec.unknownPhrase,
-    verb: e.verb ?? spec.verb,
+    context: spec.context ?? e.context,
+    unknownPhrase: spec.unknownPhrase ?? e.unknownPhrase,
+    verb: spec.verb ?? e.verb,
     decision: e.decision ?? spec.decision,
     multiStep: e.multiStep ?? spec.multiStep,
     chain: e.chain ?? spec.chain,

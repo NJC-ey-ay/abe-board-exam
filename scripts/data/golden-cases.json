@@ -1,0 +1,87 @@
+{
+  "_comment": "Hand-verified input/output pairs. Each is computed independently of the spec's `compute` and then asserted by scripts/verify-formula-specs.mjs. This is the only check that can catch a formula that is internally self-consistent but physically wrong - the 200-sample sweep proves the math does not crash and does not collapse, but it happily accepts a land-soaking requirement of 32,000 mm. Add a case for every spec; use `tolerance` for rounded results.",
+
+  "a-theoretical-field-capacity": [
+    { "_note": "TFC = (W x S)/10. 2.0 m x 10 km/h = 20/10 = 2.0 ha/h", "vals": { "W": 2.0, "S": 10 }, "expected": 2.0 }
+  ],
+  "a-field-efficiency": [
+    { "_note": "Ca/Ct x 100. 3.6/4.5 x 100 = 80%", "vals": { "Ca": 3.6, "Ct": 4.5 }, "expected": 80 }
+  ],
+  "a-pto-power": [
+    { "_note": "BP x eta_trans. 50 kW x 0.90 = 45 kW", "vals": { "BP": 50, "etr": 0.9 }, "expected": 45 }
+  ],
+  "a-mechanical-efficiency": [
+    { "_note": "BP/IP x 100. 45/50 x 100 = 90%", "vals": { "BP": 45, "IP": 50 }, "expected": 90 }
+  ],
+  "a-compression-ratio": [
+    { "_note": "(Vd+Vc)/Vc. (800+100)/100 = 9:1", "vals": { "Vd": 800, "Vc": 100 }, "expected": 9 }
+  ],
+  "a-specific-fuel-consumption": [
+    { "_note": "mf/(P x t). 12 kg / (40 kW x 3 h) = 0.1 kg/kWh", "vals": { "mf": 12, "P": 40, "t": 3 }, "expected": 0.1 }
+  ],
+  "a-continuity-equation": [
+    { "_note": "A1 v1 / A2. 0.05 x 2.0 / 0.02 = 5 m/s", "vals": { "A1": 0.05, "v1": 2.0, "A2": 0.02 }, "expected": 5 }
+  ],
+  "a-ee-simple-interest": [
+    { "_note": "P(1+rt). 100000 x (1 + 0.10 x 2) = 120000", "vals": { "P": 100000, "r": 0.1, "t": 2 }, "expected": 120000 }
+  ],
+  "a-ee-straight-line-depreciation": [
+    { "_note": "(C-S)/n. (500000-50000)/10 = 45000/yr", "vals": { "C": 500000, "S": 50000, "n": 10 }, "expected": 45000 }
+  ],
+
+  "b-irrigation-interval": [
+    { "_note": "Dad/Cu. 60 mm / 5 mm per day = 12 days", "vals": { "Dad": 60, "Cu": 5 }, "expected": 12 }
+  ],
+  "b-lsr-net": [
+    { "_note": "rb x d x theta_r + h_sw. 1.3 g/cm3 x 200 mm x 0.20 = 52 mm, + 30 mm ponded = 82 mm. A physically sane land-soaking requirement is tens of mm, not thousands.", "vals": { "rb": 1.3, "d": 200, "tr": 0.2, "hsw": 30 }, "expected": 82 }
+  ],
+  "b-rational-method": [
+    { "_note": "C I A / 360. 0.6 x 50 x 20 / 360 = 600/360 = 1.667 m3/s", "vals": { "C": 0.6, "I": 50, "A": 20 }, "expected": 1.6666666667, "tolerance": 1e-6 }
+  ],
+  "b-volumetric-moisture-content": [
+    { "_note": "theta_g x rho_b. 0.25 x 1.4 = 0.35 m3/m3", "vals": { "tg": 0.25, "rb": 1.4 }, "expected": 0.35 }
+  ],
+  "b-bulk-density": [
+    { "_note": "Md/Vt. 1200 g / 800 cm3 = 1.5 g/cm3", "vals": { "Md": 1200, "Vt": 800 }, "expected": 1.5 }
+  ],
+  "b-mannings-equation": [
+    { "_note": "(1/n) R^(2/3) sqrt(S). 1/0.025 x 1^(2/3) x sqrt(0.001) = 40 x 0.0316228 = 1.2649 m/s", "vals": { "n": 0.025, "R": 1.0, "S": 0.001 }, "expected": 1.2649110641, "tolerance": 1e-6 }
+  ],
+  "b-velocity-head": [
+    { "_note": "V^2/(2g). 3^2/(2 x 9.81) = 9/19.62 = 0.4587 m", "vals": { "V": 3 }, "expected": 0.4587155963, "tolerance": 1e-6 }
+  ],
+  "b-return-period": [
+    { "_note": "(n+1)/m. (40+1)/3 = 13.67 years", "vals": { "n": 40, "m": 3 }, "expected": 13.6666666667, "tolerance": 1e-6 }
+  ],
+
+  "c-mc-wet-basis": [
+    { "_note": "Ww/Wt x 100. 20/120 x 100 = 16.67%", "vals": { "Ww": 20, "Wt": 120 }, "expected": 16.6666666667, "tolerance": 1e-6 }
+  ],
+  "c-mc-dry-basis": [
+    { "_note": "Ww/Wd x 100. 20/100 x 100 = 20%", "vals": { "Ww": 20, "Wd": 100 }, "expected": 20 }
+  ],
+  "c-percent-milling-recovery": [
+    { "_note": "Mm/Mp x 100. 700/1000 x 100 = 70%", "vals": { "Mm": 700, "Mp": 1000 }, "expected": 70 }
+  ],
+  "c-sensible-heat": [
+    { "_note": "m Cp dT. 100 kg x 4.18 kJ/kgC x 50 C = 20900 kJ", "vals": { "m": 100, "Cp": 4.18, "dT": 50 }, "expected": 20900 }
+  ],
+  "c-enthalpy": [
+    { "_note": "1.005T + W(2501+1.88T). At 25 C, W=0.015: 25.125 + 0.015 x (2501+47) = 25.125 + 38.22 = 63.345 kJ/kg dry air", "vals": { "T": 25, "W": 0.015 }, "expected": 63.345, "tolerance": 1e-6 }
+  ],
+  "c-relative-humidity": [
+    { "_note": "Pv/Pvs x 100. 2.0/2.5 x 100 = 80%", "vals": { "Pv": 2.0, "Pvs": 2.5 }, "expected": 80 }
+  ],
+  "c-ohms-law": [
+    { "_note": "I x R. 5 A x 220 ohm = 1100 V", "vals": { "I": 5, "R": 220 }, "expected": 1100 }
+  ],
+  "c-electrical-power": [
+    { "_note": "V x I. 220 x 10 = 2200 W", "vals": { "V": 220, "I": 10 }, "expected": 2200 }
+  ],
+  "c-electrical-energy": [
+    { "_note": "P x t. 2.5 kW x 8 h = 20 kWh", "vals": { "P": 2.5, "t": 8 }, "expected": 20 }
+  ],
+  "c-power-factor": [
+    { "_note": "P/S. 90/100 = 0.9. A power factor is dimensionless and never exceeds 1, so real power must stay below apparent power.", "vals": { "P": 90, "S": 100 }, "expected": 0.9 }
+  ]
+}

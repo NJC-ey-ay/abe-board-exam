@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "verify:specs": "node scripts/verify-formula-specs.mjs",
+    "verify:specs:strict": "node scripts/verify-formula-specs.mjs --strict"
   },
   "dependencies": {
     "@serwist/core": "^9.5.11",

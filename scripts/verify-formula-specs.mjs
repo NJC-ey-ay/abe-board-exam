@@ -266,6 +266,8 @@ function renderPass(spec) {
   let noSteps = 0;
   let missingGiven = 0;
   let convertWithoutStep = 0;
+  let badConversionMath = 0;
+  let firstBadConversion = null;
   let formulaRestatement = 0;
   let firstMismatch = null;
   const seenTexts = new Set();
@@ -282,7 +284,35 @@ function renderPass(spec) {
       if (isEnglish) {
         // Values shown are English; the walkthrough must then show the conversion
         // arithmetic. Recomputing from the displayed numbers would be wrong here.
-        if (!steps.some((s) => /convert /.test(s) && /×/.test(s))) convertWithoutStep++;
+        const convLines = steps.filter((s) => /convert /.test(s) && /×/.test(s));
+        if (!convLines.length) {
+          convertWithoutStep++;
+        } else {
+          // Every printed conversion must actually multiply out: a line reading
+          // "2 in/h x 25.4 = 46 mm/h" is a bug, because 2 x 25.4 = 50.8. This
+          // catches a renderer that prints the rounded display value against the
+          // unrounded native value. The unit sits between the number and the sign
+          // ("2 in/h x 25.4"), so the gap is matched loosely but never across "(".
+          for (const line of convLines) {
+            const m = line.match(/(-?\d+(?:\.\d+)?)[^()]*?[×x]\s*(-?\d+(?:\.\d+)?)\s*=\s*(-?\d+(?:\.\d+)?)/);
+            if (!m) {
+              badConversionMath++;
+              if (badConversionMath === 1) firstBadConversion = `unparseable conversion line: ${line}`;
+              continue;
+            }
+            const lhs = parseFloat(m[1]) * parseFloat(m[2]);
+            const shownRhs = parseFloat(m[3]);
+            const dot = m[3].indexOf('.');
+            const rhsDec = dot === -1 ? 0 : m[3].length - dot - 1;
+            const tol = 0.5 * Math.pow(10, -rhsDec) + 1e-6;
+            if (Math.abs(lhs - shownRhs) > tol) {
+              badConversionMath++;
+              if (badConversionMath === 1) {
+                firstBadConversion = `"${line}" does not multiply out (${m[1]} x ${m[2]} = ${lhs.toFixed(4)}, printed ${m[3]})`;
+              }
+            }
+          }
+        }
         continue;
       }
       if (/^Using the formula/.test(q.question)) formulaRestatement++;
@@ -333,6 +363,7 @@ function renderPass(spec) {
   if (mismatched) fail(id, 'walkthrough', `${mismatched} rendered walkthroughs disagreed with a recompute - first: ${firstMismatch}`);
   if (missingGiven) fail(id, 'walkthrough', `${missingGiven} rendered questions did not expose parseable givens`);
   if (convertWithoutStep) fail(id, 'walkthrough', `${convertWithoutStep} unit-converted questions omitted the conversion arithmetic`);
+  if (badConversionMath) fail(id, 'conversions', `${badConversionMath} printed conversion lines do not multiply out - first: ${firstBadConversion}`);
   if (formulaRestatement) fail(id, 'word-problem', `${formulaRestatement} rendered questions restate the formula instead of describing a situation`);
   if (checked === 0 && !spec.conversions?.length) {
     warn(id, 'walkthrough', 'no rendered question could be recomputed - add `context` so givens are printed');
