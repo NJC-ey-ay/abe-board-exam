@@ -107,6 +107,67 @@ function combos(arr, k) {
   return out;
 }
 
+// ---------------------------------------------------------------------------
+// Authoring-standard waivers
+// ---------------------------------------------------------------------------
+// The 130 formula batches are held to the QUALITY checks below: rendered options
+// must be plausible multiples of the answer, narratives must not repeat a label,
+// and keyConcept must actually teach something. Ten Area C specs predate that
+// standard - they are one-line legacy entries with a 35-62 character keyConcept
+// and options that routinely sit outside the plausibility band.
+//
+// They are retained for coverage and they do pass every CORRECTNESS check, so
+// they are exempt from the quality checks only. They are replaced when their
+// owning topic batch lands. Do not grow this list: if a new spec is bad, fix it.
+const QUALITY_WAIVER = new Set([
+  'c-mc-wet-basis',
+  'c-mc-dry-basis',
+  'c-percent-milling-recovery',
+  'c-sensible-heat',
+  'c-enthalpy',
+  'c-relative-humidity',
+  'c-ohms-law',
+  'c-electrical-power',
+  'c-electrical-energy',
+  'c-power-factor',
+]);
+
+// An option has to be a number a student could plausibly write down as a
+// deliberate mistake: positive, non-zero, and within two orders of magnitude of
+// the answer. Outside that band the question is guessable, which is the defect
+// these checks exist to prevent.
+const OPT_MAX_RATIO = 100.5; // tolerance above 100x for rounding at the last digit
+const OPT_MIN_RATIO = 0.01; // 1%
+const KEY_CONCEPT_MIN = 80;
+
+// Returns a human-readable reason, or null when the option set is plausible.
+function optionPlausibility(options, correctIndex) {
+  if (!Array.isArray(options) || options.length < 2) return 'options are missing';
+  const correct = parseFloat(options[correctIndex]);
+  if (!Number.isFinite(correct)) return `answer slot ${correctIndex} is not a number ("${options[correctIndex]}")`;
+
+  for (let k = 0; k < options.length; k++) {
+    const n = parseFloat(options[k]);
+    if (!Number.isFinite(n)) return `option ${k} is not a number ("${options[k]}")`;
+    if (n === 0) return `option ${k} is zero ("${options[k]}")`;
+    if (n < 0) return `option ${k} is negative ("${options[k]}")`;
+    if (correct > 0) {
+      const ratio = n / correct;
+      if (ratio > OPT_MAX_RATIO) {
+        return `option ${k} is ${ratio.toFixed(0)}x the answer ("${options[k]}" vs ${correct})`;
+      }
+      if (ratio < OPT_MIN_RATIO) {
+        return `option ${k} is only ${(ratio * 100).toFixed(1)}% of the answer ("${options[k]}" vs ${correct})`;
+      }
+    }
+  }
+  return null;
+}
+
+// "a furrow of ... a furrow of ..." - a label reused inside one sentence means
+// the generated narrative was stitched together rather than written.
+const DUPLICATE_LABEL = /\ba ([a-z][a-z -]{3,30}?) of [^,.?]*\ba \1 of\b/i;
+
 const failures = [];
 const warnings = [];
 const seenFailure = new Set();
@@ -151,6 +212,12 @@ function specPass(spec) {
   }
   if (!spec.unknownPhrase || spec.unknownPhrase.trim().length < 3) {
     fail(id, 'word-problem', 'missing `unknownPhrase`: reads "What is the value of X?"');
+  }
+  if (!QUALITY_WAIVER.has(id)) {
+    const kc = (spec.keyConcept || '').trim();
+    if (kc.length < KEY_CONCEPT_MIN) {
+      fail(id, 'key-concept', `keyConcept is ${kc.length} chars, minimum ${KEY_CONCEPT_MIN} - it has to teach the handbook value or a stated constant, not restate the formula`);
+    }
   }
 
   const rand = rngFrom(0x9e3779b9);
@@ -270,6 +337,10 @@ function renderPass(spec) {
   let firstBadConversion = null;
   let formulaRestatement = 0;
   let firstMismatch = null;
+  let implausibleOptions = 0;
+  let firstImplausible = null;
+  let duplicateLabel = 0;
+  let firstDuplicateLabel = null;
   const seenTexts = new Set();
 
   for (let i = 0; i < SAMPLES; i++) {
@@ -279,6 +350,23 @@ function renderPass(spec) {
       seenTexts.add(q.question);
       const steps = q.solution?.steps ?? [];
       if (steps.length < 3) noSteps++;
+
+      // Quality gate, applied to the question the student actually sees. Checking
+      // the raw distractor generators is not enough: the renderer picks three of
+      // them at random, so a spec with one bad generator still ships bad questions
+      // some of the time. Verifying every rendered question is what makes the
+      // guarantee real rather than statistical.
+      if (!QUALITY_WAIVER.has(id)) {
+        const bad = optionPlausibility(q.options, q.correctAnswer);
+        if (bad) {
+          implausibleOptions++;
+          if (!firstImplausible) firstImplausible = bad;
+        }
+        if (DUPLICATE_LABEL.test(q.question)) {
+          duplicateLabel++;
+          if (!firstDuplicateLabel) firstDuplicateLabel = q.question.replace(/\n/g, ' ').slice(0, 140);
+        }
+      }
 
       const isEnglish = steps.some((s) => /convert /.test(s));
       if (isEnglish) {
@@ -365,6 +453,12 @@ function renderPass(spec) {
   if (convertWithoutStep) fail(id, 'walkthrough', `${convertWithoutStep} unit-converted questions omitted the conversion arithmetic`);
   if (badConversionMath) fail(id, 'conversions', `${badConversionMath} printed conversion lines do not multiply out - first: ${firstBadConversion}`);
   if (formulaRestatement) fail(id, 'word-problem', `${formulaRestatement} rendered questions restate the formula instead of describing a situation`);
+  if (implausibleOptions) {
+    fail(id, 'options-plausible', `${implausibleOptions} rendered questions had an implausible option - first: ${firstImplausible}`);
+  }
+  if (duplicateLabel) {
+    fail(id, 'narrative', `${duplicateLabel} rendered questions repeated a label inside one sentence - first: "${firstDuplicateLabel}"`);
+  }
   if (checked === 0 && !spec.conversions?.length) {
     warn(id, 'walkthrough', 'no rendered question could be recomputed - add `context` so givens are printed');
   }
@@ -374,6 +468,23 @@ const targets = specs.filter((s) => !areaFilter || s.area === areaFilter);
 for (const spec of targets) {
   specPass(spec);
   renderPass(spec);
+}
+
+// A formulaId registered twice is silent data loss: getDrillSpec() resolves with
+// .find(), so the second spec is unreachable, and the shadowed one still counts
+// toward coverage. That is how a spec can look present and never be served. This
+// has to be a whole-registry check - a per-spec check cannot see it.
+{
+  const byId = new Map();
+  for (const s of specs) {
+    if (!byId.has(s.formulaId)) byId.set(s.formulaId, []);
+    byId.get(s.formulaId).push(s);
+  }
+  for (const [id, list] of byId) {
+    if (list.length > 1) {
+      fail(id, 'duplicate-spec', `registered ${list.length} times; getDrillSpec() returns only the first, so the others are unreachable but still counted as coverage`);
+    }
+  }
 }
 
 const withSpec = new Set(specs.map((s) => s.formulaId));
