@@ -36,8 +36,10 @@ function FormulaPracticeContent() {
     }
   }, []);
 
-  const saveCompleted = (formulaId: string) => {
-    const newCompleted = [...new Set([...completedFormulas, formulaId])];
+  const saveCompleted = (baseFormulaId: string) => {
+    // Find all 4-part formula IDs that match this base formula ID
+    const matchingIds = Object.keys(formulaPracticeByFormula).filter(key => key.startsWith(baseFormulaId + '-'));
+    const newCompleted = [...new Set([...completedFormulas, ...matchingIds])];
     setCompletedFormulas(newCompleted);
     localStorage.setItem('formula-practice-completed', JSON.stringify(newCompleted));
   };
@@ -63,20 +65,23 @@ function FormulaPracticeContent() {
     setSessionStats({ correct: 0, wrong: 0 });
   };
 
-  const handleFormulaChange = (formulaName: string) => {
-    setSelectedFormula(formulaName);
-    const formulaId = `${selectedArea}-${topics.findIndex(t => t.topic === selectedTopic)}-${formulas.findIndex(f => f.name === formulaName)}`;
-    const problems = formulaPracticeByFormula[formulaId] || [];
-    setFormulaProblems(problems);
-    setCurrentIndex(0);
-    setSelectedAnswer(null);
-    setShowSolution(false);
-    setSessionStats({ correct: 0, wrong: 0 });
+  const getBaseFormulaId = (area: string, topicIndex: number, formulaIndex: number) => {
+    return `${area}-${topicIndex}-${formulaIndex}`;
+  };
+
+  const getProblemsForFormula = (baseFormulaId: string) => {
+    return Object.entries(formulaPracticeByFormula)
+      .filter(([key]) => key.startsWith(baseFormulaId + '-'))
+      .flatMap(([, v]) => v);
   };
 
   const isFormulaCompleted = (formulaName: string) => {
-    const formulaId = `${selectedArea}-${topics.findIndex(t => t.topic === selectedTopic)}-${formulas.findIndex(f => f.name === formulaName)}`;
-    return completedFormulas.includes(formulaId);
+    const baseFormulaId = getBaseFormulaId(
+      selectedArea,
+      topics.findIndex(t => t.topic === selectedTopic),
+      formulas.findIndex(f => f.name === formulaName)
+    );
+    return completedFormulas.some(id => id.startsWith(baseFormulaId + '-'));
   };
 
   const getAreaProgress = (areaCode: string) => {
@@ -84,14 +89,29 @@ function FormulaPracticeContent() {
     if (!areaData) return { completed: 0, total: 0 };
     let total = 0;
     let completed = 0;
-    areaData.topics.forEach(topic => {
-      topic.formulas.forEach(formula => {
+    areaData.topics.forEach((topic, tIdx) => {
+      topic.formulas.forEach((formula, fIdx) => {
         total++;
-        const formulaId = `${areaCode}-${areaData.topics.indexOf(topic)}-${topic.formulas.indexOf(formula)}`;
-        if (completedFormulas.includes(formulaId)) completed++;
+        const baseFormulaId = getBaseFormulaId(areaCode, tIdx, fIdx);
+        if (completedFormulas.some(id => id.startsWith(baseFormulaId + '-'))) completed++;
       });
     });
     return { completed, total };
+  };
+
+  const handleFormulaChange = (formulaName: string) => {
+    setSelectedFormula(formulaName);
+    const baseFormulaId = getBaseFormulaId(
+      selectedArea,
+      topics.findIndex(t => t.topic === selectedTopic),
+      formulas.findIndex(f => f.name === formulaName)
+    );
+    const problems = getProblemsForFormula(baseFormulaId);
+    setFormulaProblems(problems);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setShowSolution(false);
+    setSessionStats({ correct: 0, wrong: 0 });
   };
 
   if (!currentFormula) {
@@ -143,9 +163,9 @@ function FormulaPracticeContent() {
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {topics.map((topic, tIdx) => {
                   const formulaCount = topic.formulas.length;
-                  const topicCompleted = topic.formulas.filter(f => {
-                    const fId = `${selectedArea}-${tIdx}-${topic.formulas.indexOf(f)}`;
-                    return completedFormulas.includes(fId);
+                  const topicCompleted = topic.formulas.filter((f, fIdx) => {
+                    const baseFormulaId = getBaseFormulaId(selectedArea, tIdx, fIdx);
+                    return completedFormulas.some(id => id.startsWith(baseFormulaId + '-'));
                   }).length;
                   const pct = formulaCount > 0 ? Math.round((topicCompleted / formulaCount) * 100) : 0;
                   const areaColor = currentAreaFormulas.color;
@@ -200,8 +220,12 @@ function FormulaPracticeContent() {
       setShowSolution(false);
     } else {
       // Session complete
-      const formulaId = `${selectedArea}-${topics.findIndex(t => t.topic === selectedTopic)}-${formulas.findIndex(f => f.name === selectedFormula)}`;
-      saveCompleted(formulaId);
+      const baseFormulaId = getBaseFormulaId(
+        selectedArea,
+        topics.findIndex(t => t.topic === selectedTopic),
+        formulas.findIndex(f => f.name === selectedFormula)
+      );
+      saveCompleted(baseFormulaId);
       setCurrentIndex(formulaProblems.length);
     }
   };
