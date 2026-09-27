@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "verify:specs": "node scripts/verify-formula-specs.mjs",
-    "verify:specs:strict": "node scripts/verify-formula-specs.mjs --strict"
+    "verify:specs:strict": "node scripts/verify-formula-specs.mjs --strict",
+    "deploy": "node scripts/deploy.mjs",
+    "deploy:preview": "node scripts/deploy.mjs --preview"
   },
   "dependencies": {
     "@serwist/core": "^9.5.11",

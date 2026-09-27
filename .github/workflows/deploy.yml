@@ -1,0 +1,62 @@
+# Auto-deploy on push to main.
+#
+# The goal is that nobody ever has to open the Vercel dashboard to ship a change:
+# a green push to main is the deploy. Everything here is non-interactive.
+#
+# `verify:specs` runs as a HARD GATE before the deploy, not as a report. A batch
+# with broken arithmetic or an unshippable question set never reaches production.
+# That is the whole reason this workflow exists rather than a bare Vercel Git
+# integration - the deploy is only allowed to happen if the release gate passes.
+#
+# One-time setup: create a Vercel token (Account Settings -> Tokens), then add it
+# as the repository secret VERCEL_TOKEN. The org and project IDs are identifiers
+# rather than secrets, so they are inlined below and no further secrets are needed.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two deploys race. The equation work pushes many batches in a row, and
+# a stale in-flight build must not land after a newer one.
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
+env:
+  VERCEL_ORG_ID: team_cSJsCUxuX55BM9ym63hRDaAe
+  VERCEL_PROJECT_ID: prj_BAaaJFaCi0Vhbzn0O2jHzVejFrId
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # pinned to match local, otherwise Vercel's build and CI's build differ
+          node-version: 24.15.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # --- release gate: nothing below runs if this fails ---
+      - name: Verify formula drill specs
+        run: npm run verify:specs
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@54.1.0
+
+      - name: Deploy to production
+        # -y keeps it non-interactive; scripts/deploy.mjs re-checks the token and
+        # prints actionable instructions if the secret is missing.
+        run: node scripts/deploy.mjs
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
