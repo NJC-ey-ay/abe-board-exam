@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
-import { formulaPracticeProblems, formulaPracticeByFormula, formulaPracticeAreaAProblems, formulaPracticeAreaBProblems, formulaPracticeAreaCProblems } from '@/data/formulas-practice';
+import { getProblems, hasProblems } from '@/data/formula-practice-index';
 import { areaFormulas } from '@/data/formulas';
 import type { FormulaPracticeProblem } from '@/data/formulas-practice';
 import { MathRenderer, MathFormula } from '@/lib/math-renderer';
@@ -22,24 +22,26 @@ function FormulaPracticeContent() {
   const topics = currentAreaFormulas?.topics || [];
   const currentTopic = topics.find(t => t.topic === selectedTopic);
   const formulas = currentTopic?.formulas || [];
-  const currentFormula = formulas.find(f => f.name === selectedFormula);
+  const currentFormula = formulas.find(f => f.id === selectedFormula);
 
   // Load progress from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('formula-practice-completed');
     if (saved) {
       try {
-        setCompletedFormulas(JSON.parse(saved));
+        const parsed = JSON.parse(saved);
+        // Progress is now keyed by the stable formula id from the handbooks. The
+        // previous positional ids (A-0-0 style) no longer resolve to anything, so
+        // drop them instead of letting stale entries linger forever.
+        setCompletedFormulas(Array.isArray(parsed) ? parsed.filter((id: unknown) => typeof id === 'string' && !/^[ABC]-\d+-\d+(-\d+)?$/.test(id)) : []);
       } catch {
         setCompletedFormulas([]);
       }
     }
   }, []);
 
-  const saveCompleted = (baseFormulaId: string) => {
-    // Find all 4-part formula IDs that match this base formula ID
-    const matchingIds = Object.keys(formulaPracticeByFormula).filter(key => key.startsWith(baseFormulaId + '-'));
-    const newCompleted = [...new Set([...completedFormulas, ...matchingIds])];
+  const saveCompleted = (formulaId: string) => {
+    const newCompleted = [...new Set([...completedFormulas, formulaId])];
     setCompletedFormulas(newCompleted);
     localStorage.setItem('formula-practice-completed', JSON.stringify(newCompleted));
   };
@@ -65,49 +67,23 @@ function FormulaPracticeContent() {
     setSessionStats({ correct: 0, wrong: 0 });
   };
 
-  const getBaseFormulaId = (area: string, topicIndex: number, formulaIndex: number) => {
-    return `${area}-${topicIndex}-${formulaIndex}`;
-  };
-
-  const getProblemsForFormula = (baseFormulaId: string) => {
-    return Object.entries(formulaPracticeByFormula)
-      .filter(([key]) => key.startsWith(baseFormulaId + '-'))
-      .flatMap(([, v]) => v);
-  };
-
-  const isFormulaCompleted = (formulaName: string) => {
-    const baseFormulaId = getBaseFormulaId(
-      selectedArea,
-      topics.findIndex(t => t.topic === selectedTopic),
-      formulas.findIndex(f => f.name === formulaName)
-    );
-    return completedFormulas.some(id => id.startsWith(baseFormulaId + '-'));
-  };
-
   const getAreaProgress = (areaCode: string) => {
     const areaData = areaFormulas.find(f => f.areaCode === areaCode);
     if (!areaData) return { completed: 0, total: 0 };
     let total = 0;
     let completed = 0;
-    areaData.topics.forEach((topic, tIdx) => {
-      topic.formulas.forEach((formula, fIdx) => {
+    areaData.topics.forEach(topic => {
+      topic.formulas.forEach(formula => {
         total++;
-        const baseFormulaId = getBaseFormulaId(areaCode, tIdx, fIdx);
-        if (completedFormulas.some(id => id.startsWith(baseFormulaId + '-'))) completed++;
+        if (completedFormulas.includes(formula.id)) completed++;
       });
     });
     return { completed, total };
   };
 
-  const handleFormulaChange = (formulaName: string) => {
-    setSelectedFormula(formulaName);
-    const baseFormulaId = getBaseFormulaId(
-      selectedArea,
-      topics.findIndex(t => t.topic === selectedTopic),
-      formulas.findIndex(f => f.name === formulaName)
-    );
-    const problems = getProblemsForFormula(baseFormulaId);
-    setFormulaProblems(problems);
+  const handleFormulaChange = (formulaId: string) => {
+    setSelectedFormula(formulaId);
+    setFormulaProblems(getProblems(formulaId));
     setCurrentIndex(0);
     setSelectedAnswer(null);
     setShowSolution(false);
@@ -120,8 +96,12 @@ function FormulaPracticeContent() {
         {/* Area Selector */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Formula Practice</h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-2">
+            Formula Practice
+          </p>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Practice board-exam style word problems for each formula. 10 problems per formula.
+            Browse the formula reference transcribed from the official ABELE handbooks, then drill
+            board-exam style word problems where they have been generated.
           </p>
 
           <div className="flex gap-4 mb-8">
@@ -134,8 +114,8 @@ function FormulaPracticeContent() {
                   onClick={() => handleAreaChange(area.areaCode as 'A' | 'B' | 'C')}
                   className={`flex-1 px-6 py-4 rounded-xl border-2 transition ${
                     selectedArea === area.areaCode
-                      ? `${area.color === 'primary' ? 'border-primary-500' : area.color === 'green' ? 'border-green-500' : 'border-amber-500'} bg-white dark:bg-slate-700 shadow`
-                      : 'border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 hover:border-primary-300'
+                      ? `${area.color === 'primary' ? 'border-primary-500' : area.color === 'green' ? 'border-green-500' : 'border-amber-500'} bg-white dark:bg-primary-900/50 shadow`
+                      : 'border-gray-200 dark:border-slate-500 bg-white dark:bg-slate-700 hover:border-primary-400 hover:bg-gray-50 dark:hover:bg-slate-600'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -157,16 +137,13 @@ function FormulaPracticeContent() {
           </div>
 
           {/* Topic Selector */}
-          {currentAreaFormulas && (
+          {currentAreaFormulas && !selectedTopic && (
             <div>
               <h3 className="text-xl font-bold mb-4">Select Topic</h3>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {topics.map((topic, tIdx) => {
+                {topics.map((topic) => {
                   const formulaCount = topic.formulas.length;
-                  const topicCompleted = topic.formulas.filter((f, fIdx) => {
-                    const baseFormulaId = getBaseFormulaId(selectedArea, tIdx, fIdx);
-                    return completedFormulas.some(id => id.startsWith(baseFormulaId + '-'));
-                  }).length;
+                  const topicCompleted = topic.formulas.filter(f => completedFormulas.includes(f.id)).length;
                   const pct = formulaCount > 0 ? Math.round((topicCompleted / formulaCount) * 100) : 0;
                   const areaColor = currentAreaFormulas.color;
                   return (
@@ -175,8 +152,8 @@ function FormulaPracticeContent() {
                       onClick={() => handleTopicChange(topic.topic)}
                       className={`p-4 rounded-xl border-2 transition text-left ${
                         selectedTopic === topic.topic
-                          ? `${areaColor === 'primary' ? 'border-primary-500' : areaColor === 'green' ? 'border-green-500' : 'border-amber-500'} bg-white dark:bg-slate-700 shadow`
-                          : 'border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-800 hover:border-primary-300'
+                          ? `${areaColor === 'primary' ? 'border-primary-500' : areaColor === 'green' ? 'border-green-500' : 'border-amber-500'} bg-white dark:bg-primary-900/50 shadow`
+                          : 'border-gray-200 dark:border-slate-500 bg-white dark:bg-slate-700 hover:border-primary-400 hover:bg-gray-50 dark:hover:bg-slate-600'
                       }`}
                     >
                       <h4 className="font-semibold mb-2">{topic.topic}</h4>
@@ -185,13 +162,107 @@ function FormulaPracticeContent() {
                         <div className={`h-full rounded-full transition-all ${areaColor === 'primary' ? 'bg-primary-600' : areaColor === 'green' ? 'bg-green-600' : 'bg-amber-600'}`}
                           style={{ width: `${pct}%` }} />
                       </div>
-                      <p className="text-xs text-gray-500 mt-1">{topicCompleted}/{formulaCount} completed</p>
+                      <p className="text-xs text-gray-500 mt-1">{topicCompleted}/{formulaCount} completed</p>                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Formula Selector (shows when topic is selected) */}
+          {currentAreaFormulas && selectedTopic && !selectedFormula && currentTopic && (
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold">Select Formula</h3>
+                <button
+                  onClick={() => handleTopicChange('')}
+                  className="text-primary-600 hover:underline text-sm"
+                >
+                  ← Back to Topics
+                </button>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {currentTopic.formulas.map((formula) => {
+                  const isCompleted = completedFormulas.includes(formula.id);
+                  const count = getProblems(formula.id).length;
+                  return (
+                    <button
+                      key={formula.id}
+                      onClick={() => handleFormulaChange(formula.id)}
+                      className={`p-4 rounded-xl border-2 transition text-left ${
+                        isCompleted
+                          ? 'border-green-500 bg-green-50 dark:bg-green-900/20 shadow'
+                          : 'border-gray-200 dark:border-slate-500 bg-white dark:bg-slate-700 hover:border-primary-400 hover:bg-gray-50 dark:hover:bg-slate-600'
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h4 className="font-semibold">{formula.name}</h4>
+                        {isCompleted && <span className="text-green-600 dark:text-green-400 text-xs shrink-0">✓ Completed</span>}
+                      </div>
+                      <div className="mb-2 overflow-x-auto">
+                        <MathFormula formula={formula.formula} display />
+                      </div>
+                      <p className="text-xs text-gray-500">
+                        {count > 0
+                          ? `${count} practice problems`
+                          : 'Reference only — no practice problems yet'}
+                      </p>
                     </button>
                   );
                 })}
               </div>
             </div>
           )}
+        </div>
+      </div>
+    );
+  }
+
+  // A reference formula with no generated problems. Show the full handbook entry —
+  // equation, variable definitions and notes — instead of an empty quiz screen.
+  if (!hasProblems(currentFormula.id)) {
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-8">
+        <button
+          onClick={() => handleTopicChange(selectedTopic)}
+          className="text-primary-600 hover:underline text-sm mb-6"
+        >
+          ← Back to formulas in {selectedTopic}
+        </button>
+
+        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8">
+          <h1 className="text-2xl font-bold mb-1">{currentFormula.name}</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+            {selectedTopic} • Area {selectedArea}
+          </p>
+
+          <div className="bg-gray-50 dark:bg-slate-700 rounded-xl p-6 mb-6 overflow-x-auto">
+            <MathFormula formula={currentFormula.formula} display />
+          </div>
+
+          <h2 className="text-lg font-semibold mb-3">Variables</h2>
+          <ul className="space-y-2 mb-6">
+            {currentFormula.variables.map((v, i) => (
+              <li key={i} className="flex gap-3 text-sm">
+                <MathRenderer content={`$${v.symbol}$`} />
+                <span className="text-gray-600 dark:text-gray-300">{v.meaning}</span>
+              </li>
+            ))}
+          </ul>
+
+          {currentFormula.notes && (
+            <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4">
+              <h2 className="text-sm font-semibold text-amber-800 dark:text-amber-200 mb-1">Notes</h2>
+              <p className="text-sm text-amber-900 dark:text-amber-100 whitespace-pre-line">{currentFormula.notes}</p>
+            </div>
+          )}
+
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-slate-700">
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              Practice questions for this formula have not been generated yet. The reference above is
+              transcribed from the official ABELE formula handbook.
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -220,12 +291,7 @@ function FormulaPracticeContent() {
       setShowSolution(false);
     } else {
       // Session complete
-      const baseFormulaId = getBaseFormulaId(
-        selectedArea,
-        topics.findIndex(t => t.topic === selectedTopic),
-        formulas.findIndex(f => f.name === selectedFormula)
-      );
-      saveCompleted(baseFormulaId);
+      saveCompleted(currentFormula.id);
       setCurrentIndex(formulaProblems.length);
     }
   };
@@ -247,7 +313,7 @@ function FormulaPracticeContent() {
           <div className="text-6xl mb-4">
             {percentage >= 70 ? '🎉 Mastered!' : percentage >= 50 ? '👍 Good Progress!' : '📚 Keep Practicing!'}
           </div>
-          <h1 className="text-2xl font-bold mb-2">{selectedFormula}</h1>
+          <h1 className="text-2xl font-bold mb-2">{currentFormula.name}</h1>
           <p className="text-gray-600 dark:text-gray-300 mb-6">{selectedTopic} • Area {selectedArea}</p>
 
           <div className="text-6xl font-bold text-primary-600 dark:text-primary-400 mb-8">{percentage}%</div>
@@ -298,7 +364,7 @@ function FormulaPracticeContent() {
             <span className="text-gray-300 hidden sm:inline">/</span>
             <button onClick={() => handleTopicChange(selectedTopic)} className="text-primary-600 hover:underline text-sm">{selectedTopic}</button>
             <span className="text-gray-300 hidden sm:inline">/</span>
-            <span className="text-sm text-gray-500">{selectedFormula}</span>
+            <span className="text-sm text-gray-500">{currentFormula.name}</span>
           </div>
           <h1 className="text-xl lg:text-2xl font-bold mt-1">
             Problem {currentIndex + 1} of {formulaProblems.length}

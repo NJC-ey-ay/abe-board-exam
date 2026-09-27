@@ -9,6 +9,7 @@ import { tosStructure, getSubjectByCode } from '@/data/tos';
 import { keywordRules } from '@/data/formula-guide';
 import { keywordFormulas, findFormulasByKeyword } from '@/data/formula-keywords';
 import { getDrillsByArea, getDrillQuestions } from '@/data/formula-drills';
+import { areaCoverage } from '@/data/formula-practice-index';
 import { DrillRunner, type DrillMetaView } from '@/components/DrillRunner';
 import type { Question } from '@/data/comprehensive-questions';
 
@@ -23,6 +24,42 @@ function findFormulaById(id: string): Formula | null {
   }
   return null;
 }
+
+// Derived from the data so the cards can never drift out of sync with the
+// handbook reference or the practice bank. Note this reports the practice-bank
+// coverage behind the "Start Formula Practice" link; the separate Equation
+// Practice tab has its own generated drills and its own counter.
+const practiceStats = areaFormulas.map((category) => {
+  const coverage = areaCoverage(category.areaCode);
+  return {
+    areaCode: category.areaCode,
+    label: category.area,
+    color: category.color,
+    refCount: coverage.total,
+    practiceCount: coverage.withProblems,
+    problemCount: coverage.problems,
+  };
+});
+
+const totalRefCount = practiceStats.reduce((sum, s) => sum + s.refCount, 0);
+const totalPracticeCount = practiceStats.reduce((sum, s) => sum + s.practiceCount, 0);
+
+// Tailwind's JIT scanner cannot see class names built by interpolation, so the
+// area palettes are written out literally.
+const practiceCardTheme: Record<string, { card: string; heading: string }> = {
+  primary: {
+    card: 'border-primary-200 dark:border-primary-800',
+    heading: 'text-primary-700 dark:text-primary-300',
+  },
+  green: {
+    card: 'border-green-200 dark:border-green-800',
+    heading: 'text-green-700 dark:text-green-300',
+  },
+  amber: {
+    card: 'border-amber-200 dark:border-amber-800',
+    heading: 'text-amber-700 dark:text-amber-300',
+  },
+};
 
 function PracticeContent() {
   const searchParams = useSearchParams();
@@ -150,7 +187,7 @@ function PracticeContent() {
               <h2 className="text-xl font-bold mb-2">Mock Test C</h2>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">100 Items</p>
               <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                Structures & Bioprocess
+                Structures, Environment &amp; Bioprocess
               </p>
               <div className="mt-4 bg-amber-600 text-white px-6 py-2 rounded-full text-sm font-semibold group-hover:bg-amber-700 transition">
                 Start Mock Test
@@ -555,7 +592,7 @@ function PracticeContent() {
               <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                 <div>Area A: Power, Energy & Machinery</div>
                 <div>Area B: Land & Water Resources</div>
-                <div>Area C: Structures & Bioprocess</div>
+                <div>Area C: Structures, Environment &amp; Bioprocess</div>
               </div>
             </div>
             <div className="bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-6">
@@ -589,24 +626,32 @@ function PracticeContent() {
         <div className="text-center py-12">
           <h1 className="text-3xl font-bold mb-3">Formula Practice</h1>
           <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Master every formula with 10 board-exam style word problems each. Covers all 58 formulas across Areas A, B, and C with problem types: direct application, unit conversions, rearranged variables, extraneous givens, and common mistake traps.
+            Drill board-exam style word problems against the formula reference transcribed from the
+            official ABELE handbooks. Each available formula has 10 problems covering direct
+            application, unit conversions, rearranged variables, extraneous givens, and common
+            mistake traps.
+          </p>
+          <p className="text-sm text-gray-500 mb-8 max-w-2xl mx-auto">
+            {totalRefCount} reference formulas across Areas A, B and C. Word problems are available
+            for {totalPracticeCount} of them so far &mdash; the rest are reference-only until more are
+            generated.
           </p>
           <div className="grid md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-slate-800 rounded-xl border-2 border-primary-200 dark:border-primary-800 p-6">
-              <h3 className="text-xl font-bold mb-2 text-primary-700 dark:text-primary-300">Area A</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">Power, Energy & Machinery</p>
-              <p className="text-sm text-gray-500">24 formulas • 240 problems</p>
-            </div>
-            <div className="bg-white dark:bg-slate-800 rounded-xl border-2 border-green-200 dark:border-green-800 p-6">
-              <h3 className="text-xl font-bold mb-2 text-green-700 dark:text-green-300">Area B</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">Land & Water Resources</p>
-              <p className="text-sm text-gray-500">19 formulas • 190 problems</p>
-            </div>
-            <div className="bg-white dark:bg-slate-800 rounded-xl border-2 border-amber-200 dark:border-amber-800 p-6">
-              <h3 className="text-xl font-bold mb-2 text-amber-700 dark:text-amber-300">Area C</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">Structures, Bioprocess & Food</p>
-              <p className="text-sm text-gray-500">15 formulas • 150 problems</p>
-            </div>
+            {practiceStats.map((s) => (
+              <div
+                key={s.areaCode}
+                className={`bg-white dark:bg-slate-800 rounded-xl border-2 p-6 ${practiceCardTheme[s.color]?.card ?? ''}`}
+              >
+                <h3 className={`text-xl font-bold mb-2 ${practiceCardTheme[s.color]?.heading ?? ''}`}>
+                  Area {s.areaCode}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{s.label}</p>
+                <p className="text-sm text-gray-500">
+                  {s.refCount} formulas &bull; {s.practiceCount} with problems &bull;{' '}
+                  {s.problemCount} questions
+                </p>
+              </div>
+            ))}
           </div>
           <Link
             href="/formulas-practice"
