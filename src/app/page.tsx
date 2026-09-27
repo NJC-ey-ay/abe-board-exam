@@ -21,20 +21,26 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl font-display leading-tight mb-4">
               ABE Board Exam<br />Preparation
             </h1>
-            <p className="text-lg text-primary-100 leading-relaxed mb-8">
-              2,000+ questions across three TOS areas. Step-by-step solutions, formula references, and mock tests that simulate the actual board exam.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/practice" className="bg-white text-primary-800 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition text-sm">
-                Start Mock Test
-              </Link>
-              <Link href="/practice?tab=formulas" className="border border-primary-400 text-primary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition text-sm">
-                Formula Reference
-              </Link>
-              <Link href="/practice?tab=reference" className="border border-primary-400 text-primary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition text-sm">
-                TOS Guide
-              </Link>
-            </div>
+             <p className="text-lg text-primary-100 leading-relaxed mb-8">
+               2,000+ questions across three TOS areas, PAES standards study with 100 questions per standard, ABE trivias, step-by-step solutions, formula references, and mock tests that simulate the actual board exam.
+             </p>
+<div className="flex flex-wrap gap-3">
+                <Link href="/practice" className="bg-white text-primary-800 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition text-sm">
+                  Start Mock Test
+                </Link>
+                <Link href="/paes" className="border border-primary-400 text-primary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition text-sm">
+                  PAES Standards
+                </Link>
+                <Link href="/trivias" className="border border-primary-400 text-primary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition text-sm">
+                  Trivias
+                </Link>
+                <Link href="/recall" className="border border-primary-400 text-primary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition text-sm">
+                  Recalled Exams
+                </Link>
+                <Link href="/formulas-practice" className="border border-primary-400 text-primary-100 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition text-sm">
+                  Formula Practice
+                </Link>
+              </div>
           </div>
         </div>
       </div>
@@ -42,9 +48,9 @@ export default function Home() {
       <div className="bg-primary-800 border-t border-primary-600">
         <div className="max-w-6xl mx-auto px-4 py-5">
           <div className="flex flex-wrap gap-8 md:gap-16 justify-center md:justify-start">
-            <div><span className="text-2xl font-bold text-white">2,075+</span> <span className="text-primary-200 text-sm ml-1">questions</span></div>
-            <div><span className="text-2xl font-bold text-white">3</span> <span className="text-primary-200 text-sm ml-1">TOS areas</span></div>
-            <div><span className="text-2xl font-bold text-white">100</span> <span className="text-primary-200 text-sm ml-1">items per test</span></div>
+            <div><span className="text-2xl font-bold text-white">20,000+</span> <span className="text-primary-200 text-sm ml-1">questions</span></div>
+             <div><span className="text-2xl font-bold text-white">3</span> <span className="text-primary-200 text-sm ml-1">TOS areas</span></div>
+             <div><span className="text-2xl font-bold text-white">170</span> <span className="text-primary-200 text-sm ml-1">PAES standards</span></div>
           </div>
         </div>
       </div>
@@ -90,12 +96,12 @@ export default function Home() {
       </div>
 
       <div className="bg-gray-100 dark:bg-slate-800/50 border-t border-b dark:border-slate-700">
-        <div className="max-w-6xl mx-auto px-4 py-16">
+<div className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="text-3xl font-display mb-2">How it works</h2>
           <p className="text-gray-500 dark:text-gray-400 mb-10 max-w-xl">
-            Three study modes designed for board exam preparation.
+            Five study modes designed for board exam preparation.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
             <div>
               <span className="text-3xl font-display text-primary-600 dark:text-primary-400 block mb-3">01</span>
               <h3 className="font-display text-lg mb-2">Mock Tests</h3>
@@ -105,16 +111,30 @@ export default function Home() {
             </div>
             <div>
               <span className="text-3xl font-display text-primary-600 dark:text-primary-400 block mb-3">02</span>
-              <h3 className="font-display text-lg mb-2">Step-by-Step Solutions</h3>
+              <h3 className="font-display text-lg mb-2">PAES Standards</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                Every question includes key concept, worked steps, formula, and derivation.
+                170 PAES and PNS standards with 100 generated questions each. Organized by TOS area and subcategory.
               </p>
             </div>
             <div>
               <span className="text-3xl font-display text-primary-600 dark:text-primary-400 block mb-3">03</span>
-              <h3 className="font-display text-lg mb-2">Formula Reference</h3>
+              <h3 className="font-display text-lg mb-2">ABE Trivias</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                60+ formulas by TOS area with variable definitions, rendered in LaTeX.
+                50 facts about PAES, laws, machinery, engines, irrigation, and more. Flip-card study format.
+              </p>
+            </div>
+            <div>
+              <span className="text-3xl font-display text-primary-600 dark:text-primary-400 block mb-3">04</span>
+              <h3 className="font-display text-lg mb-2">Recalled Exams</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                1,000+ questions from 2021-2025 board exams. Each question expanded to 4 variants for maximum retention.
+              </p>
+            </div>
+            <div>
+              <span className="text-3xl font-display text-primary-600 dark:text-primary-400 block mb-3">05</span>
+              <h3 className="font-display text-lg mb-2">Formula Practice</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                577 board-style word problems across 58 formulas. Direct application, unit conversions, rearranged, extraneous givens, and mistake traps.
               </p>
             </div>
           </div>

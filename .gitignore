@@ -6,3 +6,7 @@ out/
 .env*.local
 
 .vercel
+paes-pdfs/
+paes-text/
+paes-questions/
+

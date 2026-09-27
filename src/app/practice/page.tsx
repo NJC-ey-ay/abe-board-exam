@@ -6,8 +6,9 @@ import Link from 'next/link';
 import { MathFormula } from '@/lib/math-renderer';
 import { areaFormulas, type FormulaCategory } from '@/data/formulas';
 import { tosStructure, getSubjectByCode } from '@/data/tos';
+import { keywordRules } from '@/data/formula-guide';
 
-type TabType = 'mock-test' | 'formulas' | 'reference';
+type TabType = 'mock-test' | 'formulas' | 'formula-guide' | 'reference' | 'recall' | 'formula-practice';
 
 function PracticeContent() {
   const searchParams = useSearchParams();
@@ -15,6 +16,9 @@ function PracticeContent() {
   const [activeTab, setActiveTab] = useState<TabType>(initialTab);
   const [formulaArea, setFormulaArea] = useState<string>('A');
   const [tosArea, setTosArea] = useState<string>('A');
+  const [keywordSearch, setKeywordSearch] = useState('');
+  const [guideArea, setGuideArea] = useState<string>('all');
+  const [selectedRule, setSelectedRule] = useState<number | null>(null);
 
   const activeFormulas = areaFormulas.find(f => f.areaCode === formulaArea) || areaFormulas[0];
   const activeTosSubject = getSubjectByCode(tosArea);
@@ -22,7 +26,10 @@ function PracticeContent() {
   const tabs: { key: TabType; label: string }[] = [
     { key: 'mock-test', label: 'Mock Test' },
     { key: 'formulas', label: 'Formula Reference' },
+    { key: 'formula-guide', label: 'Formula Guide' },
     { key: 'reference', label: 'TOS Reference' },
+    { key: 'recall', label: 'Recalled Exams' },
+    { key: 'formula-practice', label: 'Formula Practice' },
   ];
 
   return (
@@ -172,6 +179,143 @@ function PracticeContent() {
         </div>
       )}
 
+      {/* Formula Guide Tab */}
+      {activeTab === 'formula-guide' && (
+        <div>
+          <h1 className="text-3xl font-bold mb-2">Formula Guide</h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
+            Find the right formula by typing keywords from the problem. Each entry shows which keywords indicate that formula.
+          </p>
+
+          {/* Search */}
+          <div className="relative mb-4">
+            <input
+              type="text"
+              placeholder="Search keywords (e.g., field capacity, fuel consumption, SCS, Manning)..."
+              value={keywordSearch}
+              onChange={e => { setKeywordSearch(e.target.value); setSelectedRule(null); }}
+              className="w-full px-4 py-3 pl-10 bg-white dark:bg-slate-800 border dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+            />
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
+          </div>
+
+          {/* Area filter */}
+          <div className="flex gap-2 mb-6">
+            <button
+              onClick={() => setGuideArea('all')}
+              className={`px-4 py-1.5 rounded-lg text-xs font-medium transition ${guideArea === 'all' ? 'bg-primary-600 text-white' : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300'}`}
+            >
+              All Areas
+            </button>
+            {(['A', 'B', 'C'] as const).map(a => (
+              <button
+                key={a}
+                onClick={() => setGuideArea(a)}
+                className={`px-4 py-1.5 rounded-lg text-xs font-medium transition ${guideArea === a ? 'bg-primary-600 text-white' : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300'}`}
+              >
+                Area {a}
+              </button>
+            ))}
+          </div>
+
+          {/* Results */}
+          {(() => {
+            const searchLower = keywordSearch.toLowerCase();
+            const filtered = keywordRules.filter(r => {
+              if (guideArea !== 'all' && r.area !== guideArea) return false;
+              if (!searchLower) return true;
+              return r.keywords.some(k => k.toLowerCase().includes(searchLower)) ||
+                r.formulaName.toLowerCase().includes(searchLower) ||
+                r.topic.toLowerCase().includes(searchLower) ||
+                r.hint.toLowerCase().includes(searchLower);
+            });
+
+            if (filtered.length === 0) {
+              return (
+                <div className="text-center py-12 text-gray-400">
+                  No matching formulas found. Try different keywords.
+                </div>
+              );
+            }
+
+            const areaColors: Record<string, string> = {
+              A: 'border-primary-200 dark:border-primary-800',
+              B: 'border-green-200 dark:border-green-800',
+              C: 'border-amber-200 dark:border-amber-800',
+            };
+            const areaBadges: Record<string, string> = {
+              A: 'bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300',
+              B: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
+              C: 'bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300',
+            };
+
+            return (
+              <div className="space-y-3">
+                {filtered.map((rule, i) => {
+                  const originalIndex = keywordRules.indexOf(rule);
+                  const isOpen = selectedRule === originalIndex;
+                  return (
+                    <div
+                      key={i}
+                      className={`bg-white dark:bg-slate-800 rounded-xl border-2 dark:border-slate-700 transition cursor-pointer ${
+                        isOpen ? areaColors[rule.area] : 'border-gray-200 dark:border-slate-700 hover:border-primary-300'
+                      }`}
+                      onClick={() => setSelectedRule(isOpen ? null : originalIndex)}
+                    >
+                      <div className="p-4 flex items-start justify-between gap-4">
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                            <span className={`text-xs px-2 py-0.5 rounded font-medium ${areaBadges[rule.area]}`}>
+                              Area {rule.area}
+                            </span>
+                            <span className="text-xs text-gray-400">{rule.topic}</span>
+                          </div>
+                          <h3 className="font-semibold text-sm mb-0.5">{rule.formulaName}</h3>
+                          <div className="flex flex-wrap gap-1.5 mb-1">
+                            {rule.keywords.slice(0, 5).map(kw => {
+                              const match = searchLower && kw.toLowerCase().includes(searchLower);
+                              return (
+                                <span key={kw} className={`text-xs px-2 py-0.5 rounded-full ${
+                                  match
+                                    ? 'bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300 font-medium ring-1 ring-primary-400'
+                                    : 'bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-gray-400'
+                                }`}>
+                                  {kw}
+                                  {match && ' ←'}
+                                </span>
+                              );
+                            })}
+                            {rule.keywords.length > 5 && (
+                              <span className="text-xs text-gray-400">+{rule.keywords.length - 5} more</span>
+                            )}
+                          </div>
+                        </div>
+                        <span className="text-lg shrink-0 text-gray-300">{isOpen ? '▼' : '▶'}</span>
+                      </div>
+
+                      {isOpen && (
+                        <div className="px-4 pb-4 border-t dark:border-slate-700 pt-3 space-y-3">
+                          <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 flex justify-center overflow-x-auto">
+                            <MathFormula formula={rule.formula} display />
+                          </div>
+                          <p className="text-sm text-gray-600 dark:text-gray-300">{rule.hint}</p>
+                          {rule.example && (
+                            <div className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-xl p-3">
+                              <p className="text-xs text-green-700 dark:text-green-300 font-medium mb-1">Example</p>
+                              <p className="text-sm text-green-800 dark:text-green-200">{rule.example}</p>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
+        </div>
+      )}
+
       {/* TOS Reference Tab */}
       {activeTab === 'reference' && (
         <div>
@@ -222,6 +366,81 @@ function PracticeContent() {
               ))}
             </div>
           )}
+        </div>
+      )}
+
+      {/* Recalled Exams Tab */}
+      {activeTab === 'recall' && (
+        <div className="text-center py-12">
+          <h1 className="text-3xl font-bold mb-3">Recalled Board Exams (2021-2025)</h1>
+          <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            Practice with 1,000+ questions from actual ABELE board exams (2021-2025). Each original question expanded to 4 variants — every option becomes the correct answer once — for maximum learning retention.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-6">
+              <h3 className="text-xl font-bold mb-2 text-primary-700 dark:text-primary-300">By Area</h3>
+              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                <div>Area A: Power, Energy & Machinery</div>
+                <div>Area B: Land & Water Resources</div>
+                <div>Area C: Structures & Bioprocess</div>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-6">
+              <h3 className="text-xl font-bold mb-2 text-green-700 dark:text-green-300">By Year</h3>
+              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                <div>2021 • 2022 • 2023</div>
+                <div>2024 • 2025</div>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-6">
+              <h3 className="text-xl font-bold mb-2 text-amber-700 dark:text-amber-300">Features</h3>
+              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 text-left">
+                <li>• 4 variants per question (each option as correct answer)</li>
+                <li>• Step-by-step solutions with formula walkthroughs</li>
+                <li>• Weak point tracking & formula sidebar</li>
+                <li>• Filter by Area, Year, Difficulty</li>
+              </ul>
+            </div>
+          </div>
+          <Link
+            href="/recall"
+            className="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition"
+          >
+            Start Recalled Exams Session
+          </Link>
+        </div>
+      )}
+
+      {/* Formula Practice Tab */}
+      {activeTab === 'formula-practice' && (
+        <div className="text-center py-12">
+          <h1 className="text-3xl font-bold mb-3">Formula Practice</h1>
+          <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            Master every formula with 10 board-exam style word problems each. Covers all 58 formulas across Areas A, B, and C with problem types: direct application, unit conversions, rearranged variables, extraneous givens, and common mistake traps.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border-2 border-primary-200 dark:border-primary-800 p-6">
+              <h3 className="text-xl font-bold mb-2 text-primary-700 dark:text-primary-300">Area A</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">Power, Energy & Machinery</p>
+              <p className="text-sm text-gray-500">24 formulas • 240 problems</p>
+            </div>
+            <div className="bg-white dark:bg-slate-800 rounded-xl border-2 border-green-200 dark:border-green-800 p-6">
+              <h3 className="text-xl font-bold mb-2 text-green-700 dark:text-green-300">Area B</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">Land & Water Resources</p>
+              <p className="text-sm text-gray-500">19 formulas • 190 problems</p>
+            </div>
+            <div className="bg-white dark:bg-slate-800 rounded-xl border-2 border-amber-200 dark:border-amber-800 p-6">
+              <h3 className="text-xl font-bold mb-2 text-amber-700 dark:text-amber-300">Area C</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">Structures, Bioprocess & Food</p>
+              <p className="text-sm text-gray-500">15 formulas • 150 problems</p>
+            </div>
+          </div>
+          <Link
+            href="/formulas-practice"
+            className="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition"
+          >
+            Start Formula Practice
+          </Link>
         </div>
       )}
     </div>

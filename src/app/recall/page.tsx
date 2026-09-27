@@ -3,19 +3,20 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { areaAQuestions, areaBQuestions, areaCQuestions } from '@/data/comprehensive-questions';
-import { llmAreaAQuestions } from '@/data/llm-questions-area-a';
-import { llmAreaBQuestions } from '@/data/llm-questions-area-b';
-import { llmAreaCQuestions } from '@/data/llm-questions-area-c';
+import { recalledAreaAQuestions, recalledAreaBQuestions, recalledAreaCQuestions, recalledQuestionsByYear } from '@/data/recalled-questions';
 import type { Question, Area, Difficulty } from '@/data/comprehensive-questions';
 import { shuffleQuestions } from '@/lib/shuffle';
 import { MathRenderer, MathFormula } from '@/lib/math-renderer';
 
-function QuizContent() {
+const ALL_RECALLED = [...recalledAreaAQuestions, ...recalledAreaBQuestions, ...recalledAreaCQuestions];
+
+const recalledQuestionsByYearMap: Record<number, Question[]> = recalledQuestionsByYear;
+
+function RecallContent() {
   const searchParams = useSearchParams();
   const selectedArea = (searchParams.get('area') as Area) || null;
+  const selectedYear = searchParams.get('year') || null;
   const selectedDifficulty = (searchParams.get('difficulty') as Difficulty) || null;
-  const isSimulation = searchParams.get('type') === 'simulation';
 
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,34 +26,34 @@ function QuizContent() {
   const [weakPoints, setWeakPoints] = useState<string[]>([]);
   const [flaggedQuestions, setFlaggedQuestions] = useState<number[]>([]);
   const [showFormula, setShowFormula] = useState(false);
-  const [questionMode, setQuestionMode] = useState<'all' | 'computation'>('all');
 
   useEffect(() => {
     let questionPool: Question[] = [];
 
     if (selectedArea) {
-      if (selectedArea === 'A') questionPool = [...areaAQuestions, ...llmAreaAQuestions];
-      else if (selectedArea === 'B') questionPool = [...areaBQuestions, ...llmAreaBQuestions];
-      else if (selectedArea === 'C') questionPool = [...areaCQuestions, ...llmAreaCQuestions];
+      if (selectedArea === 'A') questionPool = [...recalledAreaAQuestions];
+      else if (selectedArea === 'B') questionPool = [...recalledAreaBQuestions];
+      else if (selectedArea === 'C') questionPool = [...recalledAreaCQuestions];
+    } else if (selectedYear) {
+      const year = parseInt(selectedYear);
+      questionPool = recalledQuestionsByYearMap[year] || [];
     } else {
-      questionPool = [...areaAQuestions, ...areaBQuestions, ...areaCQuestions, ...llmAreaAQuestions, ...llmAreaBQuestions, ...llmAreaCQuestions];
+      questionPool = [...ALL_RECALLED];
     }
 
     if (selectedDifficulty) {
-      questionPool = questionPool.filter(question => question.difficulty === selectedDifficulty);
-    }
-
-    if (questionMode === 'computation') {
-      questionPool = questionPool.filter(q =>
-        q.subTopic === 'computation' ||
-        q.solution?.formula ||
-        q.solution?.given
-      );
+      questionPool = questionPool.filter(q => q.difficulty === selectedDifficulty);
     }
 
     questionPool = shuffleQuestions(questionPool).slice(0, 100);
     setQuizQuestions(questionPool);
-  }, [selectedArea, selectedDifficulty, questionMode]);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setShowSolution(false);
+    setSessionStats({ correct: 0, wrong: 0 });
+    setWeakPoints([]);
+    setFlaggedQuestions([]);
+  }, [selectedArea, selectedYear, selectedDifficulty]);
 
   if (quizQuestions.length === 0) {
     return (
@@ -60,7 +61,7 @@ function QuizContent() {
         <div className="text-center py-12">
           <p className="text-gray-500">Loading questions...</p>
           <Link href="/practice" className="text-primary-600 hover:underline mt-4 inline-block">
-            Go back to Mock Test selection
+            Back to Practice
           </Link>
         </div>
       </div>
@@ -116,7 +117,6 @@ function QuizContent() {
     setShowSolution(false);
   };
 
-  // Quiz completed view
   if (currentIndex >= quizQuestions.length) {
     const percentage = Math.round((sessionStats.correct / quizQuestions.length) * 100);
 
@@ -126,8 +126,8 @@ function QuizContent() {
           <div className="text-6xl mb-4">
             {percentage >= 70 ? '🎉 Congrats!' : percentage >= 50 ? '👍 Good Effort!' : '📚 Keep Studying!'}
           </div>
-          <h1 className="text-2xl font-bold mb-2">Mock Test Complete!</h1>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">100-Item Mock Test</p>
+          <h1 className="text-2xl font-bold mb-2">Recalled Exams Complete!</h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">100-Item Session</p>
 
           <div className="text-6xl font-bold text-primary-600 dark:text-primary-400 mb-8">{percentage}%</div>
 
@@ -166,39 +166,41 @@ function QuizContent() {
             <div className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-4 text-left">
               <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">By Area:</h4>
               <div className="space-y-1 text-sm">
-                <div>Area A: {areaAQuestions.length} questions available</div>
-                <div>Area B: {areaBQuestions.length} questions available</div>
-                <div>Area C: {areaCQuestions.length} questions available</div>
+                <div>Area A: {recalledAreaAQuestions.length} questions available</div>
+                <div>Area B: {recalledAreaBQuestions.length} questions available</div>
+                <div>Area C: {recalledAreaCQuestions.length} questions available</div>
               </div>
             </div>
             <div className="bg-purple-50 dark:bg-purple-900/30 rounded-xl p-4 text-left">
-              <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">Next Steps:</h4>
-              <ul className="text-sm text-purple-700 dark:text-purple-300 space-y-1">
-                <li>• Review formulas in Formula Reference</li>
-                <li>• Focus on weak areas</li>
-                <li>• Take another Mock Test</li>
-              </ul>
+              <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">By Year:</h4>
+              <div className="space-y-1 text-sm">
+                {Object.entries(recalledQuestionsByYear).map(([year, questions]) => (
+                  <div key={year}>{year}: {questions.length} questions</div>
+                ))}
+              </div>
             </div>
           </div>
 
           <div className="flex gap-4 justify-center">
             <Link
-              href="/practice"
+              href="/recall"
               className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition"
             >
-              Try Another Mock Test
+              Try Another Session
             </Link>
             <Link
-              href="/conversions"
+              href="/practice"
               className="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
             >
-              Unit Conversions
+              Back to Practice
             </Link>
           </div>
         </div>
       </div>
     );
   }
+
+  const years = [2021, 2022, 2023, 2024, 2025];
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-6">
@@ -207,11 +209,11 @@ function QuizContent() {
         <div>
           <div className="flex items-center gap-2 flex-wrap">
             <Link href="/practice" className="text-primary-600 hover:underline text-sm">
-              ← Mock Test Selection
+              ← Practice
             </Link>
             <span className="text-gray-300 hidden sm:inline">|</span>
             <span className="text-sm text-gray-500">
-              Area {currentQuestion.area} | {currentQuestion.difficulty.charAt(0).toUpperCase() + currentQuestion.difficulty.slice(1)}
+              {currentQuestion.area === 'A' ? 'Area A' : currentQuestion.area === 'B' ? 'Area B' : 'Area C'} | {currentQuestion.difficulty.charAt(0).toUpperCase() + currentQuestion.difficulty.slice(1)}
             </span>
           </div>
           <h1 className="text-xl lg:text-2xl font-bold mt-1">
@@ -231,39 +233,54 @@ function QuizContent() {
           >
             {flaggedQuestions.includes(currentIndex) ? '★ Flagged' : '☆ Flag'}
           </button>
-          {!isSimulation && (
-            <button
-              onClick={() => setShowFormula(!showFormula)}
-              className="text-primary-600 hover:text-primary-700"
-            >
-              📐 Formula
-            </button>
-          )}
+          <button
+            onClick={() => setShowFormula(!showFormula)}
+            className="text-primary-600 hover:text-primary-700"
+          >
+            📐 Formula
+          </button>
         </div>
       </div>
 
-      {/* Mode tabs */}
-      <div className="flex gap-1 mb-4 bg-gray-100 dark:bg-slate-800 rounded-lg p-0.5 w-fit">
-        <button
-          onClick={() => setQuestionMode('all')}
-          className={`px-4 py-1.5 rounded-md text-xs font-medium transition ${
-            questionMode === 'all'
-              ? 'bg-white dark:bg-slate-700 shadow text-primary-700 dark:text-primary-300'
-              : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
-          }`}
+      {/* Filters */}
+      <div className="flex flex-wrap gap-2 mb-4 bg-gray-100 dark:bg-slate-800 rounded-xl p-3">
+        <span className="text-xs text-gray-500 self-center mr-2">Filters:</span>
+        <select
+          value={selectedArea || ''}
+          onChange={e => window.location.href = e.target.value ? `/recall?area=${e.target.value}` : '/recall'}
+          className="px-3 py-1.5 text-sm border dark:border-slate-600 bg-white dark:bg-slate-700 rounded-lg"
         >
-          All Questions
-        </button>
-        <button
-          onClick={() => setQuestionMode('computation')}
-          className={`px-4 py-1.5 rounded-md text-xs font-medium transition ${
-            questionMode === 'computation'
-              ? 'bg-white dark:bg-slate-700 shadow text-primary-700 dark:text-primary-300'
-              : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
-          }`}
+          <option value="">All Areas</option>
+          <option value="A">Area A</option>
+          <option value="B">Area B</option>
+          <option value="C">Area C</option>
+        </select>
+        <select
+          value={selectedYear || ''}
+          onChange={e => window.location.href = e.target.value ? `/recall?year=${e.target.value}` : '/recall'}
+          className="px-3 py-1.5 text-sm border dark:border-slate-600 bg-white dark:bg-slate-700 rounded-lg"
         >
-          Computations
-        </button>
+          <option value="">All Years</option>
+          {years.map(y => (
+            <option key={y} value={String(y)}>{y}</option>
+          ))}
+        </select>
+        <select
+          value={selectedDifficulty || ''}
+          onChange={e => window.location.href = e.target.value ? `/recall?difficulty=${e.target.value}` : '/recall'}
+          className="px-3 py-1.5 text-sm border dark:border-slate-600 bg-white dark:bg-slate-700 rounded-lg"
+        >
+          <option value="">All Difficulties</option>
+          <option value="easy">Easy</option>
+          <option value="average">Average</option>
+          <option value="hard">Hard</option>
+        </select>
+        <Link
+          href="/recall"
+          className="px-3 py-1.5 text-sm text-primary-600 hover:underline"
+        >
+          Clear All
+        </Link>
       </div>
 
       {/* Progress bar */}
@@ -289,6 +306,9 @@ function QuizContent() {
               </span>
               <span className="text-xs bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">
                 {currentQuestion.topic}
+              </span>
+              <span className="text-xs bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-2 py-1 rounded">
+                {currentQuestion.year}
               </span>
             </div>
 
@@ -364,35 +384,18 @@ function QuizContent() {
                 </p>
               </div>
 
-              {/* Given */}
-              {(currentQuestion.solution.given || currentQuestion.constants) && (
+              {currentQuestion.solution.given && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">📋 Given</h4>
                   <div className="bg-gray-50 dark:bg-slate-700/50 rounded-xl p-4 text-sm">
-                    {currentQuestion.solution.given ? (
-                      <p className="text-gray-700 dark:text-gray-200 whitespace-pre-line">
-                        {currentQuestion.solution.given}
-                      </p>
-                    ) : currentQuestion.constants ? (
-                      <div className="space-y-1">
-                        {currentQuestion.constants.map((c, i) => (
-                          <div key={i} className="flex items-baseline gap-2">
-                            <code className="font-mono text-primary-700 dark:text-primary-300">{c.symbol}</code>
-                            <span className="text-gray-500">=</span>
-                            <span className="text-gray-700 dark:text-gray-200">{c.value}</span>
-                            {c.description && (
-                              <span className="text-gray-400 text-xs">({c.description})</span>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    ) : null}
+                    <p className="text-gray-700 dark:text-gray-200 whitespace-pre-line">
+                      {currentQuestion.solution.given}
+                    </p>
                   </div>
                 </div>
               )}
 
-              {/* Formula */}
-              {!isSimulation && currentQuestion.solution.formula && (
+              {currentQuestion.solution.formula && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">📐 Formula</h4>
                   <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 flex justify-center overflow-x-auto">
@@ -401,7 +404,6 @@ function QuizContent() {
                 </div>
               )}
 
-              {/* Derive */}
               {currentQuestion.solution.derive && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">🔧 Derive</h4>
@@ -411,7 +413,6 @@ function QuizContent() {
                 </div>
               )}
 
-              {/* Steps: Substitute → Solve */}
               {currentQuestion.solution.steps && currentQuestion.solution.steps.length > 0 && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -457,14 +458,14 @@ function QuizContent() {
                         {weakPoint}
                       </span>
                     ))}
-            </div>
-          </div>
-          )}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
           {/* Formula (mobile - inline) */}
-          {!isSimulation && showFormula && (
+          {showFormula && (
             <div className="lg:hidden bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-xl p-4 mb-6 overflow-x-auto">
               <h4 className="font-medium text-blue-800 dark:text-blue-300 mb-2">📐 Formula</h4>
               {currentQuestion.solution.formula ? (
@@ -472,14 +473,6 @@ function QuizContent() {
               ) : (
                 <span className="text-blue-700 dark:text-blue-300">No specific formula — use concept understanding</span>
               )}
-              {(() => {
-                const qConstants = currentQuestion.constants || currentQuestion.solution.constants;
-                return qConstants ? (
-                  <div className="mt-2 text-sm text-blue-700 dark:text-blue-300">
-                    <strong>Constants:</strong> {qConstants.map(constant => `${constant.symbol} = ${constant.value}`).join(', ')}
-                  </div>
-                ) : null;
-              })()}
             </div>
           )}
         </div>
@@ -494,18 +487,6 @@ function QuizContent() {
               ) : (
                 <span className="text-blue-700 dark:text-blue-300 text-sm">No specific formula — use concept understanding</span>
               )}
-              {(() => {
-                const qConstants = currentQuestion.constants || currentQuestion.solution.constants;
-                return qConstants ? (
-                  <div className="mt-3 pt-3 border-t border-blue-200 dark:border-blue-800 space-y-1">
-                    {qConstants.map((c, i) => (
-                      <div key={i} className="text-xs text-blue-700 dark:text-blue-300">
-                        <strong>{c.symbol}</strong> = {c.value} {c.description && <span className="text-blue-500">({c.description})</span>}
-                      </div>
-                    ))}
-                  </div>
-                ) : null;
-              })()}
             </div>
           ) : (
             <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border dark:border-slate-700 p-4">
@@ -570,7 +551,7 @@ function QuizContent() {
   );
 }
 
-export default function QuizPage() {
+export default function RecallPage() {
   return (
     <Suspense fallback={
       <div className="max-w-3xl mx-auto px-4 py-8">
@@ -580,7 +561,7 @@ export default function QuizPage() {
         </div>
       </div>
     }>
-      <QuizContent />
+      <RecallContent />
     </Suspense>
   );
 }

@@ -44,6 +44,8 @@ export default function RootLayout({
                     <nav className="hidden md:flex items-center gap-1">
                       <a href="/" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Home</a>
                       <a href="/practice" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Mock Test</a>
+                      <a href="/paes" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">PAES</a>
+                      <a href="/trivias" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Trivias</a>
                       <a href="/conversions" className="px-3 py-1.5 rounded-md text-sm text-primary-100 hover:text-white hover:bg-primary-600 transition">Conversions</a>
                     </nav>
                     <div className="ml-2 pl-2 border-l border-primary-600">
