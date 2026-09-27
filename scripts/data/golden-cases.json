@@ -1338,5 +1338,62 @@
       },
       "expected": 2.85
     }
+  ],
+  "b-net-application-depth": [
+    {
+      "_note": "Available water FC - PWP = 0.32 - 0.14 = 0.18 of the pore space. Then 0.18 * 1.45 = 0.261 kg of water per m3 of bulk soil, * 0.60 m root zone = 0.1566 m, * 0.50 MAD = 0.0783 m. So 78.3 mm is applied, which is 43% of the full 0.1566 m the profile could hold - the management allowable depletion is the safety margin, so the applied depth is always less than the available water.",
+      "vals": {
+        "fc": 0.32,
+        "pwp": 0.14,
+        "as": 1.45,
+        "rzd": 0.6,
+        "mad": 0.5
+      },
+      "expected": 0.0783
+    }
+  ],
+  "b-gross-application-depth": [
+    {
+      "_note": "60/0.75 = 80 mm. The 20 mm difference between net and gross is the quarter of the applied water that never reaches the root zone. Entering EA as 75 instead of 0.75 would give 0.8 mm, which is the percentage mistake the spec teaches in mistakes.",
+      "vals": {
+        "dn": 60,
+        "ea": 0.75
+      },
+      "expected": 80
+    }
+  ],
+  "b-time-of-application": [
+    {
+      "_note": "2000 m2 * 0.05 m = 100 m3 of water needed; 100 / 0.025 m3/s = 4000 s, which is 66.7 minutes or 1.11 hours. Units check: m2 * m = m3, and m3 / (m3/s) = s, so the answer is already in seconds with no hidden factor. The whole set moves at 25 L/s, a realistic trickle-drip flow for 0.05 ha.",
+      "vals": {
+        "A": 2000,
+        "dg": 0.05,
+        "Q": 0.025
+      },
+      "expected": 4000
+    }
+  ],
+  "b-application-efficiency": [
+    {
+      "_note": "120 - (12 + 6 + 4) = 98, and 98/120 = 0.81667. The three losses total 22 L/s, 18.3% of what entered, so efficiency is the complement. Seepage alone is 12 of the 22, over half the loss, which is the term that moves with soil texture. Tolerance is stated because 98/120 is a repeating decimal.",
+      "vals": {
+        "qi": 120,
+        "s": 12,
+        "p": 6,
+        "e": 4
+      },
+      "expected": 0.8166666666666667,
+      "tolerance": 1e-6
+    }
+  ],
+  "b-border-irrigation-stream": [
+    {
+      "_note": "0.0025 * 2^(-0.75) = 0.0025 * 0.5946035575 = 0.0014865089 ft3/s per unit width. 2^0.75 = 1.6817928, so the reciprocal is 0.5946036. Check the sign of the exponent against the handbook: a steeper border must take a SMALLER stream, and doubling the slope here drops the stream to 0.59 of its value, so a positive exponent would be backwards. The 0.011 constant would give 0.0065378, the 4.4x distractor. Tolerance stated because the exponent is irrational.",
+      "vals": {
+        "S": 2
+      },
+      "expected": 0.0014865088937534,
+      "tolerance": 1e-9
+    }
   ]
 }

@@ -11,6 +11,7 @@ import { areaBChannelSpecs } from './drill-specs-area-b-channel';
 import { areaBRunoffSpecs } from './drill-specs-area-b-runoff';
 import { areaBSoilSpecs } from './drill-specs-area-b-soil';
 import { areaBPumpingSpecs } from './drill-specs-area-b-pumping';
+import { areaBApplicationSpecs } from './drill-specs-area-b-application';
 
 export interface DrillVar {
   symbol: string;
@@ -564,8 +565,27 @@ function buildQuestion(spec: DrillSpec, idSeq: number, rng: Rng, role: 'convert'
       // the walkthrough's conversion arithmetic will not add up.
       const conv = spec.conversions?.find(c => c.ascii === v.ascii);
       if (conv) {
-        const dispDec = conv.displayDecimals ?? Math.max(v.decimals, 2);
-        val = roundStep(roundStep(val * conv.factor, dispDec) / conv.factor, v.decimals);
+        let dispDec = conv.displayDecimals ?? Math.max(v.decimals, 2);
+        let rt = roundStep(roundStep(val * conv.factor, dispDec) / conv.factor, v.decimals);
+        // A small factor with a short display precision can round the product
+        // clean away to zero. The round trip then returns 0, the substitution
+        // becomes 0, and any formula with a negative exponent answers Infinity
+        // - which is what a percent-to-decimal slope conversion did: 0.1 x 0.01
+        // = 0.001, rounded to 2 places, is 0.00, and 0.00 / 0.01 = 0.
+        //
+        // Widening the display precision is the fix that keeps the printed
+        // arithmetic self-consistent, because the walkthrough quotes the
+        // displayed value and multiplies it back. Simply keeping the original
+        // sample would leave the walkthrough printing "0.00 x 100 = 0.00"
+        // against a substitution of 0.1, which the conversions check rejects.
+        //
+        // This only engages when the round trip returns zero, so specs whose
+        // round trip already works are untouched.
+        for (let d = dispDec + 1; d <= 10 && rt === 0 && val !== 0; d++) {
+          dispDec = d;
+          rt = roundStep(roundStep(val * conv.factor, dispDec) / conv.factor, v.decimals);
+        }
+        val = rt;
       }
     }
     vals[v.ascii] = val;
@@ -1173,6 +1193,7 @@ add(...areaBChannelSpecs);
 add(...areaBRunoffSpecs);
 add(...areaBSoilSpecs);
 add(...areaBPumpingSpecs);
+add(...areaBApplicationSpecs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS
