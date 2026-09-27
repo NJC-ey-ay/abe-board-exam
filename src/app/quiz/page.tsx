@@ -11,6 +11,12 @@ import type { Question, Area, Difficulty } from '@/data/comprehensive-questions'
 import { shuffleQuestions } from '@/lib/shuffle';
 import { MathRenderer, MathFormula } from '@/lib/math-renderer';
 
+const AREA_COUNTS: Record<string, number> = {
+  A: areaAQuestions.length + llmAreaAQuestions.length,
+  B: areaBQuestions.length + llmAreaBQuestions.length,
+  C: areaCQuestions.length + llmAreaCQuestions.length,
+};
+
 function QuizContent() {
   const searchParams = useSearchParams();
   const selectedArea = (searchParams.get('area') as Area) || null;
@@ -18,6 +24,7 @@ function QuizContent() {
   const isSimulation = searchParams.get('type') === 'simulation';
 
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showSolution, setShowSolution] = useState(false);
@@ -28,6 +35,15 @@ function QuizContent() {
   const [questionMode, setQuestionMode] = useState<'all' | 'computation'>('all');
 
   useEffect(() => {
+    setIsLoading(true);
+    setQuizQuestions([]);
+    setCurrentIndex(0);
+    setSelectedAnswer(null);
+    setShowSolution(false);
+    setSessionStats({ correct: 0, wrong: 0 });
+    setWeakPoints([]);
+    setFlaggedQuestions([]);
+
     let questionPool: Question[] = [];
 
     if (selectedArea) {
@@ -52,13 +68,28 @@ function QuizContent() {
 
     questionPool = shuffleQuestions(questionPool).slice(0, 100);
     setQuizQuestions(questionPool);
+    setIsLoading(false);
   }, [selectedArea, selectedDifficulty, questionMode]);
+
+  if (isLoading) {
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-8">
+        <div className="text-center py-12">
+          <div className="animate-spin w-8 h-8 border-4 border-primary-600 border-t-transparent rounded-full mx-auto mb-4" />
+          <p className="text-gray-500">Loading questions...</p>
+          <Link href="/practice" className="text-primary-600 hover:underline mt-4 inline-block">
+            Go back to Mock Test selection
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   if (quizQuestions.length === 0) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-8">
         <div className="text-center py-12">
-          <p className="text-gray-500">Loading questions...</p>
+          <p className="text-gray-500">No questions found for this selection.</p>
           <Link href="/practice" className="text-primary-600 hover:underline mt-4 inline-block">
             Go back to Mock Test selection
           </Link>
@@ -166,9 +197,9 @@ function QuizContent() {
             <div className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-4 text-left">
               <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">By Area:</h4>
               <div className="space-y-1 text-sm">
-                <div>Area A: {areaAQuestions.length} questions available</div>
-                <div>Area B: {areaBQuestions.length} questions available</div>
-                <div>Area C: {areaCQuestions.length} questions available</div>
+                <div>Area A: {AREA_COUNTS.A} questions available</div>
+                <div>Area B: {AREA_COUNTS.B} questions available</div>
+                <div>Area C: {AREA_COUNTS.C} questions available</div>
               </div>
             </div>
             <div className="bg-purple-50 dark:bg-purple-900/30 rounded-xl p-4 text-left">
@@ -364,7 +395,6 @@ function QuizContent() {
                 </p>
               </div>
 
-              {/* Given */}
               {(currentQuestion.solution.given || currentQuestion.constants) && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">📋 Given</h4>
@@ -391,7 +421,6 @@ function QuizContent() {
                 </div>
               )}
 
-              {/* Formula */}
               {!isSimulation && currentQuestion.solution.formula && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">📐 Formula</h4>
@@ -401,7 +430,6 @@ function QuizContent() {
                 </div>
               )}
 
-              {/* Derive */}
               {currentQuestion.solution.derive && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">🔧 Derive</h4>
@@ -411,7 +439,6 @@ function QuizContent() {
                 </div>
               )}
 
-              {/* Steps: Substitute → Solve */}
               {currentQuestion.solution.steps && currentQuestion.solution.steps.length > 0 && (
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -457,9 +484,9 @@ function QuizContent() {
                         {weakPoint}
                       </span>
                     ))}
-            </div>
-          </div>
-          )}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 

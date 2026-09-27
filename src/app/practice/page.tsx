@@ -1,14 +1,28 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { MathFormula } from '@/lib/math-renderer';
-import { areaFormulas, type FormulaCategory } from '@/data/formulas';
+import { areaFormulas, type Formula } from '@/data/formulas';
 import { tosStructure, getSubjectByCode } from '@/data/tos';
 import { keywordRules } from '@/data/formula-guide';
+import { keywordFormulas, findFormulasByKeyword } from '@/data/formula-keywords';
+import { getDrillsByArea, getDrillQuestions } from '@/data/formula-drills';
+import { DrillRunner, type DrillMetaView } from '@/components/DrillRunner';
+import type { Question } from '@/data/comprehensive-questions';
 
-type TabType = 'mock-test' | 'formulas' | 'formula-guide' | 'reference' | 'recall' | 'formula-practice';
+type TabType = 'mock-test' | 'formulas' | 'formula-guide' | 'keywords' | 'reference' | 'recall' | 'formula-practice' | 'drills';
+
+function findFormulaById(id: string): Formula | null {
+  for (const category of areaFormulas) {
+    for (const topic of category.topics) {
+      const found = topic.formulas.find(f => f.id === id);
+      if (found) return found;
+    }
+  }
+  return null;
+}
 
 function PracticeContent() {
   const searchParams = useSearchParams();
@@ -19,28 +33,58 @@ function PracticeContent() {
   const [keywordSearch, setKeywordSearch] = useState('');
   const [guideArea, setGuideArea] = useState<string>('all');
   const [selectedRule, setSelectedRule] = useState<number | null>(null);
+  const [drillArea, setDrillArea] = useState<'A' | 'B' | 'C'>('A');
+  const [activeDrill, setActiveDrill] = useState<DrillMetaView | null>(null);
+  const [drillQuestions, setDrillQuestions] = useState<Question[]>([]);
+  const [drillKey, setDrillKey] = useState(0);
+  const [drillSeed, setDrillSeed] = useState(() => Math.floor(Math.random() * 4294967296));
+
+  const drillMetas = getDrillsByArea(drillArea);
+
+  useEffect(() => {
+    if (activeDrill) {
+      setDrillQuestions(getDrillQuestions(activeDrill.formulaId, drillSeed));
+    }
+  }, [activeDrill]);
+
+  const startDrill = (meta: DrillMetaView) => {
+    setDrillSeed(Math.floor(Math.random() * 4294967296));
+    setActiveDrill(meta);
+    setDrillKey(k => k + 1);
+  };
+
+  const resetDrill = () => {
+    setActiveDrill(null);
+    setDrillQuestions([]);
+    setDrillKey(k => k + 1);
+  };
 
   const activeFormulas = areaFormulas.find(f => f.areaCode === formulaArea) || areaFormulas[0];
   const activeTosSubject = getSubjectByCode(tosArea);
+  const filteredKeywords = keywordSearch
+    ? findFormulasByKeyword(keywordSearch)
+    : keywordFormulas;
 
   const tabs: { key: TabType; label: string }[] = [
     { key: 'mock-test', label: 'Mock Test' },
     { key: 'formulas', label: 'Formula Reference' },
     { key: 'formula-guide', label: 'Formula Guide' },
+    { key: 'keywords', label: 'Keyword Reference' },
     { key: 'reference', label: 'TOS Reference' },
     { key: 'recall', label: 'Recalled Exams' },
     { key: 'formula-practice', label: 'Formula Practice' },
+    { key: 'drills', label: 'Equation Practice' },
   ];
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
       {/* Tab Bar */}
-      <div className="flex gap-1 mb-8 bg-gray-100 dark:bg-slate-800 rounded-xl p-1">
+      <div className="flex gap-1 mb-8 bg-gray-100 dark:bg-slate-800 rounded-xl p-1 overflow-x-auto">
         {tabs.map(t => (
           <button
             key={t.key}
             onClick={() => setActiveTab(t.key)}
-            className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition ${
+            className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition whitespace-nowrap ${
               activeTab === t.key
                 ? 'bg-white dark:bg-slate-700 shadow text-primary-700 dark:text-primary-300'
                 : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
@@ -72,7 +116,7 @@ function PracticeContent() {
               <h2 className="text-xl font-bold mb-2">Mock Test A</h2>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">100 Items</p>
               <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                Power, Energy &amp; Machinery
+                Power, Energy & Machinery
               </p>
               <div className="mt-4 bg-primary-600 text-white px-6 py-2 rounded-full text-sm font-semibold group-hover:bg-primary-700 transition">
                 Start Mock Test
@@ -89,7 +133,7 @@ function PracticeContent() {
               <h2 className="text-xl font-bold mb-2">Mock Test B</h2>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">100 Items</p>
               <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                Land &amp; Water Resources
+                Land & Water Resources
               </p>
               <div className="mt-4 bg-green-600 text-white px-6 py-2 rounded-full text-sm font-semibold group-hover:bg-green-700 transition">
                 Start Mock Test
@@ -106,7 +150,7 @@ function PracticeContent() {
               <h2 className="text-xl font-bold mb-2">Mock Test C</h2>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">100 Items</p>
               <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                Structures &amp; Bioprocess
+                Structures & Bioprocess
               </p>
               <div className="mt-4 bg-amber-600 text-white px-6 py-2 rounded-full text-sm font-semibold group-hover:bg-amber-700 transition">
                 Start Mock Test
@@ -170,6 +214,28 @@ function PracticeContent() {
                           {fm.notes}
                         </div>
                       )}
+                      {fm.workedExample && (
+                        <div className="mt-3 border-t border-gray-200 dark:border-slate-700 pt-3">
+                          <div className="text-xs font-semibold text-primary-700 dark:text-primary-300 mb-1">
+                            Worked Example
+                          </div>
+                          <div className="text-xs text-gray-600 dark:text-gray-300 mb-2">
+                            {fm.workedExample.scenario}
+                          </div>
+                          <ol className="space-y-1">
+                            {fm.workedExample.steps.map((s, i) => (
+                              <li key={i} className="text-xs text-gray-600 dark:text-gray-300">
+                                <span className="font-semibold">Step {i + 1}:</span>{' '}
+                                <MathFormula formula={s.formula} /> ={' '}
+                                <span className="font-mono font-semibold">{s.result}</span>
+                              </li>
+                            ))}
+                          </ol>
+                          <div className="mt-2 text-xs text-gray-700 dark:text-gray-200 font-medium">
+                            {fm.workedExample.answer}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -179,7 +245,7 @@ function PracticeContent() {
         </div>
       )}
 
-      {/* Formula Guide Tab */}
+      {/* Formula Guide Tab (Our keyword-based guide) */}
       {activeTab === 'formula-guide' && (
         <div>
           <h1 className="text-3xl font-bold mb-2">Formula Guide</h1>
@@ -316,6 +382,113 @@ function PracticeContent() {
         </div>
       )}
 
+      {/* Keyword Reference Tab (Their keyword search) */}
+      {activeTab === 'keywords' && (
+        <div>
+          <h1 className="text-3xl font-bold mb-2">Keyword Formula Reference</h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
+            Search keywords you see in a problem to find the right formula to use.
+          </p>
+
+          <div className="mb-6">
+            <input
+              type="text"
+              value={keywordSearch}
+              onChange={e => setKeywordSearch(e.target.value)}
+              placeholder="Search keywords... e.g. field capacity, runoff, moisture content, Manning"
+              className="w-full px-4 py-3 rounded-xl border dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+            />
+          </div>
+
+          {!keywordSearch && (
+            <div className="flex gap-2 mb-6 flex-wrap">
+              {['A', 'B', 'C'].map(area => (
+                <button
+                  key={area}
+                  onClick={() => {
+                    const first = keywordFormulas.find(f => f.area === area);
+                    if (first) {
+                      setKeywordSearch('');
+                      setTimeout(() => {
+                        document.getElementById(`keyword-${area}-0`)?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  }}
+                  className="px-4 py-2 rounded-lg text-sm font-semibold bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600 transition"
+                >
+                  Area {area}
+                </button>
+              ))}
+              <span className="text-sm text-gray-400 self-center ml-2">{keywordFormulas.length} entries</span>
+            </div>
+          )}
+
+          {filteredKeywords.length === 0 && (
+            <div className="text-center py-12 text-gray-500">
+              No formulas match "{keywordSearch}". Try a different keyword.
+            </div>
+          )}
+
+          <div className="space-y-3">
+            {filteredKeywords.map((kf, i) => {
+              const fm = findFormulaById(kf.formulaId);
+              return (
+                <div
+                  key={i}
+                  id={`keyword-${kf.area}-${i}`}
+                  className="bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-4"
+                >
+                  <div className="flex items-start gap-2 mb-2">
+                    <div className="flex flex-wrap gap-1.5 flex-1">
+                      {kf.keywords.map(kw => (
+                        <span
+                          key={kw}
+                          className="inline-block bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 text-xs px-2 py-0.5 rounded-full font-medium"
+                        >
+                          {kw}
+                        </span>
+                      ))}
+                    </div>
+                    <span className={`text-xs font-bold px-2 py-0.5 rounded shrink-0 ${
+                      kf.area === 'A' ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300' :
+                      kf.area === 'B' ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300' :
+                      'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300'
+                    }`}>
+                      {kf.area}
+                    </span>
+                  </div>
+                  <div className="font-semibold text-sm text-gray-800 dark:text-gray-200 mb-1">
+                    {kf.formulaName}
+                    {fm && fm.name !== kf.formulaName && (
+                      <span className="ml-1 text-xs font-normal text-gray-400">({fm.name})</span>
+                    )}
+                  </div>
+                  <div className="mb-2">
+                    {fm ? (
+                      <MathFormula formula={fm.formula} display />
+                    ) : (
+                      <div className="text-sm text-amber-600 dark:text-amber-400">
+                        Formula moved — see the Formula Reference tab for this entry.
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-medium text-gray-700 dark:text-gray-300">When to use: </span>
+                    {kf.whenToUse}
+                  </div>
+                  {kf.example && (
+                    <div className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                      <span className="font-medium text-gray-700 dark:text-gray-300">Example: </span>
+                      {kf.example}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* TOS Reference Tab */}
       {activeTab === 'reference' && (
         <div>
@@ -441,6 +614,68 @@ function PracticeContent() {
           >
             Start Formula Practice
           </Link>
+        </div>
+      )}
+
+      {/* Equation Practice Tab (Their drills) */}
+      {activeTab === 'drills' && (
+        <div>
+          {activeDrill ? (
+            <DrillRunner
+              key={drillKey}
+              questions={drillQuestions}
+              formulaName={activeDrill.name}
+              formula={activeDrill.formula}
+              onExit={resetDrill}
+            />
+          ) : (
+            <>
+              <h1 className="text-3xl font-bold mb-2">Equation Practice</h1>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Pick a formula and drill 10 multiple-choice computation problems with full step-by-step solutions.
+              </p>
+
+              <div className="flex gap-2 mb-6">
+                {(['A', 'B', 'C'] as const).map(area => (
+                  <button
+                    key={area}
+                    onClick={() => setDrillArea(area)}
+                    className={`px-5 py-2 rounded-lg text-sm font-semibold transition ${
+                      drillArea === area
+                        ? 'bg-primary-600 text-white shadow'
+                        : 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600'
+                    }`}
+                  >
+                    Area {area}
+                  </button>
+                ))}
+              </div>
+
+              <div className="text-sm text-gray-500 mb-4">
+                {drillMetas.length} formulas with drills available in Area {drillArea}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {drillMetas.map(meta => (
+                  <button
+                    key={meta.formulaId}
+                    onClick={() => startDrill(meta)}
+                    className="group bg-white dark:bg-slate-800 rounded-xl border dark:border-slate-700 p-4 text-left hover:shadow-lg hover:border-primary-400 transition"
+                  >
+                    <div className="font-semibold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-primary-700 dark:group-hover:text-primary-300">
+                      {meta.name}
+                    </div>
+                    <div className="mb-3 overflow-x-auto">
+                      <MathFormula formula={meta.formula} display />
+                    </div>
+                    <div className="inline-flex items-center gap-2 bg-primary-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full group-hover:bg-primary-700 transition">
+                      Start {meta.questionCount}-question drill
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>

@@ -10,3 +10,6 @@ paes-pdfs/
 paes-text/
 paes-questions/
 
+# Serwist
+public/sw*
+public/swe-worker*
