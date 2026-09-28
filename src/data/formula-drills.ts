@@ -23,6 +23,7 @@ import { areaCMoisture5Specs } from './drill-specs-area-c-moisture-5';
 import { areaCRiceMilling6Specs } from './drill-specs-area-c-rice-milling-6';
 import { areaCDryingFoundation7Specs } from './drill-specs-area-c-drying-foundation-7';
 import { areaCMaterialHandling8Specs } from './drill-specs-area-c-material-handling-8';
+import { areaCPower9Specs } from './drill-specs-area-c-power-9';
 
 export interface DrillVar {
   symbol: string;
@@ -1216,6 +1217,7 @@ add(...areaCMoisture5Specs);
 add(...areaCRiceMilling6Specs);
   add(...areaCDryingFoundation7Specs);
   add(...areaCMaterialHandling8Specs);
+  add(...areaCPower9Specs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS

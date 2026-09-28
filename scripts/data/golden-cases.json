@@ -4406,5 +4406,151 @@
       "expected": 540,
       "tolerance": 1e-12
     }
+  ],
+  "c-maximum-lamp-spacing": [
+    {
+      "_note": "M_s = 1.0 x 12.0 = 12.0 ft: the 2x40W direct-RLM rows at a twelve-foot working height, the factored lane itself.",
+      "vals": {
+        "Mh": 12
+      },
+      "expected": 12,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "M_s = 10.0 ft: the round mounting height, spacing equals height.",
+      "vals": {
+        "Mh": 10
+      },
+      "expected": 10,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: a low ceiling still spaces the rows 8 ft apart.",
+      "vals": {
+        "Mh": 8
+      },
+      "expected": 8,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a high industrial bay calls for 20 ft between rows.",
+      "vals": {
+        "Mh": 20
+      },
+      "expected": 20,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "M_s = 15.5 ft, mid-box.",
+      "vals": {
+        "Mh": 15.5
+      },
+      "expected": 15.5,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-energy-consumption-disk-meter": [
+    {
+      "_note": "(60 x 2.5 x 1200)/(1000 x 30) = 6.00 kWh: a hot disk turning forty times a minute for half an hour.",
+      "vals": {
+        "Drev": 1200,
+        "Tc": 30
+      },
+      "expected": 6,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(60 x 2.5 x 600)/(1000 x 15) = 6.00 kWh: half the revolutions in half the window is the SAME energy - the identity that shows the meter integrates power over time.",
+      "vals": {
+        "Drev": 600,
+        "Tc": 15
+      },
+      "expected": 6,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: a lazy disk counted over a full hour is 0.25 kWh.",
+      "vals": {
+        "Drev": 100,
+        "Tc": 60
+      },
+      "expected": 0.25,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: the same 1200 revolutions crammed into five minutes is 36 kWh - the difference a high load makes to the reading.",
+      "vals": {
+        "Drev": 1200,
+        "Tc": 5
+      },
+      "expected": 36,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(60 x 2.5 x 300)/(1000 x 30) = 1.5 kWh, mid-box.",
+      "vals": {
+        "Drev": 300,
+        "Tc": 30
+      },
+      "expected": 1.5,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-wire-size-selection": [
+    {
+      "_note": "(10.8 x 2 x 100 x 10)/(0.02 x 220) = 21600/4.4 = 4909.09... CM: a two-wire copper feeder a hundred feet out to a ten-amp 220 V load.",
+      "vals": {
+        "Nw": 2,
+        "L": 100,
+        "I": 10,
+        "V": 220
+      },
+      "expected": 4909.090909090909,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(10.8 x 3 x 150 x 15)/(0.02 x 220) = 72900/4.4 = 16568.18... CM: a three-wire run.",
+      "vals": {
+        "Nw": 3,
+        "L": 150,
+        "I": 15,
+        "V": 220
+      },
+      "expected": 16568.18181818182,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: a short two-wire run at 440 V needs only 613.63... CM, a light gauge, because the drop budget is spread over the highest voltage of the box.",
+      "vals": {
+        "Nw": 2,
+        "L": 50,
+        "I": 5,
+        "V": 440
+      },
+      "expected": 613.6363636363636,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a four-wire run three hundred feet out at 110 V is 176727.27... CM, a heavy feeder - the price of a long run at the lowest voltage.",
+      "vals": {
+        "Nw": 4,
+        "L": 300,
+        "I": 30,
+        "V": 110
+      },
+      "expected": 176727.2727272727,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(10.8 x 2 x 200 x 20)/(0.02 x 440) = 86400/8.8 = 9818.18... CM, mid-box.",
+      "vals": {
+        "Nw": 2,
+        "L": 200,
+        "I": 20,
+        "V": 440
+      },
+      "expected": 9818.181818181818,
+      "tolerance": 1e-12
+    }
   ]
 }
