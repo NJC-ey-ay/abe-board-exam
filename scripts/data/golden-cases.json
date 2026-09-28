@@ -2792,5 +2792,282 @@
       "expected": 44721.359549995796,
       "tolerance": 1e-12
     }
+  ],
+  "c-moisture-weight-balance": [
+    {
+      "_note": "1200 kg as received less 350 kg oven-dry gives 850 kg of water; the balance checks, 850 + 350 = 1200.",
+      "vals": {
+        "Wi": 1200,
+        "Wo": 350
+      },
+      "expected": 850,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1010 kg as received less 400 kg oven-dry gives 610 kg of water; 610 + 400 = 1010.",
+      "vals": {
+        "Wi": 1010,
+        "Wo": 400
+      },
+      "expected": 610,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: with no water in the grain the difference is zero and the balance degenerates to W_i = W_o.",
+      "vals": {
+        "Wi": 500,
+        "Wo": 500
+      },
+      "expected": 0,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-wet-dry-basis-relationship": [
+    {
+      "_note": "14 percent wet basis means the dry matter is 86 percent of the mass, so water per unit dry matter is 14/86; 14 x 100/86 = 16.279069 percent on a dry basis.",
+      "vals": {
+        "MC": 14
+      },
+      "expected": 16.27906976744186,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "22 percent wet: 2200/78 = 28.205128 percent dry, which is 28 percent larger than the wet-basis figure - the gap widens as the grain dries.",
+      "vals": {
+        "MC": 22
+      },
+      "expected": 28.205128205128204,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: at zero moisture the two bases coincide, since 0 x 100/100 = 0. It is the only point at which they are equal.",
+      "vals": {
+        "MC": 0
+      },
+      "expected": 0,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-weight-moisture-removed": [
+    {
+      "_note": "2000 kg at 0.24 to 0.08: the dry matter is 2000 x 0.92 = 1840 kg, which at 8 percent is 1840/0.92 = 2000 kg of final grain, so nothing was removed. Degenerate case, and the printed form agrees: 2000 x 0.16/0.92 = 0.",
+      "vals": {
+        "Wi": 2000,
+        "MCi": 0.24,
+        "MCf": 0.08
+      },
+      "expected": 347.82608695652175,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "5000 kg from 0.35 to 0.10: dry matter 3250 kg, final grain 3250/0.90 = 3611.111 kg, so 1388.889 kg of water left. Printed form: 5000 x 0.25/0.90.",
+      "vals": {
+        "Wi": 5000,
+        "MCi": 0.35,
+        "MCf": 0.1
+      },
+      "expected": 1388.888888888889,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-final-weight-dried": [
+    {
+      "_note": "5000 kg from 0.35 to 0.10 gives 3611.111 kg dried, computed from the dry matter side: 5000 x 0.65/0.90. The same figure the moisture-removed case reaches from the other direction.",
+      "vals": {
+        "Wi": 5000,
+        "MCi": 0.35,
+        "MCf": 0.1
+      },
+      "expected": 3611.111111111111,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1000 kg from 0.20 to 0.05: dry matter 800 kg, and 800/0.95 = 842.105 kg dried. 842.105 + 157.895 = 1000, so the mass balance closes.",
+      "vals": {
+        "Wi": 1000,
+        "MCi": 0.2,
+        "MCf": 0.05
+      },
+      "expected": 842.1052631578948,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-moisture-reduction-rate": [
+    {
+      "_note": "10000 kg down to 2000 kg over 8 h removes 8000 kg, so 1000 kg/h.",
+      "vals": {
+        "Wi": 10000,
+        "Wf": 2000,
+        "Td": 8
+      },
+      "expected": 1000,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "6000 kg down to 1500 kg over 4.5 h removes 4500 kg, so 1000 kg/h again - a check that the answer is a rate rather than a batch total.",
+      "vals": {
+        "Wi": 6000,
+        "Wf": 1500,
+        "Td": 4.5
+      },
+      "expected": 1000,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: no water removed means a zero rate however long the run takes.",
+      "vals": {
+        "Wi": 8000,
+        "Wf": 8000,
+        "Td": 5
+      },
+      "expected": 0,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-percent-moisture-reduction": [
+    {
+      "_note": "20 percent to 12 percent over 5 h is 8/5 = 1.6 percent per hour. The standard percent reduction would be 100 x 8/20 = 40 percent with no time term, which is the naming clash the SOURCE NOTE records.",
+      "vals": {
+        "MCi": 20,
+        "MCf": 12,
+        "Td": 5
+      },
+      "expected": 1.6,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "26 percent to 10 percent over 8 h is 16/8 = 2 percent per hour.",
+      "vals": {
+        "MCi": 26,
+        "MCf": 10,
+        "Td": 8
+      },
+      "expected": 2,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-paddy-porosity-medium": [
+    {
+      "_note": "69.05 - 0.885 x 14 = 69.05 - 12.39 = 56.66 percent.",
+      "vals": {
+        "MC": 14
+      },
+      "expected": 56.66,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "69.05 - 0.885 x 25 = 69.05 - 22.125 = 46.925 percent. The long-grain line at the same moisture gives 53.675, and the 6.75 point gap is the class difference.",
+      "vals": {
+        "MC": 25
+      },
+      "expected": 46.925,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: at zero moisture the slope term vanishes and the porosity is the intercept, 69.05 percent.",
+      "vals": {
+        "MC": 0
+      },
+      "expected": 69.05,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-paddy-porosity-long": [
+    {
+      "_note": "65.55 - 0.475 x 14 = 65.55 - 6.65 = 58.90 percent.",
+      "vals": {
+        "MC": 14
+      },
+      "expected": 58.9,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "65.55 - 0.475 x 25 = 65.55 - 11.875 = 53.675 percent, the same figure cross-checked against the medium-grain line above.",
+      "vals": {
+        "MC": 25
+      },
+      "expected": 53.675,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: the long-grain intercept is 65.55, BELOW the medium-grain intercept of 69.05 - the fact the medium-grain coefficient-swap distractor contradicts at the dry end.",
+      "vals": {
+        "MC": 0
+      },
+      "expected": 65.55,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-percent-increase-porosity": [
+    {
+      "_note": "Porosity 50 to 60 is 10/60 x 100 = 16.666667 percent. The printed denominator is the final porosity; dividing by the initial would give 20 percent.",
+      "vals": {
+        "F": 60,
+        "I": 50
+      },
+      "expected": 16.666666666666664,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Porosity 52 to 55 is 3/55 x 100 = 5.454545 percent, against 5.769231 for the initial-value convention.",
+      "vals": {
+        "F": 55,
+        "I": 52
+      },
+      "expected": 5.454545454545454,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-minimum-angle-friction": [
+    {
+      "_note": "atan(0.5) = 0.4636476 rad = 26.565051 degrees, the 3-4-5 triangle angle.",
+      "vals": {
+        "x": 0.5
+      },
+      "expected": 26.56505117707799,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "atan(0.25) = 0.2449787 rad = 14.036243 degrees. The reciprocal atan(4) is 75.963757 degrees and the two sum to exactly 90, which is the identity behind that distractor band.",
+      "vals": {
+        "x": 0.25
+      },
+      "expected": 14.036243467926477,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: at x = 1 the answer is 45 degrees and the reciprocal distractor atan(1/1) is also 45, so the two coincide. The box stops at 0.7.",
+      "vals": {
+        "x": 1
+      },
+      "expected": 45,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-specific-heat-paddy": [
+    {
+      "_note": "0.22008 + 0.01301 x 14 = 0.22008 + 0.18214 = 0.40222 BTU/lb F. The slope implies 1.301 for the water term against 1.0 tabulated.",
+      "vals": {
+        "MC": 14
+      },
+      "expected": 0.40222,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "0.22008 + 0.01301 x 26 = 0.22008 + 0.33826 = 0.55834 BTU/lb F, just over double the dry-matter term.",
+      "vals": {
+        "MC": 26
+      },
+      "expected": 0.5583400000000001,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: zero moisture leaves the intercept, 0.22008 BTU/lb F, the specific heat of the dry matter.",
+      "vals": {
+        "MC": 0
+      },
+      "expected": 0.22008,
+      "tolerance": 1e-12
+    }
   ]
 }
