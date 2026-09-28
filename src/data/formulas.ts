@@ -2628,6 +2628,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'W_{MR}', meaning: 'Weight of milled rice' },
               { symbol: 'T_o', meaning: 'Operating time' },
             ],
+            notes: 'SOURCE NOTE: the two printed branches are not dimensionally alike. The brown-rice branch 0.2 W_P / T_o is a rate, a weight over a time, and the 0.2 is the hulling coefficient - the share of a paddy batch that survives as brown rice. The milled-rice branch W_P x W_MR / T_o multiplies two weights, so it comes out in weight-squared per time and cannot be a capacity at all; the coherent reading is W_MR / T_o, with W_P a redundant factor or a transcription slip. Transcribed as printed. Only the brown-rice branch is driven, because it is the one whose units work.',
           },
           {
             id: 'c-brown-rice-per-hour',
@@ -2641,6 +2642,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'C_W', meaning: 'Wholeness coefficient' },
               { symbol: 'P', meaning: 'Purity' },
             ],
+            notes: 'SOURCE NOTE: the purity relation in this handbook returns P as a PERCENTAGE, 0 to 100, but the printed expression here multiplies by P directly. Taken at face value a purity of 97 would inflate the output ninety-seven fold, so P must be entered as a FRACTION in this formula even though the other entry expresses it as a percentage. Transcribed as printed; the fraction convention is the one that makes the dimension work.',
           },
           {
             id: 'c-purity',

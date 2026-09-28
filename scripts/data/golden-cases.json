@@ -3069,5 +3069,370 @@
       "expected": 0.22008,
       "tolerance": 1e-12
     }
+  ],
+  "c-hulling-coefficient": [
+    {
+      "_note": "1700 kg of brown rice off 2000 kg of paddy is 0.85, the textbook huller figure. The identical weight pair appears at 85.0 in the brown-rice-recovery goldens, because the two specs are one measurement.",
+      "vals": {
+        "Wbr": 1700,
+        "Wp": 2000
+      },
+      "expected": 0.85,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The box corner: 1632/2040 = 0.8 exactly, the lightest allowed brown rice against the heaviest paddy.",
+      "vals": {
+        "Wbr": 1632,
+        "Wp": 2040
+      },
+      "expected": 0.8,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: 1800/2000 = 0.9, the wrong side of the working band.",
+      "vals": {
+        "Wbr": 1800,
+        "Wp": 2000
+      },
+      "expected": 0.9,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: with no husk the coefficient is 1.0, and the inverted distractor W_P/W_BR is also 1.0, so the two options print the same string.",
+      "vals": {
+        "Wbr": 2000,
+        "Wp": 2000
+      },
+      "expected": 1,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-wholeness-coefficient": [
+    {
+      "_note": "779 kg of whole brown rice out of 820 kg is 0.95, the wholeness a well-set huller holds.",
+      "vals": {
+        "Wbr": 820,
+        "Wwbr": 779
+      },
+      "expected": 0.95,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "760/900 = 0.844444, the bottom of the box, where the broken share is 15.6 percent.",
+      "vals": {
+        "Wbr": 900,
+        "Wwbr": 760
+      },
+      "expected": 0.8444444444444444,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "800/820 = 0.975610, close to perfect wholeness.",
+      "vals": {
+        "Wbr": 820,
+        "Wwbr": 800
+      },
+      "expected": 0.975609756097561,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: W_WBR = W_BR means no breakage, wholeness 1.0, and the inverted distractor coincides with the answer. The box keeps the ranges disjoint so no sample lands here.",
+      "vals": {
+        "Wbr": 820,
+        "Wwbr": 820
+      },
+      "expected": 1,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-hulling-efficiency": [
+    {
+      "_note": "1700 kg of WHOLE brown rice off 2000 kg of paddy is 0.85, the product of the two previous coefficients at once.",
+      "vals": {
+        "Wwbr": 1700,
+        "Wp": 2000
+      },
+      "expected": 0.85,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner, 1632/2040 = 0.8, the same weight pair as the hulling spec corner; E_H equals C_H here because the brown rice happens to be whole.",
+      "vals": {
+        "Wwbr": 1632,
+        "Wp": 2040
+      },
+      "expected": 0.8,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: a huller that loses nothing gives efficiency 1.0, where the inverted option also prints 1.",
+      "vals": {
+        "Wwbr": 2000,
+        "Wp": 2000
+      },
+      "expected": 1,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-throughput-capacity": [
+    {
+      "_note": "0.2 x 5000 kg over 10 h is 1000/10 = 100 kg/h.",
+      "vals": {
+        "Wp": 5000,
+        "To": 10
+      },
+      "expected": 100,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "0.2 x 1000 kg over 2 h is also 100 kg/h - the rate does not depend on the batch once the time scales with it.",
+      "vals": {
+        "Wp": 1000,
+        "To": 2
+      },
+      "expected": 100,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The box ceiling: 0.2 x 10000 kg over 2 h is 1000 kg/h, the widest span in the batch.",
+      "vals": {
+        "Wp": 10000,
+        "To": 2
+      },
+      "expected": 1000,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "0.2 x 10000 kg over 24 h is 83.333... kg/h, the slow-shift average.",
+      "vals": {
+        "Wp": 10000,
+        "To": 24
+      },
+      "expected": 83.33333333333333,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-brown-rice-per-hour": [
+    {
+      "_note": "1000 x 0.75 x 0.96 = 720 kg/h, which is 72 percent of the batch - three haircuts, not one.",
+      "vals": {
+        "Wp": 1000,
+        "Eh": 0.75,
+        "P": 0.96
+      },
+      "expected": 720,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "5000 x 0.85 x 0.99 = 4207.5 kg/h, the box corner: even the best factors only yield four fifths of the batch.",
+      "vals": {
+        "Wp": 5000,
+        "Eh": 0.85,
+        "P": 0.99
+      },
+      "expected": 4207.5,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1000 x 0.65 x 0.93 = 604.5 kg/h, the worst corner. The factors multiply rather than average, which is why the span between corners is so wide.",
+      "vals": {
+        "Wp": 1000,
+        "Eh": 0.65,
+        "P": 0.93
+      },
+      "expected": 604.5,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-purity": [
+    {
+      "_note": "[1 - 20/2000] x 100 = [1 - 0.01] x 100 = 99 percent. Twenty grams of removal on two kilos.",
+      "vals": {
+        "Wc": 2000,
+        "Wu": 2020
+      },
+      "expected": 99,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "[1 - 270/1800] x 100 = 85 percent. The removal is measured on the CLEANED weight, so 270 g out of 2070 (13 percent of the input) reads as 15 percent.",
+      "vals": {
+        "Wc": 1800,
+        "Wu": 2070
+      },
+      "expected": 85,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "[1 - 130/1900] x 100 = 93.157894 percent, a mid-box anchor.",
+      "vals": {
+        "Wc": 1900,
+        "Wu": 2030
+      },
+      "expected": 93.15789473684211,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: W_u = W_c means nothing was removed, purity 100, and the removal distractor drops to zero.",
+      "vals": {
+        "Wc": 2000,
+        "Wu": 2000
+      },
+      "expected": 100,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-percent-brown-rice-recovery": [
+    {
+      "_note": "(1700/2000) x 100 = 85.0 - the same ratio and the same weight pair as the first hulling-coefficient golden, pinning the two-unit identity between the specs.",
+      "vals": {
+        "Wbr": 1700,
+        "Wp": 2000
+      },
+      "expected": 85,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(1632/2040) x 100 = 80.0, the bottom corner, the same pair as the hulling spec bottom corner.",
+      "vals": {
+        "Wbr": 1632,
+        "Wp": 2040
+      },
+      "expected": 80,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(1800/2000) x 100 = 90.0, the top corner.",
+      "vals": {
+        "Wbr": 1800,
+        "Wp": 2000
+      },
+      "expected": 90,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: no husk gives recovery 100, where the inverted distractor also prints 100.0.",
+      "vals": {
+        "Wbr": 2000,
+        "Wp": 2000
+      },
+      "expected": 100,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-percent-broken-milled-rice": [
+    {
+      "_note": "250/1000 x 100 = 25 percent, mid-box.",
+      "vals": {
+        "Wbk": 250,
+        "Wmr": 1000
+      },
+      "expected": 25,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "200/1800 x 100 = 11.111... percent, the bottom corner and the best the box posts.",
+      "vals": {
+        "Wbk": 200,
+        "Wmr": 1800
+      },
+      "expected": 11.11111111111111,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "350/1000 x 100 = 35 percent, the top corner, a machine wrecking its output.",
+      "vals": {
+        "Wbk": 350,
+        "Wmr": 1000
+      },
+      "expected": 35,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "200/1400 x 100 = 14.285... percent, the clean 1/7 line.",
+      "vals": {
+        "Wbk": 200,
+        "Wmr": 1400
+      },
+      "expected": 14.285714285714285,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Reference point: half the batch broken gives 50 percent, where the intact-share distractor also returns exactly 50.",
+      "vals": {
+        "Wbk": 500,
+        "Wmr": 1000
+      },
+      "expected": 50,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-percent-brewers-rice": [
+    {
+      "_note": "80/1000 x 100 = 8 percent, a typical routed product.",
+      "vals": {
+        "Wbr": 80,
+        "Wmr": 1000
+      },
+      "expected": 8,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "50/2000 x 100 = 2.5 percent, the box floor that anchors the distractor band.",
+      "vals": {
+        "Wbr": 50,
+        "Wmr": 2000
+      },
+      "expected": 2.5,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "200/1000 x 100 = 20 percent, the top corner.",
+      "vals": {
+        "Wbr": 200,
+        "Wmr": 1000
+      },
+      "expected": 20,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "150/1200 x 100 = 12.5 percent, the clean 1/8 line.",
+      "vals": {
+        "Wbr": 150,
+        "Wmr": 1200
+      },
+      "expected": 12.5,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-percent-head-rice-recovery": [
+    {
+      "_note": "800/1000 x 100 = 80 percent, the industry reference a buyer grades on.",
+      "vals": {
+        "Whr": 800,
+        "Wmr": 1000
+      },
+      "expected": 80,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "792/1100 x 100 = 72 percent, the bottom corner: the head rice range starts at 792 to hold the ratio above 0.72.",
+      "vals": {
+        "Whr": 792,
+        "Wmr": 1100
+      },
+      "expected": 72,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "850/1000 x 100 = 85 percent, the top corner of the tightest box in the batch.",
+      "vals": {
+        "Whr": 850,
+        "Wmr": 1000
+      },
+      "expected": 85,
+      "tolerance": 1e-12
+    }
   ]
 }
