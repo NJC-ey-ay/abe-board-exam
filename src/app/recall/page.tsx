@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { recalledAreaAQuestions, recalledAreaBQuestions, recalledAreaCQuestions, recalledQuestionsByYear } from '@/data/recalled-questions';
 import type { Question, Area, Difficulty } from '@/data/comprehensive-questions';
@@ -10,13 +10,22 @@ import { MathRenderer, MathFormula } from '@/lib/math-renderer';
 
 const ALL_RECALLED = [...recalledAreaAQuestions, ...recalledAreaBQuestions, ...recalledAreaCQuestions];
 
-const recalledQuestionsByYearMap: Record<number, Question[]> = recalledQuestionsByYear;
-
 function RecallContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const selectedArea = (searchParams.get('area') as Area) || null;
   const selectedYear = searchParams.get('year') || null;
   const selectedDifficulty = (searchParams.get('difficulty') as Difficulty) || null;
+
+  const updateFilter = (key: 'area' | 'year' | 'difficulty', value: string) => {
+    const params = new URLSearchParams();
+    if (selectedArea) params.set('area', selectedArea);
+    if (selectedYear) params.set('year', selectedYear);
+    if (selectedDifficulty) params.set('difficulty', selectedDifficulty);
+    if (value) params.set(key, value);
+    else params.delete(key);
+    router.replace(params.toString() ? `/recall?${params.toString()}` : '/recall', { scroll: false });
+  };
 
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,19 +35,18 @@ function RecallContent() {
   const [weakPoints, setWeakPoints] = useState<string[]>([]);
   const [flaggedQuestions, setFlaggedQuestions] = useState<number[]>([]);
   const [showFormula, setShowFormula] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    let questionPool: Question[] = [];
+    let questionPool = [...ALL_RECALLED];
 
     if (selectedArea) {
-      if (selectedArea === 'A') questionPool = [...recalledAreaAQuestions];
-      else if (selectedArea === 'B') questionPool = [...recalledAreaBQuestions];
-      else if (selectedArea === 'C') questionPool = [...recalledAreaCQuestions];
-    } else if (selectedYear) {
+      questionPool = questionPool.filter(q => q.area === selectedArea);
+    }
+
+    if (selectedYear) {
       const year = parseInt(selectedYear);
-      questionPool = recalledQuestionsByYearMap[year] || [];
-    } else {
-      questionPool = [...ALL_RECALLED];
+      questionPool = questionPool.filter(q => q.year === year);
     }
 
     if (selectedDifficulty) {
@@ -53,16 +61,24 @@ function RecallContent() {
     setSessionStats({ correct: 0, wrong: 0 });
     setWeakPoints([]);
     setFlaggedQuestions([]);
+    setLoaded(true);
   }, [selectedArea, selectedYear, selectedDifficulty]);
 
   if (quizQuestions.length === 0) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-8">
         <div className="text-center py-12">
-          <p className="text-gray-500">Loading questions...</p>
-          <Link href="/practice" className="text-primary-600 hover:underline mt-4 inline-block">
-            Back to Practice
-          </Link>
+          <p className="text-gray-500">{loaded ? 'No questions match these filters.' : 'Loading questions...'}</p>
+          <div className="flex flex-col items-center gap-2 mt-4">
+            {loaded && (
+              <Link href="/recall" className="text-primary-600 hover:underline inline-block">
+                Clear All Filters
+              </Link>
+            )}
+            <Link href="/practice" className="text-primary-600 hover:underline inline-block">
+              Back to Practice
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -127,7 +143,7 @@ function RecallContent() {
             {percentage >= 70 ? '🎉 Congrats!' : percentage >= 50 ? '👍 Good Effort!' : '📚 Keep Studying!'}
           </div>
           <h1 className="text-2xl font-bold mb-2">Recalled Exams Complete!</h1>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">100-Item Session</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">{quizQuestions.length}-Item Session</p>
 
           <div className="text-6xl font-bold text-primary-600 dark:text-primary-400 mb-8">{percentage}%</div>
 
@@ -200,7 +216,7 @@ function RecallContent() {
     );
   }
 
-  const years = [2021, 2022, 2023, 2024, 2025];
+  const years = Object.keys(recalledQuestionsByYear).map(Number).sort((a, b) => b - a);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-6">
@@ -247,7 +263,7 @@ function RecallContent() {
         <span className="text-xs text-gray-500 self-center mr-2">Filters:</span>
         <select
           value={selectedArea || ''}
-          onChange={e => window.location.href = e.target.value ? `/recall?area=${e.target.value}` : '/recall'}
+          onChange={e => updateFilter('area', e.target.value)}
           className="px-3 py-1.5 text-sm border dark:border-slate-600 bg-white dark:bg-slate-700 rounded-lg"
         >
           <option value="">All Areas</option>
@@ -257,7 +273,7 @@ function RecallContent() {
         </select>
         <select
           value={selectedYear || ''}
-          onChange={e => window.location.href = e.target.value ? `/recall?year=${e.target.value}` : '/recall'}
+          onChange={e => updateFilter('year', e.target.value)}
           className="px-3 py-1.5 text-sm border dark:border-slate-600 bg-white dark:bg-slate-700 rounded-lg"
         >
           <option value="">All Years</option>
@@ -267,7 +283,7 @@ function RecallContent() {
         </select>
         <select
           value={selectedDifficulty || ''}
-          onChange={e => window.location.href = e.target.value ? `/recall?difficulty=${e.target.value}` : '/recall'}
+          onChange={e => updateFilter('difficulty', e.target.value)}
           className="px-3 py-1.5 text-sm border dark:border-slate-600 bg-white dark:bg-slate-700 rounded-lg"
         >
           <option value="">All Difficulties</option>
