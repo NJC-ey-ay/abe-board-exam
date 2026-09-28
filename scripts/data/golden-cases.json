@@ -3905,5 +3905,506 @@
       "expected": 0.5,
       "tolerance": 1e-12
     }
+  ],
+  "c-bucket-velocity": [
+    {
+      "_note": "pi x 4 ft x 38.3182... rpm = 481.5... ft/min: the SAME elevator the speed box below sized at R = 2 ft, now D = 2R = 4, with the head speed carried unrounded.",
+      "vals": {
+        "D": 4,
+        "N": 38.31811647249901
+      },
+      "expected": 481.51965283760364,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "pi x 3 x 50 = 150 pi = 471.24 ft/min: a modest head at a relaxed speed.",
+      "vals": {
+        "D": 3,
+        "N": 50
+      },
+      "expected": 471.23889803846896,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest head at the slowest speed gives 60 pi = 188.50 ft/min.",
+      "vals": {
+        "D": 2,
+        "N": 30
+      },
+      "expected": 188.49555921538757,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a big head wound up to 90 rpm is 720 pi = 2261.95 ft/min.",
+      "vals": {
+        "D": 8,
+        "N": 90
+      },
+      "expected": 2261.946710584651,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "pi x 5 x 60 = 300 pi = 942.48 ft/min, mid-box.",
+      "vals": {
+        "D": 5,
+        "N": 60
+      },
+      "expected": 942.4777960769379,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-bucket-elevator-speed": [
+    {
+      "_note": "54.19/sqrt(2) = 38.3182... rpm: the chain anchor that the velocity box above spends at D = 4.",
+      "vals": {
+        "R": 2
+      },
+      "expected": 38.31811647249901,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "R = 1.00 ft is the unit radius: the speed is exactly 54.19 rpm.",
+      "vals": {
+        "R": 1
+      },
+      "expected": 54.19,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "R = 4.00 ft: sqrt(4) = 2 exactly, so the head slows to 27.095 rpm - half of the unit-radius figure, not a quarter, the square-root signature.",
+      "vals": {
+        "R": 4
+      },
+      "expected": 27.095,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "R = 2.25 = (1.5)^2: sqrt is exactly 1.5, so the speed is 36.126... rpm.",
+      "vals": {
+        "R": 2.25
+      },
+      "expected": 36.126666666666665,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "R = 3.00 ft: 54.19/1.7320... = 31.287... rpm, mid-box.",
+      "vals": {
+        "R": 3
+      },
+      "expected": 31.286611087385822,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-bucket-elevator-power": [
+    {
+      "_note": "2000 kg/min x 25 m x 1.2 = 60000 kg-m/min: the biggest elevator of the box lifting on the assisted (upside-loaded) factor.",
+      "vals": {
+        "C": 2000,
+        "H": 25,
+        "F": 1.2
+      },
+      "expected": 60000,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1000 x 10 x 1.5 = 15000 kg-m/min: the downside-loaded factor paying the full round trip.",
+      "vals": {
+        "C": 1000,
+        "H": 10,
+        "F": 1.5
+      },
+      "expected": 15000,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest capacity over the shortest lift needs only 600 kg-m/min.",
+      "vals": {
+        "C": 100,
+        "H": 5,
+        "F": 1.2
+      },
+      "expected": 600,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a full-capacity elevator at full height on the penalty factor is 120000 kg-m/min.",
+      "vals": {
+        "C": 2000,
+        "H": 40,
+        "F": 1.5
+      },
+      "expected": 120000,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "500 x 20 x 1.3 = 13000 kg-m/min, mid-box.",
+      "vals": {
+        "C": 500,
+        "H": 20,
+        "F": 1.3
+      },
+      "expected": 13000,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-screw-conveyor-capacity": [
+    {
+      "_note": "(pi*1/4) x 1 ft pitch x 60 rpm = 15 pi = 47.12 ft3/min: a foot-wide auger turning once a second.",
+      "vals": {
+        "D": 1,
+        "P": 1,
+        "N": 60
+      },
+      "expected": 47.12388980384689,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "A fast-shoving small auger: (pi*0.64/4) x 0.75 x 120 = 14.4 pi = 45.24 ft3/min.",
+      "vals": {
+        "D": 0.8,
+        "P": 0.75,
+        "N": 120
+      },
+      "expected": 45.23893421169303,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the narrowest screw at its gentlest pitch and speed moves 0.75 pi = 2.36 ft3/min.",
+      "vals": {
+        "D": 0.5,
+        "P": 0.4,
+        "N": 30
+      },
+      "expected": 2.356194490192345,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: the widest screw at a full pitch and top speed is 43.2 pi = 135.72 ft3/min.",
+      "vals": {
+        "D": 1.2,
+        "P": 1,
+        "N": 120
+      },
+      "expected": 135.71680263507906,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(pi*0.36/4) x 0.5 x 60 = 2.7 pi = 8.48 ft3/min, mid-box.",
+      "vals": {
+        "D": 0.6,
+        "P": 0.5,
+        "N": 60
+      },
+      "expected": 8.482300164692441,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-volume-of-pile": [
+    {
+      "_note": "3000 bags / 15 bag/m3 = 200 m3: three thousand RICE sacks (the densest figure of the handbook).",
+      "vals": {
+        "Cwh": 3000,
+        "Rho": 15
+      },
+      "expected": 200,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "3000 bags / 10 bag/m3 = 300 m3: the SAME three thousand PALAY sacks bulk half again as large - the stockpile pair.",
+      "vals": {
+        "Cwh": 3000,
+        "Rho": 10
+      },
+      "expected": 300,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: 500 tight rice sacks are 33.333... m3.",
+      "vals": {
+        "Cwh": 500,
+        "Rho": 15
+      },
+      "expected": 33.333333333333336,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a full 5000-bag palay pile is exactly 500 m3.",
+      "vals": {
+        "Cwh": 5000,
+        "Rho": 10
+      },
+      "expected": 500,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "2000 bags / 12 bag/m3 (corn) = 166.666... m3, mid-box.",
+      "vals": {
+        "Cwh": 2000,
+        "Rho": 12
+      },
+      "expected": 166.66666666666666,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-paddy-separator-compartments": [
+    {
+      "_note": "2000 kg/h / 40 kg/(h compartment) = 50 compartments on long grain.",
+      "vals": {
+        "Cb": 2000
+      },
+      "expected": 50,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1600 kg/h / 40 = 40 compartments: the exact figure the narrative of the box quotes for a long-grain stream.",
+      "vals": {
+        "Cb": 1600
+      },
+      "expected": 40,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest stream needs exactly 20 compartments.",
+      "vals": {
+        "Cb": 800
+      },
+      "expected": 20,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: 2400 kg/h is 60 compartments.",
+      "vals": {
+        "Cb": 2400
+      },
+      "expected": 60,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1000 kg/h / 40 = 25 compartments, mid-box.",
+      "vals": {
+        "Cb": 1000
+      },
+      "expected": 25,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-bin-level-full-volume": [
+    {
+      "_note": "(pi*36/4) x 3 = 27 pi = 84.823... m3: the bin-triad silo filled flat to the eave.",
+      "vals": {
+        "D": 6,
+        "H": 3
+      },
+      "expected": 84.82300164692441,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(pi*16/4) x 5 = 20 pi = 62.832... m3: a tall slender bin.",
+      "vals": {
+        "D": 4,
+        "H": 5
+      },
+      "expected": 62.83185307179586,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest bin holds 4.5 pi = 14.137... m3.",
+      "vals": {
+        "D": 3,
+        "H": 2
+      },
+      "expected": 14.137166941154069,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a 12 m x 8 m silo holds 288 pi = 904.779... m3.",
+      "vals": {
+        "D": 12,
+        "H": 8
+      },
+      "expected": 904.7786842338604,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "(pi*64/4) x 4 = 64 pi = 201.062... m3, mid-box.",
+      "vals": {
+        "D": 8,
+        "H": 4
+      },
+      "expected": 201.06192982974676,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-bin-peak-storage-capacity": [
+    {
+      "_note": "(pi*36/4) x (3 + (3*tan45)/3) = 9 pi x 4 = 113.097... m3: the bin-triad silo heaped; at 45 degrees the cone adds exactly one unit of height.",
+      "vals": {
+        "D": 6,
+        "H": 3,
+        "Phi": 45
+      },
+      "expected": 113.09733552923255,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "A shallow 25-degree heap on a wide flat bin: cone term = 2*tan25/3 = 0.311... m of extra height.",
+      "vals": {
+        "D": 12,
+        "H": 2,
+        "Phi": 25
+      },
+      "expected": 331.6709784068782,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "At 45 degrees the cone term is D/6 = 1.333... m of extra height on the slender bin.",
+      "vals": {
+        "D": 8,
+        "H": 2,
+        "Phi": 45
+      },
+      "expected": 167.5516081914556,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The tall bin with the gentlest heap: the cone correction is only 0.077... m, so level-full and peak-storage nearly agree - the source of the sliding-ratio warning in the spec header.",
+      "vals": {
+        "D": 3,
+        "H": 8,
+        "Phi": 25
+      },
+      "expected": 58.19673506693523,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-hopper-bottom-bin": [
+    {
+      "_note": "(pi*36/4) x (3 + 1 + 1) = 9 pi x 5 = 141.372... m3: the bin-triad silo on a self-emptying hopper, the third and largest of the three readings.",
+      "vals": {
+        "D": 6,
+        "H": 3,
+        "Phi": 45,
+        "Delta": 45
+      },
+      "expected": 141.3716694115407,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Upper cone at 30 degrees, hopper at 45: the two corrections add 0.770 + 1.333 = 2.103... m of combined cone height.",
+      "vals": {
+        "D": 8,
+        "H": 4,
+        "Phi": 30,
+        "Delta": 45
+      },
+      "expected": 306.77695954332563,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: a small bin with a gentle hopper still gains 0.538... m of cone height.",
+      "vals": {
+        "D": 3,
+        "H": 2,
+        "Phi": 45,
+        "Delta": 30
+      },
+      "expected": 19.711982961206083,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a steep 60-degree hopper adds 2*tan60/3 = 1.155... m on its own against the 2.0 m from the fill cone.",
+      "vals": {
+        "D": 12,
+        "H": 8,
+        "Phi": 45,
+        "Delta": 60
+      },
+      "expected": 1522.7540179669165,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-vertical-abrasive-whitener-brakes": [
+    {
+      "_note": "A 1200 mm cone wants 12 brakes.",
+      "vals": {
+        "D": 1200
+      },
+      "expected": 12,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "An 800 mm cone wants 8 brakes.",
+      "vals": {
+        "D": 800
+      },
+      "expected": 8,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest cone still takes 5 brakes.",
+      "vals": {
+        "D": 500
+      },
+      "expected": 5,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a 1500 mm cone takes 15 brakes.",
+      "vals": {
+        "D": 1500
+      },
+      "expected": 15,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The round figure: 1000 mm, exactly 10 brakes.",
+      "vals": {
+        "D": 1000
+      },
+      "expected": 10,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-low-speed-rubber-roller": [
+    {
+      "_note": "640 x 0.75 = 480 rpm: the top of the drive range, the differential rolled to three-quarters.",
+      "vals": {
+        "Nf": 640
+      },
+      "expected": 480,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: 480 x 0.75 = 360 rpm, the slowest driven roller of the box.",
+      "vals": {
+        "Nf": 480
+      },
+      "expected": 360,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: a fast roller at 960 rpm drives the slower one at 720 rpm.",
+      "vals": {
+        "Nf": 960
+      },
+      "expected": 720,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "800 x 0.75 = 600 rpm, mid-box.",
+      "vals": {
+        "Nf": 800
+      },
+      "expected": 600,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "720 x 0.75 = 540 rpm.",
+      "vals": {
+        "Nf": 720
+      },
+      "expected": 540,
+      "tolerance": 1e-12
+    }
   ]
 }

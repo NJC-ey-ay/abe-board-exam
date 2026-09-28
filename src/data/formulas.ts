@@ -2834,6 +2834,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'N', meaning: 'Bucket elevator speed' },
               { symbol: 'R', meaning: 'Radius of wheel plus half the projection of the bucket, ft' },
             ],
+            notes: 'SOURCE NOTE: transcribed as printed. The 54.19 is the empirical constant of the design rule and the radius is expressed in imperial feet, so the result is the head-wheel speed in revolutions per minute; the square root appears because the centrifugal throw of the load scales with the square root of the wheel radius.',
           },
           {
             id: 'c-bucket-elevator-power',
@@ -2844,6 +2845,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'H', meaning: 'Height' },
               { symbol: 'F', meaning: 'F = 1.5 (loaded downside) or 1.2 (loaded upside)' },
             ],
+            notes: 'SOURCE NOTE: the product of a capacity, a height and a factor is not power in any SI reading, but it IS a rate of lifting work once the capacity is a mass rate: kg/min of grain raised H metres is kilogram-metres per minute, the load-raise unit of this text (which converts shaft power at 4500 kg-m/min per horsepower). The drill drives the capacity in kg/min and the lift in metres, and records the factor for the two loading sides of the leg.',
           },
         ],
       },
@@ -2976,6 +2978,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'N_B', meaning: 'Number of brakes' },
               { symbol: 'D', meaning: 'Cone diameter' },
             ],
+            notes: 'SOURCE NOTE: the ratio reads with the cone diameter in MILLIMETRES, one brake per 100 mm of cone, so a 500 to 1500 mm cone wants 5 to 15 brakes. The drill enters the diameter in millimetres.',
           },
           {
             id: 'c-low-speed-rubber-roller',
