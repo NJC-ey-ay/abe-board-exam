@@ -3434,5 +3434,476 @@
       "expected": 85,
       "tolerance": 1e-12
     }
+  ],
+  "c-drying-capacity": [
+    {
+      "_note": "10000 kg / 24 h = 416.666... kg/h: the ten-tonne batch of the chain over a full working day.",
+      "vals": {
+        "Wi": 10000,
+        "Td": 24
+      },
+      "expected": 416.6666666666667,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "5000 kg / 20 h = 250 kg/h, mid-box.",
+      "vals": {
+        "Wi": 5000,
+        "Td": 20
+      },
+      "expected": 250,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest batch over the longest drying time gives 83.333... kg/h.",
+      "vals": {
+        "Wi": 4000,
+        "Td": 48
+      },
+      "expected": 83.33333333333333,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: the full 12 tonnes finished in one shift is 2000 kg/h.",
+      "vals": {
+        "Wi": 12000,
+        "Td": 6
+      },
+      "expected": 2000,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-volume-grain-to-dry": [
+    {
+      "_note": "10000 kg / 556 kg/m3 = 17.9856... m3: the SAME ten-tonne batch as the drying-capacity first case, at a typical paddy bulk density.",
+      "vals": {
+        "Wi": 10000,
+        "Rho": 556
+      },
+      "expected": 17.985611510791365,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "5000 / 545 = 9.1743... m3: damp loose paddy bulks large.",
+      "vals": {
+        "Wi": 5000,
+        "Rho": 545
+      },
+      "expected": 9.174311926605505,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest batch at the densest fill is 6.8965... m3.",
+      "vals": {
+        "Wi": 4000,
+        "Rho": 580
+      },
+      "expected": 6.896551724137931,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: 12 tonnes at the lightest density is 22.222... m3.",
+      "vals": {
+        "Wi": 12000,
+        "Rho": 540
+      },
+      "expected": 22.22222222222222,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-drying-floor-area": [
+    {
+      "_note": "18.0 m3 (the ten-tonne lot of the chain) spread 30 cm deep is 60.0 m2 of floor.",
+      "vals": {
+        "Vg": 18,
+        "Dg": 0.3
+      },
+      "expected": 60,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "12.5 m3 at a quarter metre: 50 m2, the classic flat bed.",
+      "vals": {
+        "Vg": 12.5,
+        "Dg": 0.25
+      },
+      "expected": 50,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest volume at the deepest bed needs only 20 m2.",
+      "vals": {
+        "Vg": 8,
+        "Dg": 0.4
+      },
+      "expected": 20,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: the largest volume at a shallow 15 cm needs 160 m2.",
+      "vals": {
+        "Vg": 24,
+        "Dg": 0.15
+      },
+      "expected": 160,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "15.0 m3 at 45 cm deep is 33.333... m2 - the same floor answer as the 18.0/0.30 case, because a deeper bed holds the same on a smaller plan.",
+      "vals": {
+        "Vg": 15,
+        "Dg": 0.45
+      },
+      "expected": 33.333333333333336,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-airflow-requirement": [
+    {
+      "_note": "(8000/1000) tonnes x 20 m3/(min-ton) = 160 m3/min: the 8-tonne lot the velocity box below spends across the bed.",
+      "vals": {
+        "Wi": 8000,
+        "Saf": 20
+      },
+      "expected": 160,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "6 tonnes x 15 = 90 m3/min, mid-box.",
+      "vals": {
+        "Wi": 6000,
+        "Saf": 15
+      },
+      "expected": 90,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the smallest batch at the gentlest airflow needs 40 m3/min.",
+      "vals": {
+        "Wi": 4000,
+        "Saf": 10
+      },
+      "expected": 40,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: 12 tonnes at the strongest airflow needs 360 m3/min.",
+      "vals": {
+        "Wi": 12000,
+        "Saf": 30
+      },
+      "expected": 360,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "10 tonnes x 25 = 250 m3/min: the ten-tonne chain batch, pushed hard.",
+      "vals": {
+        "Wi": 10000,
+        "Saf": 25
+      },
+      "expected": 250,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-apparent-air-velocity": [
+    {
+      "_note": "160 m3/min (the airflow box above) over the 60 m2 floor of the drying chain: 2.666... m/min.",
+      "vals": {
+        "AFR": 160,
+        "Af": 60
+      },
+      "expected": 2.6666666666666665,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "120 m3/min through a tight 30 m2 bed: 4.0 m/min.",
+      "vals": {
+        "AFR": 120,
+        "Af": 30
+      },
+      "expected": 4,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: a weak fan spilled across the biggest bed is 0.375 m/min.",
+      "vals": {
+        "AFR": 60,
+        "Af": 160
+      },
+      "expected": 0.375,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: the full airflow of the chain squeezed into 30 m2 is 12.0 m/min.",
+      "vals": {
+        "AFR": 360,
+        "Af": 30
+      },
+      "expected": 12,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "200 m3/min over 100 m2: exactly 2.0 m/min, the clean-mid anchor.",
+      "vals": {
+        "AFR": 200,
+        "Af": 100
+      },
+      "expected": 2,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-weight-of-foundation": [
+    {
+      "_note": "0.11 x 2000 x 40 = 8800 kg: the chain anchor, sqrt(1600) = 40 exactly.",
+      "vals": {
+        "We": 2000,
+        "N": 1600
+      },
+      "expected": 8800,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "0.11 x 1000 x 31.6227... = 3478.51 kg, mid-box.",
+      "vals": {
+        "We": 1000,
+        "N": 1000
+      },
+      "expected": 3478.5054261852174,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: 0.11 x 500 x 30 = 1650 kg, sqrt(900) = 30 exactly.",
+      "vals": {
+        "We": 500,
+        "N": 900
+      },
+      "expected": 1650,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: 0.11 x 3000 x 42.4264... = 14000.66 kg.",
+      "vals": {
+        "We": 3000,
+        "N": 1800
+      },
+      "expected": 14000.714267493642,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "0.11 x 2500 x 34.6410... = 9526.28 kg.",
+      "vals": {
+        "We": 2500,
+        "N": 1200
+      },
+      "expected": 9526.279441628825,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-volume-of-foundation": [
+    {
+      "_note": "8800 kg / 2400 kg/m3 = 3.6666... m3: the chain foundation carried into the pour.",
+      "vals": {
+        "Wf": 8800,
+        "Rho": 2400
+      },
+      "expected": 3.6666666666666665,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "5000 / 2300 = 2.1739... m3.",
+      "vals": {
+        "Wf": 5000,
+        "Rho": 2300
+      },
+      "expected": 2.1739130434782608,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: 1500 kg of the densest concrete is exactly 0.6 m3.",
+      "vals": {
+        "Wf": 1500,
+        "Rho": 2500
+      },
+      "expected": 0.6,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: 14000 kg pours to 5.8333... m3.",
+      "vals": {
+        "Wf": 14000,
+        "Rho": 2400
+      },
+      "expected": 5.833333333333333,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-depth-of-foundation": [
+    {
+      "_note": "3.6666... m3 over the 1.5 x 2.5 pit is 0.9777... m. The volume is carried unrounded from the previous box (the display would show 3.67).",
+      "vals": {
+        "V": 3.6666666666666665,
+        "W": 1.5,
+        "L": 2.5
+      },
+      "expected": 0.9777777777777777,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "A clean 3.0 m3 over a 3.0 m2 pit: exactly 1.00 m of depth.",
+      "vals": {
+        "V": 3,
+        "W": 1.5,
+        "L": 2
+      },
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: a thin slab over a long narrow pit is 0.25 m.",
+      "vals": {
+        "V": 1,
+        "W": 1,
+        "L": 4
+      },
+      "expected": 0.25,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: 6 m3 over a 5 m2 pit is 1.20 m.",
+      "vals": {
+        "V": 6,
+        "W": 2.5,
+        "L": 2
+      },
+      "expected": 1.2,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "3.6 m3 over 6 m2: 0.60 m, mid-box.",
+      "vals": {
+        "V": 3.6,
+        "W": 2,
+        "L": 3
+      },
+      "expected": 0.6,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-soil-pressure-foundation": [
+    {
+      "_note": "(2000 + 8800) kg / 3.75 m2 = 2880 kg/m2: the chain engine and foundation on the footprint 1.5 x 2.5 the depth box dug. Note the SUM, not the product.",
+      "vals": {
+        "We": 2000,
+        "Wf": 8800,
+        "Af": 3.75
+      },
+      "expected": 2880,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "6500 kg over 2.5 m2: 2600 kg/m2.",
+      "vals": {
+        "We": 1500,
+        "Wf": 5000,
+        "Af": 2.5
+      },
+      "expected": 2600,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: the lightest rig spread wide presses only 500 kg/m2.",
+      "vals": {
+        "We": 500,
+        "Wf": 1500,
+        "Af": 4
+      },
+      "expected": 500,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: 17 tonnes on the smallest pad is 11333.33 kg/m2 - a load most soils will not take, which is what the next formula exists to say.",
+      "vals": {
+        "We": 3000,
+        "Wf": 14000,
+        "Af": 1.5
+      },
+      "expected": 11333.333333333334,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "9000 kg over 3 m2: 3000 kg/m2.",
+      "vals": {
+        "We": 2500,
+        "Wf": 6500,
+        "Af": 3
+      },
+      "expected": 3000,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-foundation-factor-safety": [
+    {
+      "_note": "12225 / 2880 = 4.2447...: the chain pressure against the printed safe bearing capacity; the round trip from a 2000 kg engine gives a factor of safety just over 4.",
+      "vals": {
+        "Bc": 12225,
+        "Ps": 2880
+      },
+      "expected": 4.244791666666667,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "12000 / 3000: exactly 4.00, the top of the good-practice band.",
+      "vals": {
+        "Bc": 12000,
+        "Ps": 3000
+      },
+      "expected": 4,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "12500 / 5000: exactly 2.50, mid-band.",
+      "vals": {
+        "Bc": 12500,
+        "Ps": 5000
+      },
+      "expected": 2.5,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The top corner: the lightest pressure a sample can show is 6.1125, moving into over-design.",
+      "vals": {
+        "Bc": 12225,
+        "Ps": 2000
+      },
+      "expected": 6.1125,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The bottom corner: 2.00, the floor of acceptable practice.",
+      "vals": {
+        "Bc": 12000,
+        "Ps": 6000
+      },
+      "expected": 2,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Bc = Ps: the ratio is exactly 1, the foundation at its limit - and the inverted distractor ALSO returns 1, so the two options print the same string. The drill keeps Ps below Bc by construction.",
+      "vals": {
+        "Bc": 12225,
+        "Ps": 12225
+      },
+      "expected": 1,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Ps = 2 x Bc: the ratio is 0.5, a foundation asking the soil for twice what it can carry - the inverted option rendered honestly, and the number a factor of safety below 1 always signals.",
+      "vals": {
+        "Bc": 12225,
+        "Ps": 24450
+      },
+      "expected": 0.5,
+      "tolerance": 1e-12
+    }
   ]
 }

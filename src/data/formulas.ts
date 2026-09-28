@@ -2738,6 +2738,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'C_D', meaning: 'Drying capacity' },
               { symbol: 'SAF', meaning: 'Specific airflow rate, m³/min-ton' },
             ],
+            notes: 'SOURCE NOTE: the printed form multiplies C_D (a drying RATE, W_i/T_D, in tonnes per hour) by SAF in m³/min-ton, and a rate times a per-ton flow has no coherent reading in m³/min. The only way the next formula in the cascade, V_app = AF_R/A_f, can come out in a velocity is for AF_R to be m³/min, which requires the CAPACITY to be counted as the tonnage of the batch being dried, not the hourly rate. The drill therefore drives AF_R = (tonnage of the batch) x SAF, with the paddy weight entered in kg and converted to tonnes; the printed C_D is recorded as the batch capacity rather than the throughput.',
           },
           {
             id: 'c-apparent-air-velocity',
@@ -2797,6 +2798,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'W_F', meaning: 'Weight of foundation' },
               { symbol: 'A_F', meaning: 'Area of foundation' },
             ],
+            notes: 'SOURCE NOTE: the printed form multiplies the engine weight by the foundation weight and divides by the base area, which is dimensionally not a pressure. The physical statement - the total vertical load delivered to the soil is the engine plus the foundation over the area it stands on - requires a SUM in the numerator, and the factor-of-safety formula downstream (FS = BC_soil/P_s) is only interpretable against that sum. Transcribed as printed; the drill drives P_s = (W_E + W_F)/A_F.',
           },
           {
             id: 'c-foundation-factor-safety',
