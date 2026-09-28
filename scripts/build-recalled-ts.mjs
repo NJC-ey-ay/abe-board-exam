@@ -7,8 +7,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const variants = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'src', 'data', 'recalled-questions-variants.json'), 'utf-8'));
 
 function escapeString(str) {
-  if (!str) return '';
-  return String(str)
+  if (str === null || str === undefined) return '';
+  // The LLM occasionally emits structured fields (solution.given is often a
+  // {key: value} object). String(obj) would render "[object Object]", so
+  // flatten to a readable "key = value" list first.
+  let s = str;
+  if (typeof s !== 'string') {
+    if (Array.isArray(s)) s = s.join(', ');
+    else if (typeof s === 'object') s = Object.entries(s).map(([k, v]) => `${k} = ${v}`).join(', ');
+    else s = String(s);
+  }
+  return s
     .replace(/\\/g, '\\\\')
     .replace(/'/g, "\\'")
     .replace(/"/g, '\\"')
@@ -51,6 +60,7 @@ ${weakPoints}
 
   return `  {
     id: '${q.id}',
+    year: ${q.year},
     area: '${q.area}',
     subTopic: '${escapeString(q.subTopic)}',
     topic: '${escapeString(q.topic)}',

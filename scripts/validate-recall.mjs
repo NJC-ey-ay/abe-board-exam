@@ -81,6 +81,39 @@ const electricalHits = (text) => {
   return [...ELECTRICAL].filter((token) => lower.includes(token));
 };
 
+// ---------- answer-consistency gate (computation variants) ----------
+//
+// The variant generator was told to rewrite each stem so a DIFFERENT option
+// becomes "correct" (generate-recall-variants.mjs), and for computation items
+// it routinely botches the rewrite: the stem/given/steps compute one value
+// while the marked correct option is a different number. When the steps
+// actually print a computed result (`= N` or `≈ N`), we can prove the marked
+// option is wrong mechanically. This gate counts that class.
+
+const RESULT_RX = /[=≈]\s*(-?\d[\d,]*(?:\.\d+)?)/g;
+
+function parseNum(s) {
+  if (typeof s !== 'string') return null;
+  const m = s.match(/(-?\d[\d,]*(?:\.\d+)?)/);
+  return m ? Number(m[1].replace(/,/g, '')) : null;
+}
+
+function numApproxEq(a, b) {
+  if (a === null || b === null) return false;
+  if (a === b) return true;
+  if (Math.abs(a - b) <= 0.02) return true;
+  if (Math.abs(a - b) <= Math.abs(b) * 0.02) return true;
+  return a === Math.round(b);
+}
+
+// Every `= N` / `≈ N` value printed in a single text (steps only — the formula
+// and given blobs append coefficient literals and must not be scanned).
+const resultNumsOf = (text) => {
+  const out = [];
+  for (const m of String(text).matchAll(RESULT_RX)) out.push(Number(m[1].replace(/,/g, '')));
+  return out;
+};
+
 // ---------- per-question checks ----------
 
 const qtextCount = new Map();
@@ -176,6 +209,18 @@ for (const q of questions) {
 
   const canon = q.question.trim().toLowerCase();
   qtextCount.set(canon, (qtextCount.get(canon) ?? 0) + 1);
+
+  // A computation question must print at least one computed value, and the
+  // marked correct option must be one of the printed values.
+  if (q.type === 'computation' && sol.formula && sol.formula !== 'N/A') {
+    const marked = parseNum(Array.isArray(q.options) ? q.options[q.correctAnswer] : null);
+    const computed = resultNumsOf((sol.steps ?? []).join('\n'));
+    if (computed.length && marked === null) {
+      fail(q.id, 'answer-consistency', `steps compute ${computed.join(', ')} but the correct option has no numeric value`);
+    } else if (computed.length && marked !== null && !computed.some((n) => numApproxEq(marked, n))) {
+      fail(q.id, 'answer-consistency', `steps compute ${computed.join(', ')}; correctAnswer marks '${q.options[q.correctAnswer]}' (${marked}), which no computation produces`);
+    }
+  }
 }
 
 // ---------- cross-question checks ----------
@@ -209,6 +254,17 @@ for (const [base, group] of byBase) {
   if (!consecutive) {
     splitGroups++;
     fail(base, 'variant-adjacency', `all 4 variants present but stored at non-consecutive rows (${group.positions.join(', ')}); the four copies of a base must stay adjacent`);
+  }
+}
+
+// Duplicate stem text = one question used twice with (likely) two different
+// answers marked correct, which is an incoherence the bank must not ship.
+for (const [text, count] of qtextCount) {
+  if (count <= 1) continue;
+  for (const q of questions) {
+    if (q.question.trim().toLowerCase() === text) {
+      fail(q.id, 'duplicate-text', `stem duplicated across ${count} questions`);
+    }
   }
 }
 

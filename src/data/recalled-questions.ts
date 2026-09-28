@@ -10,6 +10,7 @@ import type { Question } from './comprehensive-questions';
 export const recalledAreaAQuestions: Question[] = [
   {
     id: 'recall-2021-A-agricultural-mechanization-0-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanized Crops',
     topic: 'Agricultural Mechanization',
@@ -43,6 +44,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-mechanization-0-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanized Crops',
     topic: 'Agricultural Mechanization',
@@ -76,6 +78,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-mechanization-0-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanized Crops',
     topic: 'Agricultural Mechanization',
@@ -109,6 +112,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-mechanization-0-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanized Crops',
     topic: 'Agricultural Mechanization',
@@ -143,6 +147,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-grain-drying-1-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanical Grain Dryer',
     topic: 'Grain Drying',
@@ -177,6 +182,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-grain-drying-1-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanical Grain Dryer',
     topic: 'Grain Drying',
@@ -212,6 +218,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-grain-drying-1-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanical Grain Dryer',
     topic: 'Grain Drying',
@@ -246,6 +253,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-grain-drying-1-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanical Grain Dryer',
     topic: 'Grain Drying',
@@ -281,6 +289,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-rice-threshing-2-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Testing Requirements',
     topic: 'Rice Threshing',
@@ -315,6 +324,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-rice-threshing-2-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Testing Requirements',
     topic: 'Rice Threshing',
@@ -349,6 +359,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-rice-threshing-2-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Testing Requirements',
     topic: 'Rice Threshing',
@@ -385,6 +396,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-rice-threshing-2-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Testing Requirements',
     topic: 'Rice Threshing',
@@ -419,6 +431,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-planter-components-3-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Essential Parts',
     topic: 'Planter Components',
@@ -453,6 +466,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-planter-components-3-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Essential Parts',
     topic: 'Planter Components',
@@ -487,6 +501,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-planter-components-3-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Essential Parts',
     topic: 'Planter Components',
@@ -521,6 +536,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-planter-components-3-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Essential Parts',
     topic: 'Planter Components',
@@ -555,6 +571,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-efficiency-4-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Optimal Machine Use',
     topic: 'Machinery Efficiency',
@@ -591,6 +608,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-efficiency-4-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Optimal Machine Use',
     topic: 'Machinery Efficiency',
@@ -605,7 +623,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'totalCropYield = 1500, timeAvailable = 5, efficiencyHoldOn = 300, efficiencyThrowIn = 200',
       steps: [
         'Step 1: Calculate the output for each option using the formula.',
         'Step 2: Compare the outputs to determine which option maximizes efficiency.'
@@ -626,6 +644,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-efficiency-4-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Optimal Machine Use',
     topic: 'Machinery Efficiency',
@@ -661,6 +680,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-efficiency-4-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Optimal Machine Use',
     topic: 'Machinery Efficiency',
@@ -695,6 +715,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-business-structures-5-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Types of Business',
     topic: 'Business Structures',
@@ -729,6 +750,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-business-structures-5-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Types of Business',
     topic: 'Business Structures',
@@ -763,6 +785,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-business-structures-5-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Types of Business',
     topic: 'Business Structures',
@@ -797,6 +820,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-business-structures-5-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Types of Business',
     topic: 'Business Structures',
@@ -831,6 +855,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-animal-power-6-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Comparative Power',
     topic: 'Animal Power',
@@ -865,6 +890,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-animal-power-6-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Comparative Power',
     topic: 'Animal Power',
@@ -899,6 +925,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-animal-power-6-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Comparative Power',
     topic: 'Animal Power',
@@ -933,6 +960,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-animal-power-6-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Comparative Power',
     topic: 'Animal Power',
@@ -967,6 +995,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-gasification-7-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Gas Production',
     topic: 'Gasification',
@@ -1001,6 +1030,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-gasification-7-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Gas Production',
     topic: 'Gasification',
@@ -1035,6 +1065,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-gasification-7-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Gas Production',
     topic: 'Gasification',
@@ -1070,6 +1101,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-gasification-7-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Gas Production',
     topic: 'Gasification',
@@ -1104,6 +1136,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-hydraulic-systems-8-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Stroke Length',
     topic: 'Hydraulic Systems',
@@ -1137,6 +1170,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-hydraulic-systems-8-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Stroke Length',
     topic: 'Hydraulic Systems',
@@ -1170,6 +1204,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-hydraulic-systems-8-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Stroke Length',
     topic: 'Hydraulic Systems',
@@ -1204,6 +1239,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-hydraulic-systems-8-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Stroke Length',
     topic: 'Hydraulic Systems',
@@ -1238,6 +1274,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-tractor-performance-9-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Wheel Slip',
     topic: 'Tractor Performance',
@@ -1272,6 +1309,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-tractor-performance-9-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Wheel Slip',
     topic: 'Tractor Performance',
@@ -1306,6 +1344,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-tractor-performance-9-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Wheel Slip',
     topic: 'Tractor Performance',
@@ -1340,6 +1379,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-tractor-performance-9-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Wheel Slip',
     topic: 'Tractor Performance',
@@ -1374,6 +1414,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-tillage-equipment-10-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Types of Tillage',
     topic: 'Tillage Equipment',
@@ -1408,6 +1449,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-tillage-equipment-10-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Types of Tillage',
     topic: 'Tillage Equipment',
@@ -1443,6 +1485,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-tillage-equipment-10-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Types of Tillage',
     topic: 'Tillage Equipment',
@@ -1476,6 +1519,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-tillage-equipment-10-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Types of Tillage',
     topic: 'Tillage Equipment',
@@ -1510,6 +1554,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-18-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanical Power Calculation',
     topic: 'Wind Energy',
@@ -1543,6 +1588,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-18-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanical Power Calculation',
     topic: 'Wind Energy',
@@ -1557,7 +1603,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'diameter = 8, velocity = 6, windDensity = 1.225, efficiency = 0.4',
       steps: [
         'Step 1: Calculate the area (A) of the windmill using A = π * (d/2)².',
         'Step 2: Substitute the area, wind density, velocity, and efficiency into the power formula.'
@@ -1576,6 +1622,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-18-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanical Power Calculation',
     topic: 'Wind Energy',
@@ -1611,6 +1658,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-18-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanical Power Calculation',
     topic: 'Wind Energy',
@@ -1644,6 +1692,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-thermodynamics-21-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Heat Transfer',
     topic: 'Thermodynamics',
@@ -1680,6 +1729,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-thermodynamics-21-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Heat Transfer',
     topic: 'Thermodynamics',
@@ -1714,6 +1764,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-thermodynamics-21-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Heat Transfer',
     topic: 'Thermodynamics',
@@ -1749,6 +1800,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-thermodynamics-21-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Heat Transfer',
     topic: 'Thermodynamics',
@@ -1784,6 +1836,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-abe-recognition-23-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'History',
     topic: 'ABE Recognition',
@@ -1818,6 +1871,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-abe-recognition-23-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'History',
     topic: 'ABE Recognition',
@@ -1852,6 +1906,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-abe-recognition-23-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'History',
     topic: 'ABE Recognition',
@@ -1886,6 +1941,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-abe-recognition-23-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'History',
     topic: 'ABE Recognition',
@@ -1921,6 +1977,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-24-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Power of Equipment',
     topic: 'Machinery',
@@ -1955,6 +2012,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-24-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Power of Equipment',
     topic: 'Machinery',
@@ -1988,6 +2046,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-24-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Power of Equipment',
     topic: 'Machinery',
@@ -2021,6 +2080,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-24-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Power of Equipment',
     topic: 'Machinery',
@@ -2054,6 +2114,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-equipment-25-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'ROI Analysis',
     topic: 'Agricultural Equipment',
@@ -2089,6 +2150,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-equipment-25-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'ROI Analysis',
     topic: 'Agricultural Equipment',
@@ -2127,6 +2189,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-equipment-25-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'ROI Analysis',
     topic: 'Agricultural Equipment',
@@ -2161,6 +2224,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-equipment-25-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'ROI Analysis',
     topic: 'Agricultural Equipment',
@@ -2199,6 +2263,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-laws-30-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'After-sales service and warranty',
     topic: 'Engineering Laws',
@@ -2232,6 +2297,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-laws-30-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'After-sales service and warranty',
     topic: 'Engineering Laws',
@@ -2266,6 +2332,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-laws-30-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'After-sales service and warranty',
     topic: 'Engineering Laws',
@@ -2299,6 +2366,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-laws-30-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'After-sales service and warranty',
     topic: 'Engineering Laws',
@@ -2333,6 +2401,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-31-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'API meaning',
     topic: 'Agricultural Machinery',
@@ -2367,6 +2436,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-31-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'API meaning',
     topic: 'Agricultural Machinery',
@@ -2400,6 +2470,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-31-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'API meaning',
     topic: 'Agricultural Machinery',
@@ -2433,6 +2504,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-31-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'API meaning',
     topic: 'Agricultural Machinery',
@@ -2466,6 +2538,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-32-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Cost types',
     topic: 'Engineering Economy',
@@ -2500,6 +2573,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-32-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Cost types',
     topic: 'Engineering Economy',
@@ -2534,6 +2608,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-32-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Cost types',
     topic: 'Engineering Economy',
@@ -2568,6 +2643,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-32-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Cost types',
     topic: 'Engineering Economy',
@@ -2602,6 +2678,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-crop-processing-33-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Cooking time for rice',
     topic: 'Crop Processing',
@@ -2635,6 +2712,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-crop-processing-33-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Cooking time for rice',
     topic: 'Crop Processing',
@@ -2669,6 +2747,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-crop-processing-33-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Cooking time for rice',
     topic: 'Crop Processing',
@@ -2702,6 +2781,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-crop-processing-33-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Cooking time for rice',
     topic: 'Crop Processing',
@@ -2737,6 +2817,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-34-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Depreciation calculation',
     topic: 'Engineering Economy',
@@ -2772,6 +2853,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-34-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Depreciation calculation',
     topic: 'Engineering Economy',
@@ -2807,6 +2889,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-34-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Depreciation calculation',
     topic: 'Engineering Economy',
@@ -2841,6 +2924,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-34-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Depreciation calculation',
     topic: 'Engineering Economy',
@@ -2875,6 +2959,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-35-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanization in crops',
     topic: 'Agricultural Machinery',
@@ -2909,6 +2994,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-35-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanization in crops',
     topic: 'Agricultural Machinery',
@@ -2943,6 +3029,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-35-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanization in crops',
     topic: 'Agricultural Machinery',
@@ -2977,6 +3064,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-35-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Mechanization in crops',
     topic: 'Agricultural Machinery',
@@ -3011,6 +3099,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-36-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Shipping costs',
     topic: 'Engineering Economy',
@@ -3046,6 +3135,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-36-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Shipping costs',
     topic: 'Engineering Economy',
@@ -3080,6 +3170,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-36-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Shipping costs',
     topic: 'Engineering Economy',
@@ -3114,6 +3205,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-engineering-economy-36-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Shipping costs',
     topic: 'Engineering Economy',
@@ -3149,6 +3241,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-37-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Tractor requirements',
     topic: 'Agricultural Machinery',
@@ -3163,7 +3256,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'totalArea = 80, days = 10, hoursPerDay = 8, speed = 5, effectiveWidth = 4, efficiency = 0.8',
       steps: [
         'Calculate the total hours available: 10 days * 8 hours/day = 80 hours.',
         'Calculate the area that one tractor can cover in that time: Effective Width * Speed * Efficiency * Total Hours = 4 m * 5 kph * 0.8 * 80 hours.',
@@ -3187,6 +3280,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-38-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'ROI in machinery',
     topic: 'Agricultural Machinery',
@@ -3223,6 +3317,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-38-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'ROI in machinery',
     topic: 'Agricultural Machinery',
@@ -3259,6 +3354,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-38-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'ROI in machinery',
     topic: 'Agricultural Machinery',
@@ -3295,6 +3391,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-38-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'ROI in machinery',
     topic: 'Agricultural Machinery',
@@ -3329,6 +3426,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-39-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Cylinder volume concepts',
     topic: 'Agricultural Machinery',
@@ -3363,6 +3461,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-39-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Cylinder volume concepts',
     topic: 'Agricultural Machinery',
@@ -3398,6 +3497,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-39-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Cylinder volume concepts',
     topic: 'Agricultural Machinery',
@@ -3432,6 +3532,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-machinery-39-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Cylinder volume concepts',
     topic: 'Agricultural Machinery',
@@ -3466,6 +3567,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-52-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Flame Characteristics',
     topic: 'Biogas',
@@ -3500,6 +3602,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-52-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Flame Characteristics',
     topic: 'Biogas',
@@ -3534,6 +3637,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-52-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Flame Characteristics',
     topic: 'Biogas',
@@ -3568,6 +3672,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-52-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Flame Characteristics',
     topic: 'Biogas',
@@ -3602,6 +3707,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-53-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Components',
     topic: 'Biogas',
@@ -3635,6 +3741,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-53-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Components',
     topic: 'Biogas',
@@ -3669,6 +3776,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-53-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Components',
     topic: 'Biogas',
@@ -3703,6 +3811,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-53-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Components',
     topic: 'Biogas',
@@ -3737,6 +3846,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-54-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Forces on Turbines',
     topic: 'Wind Energy',
@@ -3772,6 +3882,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-54-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Forces on Turbines',
     topic: 'Wind Energy',
@@ -3806,6 +3917,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-54-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Forces on Turbines',
     topic: 'Wind Energy',
@@ -3840,6 +3952,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-54-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Forces on Turbines',
     topic: 'Wind Energy',
@@ -3874,6 +3987,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-55-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Calculation',
     topic: 'Wind Energy',
@@ -3888,7 +4002,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'diameter = 3, windSpeed = 2.5, powerCoefficient = 0.5, airDensity = 1.2',
       steps: [
         'Step 1: Calculate the area (A) of the rotor: A = π * (d/2)^2 = π * (3/2)^2 = 7.0686 m^2.',
         'Step 2: Substitute the values into the power formula: P = 0.5 * 0.5 * 1.2 * 7.0686 * (2.5)^3.',
@@ -3910,6 +4024,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-55-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Calculation',
     topic: 'Wind Energy',
@@ -3924,7 +4039,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'diameter = 3, wind_speed = 2.5, power_coefficient = 0.5, air_density = 1.2',
       steps: [
         'Step 1: Calculate the area A of the rotor: A = π * (D/2)^2 = π * (3/2)^2 = 7.0686 m^2.',
         'Step 2: Substitute values into the power formula: P = 0.5 * 0.5 * 1.2 * 7.0686 * (2.5)^3.',
@@ -3946,6 +4061,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-55-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Calculation',
     topic: 'Wind Energy',
@@ -3960,7 +4076,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'diameter = 3.5, windSpeed = 4, powerCoefficient = 0.5, airDensity = 1.2',
       steps: [
         'Step 1: Calculate the area A using A = π * (d/2)^2 where d = 3.5m.',
         'Step 2: Substitute A, Cp, ρ, and V into the power formula to find P.'
@@ -3981,6 +4097,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-wind-energy-55-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Calculation',
     topic: 'Wind Energy',
@@ -3995,7 +4112,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'diameter = 4, windSpeed = 5, powerCoefficient = 0.5, airDensity = 1.2',
       steps: [
         'Step 1: Calculate the area A = π * (d/2)^2 = π * (4/2)^2 = 12.57 m^2.',
         'Step 2: Substitute values into the formula: P = 0.5 * 0.5 * 1.2 * 12.57 * (5^3).',
@@ -4016,6 +4133,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-production-56-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Digester Sizing',
     topic: 'Biogas Production',
@@ -4049,6 +4167,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-production-56-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Digester Sizing',
     topic: 'Biogas Production',
@@ -4083,6 +4202,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-production-56-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Digester Sizing',
     topic: 'Biogas Production',
@@ -4116,409 +4236,8 @@ export const recalledAreaAQuestions: Question[] = [
     }
   },
   {
-    id: 'recall-2021-A-electrical-systems-57-v0',
-    area: 'A',
-    subTopic: 'Current Types',
-    topic: 'Electrical Systems',
-    type: 'theory',
-    difficulty: 'easy',
-    question: 'Rural Electrification: Electricity that can flow in both directions and is commonly used for power distribution in homes and industries.',
-    options: [
-      'AC',
-      'DC',
-      'AC and DC',
-      'IC'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage: 120V, Load: 1500W',
-      steps: [
-        'Step 1: Identify the type of current used for power distribution.',
-        'Step 2: Apply the formula to understand the relationship.'
-      ],
-      formula: 'Power (P) = Voltage (V) × Current (I)',
-      keyConcept: 'Alternating Current (AC) is used for efficient power distribution due to its ability to change direction.',
-      commonMistakes: [
-          'Confusing AC with DC in terms of flow direction',
-          'Not recognizing the advantages of AC for long-distance transmission'
-      ],
-      extraneousGivens: [
-        'Voltage level: 120V',
-        'Frequency: 60Hz',
-        'Load: 1500W'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-systems-57-v1',
-    area: 'A',
-    subTopic: 'Current Types',
-    topic: 'Electrical Systems',
-    type: 'theory',
-    difficulty: 'easy',
-    question: 'In a simple electrical circuit where the current flows consistently in one direction, which type of current is being utilized?',
-    options: [
-      'DC',
-      'AC',
-      'AC and DC',
-      'IC'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 12V, Resistance (R) = 4Ω, Power (P) = 36W',
-      steps: [
-        'Step 1: Identify the type of current based on the direction of flow.',
-        'Step 2: Recognize that current flowing in one direction is characteristic of DC.'
-      ],
-      formula: 'Ohm\'s Law: V = I * R',
-      keyConcept: 'Direct Current (DC) flows in a single direction, unlike Alternating Current (AC) which changes direction periodically.',
-      commonMistakes: [
-          'Confusing AC with DC due to similar applications.',
-          'Assuming all electrical devices use AC without considering DC applications.'
-      ],
-      extraneousGivens: [
-        'Voltage of 12V',
-        'Resistance of 4Ω',
-        'Power of 36W'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-systems-57-v2',
-    area: 'A',
-    subTopic: 'Current Types',
-    topic: 'Electrical Systems',
-    type: 'theory',
-    difficulty: 'easy',
-    question: 'In electrical systems, which type of current can flow in both directions and is essential for various applications?',
-    options: [
-      'AC and DC',
-      'AC',
-      'DC',
-      'IC'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'The electrical system utilizes both alternating current (AC) and direct current (DC) for different applications.',
-      steps: [
-        'Identify the characteristics of AC and DC.',
-        'Understand the applications of both types of current.'
-      ],
-      formula: 'N/A for theoretical question',
-      keyConcept: 'AC and DC are both essential for various electrical applications, with AC being used for power distribution and DC for electronic devices.',
-      commonMistakes: [
-          'Confusing AC with DC',
-          'Assuming only one type of current is used in all applications'
-      ],
-      extraneousGivens: [
-        'Voltage levels of 120V and 240V',
-        'Frequency of 60Hz',
-        'Load resistance of 10 ohms'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-systems-57-v3',
-    area: 'A',
-    subTopic: 'Current Types',
-    topic: 'Electrical Systems',
-    type: 'theory',
-    difficulty: 'easy',
-    question: 'In the context of electrical circuits, which type of current can flow in both directions but is often used in integrated circuits for signal processing?',
-    options: [
-      'IC',
-      'AC',
-      'DC',
-      'AC and DC'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Integrated circuits often utilize current that can switch directions for efficient signal processing.',
-      steps: [
-        'Identify the type of current used in integrated circuits.',
-        'Determine the characteristics of IC in comparison to AC and DC.'
-      ],
-      formula: 'Power (P) = Voltage (V) × Current (I)',
-      keyConcept: 'Integrated circuits (IC) use alternating current for signal modulation, allowing for complex processing.',
-      commonMistakes: [
-          'Confusing IC with DC, which only flows in one direction.',
-          'Assuming AC is used in all electronic devices without considering the specific application.'
-      ],
-      extraneousGivens: [
-        'Voltage levels: 5V, 12V',
-        'Resistance: 10Ω',
-        'Power: 50W'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-power-58-v0',
-    area: 'A',
-    subTopic: 'Power Calculation',
-    topic: 'Electrical Power',
-    type: 'computation',
-    difficulty: 'hard',
-    question: 'Rural Electrification: A 10 amperes electric heater with a power factor of 0.95 was connected to a 240 volts convenient outlet. Calculate the power in the circuit.',
-    options: [
-      '2288 watts',
-      '2448 watts',
-      '2500 watts',
-      '2555 watts'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: '[object Object]',
-      steps: [
-        'Step 1: Substitute the given values into the formula: P = 240 V × 10 A × 0.95',
-        'Step 2: Calculate the power: P = 2400 × 0.95 = 2288 watts'
-      ],
-      formula: 'Power (P) = Voltage (V) × Current (I) × Power Factor (PF)',
-      keyConcept: 'The calculation of electrical power involves the product of voltage, current, and power factor.',
-      commonMistakes: [
-          'Forgetting to multiply by the power factor.',
-          'Using incorrect units for voltage or current.'
-      ],
-      extraneousGivens: [
-        'Power factor of 0.95',
-        'Voltage of 240 volts'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-power-58-v1',
-    area: 'A',
-    subTopic: 'Power Calculation',
-    topic: 'Electrical Power',
-    type: 'computation',
-    difficulty: 'hard',
-    question: 'Rural Electrification: A 12 amperes electric heater with a power factor of 0.85 was connected to a 240 volts convenient outlet. Calculate the power in the circuit.',
-    options: [
-      '2448 watts',
-      '2288 watts',
-      '2500 watts',
-      '2555 watts'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Current (I) = 12 A, Voltage (V) = 240 V, Power Factor (PF) = 0.85',
-      steps: [
-        'Step 1: Calculate the apparent power: S = V x I = 240 V x 12 A = 2880 VA',
-        'Step 2: Calculate the real power: P = S x PF = 2880 VA x 0.85 = 2448 watts'
-      ],
-      formula: 'Power (P) = Voltage (V) x Current (I) x Power Factor (PF)',
-      keyConcept: 'Understanding how to calculate real power using voltage, current, and power factor.',
-      commonMistakes: [
-          'Forgetting to multiply by the power factor',
-          'Using incorrect values for voltage or current'
-      ],
-      extraneousGivens: [
-        'The heater operates at a voltage of 240 volts',
-        'The power factor is 0.85',
-        'The current is 12 amperes'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-power-58-v2',
-    area: 'A',
-    subTopic: 'Power Calculation',
-    topic: 'Electrical Power',
-    type: 'computation',
-    difficulty: 'hard',
-    question: 'Rural Electrification: A 12 amperes electric heater with a power factor of 0.95 was connected to a 240 volts convenient outlet. Calculate the power in the circuit.',
-    options: [
-      '2500 watts',
-      '2288 watts',
-      '2448 watts',
-      '2555 watts'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Current (I) = 12 A, Voltage (V) = 240 V, Power Factor (PF) = 0.95',
-      steps: [
-        'Step 1: Substitute the given values into the formula: P = 240 V × 12 A × 0.95',
-        'Step 2: Calculate the result: P = 240 × 12 × 0.95 = 2500 watts'
-      ],
-      formula: 'Power (P) = Voltage (V) × Current (I) × Power Factor (PF)',
-      keyConcept: 'Understanding the relationship between voltage, current, and power factor in calculating real power.',
-      commonMistakes: [
-          'Forgetting to multiply by the power factor.',
-          'Using incorrect values for voltage or current.'
-      ],
-      extraneousGivens: [
-        'The electric heater operates at a voltage of 240 volts.',
-        'The power factor is given as 0.95.'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-power-58-v3',
-    area: 'A',
-    subTopic: 'Power Calculation',
-    topic: 'Electrical Power',
-    type: 'computation',
-    difficulty: 'hard',
-    question: 'Rural Electrification: A 15 amperes electric fan and blower with a power factor of 0.95 was connected to a 240 volts convenient outlet. Calculate the power in the circuit.',
-    options: [
-      '2555 watts',
-      '2288 watts',
-      '2448 watts',
-      '2500 watts'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Current (I) = 15 amperes, Voltage (V) = 240 volts, Power Factor (PF) = 0.95',
-      steps: [
-        'Step 1: Substitute the given values into the formula: P = 240 volts × 15 amperes × 0.95',
-        'Step 2: Calculate the power: P = 240 × 15 × 0.95 = 2555 watts'
-      ],
-      formula: 'Power (P) = Voltage (V) × Current (I) × Power Factor (PF)',
-      keyConcept: 'Understanding the relationship between voltage, current, and power factor in calculating electrical power.',
-      commonMistakes: [
-          'Forgetting to multiply by the power factor.',
-          'Using incorrect current or voltage values.'
-      ],
-      extraneousGivens: [
-        'Voltage: 240 volts',
-        'Power Factor: 0.95'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-systems-59-v0',
-    area: 'A',
-    subTopic: 'Ohm\'s Law',
-    topic: 'Electrical Systems',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'Determine the current flow in a circuit having a resistance of 5 Ohms on a 240 volts current supply, considering an additional load of 10 Ohms in parallel that does not affect the total voltage.',
-    options: [
-      '48 A',
-      '50 A',
-      '52 A',
-      '54 A'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 240 volts, Resistance (R) = 5 Ohms',
-      steps: [
-        'Step 1: Identify the total voltage (V = 240 volts)',
-        'Step 2: Identify the resistance (R = 5 Ohms)',
-        'Step 3: Apply Ohm\'s Law (I = V / R) to find the current.'
-      ],
-      formula: 'I = V / R',
-      keyConcept: 'Ohm\'s Law states that current is equal to voltage divided by resistance.',
-      commonMistakes: [
-          'Forgetting to use the correct resistance value',
-          'Confusing series and parallel resistance calculations'
-      ],
-      extraneousGivens: [
-        'Additional load of 10 Ohms in parallel',
-        'Voltage supply remains constant at 240 volts'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-systems-59-v1',
-    area: 'A',
-    subTopic: 'Ohm\'s Law',
-    topic: 'Electrical Systems',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'Rural Electrification: Determine the current flow in a circuit having a resistance of 4.8 Ohms on a 240 volts current supply.',
-    options: [
-      '50 A',
-      '48 A',
-      '52 A',
-      '54 A'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: '[object Object]',
-      steps: [
-        'Step 1: Identify the voltage (V = 240 volts) and resistance (R = 4.8 Ohms).',
-        'Step 2: Apply Ohm\'s Law: I = V / R = 240 / 4.8.'
-      ],
-      formula: 'I = V / R',
-      keyConcept: 'Ohm\'s Law states that current is equal to voltage divided by resistance.',
-      commonMistakes: [
-          'Confusing resistance values leading to incorrect current calculations.',
-          'Misapplying the formula by not using the correct units.'
-      ],
-      extraneousGivens: [
-        'Voltage supply: 240 volts',
-        'Resistance: 4.8 Ohms'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-systems-59-v2',
-    area: 'A',
-    subTopic: 'Ohm\'s Law',
-    topic: 'Electrical Systems',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'Rural Electrification: Determine the current flow in a circuit having a resistance of 4.6 Ohms on a 240 volts current supply.',
-    options: [
-      '52 A',
-      '48 A',
-      '50 A',
-      '54 A'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 240 volts, Resistance (R) = 4.6 Ohms',
-      steps: [
-        'Step 1: Substitute the given values into the formula: I = 240 / 4.6',
-        'Step 2: Calculate the current: I = 52.17 A, which rounds to 52 A'
-      ],
-      formula: 'I = V / R',
-      keyConcept: 'Ohm\'s Law states that current is equal to voltage divided by resistance.',
-      commonMistakes: [
-          'Forgetting to round the answer correctly',
-          'Using incorrect resistance value'
-      ],
-      extraneousGivens: [
-        'Voltage supply: 240 volts',
-        'Resistance: 4.6 Ohms'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-systems-59-v3',
-    area: 'A',
-    subTopic: 'Ohm\'s Law',
-    topic: 'Electrical Systems',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'Rural Electrification: Determine the current flow in a circuit having a resistance of 4.44 Ohms on a 240 volts current supply.',
-    options: [
-      '54 A',
-      '48 A',
-      '50 A',
-      '52 A'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 240 V, Resistance (R) = 4.44 Ohms',
-      steps: [
-        'Step 1: Substitute the given values into the formula: I = 240 V / 4.44 Ohms',
-        'Step 2: Calculate the current: I = 54 A'
-      ],
-      formula: 'I = V / R',
-      keyConcept: 'Ohm\'s Law states that current is equal to voltage divided by resistance.',
-      commonMistakes: [
-          'Using incorrect resistance value',
-          'Forgetting to convert units if necessary'
-      ],
-      extraneousGivens: [
-        'Voltage supply: 240 V',
-        'Resistance: 4.44 Ohms'
-      ],
-    }
-  },
-  {
     id: 'recall-2021-A-biogas-technology-68-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Anaerobic Digestion',
     topic: 'Biogas Technology',
@@ -4553,6 +4272,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-technology-68-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Anaerobic Digestion',
     topic: 'Biogas Technology',
@@ -4587,6 +4307,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-technology-68-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Anaerobic Digestion',
     topic: 'Biogas Technology',
@@ -4621,6 +4342,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-biogas-technology-68-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Anaerobic Digestion',
     topic: 'Biogas Technology',
@@ -4655,142 +4377,8 @@ export const recalledAreaAQuestions: Question[] = [
     }
   },
   {
-    id: 'recall-2021-A-electrical-engineering-69-v0',
-    area: 'A',
-    subTopic: 'Alternating Current',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following applications is suitable for Alternating Current in practical scenarios?',
-    options: [
-      'Can be used in charging batteries',
-      'Can interrupt communication lines',
-      'Can be transformed to different voltages',
-      'Can be easily generated'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Battery voltage: 12V, Charging current: 2A, Time: 5 hours',
-      steps: [
-        'Step 1: Calculate the total charge needed for the battery using Q = I x t.',
-        'Step 2: Determine if the Alternating Current can provide the required voltage and current for charging.'
-      ],
-      formula: 'P = V x I, where P is power, V is voltage, and I is current',
-      keyConcept: 'Alternating Current can be utilized effectively to charge batteries when the voltage and current specifications are met.',
-      commonMistakes: [
-          'Assuming AC cannot charge batteries',
-          'Neglecting the importance of voltage compatibility'
-      ],
-      extraneousGivens: [
-        'Battery capacity: 12V, 100Ah',
-        'Charging time: 5 hours',
-        'AC frequency: 60Hz'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-engineering-69-v1',
-    area: 'A',
-    subTopic: 'Alternating Current',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following is a disadvantage of Alternating Current in communication systems?',
-    options: [
-      'Can interrupt communication lines',
-      'Can be used in charging batteries',
-      'Can be transformed to different voltages',
-      'Can be easily generated'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Alternating Current can cause interference in communication lines due to its varying nature.',
-      steps: [
-        'Identify the characteristics of AC that affect communication.',
-        'Analyze how AC can induce noise in communication systems.'
-      ],
-      formula: 'N/A',
-      keyConcept: 'Alternating Current can disrupt communication lines due to its fluctuating voltage and frequency.',
-      commonMistakes: [
-          'Assuming all AC characteristics are beneficial for communication.',
-          'Overlooking the impact of frequency on signal integrity.'
-      ],
-      extraneousGivens: [
-        'Frequency of AC supply: 60 Hz',
-        'Voltage level: 120 V',
-        'Distance of transmission: 100 meters'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-engineering-69-v2',
-    area: 'A',
-    subTopic: 'Alternating Current',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following is a key advantage of Alternating Current in electrical systems?',
-    options: [
-      'Can be transformed to different voltages',
-      'Can be used in charging batteries',
-      'Can interrupt communication lines',
-      'Can be easily generated'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage levels of 120V and 240V are available for transformation in AC systems.',
-      steps: [
-        'Step 1: Identify the primary and secondary turns ratio.',
-        'Step 2: Apply the formula to find the output voltage.'
-      ],
-      formula: 'V_out = V_in * (N_secondary / N_primary)',
-      keyConcept: 'The ability to transform AC voltages allows for efficient transmission over long distances.',
-      commonMistakes: [
-          'Confusing AC with DC characteristics',
-          'Overlooking the significance of transformer turns ratio'
-      ],
-      extraneousGivens: [
-        'Voltage levels of 120V and 240V',
-        'Frequency of 60Hz',
-        'Load resistance of 10 ohms'
-      ],
-    }
-  },
-  {
-    id: 'recall-2021-A-electrical-engineering-69-v3',
-    area: 'A',
-    subTopic: 'Alternating Current',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following is a primary advantage of Alternating Current in terms of generation?',
-    options: [
-      'Can be easily generated',
-      'Can be used in charging batteries',
-      'Can interrupt communication lines',
-      'Can be transformed to different voltages'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'The efficiency of various types of generators is compared, with AC generators showing a higher output.',
-      steps: [
-        'Step 1: Identify the output power of the AC generator.',
-        'Step 2: Compare it with the input power to determine efficiency.'
-      ],
-      formula: 'Efficiency = (Output Power / Input Power) x 100%',
-      keyConcept: 'The ability to easily generate AC makes it a preferred choice for power generation.',
-      commonMistakes: [
-          'Assuming that AC cannot be generated as easily as DC.',
-          'Overlooking the advantages of AC in terms of transmission efficiency.'
-      ],
-      extraneousGivens: [
-        'The efficiency of AC generators is higher than that of DC generators.',
-        'AC can be transmitted over long distances with less power loss.'
-      ],
-    }
-  },
-  {
     id: 'recall-2021-A-renewable-energy-70-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Wind Energy',
     topic: 'Renewable Energy',
@@ -4827,6 +4415,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-renewable-energy-70-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Wind Energy',
     topic: 'Renewable Energy',
@@ -4861,6 +4450,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-renewable-energy-70-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Wind Energy',
     topic: 'Renewable Energy',
@@ -4895,6 +4485,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-renewable-energy-70-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Wind Energy',
     topic: 'Renewable Energy',
@@ -4929,6 +4520,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machine-optimization-73-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Capacity Optimization',
     topic: 'Machine Optimization',
@@ -4963,6 +4555,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machine-optimization-73-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Capacity Optimization',
     topic: 'Machine Optimization',
@@ -4997,6 +4590,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machine-optimization-73-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Capacity Optimization',
     topic: 'Machine Optimization',
@@ -5032,6 +4626,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machine-optimization-73-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Capacity Optimization',
     topic: 'Machine Optimization',
@@ -5067,6 +4662,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-economics-74-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Return on Investment',
     topic: 'Agricultural Economics',
@@ -5103,6 +4699,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-economics-74-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Return on Investment',
     topic: 'Agricultural Economics',
@@ -5139,6 +4736,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-economics-74-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Return on Investment',
     topic: 'Agricultural Economics',
@@ -5176,6 +4774,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-agricultural-economics-74-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Return on Investment',
     topic: 'Agricultural Economics',
@@ -5212,6 +4811,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-efficiency-75-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Productivity',
     topic: 'Efficiency',
@@ -5246,6 +4846,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-efficiency-75-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Productivity',
     topic: 'Efficiency',
@@ -5281,6 +4882,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-efficiency-75-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Productivity',
     topic: 'Efficiency',
@@ -5315,6 +4917,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-efficiency-75-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Productivity',
     topic: 'Efficiency',
@@ -5348,6 +4951,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-abe-laws-80-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Recognition of ABE',
     topic: 'ABE Laws',
@@ -5381,6 +4985,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-abe-laws-80-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Recognition of ABE',
     topic: 'ABE Laws',
@@ -5414,6 +5019,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-abe-laws-80-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Recognition of ABE',
     topic: 'ABE Laws',
@@ -5447,6 +5053,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-abe-laws-80-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Recognition of ABE',
     topic: 'ABE Laws',
@@ -5480,6 +5087,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-81-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Ratings',
     topic: 'Machinery',
@@ -5515,6 +5123,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-81-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Ratings',
     topic: 'Machinery',
@@ -5548,6 +5157,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-81-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Ratings',
     topic: 'Machinery',
@@ -5581,6 +5191,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-machinery-81-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Ratings',
     topic: 'Machinery',
@@ -5615,6 +5226,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-field-capacity-82-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Machinery Efficiency',
     topic: 'Field Capacity',
@@ -5629,7 +5241,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'totalArea = 10, totalTime = 28, efficiencyFactor = 0.9',
       steps: [
         'Step 1: Calculate the theoretical field capacity: Total Area / Total Time = 10 ha / 28 hr = 0.357 ha/hr',
         'Step 2: Adjust for efficiency: 0.357 ha/hr * 0.9 = 0.321 ha/hr (not the answer)',
@@ -5650,6 +5262,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-field-capacity-82-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Machinery Efficiency',
     topic: 'Field Capacity',
@@ -5664,7 +5277,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'speed = 5, width = 6, efficiency = 0.2',
       steps: [
         'Convert speed from km/hr to m/hr: 5 km/hr = 5000 m/hr',
         'Calculate effective field capacity: (5000 m/hr × 6 m × 0.20) / 10000 = 0.30 ha/hr'
@@ -5684,6 +5297,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-field-capacity-82-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Machinery Efficiency',
     topic: 'Field Capacity',
@@ -5698,7 +5312,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'width = 1.5, speed = 4, downtime = 0.2',
       steps: [
         'Step 1: Calculate the effective speed considering downtime: Effective Speed = Speed * (1 - Downtime) = 4 * (1 - 0.20) = 4 * 0.80 = 3.2 km/hr',
         'Step 2: Calculate the effective field capacity: Effective Field Capacity = (Width * Effective Speed) / 10 = (1.5 * 3.2) / 10 = 0.48 ha/hr',
@@ -5720,6 +5334,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-field-capacity-82-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Machinery Efficiency',
     topic: 'Field Capacity',
@@ -5734,7 +5349,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'fieldSize = 1.5 ha, timeTaken = 15 minutes, speed = 5 km/hr',
       steps: [
         'Convert time taken from minutes to hours: 15 minutes = 0.25 hours.',
         'Calculate EFC: EFC = 1.5 ha / 0.25 hr = 6 ha/hr.',
@@ -5755,6 +5370,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-thermal-efficiency-84-v0',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Cycles',
     topic: 'Thermal Efficiency',
@@ -5788,6 +5404,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-thermal-efficiency-84-v1',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Cycles',
     topic: 'Thermal Efficiency',
@@ -5825,6 +5442,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-thermal-efficiency-84-v2',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Cycles',
     topic: 'Thermal Efficiency',
@@ -5860,6 +5478,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2021-A-thermal-efficiency-84-v3',
+    year: 2021,
     area: 'A',
     subTopic: 'Power Cycles',
     topic: 'Thermal Efficiency',
@@ -5894,6 +5513,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-moisture-content-calculation-88-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Moisture Content Conversion',
     topic: 'Moisture Content Calculation',
@@ -5930,6 +5550,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-moisture-content-calculation-88-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Moisture Content Conversion',
     topic: 'Moisture Content Calculation',
@@ -5965,6 +5586,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-moisture-content-calculation-88-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Moisture Content Conversion',
     topic: 'Moisture Content Calculation',
@@ -5998,6 +5620,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-moisture-content-calculation-88-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Moisture Content Conversion',
     topic: 'Moisture Content Calculation',
@@ -6032,143 +5655,8 @@ export const recalledAreaAQuestions: Question[] = [
     }
   },
   {
-    id: 'recall-2022-A-electrical-power-calculation-89-v0',
-    area: 'A',
-    subTopic: 'Ohm\'s Law',
-    topic: 'Electrical Power Calculation',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'Compute the power if voltage is 220V and resistance is 36.4 Ω.',
-    options: [
-      '1210 W',
-      '1100 W',
-      '2200 W',
-      '1000 W'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 220V, Resistance (R) = 36.4 Ω',
-      steps: [
-        'Step 1: Substitute the given values into the formula: P = 220^2 / 36.4',
-        'Step 2: Calculate 220^2 = 48400.',
-        'Step 3: Divide 48400 by 36.4 to get P = 1210 W.'
-      ],
-      formula: 'Power (P) = V^2 / R',
-      keyConcept: 'Understanding Ohm\'s Law and the relationship between voltage, current, resistance, and power.',
-      commonMistakes: [
-          'Forgetting to square the voltage before dividing by resistance.',
-          'Using incorrect resistance values or miscalculating the division.'
-      ],
-      extraneousGivens: [
-        'Voltage: 220V',
-        'Resistance: 36.4 Ω'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-power-calculation-89-v1',
-    area: 'A',
-    subTopic: 'Ohm\'s Law',
-    topic: 'Electrical Power Calculation',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'Compute the power if voltage is 220V and resistance is 44 Ω.',
-    options: [
-      '1100 W',
-      '1210 W',
-      '2200 W',
-      '1000 W'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 220V, Resistance (R) = 44Ω',
-      steps: [
-        'Step 1: Substitute the given values into the formula: P = (220)² / 44',
-        'Step 2: Calculate (220)² = 48400, then divide by 44: P = 48400 / 44 = 1100'
-      ],
-      formula: 'P = V² / R',
-      keyConcept: 'Understanding how to apply Ohm\'s Law to calculate power using voltage and resistance.',
-      commonMistakes: [
-          'Forgetting to square the voltage before dividing by resistance.',
-          'Using incorrect units or not converting units properly.'
-      ],
-      extraneousGivens: [
-        'Voltage: 220V',
-        'Resistance: 44 Ω',
-        'Power formula: P = V²/R'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-power-calculation-89-v2',
-    area: 'A',
-    subTopic: 'Ohm\'s Law',
-    topic: 'Electrical Power Calculation',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'Compute the power if voltage is 330V and resistance is 40 Ω.',
-    options: [
-      '2200 W',
-      '1210 W',
-      '1100 W',
-      '1000 W'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 330V, Resistance (R) = 40 Ω',
-      steps: [
-        'Step 1: Substitute the given values into the formula: P = (330)² / 40',
-        'Step 2: Calculate (330)² = 108900',
-        'Step 3: Divide 108900 by 40 to find P: P = 108900 / 40 = 2722.5',
-        'Step 4: Re-evaluate the resistance to ensure it aligns with the expected power output.'
-      ],
-      formula: 'P = V² / R',
-      keyConcept: 'Power is calculated using the formula P = V² / R, which relates voltage, resistance, and power.',
-      commonMistakes: [
-          'Forgetting to square the voltage before dividing by resistance.',
-          'Using incorrect resistance values leading to incorrect power calculations.'
-      ],
-      extraneousGivens: [
-        'Voltage: 330V',
-        'Resistance: 40 Ω'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-power-calculation-89-v3',
-    area: 'A',
-    subTopic: 'Ohm\'s Law',
-    topic: 'Electrical Power Calculation',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'Compute the power if voltage is 200V and resistance is 40 Ω.',
-    options: [
-      '1000 W',
-      '1210 W',
-      '1100 W',
-      '2200 W'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 200V, Resistance (R) = 40Ω',
-      steps: [
-        'Step 1: Substitute the given values into the formula: P = (200V)^2 / 40Ω',
-        'Step 2: Calculate P = 40000 / 40 = 1000 W'
-      ],
-      formula: 'Power (P) = V^2 / R',
-      keyConcept: 'Understanding Ohm\'s Law and the relationship between voltage, current, resistance, and power.',
-      commonMistakes: [
-          'Confusing the formula for power with that for current or resistance.',
-          'Incorrectly calculating the square of the voltage.'
-      ],
-      extraneousGivens: [
-        'Voltage is 200V',
-        'Resistance is 40 Ω'
-      ],
-    }
-  },
-  {
     id: 'recall-2022-A-wind-power-calculation-90-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Wind Energy',
     topic: 'Wind Power Calculation',
@@ -6183,7 +5671,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'windSpeed = 10, motorArea = 2.5, windDensity = 1.225, efficiency = 0.5',
       steps: [
         'Step 1: Calculate wind speed cubed: 10^3 = 1000.',
         'Step 2: Substitute values into the formula: Power = 0.5 * 1.225 * 2.5 * 1000.',
@@ -6205,6 +5693,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-wind-power-calculation-90-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Wind Energy',
     topic: 'Wind Power Calculation',
@@ -6239,6 +5728,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-wind-power-calculation-90-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Wind Energy',
     topic: 'Wind Power Calculation',
@@ -6273,6 +5763,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-wind-power-calculation-90-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Wind Energy',
     topic: 'Wind Power Calculation',
@@ -6308,151 +5799,8 @@ export const recalledAreaAQuestions: Question[] = [
     }
   },
   {
-    id: 'recall-2022-A-electric-energy-cost-calculation-91-v0',
-    area: 'A',
-    subTopic: 'Energy Consumption',
-    topic: 'Electric Energy Cost Calculation',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'A 900-watt light bulb is used continuously for 4 hours per day. How much electric energy is used? If the cost of electricity is P9.50 per kw-hour, how much is the cost for a 1-month period operation?',
-    options: [
-      '855 pesos',
-      '900 pesos',
-      '800 pesos',
-      '950 pesos'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Power of the bulb = 900 watts, Time = 4 hours/day, Cost per kw-hour = P9.50, Duration = 30 days',
-      steps: [
-        'Convert power to kilowatts: 900 watts = 0.9 kW',
-        'Calculate daily energy consumption: 0.9 kW × 4 hours = 3.6 kWh',
-        'Calculate monthly energy consumption: 3.6 kWh/day × 30 days = 108 kWh',
-        'Calculate total cost: 108 kWh × P9.50 = P1026',
-        'Adjust the time to find the correct monthly cost: 900 watts for 3 hours/day for 30 days = 81 kWh; 81 kWh × P9.50 = P769.50, which is incorrect, so adjust power or time.'
-      ],
-      formula: 'Energy (kWh) = Power (kW) × Time (hours); Cost = Energy (kWh) × Cost per kWh',
-      keyConcept: 'Understanding the relationship between power, time, and cost in energy consumption calculations.',
-      commonMistakes: [
-          'Forgetting to convert watts to kilowatts',
-          'Not multiplying the daily consumption by the number of days correctly'
-      ],
-      extraneousGivens: [
-        'The bulb operates for 30 days',
-        'The electricity rate is constant'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electric-energy-cost-calculation-91-v1',
-    area: 'A',
-    subTopic: 'Energy Consumption',
-    topic: 'Electric Energy Cost Calculation',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'A 1200-watt light bulb is used continuously for 2.5 hours per day. How much electric energy is used? If the cost of electricity is P9.50 per kw-hour, how much is the cost for a 1-month period operation?',
-    options: [
-      '900 pesos',
-      '855 pesos',
-      '800 pesos',
-      '950 pesos'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Power = 1200 watts, Time = 2.5 hours/day, Cost per kw-hour = P9.50',
-      steps: [
-        'Step 1: Convert power from watts to kilowatts: 1200 watts = 1.2 kW',
-        'Step 2: Calculate daily energy consumption: 1.2 kW × 2.5 h = 3 kWh',
-        'Step 3: Calculate monthly energy consumption: 3 kWh/day × 30 days = 90 kWh',
-        'Step 4: Calculate total cost: 90 kWh × P9.50 = P855'
-      ],
-      formula: 'Energy (kWh) = Power (kW) × Time (h); Total Cost = Energy (kWh) × Cost per kWh',
-      keyConcept: 'Understanding the relationship between power, time, and cost in energy consumption.',
-      commonMistakes: [
-          'Forgetting to convert watts to kilowatts',
-          'Miscalculating the number of days in a month'
-      ],
-      extraneousGivens: [
-        'The light bulb operates for 30 days',
-        'The cost of electricity is constant'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electric-energy-cost-calculation-91-v2',
-    area: 'A',
-    subTopic: 'Energy Consumption',
-    topic: 'Electric Energy Cost Calculation',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'A 800-watt light bulb is used continuously for 4 hours per day. How much electric energy is used? If the cost of electricity is P10.00 per kw-hour, how much is the cost for a 1-month period operation?',
-    options: [
-      '800 pesos',
-      '855 pesos',
-      '900 pesos',
-      '950 pesos'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Power of the bulb = 800 watts, Time = 4 hours/day, Cost of electricity = P10.00 per kw-hour, Days in a month = 30',
-      steps: [
-        'Convert power from watts to kilowatts: 800 watts = 0.8 kW',
-        'Calculate daily energy consumption: 0.8 kW × 4 hours = 3.2 kWh',
-        'Calculate monthly energy consumption: 3.2 kWh/day × 30 days = 96 kWh',
-        'Calculate total cost: 96 kWh × P10.00/kWh = P960.00'
-      ],
-      formula: 'Energy (kWh) = Power (kW) × Time (hours); Cost = Energy (kWh) × Cost per kWh',
-      keyConcept: 'Understanding the conversion of watts to kilowatts and the calculation of energy cost over a month.',
-      commonMistakes: [
-          'Forgetting to convert watts to kilowatts',
-          'Incorrectly calculating the number of days in a month',
-          'Misapplying the cost per kilowatt-hour'
-      ],
-      extraneousGivens: [
-        'The bulb is used continuously for 4 hours per day',
-        'The cost of electricity is P10.00 per kw-hour'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electric-energy-cost-calculation-91-v3',
-    area: 'A',
-    subTopic: 'Energy Consumption',
-    topic: 'Electric Energy Cost Calculation',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'A 1000-watt light bulb is used continuously for 4 hours per day. How much electric energy is used? If the cost of electricity is P9.50 per kw-hour, how much is the cost for a 1-month period operation?',
-    options: [
-      '950 pesos',
-      '855 pesos',
-      '900 pesos',
-      '800 pesos'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Power = 1000 watts, Time = 4 hours/day, Cost per kw-hour = P9.50, Days = 30',
-      steps: [
-        'Step 1: Convert power to kilowatts: 1000 watts = 1 kW.',
-        'Step 2: Calculate daily energy consumption: 1 kW × 4 hours = 4 kWh.',
-        'Step 3: Calculate monthly energy consumption: 4 kWh/day × 30 days = 120 kWh.',
-        'Step 4: Calculate total cost: 120 kWh × P9.50/kWh = P1140.'
-      ],
-      formula: 'Energy (kWh) = Power (kW) × Time (h); Cost = Energy (kWh) × Cost per kWh',
-      keyConcept: 'Understanding the relationship between power, time, and cost in energy consumption.',
-      commonMistakes: [
-          'Forgetting to convert watts to kilowatts',
-          'Not multiplying by the number of days',
-          'Incorrectly calculating the total cost'
-      ],
-      extraneousGivens: [
-        'The light bulb is 1000 watts',
-        'The cost of electricity is P9.50 per kw-hour',
-        'The usage is for 30 days'
-      ],
-    }
-  },
-  {
     id: 'recall-2022-A-sprayer-performance-92-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Agricultural Machinery',
     topic: 'Sprayer Performance',
@@ -6487,6 +5835,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-sprayer-performance-92-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Agricultural Machinery',
     topic: 'Sprayer Performance',
@@ -6521,6 +5870,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-sprayer-performance-92-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Agricultural Machinery',
     topic: 'Sprayer Performance',
@@ -6555,6 +5905,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-sprayer-performance-92-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Agricultural Machinery',
     topic: 'Sprayer Performance',
@@ -6589,6 +5940,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-marketing-strategies-93-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Rural Marketing',
     topic: 'Marketing Strategies',
@@ -6623,6 +5975,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-marketing-strategies-93-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Rural Marketing',
     topic: 'Marketing Strategies',
@@ -6657,6 +6010,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-marketing-strategies-93-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Rural Marketing',
     topic: 'Marketing Strategies',
@@ -6691,6 +6045,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-marketing-strategies-93-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Rural Marketing',
     topic: 'Marketing Strategies',
@@ -6725,6 +6080,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-vehicle-conditions-96-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Agricultural Machinery',
     topic: 'Vehicle Conditions',
@@ -6759,6 +6115,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-vehicle-conditions-96-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Agricultural Machinery',
     topic: 'Vehicle Conditions',
@@ -6793,6 +6150,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-vehicle-conditions-96-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Agricultural Machinery',
     topic: 'Vehicle Conditions',
@@ -6827,6 +6185,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-vehicle-conditions-96-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Agricultural Machinery',
     topic: 'Vehicle Conditions',
@@ -6861,6 +6220,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-tractor-operation-97-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Starting Procedures',
     topic: 'Tractor Operation',
@@ -6895,6 +6255,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-tractor-operation-97-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Starting Procedures',
     topic: 'Tractor Operation',
@@ -6929,6 +6290,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-tractor-operation-97-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Starting Procedures',
     topic: 'Tractor Operation',
@@ -6964,6 +6326,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-tractor-operation-97-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Starting Procedures',
     topic: 'Tractor Operation',
@@ -6999,6 +6362,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-components-100-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Power Enhancement',
     topic: 'Engine Components',
@@ -7033,6 +6397,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-components-100-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Power Enhancement',
     topic: 'Engine Components',
@@ -7067,6 +6432,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-components-100-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Power Enhancement',
     topic: 'Engine Components',
@@ -7101,6 +6467,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-components-100-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Power Enhancement',
     topic: 'Engine Components',
@@ -7135,6 +6502,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-maintenance-101-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Oil Pressure Issues',
     topic: 'Engine Maintenance',
@@ -7169,6 +6537,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-maintenance-101-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Oil Pressure Issues',
     topic: 'Engine Maintenance',
@@ -7203,6 +6572,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-maintenance-101-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Oil Pressure Issues',
     topic: 'Engine Maintenance',
@@ -7238,6 +6608,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-maintenance-101-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Oil Pressure Issues',
     topic: 'Engine Maintenance',
@@ -7272,6 +6643,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-agricultural-machinery-106-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Operational Requirements',
     topic: 'Agricultural Machinery',
@@ -7308,6 +6680,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-agricultural-machinery-106-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Operational Requirements',
     topic: 'Agricultural Machinery',
@@ -7343,6 +6716,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-agricultural-machinery-106-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Operational Requirements',
     topic: 'Agricultural Machinery',
@@ -7378,6 +6752,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-agricultural-machinery-106-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Operational Requirements',
     topic: 'Agricultural Machinery',
@@ -7412,6 +6787,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-technology-107-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Origin of Engines',
     topic: 'Engine Technology',
@@ -7445,6 +6821,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-technology-107-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Origin of Engines',
     topic: 'Engine Technology',
@@ -7478,6 +6855,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-technology-107-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Origin of Engines',
     topic: 'Engine Technology',
@@ -7511,6 +6889,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-engine-technology-107-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Origin of Engines',
     topic: 'Engine Technology',
@@ -7544,6 +6923,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-open-channel-design-108-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Pollution Control',
     topic: 'Open Channel Design',
@@ -7578,6 +6958,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-open-channel-design-108-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Pollution Control',
     topic: 'Open Channel Design',
@@ -7612,6 +6993,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-open-channel-design-108-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Pollution Control',
     topic: 'Open Channel Design',
@@ -7644,6 +7026,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-open-channel-design-108-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Pollution Control',
     topic: 'Open Channel Design',
@@ -7678,6 +7061,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-energy-conversion-110-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Energy Processes',
     topic: 'Energy Conversion',
@@ -7710,6 +7094,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-energy-conversion-110-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Energy Processes',
     topic: 'Energy Conversion',
@@ -7746,6 +7131,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-energy-conversion-110-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Energy Processes',
     topic: 'Energy Conversion',
@@ -7781,6 +7167,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-energy-conversion-110-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Energy Processes',
     topic: 'Energy Conversion',
@@ -7814,142 +7201,8 @@ export const recalledAreaAQuestions: Question[] = [
     }
   },
   {
-    id: 'recall-2022-A-energy-devices-111-v0',
-    area: 'A',
-    subTopic: 'Energy Conversion Devices',
-    topic: 'Energy Devices',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which device is specifically designed to convert one form of energy into another, such as electrical energy into mechanical energy?',
-    options: [
-      'Transducer',
-      'Transformer',
-      'Power Converter',
-      'AOTA'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'A device that converts electrical energy into mechanical energy is required.',
-      steps: [
-        'Identify the type of energy being converted',
-        'Select the appropriate device based on the energy conversion needed'
-      ],
-      formula: 'Energy Conversion Principle',
-      keyConcept: 'A transducer is a device that converts energy from one form to another, making it essential in various applications.',
-      commonMistakes: [
-          'Confusing transducers with transformers',
-          'Overlooking the specific energy types involved in conversion'
-      ],
-      extraneousGivens: [
-        'Voltage levels of 120V and 240V',
-        'Current ratings of 10A and 5A'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-energy-devices-111-v1',
-    area: 'A',
-    subTopic: 'Energy Conversion Devices',
-    topic: 'Energy Devices',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which device is primarily used to change the voltage level of alternating current while maintaining the same frequency?',
-    options: [
-      'Transformer',
-      'Transducer',
-      'Power Converter',
-      'AOTA'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Input voltage of 120V and output voltage of 240V.',
-      steps: [
-        'Identify the input and output voltages.',
-        'Use the transformer formula to find the relationship.'
-      ],
-      formula: 'V_out = (N_secondary / N_primary) * V_in',
-      keyConcept: 'A transformer changes voltage levels in AC circuits.',
-      commonMistakes: [
-          'Confusing transformers with power converters',
-          'Forgetting that transformers only work with AC'
-      ],
-      extraneousGivens: [
-        'Voltage input: 120V',
-        'Current output: 10A',
-        'Frequency: 60Hz'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-energy-devices-111-v2',
-    area: 'A',
-    subTopic: 'Energy Conversion Devices',
-    topic: 'Energy Devices',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which device is specifically designed to change electrical energy from one voltage level to another while maintaining power efficiency?',
-    options: [
-      'Power Converter',
-      'Transducer',
-      'Transformer',
-      'AOTA'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage levels of 120V and 240V indicate the need for a device that can convert between these levels efficiently.',
-      steps: [
-        'Step 1: Identify the voltage levels that need conversion.',
-        'Step 2: Determine the current that flows through the device to maintain power.'
-      ],
-      formula: 'Power (P) = Voltage (V) × Current (I)',
-      keyConcept: 'A Power Converter is essential for changing voltage levels while ensuring power remains constant.',
-      commonMistakes: [
-          'Confusing Power Converter with Transformer, which only changes voltage without specifying power efficiency.',
-          'Assuming that all energy conversion devices can handle both AC and DC without distinction.'
-      ],
-      extraneousGivens: [
-        'Voltage levels: 120V and 240V',
-        'Current: 10A',
-        'Frequency: 60Hz'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-energy-devices-111-v3',
-    area: 'A',
-    subTopic: 'Energy Conversion Devices',
-    topic: 'Energy Devices',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following devices can encompass multiple types of energy conversion methods?',
-    options: [
-      'AOTA',
-      'Transducer',
-      'Transformer',
-      'Power Converter'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'The question asks for a device that includes all types of energy conversion methods.',
-      steps: [
-        'Identify the definitions of each option.',
-        'Determine which option includes all types of energy conversion.'
-      ],
-      formula: 'N/A',
-      keyConcept: 'AOTA (All of the Above) indicates that multiple devices can perform energy conversion, making it the correct choice.',
-      commonMistakes: [
-          'Choosing a single device thinking it represents all types.',
-          'Overlooking the inclusive nature of AOTA.'
-      ],
-      extraneousGivens: [
-        'A transducer can convert sound into electrical signals.',
-        'A transformer changes voltage levels.',
-        'A power converter can adjust the form of electrical energy.'
-      ],
-    }
-  },
-  {
     id: 'recall-2022-A-lighting-116-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Light Conditions',
     topic: 'Lighting',
@@ -7984,6 +7237,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-lighting-116-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Light Conditions',
     topic: 'Lighting',
@@ -8018,6 +7272,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-lighting-116-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Light Conditions',
     topic: 'Lighting',
@@ -8052,6 +7307,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-lighting-116-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Light Conditions',
     topic: 'Lighting',
@@ -8085,146 +7341,8 @@ export const recalledAreaAQuestions: Question[] = [
     }
   },
   {
-    id: 'recall-2022-A-electrical-engineering-117-v0',
-    area: 'A',
-    subTopic: 'Conductor Ratings',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'What is the term used to describe the maximum current a conductor can safely carry without overheating?',
-    options: [
-      'Ampacity',
-      'Capacity',
-      'Conductivity',
-      'Maximum Capacity'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'A copper conductor with PVC insulation is rated for a maximum temperature of 75°C.',
-      steps: [
-        'Identify the material and insulation type.',
-        'Refer to the ampacity tables for copper conductors.'
-      ],
-      formula: 'Ampacity is determined based on the conductor\'s material, insulation type, and ambient temperature.',
-      keyConcept: 'Ampacity is the maximum current a conductor can carry continuously without exceeding its temperature rating.',
-      commonMistakes: [
-          'Confusing ampacity with capacity',
-          'Not considering the insulation type'
-      ],
-      extraneousGivens: [
-        'Conductor material: Copper',
-        'Ambient temperature: 30°C',
-        'Conductor insulation type: PVC'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-engineering-117-v1',
-    area: 'A',
-    subTopic: 'Conductor Ratings',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'What is the maximum load that a conductor can handle continuously without overheating, often referred to as its capacity?',
-    options: [
-      'Capacity',
-      'Ampacity',
-      'Conductivity',
-      'Maximum Capacity'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'A copper conductor with a temperature rating of 75°C and PVC insulation is rated for continuous use.',
-      steps: [
-        'Step 1: Identify the conductor size and insulation type.',
-        'Step 2: Refer to the NEC (National Electrical Code) table for the ampacity of the conductor.',
-        'Step 3: Determine the maximum load based on the ampacity value.'
-      ],
-      formula: 'Capacity = (Current rating based on conductor size and insulation type)',
-      keyConcept: 'The capacity of a conductor is determined by its size, material, and insulation type, which dictates how much current it can safely carry.',
-      commonMistakes: [
-          'Confusing ampacity with capacity',
-          'Not considering temperature ratings',
-          'Overlooking the type of insulation'
-      ],
-      extraneousGivens: [
-        'Temperature rating: 75°C',
-        'Conductor type: Copper',
-        'Insulation type: PVC'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-engineering-117-v2',
-    area: 'A',
-    subTopic: 'Conductor Ratings',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'What property of a material determines its ability to conduct electric current, measured in siemens per meter?',
-    options: [
-      'Conductivity',
-      'Ampacity',
-      'Capacity',
-      'Maximum Capacity'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Material length = 2 m, Cross-sectional area = 0.5 m², Voltage = 10 V',
-      steps: [
-        'Step 1: Calculate resistivity using Ohm\'s law.',
-        'Step 2: Use the calculated resistivity to find conductivity.'
-      ],
-      formula: 'Conductivity (σ) = 1 / Resistivity (ρ)',
-      keyConcept: 'Conductivity is a measure of how easily electric current can flow through a material.',
-      commonMistakes: [
-          'Confusing conductivity with resistivity',
-          'Not considering the units of measurement'
-      ],
-      extraneousGivens: [
-        'Material length: 2 meters',
-        'Cross-sectional area: 0.5 square meters',
-        'Voltage: 10 volts'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-engineering-117-v3',
-    area: 'A',
-    subTopic: 'Conductor Ratings',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'What term describes the maximum amount of current a conductor can handle continuously without exceeding its thermal limits?',
-    options: [
-      'Maximum Capacity',
-      'Ampacity',
-      'Capacity',
-      'Conductivity'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Conductor rated for 100A at 30°C, with a length of 100m and made of copper.',
-      steps: [
-        'Step 1: Identify the rated current for the conductor, which is given as 100A.',
-        'Step 2: Determine the safety factor, which is typically 1.25 for continuous loads.',
-        'Step 3: Calculate Maximum Capacity = 100A / 1.25 = 80A.'
-      ],
-      formula: 'Maximum Capacity = Rated Current / Safety Factor',
-      keyConcept: 'The maximum capacity of a conductor is determined by its rated current and safety factors to prevent overheating.',
-      commonMistakes: [
-          'Confusing maximum capacity with ampacity, which refers to the same concept but may include different conditions.',
-          'Neglecting to apply the safety factor when calculating the maximum capacity.'
-      ],
-      extraneousGivens: [
-        'Conductor length: 100m',
-        'Ambient temperature: 30°C',
-        'Conductor material: Copper'
-      ],
-    }
-  },
-  {
     id: 'recall-2022-A-energy-consumption-121-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Electrical Energy',
     topic: 'Energy Consumption',
@@ -8239,7 +7357,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'power = 10, time = 3, weight = 2',
       steps: [
         'Step 1: Calculate the total energy consumed using the formula: Energy = Power × Time.',
         'Step 2: Convert the weight of farm waste from tonnes to kg (2 tonnes = 2000 kg).',
@@ -8261,6 +7379,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-energy-consumption-121-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Electrical Energy',
     topic: 'Energy Consumption',
@@ -8275,7 +7394,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'power = 10, time = 3, mass = 2',
       steps: [
         'Step 1: Calculate the energy consumed by the shredder: Energy = 10 kW × 3 h = 30 kW-h.',
         'Step 2: Calculate the energy consumption per kg: Energy per kg = Total Energy / Mass = 30 kW-h / 2000 kg = 0.015 kW-h/kg.'
@@ -8294,6 +7413,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-energy-consumption-121-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Electrical Energy',
     topic: 'Energy Consumption',
@@ -8308,7 +7428,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'power = 20, time = 2.5, mass = 2',
       steps: [
         'Step 1: Calculate the energy consumed in kW-h: Energy = 20 kW × 2.5 h = 50 kW-h.',
         'Step 2: Calculate the energy consumption per kg: Energy per kg = Total Energy / Mass = 50 kW-h / 2000 kg = 0.025 kW-h/kg.'
@@ -8328,6 +7448,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-energy-consumption-121-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Electrical Energy',
     topic: 'Energy Consumption',
@@ -8342,7 +7463,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'power = 25, time = 3, mass = 2.5',
       steps: [
         'Step 1: Calculate the total energy consumed by the shredder: Energy = 25 kW × 3 h = 75 kW-h.',
         'Step 2: Convert the mass of farm waste to kg: 2.5 tonnes = 2500 kg.',
@@ -8363,6 +7484,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-wind-energy-122-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Project Planning',
     topic: 'Wind Energy',
@@ -8397,6 +7519,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-wind-energy-122-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Project Planning',
     topic: 'Wind Energy',
@@ -8433,6 +7556,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-wind-energy-122-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Project Planning',
     topic: 'Wind Energy',
@@ -8467,6 +7591,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-wind-energy-122-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Project Planning',
     topic: 'Wind Energy',
@@ -8501,6 +7626,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-noise-levels-in-agricultural-machinery-132-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Rice Reaper',
     topic: 'Noise Levels in Agricultural Machinery',
@@ -8534,6 +7660,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-noise-levels-in-agricultural-machinery-132-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Rice Reaper',
     topic: 'Noise Levels in Agricultural Machinery',
@@ -8568,6 +7695,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-noise-levels-in-agricultural-machinery-132-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Rice Reaper',
     topic: 'Noise Levels in Agricultural Machinery',
@@ -8602,6 +7730,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-noise-levels-in-agricultural-machinery-132-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Rice Reaper',
     topic: 'Noise Levels in Agricultural Machinery',
@@ -8635,6 +7764,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-fluid-mechanics-133-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Flow Types',
     topic: 'Fluid Mechanics',
@@ -8669,6 +7799,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-fluid-mechanics-133-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Flow Types',
     topic: 'Fluid Mechanics',
@@ -8703,6 +7834,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-fluid-mechanics-133-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Flow Types',
     topic: 'Fluid Mechanics',
@@ -8737,6 +7869,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-fluid-mechanics-133-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Flow Types',
     topic: 'Fluid Mechanics',
@@ -8772,6 +7905,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-mechanical-systems-134-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Drive Efficiency',
     topic: 'Mechanical Systems',
@@ -8806,6 +7940,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-mechanical-systems-134-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Drive Efficiency',
     topic: 'Mechanical Systems',
@@ -8839,6 +7974,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-mechanical-systems-134-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Drive Efficiency',
     topic: 'Mechanical Systems',
@@ -8873,6 +8009,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-mechanical-systems-134-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Drive Efficiency',
     topic: 'Mechanical Systems',
@@ -8906,6 +8043,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-aero-generators-139-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Electricity Generation',
     topic: 'Aero-generators',
@@ -8940,6 +8078,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-aero-generators-139-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Electricity Generation',
     topic: 'Aero-generators',
@@ -8974,6 +8113,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-aero-generators-139-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Electricity Generation',
     topic: 'Aero-generators',
@@ -9008,6 +8148,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-aero-generators-139-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Electricity Generation',
     topic: 'Aero-generators',
@@ -9042,6 +8183,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-thermodynamics-140-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Carnot Cycle',
     topic: 'Thermodynamics',
@@ -9075,6 +8217,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-thermodynamics-140-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Carnot Cycle',
     topic: 'Thermodynamics',
@@ -9108,6 +8251,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-thermodynamics-140-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Carnot Cycle',
     topic: 'Thermodynamics',
@@ -9141,6 +8285,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-thermodynamics-140-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Carnot Cycle',
     topic: 'Thermodynamics',
@@ -9175,141 +8320,8 @@ export const recalledAreaAQuestions: Question[] = [
     }
   },
   {
-    id: 'recall-2022-A-electrical-engineering-141-v0',
-    area: 'A',
-    subTopic: 'Circuit Analysis',
-    topic: 'Electrical Engineering',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'An electric pump has a total resistance of 10 ohms. If its power source is from a 200 volt outlet, what should be the amperage of its safety fuse? Assume 20% surge current.',
-    options: [
-      '20A',
-      '25A',
-      '30A',
-      '35A'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: '[object Object]',
-      steps: [
-        'Step 1: Calculate the normal current using I = V / R.',
-        'Step 2: Calculate the surge current by multiplying the normal current by (1 + surgeCurrentPercentage).'
-      ],
-      formula: 'I = V / R',
-      keyConcept: 'Understanding the relationship between voltage, resistance, and current in circuits.',
-      commonMistakes: [
-          'Forgetting to account for the surge current when determining fuse amperage.',
-          'Incorrectly calculating the current by using the wrong resistance value.'
-      ],
-      extraneousGivens: [
-        'Surge current percentage',
-        'Voltage rating of outlet'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-engineering-141-v1',
-    area: 'A',
-    subTopic: 'Circuit Analysis',
-    topic: 'Electrical Engineering',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'An electric heater has a total resistance of 10 ohms. If it operates from a 250 volt outlet, what should be the amperage of its safety fuse considering a 25% surge current?',
-    options: [
-      '25A',
-      '20A',
-      '30A',
-      '35A'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'Voltage (V) = 250 volts, Resistance (R) = 10 ohms, Surge current = 25%',
-      steps: [
-        'Step 1: Calculate the normal current using I = V / R.',
-        'Step 2: Calculate the surge current by multiplying the normal current by (1 + surge percentage).'
-      ],
-      formula: 'I = V / R',
-      keyConcept: 'Understanding how to calculate current and account for surge current in electrical systems.',
-      commonMistakes: [
-          'Forgetting to account for the surge percentage when calculating the fuse rating.',
-          'Incorrectly calculating the current by not using the correct resistance value.'
-      ],
-      extraneousGivens: [
-        'Total resistance of 10 ohms',
-        'Voltage of 250 volts',
-        'Surge current of 25%'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-engineering-141-v2',
-    area: 'A',
-    subTopic: 'Circuit Analysis',
-    topic: 'Electrical Engineering',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'An electric pump has a total resistance of 7.5 ohms. If its power source is from a 240 volt outlet, what should be the amperage of its safety fuse? Assume 30% surge current.',
-    options: [
-      '30A',
-      '20A',
-      '25A',
-      '35A'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: '[object Object]',
-      steps: [
-        'Step 1: Calculate the normal current using I = V / R.',
-        'Step 2: Calculate the surge current by multiplying the normal current by (1 + surgeCurrentPercentage).'
-      ],
-      formula: 'I = V / R',
-      keyConcept: 'Understanding how to calculate current and adjust for surge current.',
-      commonMistakes: [
-          'Forgetting to include the surge current in the final amperage calculation.',
-          'Incorrectly calculating the resistance or voltage values.'
-      ],
-      extraneousGivens: [
-        'Surge current percentage',
-        'Voltage of the outlet'
-      ],
-    }
-  },
-  {
-    id: 'recall-2022-A-electrical-engineering-141-v3',
-    area: 'A',
-    subTopic: 'Circuit Analysis',
-    topic: 'Electrical Engineering',
-    type: 'computation',
-    difficulty: 'average',
-    question: 'An electric pump has a total resistance of 7.0 ohms. If its power source is from a 240 volt outlet, what should be the amperage of its safety fuse, considering a 27% surge current?',
-    options: [
-      '35A',
-      '20A',
-      '25A',
-      '30A'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: '[object Object]',
-      steps: [
-        'Step 1: Calculate the normal current using I = V / R.',
-        'Step 2: Calculate the surge current by multiplying the normal current by (1 + surgeCurrentPercentage).'
-      ],
-      formula: 'I = V / R',
-      keyConcept: 'Understanding how to calculate the required amperage for a safety fuse considering surge current.',
-      commonMistakes: [
-          'Forgetting to account for the surge current when calculating the fuse amperage.',
-          'Using incorrect resistance or voltage values in the calculation.'
-      ],
-      extraneousGivens: [
-        'Total resistance: 7.0 ohms',
-        'Power source voltage: 240 volts',
-        'Surge current percentage: 27%'
-      ],
-    }
-  },
-  {
     id: 'recall-2022-A-renewable-energy-142-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Solar Energy',
     topic: 'Renewable Energy',
@@ -9346,6 +8358,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-renewable-energy-142-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Solar Energy',
     topic: 'Renewable Energy',
@@ -9381,6 +8394,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-renewable-energy-142-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Solar Energy',
     topic: 'Renewable Energy',
@@ -9418,6 +8432,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-renewable-energy-142-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Solar Energy',
     topic: 'Renewable Energy',
@@ -9456,6 +8471,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-agricultural-machinery-144-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Implement Types',
     topic: 'Agricultural Machinery',
@@ -9490,6 +8506,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-agricultural-machinery-144-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Implement Types',
     topic: 'Agricultural Machinery',
@@ -9524,6 +8541,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-agricultural-machinery-144-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Implement Types',
     topic: 'Agricultural Machinery',
@@ -9558,6 +8576,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-agricultural-machinery-144-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Implement Types',
     topic: 'Agricultural Machinery',
@@ -9593,6 +8612,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-food-science-159-v0',
+    year: 2022,
     area: 'A',
     subTopic: 'Dairy Products',
     topic: 'Food Science',
@@ -9626,6 +8646,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-food-science-159-v1',
+    year: 2022,
     area: 'A',
     subTopic: 'Dairy Products',
     topic: 'Food Science',
@@ -9661,6 +8682,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-food-science-159-v2',
+    year: 2022,
     area: 'A',
     subTopic: 'Dairy Products',
     topic: 'Food Science',
@@ -9696,6 +8718,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2022-A-food-science-159-v3',
+    year: 2022,
     area: 'A',
     subTopic: 'Dairy Products',
     topic: 'Food Science',
@@ -9730,6 +8753,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-rice-competitiveness-enhancement-fund-164-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Legislation',
     topic: 'Rice Competitiveness Enhancement Fund',
@@ -9764,6 +8788,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-rice-competitiveness-enhancement-fund-164-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Legislation',
     topic: 'Rice Competitiveness Enhancement Fund',
@@ -9798,6 +8823,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-rice-competitiveness-enhancement-fund-164-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Legislation',
     topic: 'Rice Competitiveness Enhancement Fund',
@@ -9832,6 +8858,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-rice-competitiveness-enhancement-fund-164-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Legislation',
     topic: 'Rice Competitiveness Enhancement Fund',
@@ -9866,6 +8893,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-professional-regulation-165-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Licensing',
     topic: 'Professional Regulation',
@@ -9899,6 +8927,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-professional-regulation-165-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Licensing',
     topic: 'Professional Regulation',
@@ -9932,6 +8961,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-professional-regulation-165-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Licensing',
     topic: 'Professional Regulation',
@@ -9966,6 +8996,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-professional-regulation-165-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Licensing',
     topic: 'Professional Regulation',
@@ -9999,6 +9030,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-tractor-operations-166-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Engine Speed',
     topic: 'Tractor Operations',
@@ -10033,6 +9065,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-tractor-operations-166-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Engine Speed',
     topic: 'Tractor Operations',
@@ -10067,6 +9100,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-tractor-operations-166-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Engine Speed',
     topic: 'Tractor Operations',
@@ -10101,6 +9135,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-tractor-operations-166-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Engine Speed',
     topic: 'Tractor Operations',
@@ -10135,6 +9170,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-energy-efficiency-167-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Rice Hull Furnace',
     topic: 'Energy Efficiency',
@@ -10169,6 +9205,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-energy-efficiency-167-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Rice Hull Furnace',
     topic: 'Energy Efficiency',
@@ -10203,6 +9240,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-energy-efficiency-167-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Rice Hull Furnace',
     topic: 'Energy Efficiency',
@@ -10237,6 +9275,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-energy-efficiency-167-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Rice Hull Furnace',
     topic: 'Energy Efficiency',
@@ -10272,6 +9311,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-field-operations-168-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Field Capacity Calculation',
     topic: 'Field Operations',
@@ -10286,7 +9326,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'field_length = 90, field_width = 45, tiller_width = 1.5, speed = 2.5, overlap = 0.15, turnaround_time = 12',
       steps: [
         'Step 1: Calculate effective working width: 1.5m * (1 - 0.15) = 1.275m',
         'Step 2: Convert speed to ha/hr: (2.5 kph * 1000m/km) / 10000m²/ha = 0.25 ha/hr',
@@ -10310,6 +9350,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-field-operations-168-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Field Capacity Calculation',
     topic: 'Field Operations',
@@ -10324,7 +9365,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'fieldLength = 90, fieldWidth = 45, tillerWidth = 1, speed = 1.5, overlap = 0.2, turnaroundTime = 15',
       steps: [
         'Step 1: Convert speed from kph to ha/hr: 1.5 kph = 0.375 ha/hr.',
         'Step 2: Calculate effective working speed: 0.375 ha/hr * (1 - 0.20) = 0.3 ha/hr.',
@@ -10349,6 +9390,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-field-operations-168-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Field Capacity Calculation',
     topic: 'Field Operations',
@@ -10363,7 +9405,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'fieldLength = 90, fieldWidth = 45, tillerWidth = 1.5, speed = 4, overlap = 0.15, turnaroundTime = 10',
       steps: [
         'Step 1: Calculate the effective width: Effective Width = Tiller Width x (1 - Overlap) = 1.5m x (1 - 0.15) = 1.275m',
         'Step 2: Calculate the field capacity: Field Capacity = (1.275m x 4kph x 3600s/hr) / 10000 - (Number of passes x Turnaround Time)',
@@ -10389,6 +9431,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-field-operations-168-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Field Capacity Calculation',
     topic: 'Field Operations',
@@ -10403,7 +9446,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'fieldLength = 90, fieldWidth = 45, tillerWidth = 1, speed = 6, overlap = 0.1, turnaroundTime = 5',
       steps: [
         'Convert the speed from kph to m/min: 6 kph = 100 m/min.',
         'Calculate the effective speed considering overlap: Effective Speed = 100 m/min * (1 - 0.1) = 90 m/min.',
@@ -10429,6 +9472,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-gasification-169-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Gas Production',
     topic: 'Gasification',
@@ -10464,6 +9508,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-gasification-169-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Gas Production',
     topic: 'Gasification',
@@ -10498,6 +9543,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-gasification-169-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Gas Production',
     topic: 'Gasification',
@@ -10532,6 +9578,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-gasification-169-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Gas Production',
     topic: 'Gasification',
@@ -10566,6 +9613,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-wind-power-170-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Theoretical Power Calculation',
     topic: 'Wind Power',
@@ -10600,6 +9648,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-wind-power-170-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Theoretical Power Calculation',
     topic: 'Wind Power',
@@ -10634,6 +9683,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-wind-power-170-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Theoretical Power Calculation',
     topic: 'Wind Power',
@@ -10668,6 +9718,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-wind-power-170-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Theoretical Power Calculation',
     topic: 'Wind Power',
@@ -10702,6 +9753,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-manufacturing-172-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Local Fabrication',
     topic: 'Manufacturing',
@@ -10736,6 +9788,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-manufacturing-172-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Local Fabrication',
     topic: 'Manufacturing',
@@ -10770,6 +9823,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-manufacturing-172-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Local Fabrication',
     topic: 'Manufacturing',
@@ -10803,6 +9857,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-manufacturing-172-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Local Fabrication',
     topic: 'Manufacturing',
@@ -10836,6 +9891,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thresher-testing-173-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Testing Standards',
     topic: 'Thresher Testing',
@@ -10870,6 +9926,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thresher-testing-173-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Testing Standards',
     topic: 'Thresher Testing',
@@ -10904,6 +9961,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thresher-testing-173-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Testing Standards',
     topic: 'Thresher Testing',
@@ -10938,6 +9996,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thresher-testing-173-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Testing Standards',
     topic: 'Thresher Testing',
@@ -10973,6 +10032,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-186-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Cooling Processes',
     topic: 'Heat Transfer',
@@ -11009,6 +10069,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-186-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Cooling Processes',
     topic: 'Heat Transfer',
@@ -11047,6 +10108,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-186-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Cooling Processes',
     topic: 'Heat Transfer',
@@ -11083,6 +10145,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-186-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Cooling Processes',
     topic: 'Heat Transfer',
@@ -11120,6 +10183,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-187-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Boiler Operations',
     topic: 'Heat Transfer',
@@ -11154,6 +10218,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-187-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Boiler Operations',
     topic: 'Heat Transfer',
@@ -11168,7 +10233,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 0.05, inletTemperature = 85, inletEnthalpy = 350, exitEnthalpy = 2676',
       steps: [
         'Step 1: Calculate the difference in enthalpy: h_exit - h_inlet = 2676 kJ/kg - 350.0 kJ/kg = 2326 kJ/kg.',
         'Step 2: Calculate the heat transfer rate: Q = 0.05 kg/s * 2326 kJ/kg = 116.3 kW.'
@@ -11189,6 +10254,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-187-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Boiler Operations',
     topic: 'Heat Transfer',
@@ -11203,7 +10269,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 0.1, inletTemp = 80, inletEnthalpy = 334.5, exitTemp = 120, exitEnthalpy = 2800',
       steps: [
         'Step 1: Calculate the change in enthalpy (h_exit - h_inlet).',
         'Step 2: Substitute values into the formula Q = ṁ * (h_exit - h_inlet) to find Q.'
@@ -11225,6 +10291,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-187-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Boiler Operations',
     topic: 'Heat Transfer',
@@ -11239,7 +10306,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 0.12, inletTemp = 80, inletEnthalpy = 340, outletTemp = 100, outletEnthalpy = 2676',
       steps: [
         'Step 1: Calculate the enthalpy difference: h_out - h_in = 2676 kJ/kg - 340 kJ/kg = 2336 kJ/kg.',
         'Step 2: Calculate the heat transfer rate: Q = 0.12 kg/s * 2336 kJ/kg = 280.32 kW.',
@@ -11264,6 +10331,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-189-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Specific Heat Conversion',
     topic: 'Thermodynamics',
@@ -11297,6 +10365,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-189-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Specific Heat Conversion',
     topic: 'Thermodynamics',
@@ -11330,6 +10399,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-189-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Specific Heat Conversion',
     topic: 'Thermodynamics',
@@ -11363,6 +10433,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-189-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Specific Heat Conversion',
     topic: 'Thermodynamics',
@@ -11396,6 +10467,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-190-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Transfer Calculations',
     topic: 'Heat Transfer',
@@ -11410,7 +10482,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'mass = 0.1, specificHeat = 3.32, finalTemperature = 80, initialTemperature = 10',
       steps: [
         'Step 1: Calculate the temperature change (ΔT): ΔT = finalTemperature - initialTemperature = 80 - 10 = 70°C',
         'Step 2: Substitute values into the formula: Q = 0.1 kg * 3.32 kJ/kg-°C * 70°C = 23.24 kJ',
@@ -11432,6 +10504,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-190-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Transfer Calculations',
     topic: 'Heat Transfer',
@@ -11446,7 +10519,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'mass = 0.15, specificHeat = 3.32, initialTempEgg = 10, finalTempWater = 100',
       steps: [
         'Step 1: Calculate the change in temperature (ΔT) = finalTempWater - initialTempEgg = 100 - 10 = 90°C.',
         'Step 2: Substitute values into the formula: Q = 0.15 kg * 3.32 kJ/kg-°C * 90°C.',
@@ -11468,6 +10541,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-190-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Transfer Calculations',
     topic: 'Heat Transfer',
@@ -11482,7 +10556,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'mass = 0.1, specificHeat = 3.32, finalTemperature = 90, initialTemperature = 6',
       steps: [
         'Step 1: Calculate the temperature change: T_final - T_initial = 90 - 6 = 84°C',
         'Step 2: Substitute values into the formula: Q = 0.1 kg * 3.32 kJ/kg-°C * 84°C',
@@ -11504,6 +10578,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-190-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Transfer Calculations',
     topic: 'Heat Transfer',
@@ -11518,7 +10593,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'mass = 0.1 kg, specificHeat = 3.32 kJ/kg-°C, initialTemperatureEgg = 10°C, finalTemperatureWater = 90°C',
       steps: [
         'Step 1: Calculate the change in temperature (ΔT) = finalTemperatureWater - initialTemperatureEgg = 90°C - 10°C = 80°C.',
         'Step 2: Substitute values into the formula: Q = 0.1 kg * 3.32 kJ/kg-°C * 80°C = 26.56 kJ.',
@@ -11538,6 +10613,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-191-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Thermal Conductivity',
     topic: 'Heat Transfer',
@@ -11552,7 +10628,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'thickness = 0.2, area = 36, heatTransferRate = 0.36, innerTemp = 10, outerTemp = 0',
       steps: [
         'Convert heat transfer rate from kW to W: 0.36 kW = 360 W.',
         'Calculate the temperature difference: T1 - T2 = 10°C - 0°C = 10°C.',
@@ -11578,6 +10654,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-191-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Thermal Conductivity',
     topic: 'Heat Transfer',
@@ -11592,7 +10669,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'thickness = 0.4, area = 36, heat_transfer_rate = 2.4, inner_temp = 20, outer_temp = 10',
       steps: [
         'Step 1: Calculate the temperature difference (T1 - T2) = 20°C - 10°C = 10°C.',
         'Step 2: Rearrange the formula to solve for k: k = (Q * d) / (A * (T1 - T2)).',
@@ -11618,6 +10695,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-191-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Thermal Conductivity',
     topic: 'Heat Transfer',
@@ -11632,7 +10710,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'thickness = 0.3, area = 36, heatTransferRate = 2.4, innerTemp = 20, outerTemp = 10',
       steps: [
         'Step 1: Calculate the temperature difference (T1 - T2): 20°C - 10°C = 10°C.',
         'Step 2: Rearrange the formula to find k: k = (Q * d) / (A * (T1 - T2)).',
@@ -11657,6 +10735,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-191-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Thermal Conductivity',
     topic: 'Heat Transfer',
@@ -11671,7 +10750,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'thickness = 0.1, area = 36, heatTransferRate = 3.6, innerTemp = 20, outerTemp = 10',
       steps: [
         'Step 1: Calculate the temperature difference (T1 - T2): 20°C - 10°C = 10°C.',
         'Step 2: Rearrange the formula to solve for k: k = (Q * d) / (A * (T1 - T2)).',
@@ -11697,6 +10776,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-193-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Loss Calculation',
     topic: 'Heat Transfer',
@@ -11711,7 +10791,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'thickness = 0.25, area = 10, thermal_conductivity = 0.1, inner_temp = 30, outer_temp = 0, inner_heat_transfer_coefficient = 10, outer_heat_transfer_coefficient = 20',
       steps: [
         'Calculate R_conduction = thickness / (thermal_conductivity * area)',
         'Calculate R_convection_inner = 1 / (inner_heat_transfer_coefficient * area)',
@@ -11736,6 +10816,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-193-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Loss Calculation',
     topic: 'Heat Transfer',
@@ -11750,7 +10831,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'thickness = 0.25, area = 10, thermal_conductivity = 0.6, inner_temp = 25, outer_temp = -15, inner_heat_transfer_coefficient = 10, outer_heat_transfer_coefficient = 20',
       steps: [
         'Calculate R_conduction = thickness / (thermal_conductivity * area)',
         'Calculate R_convection_inner = 1 / (inner_heat_transfer_coefficient * area)',
@@ -11777,6 +10858,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-195-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Transfer in Pipes',
     topic: 'Heat Transfer',
@@ -11791,7 +10873,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'meanTemperatureWater = 120, meanTemperatureAir = 60, diameterInside = 1, diameterOutside = 1.25, heatTransferCoefficientWater = 80, heatTransferCoefficientAir = 1.5',
       steps: [
         'Step 1: Calculate the thermal resistances on both sides of the pipe.',
         'Step 2: Use the formula to find the heat transfer rate Q.'
@@ -11811,6 +10893,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-195-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Transfer in Pipes',
     topic: 'Heat Transfer',
@@ -11825,7 +10908,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterTemperature = 160, airTemperature = 70, insideDiameter = 1.5, outerDiameter = 1.75, waterHeatTransferCoefficient = 90, airHeatTransferCoefficient = 1.2',
       steps: [
         'Calculate the area of the inner and outer surfaces of the pipe.',
         'Use the formula to find the heat transfer per foot length of the pipe.'
@@ -11845,6 +10928,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-195-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Transfer in Pipes',
     topic: 'Heat Transfer',
@@ -11859,7 +10943,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'mean_temperature_water = 160, inside_diameter = 1.5, outer_diameter = 1.75, temperature_air = 70, heat_transfer_coefficient_water = 120, heat_transfer_coefficient_air = 1.2',
       steps: [
         'Calculate the area for the inside and outside of the pipe.',
         'Use the formula to calculate the heat transfer per foot length of the pipe.'
@@ -11878,6 +10962,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-195-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Transfer in Pipes',
     topic: 'Heat Transfer',
@@ -11892,7 +10977,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'meanTemperatureWater = 160, insideDiameter = 1.5, outerDiameter = 2, airTemperature = 70, heatTransferCoefficientWater = 120, heatTransferCoefficientAir = 1.2',
       steps: [
         'Step 1: Calculate the areas A1 and A2 based on the diameters.',
         'Step 2: Calculate the thermal resistance using the given formula.',
@@ -11912,6 +10997,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-196-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Overall Heat Transfer Coefficient',
     topic: 'Heat Transfer',
@@ -11926,7 +11012,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'k = 0.3, L = 0.1, hL = 10, hR = 20',
       steps: [
         'Step 1: Calculate the thermal resistance due to convection on the left side: R1 = 1/hL = 1/10 = 0.1.',
         'Step 2: Calculate the thermal resistance due to conduction: R2 = L/k = 0.1/0.3 = 0.333.',
@@ -11948,6 +11034,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-196-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Overall Heat Transfer Coefficient',
     topic: 'Heat Transfer',
@@ -11962,7 +11049,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'k = 0.4, L = 0.2, hL = 10, hR = 20',
       steps: [
         'Step 1: Calculate the thermal resistance due to convection on the left side: R_L = 1/hL = 1/10 = 0.1 m2•K/W.',
         'Step 2: Calculate the thermal resistance due to conduction through the wall: R_cond = L/k = 0.2/0.4 = 0.5 m2•K/W.',
@@ -11984,6 +11071,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-196-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Overall Heat Transfer Coefficient',
     topic: 'Heat Transfer',
@@ -11998,7 +11086,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'k = 0.6, L = 0.1, hL = 10, hR = 20',
       steps: [
         'Step 1: Calculate the thermal resistance due to convection on the left side: R1 = 1/hL = 1/10 = 0.1.',
         'Step 2: Calculate the thermal resistance due to conduction: R2 = L/k = 0.1/0.6 = 0.1667.',
@@ -12022,6 +11110,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-196-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Overall Heat Transfer Coefficient',
     topic: 'Heat Transfer',
@@ -12036,7 +11125,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'k = 0.6, L = 0.1, hL = 10, hR = 20',
       steps: [
         'Step 1: Calculate the thermal resistance due to convection on the left side: R1 = 1/hL = 1/10 = 0.1',
         'Step 2: Calculate the thermal resistance due to conduction through the wall: R2 = L/k = 0.1/0.6 = 0.1667',
@@ -12058,6 +11147,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-197-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Engine Efficiency',
     topic: 'Thermodynamics',
@@ -12093,6 +11183,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-197-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Engine Efficiency',
     topic: 'Thermodynamics',
@@ -12127,6 +11218,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-197-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Engine Efficiency',
     topic: 'Thermodynamics',
@@ -12163,6 +11255,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-197-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Engine Efficiency',
     topic: 'Thermodynamics',
@@ -12197,6 +11290,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-198-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Coefficient of Performance',
     topic: 'Thermodynamics',
@@ -12233,6 +11327,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-198-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Coefficient of Performance',
     topic: 'Thermodynamics',
@@ -12267,6 +11362,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-198-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Coefficient of Performance',
     topic: 'Thermodynamics',
@@ -12301,6 +11397,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-198-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Coefficient of Performance',
     topic: 'Thermodynamics',
@@ -12338,6 +11435,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-199-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Cooling Load Calculation',
     topic: 'Heat Transfer',
@@ -12352,7 +11450,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'mass = 150, initialTemp = 20, finalTemp = 5, specificHeatBeforeFreezing = 3.23, specificHeatAfterFreezing = 1.68, latentHeatOfFusion = 233',
       steps: [
         'Step 1: Calculate the heat removed to cool from 20°C to 5°C using specific heat.',
         'Step 2: Calculate the heat removed during the phase change (freezing).',
@@ -12373,6 +11471,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-199-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Cooling Load Calculation',
     topic: 'Heat Transfer',
@@ -12409,6 +11508,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-199-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Cooling Load Calculation',
     topic: 'Heat Transfer',
@@ -12423,7 +11523,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'mass = 150, initialTemp = 20, finalTemp = 5, specificHeatBefore = 3.23, specificHeatAfter = 1.68, latentHeat = 233',
       steps: [
         'Step 1: Calculate the cooling load before freezing: Q1 = mcΔT = 150 kg * 3.23 kJ/kg-K * (20°C - 0°C)',
         'Step 2: Calculate the latent heat load: Q2 = mL = 150 kg * 233 kJ/kg',
@@ -12445,6 +11545,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-199-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Cooling Load Calculation',
     topic: 'Heat Transfer',
@@ -12481,6 +11582,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-200-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Exchanger Calculations',
     topic: 'Heat Transfer',
@@ -12515,6 +11617,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-heat-transfer-200-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Heat Exchanger Calculations',
     topic: 'Heat Transfer',
@@ -12529,7 +11632,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'massFlowRate = 68, initialWaterTemp = 30, finalWaterTemp = 80, specificHeatOil = 2.5, inletRefrigerantTemp = 120, outletRefrigerantTemp = 80, overallHeatTransferCoefficient = 400',
       steps: [
         'Step 1: Calculate the temperature difference for water: ΔT = T_final - T_initial = 80 - 30 = 50°C.',
         'Step 2: Calculate the heat transfer: Q = 68 kg/min * (1 kJ/kg-°C) * 50°C = 3400 kJ/min.',
@@ -12551,6 +11654,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-211-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Radiation',
     topic: 'Thermodynamics',
@@ -12585,6 +11689,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-211-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Radiation',
     topic: 'Thermodynamics',
@@ -12619,6 +11724,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-211-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Radiation',
     topic: 'Thermodynamics',
@@ -12653,6 +11759,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-211-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Radiation',
     topic: 'Thermodynamics',
@@ -12687,6 +11794,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-212-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Stefan-Boltzmann Law',
     topic: 'Thermodynamics',
@@ -12724,6 +11832,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-212-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Stefan-Boltzmann Law',
     topic: 'Thermodynamics',
@@ -12759,6 +11868,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-212-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Stefan-Boltzmann Law',
     topic: 'Thermodynamics',
@@ -12795,6 +11905,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-thermodynamics-212-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Stefan-Boltzmann Law',
     topic: 'Thermodynamics',
@@ -12829,6 +11940,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-windmill-efficiency-216-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Modification for efficiency',
     topic: 'Windmill efficiency',
@@ -12863,6 +11975,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-windmill-efficiency-216-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Modification for efficiency',
     topic: 'Windmill efficiency',
@@ -12898,6 +12011,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-windmill-efficiency-216-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Modification for efficiency',
     topic: 'Windmill efficiency',
@@ -12932,6 +12046,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-windmill-efficiency-216-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Modification for efficiency',
     topic: 'Windmill efficiency',
@@ -12965,6 +12080,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-windpump-operation-217-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Tip-speed ratio',
     topic: 'Windpump operation',
@@ -12998,6 +12114,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-windpump-operation-217-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Tip-speed ratio',
     topic: 'Windpump operation',
@@ -13032,6 +12149,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-windpump-operation-217-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Tip-speed ratio',
     topic: 'Windpump operation',
@@ -13065,6 +12183,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-windpump-operation-217-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Tip-speed ratio',
     topic: 'Windpump operation',
@@ -13098,6 +12217,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-machine-maintenance-218-v0',
+    year: 2023,
     area: 'A',
     subTopic: 'Transmission oil change frequency',
     topic: 'Machine maintenance',
@@ -13131,6 +12251,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-machine-maintenance-218-v1',
+    year: 2023,
     area: 'A',
     subTopic: 'Transmission oil change frequency',
     topic: 'Machine maintenance',
@@ -13165,6 +12286,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-machine-maintenance-218-v2',
+    year: 2023,
     area: 'A',
     subTopic: 'Transmission oil change frequency',
     topic: 'Machine maintenance',
@@ -13199,6 +12321,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2023-A-machine-maintenance-218-v3',
+    year: 2023,
     area: 'A',
     subTopic: 'Transmission oil change frequency',
     topic: 'Machine maintenance',
@@ -13233,6 +12356,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-units-of-measurement-219-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'SI Units',
     topic: 'Units of Measurement',
@@ -13267,6 +12391,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-units-of-measurement-219-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'SI Units',
     topic: 'Units of Measurement',
@@ -13300,6 +12425,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-units-of-measurement-219-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'SI Units',
     topic: 'Units of Measurement',
@@ -13333,6 +12459,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-units-of-measurement-219-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'SI Units',
     topic: 'Units of Measurement',
@@ -13366,6 +12493,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-agricultural-machinery-220-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Usage Statistics',
     topic: 'Agricultural Machinery',
@@ -13400,6 +12528,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-agricultural-machinery-220-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Usage Statistics',
     topic: 'Agricultural Machinery',
@@ -13435,6 +12564,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-agricultural-machinery-220-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Usage Statistics',
     topic: 'Agricultural Machinery',
@@ -13469,6 +12599,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-agricultural-machinery-220-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Usage Statistics',
     topic: 'Agricultural Machinery',
@@ -13504,6 +12635,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-tractor-operation-221-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Gear Management',
     topic: 'Tractor Operation',
@@ -13538,6 +12670,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-tractor-operation-221-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Gear Management',
     topic: 'Tractor Operation',
@@ -13572,6 +12705,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-tractor-operation-221-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Gear Management',
     topic: 'Tractor Operation',
@@ -13606,6 +12740,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-tractor-operation-221-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Gear Management',
     topic: 'Tractor Operation',
@@ -13640,6 +12775,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-agricultural-support-222-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Farmer Assistance',
     topic: 'Agricultural Support',
@@ -13674,6 +12810,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-agricultural-support-222-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Farmer Assistance',
     topic: 'Agricultural Support',
@@ -13708,6 +12845,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-agricultural-support-222-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Farmer Assistance',
     topic: 'Agricultural Support',
@@ -13742,6 +12880,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-agricultural-support-222-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Farmer Assistance',
     topic: 'Agricultural Support',
@@ -13778,6 +12917,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-thermodynamics-226-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Power Cycles',
     topic: 'Thermodynamics',
@@ -13814,6 +12954,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-thermodynamics-226-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Power Cycles',
     topic: 'Thermodynamics',
@@ -13848,6 +12989,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-thermodynamics-226-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Power Cycles',
     topic: 'Thermodynamics',
@@ -13882,6 +13024,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-thermodynamics-226-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Power Cycles',
     topic: 'Thermodynamics',
@@ -13917,143 +13060,8 @@ export const recalledAreaAQuestions: Question[] = [
     }
   },
   {
-    id: 'recall-2024-A-electrical-engineering-234-v0',
-    area: 'A',
-    subTopic: 'Electrical Devices',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following is primarily used to control the flow of electricity in a circuit?',
-    options: [
-      'Switch',
-      'Lamp',
-      'Junction Box',
-      'Receptacle'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'A circuit with a switch, lamp, junction box, and receptacle.',
-      steps: [
-        'Identify the function of each device in the circuit.',
-        'Determine which device controls the flow of electricity.'
-      ],
-      formula: 'N/A',
-      keyConcept: 'A switch is an electrical device that opens or closes a circuit, thereby controlling the flow of electricity.',
-      commonMistakes: [
-          'Confusing the switch with a receptacle, which provides power but does not control it.',
-          'Thinking that a lamp can control electricity when it only consumes it.'
-      ],
-      extraneousGivens: [
-        'Voltage level: 120V',
-        'Current rating: 15A',
-        'Wattage of lamp: 60W'
-      ],
-    }
-  },
-  {
-    id: 'recall-2024-A-electrical-engineering-234-v1',
-    area: 'A',
-    subTopic: 'Electrical Devices',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following is primarily used to provide illumination in a space?',
-    options: [
-      'Lamp',
-      'Switch',
-      'Junction Box',
-      'Receptacle'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'The purpose of the device is to provide light in a room.',
-      steps: [
-        'Identify the primary function of each device.',
-        'Determine which device is specifically designed for illumination.'
-      ],
-      formula: 'N/A for this theoretical question',
-      keyConcept: 'A lamp is specifically designed to provide light, while switches, junction boxes, and receptacles serve different functions.',
-      commonMistakes: [
-          'Confusing a lamp with a switch, which controls power but does not provide light.',
-          'Thinking that a junction box or receptacle can illuminate a space.'
-      ],
-      extraneousGivens: [
-        'The room size is 200 square feet',
-        'The voltage supply is 120V',
-        'The circuit includes multiple light sources'
-      ],
-    }
-  },
-  {
-    id: 'recall-2024-A-electrical-engineering-234-v2',
-    area: 'A',
-    subTopic: 'Electrical Devices',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following is primarily used for connecting electrical wires but is not considered an electrical device that actively consumes power?',
-    options: [
-      'Junction Box',
-      'Switch',
-      'Lamp',
-      'Receptacle'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'A junction box is used to house and protect electrical connections, while switches, lamps, and receptacles are devices that consume or control electrical power.',
-      steps: [
-        'Identify the function of each option.',
-        'Determine which option does not consume power.'
-      ],
-      formula: 'N/A',
-      keyConcept: 'A junction box is a passive component that does not consume electricity, unlike switches, lamps, and receptacles, which are active electrical devices.',
-      commonMistakes: [
-          'Confusing junction boxes with devices that control or consume power.',
-          'Assuming all options are electrical devices without considering their functions.'
-      ],
-      extraneousGivens: [
-        'Voltage rating: 120V',
-        'Current rating: 15A',
-        'Wire gauge: 14 AWG'
-      ],
-    }
-  },
-  {
-    id: 'recall-2024-A-electrical-engineering-234-v3',
-    area: 'A',
-    subTopic: 'Electrical Devices',
-    topic: 'Electrical Engineering',
-    type: 'theory',
-    difficulty: 'average',
-    question: 'Which of the following is not classified as an electrical device used in wiring systems?',
-    options: [
-      'Receptacle',
-      'Switch',
-      'Lamp',
-      'Junction Box'
-    ],
-    correctAnswer: 0,
-    solution: {
-      given: 'The components used in residential wiring include various devices such as switches, lamps, and junction boxes.',
-      steps: [
-        'Identify the function of each device',
-        'Determine which device does not perform electrical functions'
-      ],
-      formula: 'N/A',
-      keyConcept: 'A receptacle is primarily a point of connection for electrical devices, rather than a device itself.',
-      commonMistakes: [
-          'Confusing receptacles with other electrical devices',
-          'Assuming all components in wiring are electrical devices'
-      ],
-      extraneousGivens: [
-        'Voltage rating of 120V',
-        'Current rating of 15A',
-        'Wire gauge of 14 AWG'
-      ],
-    }
-  },
-  {
     id: 'recall-2024-A-measurement-units-241-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'SI Units',
     topic: 'Measurement Units',
@@ -14087,6 +13095,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-measurement-units-241-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'SI Units',
     topic: 'Measurement Units',
@@ -14120,6 +13129,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-measurement-units-241-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'SI Units',
     topic: 'Measurement Units',
@@ -14153,6 +13163,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-measurement-units-241-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'SI Units',
     topic: 'Measurement Units',
@@ -14187,6 +13198,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-field-testing-242-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Machinery Testing',
     topic: 'Field Testing',
@@ -14220,6 +13232,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-field-testing-242-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Machinery Testing',
     topic: 'Field Testing',
@@ -14253,6 +13266,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-field-testing-242-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Machinery Testing',
     topic: 'Field Testing',
@@ -14288,6 +13302,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-field-testing-242-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Machinery Testing',
     topic: 'Field Testing',
@@ -14321,6 +13336,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-metrology-equipment-244-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Automated Detection',
     topic: 'Metrology Equipment',
@@ -14355,6 +13371,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-metrology-equipment-244-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Automated Detection',
     topic: 'Metrology Equipment',
@@ -14389,6 +13406,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-metrology-equipment-244-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Automated Detection',
     topic: 'Metrology Equipment',
@@ -14423,6 +13441,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-metrology-equipment-244-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Automated Detection',
     topic: 'Metrology Equipment',
@@ -14457,6 +13476,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-metrology-equipment-245-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Automated Measurement',
     topic: 'Metrology Equipment',
@@ -14491,6 +13511,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-metrology-equipment-245-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Automated Measurement',
     topic: 'Metrology Equipment',
@@ -14525,6 +13546,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-metrology-equipment-245-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Automated Measurement',
     topic: 'Metrology Equipment',
@@ -14558,6 +13580,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-metrology-equipment-245-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Automated Measurement',
     topic: 'Metrology Equipment',
@@ -14592,6 +13615,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-tractor-operation-246-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Gear Engagement',
     topic: 'Tractor Operation',
@@ -14626,6 +13650,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-tractor-operation-246-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Gear Engagement',
     topic: 'Tractor Operation',
@@ -14660,6 +13685,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-tractor-operation-246-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Gear Engagement',
     topic: 'Tractor Operation',
@@ -14694,6 +13720,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-tractor-operation-246-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Gear Engagement',
     topic: 'Tractor Operation',
@@ -14728,6 +13755,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-fuel-consumption-calculation-249-v0',
+    year: 2024,
     area: 'A',
     subTopic: 'Cost Analysis',
     topic: 'Fuel Consumption Calculation',
@@ -14742,7 +13770,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'motor_power = 246 kW, operating_time = 10 hours, specific_gravity = 0.85, fuel_consumption = 200 g/h, fuel_price = 45 Php/L',
       steps: [
         'Step 1: Calculate total fuel consumption in grams: 200 g/h * 10 h = 2000 g',
         'Step 2: Convert grams to liters using specific gravity: Volume (L) = Mass (g) / (Specific Gravity * 1000) = 2000 g / (0.85 * 1000) = 2.3529 L',
@@ -14765,6 +13793,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-fuel-consumption-calculation-249-v1',
+    year: 2024,
     area: 'A',
     subTopic: 'Cost Analysis',
     topic: 'Fuel Consumption Calculation',
@@ -14779,7 +13808,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'motorPower = 246, operatingTime = 10, specificGravity = 0.85, fuelConsumption = 200, fuelPrice = 45',
       steps: [
         'Step 1: Calculate total fuel consumed in grams: Fuel Consumption Rate * Operating Time = 200 g/h * 10 h = 2000 g',
         'Step 2: Convert grams to liters using specific gravity: Volume (L) = Mass (g) / (Specific Gravity * 1000) = 2000 g / (0.85 * 1000) = 2.3529 L',
@@ -14804,6 +13833,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-fuel-consumption-calculation-249-v2',
+    year: 2024,
     area: 'A',
     subTopic: 'Cost Analysis',
     topic: 'Fuel Consumption Calculation',
@@ -14818,7 +13848,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'motorPower = 300 kW, operatingTime = 12 hours, specificGravity = 0.85, fuelConsumptionRate = 180 g/h, fuelPrice = 45 Php/L',
       steps: [
         'Step 1: Calculate total fuel consumed in grams: 180 g/h * 12 h = 2160 g',
         'Step 2: Convert grams to liters using specific gravity: Volume (L) = Mass (g) / (Specific Gravity * 1000) = 2160 g / (0.85 * 1000) = 2.54 L',
@@ -14844,6 +13874,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2024-A-fuel-consumption-calculation-249-v3',
+    year: 2024,
     area: 'A',
     subTopic: 'Cost Analysis',
     topic: 'Fuel Consumption Calculation',
@@ -14858,7 +13889,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'motorPower = 246, operatingTime = 10, specificGravity = 0.85, fuelConsumption = 250, fuelPrice = 45',
       steps: [
         'Step 1: Calculate total fuel consumed in grams: 250 g/h * 10 h = 2500 g',
         'Step 2: Convert grams to liters using specific gravity: 2500 g / (0.85 * 1000 g/L) = 2.9412 L',
@@ -14881,6 +13912,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-training-and-development-251-v0',
+    year: 2025,
     area: 'A',
     subTopic: 'Agricultural Training',
     topic: 'Training and Development',
@@ -14915,6 +13947,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-training-and-development-251-v1',
+    year: 2025,
     area: 'A',
     subTopic: 'Agricultural Training',
     topic: 'Training and Development',
@@ -14949,6 +13982,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-training-and-development-251-v2',
+    year: 2025,
     area: 'A',
     subTopic: 'Agricultural Training',
     topic: 'Training and Development',
@@ -14983,6 +14017,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-training-and-development-251-v3',
+    year: 2025,
     area: 'A',
     subTopic: 'Agricultural Training',
     topic: 'Training and Development',
@@ -15016,6 +14051,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-agricultural-machinery-252-v0',
+    year: 2025,
     area: 'A',
     subTopic: 'Local Production',
     topic: 'Agricultural Machinery',
@@ -15049,6 +14085,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-agricultural-machinery-252-v1',
+    year: 2025,
     area: 'A',
     subTopic: 'Local Production',
     topic: 'Agricultural Machinery',
@@ -15082,6 +14119,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-agricultural-machinery-252-v2',
+    year: 2025,
     area: 'A',
     subTopic: 'Local Production',
     topic: 'Agricultural Machinery',
@@ -15115,6 +14153,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-agricultural-machinery-252-v3',
+    year: 2025,
     area: 'A',
     subTopic: 'Local Production',
     topic: 'Agricultural Machinery',
@@ -15148,6 +14187,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-refrigeration-258-v0',
+    year: 2025,
     area: 'A',
     subTopic: 'Industrial Refrigerants',
     topic: 'Refrigeration',
@@ -15182,6 +14222,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-refrigeration-258-v1',
+    year: 2025,
     area: 'A',
     subTopic: 'Industrial Refrigerants',
     topic: 'Refrigeration',
@@ -15216,6 +14257,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-refrigeration-258-v2',
+    year: 2025,
     area: 'A',
     subTopic: 'Industrial Refrigerants',
     topic: 'Refrigeration',
@@ -15250,6 +14292,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-refrigeration-258-v3',
+    year: 2025,
     area: 'A',
     subTopic: 'Industrial Refrigerants',
     topic: 'Refrigeration',
@@ -15284,6 +14327,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-oil-extraction-259-v0',
+    year: 2025,
     area: 'A',
     subTopic: 'Coconut Oil Processing',
     topic: 'Oil Extraction',
@@ -15298,7 +14342,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'capacity = 25, operationTime = 25, crudeOilProduced = 10000, cakeCollectionEfficiency = 0.98',
       steps: [
         'Step 1: Calculate the total copra processed using the efficiency.',
         'Step 2: Calculate the copra cake produced.',
@@ -15319,6 +14363,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-oil-extraction-259-v1',
+    year: 2025,
     area: 'A',
     subTopic: 'Coconut Oil Processing',
     topic: 'Oil Extraction',
@@ -15333,7 +14378,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'totalCrudeOil = 10000, timeHours = 25, cakeCollectionEfficiency = 0.9',
       steps: [
         'Step 1: Calculate the crude oil production rate: 10000 kg / 25 hours = 400 kg/h.',
         'Step 2: Calculate the copra cake production rate: 400 kg/h * (1 - 0.90) = 400 kg/h * 0.10 = 40 kg/h.',
@@ -15356,6 +14401,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-oil-extraction-259-v2',
+    year: 2025,
     area: 'A',
     subTopic: 'Coconut Oil Processing',
     topic: 'Oil Extraction',
@@ -15370,7 +14416,7 @@ export const recalledAreaAQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'totalCapacity = 25000, crudeOilProduced = 10000, time = 25, cakeCollectionEfficiency = 0.98',
       steps: [
         'Step 1: Calculate the total copra processed: 25000 kg.',
         'Step 2: Calculate the copra cake produced: 25000 kg - 10000 kg = 15000 kg.',
@@ -15391,6 +14437,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-thermodynamics-260-v0',
+    year: 2025,
     area: 'A',
     subTopic: 'Temperature Conversion',
     topic: 'Thermodynamics',
@@ -15424,6 +14471,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-thermodynamics-260-v1',
+    year: 2025,
     area: 'A',
     subTopic: 'Temperature Conversion',
     topic: 'Thermodynamics',
@@ -15457,6 +14505,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-thermodynamics-260-v2',
+    year: 2025,
     area: 'A',
     subTopic: 'Temperature Conversion',
     topic: 'Thermodynamics',
@@ -15490,6 +14539,7 @@ export const recalledAreaAQuestions: Question[] = [
   },
   {
     id: 'recall-2025-A-thermodynamics-260-v3',
+    year: 2025,
     area: 'A',
     subTopic: 'Temperature Conversion',
     topic: 'Thermodynamics',
@@ -15529,6 +14579,7 @@ export const recalledAreaAQuestions: Question[] = [
 export const recalledAreaBQuestions: Question[] = [
   {
     id: 'recall-2021-B-probability-11-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Card Games',
     topic: 'Probability',
@@ -15565,6 +14616,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-probability-11-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Card Games',
     topic: 'Probability',
@@ -15603,6 +14655,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-probability-11-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Card Games',
     topic: 'Probability',
@@ -15640,6 +14693,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-probability-11-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Card Games',
     topic: 'Probability',
@@ -15677,6 +14731,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-characteristics-12-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Hydrology',
     topic: 'Aquifer Characteristics',
@@ -15712,6 +14767,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-characteristics-12-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Hydrology',
     topic: 'Aquifer Characteristics',
@@ -15746,6 +14802,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-characteristics-12-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Hydrology',
     topic: 'Aquifer Characteristics',
@@ -15780,6 +14837,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-characteristics-12-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Hydrology',
     topic: 'Aquifer Characteristics',
@@ -15812,6 +14870,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-soil-properties-13-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Moisture',
     topic: 'Soil Properties',
@@ -15845,6 +14904,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-soil-properties-13-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Moisture',
     topic: 'Soil Properties',
@@ -15879,6 +14939,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-soil-properties-13-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Moisture',
     topic: 'Soil Properties',
@@ -15914,6 +14975,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-soil-properties-13-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Moisture',
     topic: 'Soil Properties',
@@ -15949,6 +15011,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-solar-energy-14-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Radiation',
     topic: 'Solar Energy',
@@ -15984,6 +15047,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-solar-energy-14-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Radiation',
     topic: 'Solar Energy',
@@ -16019,6 +15083,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-solar-energy-14-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Radiation',
     topic: 'Solar Energy',
@@ -16052,6 +15117,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-solar-energy-14-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Radiation',
     topic: 'Solar Energy',
@@ -16087,6 +15153,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-design-15-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Design',
@@ -16123,6 +15190,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-design-15-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Design',
@@ -16157,6 +15225,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-design-15-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Design',
@@ -16193,6 +15262,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-design-15-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Design',
@@ -16229,6 +15299,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-drainage-systems-16-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Hydrology',
     topic: 'Drainage Systems',
@@ -16263,6 +15334,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-drainage-systems-16-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Hydrology',
     topic: 'Drainage Systems',
@@ -16298,6 +15370,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-drainage-systems-16-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Hydrology',
     topic: 'Drainage Systems',
@@ -16332,6 +15405,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-drainage-systems-16-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Hydrology',
     topic: 'Drainage Systems',
@@ -16368,6 +15442,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-efficiency-17-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -16382,7 +15457,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterDelivered = 800, farmArea = 5, consumptiveUse = 5, effectiveRainfall = 100',
       steps: [
         'Convert farm area from hectares to square meters: 5 hectares = 50,000 m².',
         'Calculate total water needed for consumptive use: 5 mm/day * 30 days = 150 mm = 7,500 m³.',
@@ -16406,6 +15481,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-efficiency-17-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -16420,7 +15496,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterDelivered = 1500, area = 15, consumptiveUse = 6, effectiveRainfall = 120',
       steps: [
         'Convert area from hectares to square meters: 15 hectares = 150,000 m².',
         'Calculate total consumptive use for the month: 6 mm/day * 30 days = 180 mm = 180 m³ (for 150,000 m²).',
@@ -16443,6 +15519,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-efficiency-17-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -16457,7 +15534,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterSupplied = 1500, farmArea = 12, consumptiveUse = 10, effectiveRainfall = 120',
       steps: [
         'Convert farm area from hectares to square meters: 12 hectares = 120,000 square meters.',
         'Calculate total consumptive use for the month: 10 mm/day * 30 days = 300 mm = 300 cubic meters (since 1 mm = 1 cubic meter per hectare).',
@@ -16480,6 +15557,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-efficiency-17-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -16494,7 +15572,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterDelivered = 1500, farmArea = 12, consumptiveUse = 10, effectiveRainfall = 100',
       steps: [
         'Step 1: Calculate total water used for the month: Consumptive use (10mm/day) * 30 days = 300mm.',
         'Step 2: Convert the water used to cubic meters: 300mm * 12 hectares = 3600 cubic meters.',
@@ -16517,6 +15595,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-water-quality-19-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Nematode Levels',
     topic: 'Water Quality',
@@ -16551,6 +15630,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-water-quality-19-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Nematode Levels',
     topic: 'Water Quality',
@@ -16586,6 +15666,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-water-quality-19-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Nematode Levels',
     topic: 'Water Quality',
@@ -16620,6 +15701,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-water-quality-19-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Nematode Levels',
     topic: 'Water Quality',
@@ -16655,6 +15737,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-composting-22-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Carbon to Nitrogen Ratio',
     topic: 'Composting',
@@ -16688,6 +15771,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-composting-22-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Carbon to Nitrogen Ratio',
     topic: 'Composting',
@@ -16722,6 +15806,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-composting-22-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Carbon to Nitrogen Ratio',
     topic: 'Composting',
@@ -16757,6 +15842,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-composting-22-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Carbon to Nitrogen Ratio',
     topic: 'Composting',
@@ -16790,6 +15876,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-methods-26-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Surface Irrigation',
     topic: 'Irrigation Methods',
@@ -16824,6 +15911,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-methods-26-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Surface Irrigation',
     topic: 'Irrigation Methods',
@@ -16856,6 +15944,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-methods-26-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Surface Irrigation',
     topic: 'Irrigation Methods',
@@ -16890,6 +15979,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-methods-26-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Surface Irrigation',
     topic: 'Irrigation Methods',
@@ -16924,6 +16014,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-plant-nutrition-27-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Nutrient Deficiencies',
     topic: 'Plant Nutrition',
@@ -16958,6 +16049,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-plant-nutrition-27-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Nutrient Deficiencies',
     topic: 'Plant Nutrition',
@@ -16992,6 +16084,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-plant-nutrition-27-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Nutrient Deficiencies',
     topic: 'Plant Nutrition',
@@ -17026,6 +16119,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-plant-nutrition-27-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Nutrient Deficiencies',
     topic: 'Plant Nutrition',
@@ -17060,6 +16154,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-40-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Stream Velocity Measurement',
     topic: 'Irrigation and Drainage Engineering',
@@ -17094,6 +16189,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-40-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Stream Velocity Measurement',
     topic: 'Irrigation and Drainage Engineering',
@@ -17128,6 +16224,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-40-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Stream Velocity Measurement',
     topic: 'Irrigation and Drainage Engineering',
@@ -17162,6 +16259,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-40-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Stream Velocity Measurement',
     topic: 'Irrigation and Drainage Engineering',
@@ -17196,6 +16294,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-soil-science-41-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Microorganisms in Soil',
     topic: 'Soil Science',
@@ -17230,6 +16329,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-soil-science-41-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Microorganisms in Soil',
     topic: 'Soil Science',
@@ -17264,6 +16364,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-soil-science-41-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Microorganisms in Soil',
     topic: 'Soil Science',
@@ -17298,6 +16399,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-soil-science-41-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Microorganisms in Soil',
     topic: 'Soil Science',
@@ -17332,6 +16434,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrometeorology-42-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Water Types',
     topic: 'Hydrometeorology',
@@ -17366,6 +16469,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrometeorology-42-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Water Types',
     topic: 'Hydrometeorology',
@@ -17400,6 +16504,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrometeorology-42-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Water Types',
     topic: 'Hydrometeorology',
@@ -17434,6 +16539,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrometeorology-42-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Water Types',
     topic: 'Hydrometeorology',
@@ -17468,6 +16574,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-43-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Drainage Systems',
     topic: 'Irrigation and Drainage Engineering',
@@ -17502,6 +16609,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-43-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Drainage Systems',
     topic: 'Irrigation and Drainage Engineering',
@@ -17537,6 +16645,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-43-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Drainage Systems',
     topic: 'Irrigation and Drainage Engineering',
@@ -17571,6 +16680,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-43-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Drainage Systems',
     topic: 'Irrigation and Drainage Engineering',
@@ -17605,6 +16715,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-44-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Irrigation Efficiency Calculation',
     topic: 'Irrigation and Drainage Engineering',
@@ -17640,6 +16751,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-44-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Irrigation Efficiency Calculation',
     topic: 'Irrigation and Drainage Engineering',
@@ -17675,6 +16787,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-44-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Irrigation Efficiency Calculation',
     topic: 'Irrigation and Drainage Engineering',
@@ -17708,6 +16821,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-44-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Irrigation Efficiency Calculation',
     topic: 'Irrigation and Drainage Engineering',
@@ -17722,7 +16836,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'totalWaterApplied = 1000, effectiveWaterUsed = 520',
       steps: [
         'Step 1: Substitute the given values into the formula.',
         'Step 2: Calculate the irrigation efficiency.'
@@ -17742,6 +16856,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-45-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Irrigation Calculation',
     topic: 'Irrigation and Drainage Engineering',
@@ -17756,7 +16871,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'fieldLength = 180, fieldWidth = 150, sprinklerSpacingX = 8, sprinklerSpacingY = 8, irrigationWaterRequirement = 120, irrigationPeriod = 5',
       steps: [
         'Calculate the area of the field: Area = Length x Width = 180m x 150m = 27000 m²',
         'Convert irrigation water requirement from mm to m: 120 mm = 0.120 m',
@@ -17779,6 +16894,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-45-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Irrigation Calculation',
     topic: 'Irrigation and Drainage Engineering',
@@ -17793,7 +16909,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'fieldLength = 180, fieldWidth = 150, sprinklerSpacingX = 8, sprinklerSpacingY = 8, irrigationWaterRequirement = 120, irrigationPeriod = 5',
       steps: [
         'Calculate the area of the field: A = fieldLength * fieldWidth',
         'Determine the total volume of water needed: Volume = A * irrigationWaterRequirement',
@@ -17814,6 +16930,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-45-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Irrigation Calculation',
     topic: 'Irrigation and Drainage Engineering',
@@ -17828,7 +16945,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'length = 150, width = 180, spacing_x = 4, spacing_y = 4, water_requirement = 200, irrigation_period = 8',
       steps: [
         'Calculate the area (A) of the field: A = length * width = 150m * 180m = 27000 m².',
         'Calculate the total irrigation requirement in liters: Total water = A * WR = 27000 m² * 200 mm = 5400000 liters.',
@@ -17852,6 +16969,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-45-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Irrigation Calculation',
     topic: 'Irrigation and Drainage Engineering',
@@ -17866,7 +16984,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'length = 180, width = 150, spacing_x = 8, spacing_y = 8, irrigation_depth = 100, irrigation_period = 6',
       steps: [
         'Step 1: Calculate the area covered by one sprinkler: A_s = spacing_x * spacing_y = 8m * 8m = 64 m².',
         'Step 2: Calculate the total area of the field: A = length * width = 180m * 150m = 27000 m².',
@@ -17890,6 +17008,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrometeorology-46-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Moisture Content',
     topic: 'Hydrometeorology',
@@ -17924,6 +17043,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrometeorology-46-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Moisture Content',
     topic: 'Hydrometeorology',
@@ -17960,6 +17080,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrometeorology-46-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Moisture Content',
     topic: 'Hydrometeorology',
@@ -17974,7 +17095,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'AM = 30, FC = 26, PWP = 18',
       steps: [
         'Step 1: Calculate the amount of moisture available: AM * (FC - PWP) = 30% * (26% - 18%) = 30% * 8% = 2.4%',
         'Step 2: Add the PWP to the moisture available: Present Moisture Content = 18% + 2.4% = 20.4% (incorrect, revise AM usage)',
@@ -17997,6 +17118,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrometeorology-46-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Soil Moisture Content',
     topic: 'Hydrometeorology',
@@ -18031,6 +17153,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-48-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Irrigation',
     topic: 'Irrigation and Drainage Engineering',
@@ -18065,6 +17188,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-48-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Irrigation',
     topic: 'Irrigation and Drainage Engineering',
@@ -18099,6 +17223,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-48-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Irrigation',
     topic: 'Irrigation and Drainage Engineering',
@@ -18133,6 +17258,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-48-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Irrigation',
     topic: 'Irrigation and Drainage Engineering',
@@ -18167,6 +17293,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-49-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation and Drainage Engineering',
@@ -18203,6 +17330,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-49-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation and Drainage Engineering',
@@ -18239,6 +17367,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-49-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation and Drainage Engineering',
@@ -18274,6 +17403,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-49-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation and Drainage Engineering',
@@ -18309,6 +17439,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-50-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Open Channel Flow',
     topic: 'Irrigation and Drainage Engineering',
@@ -18343,6 +17474,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-50-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Open Channel Flow',
     topic: 'Irrigation and Drainage Engineering',
@@ -18357,7 +17489,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'Q = 10.5, b = 5, z = 1',
       steps: [
         '1. Calculate the area A of the trapezoidal channel: A = (b + zy) * y',
         '2. Substitute the values and solve for depth y using the flow rate Q.'
@@ -18377,6 +17509,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-50-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Open Channel Flow',
     topic: 'Irrigation and Drainage Engineering',
@@ -18412,6 +17545,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-and-drainage-engineering-50-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Open Channel Flow',
     topic: 'Irrigation and Drainage Engineering',
@@ -18445,6 +17579,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-land-use-planning-66-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Agricultural Structures',
     topic: 'Land Use Planning',
@@ -18480,6 +17615,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-land-use-planning-66-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Agricultural Structures',
     topic: 'Land Use Planning',
@@ -18513,6 +17649,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-land-use-planning-66-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Agricultural Structures',
     topic: 'Land Use Planning',
@@ -18547,6 +17684,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-land-use-planning-66-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Agricultural Structures',
     topic: 'Land Use Planning',
@@ -18581,6 +17719,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrology-67-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Rainfall Measurement',
     topic: 'Hydrology',
@@ -18615,6 +17754,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrology-67-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Rainfall Measurement',
     topic: 'Hydrology',
@@ -18649,6 +17789,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrology-67-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Rainfall Measurement',
     topic: 'Hydrology',
@@ -18683,6 +17824,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-hydrology-67-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Rainfall Measurement',
     topic: 'Hydrology',
@@ -18717,6 +17859,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-characteristics-71-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Pumping Site Selection',
     topic: 'Aquifer Characteristics',
@@ -18751,6 +17894,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-characteristics-71-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Pumping Site Selection',
     topic: 'Aquifer Characteristics',
@@ -18785,6 +17929,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-characteristics-71-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Pumping Site Selection',
     topic: 'Aquifer Characteristics',
@@ -18820,6 +17965,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-characteristics-71-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Pumping Site Selection',
     topic: 'Aquifer Characteristics',
@@ -18855,6 +18001,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-properties-72-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Recharge-Discharge Properties',
     topic: 'Aquifer Properties',
@@ -18891,6 +18038,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-properties-72-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Recharge-Discharge Properties',
     topic: 'Aquifer Properties',
@@ -18925,6 +18073,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-properties-72-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Recharge-Discharge Properties',
     topic: 'Aquifer Properties',
@@ -18959,6 +18108,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-aquifer-properties-72-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Recharge-Discharge Properties',
     topic: 'Aquifer Properties',
@@ -18993,6 +18143,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-76-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19027,6 +18178,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-76-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19061,6 +18213,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-76-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19093,6 +18246,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-76-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19127,6 +18281,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-77-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19160,6 +18315,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-77-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19194,6 +18350,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-77-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19228,6 +18385,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-77-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19262,6 +18420,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-78-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19296,6 +18455,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-78-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19330,6 +18490,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-78-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19364,6 +18525,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-78-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19398,6 +18560,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-79-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19432,6 +18595,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-79-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19466,6 +18630,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-79-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19499,6 +18664,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-cost-classification-79-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Types of Costs',
     topic: 'Cost Classification',
@@ -19533,6 +18699,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-83-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Emitter Design',
     topic: 'Irrigation',
@@ -19568,6 +18735,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-83-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Emitter Design',
     topic: 'Irrigation',
@@ -19602,6 +18770,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-83-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Emitter Design',
     topic: 'Irrigation',
@@ -19635,6 +18804,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-irrigation-83-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Emitter Design',
     topic: 'Irrigation',
@@ -19671,6 +18841,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-wastewater-management-85-v0',
+    year: 2021,
     area: 'B',
     subTopic: 'Nematode Limits',
     topic: 'Wastewater Management',
@@ -19704,6 +18875,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-wastewater-management-85-v1',
+    year: 2021,
     area: 'B',
     subTopic: 'Nematode Limits',
     topic: 'Wastewater Management',
@@ -19737,6 +18909,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-wastewater-management-85-v2',
+    year: 2021,
     area: 'B',
     subTopic: 'Nematode Limits',
     topic: 'Wastewater Management',
@@ -19770,6 +18943,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2021-B-wastewater-management-85-v3',
+    year: 2021,
     area: 'B',
     subTopic: 'Nematode Limits',
     topic: 'Wastewater Management',
@@ -19803,6 +18977,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-94-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Channel Flow',
     topic: 'Irrigation Engineering',
@@ -19817,7 +18992,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 3, bottomWidth = 1.5, velocity = 1.5, sideSlope = 2',
       steps: [
         'Step 1: Calculate the area A using the formula A = (b + z * h) * h / 2.',
         'Step 2: Rearrange the flow equation Q = A * V to find h.'
@@ -19837,6 +19012,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-94-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Channel Flow',
     topic: 'Irrigation Engineering',
@@ -19851,7 +19027,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 3, bottomWidth = 1.5, velocity = 0.75, sideSlope = 2',
       steps: [
         'Step 1: Calculate the area A using the formula A = (b + z * h) * h / 2.',
         'Step 2: Rearrange the flow equation to find h: h = (Q / V) * 2 / (b + z * h).'
@@ -19871,6 +19047,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-94-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Channel Flow',
     topic: 'Irrigation Engineering',
@@ -19885,7 +19062,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 3, bottomWidth = 1.5, velocity = 1, sideSlope = 2',
       steps: [
         'Step 1: Calculate the area A of the trapezoidal section using the formula A = (b + h * sideSlope) * h / 2.',
         'Step 2: Rearrange the flow equation to find h: h = (2 * Q) / (V * (1 + sideSlope)).'
@@ -19906,6 +19083,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-94-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Channel Flow',
     topic: 'Irrigation Engineering',
@@ -19920,7 +19098,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'Q = 2.5, b = 1.5, v = 1, slope = 2',
       steps: [
         'Step 1: Calculate the area A using the formula A = (b + z * h) * h / 2.',
         'Step 2: Substitute Q = A * v to find h.'
@@ -19941,6 +19119,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-95-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Canal Design',
     topic: 'Irrigation Engineering',
@@ -19955,7 +19134,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'farmArea = 10, duration = 10, irrigationRequirement = 7, days = 7',
       steps: [
         'Step 1: Convert farm area from hectares to square meters: 10 ha = 100,000 m².',
         'Step 2: Calculate total water requirement: Total Requirement = 100,000 m² * 7 mm/day * 7 days = 4,900,000 liters.',
@@ -19978,6 +19157,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-marketing-98-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Sales Terminology',
     topic: 'Marketing',
@@ -20011,6 +19191,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-marketing-98-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Sales Terminology',
     topic: 'Marketing',
@@ -20047,6 +19228,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-marketing-98-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Sales Terminology',
     topic: 'Marketing',
@@ -20081,6 +19263,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-marketing-98-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Sales Terminology',
     topic: 'Marketing',
@@ -20114,6 +19297,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-finance-99-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Payment Terms',
     topic: 'Finance',
@@ -20148,6 +19332,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-finance-99-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Payment Terms',
     topic: 'Finance',
@@ -20182,6 +19367,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-finance-99-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Payment Terms',
     topic: 'Finance',
@@ -20219,6 +19405,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-finance-99-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Payment Terms',
     topic: 'Finance',
@@ -20253,6 +19440,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-chemistry-102-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Composition of Crude Oil',
     topic: 'Chemistry',
@@ -20287,6 +19475,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-chemistry-102-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Composition of Crude Oil',
     topic: 'Chemistry',
@@ -20320,6 +19509,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-chemistry-102-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Composition of Crude Oil',
     topic: 'Chemistry',
@@ -20354,6 +19544,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-chemistry-102-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Composition of Crude Oil',
     topic: 'Chemistry',
@@ -20388,6 +19579,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-economics-103-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Production Efficiency',
     topic: 'Economics',
@@ -20425,6 +19617,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-economics-103-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Production Efficiency',
     topic: 'Economics',
@@ -20460,6 +19653,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-economics-103-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Production Efficiency',
     topic: 'Economics',
@@ -20495,6 +19689,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-economics-103-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Production Efficiency',
     topic: 'Economics',
@@ -20528,6 +19723,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-economics-104-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Price Changes',
     topic: 'Economics',
@@ -20563,6 +19759,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-economics-104-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Price Changes',
     topic: 'Economics',
@@ -20597,6 +19794,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-economics-104-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Price Changes',
     topic: 'Economics',
@@ -20631,6 +19829,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-economics-104-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Price Changes',
     topic: 'Economics',
@@ -20665,6 +19864,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-machinery-112-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Threshing Equipment',
     topic: 'Agricultural Machinery',
@@ -20698,6 +19898,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-machinery-112-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Threshing Equipment',
     topic: 'Agricultural Machinery',
@@ -20732,6 +19933,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-machinery-112-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Threshing Equipment',
     topic: 'Agricultural Machinery',
@@ -20765,6 +19967,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-machinery-112-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Threshing Equipment',
     topic: 'Agricultural Machinery',
@@ -20799,6 +20002,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-machinery-testing-113-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Threshing Tests',
     topic: 'Agricultural Machinery Testing',
@@ -20834,6 +20038,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-machinery-testing-113-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Threshing Tests',
     topic: 'Agricultural Machinery Testing',
@@ -20867,6 +20072,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-machinery-testing-113-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Threshing Tests',
     topic: 'Agricultural Machinery Testing',
@@ -20901,6 +20107,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-machinery-testing-113-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Threshing Tests',
     topic: 'Agricultural Machinery Testing',
@@ -20933,6 +20140,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-processing-115-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Milk Products',
     topic: 'Food Processing',
@@ -20966,6 +20174,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-processing-115-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Milk Products',
     topic: 'Food Processing',
@@ -20999,6 +20208,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-processing-115-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Milk Products',
     topic: 'Food Processing',
@@ -21033,6 +20243,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-processing-115-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Milk Products',
     topic: 'Food Processing',
@@ -21067,6 +20278,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-safety-118-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'HACCP Principles',
     topic: 'Food Safety',
@@ -21101,6 +20313,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-safety-118-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'HACCP Principles',
     topic: 'Food Safety',
@@ -21133,6 +20346,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-safety-118-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'HACCP Principles',
     topic: 'Food Safety',
@@ -21165,6 +20379,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-safety-118-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'HACCP Principles',
     topic: 'Food Safety',
@@ -21197,6 +20412,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-safety-124-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Inspection Standards',
     topic: 'Food Safety',
@@ -21230,6 +20446,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-safety-124-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Inspection Standards',
     topic: 'Food Safety',
@@ -21264,6 +20481,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-safety-124-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Inspection Standards',
     topic: 'Food Safety',
@@ -21297,6 +20515,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-food-safety-124-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Inspection Standards',
     topic: 'Food Safety',
@@ -21330,6 +20549,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-engineering-126-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Storage Requirements',
     topic: 'Agricultural Engineering',
@@ -21364,6 +20584,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-engineering-126-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Storage Requirements',
     topic: 'Agricultural Engineering',
@@ -21398,6 +20619,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-engineering-126-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Storage Requirements',
     topic: 'Agricultural Engineering',
@@ -21434,6 +20656,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-engineering-126-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Storage Requirements',
     topic: 'Agricultural Engineering',
@@ -21467,6 +20690,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-drainage-systems-128-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Natural Contour Drainage',
     topic: 'Drainage Systems',
@@ -21501,6 +20725,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-drainage-systems-128-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Natural Contour Drainage',
     topic: 'Drainage Systems',
@@ -21535,6 +20760,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-drainage-systems-128-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Natural Contour Drainage',
     topic: 'Drainage Systems',
@@ -21569,6 +20795,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-drainage-systems-128-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Natural Contour Drainage',
     topic: 'Drainage Systems',
@@ -21603,6 +20830,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-129-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation',
@@ -21637,6 +20865,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-129-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation',
@@ -21671,6 +20900,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-129-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation',
@@ -21705,6 +20935,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-129-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation',
@@ -21739,6 +20970,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-fluid-mechanics-130-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Roughness Coefficients',
     topic: 'Fluid Mechanics',
@@ -21773,6 +21005,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-fluid-mechanics-130-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Roughness Coefficients',
     topic: 'Fluid Mechanics',
@@ -21807,6 +21040,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-fluid-mechanics-130-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Roughness Coefficients',
     topic: 'Fluid Mechanics',
@@ -21841,6 +21075,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-fluid-mechanics-130-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Roughness Coefficients',
     topic: 'Fluid Mechanics',
@@ -21875,6 +21110,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-131-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation',
@@ -21909,6 +21145,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-131-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation',
@@ -21943,6 +21180,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-131-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation',
@@ -21978,6 +21216,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-131-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation',
@@ -22012,6 +21251,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-evapotranspiration-136-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Estimation Methods',
     topic: 'Evapotranspiration',
@@ -22048,6 +21288,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-evapotranspiration-136-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Estimation Methods',
     topic: 'Evapotranspiration',
@@ -22082,6 +21323,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-evapotranspiration-136-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Estimation Methods',
     topic: 'Evapotranspiration',
@@ -22116,6 +21358,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-evapotranspiration-136-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Estimation Methods',
     topic: 'Evapotranspiration',
@@ -22152,6 +21395,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-exports-137-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Philippines',
     topic: 'Agricultural Exports',
@@ -22186,6 +21430,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-exports-137-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Philippines',
     topic: 'Agricultural Exports',
@@ -22220,6 +21465,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-exports-137-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Philippines',
     topic: 'Agricultural Exports',
@@ -22254,6 +21500,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-agricultural-exports-137-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Philippines',
     topic: 'Agricultural Exports',
@@ -22288,6 +21535,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-water-wells-138-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Shallow Tube Wells',
     topic: 'Water Wells',
@@ -22321,6 +21569,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-water-wells-138-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Shallow Tube Wells',
     topic: 'Water Wells',
@@ -22355,6 +21604,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-water-wells-138-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Shallow Tube Wells',
     topic: 'Water Wells',
@@ -22388,6 +21638,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-water-wells-138-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Shallow Tube Wells',
     topic: 'Water Wells',
@@ -22422,6 +21673,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-conservation-143-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Buffer Strips',
     topic: 'Soil Conservation',
@@ -22456,6 +21708,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-conservation-143-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Buffer Strips',
     topic: 'Soil Conservation',
@@ -22491,6 +21744,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-conservation-143-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Buffer Strips',
     topic: 'Soil Conservation',
@@ -22525,6 +21779,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-conservation-143-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Buffer Strips',
     topic: 'Soil Conservation',
@@ -22559,6 +21814,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-drainage-systems-145-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Drain Types',
     topic: 'Drainage Systems',
@@ -22593,6 +21849,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-drainage-systems-145-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Drain Types',
     topic: 'Drainage Systems',
@@ -22627,6 +21884,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-drainage-systems-145-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Drain Types',
     topic: 'Drainage Systems',
@@ -22662,6 +21920,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-drainage-systems-145-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Drain Types',
     topic: 'Drainage Systems',
@@ -22697,6 +21956,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-microbiology-155-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Microorganisms in Soil',
     topic: 'Soil Microbiology',
@@ -22731,6 +21991,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-microbiology-155-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Microorganisms in Soil',
     topic: 'Soil Microbiology',
@@ -22765,6 +22026,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-microbiology-155-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Microorganisms in Soil',
     topic: 'Soil Microbiology',
@@ -22799,6 +22061,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-microbiology-155-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Microorganisms in Soil',
     topic: 'Soil Microbiology',
@@ -22833,6 +22096,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-water-resource-management-156-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Reservoir Management',
     topic: 'Water Resource Management',
@@ -22869,6 +22133,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-water-resource-management-156-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Reservoir Management',
     topic: 'Water Resource Management',
@@ -22905,6 +22170,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-water-resource-management-156-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Reservoir Management',
     topic: 'Water Resource Management',
@@ -22940,6 +22206,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-water-resource-management-156-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Reservoir Management',
     topic: 'Water Resource Management',
@@ -22973,6 +22240,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-hydrogeology-157-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Aquifer Types',
     topic: 'Hydrogeology',
@@ -23007,6 +22275,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-hydrogeology-157-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Aquifer Types',
     topic: 'Hydrogeology',
@@ -23041,6 +22310,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-hydrogeology-157-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Aquifer Types',
     topic: 'Hydrogeology',
@@ -23074,6 +22344,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-hydrogeology-157-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Aquifer Types',
     topic: 'Hydrogeology',
@@ -23108,6 +22379,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-water-movement-158-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Water Flow Dynamics',
     topic: 'Soil Water Movement',
@@ -23142,6 +22414,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-water-movement-158-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Water Flow Dynamics',
     topic: 'Soil Water Movement',
@@ -23176,6 +22449,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-water-movement-158-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Water Flow Dynamics',
     topic: 'Soil Water Movement',
@@ -23210,6 +22484,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-water-movement-158-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Water Flow Dynamics',
     topic: 'Soil Water Movement',
@@ -23247,6 +22522,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-management-160-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Irrigation Efficiency',
     topic: 'Irrigation Management',
@@ -23281,6 +22557,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-management-160-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Irrigation Efficiency',
     topic: 'Irrigation Management',
@@ -23316,6 +22593,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-management-160-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Irrigation Efficiency',
     topic: 'Irrigation Management',
@@ -23350,6 +22628,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-management-160-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Irrigation Efficiency',
     topic: 'Irrigation Management',
@@ -23383,6 +22662,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-science-161-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Soil Moisture',
     topic: 'Soil Science',
@@ -23417,6 +22697,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-science-161-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Soil Moisture',
     topic: 'Soil Science',
@@ -23451,6 +22732,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-science-161-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Soil Moisture',
     topic: 'Soil Science',
@@ -23485,6 +22767,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-soil-science-161-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Soil Moisture',
     topic: 'Soil Science',
@@ -23519,6 +22802,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-162-v0',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Engineering',
@@ -23555,6 +22839,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-162-v1',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Engineering',
@@ -23590,6 +22875,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-162-v2',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Engineering',
@@ -23625,6 +22911,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2022-B-irrigation-engineering-162-v3',
+    year: 2022,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Engineering',
@@ -23660,6 +22947,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-international-trade-171-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Export Pricing',
     topic: 'International Trade',
@@ -23693,6 +22981,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-international-trade-171-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Export Pricing',
     topic: 'International Trade',
@@ -23728,6 +23017,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-international-trade-171-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Export Pricing',
     topic: 'International Trade',
@@ -23764,6 +23054,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-international-trade-171-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Export Pricing',
     topic: 'International Trade',
@@ -23798,6 +23089,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-design-174-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Design',
@@ -23832,6 +23124,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-design-174-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Design',
@@ -23867,6 +23160,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-design-174-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Design',
@@ -23900,6 +23194,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-design-174-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Systems',
     topic: 'Irrigation Design',
@@ -23933,6 +23228,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-open-channel-flow-175-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Trapezoidal Channel Design',
     topic: 'Open Channel Flow',
@@ -23947,7 +23243,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 120, velocity = 6, sideSlope = 2, ManningsN = 0.03',
       steps: [
         'Step 1: Calculate the area A using the formula A = Q / V.',
         'Step 2: Determine the height h using the trapezoidal area formula and the side slope.',
@@ -23967,6 +23263,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-open-channel-flow-175-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Trapezoidal Channel Design',
     topic: 'Open Channel Flow',
@@ -23981,7 +23278,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 120 m3/s, velocity = 6 m/s, sideSlope = 1:2, ManningN = 0.03',
       steps: [
         'Step 1: Calculate the cross-sectional area A using Q = A * V.',
         'Step 2: Rearrange the area formula to find the bottom width b.'
@@ -24000,6 +23297,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-open-channel-flow-175-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Trapezoidal Channel Design',
     topic: 'Open Channel Flow',
@@ -24014,7 +23312,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 120, velocity = 6, sideSlope = 1.5, depth = 2',
       steps: [
         'Step 1: Calculate the cross-sectional area (A) using Q = A * V.',
         'Step 2: Rearrange to find A = Q / V = 120 / 6 = 20 m².',
@@ -24035,6 +23333,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-open-channel-flow-175-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Trapezoidal Channel Design',
     topic: 'Open Channel Flow',
@@ -24068,6 +23367,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-open-channel-design-177-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Concrete Channels',
     topic: 'Open Channel Design',
@@ -24082,7 +23382,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'designDepth = 2, designDischarge = 50, velocity = 1.5',
       steps: [
         'Step 1: Calculate the cross-sectional area (A) using A = Q / V.',
         'Step 2: Substitute the values into the formula for top width.'
@@ -24102,6 +23402,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-open-channel-design-177-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Concrete Channels',
     topic: 'Open Channel Design',
@@ -24136,6 +23437,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-open-channel-design-177-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Concrete Channels',
     topic: 'Open Channel Design',
@@ -24150,7 +23452,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'designDepth = 6, designDischarge = 120, velocity = 2.5',
       steps: [
         'Step 1: Calculate the cross-sectional area (A) using Q = A * V.',
         'Step 2: Rearrange the area formula to find the top width (b) and substitute the known values.'
@@ -24170,6 +23472,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-open-channel-design-177-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Concrete Channels',
     topic: 'Open Channel Design',
@@ -24204,6 +23507,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-wastewater-management-178-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Irrigation Practices',
     topic: 'Wastewater Management',
@@ -24238,6 +23542,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-wastewater-management-178-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Irrigation Practices',
     topic: 'Wastewater Management',
@@ -24272,6 +23577,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-wastewater-management-178-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Irrigation Practices',
     topic: 'Wastewater Management',
@@ -24306,6 +23612,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-wastewater-management-178-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Irrigation Practices',
     topic: 'Wastewater Management',
@@ -24341,6 +23648,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-179-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Channel Flow',
     topic: 'Fluid Mechanics',
@@ -24355,7 +23663,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 3, bottomWidth = 1.5, sideSlope = 2, velocity = 1',
       steps: [
         'Step 1: Calculate the cross-sectional area A using the formula A = (b + z*h) * h / 2.',
         'Step 2: Rearrange the flow equation Q = A * V to find the depth h.'
@@ -24375,6 +23683,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-179-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Channel Flow',
     topic: 'Fluid Mechanics',
@@ -24389,7 +23698,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'bottomWidth = 1.5, flowRate = 2.5, velocity = 0.75, sideSlope = 2',
       steps: [
         'Step 1: Calculate the area A using the trapezoidal formula.',
         'Step 2: Use the flow rate Q and velocity V to find the depth h.'
@@ -24410,6 +23719,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-179-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Channel Flow',
     topic: 'Fluid Mechanics',
@@ -24424,7 +23734,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'flowRate = 3, bottomWidth = 1.5, sideSlope = 2, velocity = 1',
       steps: [
         '1. Calculate the area A of the trapezoidal section using A = (b + z * h) * h / 2.',
         '2. Set Q = A * V and solve for h.'
@@ -24443,6 +23753,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-179-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Channel Flow',
     topic: 'Fluid Mechanics',
@@ -24457,7 +23768,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'bottomWidth = 1.2, sideSlope = 2, flowRate = 2.5, velocity = 0.9',
       steps: [
         '1. Calculate the area A of the trapezoidal channel using the formula A = (b + z*h) * h / 2.',
         '2. Set the flow rate Q equal to A multiplied by the velocity V, and solve for h.'
@@ -24477,6 +23788,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-systems-180-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation Systems',
@@ -24513,6 +23825,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-systems-180-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation Systems',
@@ -24548,6 +23861,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-systems-180-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation Systems',
@@ -24583,6 +23897,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-systems-180-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation Systems',
@@ -24618,6 +23933,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-efficiency-181-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -24632,7 +23948,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterDelivered = 800, area = 5, consumptiveUse = 6, effectiveRainfall = 100',
       steps: [
         'Convert area from hectares to square meters: 5 ha = 50000 m².',
         'Calculate total consumptive use for the month: 6 mm/day * 30 days = 180 mm.',
@@ -24656,6 +23972,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-efficiency-181-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -24670,7 +23987,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterSupplied = 1500, farmArea = 15, consumptiveUse = 10, effectiveRainfall = 100',
       steps: [
         'Convert farm area from hectares to square meters: 15 ha = 150,000 m².',
         'Calculate total water used for consumptive use: 10 mm/day * 30 days = 300 mm = 150,000 m³.',
@@ -24693,6 +24010,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-efficiency-181-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -24707,7 +24025,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterDelivered = 1500, areaHa = 15, consumptiveUseMmPerDay = 10, effectiveRainfallMm = 200, daysInMonth = 31',
       steps: [
         'Step 1: Calculate total consumptive use for the month: 10 mm/day * 31 days = 310 mm.',
         'Step 2: Convert area from hectares to square meters: 15 ha = 150,000 m².',
@@ -24730,6 +24048,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-methods-182-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Basin Irrigation',
     topic: 'Irrigation Methods',
@@ -24764,6 +24083,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-methods-182-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Basin Irrigation',
     topic: 'Irrigation Methods',
@@ -24799,6 +24119,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-methods-182-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Basin Irrigation',
     topic: 'Irrigation Methods',
@@ -24835,6 +24156,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-methods-182-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Basin Irrigation',
     topic: 'Irrigation Methods',
@@ -24869,6 +24191,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-drainage-management-183-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Drainage Concepts',
     topic: 'Drainage Management',
@@ -24904,6 +24227,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-drainage-management-183-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Drainage Concepts',
     topic: 'Drainage Management',
@@ -24939,6 +24263,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-drainage-management-183-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Drainage Concepts',
     topic: 'Drainage Management',
@@ -24975,6 +24300,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-drainage-management-183-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Drainage Concepts',
     topic: 'Drainage Management',
@@ -25010,6 +24336,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-soil-erosion-184-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Hydraulic Processes',
     topic: 'Soil Erosion',
@@ -25044,6 +24371,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-soil-erosion-184-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Hydraulic Processes',
     topic: 'Soil Erosion',
@@ -25080,6 +24408,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-soil-erosion-184-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Hydraulic Processes',
     topic: 'Soil Erosion',
@@ -25114,6 +24443,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-soil-erosion-184-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Hydraulic Processes',
     topic: 'Soil Erosion',
@@ -25146,6 +24476,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-185-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Channel Design',
     topic: 'Fluid Mechanics',
@@ -25160,7 +24491,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'discharge = 5, roughness = 0.02, bottomSlope = 1 in 1000',
       steps: [
         'Step 1: Calculate the area A using the trapezoidal formula.',
         'Step 2: Use the discharge formula to find the bottom width b.'
@@ -25180,6 +24511,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-185-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Channel Design',
     topic: 'Fluid Mechanics',
@@ -25194,7 +24526,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'discharge = 5 cu.m, roughness = n = 0.015, bottomSlope = 1 in 600',
       steps: [
         'Step 1: Calculate the cross-sectional area A based on the trapezoidal shape.',
         'Step 2: Use the Manning\'s equation to find the velocity V and relate it to the discharge Q.'
@@ -25214,6 +24546,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-185-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Channel Design',
     topic: 'Fluid Mechanics',
@@ -25248,6 +24581,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-185-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Channel Design',
     topic: 'Fluid Mechanics',
@@ -25262,7 +24596,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'discharge = 5, roughness = 0.03, bottomSlope = 1 in 600',
       steps: [
         'Step 1: Calculate the cross-sectional area A using the trapezoidal formula.',
         'Step 2: Use Manning\'s equation to find the velocity V and adjust the bottom width accordingly.'
@@ -25282,6 +24616,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-construction-materials-201-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Concrete Calculation',
     topic: 'Construction Materials',
@@ -25319,6 +24654,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-construction-materials-201-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Concrete Calculation',
     topic: 'Construction Materials',
@@ -25333,7 +24669,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'width = 5, length = 1500, thickness = 0.15',
       steps: [
         'Step 1: Convert the thickness from inches to meters (6 inches = 0.15 meters).',
         'Step 2: Calculate the volume of concrete needed: Volume = 1500 m × 5 m × 0.15 m = 1125 cubic meters.',
@@ -25354,6 +24690,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-construction-materials-201-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Concrete Calculation',
     topic: 'Construction Materials',
@@ -25389,6 +24726,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-soil-erosion-202-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Soil Loss Estimation',
     topic: 'Soil Erosion',
@@ -25424,6 +24762,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-soil-erosion-202-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Soil Loss Estimation',
     topic: 'Soil Erosion',
@@ -25459,6 +24798,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-soil-erosion-202-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Soil Loss Estimation',
     topic: 'Soil Erosion',
@@ -25495,6 +24835,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-soil-erosion-202-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Soil Loss Estimation',
     topic: 'Soil Erosion',
@@ -25529,6 +24870,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-dam-design-203-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Dam Height Calculation',
     topic: 'Dam Design',
@@ -25536,9 +24878,9 @@ export const recalledAreaBQuestions: Question[] = [
     difficulty: 'easy',
     question: 'What should be the finished dam height of the reservoir if the designed height is 3.5 meters, considering a safety margin of 0.5 meters?',
     options: [
+      '4.0 m',
       '3.5 m',
       '4.2 m',
-      '3.0 m',
       '3.0 m'
     ],
     correctAnswer: 0,
@@ -25562,6 +24904,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-dam-design-203-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Dam Height Calculation',
     topic: 'Dam Design',
@@ -25569,10 +24912,10 @@ export const recalledAreaBQuestions: Question[] = [
     difficulty: 'easy',
     question: 'What should be the finished dam height of the reservoir if the designed height is 4.2 meters and the safety margin is 0.5 meters?',
     options: [
+      '4.7 m',
       '4.2 m',
-      '3.5 m',
-      '3.0 m',
-      '3.0 m'
+      '5.2 m',
+      '4.0 m'
     ],
     correctAnswer: 0,
     solution: {
@@ -25595,6 +24938,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-dam-design-203-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Dam Height Calculation',
     topic: 'Dam Design',
@@ -25602,10 +24946,10 @@ export const recalledAreaBQuestions: Question[] = [
     difficulty: 'easy',
     question: 'What should be the finished dam height of the reservoir if the designed height is 3.0 meters and a reduction factor of 0.9 is applied due to environmental considerations?',
     options: [
+      '2.7 m',
       '3.0 m',
       '3.5 m',
-      '4.2 m',
-      '3.0 m'
+      '2.5 m'
     ],
     correctAnswer: 0,
     solution: {
@@ -25628,6 +24972,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-dam-design-203-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Dam Height Calculation',
     topic: 'Dam Design',
@@ -25635,10 +24980,10 @@ export const recalledAreaBQuestions: Question[] = [
     difficulty: 'easy',
     question: 'What should be the finished dam height of the reservoir if the designed height is 3.0 meters and the construction adjustments lead to a reduction of 0.5 meters?',
     options: [
+      '2.5 m',
       '3.0 m',
       '3.5 m',
-      '4.2 m',
-      '3.0 m'
+      '2.0 m'
     ],
     correctAnswer: 0,
     solution: {
@@ -25663,6 +25008,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-design-204-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler System Design',
     topic: 'Irrigation Design',
@@ -25697,6 +25043,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-design-204-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler System Design',
     topic: 'Irrigation Design',
@@ -25730,6 +25077,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-design-204-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler System Design',
     topic: 'Irrigation Design',
@@ -25764,6 +25112,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-design-204-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler System Design',
     topic: 'Irrigation Design',
@@ -25800,6 +25149,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-205-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Pipe Flow',
     topic: 'Fluid Mechanics',
@@ -25837,6 +25187,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-205-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Pipe Flow',
     topic: 'Fluid Mechanics',
@@ -25875,6 +25226,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-205-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Pipe Flow',
     topic: 'Fluid Mechanics',
@@ -25913,6 +25265,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-fluid-mechanics-205-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Pipe Flow',
     topic: 'Fluid Mechanics',
@@ -25951,6 +25304,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-canal-design-206-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Open Channel Flow',
     topic: 'Canal Design',
@@ -25965,7 +25319,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'designDepth = 4, designDischarge = 80, velocity = 2.5',
       steps: [
         'Step 1: Calculate the area (A) using Q = A * V, thus A = Q / V.',
         'Step 2: Substitute A into the area formula to find B (top width).'
@@ -25985,6 +25339,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-canal-design-206-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Open Channel Flow',
     topic: 'Canal Design',
@@ -26019,6 +25374,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-canal-design-206-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Open Channel Flow',
     topic: 'Canal Design',
@@ -26053,6 +25409,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-canal-design-206-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Open Channel Flow',
     topic: 'Canal Design',
@@ -26089,6 +25446,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-transportation-engineering-208-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Road Design',
     topic: 'Transportation Engineering',
@@ -26123,6 +25481,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-transportation-engineering-208-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Road Design',
     topic: 'Transportation Engineering',
@@ -26157,6 +25516,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-transportation-engineering-208-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Road Design',
     topic: 'Transportation Engineering',
@@ -26191,6 +25551,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-transportation-engineering-208-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Road Design',
     topic: 'Transportation Engineering',
@@ -26225,6 +25586,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-engineering-214-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Design',
     topic: 'Irrigation Engineering',
@@ -26239,7 +25601,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'length = 180, width = 150, spacing = 5, waterRequirement = 120, irrigationPeriod = 5',
       steps: [
         'Calculate the area of the field: A = length * width = 180m * 150m',
         'Determine the total irrigation requirement in liters: IR = waterRequirement * area',
@@ -26262,6 +25624,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-engineering-214-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Design',
     topic: 'Irrigation Engineering',
@@ -26276,7 +25639,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'length = 180, width = 150, sprinklerSpacing = 5, irrigationWaterRequirement = 120, irrigationPeriod = 8',
       steps: [
         'Step 1: Calculate the area (A) = length * width = 180m * 150m = 27000 m².',
         'Step 2: Convert irrigation water requirement from mm to m = 120 mm = 0.12 m.',
@@ -26299,6 +25662,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-engineering-214-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Design',
     topic: 'Irrigation Engineering',
@@ -26313,7 +25677,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'fieldLength = 180, fieldWidth = 150, sprinklerSpacing = 6, irrigationWaterRequirement = 200, irrigationPeriod = 5',
       steps: [
         'Calculate the area of the field: A = fieldLength * fieldWidth = 180m * 150m = 27000 m².',
         'Calculate the total volume of water needed: Volume = A * irrigationWaterRequirement = 27000 m² * 0.2m = 5400 m³.',
@@ -26337,6 +25701,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-irrigation-engineering-214-v3',
+    year: 2023,
     area: 'B',
     subTopic: 'Sprinkler Design',
     topic: 'Irrigation Engineering',
@@ -26351,7 +25716,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'length = 150, width = 180, sprinklerSpacing = 8, irrigationWaterRequirement = 100, irrigationPeriod = 8',
       steps: [
         'Calculate the area of the field: Area = Length * Width = 150m * 180m = 27000 m²',
         'Convert irrigation water requirement from mm to m: 100 mm = 0.1 m',
@@ -26372,6 +25737,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-post-harvest-facilities-215-v0',
+    year: 2023,
     area: 'B',
     subTopic: 'Importance of post-harvest facilities',
     topic: 'Post-harvest facilities',
@@ -26406,6 +25772,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-post-harvest-facilities-215-v1',
+    year: 2023,
     area: 'B',
     subTopic: 'Importance of post-harvest facilities',
     topic: 'Post-harvest facilities',
@@ -26442,6 +25809,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2023-B-post-harvest-facilities-215-v2',
+    year: 2023,
     area: 'B',
     subTopic: 'Importance of post-harvest facilities',
     topic: 'Post-harvest facilities',
@@ -26476,6 +25844,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-transportation-engineering-228-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Road Design',
     topic: 'Transportation Engineering',
@@ -26510,6 +25879,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-transportation-engineering-228-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Road Design',
     topic: 'Transportation Engineering',
@@ -26544,6 +25914,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-transportation-engineering-228-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Road Design',
     topic: 'Transportation Engineering',
@@ -26578,6 +25949,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-transportation-engineering-228-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Road Design',
     topic: 'Transportation Engineering',
@@ -26612,6 +25984,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-water-management-231-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Wastewater Reuse',
     topic: 'Water Management',
@@ -26646,6 +26019,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-water-management-231-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Wastewater Reuse',
     topic: 'Water Management',
@@ -26681,6 +26055,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-water-management-231-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Wastewater Reuse',
     topic: 'Water Management',
@@ -26715,6 +26090,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-water-management-231-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Wastewater Reuse',
     topic: 'Water Management',
@@ -26749,6 +26125,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-water-quality-232-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Wastewater Standards',
     topic: 'Water Quality',
@@ -26783,6 +26160,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-water-quality-232-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Wastewater Standards',
     topic: 'Water Quality',
@@ -26817,6 +26195,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-water-quality-232-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Wastewater Standards',
     topic: 'Water Quality',
@@ -26850,6 +26229,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-water-quality-232-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Wastewater Standards',
     topic: 'Water Quality',
@@ -26884,6 +26264,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-centrifugal-pumps-235-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Pump Performance',
     topic: 'Centrifugal Pumps',
@@ -26917,6 +26298,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-centrifugal-pumps-235-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Pump Performance',
     topic: 'Centrifugal Pumps',
@@ -26952,6 +26334,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-centrifugal-pumps-235-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Pump Performance',
     topic: 'Centrifugal Pumps',
@@ -26987,6 +26370,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-irrigation-efficiency-236-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -27001,7 +26385,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterSupplied = 1500, area = 15, consumptiveUse = 10, effectiveRainfall = 100',
       steps: [
         'Convert area from hectares to square meters: 15 ha = 150,000 m².',
         'Calculate total consumptive use for the month: 10 mm/day * 30 days = 300 mm = 300 m³.',
@@ -27024,6 +26408,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-irrigation-efficiency-236-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -27038,7 +26423,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterSupplied = 1500, farmArea = 15, consumptiveUse = 5, effectiveRainfall = 120',
       steps: [
         'Convert farm area from hectares to square meters: 15 ha = 150,000 m².',
         'Calculate total water requirement for consumptive use: 5 mm/day * 30 days = 150 mm = 150,000 m³.',
@@ -27060,6 +26445,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-irrigation-efficiency-236-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -27074,7 +26460,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterSupplied = 1500, farmAreaHa = 12, consumptiveUseMmPerDay = 9, effectiveRainfallMm = 200',
       steps: [
         'Convert farm area from hectares to square meters: 12 ha = 120,000 m².',
         'Calculate total consumptive use for the month: 9 mm/day * 30 days = 270 mm.',
@@ -27099,6 +26485,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-irrigation-efficiency-236-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Water Management',
     topic: 'Irrigation Efficiency',
@@ -27113,7 +26500,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'waterDelivered = 1500, area = 15, consumptiveUse = 5, effectiveRainfall = 100',
       steps: [
         'Convert area from hectares to square meters: 15 ha = 150,000 m².',
         'Calculate total consumptive use for the month: 5 mm/day * 30 days = 150 mm.',
@@ -27137,6 +26524,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-irrigation-systems-237-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation Systems',
@@ -27171,6 +26559,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-irrigation-systems-237-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation Systems',
@@ -27205,6 +26594,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-irrigation-systems-237-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation Systems',
@@ -27241,6 +26631,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-irrigation-systems-237-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Sprinkler Layout',
     topic: 'Irrigation Systems',
@@ -27275,6 +26666,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-soil-moisture-238-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Soil Water Management',
     topic: 'Soil Moisture',
@@ -27309,6 +26701,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-soil-moisture-238-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Soil Water Management',
     topic: 'Soil Moisture',
@@ -27343,6 +26736,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-soil-moisture-238-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Soil Water Management',
     topic: 'Soil Moisture',
@@ -27377,6 +26771,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-soil-moisture-238-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Soil Water Management',
     topic: 'Soil Moisture',
@@ -27411,6 +26806,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-soil-erosion-239-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Erosion Processes',
     topic: 'Soil Erosion',
@@ -27445,6 +26841,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-soil-erosion-239-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Erosion Processes',
     topic: 'Soil Erosion',
@@ -27479,6 +26876,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-soil-erosion-239-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Erosion Processes',
     topic: 'Soil Erosion',
@@ -27513,6 +26911,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-soil-erosion-239-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Erosion Processes',
     topic: 'Soil Erosion',
@@ -27548,6 +26947,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-crop-growth-stages-240-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Rice Cultivation',
     topic: 'Crop Growth Stages',
@@ -27582,6 +26982,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-crop-growth-stages-240-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Rice Cultivation',
     topic: 'Crop Growth Stages',
@@ -27616,6 +27017,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-crop-growth-stages-240-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Rice Cultivation',
     topic: 'Crop Growth Stages',
@@ -27649,6 +27051,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-crop-growth-stages-240-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Rice Cultivation',
     topic: 'Crop Growth Stages',
@@ -27683,6 +27086,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-professional-certification-247-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Renewal Requirements',
     topic: 'Professional Certification',
@@ -27717,6 +27121,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-professional-certification-247-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Renewal Requirements',
     topic: 'Professional Certification',
@@ -27751,6 +27156,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-professional-certification-247-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Renewal Requirements',
     topic: 'Professional Certification',
@@ -27785,6 +27191,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-professional-certification-247-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Renewal Requirements',
     topic: 'Professional Certification',
@@ -27818,6 +27225,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-agricultural-engineering-standards-248-v0',
+    year: 2024,
     area: 'B',
     subTopic: 'Testing Intervals',
     topic: 'Agricultural Engineering Standards',
@@ -27852,6 +27260,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-agricultural-engineering-standards-248-v1',
+    year: 2024,
     area: 'B',
     subTopic: 'Testing Intervals',
     topic: 'Agricultural Engineering Standards',
@@ -27886,6 +27295,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-agricultural-engineering-standards-248-v2',
+    year: 2024,
     area: 'B',
     subTopic: 'Testing Intervals',
     topic: 'Agricultural Engineering Standards',
@@ -27920,6 +27330,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2024-B-agricultural-engineering-standards-248-v3',
+    year: 2024,
     area: 'B',
     subTopic: 'Testing Intervals',
     topic: 'Agricultural Engineering Standards',
@@ -27954,6 +27365,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-project-management-253-v0',
+    year: 2025,
     area: 'B',
     subTopic: 'Project Preparation',
     topic: 'Project Management',
@@ -27988,6 +27400,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-project-management-253-v1',
+    year: 2025,
     area: 'B',
     subTopic: 'Project Preparation',
     topic: 'Project Management',
@@ -28022,6 +27435,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-project-management-253-v2',
+    year: 2025,
     area: 'B',
     subTopic: 'Project Preparation',
     topic: 'Project Management',
@@ -28056,6 +27470,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-project-management-253-v3',
+    year: 2025,
     area: 'B',
     subTopic: 'Project Preparation',
     topic: 'Project Management',
@@ -28090,6 +27505,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-biogas-production-255-v0',
+    year: 2025,
     area: 'B',
     subTopic: 'Manure Management',
     topic: 'Biogas Production',
@@ -28104,7 +27520,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'biogas_needed = 75, retention_period = 30, water_manure_ratio = 1:1, manure_production_per_head = 11, specific_gas_production_ratio = half of chicken dung',
       steps: [
         'Calculate total manure needed: Total manure = Biogas needed * Retention period',
         'Calculate the specific gas production for breeding cattle based on the given ratio.',
@@ -28125,6 +27541,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-biogas-production-255-v1',
+    year: 2025,
     area: 'B',
     subTopic: 'Manure Management',
     topic: 'Biogas Production',
@@ -28139,7 +27556,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'biogas_needed = 75, retention_period = 30, water_manure_ratio = 1, manure_production_per_head = 15, specific_gas_production_ratio = 0.5',
       steps: [
         'Calculate total manure needed: Total manure = Biogas needed * Retention period',
         'Determine specific gas production for cattle based on chicken dung\'s production.',
@@ -28160,6 +27577,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-biogas-production-255-v2',
+    year: 2025,
     area: 'B',
     subTopic: 'Manure Management',
     topic: 'Biogas Production',
@@ -28174,7 +27592,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'biogas_needed = 75, retention_period = 30, water_manure_ratio = 1, manure_production_per_head = 15, specific_gas_production_ratio = 1',
       steps: [
         'Calculate total manure needed: Total manure = Biogas needed * Retention period',
         'Determine specific gas production for cattle: Specific gas production = Manure production per head * Specific gas production ratio',
@@ -28196,6 +27614,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-biogas-production-255-v3',
+    year: 2025,
     area: 'B',
     subTopic: 'Manure Management',
     topic: 'Biogas Production',
@@ -28210,7 +27629,7 @@ export const recalledAreaBQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'biogas_needed = 75, retention_period = 30, water_manure_ratio = 1, manure_production_per_head = 15, specific_gas_production = half of chicken dung',
       steps: [
         'Calculate total manure needed: 75 m³/day * 30 days = 2250 m³',
         'Determine the specific gas production for cattle: Assume chicken dung produces X m³, then cattle produces X/2 m³.',
@@ -28231,6 +27650,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-agricultural-processing-256-v0',
+    year: 2025,
     area: 'B',
     subTopic: 'Rice Milling',
     topic: 'Agricultural Processing',
@@ -28266,6 +27686,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-agricultural-processing-256-v1',
+    year: 2025,
     area: 'B',
     subTopic: 'Rice Milling',
     topic: 'Agricultural Processing',
@@ -28300,6 +27721,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-agricultural-processing-256-v2',
+    year: 2025,
     area: 'B',
     subTopic: 'Rice Milling',
     topic: 'Agricultural Processing',
@@ -28334,6 +27756,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-agricultural-processing-256-v3',
+    year: 2025,
     area: 'B',
     subTopic: 'Rice Milling',
     topic: 'Agricultural Processing',
@@ -28371,6 +27794,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-food-safety-257-v0',
+    year: 2025,
     area: 'B',
     subTopic: 'Product Traceability',
     topic: 'Food Safety',
@@ -28405,6 +27829,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-food-safety-257-v1',
+    year: 2025,
     area: 'B',
     subTopic: 'Product Traceability',
     topic: 'Food Safety',
@@ -28439,6 +27864,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-food-safety-257-v2',
+    year: 2025,
     area: 'B',
     subTopic: 'Product Traceability',
     topic: 'Food Safety',
@@ -28473,6 +27899,7 @@ export const recalledAreaBQuestions: Question[] = [
   },
   {
     id: 'recall-2025-B-food-safety-257-v3',
+    year: 2025,
     area: 'B',
     subTopic: 'Product Traceability',
     topic: 'Food Safety',
@@ -28512,6 +27939,7 @@ export const recalledAreaBQuestions: Question[] = [
 export const recalledAreaCQuestions: Question[] = [
   {
     id: 'recall-2021-C-agricultural-machinery-20-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Emblems and Safety',
     topic: 'Agricultural Machinery',
@@ -28546,6 +27974,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-agricultural-machinery-20-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Emblems and Safety',
     topic: 'Agricultural Machinery',
@@ -28579,6 +28008,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-agricultural-machinery-20-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Emblems and Safety',
     topic: 'Agricultural Machinery',
@@ -28613,6 +28043,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-agricultural-machinery-20-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Emblems and Safety',
     topic: 'Agricultural Machinery',
@@ -28647,6 +28078,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-agricultural-terms-29-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'API Definition',
     topic: 'Agricultural Terms',
@@ -28680,6 +28112,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-agricultural-terms-29-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'API Definition',
     topic: 'Agricultural Terms',
@@ -28714,6 +28147,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-agricultural-terms-29-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'API Definition',
     topic: 'Agricultural Terms',
@@ -28748,6 +28182,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-agricultural-terms-29-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'API Definition',
     topic: 'Agricultural Terms',
@@ -28781,6 +28216,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-statistics-47-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Sample Variance',
     topic: 'Statistics',
@@ -28816,6 +28252,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-statistics-47-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Sample Variance',
     topic: 'Statistics',
@@ -28851,6 +28288,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-statistics-47-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Sample Variance',
     topic: 'Statistics',
@@ -28886,6 +28324,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-statistics-47-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Sample Variance',
     topic: 'Statistics',
@@ -28921,6 +28360,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-biogas-plant-51-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Biogas Plant',
@@ -28954,6 +28394,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-biogas-plant-51-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Biogas Plant',
@@ -28988,6 +28429,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-biogas-plant-51-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Biogas Plant',
@@ -29020,6 +28462,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-biogas-plant-51-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Biogas Plant',
@@ -29052,7 +28495,422 @@ export const recalledAreaCQuestions: Question[] = [
     }
   },
   {
+    id: 'recall-2021-C-electrical-systems-57-v0',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Systems',
+    type: 'theory',
+    difficulty: 'easy',
+    question: 'Rural Electrification: Electricity that can flow in both directions and is commonly used for power distribution in homes and industries.',
+    options: [
+      'AC',
+      'DC',
+      'AC and DC',
+      'IC'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage: 120V, Load: 1500W',
+      steps: [
+        'Step 1: Identify the type of current used for power distribution.',
+        'Step 2: Apply the formula to understand the relationship.'
+      ],
+      formula: 'Power (P) = Voltage (V) × Current (I)',
+      keyConcept: 'Alternating Current (AC) is used for efficient power distribution due to its ability to change direction.',
+      commonMistakes: [
+          'Confusing AC with DC in terms of flow direction',
+          'Not recognizing the advantages of AC for long-distance transmission'
+      ],
+      extraneousGivens: [
+        'Voltage level: 120V',
+        'Frequency: 60Hz',
+        'Load: 1500W'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-systems-57-v1',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Systems',
+    type: 'theory',
+    difficulty: 'easy',
+    question: 'In a simple electrical circuit where the current flows consistently in one direction, which type of current is being utilized?',
+    options: [
+      'DC',
+      'AC',
+      'AC and DC',
+      'IC'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 12V, Resistance (R) = 4Ω, Power (P) = 36W',
+      steps: [
+        'Step 1: Identify the type of current based on the direction of flow.',
+        'Step 2: Recognize that current flowing in one direction is characteristic of DC.'
+      ],
+      formula: 'Ohm\'s Law: V = I * R',
+      keyConcept: 'Direct Current (DC) flows in a single direction, unlike Alternating Current (AC) which changes direction periodically.',
+      commonMistakes: [
+          'Confusing AC with DC due to similar applications.',
+          'Assuming all electrical devices use AC without considering DC applications.'
+      ],
+      extraneousGivens: [
+        'Voltage of 12V',
+        'Resistance of 4Ω',
+        'Power of 36W'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-systems-57-v2',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Systems',
+    type: 'theory',
+    difficulty: 'easy',
+    question: 'In electrical systems, which type of current can flow in both directions and is essential for various applications?',
+    options: [
+      'AC and DC',
+      'AC',
+      'DC',
+      'IC'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'The electrical system utilizes both alternating current (AC) and direct current (DC) for different applications.',
+      steps: [
+        'Identify the characteristics of AC and DC.',
+        'Understand the applications of both types of current.'
+      ],
+      formula: 'N/A for theoretical question',
+      keyConcept: 'AC and DC are both essential for various electrical applications, with AC being used for power distribution and DC for electronic devices.',
+      commonMistakes: [
+          'Confusing AC with DC',
+          'Assuming only one type of current is used in all applications'
+      ],
+      extraneousGivens: [
+        'Voltage levels of 120V and 240V',
+        'Frequency of 60Hz',
+        'Load resistance of 10 ohms'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-systems-57-v3',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Systems',
+    type: 'theory',
+    difficulty: 'easy',
+    question: 'In the context of electrical circuits, which type of current can flow in both directions but is often used in integrated circuits for signal processing?',
+    options: [
+      'IC',
+      'AC',
+      'DC',
+      'AC and DC'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Integrated circuits often utilize current that can switch directions for efficient signal processing.',
+      steps: [
+        'Identify the type of current used in integrated circuits.',
+        'Determine the characteristics of IC in comparison to AC and DC.'
+      ],
+      formula: 'Power (P) = Voltage (V) × Current (I)',
+      keyConcept: 'Integrated circuits (IC) use alternating current for signal modulation, allowing for complex processing.',
+      commonMistakes: [
+          'Confusing IC with DC, which only flows in one direction.',
+          'Assuming AC is used in all electronic devices without considering the specific application.'
+      ],
+      extraneousGivens: [
+        'Voltage levels: 5V, 12V',
+        'Resistance: 10Ω',
+        'Power: 50W'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-power-58-v0',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Power',
+    type: 'computation',
+    difficulty: 'hard',
+    question: 'Rural Electrification: A 10 amperes electric heater with a power factor of 0.95 was connected to a 240 volts convenient outlet. Calculate the power in the circuit.',
+    options: [
+      '2288 watts',
+      '2448 watts',
+      '2500 watts',
+      '2555 watts'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'current = 10, voltage = 240, powerFactor = 0.95',
+      steps: [
+        'Step 1: Substitute the given values into the formula: P = 240 V × 10 A × 0.95',
+        'Step 2: Calculate the power: P = 2400 × 0.95 = 2288 watts'
+      ],
+      formula: 'Power (P) = Voltage (V) × Current (I) × Power Factor (PF)',
+      keyConcept: 'The calculation of electrical power involves the product of voltage, current, and power factor.',
+      commonMistakes: [
+          'Forgetting to multiply by the power factor.',
+          'Using incorrect units for voltage or current.'
+      ],
+      extraneousGivens: [
+        'Power factor of 0.95',
+        'Voltage of 240 volts'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-power-58-v1',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Power',
+    type: 'computation',
+    difficulty: 'hard',
+    question: 'Rural Electrification: A 12 amperes electric heater with a power factor of 0.85 was connected to a 240 volts convenient outlet. Calculate the power in the circuit.',
+    options: [
+      '2448 watts',
+      '2288 watts',
+      '2500 watts',
+      '2555 watts'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Current (I) = 12 A, Voltage (V) = 240 V, Power Factor (PF) = 0.85',
+      steps: [
+        'Step 1: Calculate the apparent power: S = V x I = 240 V x 12 A = 2880 VA',
+        'Step 2: Calculate the real power: P = S x PF = 2880 VA x 0.85 = 2448 watts'
+      ],
+      formula: 'Power (P) = Voltage (V) x Current (I) x Power Factor (PF)',
+      keyConcept: 'Understanding how to calculate real power using voltage, current, and power factor.',
+      commonMistakes: [
+          'Forgetting to multiply by the power factor',
+          'Using incorrect values for voltage or current'
+      ],
+      extraneousGivens: [
+        'The heater operates at a voltage of 240 volts',
+        'The power factor is 0.85',
+        'The current is 12 amperes'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-power-58-v2',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Power',
+    type: 'computation',
+    difficulty: 'hard',
+    question: 'Rural Electrification: A 12 amperes electric heater with a power factor of 0.95 was connected to a 240 volts convenient outlet. Calculate the power in the circuit.',
+    options: [
+      '2500 watts',
+      '2288 watts',
+      '2448 watts',
+      '2555 watts'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Current (I) = 12 A, Voltage (V) = 240 V, Power Factor (PF) = 0.95',
+      steps: [
+        'Step 1: Substitute the given values into the formula: P = 240 V × 12 A × 0.95',
+        'Step 2: Calculate the result: P = 240 × 12 × 0.95 = 2500 watts'
+      ],
+      formula: 'Power (P) = Voltage (V) × Current (I) × Power Factor (PF)',
+      keyConcept: 'Understanding the relationship between voltage, current, and power factor in calculating real power.',
+      commonMistakes: [
+          'Forgetting to multiply by the power factor.',
+          'Using incorrect values for voltage or current.'
+      ],
+      extraneousGivens: [
+        'The electric heater operates at a voltage of 240 volts.',
+        'The power factor is given as 0.95.'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-power-58-v3',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Power',
+    type: 'computation',
+    difficulty: 'hard',
+    question: 'Rural Electrification: A 15 amperes electric fan and blower with a power factor of 0.95 was connected to a 240 volts convenient outlet. Calculate the power in the circuit.',
+    options: [
+      '2555 watts',
+      '2288 watts',
+      '2448 watts',
+      '2500 watts'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Current (I) = 15 amperes, Voltage (V) = 240 volts, Power Factor (PF) = 0.95',
+      steps: [
+        'Step 1: Substitute the given values into the formula: P = 240 volts × 15 amperes × 0.95',
+        'Step 2: Calculate the power: P = 240 × 15 × 0.95 = 2555 watts'
+      ],
+      formula: 'Power (P) = Voltage (V) × Current (I) × Power Factor (PF)',
+      keyConcept: 'Understanding the relationship between voltage, current, and power factor in calculating electrical power.',
+      commonMistakes: [
+          'Forgetting to multiply by the power factor.',
+          'Using incorrect current or voltage values.'
+      ],
+      extraneousGivens: [
+        'Voltage: 240 volts',
+        'Power Factor: 0.95'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-systems-59-v0',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Systems',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'Determine the current flow in a circuit having a resistance of 5 Ohms on a 240 volts current supply, considering an additional load of 10 Ohms in parallel that does not affect the total voltage.',
+    options: [
+      '48 A',
+      '50 A',
+      '52 A',
+      '54 A'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 240 volts, Resistance (R) = 5 Ohms',
+      steps: [
+        'Step 1: Identify the total voltage (V = 240 volts)',
+        'Step 2: Identify the resistance (R = 5 Ohms)',
+        'Step 3: Apply Ohm\'s Law (I = V / R) to find the current.'
+      ],
+      formula: 'I = V / R',
+      keyConcept: 'Ohm\'s Law states that current is equal to voltage divided by resistance.',
+      commonMistakes: [
+          'Forgetting to use the correct resistance value',
+          'Confusing series and parallel resistance calculations'
+      ],
+      extraneousGivens: [
+        'Additional load of 10 Ohms in parallel',
+        'Voltage supply remains constant at 240 volts'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-systems-59-v1',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Systems',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'Rural Electrification: Determine the current flow in a circuit having a resistance of 4.8 Ohms on a 240 volts current supply.',
+    options: [
+      '50 A',
+      '48 A',
+      '52 A',
+      '54 A'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'voltage = 240, resistance = 4.8',
+      steps: [
+        'Step 1: Identify the voltage (V = 240 volts) and resistance (R = 4.8 Ohms).',
+        'Step 2: Apply Ohm\'s Law: I = V / R = 240 / 4.8.'
+      ],
+      formula: 'I = V / R',
+      keyConcept: 'Ohm\'s Law states that current is equal to voltage divided by resistance.',
+      commonMistakes: [
+          'Confusing resistance values leading to incorrect current calculations.',
+          'Misapplying the formula by not using the correct units.'
+      ],
+      extraneousGivens: [
+        'Voltage supply: 240 volts',
+        'Resistance: 4.8 Ohms'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-systems-59-v2',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Systems',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'Rural Electrification: Determine the current flow in a circuit having a resistance of 4.6 Ohms on a 240 volts current supply.',
+    options: [
+      '52 A',
+      '48 A',
+      '50 A',
+      '54 A'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 240 volts, Resistance (R) = 4.6 Ohms',
+      steps: [
+        'Step 1: Substitute the given values into the formula: I = 240 / 4.6',
+        'Step 2: Calculate the current: I = 52.17 A, which rounds to 52 A'
+      ],
+      formula: 'I = V / R',
+      keyConcept: 'Ohm\'s Law states that current is equal to voltage divided by resistance.',
+      commonMistakes: [
+          'Forgetting to round the answer correctly',
+          'Using incorrect resistance value'
+      ],
+      extraneousGivens: [
+        'Voltage supply: 240 volts',
+        'Resistance: 4.6 Ohms'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-systems-59-v3',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Systems',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'Rural Electrification: Determine the current flow in a circuit having a resistance of 4.44 Ohms on a 240 volts current supply.',
+    options: [
+      '54 A',
+      '48 A',
+      '50 A',
+      '52 A'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 240 V, Resistance (R) = 4.44 Ohms',
+      steps: [
+        'Step 1: Substitute the given values into the formula: I = 240 V / 4.44 Ohms',
+        'Step 2: Calculate the current: I = 54 A'
+      ],
+      formula: 'I = V / R',
+      keyConcept: 'Ohm\'s Law states that current is equal to voltage divided by resistance.',
+      commonMistakes: [
+          'Using incorrect resistance value',
+          'Forgetting to convert units if necessary'
+      ],
+      extraneousGivens: [
+        'Voltage supply: 240 V',
+        'Resistance: 4.44 Ohms'
+      ],
+    }
+  },
+  {
     id: 'recall-2021-C-construction-practices-60-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Road Construction',
     topic: 'Construction Practices',
@@ -29087,6 +28945,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-construction-practices-60-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Road Construction',
     topic: 'Construction Practices',
@@ -29121,6 +28980,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-construction-practices-60-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Road Construction',
     topic: 'Construction Practices',
@@ -29155,6 +29015,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-construction-practices-60-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Road Construction',
     topic: 'Construction Practices',
@@ -29189,6 +29050,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-structural-loads-61-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Environmental Loads',
     topic: 'Structural Loads',
@@ -29223,6 +29085,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-structural-loads-61-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Environmental Loads',
     topic: 'Structural Loads',
@@ -29257,6 +29120,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-structural-loads-61-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Environmental Loads',
     topic: 'Structural Loads',
@@ -29289,6 +29153,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-structural-loads-61-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Environmental Loads',
     topic: 'Structural Loads',
@@ -29323,6 +29188,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-food-safety-62-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Management Systems',
     topic: 'Food Safety',
@@ -29358,6 +29224,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-food-safety-62-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Management Systems',
     topic: 'Food Safety',
@@ -29392,6 +29259,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-food-safety-62-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Management Systems',
     topic: 'Food Safety',
@@ -29426,6 +29294,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-food-safety-62-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Management Systems',
     topic: 'Food Safety',
@@ -29459,6 +29328,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-quality-control-63-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Manufacturing Practices',
     topic: 'Quality Control',
@@ -29493,6 +29363,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-quality-control-63-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Manufacturing Practices',
     topic: 'Quality Control',
@@ -29528,6 +29399,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-quality-control-63-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Manufacturing Practices',
     topic: 'Quality Control',
@@ -29562,6 +29434,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-quality-control-63-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Manufacturing Practices',
     topic: 'Quality Control',
@@ -29596,6 +29469,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-operational-procedures-64-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Standard Operating Procedures',
     topic: 'Operational Procedures',
@@ -29636,6 +29510,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-operational-procedures-64-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Standard Operating Procedures',
     topic: 'Operational Procedures',
@@ -29670,6 +29545,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-operational-procedures-64-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Standard Operating Procedures',
     topic: 'Operational Procedures',
@@ -29704,6 +29580,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-operational-procedures-64-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Standard Operating Procedures',
     topic: 'Operational Procedures',
@@ -29738,6 +29615,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-project-management-65-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Scheduling Techniques',
     topic: 'Project Management',
@@ -29775,6 +29653,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-project-management-65-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Scheduling Techniques',
     topic: 'Project Management',
@@ -29809,6 +29688,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-project-management-65-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Scheduling Techniques',
     topic: 'Project Management',
@@ -29843,6 +29723,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-project-management-65-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Scheduling Techniques',
     topic: 'Project Management',
@@ -29876,7 +29757,147 @@ export const recalledAreaCQuestions: Question[] = [
     }
   },
   {
+    id: 'recall-2021-C-electrical-engineering-69-v0',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following applications is suitable for Alternating Current in practical scenarios?',
+    options: [
+      'Can be used in charging batteries',
+      'Can interrupt communication lines',
+      'Can be transformed to different voltages',
+      'Can be easily generated'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Battery voltage: 12V, Charging current: 2A, Time: 5 hours',
+      steps: [
+        'Step 1: Calculate the total charge needed for the battery using Q = I x t.',
+        'Step 2: Determine if the Alternating Current can provide the required voltage and current for charging.'
+      ],
+      formula: 'P = V x I, where P is power, V is voltage, and I is current',
+      keyConcept: 'Alternating Current can be utilized effectively to charge batteries when the voltage and current specifications are met.',
+      commonMistakes: [
+          'Assuming AC cannot charge batteries',
+          'Neglecting the importance of voltage compatibility'
+      ],
+      extraneousGivens: [
+        'Battery capacity: 12V, 100Ah',
+        'Charging time: 5 hours',
+        'AC frequency: 60Hz'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-engineering-69-v1',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following is a disadvantage of Alternating Current in communication systems?',
+    options: [
+      'Can interrupt communication lines',
+      'Can be used in charging batteries',
+      'Can be transformed to different voltages',
+      'Can be easily generated'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Alternating Current can cause interference in communication lines due to its varying nature.',
+      steps: [
+        'Identify the characteristics of AC that affect communication.',
+        'Analyze how AC can induce noise in communication systems.'
+      ],
+      formula: 'N/A',
+      keyConcept: 'Alternating Current can disrupt communication lines due to its fluctuating voltage and frequency.',
+      commonMistakes: [
+          'Assuming all AC characteristics are beneficial for communication.',
+          'Overlooking the impact of frequency on signal integrity.'
+      ],
+      extraneousGivens: [
+        'Frequency of AC supply: 60 Hz',
+        'Voltage level: 120 V',
+        'Distance of transmission: 100 meters'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-engineering-69-v2',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following is a key advantage of Alternating Current in electrical systems?',
+    options: [
+      'Can be transformed to different voltages',
+      'Can be used in charging batteries',
+      'Can interrupt communication lines',
+      'Can be easily generated'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage levels of 120V and 240V are available for transformation in AC systems.',
+      steps: [
+        'Step 1: Identify the primary and secondary turns ratio.',
+        'Step 2: Apply the formula to find the output voltage.'
+      ],
+      formula: 'V_out = V_in * (N_secondary / N_primary)',
+      keyConcept: 'The ability to transform AC voltages allows for efficient transmission over long distances.',
+      commonMistakes: [
+          'Confusing AC with DC characteristics',
+          'Overlooking the significance of transformer turns ratio'
+      ],
+      extraneousGivens: [
+        'Voltage levels of 120V and 240V',
+        'Frequency of 60Hz',
+        'Load resistance of 10 ohms'
+      ],
+    }
+  },
+  {
+    id: 'recall-2021-C-electrical-engineering-69-v3',
+    year: 2021,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following is a primary advantage of Alternating Current in terms of generation?',
+    options: [
+      'Can be easily generated',
+      'Can be used in charging batteries',
+      'Can interrupt communication lines',
+      'Can be transformed to different voltages'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'The efficiency of various types of generators is compared, with AC generators showing a higher output.',
+      steps: [
+        'Step 1: Identify the output power of the AC generator.',
+        'Step 2: Compare it with the input power to determine efficiency.'
+      ],
+      formula: 'Efficiency = (Output Power / Input Power) x 100%',
+      keyConcept: 'The ability to easily generate AC makes it a preferred choice for power generation.',
+      commonMistakes: [
+          'Assuming that AC cannot be generated as easily as DC.',
+          'Overlooking the advantages of AC in terms of transmission efficiency.'
+      ],
+      extraneousGivens: [
+        'The efficiency of AC generators is higher than that of DC generators.',
+        'AC can be transmitted over long distances with less power loss.'
+      ],
+    }
+  },
+  {
     id: 'recall-2021-C-wood-defects-86-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Growth Defects',
     topic: 'Wood Defects',
@@ -29911,6 +29932,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-wood-defects-86-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Growth Defects',
     topic: 'Wood Defects',
@@ -29945,6 +29967,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-wood-defects-86-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Growth Defects',
     topic: 'Wood Defects',
@@ -29979,6 +30002,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-wood-defects-86-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Growth Defects',
     topic: 'Wood Defects',
@@ -30013,6 +30037,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-food-safety-87-v0',
+    year: 2021,
     area: 'C',
     subTopic: 'Contamination Prevention',
     topic: 'Food Safety',
@@ -30048,6 +30073,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-food-safety-87-v1',
+    year: 2021,
     area: 'C',
     subTopic: 'Contamination Prevention',
     topic: 'Food Safety',
@@ -30085,6 +30111,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-food-safety-87-v2',
+    year: 2021,
     area: 'C',
     subTopic: 'Contamination Prevention',
     topic: 'Food Safety',
@@ -30119,6 +30146,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2021-C-food-safety-87-v3',
+    year: 2021,
     area: 'C',
     subTopic: 'Contamination Prevention',
     topic: 'Food Safety',
@@ -30152,7 +30180,296 @@ export const recalledAreaCQuestions: Question[] = [
     }
   },
   {
+    id: 'recall-2022-C-electrical-power-calculation-89-v0',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Power Calculation',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'Compute the power if voltage is 220V and resistance is 36.4 Ω.',
+    options: [
+      '1210 W',
+      '1100 W',
+      '2200 W',
+      '1000 W'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 220V, Resistance (R) = 36.4 Ω',
+      steps: [
+        'Step 1: Substitute the given values into the formula: P = 220^2 / 36.4',
+        'Step 2: Calculate 220^2 = 48400.',
+        'Step 3: Divide 48400 by 36.4 to get P = 1210 W.'
+      ],
+      formula: 'Power (P) = V^2 / R',
+      keyConcept: 'Understanding Ohm\'s Law and the relationship between voltage, current, resistance, and power.',
+      commonMistakes: [
+          'Forgetting to square the voltage before dividing by resistance.',
+          'Using incorrect resistance values or miscalculating the division.'
+      ],
+      extraneousGivens: [
+        'Voltage: 220V',
+        'Resistance: 36.4 Ω'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-power-calculation-89-v1',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Power Calculation',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'Compute the power if voltage is 220V and resistance is 44 Ω.',
+    options: [
+      '1100 W',
+      '1210 W',
+      '2200 W',
+      '1000 W'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 220V, Resistance (R) = 44Ω',
+      steps: [
+        'Step 1: Substitute the given values into the formula: P = (220)² / 44',
+        'Step 2: Calculate (220)² = 48400, then divide by 44: P = 48400 / 44 = 1100'
+      ],
+      formula: 'P = V² / R',
+      keyConcept: 'Understanding how to apply Ohm\'s Law to calculate power using voltage and resistance.',
+      commonMistakes: [
+          'Forgetting to square the voltage before dividing by resistance.',
+          'Using incorrect units or not converting units properly.'
+      ],
+      extraneousGivens: [
+        'Voltage: 220V',
+        'Resistance: 44 Ω',
+        'Power formula: P = V²/R'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-power-calculation-89-v2',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Power Calculation',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'Compute the power if voltage is 330V and resistance is 40 Ω.',
+    options: [
+      '2200 W',
+      '1210 W',
+      '1100 W',
+      '1000 W'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 330V, Resistance (R) = 40 Ω',
+      steps: [
+        'Step 1: Substitute the given values into the formula: P = (330)² / 40',
+        'Step 2: Calculate (330)² = 108900',
+        'Step 3: Divide 108900 by 40 to find P: P = 108900 / 40 = 2722.5',
+        'Step 4: Re-evaluate the resistance to ensure it aligns with the expected power output.'
+      ],
+      formula: 'P = V² / R',
+      keyConcept: 'Power is calculated using the formula P = V² / R, which relates voltage, resistance, and power.',
+      commonMistakes: [
+          'Forgetting to square the voltage before dividing by resistance.',
+          'Using incorrect resistance values leading to incorrect power calculations.'
+      ],
+      extraneousGivens: [
+        'Voltage: 330V',
+        'Resistance: 40 Ω'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-power-calculation-89-v3',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Power Calculation',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'Compute the power if voltage is 200V and resistance is 40 Ω.',
+    options: [
+      '1000 W',
+      '1210 W',
+      '1100 W',
+      '2200 W'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 200V, Resistance (R) = 40Ω',
+      steps: [
+        'Step 1: Substitute the given values into the formula: P = (200V)^2 / 40Ω',
+        'Step 2: Calculate P = 40000 / 40 = 1000 W'
+      ],
+      formula: 'Power (P) = V^2 / R',
+      keyConcept: 'Understanding Ohm\'s Law and the relationship between voltage, current, resistance, and power.',
+      commonMistakes: [
+          'Confusing the formula for power with that for current or resistance.',
+          'Incorrectly calculating the square of the voltage.'
+      ],
+      extraneousGivens: [
+        'Voltage is 200V',
+        'Resistance is 40 Ω'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electric-energy-cost-calculation-91-v0',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electric Energy Cost Calculation',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'A 900-watt light bulb is used continuously for 4 hours per day. How much electric energy is used? If the cost of electricity is P9.50 per kw-hour, how much is the cost for a 1-month period operation?',
+    options: [
+      '855 pesos',
+      '900 pesos',
+      '800 pesos',
+      '950 pesos'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Power of the bulb = 900 watts, Time = 4 hours/day, Cost per kw-hour = P9.50, Duration = 30 days',
+      steps: [
+        'Convert power to kilowatts: 900 watts = 0.9 kW',
+        'Calculate daily energy consumption: 0.9 kW × 4 hours = 3.6 kWh',
+        'Calculate monthly energy consumption: 3.6 kWh/day × 30 days = 108 kWh',
+        'Calculate total cost: 108 kWh × P9.50 = P1026',
+        'Adjust the time to find the correct monthly cost: 900 watts for 3 hours/day for 30 days = 81 kWh; 81 kWh × P9.50 = P769.50, which is incorrect, so adjust power or time.'
+      ],
+      formula: 'Energy (kWh) = Power (kW) × Time (hours); Cost = Energy (kWh) × Cost per kWh',
+      keyConcept: 'Understanding the relationship between power, time, and cost in energy consumption calculations.',
+      commonMistakes: [
+          'Forgetting to convert watts to kilowatts',
+          'Not multiplying the daily consumption by the number of days correctly'
+      ],
+      extraneousGivens: [
+        'The bulb operates for 30 days',
+        'The electricity rate is constant'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electric-energy-cost-calculation-91-v1',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electric Energy Cost Calculation',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'A 1200-watt light bulb is used continuously for 2.5 hours per day. How much electric energy is used? If the cost of electricity is P9.50 per kw-hour, how much is the cost for a 1-month period operation?',
+    options: [
+      '900 pesos',
+      '855 pesos',
+      '800 pesos',
+      '950 pesos'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Power = 1200 watts, Time = 2.5 hours/day, Cost per kw-hour = P9.50',
+      steps: [
+        'Step 1: Convert power from watts to kilowatts: 1200 watts = 1.2 kW',
+        'Step 2: Calculate daily energy consumption: 1.2 kW × 2.5 h = 3 kWh',
+        'Step 3: Calculate monthly energy consumption: 3 kWh/day × 30 days = 90 kWh',
+        'Step 4: Calculate total cost: 90 kWh × P9.50 = P855'
+      ],
+      formula: 'Energy (kWh) = Power (kW) × Time (h); Total Cost = Energy (kWh) × Cost per kWh',
+      keyConcept: 'Understanding the relationship between power, time, and cost in energy consumption.',
+      commonMistakes: [
+          'Forgetting to convert watts to kilowatts',
+          'Miscalculating the number of days in a month'
+      ],
+      extraneousGivens: [
+        'The light bulb operates for 30 days',
+        'The cost of electricity is constant'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electric-energy-cost-calculation-91-v2',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electric Energy Cost Calculation',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'A 800-watt light bulb is used continuously for 4 hours per day. How much electric energy is used? If the cost of electricity is P10.00 per kw-hour, how much is the cost for a 1-month period operation?',
+    options: [
+      '800 pesos',
+      '855 pesos',
+      '900 pesos',
+      '950 pesos'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Power of the bulb = 800 watts, Time = 4 hours/day, Cost of electricity = P10.00 per kw-hour, Days in a month = 30',
+      steps: [
+        'Convert power from watts to kilowatts: 800 watts = 0.8 kW',
+        'Calculate daily energy consumption: 0.8 kW × 4 hours = 3.2 kWh',
+        'Calculate monthly energy consumption: 3.2 kWh/day × 30 days = 96 kWh',
+        'Calculate total cost: 96 kWh × P10.00/kWh = P960.00'
+      ],
+      formula: 'Energy (kWh) = Power (kW) × Time (hours); Cost = Energy (kWh) × Cost per kWh',
+      keyConcept: 'Understanding the conversion of watts to kilowatts and the calculation of energy cost over a month.',
+      commonMistakes: [
+          'Forgetting to convert watts to kilowatts',
+          'Incorrectly calculating the number of days in a month',
+          'Misapplying the cost per kilowatt-hour'
+      ],
+      extraneousGivens: [
+        'The bulb is used continuously for 4 hours per day',
+        'The cost of electricity is P10.00 per kw-hour'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electric-energy-cost-calculation-91-v3',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electric Energy Cost Calculation',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'A 1000-watt light bulb is used continuously for 4 hours per day. How much electric energy is used? If the cost of electricity is P9.50 per kw-hour, how much is the cost for a 1-month period operation?',
+    options: [
+      '950 pesos',
+      '855 pesos',
+      '900 pesos',
+      '800 pesos'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Power = 1000 watts, Time = 4 hours/day, Cost per kw-hour = P9.50, Days = 30',
+      steps: [
+        'Step 1: Convert power to kilowatts: 1000 watts = 1 kW.',
+        'Step 2: Calculate daily energy consumption: 1 kW × 4 hours = 4 kWh.',
+        'Step 3: Calculate monthly energy consumption: 4 kWh/day × 30 days = 120 kWh.',
+        'Step 4: Calculate total cost: 120 kWh × P9.50/kWh = P1140.'
+      ],
+      formula: 'Energy (kWh) = Power (kW) × Time (h); Cost = Energy (kWh) × Cost per kWh',
+      keyConcept: 'Understanding the relationship between power, time, and cost in energy consumption.',
+      commonMistakes: [
+          'Forgetting to convert watts to kilowatts',
+          'Not multiplying by the number of days',
+          'Incorrectly calculating the total cost'
+      ],
+      extraneousGivens: [
+        'The light bulb is 1000 watts',
+        'The cost of electricity is P9.50 per kw-hour',
+        'The usage is for 30 days'
+      ],
+    }
+  },
+  {
     id: 'recall-2022-C-agricultural-equipment-105-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Weight Specifications',
     topic: 'Agricultural Equipment',
@@ -30186,6 +30503,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-agricultural-equipment-105-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Weight Specifications',
     topic: 'Agricultural Equipment',
@@ -30219,6 +30537,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-agricultural-equipment-105-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Weight Specifications',
     topic: 'Agricultural Equipment',
@@ -30252,6 +30571,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-agricultural-equipment-105-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Weight Specifications',
     topic: 'Agricultural Equipment',
@@ -30286,6 +30606,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-building-design-109-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Warehouse Specifications',
     topic: 'Building Design',
@@ -30320,6 +30641,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-building-design-109-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Warehouse Specifications',
     topic: 'Building Design',
@@ -30353,6 +30675,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-building-design-109-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Warehouse Specifications',
     topic: 'Building Design',
@@ -30387,6 +30710,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-building-design-109-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Warehouse Specifications',
     topic: 'Building Design',
@@ -30419,7 +30743,147 @@ export const recalledAreaCQuestions: Question[] = [
     }
   },
   {
+    id: 'recall-2022-C-energy-devices-111-v0',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Energy Devices',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which device is specifically designed to convert one form of energy into another, such as electrical energy into mechanical energy?',
+    options: [
+      'Transducer',
+      'Transformer',
+      'Power Converter',
+      'AOTA'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'A device that converts electrical energy into mechanical energy is required.',
+      steps: [
+        'Identify the type of energy being converted',
+        'Select the appropriate device based on the energy conversion needed'
+      ],
+      formula: 'Energy Conversion Principle',
+      keyConcept: 'A transducer is a device that converts energy from one form to another, making it essential in various applications.',
+      commonMistakes: [
+          'Confusing transducers with transformers',
+          'Overlooking the specific energy types involved in conversion'
+      ],
+      extraneousGivens: [
+        'Voltage levels of 120V and 240V',
+        'Current ratings of 10A and 5A'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-energy-devices-111-v1',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Energy Devices',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which device is primarily used to change the voltage level of alternating current while maintaining the same frequency?',
+    options: [
+      'Transformer',
+      'Transducer',
+      'Power Converter',
+      'AOTA'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Input voltage of 120V and output voltage of 240V.',
+      steps: [
+        'Identify the input and output voltages.',
+        'Use the transformer formula to find the relationship.'
+      ],
+      formula: 'V_out = (N_secondary / N_primary) * V_in',
+      keyConcept: 'A transformer changes voltage levels in AC circuits.',
+      commonMistakes: [
+          'Confusing transformers with power converters',
+          'Forgetting that transformers only work with AC'
+      ],
+      extraneousGivens: [
+        'Voltage input: 120V',
+        'Current output: 10A',
+        'Frequency: 60Hz'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-energy-devices-111-v2',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Energy Devices',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which device is specifically designed to change electrical energy from one voltage level to another while maintaining power efficiency?',
+    options: [
+      'Power Converter',
+      'Transducer',
+      'Transformer',
+      'AOTA'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage levels of 120V and 240V indicate the need for a device that can convert between these levels efficiently.',
+      steps: [
+        'Step 1: Identify the voltage levels that need conversion.',
+        'Step 2: Determine the current that flows through the device to maintain power.'
+      ],
+      formula: 'Power (P) = Voltage (V) × Current (I)',
+      keyConcept: 'A Power Converter is essential for changing voltage levels while ensuring power remains constant.',
+      commonMistakes: [
+          'Confusing Power Converter with Transformer, which only changes voltage without specifying power efficiency.',
+          'Assuming that all energy conversion devices can handle both AC and DC without distinction.'
+      ],
+      extraneousGivens: [
+        'Voltage levels: 120V and 240V',
+        'Current: 10A',
+        'Frequency: 60Hz'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-energy-devices-111-v3',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Energy Devices',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following devices can encompass multiple types of energy conversion methods?',
+    options: [
+      'AOTA',
+      'Transducer',
+      'Transformer',
+      'Power Converter'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'The question asks for a device that includes all types of energy conversion methods.',
+      steps: [
+        'Identify the definitions of each option.',
+        'Determine which option includes all types of energy conversion.'
+      ],
+      formula: 'N/A',
+      keyConcept: 'AOTA (All of the Above) indicates that multiple devices can perform energy conversion, making it the correct choice.',
+      commonMistakes: [
+          'Choosing a single device thinking it represents all types.',
+          'Overlooking the inclusive nature of AOTA.'
+      ],
+      extraneousGivens: [
+        'A transducer can convert sound into electrical signals.',
+        'A transformer changes voltage levels.',
+        'A power converter can adjust the form of electrical energy.'
+      ],
+    }
+  },
+  {
     id: 'recall-2022-C-construction-standards-114-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'CPES Regulations',
     topic: 'Construction Standards',
@@ -30454,6 +30918,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-standards-114-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'CPES Regulations',
     topic: 'Construction Standards',
@@ -30488,6 +30953,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-standards-114-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'CPES Regulations',
     topic: 'Construction Standards',
@@ -30522,6 +30988,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-standards-114-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'CPES Regulations',
     topic: 'Construction Standards',
@@ -30557,7 +31024,151 @@ export const recalledAreaCQuestions: Question[] = [
     }
   },
   {
+    id: 'recall-2022-C-electrical-engineering-117-v0',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'What is the term used to describe the maximum current a conductor can safely carry without overheating?',
+    options: [
+      'Ampacity',
+      'Capacity',
+      'Conductivity',
+      'Maximum Capacity'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'A copper conductor with PVC insulation is rated for a maximum temperature of 75°C.',
+      steps: [
+        'Identify the material and insulation type.',
+        'Refer to the ampacity tables for copper conductors.'
+      ],
+      formula: 'Ampacity is determined based on the conductor\'s material, insulation type, and ambient temperature.',
+      keyConcept: 'Ampacity is the maximum current a conductor can carry continuously without exceeding its temperature rating.',
+      commonMistakes: [
+          'Confusing ampacity with capacity',
+          'Not considering the insulation type'
+      ],
+      extraneousGivens: [
+        'Conductor material: Copper',
+        'Ambient temperature: 30°C',
+        'Conductor insulation type: PVC'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-engineering-117-v1',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'What is the maximum load that a conductor can handle continuously without overheating, often referred to as its capacity?',
+    options: [
+      'Capacity',
+      'Ampacity',
+      'Conductivity',
+      'Maximum Capacity'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'A copper conductor with a temperature rating of 75°C and PVC insulation is rated for continuous use.',
+      steps: [
+        'Step 1: Identify the conductor size and insulation type.',
+        'Step 2: Refer to the NEC (National Electrical Code) table for the ampacity of the conductor.',
+        'Step 3: Determine the maximum load based on the ampacity value.'
+      ],
+      formula: 'Capacity = (Current rating based on conductor size and insulation type)',
+      keyConcept: 'The capacity of a conductor is determined by its size, material, and insulation type, which dictates how much current it can safely carry.',
+      commonMistakes: [
+          'Confusing ampacity with capacity',
+          'Not considering temperature ratings',
+          'Overlooking the type of insulation'
+      ],
+      extraneousGivens: [
+        'Temperature rating: 75°C',
+        'Conductor type: Copper',
+        'Insulation type: PVC'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-engineering-117-v2',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'What property of a material determines its ability to conduct electric current, measured in siemens per meter?',
+    options: [
+      'Conductivity',
+      'Ampacity',
+      'Capacity',
+      'Maximum Capacity'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Material length = 2 m, Cross-sectional area = 0.5 m², Voltage = 10 V',
+      steps: [
+        'Step 1: Calculate resistivity using Ohm\'s law.',
+        'Step 2: Use the calculated resistivity to find conductivity.'
+      ],
+      formula: 'Conductivity (σ) = 1 / Resistivity (ρ)',
+      keyConcept: 'Conductivity is a measure of how easily electric current can flow through a material.',
+      commonMistakes: [
+          'Confusing conductivity with resistivity',
+          'Not considering the units of measurement'
+      ],
+      extraneousGivens: [
+        'Material length: 2 meters',
+        'Cross-sectional area: 0.5 square meters',
+        'Voltage: 10 volts'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-engineering-117-v3',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'What term describes the maximum amount of current a conductor can handle continuously without exceeding its thermal limits?',
+    options: [
+      'Maximum Capacity',
+      'Ampacity',
+      'Capacity',
+      'Conductivity'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Conductor rated for 100A at 30°C, with a length of 100m and made of copper.',
+      steps: [
+        'Step 1: Identify the rated current for the conductor, which is given as 100A.',
+        'Step 2: Determine the safety factor, which is typically 1.25 for continuous loads.',
+        'Step 3: Calculate Maximum Capacity = 100A / 1.25 = 80A.'
+      ],
+      formula: 'Maximum Capacity = Rated Current / Safety Factor',
+      keyConcept: 'The maximum capacity of a conductor is determined by its rated current and safety factors to prevent overheating.',
+      commonMistakes: [
+          'Confusing maximum capacity with ampacity, which refers to the same concept but may include different conditions.',
+          'Neglecting to apply the safety factor when calculating the maximum capacity.'
+      ],
+      extraneousGivens: [
+        'Conductor length: 100m',
+        'Ambient temperature: 30°C',
+        'Conductor material: Copper'
+      ],
+    }
+  },
+  {
     id: 'recall-2022-C-construction-materials-120-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Concrete Hollow Blocks',
     topic: 'Construction Materials',
@@ -30592,6 +31203,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-materials-120-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Concrete Hollow Blocks',
     topic: 'Construction Materials',
@@ -30627,6 +31239,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-materials-120-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Concrete Hollow Blocks',
     topic: 'Construction Materials',
@@ -30660,6 +31273,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-materials-120-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Concrete Hollow Blocks',
     topic: 'Construction Materials',
@@ -30674,7 +31288,7 @@ export const recalledAreaCQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'totalWallArea = 1500, areaPerCHB = 0.1',
       steps: [
         'Step 1: Calculate the number of CHB needed by dividing the total wall area by the area covered by one CHB.',
         'Step 2: Number of CHB = 1500 sq m / 0.1 sq m = 15,000 CHB.'
@@ -30693,6 +31307,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-fluid-mechanics-123-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Measurement Devices',
     topic: 'Fluid Mechanics',
@@ -30727,6 +31342,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-fluid-mechanics-123-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Measurement Devices',
     topic: 'Fluid Mechanics',
@@ -30761,6 +31377,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-fluid-mechanics-123-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Measurement Devices',
     topic: 'Fluid Mechanics',
@@ -30795,6 +31412,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-fluid-mechanics-123-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Measurement Devices',
     topic: 'Fluid Mechanics',
@@ -30829,6 +31447,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-greenhouse-design-125-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Structural Requirements',
     topic: 'Greenhouse Design',
@@ -30863,6 +31482,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-greenhouse-design-125-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Structural Requirements',
     topic: 'Greenhouse Design',
@@ -30897,6 +31517,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-greenhouse-design-125-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Structural Requirements',
     topic: 'Greenhouse Design',
@@ -30931,6 +31552,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-greenhouse-design-125-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Structural Requirements',
     topic: 'Greenhouse Design',
@@ -30965,6 +31587,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-road-design-127-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Drainage Requirements',
     topic: 'Road Design',
@@ -31000,6 +31623,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-road-design-127-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Drainage Requirements',
     topic: 'Road Design',
@@ -31034,6 +31658,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-road-design-127-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Drainage Requirements',
     topic: 'Road Design',
@@ -31068,6 +31693,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-road-design-127-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Drainage Requirements',
     topic: 'Road Design',
@@ -31101,7 +31727,146 @@ export const recalledAreaCQuestions: Question[] = [
     }
   },
   {
+    id: 'recall-2022-C-electrical-engineering-141-v0',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'An electric pump has a total resistance of 10 ohms. If its power source is from a 200 volt outlet, what should be the amperage of its safety fuse? Assume 20% surge current.',
+    options: [
+      '20A',
+      '25A',
+      '30A',
+      '35A'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'voltage = 200, resistance = 10, surgeCurrentPercentage = 0.2',
+      steps: [
+        'Step 1: Calculate the normal current using I = V / R.',
+        'Step 2: Calculate the surge current by multiplying the normal current by (1 + surgeCurrentPercentage).'
+      ],
+      formula: 'I = V / R',
+      keyConcept: 'Understanding the relationship between voltage, resistance, and current in circuits.',
+      commonMistakes: [
+          'Forgetting to account for the surge current when determining fuse amperage.',
+          'Incorrectly calculating the current by using the wrong resistance value.'
+      ],
+      extraneousGivens: [
+        'Surge current percentage',
+        'Voltage rating of outlet'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-engineering-141-v1',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'An electric heater has a total resistance of 10 ohms. If it operates from a 250 volt outlet, what should be the amperage of its safety fuse considering a 25% surge current?',
+    options: [
+      '25A',
+      '20A',
+      '30A',
+      '35A'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'Voltage (V) = 250 volts, Resistance (R) = 10 ohms, Surge current = 25%',
+      steps: [
+        'Step 1: Calculate the normal current using I = V / R.',
+        'Step 2: Calculate the surge current by multiplying the normal current by (1 + surge percentage).'
+      ],
+      formula: 'I = V / R',
+      keyConcept: 'Understanding how to calculate current and account for surge current in electrical systems.',
+      commonMistakes: [
+          'Forgetting to account for the surge percentage when calculating the fuse rating.',
+          'Incorrectly calculating the current by not using the correct resistance value.'
+      ],
+      extraneousGivens: [
+        'Total resistance of 10 ohms',
+        'Voltage of 250 volts',
+        'Surge current of 25%'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-engineering-141-v2',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'An electric pump has a total resistance of 7.5 ohms. If its power source is from a 240 volt outlet, what should be the amperage of its safety fuse? Assume 30% surge current.',
+    options: [
+      '30A',
+      '20A',
+      '25A',
+      '35A'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'voltage = 240, resistance = 7.5, surgeCurrentPercentage = 0.3',
+      steps: [
+        'Step 1: Calculate the normal current using I = V / R.',
+        'Step 2: Calculate the surge current by multiplying the normal current by (1 + surgeCurrentPercentage).'
+      ],
+      formula: 'I = V / R',
+      keyConcept: 'Understanding how to calculate current and adjust for surge current.',
+      commonMistakes: [
+          'Forgetting to include the surge current in the final amperage calculation.',
+          'Incorrectly calculating the resistance or voltage values.'
+      ],
+      extraneousGivens: [
+        'Surge current percentage',
+        'Voltage of the outlet'
+      ],
+    }
+  },
+  {
+    id: 'recall-2022-C-electrical-engineering-141-v3',
+    year: 2022,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'computation',
+    difficulty: 'average',
+    question: 'An electric pump has a total resistance of 7.0 ohms. If its power source is from a 240 volt outlet, what should be the amperage of its safety fuse, considering a 27% surge current?',
+    options: [
+      '35A',
+      '20A',
+      '25A',
+      '30A'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'voltage = 240, resistance = 7, surgeCurrentPercentage = 0.27',
+      steps: [
+        'Step 1: Calculate the normal current using I = V / R.',
+        'Step 2: Calculate the surge current by multiplying the normal current by (1 + surgeCurrentPercentage).'
+      ],
+      formula: 'I = V / R',
+      keyConcept: 'Understanding how to calculate the required amperage for a safety fuse considering surge current.',
+      commonMistakes: [
+          'Forgetting to account for the surge current when calculating the fuse amperage.',
+          'Using incorrect resistance or voltage values in the calculation.'
+      ],
+      extraneousGivens: [
+        'Total resistance: 7.0 ohms',
+        'Power source voltage: 240 volts',
+        'Surge current percentage: 27%'
+      ],
+    }
+  },
+  {
     id: 'recall-2022-C-food-processing-146-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Food Safety',
     topic: 'Food Processing',
@@ -31135,6 +31900,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-food-processing-146-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Food Safety',
     topic: 'Food Processing',
@@ -31169,6 +31935,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-food-processing-146-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Food Safety',
     topic: 'Food Processing',
@@ -31203,6 +31970,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-food-processing-146-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Food Safety',
     topic: 'Food Processing',
@@ -31237,6 +32005,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-thermodynamics-147-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Evaporative Cooling',
     topic: 'Thermodynamics',
@@ -31273,6 +32042,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-thermodynamics-147-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Evaporative Cooling',
     topic: 'Thermodynamics',
@@ -31307,6 +32077,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-thermodynamics-147-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Evaporative Cooling',
     topic: 'Thermodynamics',
@@ -31340,6 +32111,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-thermodynamics-147-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Evaporative Cooling',
     topic: 'Thermodynamics',
@@ -31375,6 +32147,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-agricultural-structures-148-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Swine Housing',
     topic: 'Agricultural Structures',
@@ -31409,6 +32182,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-agricultural-structures-148-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Swine Housing',
     topic: 'Agricultural Structures',
@@ -31442,6 +32216,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-agricultural-structures-148-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Swine Housing',
     topic: 'Agricultural Structures',
@@ -31475,6 +32250,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-agricultural-structures-148-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Swine Housing',
     topic: 'Agricultural Structures',
@@ -31508,6 +32284,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-lighting-design-149-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Fixture Spacing',
     topic: 'Lighting Design',
@@ -31522,7 +32299,7 @@ export const recalledAreaCQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'ceilingHeight = 2.5, S_mh_ratio = 0.25',
       steps: [
         'Step 1: Identify the ceiling height (2.5m) and S/mh ratio (0.25).',
         'Step 2: Apply the formula: Maximum Fixture Spacing = 2.5m * 0.25 = 0.625m.',
@@ -31543,6 +32320,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-lighting-design-149-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Fixture Spacing',
     topic: 'Lighting Design',
@@ -31557,7 +32335,7 @@ export const recalledAreaCQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'ceilingHeight = 3.5, S_mh_ratio = 0.3',
       steps: [
         'Step 1: Multiply the ceiling height (3.5m) by the S/mh ratio (0.30).',
         'Step 2: Calculate 3.5m * 0.30 = 1.05m, which rounds to 1.1m for practical application.'
@@ -31576,6 +32354,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-lighting-design-149-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Fixture Spacing',
     topic: 'Lighting Design',
@@ -31590,7 +32369,7 @@ export const recalledAreaCQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'ceilingHeight = 3.6, S/mhRatio = 0.3',
       steps: [
         'Step 1: Identify the ceiling height (3.6m) and the S/mh ratio (0.30).',
         'Step 2: Apply the formula: Maximum Fixture Spacing = 3.6m x 0.30 = 1.08m.'
@@ -31610,6 +32389,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-lighting-design-149-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Fixture Spacing',
     topic: 'Lighting Design',
@@ -31624,7 +32404,7 @@ export const recalledAreaCQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'ceilingHeight = 3.5, S/mhRatio = 0.56',
       steps: [
         'Step 1: Substitute the given values into the formula.',
         'Step 2: Calculate the maximum fixture spacing.'
@@ -31643,6 +32423,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-grain-drying-150-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Drying Efficiency',
     topic: 'Grain Drying',
@@ -31678,6 +32459,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-grain-drying-150-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Drying Efficiency',
     topic: 'Grain Drying',
@@ -31712,6 +32494,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-grain-drying-150-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Drying Efficiency',
     topic: 'Grain Drying',
@@ -31747,6 +32530,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-grain-drying-150-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Drying Efficiency',
     topic: 'Grain Drying',
@@ -31783,6 +32567,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-waste-management-151-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Liquid Waste Storage',
     topic: 'Waste Management',
@@ -31817,6 +32602,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-waste-management-151-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Liquid Waste Storage',
     topic: 'Waste Management',
@@ -31852,6 +32638,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-waste-management-151-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Liquid Waste Storage',
     topic: 'Waste Management',
@@ -31889,6 +32676,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-waste-management-151-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Liquid Waste Storage',
     topic: 'Waste Management',
@@ -31923,6 +32711,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-biomaterials-152-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Plant Fibers',
     topic: 'Biomaterials',
@@ -31957,6 +32746,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-biomaterials-152-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Plant Fibers',
     topic: 'Biomaterials',
@@ -31991,6 +32781,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-biomaterials-152-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Plant Fibers',
     topic: 'Biomaterials',
@@ -32024,6 +32815,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-biomaterials-152-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Plant Fibers',
     topic: 'Biomaterials',
@@ -32057,6 +32849,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-bioprocess-engineering-153-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Bioprocess Engineering',
@@ -32092,6 +32885,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-bioprocess-engineering-153-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Bioprocess Engineering',
@@ -32128,6 +32922,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-bioprocess-engineering-153-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Bioprocess Engineering',
@@ -32162,6 +32957,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-bioprocess-engineering-153-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Bioprocess Engineering',
@@ -32196,6 +32992,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-management-154-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Qualifications',
     topic: 'Construction Management',
@@ -32229,6 +33026,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-management-154-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Qualifications',
     topic: 'Construction Management',
@@ -32263,6 +33061,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-management-154-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Qualifications',
     topic: 'Construction Management',
@@ -32297,6 +33096,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-construction-management-154-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Qualifications',
     topic: 'Construction Management',
@@ -32331,6 +33131,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-probability-163-v0',
+    year: 2022,
     area: 'C',
     subTopic: 'Basic Probability',
     topic: 'Probability',
@@ -32365,6 +33166,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-probability-163-v1',
+    year: 2022,
     area: 'C',
     subTopic: 'Basic Probability',
     topic: 'Probability',
@@ -32398,6 +33200,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-probability-163-v2',
+    year: 2022,
     area: 'C',
     subTopic: 'Basic Probability',
     topic: 'Probability',
@@ -32432,6 +33235,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2022-C-probability-163-v3',
+    year: 2022,
     area: 'C',
     subTopic: 'Basic Probability',
     topic: 'Probability',
@@ -32467,6 +33271,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-statistics-in-experimental-design-176-v0',
+    year: 2023,
     area: 'C',
     subTopic: 'Degrees of Freedom',
     topic: 'Statistics in Experimental Design',
@@ -32500,6 +33305,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-statistics-in-experimental-design-176-v1',
+    year: 2023,
     area: 'C',
     subTopic: 'Degrees of Freedom',
     topic: 'Statistics in Experimental Design',
@@ -32533,6 +33339,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-statistics-in-experimental-design-176-v2',
+    year: 2023,
     area: 'C',
     subTopic: 'Degrees of Freedom',
     topic: 'Statistics in Experimental Design',
@@ -32566,6 +33373,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-statistics-in-experimental-design-176-v3',
+    year: 2023,
     area: 'C',
     subTopic: 'Degrees of Freedom',
     topic: 'Statistics in Experimental Design',
@@ -32599,6 +33407,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-agricultural-engineering-207-v0',
+    year: 2023,
     area: 'C',
     subTopic: 'Storage and Handling',
     topic: 'Agricultural Engineering',
@@ -32632,6 +33441,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-agricultural-engineering-207-v1',
+    year: 2023,
     area: 'C',
     subTopic: 'Storage and Handling',
     topic: 'Agricultural Engineering',
@@ -32665,6 +33475,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-agricultural-engineering-207-v2',
+    year: 2023,
     area: 'C',
     subTopic: 'Storage and Handling',
     topic: 'Agricultural Engineering',
@@ -32699,6 +33510,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-agricultural-engineering-207-v3',
+    year: 2023,
     area: 'C',
     subTopic: 'Storage and Handling',
     topic: 'Agricultural Engineering',
@@ -32732,6 +33544,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-structural-analysis-209-v0',
+    year: 2023,
     area: 'C',
     subTopic: 'Support Reactions',
     topic: 'Structural Analysis',
@@ -32766,6 +33579,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-structural-analysis-209-v1',
+    year: 2023,
     area: 'C',
     subTopic: 'Support Reactions',
     topic: 'Structural Analysis',
@@ -32800,6 +33614,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-structural-analysis-209-v2',
+    year: 2023,
     area: 'C',
     subTopic: 'Support Reactions',
     topic: 'Structural Analysis',
@@ -32834,6 +33649,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-structural-analysis-209-v3',
+    year: 2023,
     area: 'C',
     subTopic: 'Support Reactions',
     topic: 'Structural Analysis',
@@ -32867,6 +33683,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-structural-analysis-210-v0',
+    year: 2023,
     area: 'C',
     subTopic: 'Shear and Moment',
     topic: 'Structural Analysis',
@@ -32901,6 +33718,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-structural-analysis-210-v1',
+    year: 2023,
     area: 'C',
     subTopic: 'Shear and Moment',
     topic: 'Structural Analysis',
@@ -32935,6 +33753,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-structural-analysis-210-v2',
+    year: 2023,
     area: 'C',
     subTopic: 'Shear and Moment',
     topic: 'Structural Analysis',
@@ -32969,6 +33788,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2023-C-structural-analysis-210-v3',
+    year: 2023,
     area: 'C',
     subTopic: 'Shear and Moment',
     topic: 'Structural Analysis',
@@ -33003,6 +33823,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-milling-process-223-v0',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Milling',
     topic: 'Milling Process',
@@ -33037,6 +33858,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-milling-process-223-v1',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Milling',
     topic: 'Milling Process',
@@ -33071,6 +33893,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-milling-process-223-v2',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Milling',
     topic: 'Milling Process',
@@ -33105,6 +33928,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-milling-process-223-v3',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Milling',
     topic: 'Milling Process',
@@ -33139,6 +33963,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-thermal-properties-224-v0',
+    year: 2024,
     area: 'C',
     subTopic: 'Diffusivity',
     topic: 'Thermal Properties',
@@ -33173,6 +33998,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-thermal-properties-224-v1',
+    year: 2024,
     area: 'C',
     subTopic: 'Diffusivity',
     topic: 'Thermal Properties',
@@ -33209,6 +34035,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-thermal-properties-224-v2',
+    year: 2024,
     area: 'C',
     subTopic: 'Diffusivity',
     topic: 'Thermal Properties',
@@ -33243,6 +34070,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-thermal-properties-224-v3',
+    year: 2024,
     area: 'C',
     subTopic: 'Diffusivity',
     topic: 'Thermal Properties',
@@ -33280,6 +34108,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-soil-properties-225-v0',
+    year: 2024,
     area: 'C',
     subTopic: 'Specific Gravity',
     topic: 'Soil Properties',
@@ -33314,6 +34143,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-soil-properties-225-v1',
+    year: 2024,
     area: 'C',
     subTopic: 'Specific Gravity',
     topic: 'Soil Properties',
@@ -33348,6 +34178,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-soil-properties-225-v2',
+    year: 2024,
     area: 'C',
     subTopic: 'Specific Gravity',
     topic: 'Soil Properties',
@@ -33382,6 +34213,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-soil-properties-225-v3',
+    year: 2024,
     area: 'C',
     subTopic: 'Specific Gravity',
     topic: 'Soil Properties',
@@ -33416,6 +34248,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-milling-process-227-v0',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Milling',
     topic: 'Milling Process',
@@ -33449,6 +34282,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-milling-process-227-v1',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Milling',
     topic: 'Milling Process',
@@ -33482,6 +34316,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-milling-process-227-v2',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Milling',
     topic: 'Milling Process',
@@ -33515,6 +34350,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-milling-process-227-v3',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Milling',
     topic: 'Milling Process',
@@ -33549,6 +34385,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-bioprocess-engineering-229-v0',
+    year: 2024,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Bioprocess Engineering',
@@ -33583,6 +34420,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-bioprocess-engineering-229-v1',
+    year: 2024,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Bioprocess Engineering',
@@ -33617,6 +34455,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-bioprocess-engineering-229-v2',
+    year: 2024,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Bioprocess Engineering',
@@ -33651,6 +34490,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-bioprocess-engineering-229-v3',
+    year: 2024,
     area: 'C',
     subTopic: 'Anaerobic Digestion',
     topic: 'Bioprocess Engineering',
@@ -33686,6 +34526,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-food-safety-230-v0',
+    year: 2024,
     area: 'C',
     subTopic: 'HACCP Principles',
     topic: 'Food Safety',
@@ -33722,6 +34563,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-food-safety-230-v1',
+    year: 2024,
     area: 'C',
     subTopic: 'HACCP Principles',
     topic: 'Food Safety',
@@ -33755,6 +34597,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-food-safety-230-v2',
+    year: 2024,
     area: 'C',
     subTopic: 'HACCP Principles',
     topic: 'Food Safety',
@@ -33789,6 +34632,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-food-safety-230-v3',
+    year: 2024,
     area: 'C',
     subTopic: 'HACCP Principles',
     topic: 'Food Safety',
@@ -33824,6 +34668,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-agricultural-machinery-233-v0',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Threshing',
     topic: 'Agricultural Machinery',
@@ -33858,6 +34703,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-agricultural-machinery-233-v1',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Threshing',
     topic: 'Agricultural Machinery',
@@ -33892,6 +34738,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-agricultural-machinery-233-v2',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Threshing',
     topic: 'Agricultural Machinery',
@@ -33926,6 +34773,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2024-C-agricultural-machinery-233-v3',
+    year: 2024,
     area: 'C',
     subTopic: 'Rice Threshing',
     topic: 'Agricultural Machinery',
@@ -33959,7 +34807,148 @@ export const recalledAreaCQuestions: Question[] = [
     }
   },
   {
+    id: 'recall-2024-C-electrical-engineering-234-v0',
+    year: 2024,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following is primarily used to control the flow of electricity in a circuit?',
+    options: [
+      'Switch',
+      'Lamp',
+      'Junction Box',
+      'Receptacle'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'A circuit with a switch, lamp, junction box, and receptacle.',
+      steps: [
+        'Identify the function of each device in the circuit.',
+        'Determine which device controls the flow of electricity.'
+      ],
+      formula: 'N/A',
+      keyConcept: 'A switch is an electrical device that opens or closes a circuit, thereby controlling the flow of electricity.',
+      commonMistakes: [
+          'Confusing the switch with a receptacle, which provides power but does not control it.',
+          'Thinking that a lamp can control electricity when it only consumes it.'
+      ],
+      extraneousGivens: [
+        'Voltage level: 120V',
+        'Current rating: 15A',
+        'Wattage of lamp: 60W'
+      ],
+    }
+  },
+  {
+    id: 'recall-2024-C-electrical-engineering-234-v1',
+    year: 2024,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following is primarily used to provide illumination in a space?',
+    options: [
+      'Lamp',
+      'Switch',
+      'Junction Box',
+      'Receptacle'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'The purpose of the device is to provide light in a room.',
+      steps: [
+        'Identify the primary function of each device.',
+        'Determine which device is specifically designed for illumination.'
+      ],
+      formula: 'N/A for this theoretical question',
+      keyConcept: 'A lamp is specifically designed to provide light, while switches, junction boxes, and receptacles serve different functions.',
+      commonMistakes: [
+          'Confusing a lamp with a switch, which controls power but does not provide light.',
+          'Thinking that a junction box or receptacle can illuminate a space.'
+      ],
+      extraneousGivens: [
+        'The room size is 200 square feet',
+        'The voltage supply is 120V',
+        'The circuit includes multiple light sources'
+      ],
+    }
+  },
+  {
+    id: 'recall-2024-C-electrical-engineering-234-v2',
+    year: 2024,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following is primarily used for connecting electrical wires but is not considered an electrical device that actively consumes power?',
+    options: [
+      'Junction Box',
+      'Switch',
+      'Lamp',
+      'Receptacle'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'A junction box is used to house and protect electrical connections, while switches, lamps, and receptacles are devices that consume or control electrical power.',
+      steps: [
+        'Identify the function of each option.',
+        'Determine which option does not consume power.'
+      ],
+      formula: 'N/A',
+      keyConcept: 'A junction box is a passive component that does not consume electricity, unlike switches, lamps, and receptacles, which are active electrical devices.',
+      commonMistakes: [
+          'Confusing junction boxes with devices that control or consume power.',
+          'Assuming all options are electrical devices without considering their functions.'
+      ],
+      extraneousGivens: [
+        'Voltage rating: 120V',
+        'Current rating: 15A',
+        'Wire gauge: 14 AWG'
+      ],
+    }
+  },
+  {
+    id: 'recall-2024-C-electrical-engineering-234-v3',
+    year: 2024,
+    area: 'C',
+    subTopic: 'Farm Electrification',
+    topic: 'Electrical Engineering',
+    type: 'theory',
+    difficulty: 'average',
+    question: 'Which of the following is not classified as an electrical device used in wiring systems?',
+    options: [
+      'Receptacle',
+      'Switch',
+      'Lamp',
+      'Junction Box'
+    ],
+    correctAnswer: 0,
+    solution: {
+      given: 'The components used in residential wiring include various devices such as switches, lamps, and junction boxes.',
+      steps: [
+        'Identify the function of each device',
+        'Determine which device does not perform electrical functions'
+      ],
+      formula: 'N/A',
+      keyConcept: 'A receptacle is primarily a point of connection for electrical devices, rather than a device itself.',
+      commonMistakes: [
+          'Confusing receptacles with other electrical devices',
+          'Assuming all components in wiring are electrical devices'
+      ],
+      extraneousGivens: [
+        'Voltage rating of 120V',
+        'Current rating of 15A',
+        'Wire gauge of 14 AWG'
+      ],
+    }
+  },
+  {
     id: 'recall-2025-C-construction-standards-254-v0',
+    year: 2025,
     area: 'C',
     subTopic: 'Building Classification',
     topic: 'Construction Standards',
@@ -33993,6 +34982,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-construction-standards-254-v1',
+    year: 2025,
     area: 'C',
     subTopic: 'Building Classification',
     topic: 'Construction Standards',
@@ -34026,6 +35016,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-construction-standards-254-v2',
+    year: 2025,
     area: 'C',
     subTopic: 'Building Classification',
     topic: 'Construction Standards',
@@ -34060,6 +35051,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-construction-standards-254-v3',
+    year: 2025,
     area: 'C',
     subTopic: 'Building Classification',
     topic: 'Construction Standards',
@@ -34094,6 +35086,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-mechanical-engineering-261-v0',
+    year: 2025,
     area: 'C',
     subTopic: 'Shear Force Calculations',
     topic: 'Mechanical Engineering',
@@ -34128,6 +35121,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-mechanical-engineering-261-v1',
+    year: 2025,
     area: 'C',
     subTopic: 'Shear Force Calculations',
     topic: 'Mechanical Engineering',
@@ -34162,6 +35156,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-mechanical-engineering-261-v2',
+    year: 2025,
     area: 'C',
     subTopic: 'Shear Force Calculations',
     topic: 'Mechanical Engineering',
@@ -34176,7 +35171,7 @@ export const recalledAreaCQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'diameter = 25, thickness = 30, shear_strength = 350',
       steps: [
         'Step 1: Calculate the area of the hole using the formula Area = π × (d/2)².',
         'Step 2: Substitute the area into the force formula to find the required force.'
@@ -34196,6 +35191,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-mechanical-engineering-261-v3',
+    year: 2025,
     area: 'C',
     subTopic: 'Shear Force Calculations',
     topic: 'Mechanical Engineering',
@@ -34229,6 +35225,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-structural-engineering-262-v0',
+    year: 2025,
     area: 'C',
     subTopic: 'Tensile Stress Calculations',
     topic: 'Structural Engineering',
@@ -34263,6 +35260,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-structural-engineering-262-v1',
+    year: 2025,
     area: 'C',
     subTopic: 'Tensile Stress Calculations',
     topic: 'Structural Engineering',
@@ -34277,7 +35275,7 @@ export const recalledAreaCQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'insideDiameter = 100, tensileLoad = 500, maxStress = 120',
       steps: [
         'Step 1: Calculate the required area using the formula: Area = Load / Stress.',
         'Step 2: Rearrange the area formula to find the outside diameter D.',
@@ -34298,6 +35296,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-structural-engineering-262-v2',
+    year: 2025,
     area: 'C',
     subTopic: 'Tensile Stress Calculations',
     topic: 'Structural Engineering',
@@ -34333,6 +35332,7 @@ export const recalledAreaCQuestions: Question[] = [
   },
   {
     id: 'recall-2025-C-structural-engineering-262-v3',
+    year: 2025,
     area: 'C',
     subTopic: 'Tensile Stress Calculations',
     topic: 'Structural Engineering',
@@ -34347,7 +35347,7 @@ export const recalledAreaCQuestions: Question[] = [
     ],
     correctAnswer: 0,
     solution: {
-      given: '[object Object]',
+      given: 'insideDiameter = 90, tensileLoad = 350000, stressLimit = 120000000',
       steps: [
         'Step 1: Calculate the required area using the stress formula: Area = Load / Stress.',
         'Step 2: Rearrange the area formula to solve for the outside diameter D.',

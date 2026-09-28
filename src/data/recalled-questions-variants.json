@@ -8108,9 +8108,9 @@
       "IC"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Systems",
-    "subTopic": "Current Types",
+    "subTopic": "Farm Electrification",
     "difficulty": "easy",
     "type": "theory",
     "year": 2021,
@@ -8132,7 +8132,7 @@
         "Not recognizing the advantages of AC for long-distance transmission"
       ]
     },
-    "id": "recall-2021-A-electrical-systems-57-v0",
+    "id": "recall-2021-C-electrical-systems-57-v0",
     "originalQuestion": "Rural Electrification: Electricity that flows in one direction."
   },
   {
@@ -8144,9 +8144,9 @@
       "IC"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Systems",
-    "subTopic": "Current Types",
+    "subTopic": "Farm Electrification",
     "difficulty": "easy",
     "type": "theory",
     "year": 2021,
@@ -8168,7 +8168,7 @@
         "Assuming all electrical devices use AC without considering DC applications."
       ]
     },
-    "id": "recall-2021-A-electrical-systems-57-v1",
+    "id": "recall-2021-C-electrical-systems-57-v1",
     "originalQuestion": "Rural Electrification: Electricity that flows in one direction."
   },
   {
@@ -8180,9 +8180,9 @@
       "IC"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Systems",
-    "subTopic": "Current Types",
+    "subTopic": "Farm Electrification",
     "difficulty": "easy",
     "type": "theory",
     "year": 2021,
@@ -8204,7 +8204,7 @@
         "Assuming only one type of current is used in all applications"
       ]
     },
-    "id": "recall-2021-A-electrical-systems-57-v2",
+    "id": "recall-2021-C-electrical-systems-57-v2",
     "originalQuestion": "Rural Electrification: Electricity that flows in one direction."
   },
   {
@@ -8216,9 +8216,9 @@
       "AC and DC"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Systems",
-    "subTopic": "Current Types",
+    "subTopic": "Farm Electrification",
     "difficulty": "easy",
     "type": "theory",
     "year": 2021,
@@ -8240,7 +8240,7 @@
         "Assuming AC is used in all electronic devices without considering the specific application."
       ]
     },
-    "id": "recall-2021-A-electrical-systems-57-v3",
+    "id": "recall-2021-C-electrical-systems-57-v3",
     "originalQuestion": "Rural Electrification: Electricity that flows in one direction."
   },
   {
@@ -8252,9 +8252,9 @@
       "2555 watts"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Power",
-    "subTopic": "Power Calculation",
+    "subTopic": "Farm Electrification",
     "difficulty": "hard",
     "type": "computation",
     "year": 2021,
@@ -8279,7 +8279,7 @@
         "Using incorrect units for voltage or current."
       ]
     },
-    "id": "recall-2021-A-electrical-power-58-v0",
+    "id": "recall-2021-C-electrical-power-58-v0",
     "originalQuestion": "Rural Electrification: A 12 amperes electric fan and blower with a power factor of 0.85 was connecte"
   },
   {
@@ -8291,9 +8291,9 @@
       "2555 watts"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Power",
-    "subTopic": "Power Calculation",
+    "subTopic": "Farm Electrification",
     "difficulty": "hard",
     "type": "computation",
     "year": 2021,
@@ -8315,7 +8315,7 @@
         "Using incorrect values for voltage or current"
       ]
     },
-    "id": "recall-2021-A-electrical-power-58-v1",
+    "id": "recall-2021-C-electrical-power-58-v1",
     "originalQuestion": "Rural Electrification: A 12 amperes electric fan and blower with a power factor of 0.85 was connecte"
   },
   {
@@ -8327,9 +8327,9 @@
       "2555 watts"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Power",
-    "subTopic": "Power Calculation",
+    "subTopic": "Farm Electrification",
     "difficulty": "hard",
     "type": "computation",
     "year": 2021,
@@ -8350,7 +8350,7 @@
         "Using incorrect values for voltage or current."
       ]
     },
-    "id": "recall-2021-A-electrical-power-58-v2",
+    "id": "recall-2021-C-electrical-power-58-v2",
     "originalQuestion": "Rural Electrification: A 12 amperes electric fan and blower with a power factor of 0.85 was connecte"
   },
   {
@@ -8362,9 +8362,9 @@
       "2500 watts"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Power",
-    "subTopic": "Power Calculation",
+    "subTopic": "Farm Electrification",
     "difficulty": "hard",
     "type": "computation",
     "year": 2021,
@@ -8385,7 +8385,7 @@
         "Using incorrect current or voltage values."
       ]
     },
-    "id": "recall-2021-A-electrical-power-58-v3",
+    "id": "recall-2021-C-electrical-power-58-v3",
     "originalQuestion": "Rural Electrification: A 12 amperes electric fan and blower with a power factor of 0.85 was connecte"
   },
   {
@@ -8397,9 +8397,9 @@
       "54 A"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Systems",
-    "subTopic": "Ohm's Law",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2021,
@@ -8421,7 +8421,7 @@
         "Confusing series and parallel resistance calculations"
       ]
     },
-    "id": "recall-2021-A-electrical-systems-59-v0",
+    "id": "recall-2021-C-electrical-systems-59-v0",
     "originalQuestion": "Rural Electrification: Determine the current flow in a circuit having a resistance of 5 Ohms on a 24"
   },
   {
@@ -8433,9 +8433,9 @@
       "54 A"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Systems",
-    "subTopic": "Ohm's Law",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2021,
@@ -8459,7 +8459,7 @@
         "Misapplying the formula by not using the correct units."
       ]
     },
-    "id": "recall-2021-A-electrical-systems-59-v1",
+    "id": "recall-2021-C-electrical-systems-59-v1",
     "originalQuestion": "Rural Electrification: Determine the current flow in a circuit having a resistance of 5 Ohms on a 24"
   },
   {
@@ -8471,9 +8471,9 @@
       "54 A"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Systems",
-    "subTopic": "Ohm's Law",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2021,
@@ -8494,7 +8494,7 @@
         "Using incorrect resistance value"
       ]
     },
-    "id": "recall-2021-A-electrical-systems-59-v2",
+    "id": "recall-2021-C-electrical-systems-59-v2",
     "originalQuestion": "Rural Electrification: Determine the current flow in a circuit having a resistance of 5 Ohms on a 24"
   },
   {
@@ -8506,9 +8506,9 @@
       "52 A"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Systems",
-    "subTopic": "Ohm's Law",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2021,
@@ -8529,7 +8529,7 @@
         "Forgetting to convert units if necessary"
       ]
     },
-    "id": "recall-2021-A-electrical-systems-59-v3",
+    "id": "recall-2021-C-electrical-systems-59-v3",
     "originalQuestion": "Rural Electrification: Determine the current flow in a circuit having a resistance of 5 Ohms on a 24"
   },
   {
@@ -9846,9 +9846,9 @@
       "Can be easily generated"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Alternating Current",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2021,
@@ -9870,7 +9870,7 @@
         "Neglecting the importance of voltage compatibility"
       ]
     },
-    "id": "recall-2021-A-electrical-engineering-69-v0",
+    "id": "recall-2021-C-electrical-engineering-69-v0",
     "originalQuestion": "Which of the following is not a characteristic of Alternating Current?"
   },
   {
@@ -9882,9 +9882,9 @@
       "Can be easily generated"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Alternating Current",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2021,
@@ -9906,7 +9906,7 @@
         "Overlooking the impact of frequency on signal integrity."
       ]
     },
-    "id": "recall-2021-A-electrical-engineering-69-v1",
+    "id": "recall-2021-C-electrical-engineering-69-v1",
     "originalQuestion": "Which of the following is not a characteristic of Alternating Current?"
   },
   {
@@ -9918,9 +9918,9 @@
       "Can be easily generated"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Alternating Current",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2021,
@@ -9942,7 +9942,7 @@
         "Overlooking the significance of transformer turns ratio"
       ]
     },
-    "id": "recall-2021-A-electrical-engineering-69-v2",
+    "id": "recall-2021-C-electrical-engineering-69-v2",
     "originalQuestion": "Which of the following is not a characteristic of Alternating Current?"
   },
   {
@@ -9954,9 +9954,9 @@
       "Can be transformed to different voltages"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Alternating Current",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2021,
@@ -9977,7 +9977,7 @@
         "Overlooking the advantages of AC in terms of transmission efficiency."
       ]
     },
-    "id": "recall-2021-A-electrical-engineering-69-v3",
+    "id": "recall-2021-C-electrical-engineering-69-v3",
     "originalQuestion": "Which of the following is not a characteristic of Alternating Current?"
   },
   {
@@ -12761,9 +12761,9 @@
       "1000 W"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Power Calculation",
-    "subTopic": "Ohm's Law",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -12785,7 +12785,7 @@
         "Using incorrect resistance values or miscalculating the division."
       ]
     },
-    "id": "recall-2022-A-electrical-power-calculation-89-v0",
+    "id": "recall-2022-C-electrical-power-calculation-89-v0",
     "originalQuestion": "Compute the power if voltage is 220V and resistance is 40 Ω."
   },
   {
@@ -12797,9 +12797,9 @@
       "1000 W"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Power Calculation",
-    "subTopic": "Ohm's Law",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -12821,7 +12821,7 @@
         "Using incorrect units or not converting units properly."
       ]
     },
-    "id": "recall-2022-A-electrical-power-calculation-89-v1",
+    "id": "recall-2022-C-electrical-power-calculation-89-v1",
     "originalQuestion": "Compute the power if voltage is 220V and resistance is 40 Ω."
   },
   {
@@ -12833,9 +12833,9 @@
       "1000 W"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Power Calculation",
-    "subTopic": "Ohm's Law",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -12858,7 +12858,7 @@
         "Using incorrect resistance values leading to incorrect power calculations."
       ]
     },
-    "id": "recall-2022-A-electrical-power-calculation-89-v2",
+    "id": "recall-2022-C-electrical-power-calculation-89-v2",
     "originalQuestion": "Compute the power if voltage is 220V and resistance is 40 Ω."
   },
   {
@@ -12870,9 +12870,9 @@
       "2200 W"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Power Calculation",
-    "subTopic": "Ohm's Law",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -12893,7 +12893,7 @@
         "Incorrectly calculating the square of the voltage."
       ]
     },
-    "id": "recall-2022-A-electrical-power-calculation-89-v3",
+    "id": "recall-2022-C-electrical-power-calculation-89-v3",
     "originalQuestion": "Compute the power if voltage is 220V and resistance is 40 Ω."
   },
   {
@@ -13058,9 +13058,9 @@
       "950 pesos"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electric Energy Cost Calculation",
-    "subTopic": "Energy Consumption",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -13084,7 +13084,7 @@
         "Not multiplying the daily consumption by the number of days correctly"
       ]
     },
-    "id": "recall-2022-A-electric-energy-cost-calculation-91-v0",
+    "id": "recall-2022-C-electric-energy-cost-calculation-91-v0",
     "originalQuestion": "A 1000-watt light bulb is used continuously for 3 hours per day. How much electric energy is used? I"
   },
   {
@@ -13096,9 +13096,9 @@
       "950 pesos"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electric Energy Cost Calculation",
-    "subTopic": "Energy Consumption",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -13121,7 +13121,7 @@
         "Miscalculating the number of days in a month"
       ]
     },
-    "id": "recall-2022-A-electric-energy-cost-calculation-91-v1",
+    "id": "recall-2022-C-electric-energy-cost-calculation-91-v1",
     "originalQuestion": "A 1000-watt light bulb is used continuously for 3 hours per day. How much electric energy is used? I"
   },
   {
@@ -13133,9 +13133,9 @@
       "950 pesos"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electric Energy Cost Calculation",
-    "subTopic": "Energy Consumption",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -13159,7 +13159,7 @@
         "Misapplying the cost per kilowatt-hour"
       ]
     },
-    "id": "recall-2022-A-electric-energy-cost-calculation-91-v2",
+    "id": "recall-2022-C-electric-energy-cost-calculation-91-v2",
     "originalQuestion": "A 1000-watt light bulb is used continuously for 3 hours per day. How much electric energy is used? I"
   },
   {
@@ -13171,9 +13171,9 @@
       "800 pesos"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electric Energy Cost Calculation",
-    "subTopic": "Energy Consumption",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -13198,7 +13198,7 @@
         "Incorrectly calculating the total cost"
       ]
     },
-    "id": "recall-2022-A-electric-energy-cost-calculation-91-v3",
+    "id": "recall-2022-C-electric-energy-cost-calculation-91-v3",
     "originalQuestion": "A 1000-watt light bulb is used continuously for 3 hours per day. How much electric energy is used? I"
   },
   {
@@ -15872,9 +15872,9 @@
       "AOTA"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Energy Devices",
-    "subTopic": "Energy Conversion Devices",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2022,
@@ -15895,7 +15895,7 @@
         "Overlooking the specific energy types involved in conversion"
       ]
     },
-    "id": "recall-2022-A-energy-devices-111-v0",
+    "id": "recall-2022-C-energy-devices-111-v0",
     "originalQuestion": "A device that converts one type of energy into another type."
   },
   {
@@ -15907,9 +15907,9 @@
       "AOTA"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Energy Devices",
-    "subTopic": "Energy Conversion Devices",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2022,
@@ -15931,7 +15931,7 @@
         "Forgetting that transformers only work with AC"
       ]
     },
-    "id": "recall-2022-A-energy-devices-111-v1",
+    "id": "recall-2022-C-energy-devices-111-v1",
     "originalQuestion": "A device that converts one type of energy into another type."
   },
   {
@@ -15943,9 +15943,9 @@
       "AOTA"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Energy Devices",
-    "subTopic": "Energy Conversion Devices",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2022,
@@ -15967,7 +15967,7 @@
         "Assuming that all energy conversion devices can handle both AC and DC without distinction."
       ]
     },
-    "id": "recall-2022-A-energy-devices-111-v2",
+    "id": "recall-2022-C-energy-devices-111-v2",
     "originalQuestion": "A device that converts one type of energy into another type."
   },
   {
@@ -15979,9 +15979,9 @@
       "Power Converter"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Energy Devices",
-    "subTopic": "Energy Conversion Devices",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2022,
@@ -16003,7 +16003,7 @@
         "Overlooking the inclusive nature of AOTA."
       ]
     },
-    "id": "recall-2022-A-energy-devices-111-v3",
+    "id": "recall-2022-C-energy-devices-111-v3",
     "originalQuestion": "A device that converts one type of energy into another type."
   },
   {
@@ -16731,9 +16731,9 @@
       "Maximum Capacity"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Conductor Ratings",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2022,
@@ -16755,7 +16755,7 @@
         "Not considering the insulation type"
       ]
     },
-    "id": "recall-2022-A-electrical-engineering-117-v0",
+    "id": "recall-2022-C-electrical-engineering-117-v0",
     "originalQuestion": "Maximum current that a conductor can carry continuously without overload."
   },
   {
@@ -16767,9 +16767,9 @@
       "Maximum Capacity"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Conductor Ratings",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2022,
@@ -16793,7 +16793,7 @@
         "Overlooking the type of insulation"
       ]
     },
-    "id": "recall-2022-A-electrical-engineering-117-v1",
+    "id": "recall-2022-C-electrical-engineering-117-v1",
     "originalQuestion": "Maximum current that a conductor can carry continuously without overload."
   },
   {
@@ -16805,9 +16805,9 @@
       "Maximum Capacity"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Conductor Ratings",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2022,
@@ -16829,7 +16829,7 @@
         "Not considering the units of measurement"
       ]
     },
-    "id": "recall-2022-A-electrical-engineering-117-v2",
+    "id": "recall-2022-C-electrical-engineering-117-v2",
     "originalQuestion": "Maximum current that a conductor can carry continuously without overload."
   },
   {
@@ -16841,9 +16841,9 @@
       "Conductivity"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Conductor Ratings",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2022,
@@ -16866,7 +16866,7 @@
         "Neglecting to apply the safety factor when calculating the maximum capacity."
       ]
     },
-    "id": "recall-2022-A-electrical-engineering-117-v3",
+    "id": "recall-2022-C-electrical-engineering-117-v3",
     "originalQuestion": "Maximum current that a conductor can carry continuously without overload."
   },
   {
@@ -19915,9 +19915,9 @@
       "35A"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Circuit Analysis",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -19942,7 +19942,7 @@
         "Incorrectly calculating the current by using the wrong resistance value."
       ]
     },
-    "id": "recall-2022-A-electrical-engineering-141-v0",
+    "id": "recall-2022-C-electrical-engineering-141-v0",
     "originalQuestion": "An electric pump has total resistance of 9.5 ohms. If its power source is from a 220 volt outlet, wh"
   },
   {
@@ -19954,9 +19954,9 @@
       "35A"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Circuit Analysis",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -19978,7 +19978,7 @@
         "Incorrectly calculating the current by not using the correct resistance value."
       ]
     },
-    "id": "recall-2022-A-electrical-engineering-141-v1",
+    "id": "recall-2022-C-electrical-engineering-141-v1",
     "originalQuestion": "An electric pump has total resistance of 9.5 ohms. If its power source is from a 220 volt outlet, wh"
   },
   {
@@ -19990,9 +19990,9 @@
       "35A"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Circuit Analysis",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -20017,7 +20017,7 @@
         "Incorrectly calculating the resistance or voltage values."
       ]
     },
-    "id": "recall-2022-A-electrical-engineering-141-v2",
+    "id": "recall-2022-C-electrical-engineering-141-v2",
     "originalQuestion": "An electric pump has total resistance of 9.5 ohms. If its power source is from a 220 volt outlet, wh"
   },
   {
@@ -20029,9 +20029,9 @@
       "30A"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Circuit Analysis",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "computation",
     "year": 2022,
@@ -20057,7 +20057,7 @@
         "Using incorrect resistance or voltage values in the calculation."
       ]
     },
-    "id": "recall-2022-A-electrical-engineering-141-v3",
+    "id": "recall-2022-C-electrical-engineering-141-v3",
     "originalQuestion": "An electric pump has total resistance of 9.5 ohms. If its power source is from a 220 volt outlet, wh"
   },
   {
@@ -28622,9 +28622,9 @@
   {
     "question": "What should be the finished dam height of the reservoir if the designed height is 3.5 meters, considering a safety margin of 0.5 meters?",
     "options": [
+      "4.0 m",
       "3.5 m",
       "4.2 m",
-      "3.0 m",
       "3.0 m"
     ],
     "correctAnswer": 0,
@@ -28657,10 +28657,10 @@
   {
     "question": "What should be the finished dam height of the reservoir if the designed height is 4.2 meters and the safety margin is 0.5 meters?",
     "options": [
+      "4.7 m",
       "4.2 m",
-      "3.5 m",
-      "3.0 m",
-      "3.0 m"
+      "5.2 m",
+      "4.0 m"
     ],
     "correctAnswer": 0,
     "area": "B",
@@ -28692,10 +28692,10 @@
   {
     "question": "What should be the finished dam height of the reservoir if the designed height is 3.0 meters and a reduction factor of 0.9 is applied due to environmental considerations?",
     "options": [
+      "2.7 m",
       "3.0 m",
       "3.5 m",
-      "4.2 m",
-      "3.0 m"
+      "2.5 m"
     ],
     "correctAnswer": 0,
     "area": "B",
@@ -28727,10 +28727,10 @@
   {
     "question": "What should be the finished dam height of the reservoir if the designed height is 3.0 meters and the construction adjustments lead to a reduction of 0.5 meters?",
     "options": [
+      "2.5 m",
       "3.0 m",
       "3.5 m",
-      "4.2 m",
-      "3.0 m"
+      "2.0 m"
     ],
     "correctAnswer": 0,
     "area": "B",
@@ -32977,9 +32977,9 @@
       "Receptacle"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Electrical Devices",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2024,
@@ -33001,7 +33001,7 @@
         "Thinking that a lamp can control electricity when it only consumes it."
       ]
     },
-    "id": "recall-2024-A-electrical-engineering-234-v0",
+    "id": "recall-2024-C-electrical-engineering-234-v0",
     "originalQuestion": "Which is not considered an electrical device."
   },
   {
@@ -33013,9 +33013,9 @@
       "Receptacle"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Electrical Devices",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2024,
@@ -33037,7 +33037,7 @@
         "Thinking that a junction box or receptacle can illuminate a space."
       ]
     },
-    "id": "recall-2024-A-electrical-engineering-234-v1",
+    "id": "recall-2024-C-electrical-engineering-234-v1",
     "originalQuestion": "Which is not considered an electrical device."
   },
   {
@@ -33049,9 +33049,9 @@
       "Receptacle"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Electrical Devices",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2024,
@@ -33073,7 +33073,7 @@
         "Assuming all options are electrical devices without considering their functions."
       ]
     },
-    "id": "recall-2024-A-electrical-engineering-234-v2",
+    "id": "recall-2024-C-electrical-engineering-234-v2",
     "originalQuestion": "Which is not considered an electrical device."
   },
   {
@@ -33085,9 +33085,9 @@
       "Junction Box"
     ],
     "correctAnswer": 0,
-    "area": "A",
+    "area": "C",
     "topic": "Electrical Engineering",
-    "subTopic": "Electrical Devices",
+    "subTopic": "Farm Electrification",
     "difficulty": "average",
     "type": "theory",
     "year": 2024,
@@ -33109,7 +33109,7 @@
         "Assuming all components in wiring are electrical devices"
       ]
     },
-    "id": "recall-2024-A-electrical-engineering-234-v3",
+    "id": "recall-2024-C-electrical-engineering-234-v3",
     "originalQuestion": "Which is not considered an electrical device."
   },
   {
