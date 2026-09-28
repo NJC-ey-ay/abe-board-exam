@@ -18,6 +18,7 @@ import { areaBWeirsFlumesOrificesSpecs } from './drill-specs-area-b-weirs-flumes
 import { areaCElectrical1Specs } from './drill-specs-area-c-electrical-1';
 import { areaCElectrical2Specs } from './drill-specs-area-c-electrical-2';
 import { areaCElectrical3Specs } from './drill-specs-area-c-electrical-3';
+import { areaCElectrical4Specs } from './drill-specs-area-c-electrical-4';
 
 export interface DrillVar {
   symbol: string;
@@ -1206,6 +1207,7 @@ add(...areaBWeirsFlumesOrificesSpecs);
 add(...areaCElectrical1Specs);
 add(...areaCElectrical2Specs);
 add(...areaCElectrical3Specs);
+add(...areaCElectrical4Specs);
 
 // ---------------------------------------------------------------------------
 // CHAINED MULTI-PART WORD PROBLEMS

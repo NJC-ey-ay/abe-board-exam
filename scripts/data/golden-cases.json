@@ -2547,5 +2547,250 @@
       "expected": 50,
       "tolerance": 1e-12
     }
+  ],
+  "c-board-foot": [
+    {
+      "_note": "144 in of 6 in wide stock 1.5 in thick. 0.125 ft is 1.5 in, so the volume is 144 x 6 x 1.5 = 1296 cubic inches. One board foot is 1 in x 12 in x 1 ft = 144 cubic inches, and 1296/144 = 9 Bd.Ft. The formula gets there as 144 x 6 x 0.125 / 12 = 9, and the two routes agreeing is the check that the divisor of 12 is the definition rather than a fudge.",
+      "vals": {
+        "Lin": 144,
+        "Win": 6,
+        "Hft": 0.125
+      },
+      "expected": 9,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "96 in of 4 in wide stock a full foot thick is 96 x 4 x 12 = 4608 cubic inches, so 4608/144 = 32 Bd.Ft. The formula gives 96 x 4 x 1 / 12 = 32. A one-foot thickness is at the top of the box and is the timber case rather than the sheet-goods case.",
+      "vals": {
+        "Lin": 96,
+        "Win": 4,
+        "Hft": 1
+      },
+      "expected": 32,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The definition of the unit, and the only case in this batch that checks the divisor head-on. One foot of a 1x12 an inch thick is 12 in x 12 in x 12 in = 1728 cubic inches, and 1728/144 = 12 board feet exactly. The formula gives 12 x 12 x 1 / 12 = 12. This sits below the box floor of 24 in on purpose: it is a definitional check, not a drill sample.",
+      "vals": {
+        "Lin": 12,
+        "Win": 12,
+        "Hft": 1
+      },
+      "expected": 12,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-board-foot-from-log": [
+    {
+      "_note": "Doyle on a 16 in small end over a 16 ft log. (16 - 4)^2 = 144, and 144 x 16 / 16 = 144 Bd.Ft. The length dividing out entirely is a useful confirmation that the divisor really is 16 and not 12, since the squared-inch section has to become board feet.",
+      "vals": {
+        "D": 16,
+        "L": 16
+      },
+      "expected": 144,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "A 20 in small end over 12 ft. (20 - 4)^2 = 256, and 256 x 12 / 16 = 192 Bd.Ft. Doyle understates small logs, which is why 192 Bd.Ft here is an estimate rather than a measurement, and why the rule is used for rough screening and not for settling tonnage.",
+      "vals": {
+        "D": 20,
+        "L": 12
+      },
+      "expected": 192,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-belt-speed": [
+    {
+      "_note": "V = pi N D in m/min, because rev/min times a circumference in metres is metres per MINUTE. 900 rpm on a 300 mm pulley is 270 pi = 848.23 m/min, which is 14.14 m/s - comfortably inside the 25 to 30 m/s at which centrifugal tension starts to lift a V-belt off the pulley. Using the radius instead would halve it, and dropping the pi gives 270 m/min.",
+      "vals": {
+        "N": 900,
+        "D": 0.3
+      },
+      "expected": 848.2300164692441,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "720 rpm on a 250 mm pulley is 180 pi = 565.49 m/min, or 9.42 m/s. A slower drive and a smaller pulley than the case above, and the belt speed falls by a factor of 1.5 rather than by the 2.67 that the speed change alone would suggest, because the diameter moved too.",
+      "vals": {
+        "N": 720,
+        "D": 0.25
+      },
+      "expected": 565.4866776461628,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-belt-power": [
+    {
+      "_note": "The belt always carries MORE than the water, and this is the smallest number that shows why. 3.7 kW of fluid power at 55 percent pump efficiency means the shaft is absorbing 3.7/0.55 = 6.727 kW. Multiplying instead of dividing would give 2.035 kW, which is less than the water power and physically impossible.",
+      "vals": {
+        "Pf": 3.7,
+        "E": 0.55
+      },
+      "expected": 6.727272727272727,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "15 kW delivered to the water at 62 percent, so 15/0.62 = 24.194 kW on the belt. The 61 percent difference between the two figures is exactly the loss the formula is there to expose, and it is the margin by which a drive sized on fluid power is undersized.",
+      "vals": {
+        "Pf": 15,
+        "E": 0.62
+      },
+      "expected": 24.193548387096776,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The perfect-pump bound, above the box ceiling of 0.7. At E = 1 the belt power equals the fluid power exactly, which is the limit the division is measuring distance from: a real pump sits somewhere below 1 and always needs a larger belt than its water power suggests. This case is worth having because the answer equals the numerator, which makes the direction of the formula obvious in one line.",
+      "vals": {
+        "Pf": 3.7,
+        "E": 1
+      },
+      "expected": 3.7,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-pump-laws": [
+    {
+      "_note": "The head-square law, N_2 = N_1 (H_2/H_1)^(1/2). Going from 6 m to 60 m of head is a factor of 10, and the square root of 10 is 3.162278, so 1200 rpm becomes 3794.7 rpm. The half power is the entire content: a 10x head needs 3.16x the speed, NOT 10x, and using the first power would ask for 12000 rpm.",
+      "vals": {
+        "N1": 1200,
+        "H1": 6,
+        "H2": 60
+      },
+      "expected": 3794.7331922020553,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "1450 rpm with the head rising from 8.5 m to 75 m. The ratio is 75/8.5 = 8.823529, its square root is 2.970108, and 1450 x 2.970108 = 4306.66 rpm. Note the speed more than doubles for less than a tenfold head, which is why trimming a pump up in speed is an efficient way to chase a head that is only a little short.",
+      "vals": {
+        "N1": 1450,
+        "H1": 8.5,
+        "H2": 75
+      },
+      "expected": 4307.141811948533,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "THE COLLISION POINT, and the reason the two head ranges in this spec are disjoint. With H_1 = H_2 the ratio is 1, and 1 raised to any power is 1, so the first-power option, the third-power option and the 0.85 scalar ALL become exactly N_1 = 1200. Any box that permitted equal heads would render the same option three times. The drill floors H_1 at 12 m and floors H_2 at 50 m, so the ratio is never below 4.167 and never 1. This case is outside the box by construction and is kept as the record.",
+      "vals": {
+        "N1": 1200,
+        "H1": 30,
+        "H2": 30
+      },
+      "expected": 1200,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-fan-laws": [
+    {
+      "_note": "The printed fan relation regrouped, with head at the quarter power and flow at the half power. From 450 mm at 35 mm and 3.5 cfm up to 60 mm and 60 cfm: (35/60)^(1/4) = 0.873917 for the head factor and (60/3.5)^(1/2) = 4.140510 for the flow factor, and 450 x 0.873917 x 4.140510 = 1628.3 mm. A 3.1x flow rise bought only 0.6x on the head, and the quarter power is the reason the impeller has to grow at all.",
+      "vals": {
+        "D1": 450,
+        "H1": 35,
+        "H2": 60,
+        "Q1": 3.5,
+        "Q2": 60
+      },
+      "expected": 1628.295847310097,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "300 mm at 30 mm of pressure and 2 cfm, up to 50 mm and 40 cfm. (30/50)^(1/4) = 0.880112 and (40/2)^(1/2) = 4.472136, and 300 x 0.880112 x 4.472136 = 1180.8 mm. Notice the head factor is barely below 1 even though the head rose by 67 percent, which is the practical signature of the quarter power and the reason fan impellers are large.",
+      "vals": {
+        "D1": 300,
+        "H1": 30,
+        "H2": 50,
+        "Q1": 2,
+        "Q2": 40
+      },
+      "expected": 1180.7938027592584,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "THE COLLISION POINT, twice over, and the reason this spec needed three attempts. With equal heads the head factor is 1, and with equal flows the flow factor is 1, so the answer, the doubled-head-exponent option and the doubled-flow-exponent option are all D_1 = 400. An earlier version of this box also collided at intermediate points, where the two doubling options are equal whenever (Q_2/Q_1)^2 = H_2/H_1. The ranges here are disjoint twice over - heads 30..40 against 48..70, flows 2..5 against 25..90 - so no sampled input can reach either collision.",
+      "vals": {
+        "D1": 400,
+        "H1": 45,
+        "H2": 45,
+        "Q1": 20,
+        "Q2": 20
+      },
+      "expected": 400,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-air-power": [
+    {
+      "_note": "Air power, and the dimensional check in one line. 12.5 m3/s against 2.5 m of air head at a specific weight of 12.00 N/m3 gives 12.5 x 12 x 2.5 = 375 W exactly. The argument for why H is a LENGTH: 1 m3/s through 1 m of air head needs 12 N of force, so 12 W. If H were a pressure in pascals the product would be N^2/(s m^2), which is not a power, and the g is already inside the specific weight.",
+      "vals": {
+        "Q": 12.5,
+        "nu": 12,
+        "H": 2.5
+      },
+      "expected": 375,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "A warm-afternoon reading: 12.25 N/m3 is the specific weight of air at roughly 25 degC, so this is denser than the 12.00 of the case above and sits inside the 11.0 to 12.5 box. 4.2 m3/s against 1.75 m of head is 4.2 x 12.25 x 1.75 = 90.04 W. Note the specific weight moves by only about 8 percent across the whole plausible temperature range, which is why it is nearly a constant in fan sizing.",
+      "vals": {
+        "Q": 4.2,
+        "nu": 12.25,
+        "H": 1.75
+      },
+      "expected": 90.03750000000001,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-propeller-fan-pitch": [
+    {
+      "_note": "Pitch is advance per revolution, so it has to come out as a length. At 30 degrees on a 0.75 m radius: 2 pi x 0.75 = 4.712389 m of circumference per revolution, and tan 30 deg = 0.577350, so the advance is 4.712389 x 0.577350 = 2.720699 m. The check is geometric - a 30 degree blade angle should advance a third of the circumference, and 2.720699/4.712389 is 0.5774, which is tan 30.",
+      "vals": {
+        "r": 0.75,
+        "alpha": 30
+      },
+      "expected": 2.7206990463513265,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "A finer pitch on a larger fan. 2 pi x 1.2 = 7.539822 m of circumference, and tan 20 deg = 0.363970, so 7.539822 x 0.363970 = 2.744106 m. The pitch is almost unchanged from the 30 degree case despite a 60 percent larger radius, which is the practical reason blade angle and fan diameter are specified independently.",
+      "vals": {
+        "r": 1.2,
+        "alpha": 20
+      },
+      "expected": 2.7442709138305372,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-specific-speed-dryer-fan": [
+    {
+      "_note": "Specific speed in the printed units of rpm, cfm and inches of water. 1200 rpm at 3000 cfm and 2.00 in-H2O: sqrt(3000) = 54.772256 and 2^0.75 = 1.681793, so 1200 x 54.772256 / 1.681793 = 39081.7. A five-figure index, and the reason the answer is meaningless as a bare number - the same fan in SI would report a completely different specific speed.",
+      "vals": {
+        "N": 1200,
+        "Q": 3000,
+        "Ps": 2
+      },
+      "expected": 39081.33374595783,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "900 rpm at 1200 cfm and 1.50 in-H2O. sqrt(1200) = 34.641016 and 1.5^0.75 = 1.355403, so 900 x 34.641016 / 1.355403 = 23002.6. Halving the flow and dropping the pressure by a quarter has cut the index by 41 percent, which is how sharply specific speed responds to both variables at once.",
+      "vals": {
+        "N": 900,
+        "Q": 1200,
+        "Ps": 1.5
+      },
+      "expected": 23001.95175286581,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "THE COLLISION POINT, and the reason the pressure box floors at 1.2 rather than 0.5. The two pressure misreadings sit at P_s^(+1/4) and P_s^(-1/4) of the answer, and at P_s = 1 both of those are exactly 1, so the two options render as the same string. Nothing about the ratios reveals this - it only shows up when you ask what they are EQUAL to. The drill box runs 1.2 to 3, so 1 is unreachable, and this case stands outside it as the record.",
+      "vals": {
+        "N": 1000,
+        "Q": 2000,
+        "Ps": 1
+      },
+      "expected": 44721.359549995796,
+      "tolerance": 1e-12
+    }
   ]
 }
