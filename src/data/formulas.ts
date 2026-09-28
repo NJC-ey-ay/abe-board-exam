@@ -2208,6 +2208,7 @@ export const areaFormulas: FormulaCategory[] = [
               { symbol: 'W', meaning: 'Work done by the system' },
               { symbol: '\\Delta E', meaning: 'Change in internal energy' },
             ],
+            notes: 'Source note: the printed plus sign is inconsistent with the printed definition of W. With W defined as work done BY the system, energy conservation requires \\Delta E = Q - W, because part of the energy entering as heat leaves as work. A cylinder absorbing 1000 J of heat and pushing a piston through 300 J ends with 700 J more internal energy, not 1300 J; the printed form appears to add the two and so creates energy. The printed form is only correct if W is instead work done ON the system, in which case W is negative. The drill uses \\Delta E = Q - W, which is the version consistent with the printed variable definitions.',
           },
           {
             id: 'c-newtons-law-cooling',
@@ -2300,7 +2301,7 @@ export const areaFormulas: FormulaCategory[] = [
             variables: [
               { symbol: 'W', meaning: 'Humidity ratio' },
             ],
-            notes: 'Atmospheric pressure P_atm = 101.3 kPa; 1 Pa = 1 N/m².',
+            notes: 'Atmospheric pressure P_atm = 101.3 kPa; 1 Pa = 1 N/m². Source note: the printed form is a PRESSURE ratio, not a mass ratio, so it is not the humidity ratio that the psychrometric chart and every cooling and drying calculation actually use. Dividing by the total atmospheric pressure gives the mole fraction of water vapour, and that quantity is not W. The psychrometric humidity ratio, in kilograms of water per kilogram of dry air, is W = 0.622 p_v / (P_atm - p_v), where 0.622 = M_water / M_air = 18.015/28.965 is the ratio of molar masses; the denominator is the partial pressure of the dry air, P_atm - p_v, not the total. The two differ enough to matter: at p_v = 2 kPa and P_atm = 101.3 kPa the printed form gives 0.01974 while the mass ratio is 0.01253, so the printed form is high by about 58 percent. The identity 0.622 p_v / (P_atm - p_v) = x_v / (1 - x_v) with x_v = p_v / P_atm is the exact statement of the relationship, and it is the mass version that pairs with the enthalpy and relative humidity formulas. The drill drives the printed form, and offers the mass version as a distractor, because recognising that the two are not the same number is the point.',
           },
           {
             id: 'c-density-specific-volume',

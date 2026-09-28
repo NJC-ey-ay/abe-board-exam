@@ -2333,5 +2333,219 @@
       "expected": 1256.6370614359173,
       "tolerance": 1e-12
     }
+  ],
+  "c-temperature-conversions": [
+    {
+      "_note": "212 degF is the boiling point of water, so the answer must be exactly 100 degC. 212 - 32 = 180, and 180 x 5/9 = 100. This is the single reference point that validates the whole printed identity, and it sits above the drill box only because the box stops at 200 degF to keep the shifted distractor clear of the 1.15 scalar.",
+      "vals": {
+        "degF": 212
+      },
+      "expected": 100,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "98.6 degF is human body temperature. 98.6 - 32 = 66.6, and 66.6 x 5/9 = 37.0 degC, confirming the 37 degC that the identity was built on.",
+      "vals": {
+        "degF": 98.6
+      },
+      "expected": 37,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-stefan-boltzmann": [
+    {
+      "_note": "A surface at 900 K over 5 m2 at emissivity 0.95. 900^4 = 6.561e11, and 5.669e-8 x 6.561e11 = 37196.4 W per m2 per unit emissivity, so times 5 m2 times 0.95 the answer is 176682 W. The magnitude is the point: radiation from a hot surface is tens of kilowatts from a few square metres.",
+      "vals": {
+        "eps": 0.95,
+        "A": 5,
+        "T": 900
+      },
+      "expected": 176672.96774999998,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "450 K is exactly half of 900 K, and a fourth power makes that a sixteenth, not a half. Per m2 at emissivity 0.8: 450^4 = 4.1006e10, and 5.669e-8 x 4.1006e10 = 2324.9 W/m2, and 2324.9/37196.4 = 0.0625, which is 1/16 exactly. That is the fourth power doing its work, and it is why the kelvin scale is not optional.",
+      "vals": {
+        "eps": 0.8,
+        "A": 1.25,
+        "T": 450
+      },
+      "expected": 2324.6443125,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-first-law-thermodynamics": [
+    {
+      "_note": "The textbook balance, and the reason for the SOURCE NOTE on this formula. 1000 J of heat enters and 300 J of work leaves, so 700 J is retained. The printed Q + W would give 1300 J, which is energy appearing from nothing; the drill uses the difference because the printed definition of W is work done BY the system.",
+      "vals": {
+        "Q": 1000,
+        "W": 300
+      },
+      "expected": 700,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "2400 J of heat in, 600 J of work out, 1800 J retained. Here W/Q = 0.25, and the printed sum would be 3000 J against a true 1800 J - a 1.67x error, which is the size of mistake the printed plus sign invites at ordinary ratios.",
+      "vals": {
+        "Q": 2400,
+        "W": 600
+      },
+      "expected": 1800,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-newtons-law-cooling": [
+    {
+      "_note": "25 W/m2K over 2.4 m2 across a 40 K difference. 25 x 2.4 = 60, and 60 x 40 = 2400 W, the 2.4 kW a dairy chiller is rated on. Note the difference is a difference: 65 - 25 = 40, and converting both to kelvin would give the same 40, which is why that error is not offered.",
+      "vals": {
+        "hc": 25,
+        "A": 2.4,
+        "Ts": 65,
+        "Tf": 25
+      },
+      "expected": 2400,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "12.5 W/m2K over 8 m2 across a 65 K difference. 12.5 x 8 = 100, and 100 x 65 = 6500 W. The 8 m2 is the total fin surface rather than the plan area of the evaporator, which is the whole reason fins are fitted.",
+      "vals": {
+        "hc": 12.5,
+        "A": 8,
+        "Ts": 100,
+        "Tf": 35
+      },
+      "expected": 6500,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-fouriers-law": [
+    {
+      "_note": "Cylindrical wall: 2 pi K L dT over ln(ro/ri). r_o/r_i = 100/40 = 2.5, and ln 2.5 = 0.916291. The numerator is 2 pi x 0.18 x 2 x 60 = 135.717, so 135.717/0.916291 = 148.1 W. For comparison the flat-wall form KA dT/L on the same figures gives 3.4 W, so the log is worth a factor of 43 here.",
+      "vals": {
+        "K": 0.18,
+        "L": 2,
+        "Ti": 90,
+        "To": 30,
+        "ri": 40,
+        "ro": 100
+      },
+      "expected": 148.1154375069229,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "A thin sleeve: r_o/r_i = 60/50 = 1.2, and ln 1.2 = 0.182322. The numerator is 2 pi x 40 x 1.5 x 130 = 49008.8, so 49008.8/0.182322 = 268805 W. A thin wall is where the log is nearly 1 and the flat-wall answer nearly suffices, which is the limit of the correction.",
+      "vals": {
+        "K": 40,
+        "L": 1.5,
+        "Ti": 150,
+        "To": 20,
+        "ri": 50,
+        "ro": 60
+      },
+      "expected": 268804.44779981056,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-heat-utilization-factor": [
+    {
+      "_note": "Air enters the heater at 30 degC and leaves it at 80 degC, a 50 K rise available, and the exhaust air at 50 degC has taken 20 K of it. HUF = 20/50 = 0.4. The printed form computes (T3 - T2)/(T1 - T2) = -30/-50, and the two negatives are what make it come out positive.",
+      "vals": {
+        "T1": 30,
+        "T3": 50,
+        "T2": 80
+      },
+      "expected": 0.6,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "Full utilisation: the exhaust air leaves at the inlet temperature of 28 degC, so all 42 K of the rise was used. HUF = (45 - 70)/(28 - 70) = -25/-42 = 0.5952. 1.0 is the limit, reached when T_3 equals T_1.",
+      "vals": {
+        "T1": 28,
+        "T3": 45,
+        "T2": 70
+      },
+      "expected": 0.5952380952380952,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-humidity-ratio": [
+    {
+      "_note": "The PRINTED form, W = p_v/P_atm, which is a pressure ratio. 2/101.3 = 0.019744. The psychrometric mass ratio would be 0.622 x 2/(101.3 - 2) = 0.012525, so the printed form is high by a factor of 1.577, which is the gap the SOURCE NOTE records and the reason both mass-ratio forms are offered as distractors.",
+      "vals": {
+        "pv": 2,
+        "Patm": 101.3
+      },
+      "expected": 0.019743336623889437,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "3.5 kPa of vapour in 98.7 kPa, at the cooler end of the station pressure range. 3.5/98.7 = 0.035461. The mass ratio is 0.622 x 3.5/(98.7 - 3.5) = 0.022846, and the printed form is high by the same 1.552 factor as the first case, as it must be since the factor depends only on the pressure ratio.",
+      "vals": {
+        "pv": 3.5,
+        "Patm": 98.7
+      },
+      "expected": 0.035460992907801414,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-saturation-ratio": [
+    {
+      "_note": "0.012 kg of water per kg of air against a saturation capacity of 0.030, so the air is at 40 percent of saturation. 0.012/0.03 = 0.4 exactly. A value of 1.0 is saturated air, and the 0.028 floor of the W_sat box is what keeps the ratio below that in every sample.",
+      "vals": {
+        "Wact": 0.012,
+        "Wsat": 0.03
+      },
+      "expected": 0.4,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "0.006 against 0.028, the tightest corner of the box. 0.006/0.028 = 0.214286. This is the case that set the W_sat floor: the moisture-deficit distractor bottoms out at 0.028 x 0.010/0.018 = 0.0156 of the answer here, and at 0.0035 if the floor were 0.021, which is below the 1 percent plausibility limit.",
+      "vals": {
+        "Wact": 0.006,
+        "Wsat": 0.028
+      },
+      "expected": 0.21428571428571427,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-density-specific-volume": [
+    {
+      "_note": "300 kg occupying 1.5 m3 is a density of 200 kg/m3, and the specific volume is its reciprocal. 1.5/300 = 0.005 m3/kg exactly, and 1/0.005 = 200 confirms it. Grain, and the kind of bulk that makes a specific volume worth quoting at all.",
+      "vals": {
+        "V": 1.5,
+        "m": 300
+      },
+      "expected": 0.005,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "The tightest corner of the box: 400 kg in 0.2 m3 is a density of 2000 kg/m3, which is steel, and the specific volume is 0.2/400 = 0.0005 m3/kg. This case is the reason the mass and volume ranges are what they are: it is the corner that decides how wide they can be.",
+      "vals": {
+        "V": 0.2,
+        "m": 400
+      },
+      "expected": 0.0005,
+      "tolerance": 1e-12
+    }
+  ],
+  "c-stress": [
+    {
+      "_note": "20 kN over a 200 mm2 pin. Newtons per square millimetre is the megapascal directly, so 20000/200 = 100 MPa, with no conversion in the path. 100 MPa is a sensible working figure for a pin in a farm machine linkage.",
+      "vals": {
+        "P": 20000,
+        "A": 200
+      },
+      "expected": 100,
+      "tolerance": 1e-12
+    },
+    {
+      "_note": "125 kN over 2500 mm2, the top corner of both ranges. 125000/2500 = 50 MPa, and the area is 50 mm on a side, so the perimeter error would have given 125000/(4 x 50) = 625, which is 12.5x the answer and the reason that distractor is built from the square root.",
+      "vals": {
+        "P": 125000,
+        "A": 2500
+      },
+      "expected": 50,
+      "tolerance": 1e-12
+    }
   ]
 }
