@@ -84,8 +84,10 @@ for (let i = 0; i < variants.length; i++) {
 }
 
 let output = `// Recalled Questions - ABELE Board Exam (2021-2025)
-// Generated from PDF extraction + LLM parsing + variant generation
-// Each original question expanded to 4 variants (each option as correct answer once)
+// Generated from PDF extraction + LLM parsing + fixed expansion
+// Every source question ships verbatim (original + source answer);
+// computation items additionally ship distinct, provably-consistent
+// siblings (one per other option value). Theory items ship once.
 // Total: ${variants.length} questions
 
 import type { Question } from './comprehensive-questions';

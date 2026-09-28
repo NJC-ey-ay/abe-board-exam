@@ -1,11 +1,18 @@
 // Structural and identity validator for the recalled-question bank.
 //
-// The recalled bank ships ~1000 questions that were reconstructed from PDF
-// extraction + LLM parsing + variant expansion, so the failure modes are
-// different from the formula bank: mojibake, template artifacts, dropped
-// fields, and variant groups that lost a copy. This validator catches those
-// mechanically. It also runs two domain heuristics that feed the known
-// reconciliation work:
+// The recalled bank is rebuilt from PDF extraction + LLM parsing + a fixed
+// expansion model:
+//   * Every source question ships verbatim (v0) with the source-marked answer.
+//   * Computation questions additionally ship 0-3 siblings (v1..v3), each a
+//     DISTINCT question whose steps recompute to one of the other option
+//     values. Unprovable siblings are dropped at generation time.
+//   * Theory/factual questions ship as a single verbatim entry only.
+//
+// The validator mechanically catches: mojibake, template artifacts, dropped
+// fields, broken families (missing/misnumbered siblings), v0 drifting from the
+// parsed source, and computation variants whose marked answer contradicts the
+// steps. It also runs two domain heuristics that feed the known reconciliation
+// work:
 //
 //   1. ELECTRICAL mislabel check - questions whose text is dominated by
 //      farm-electrification vocabulary but are tagged area 'A' (area C owns
@@ -19,7 +26,14 @@
 // Run: npm run verify:recall
 
 import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { loadTsModule } from './lib/load-ts.mjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const variants = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'src', 'data', 'recalled-questions-variants.json'), 'utf-8'));
+const parsed = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'src', 'data', 'recalled-questions-parsed.json'), 'utf-8'));
 
 const FAILURES = [];
 const WARNINGS = [];
@@ -103,7 +117,7 @@ function numApproxEq(a, b) {
   if (a === b) return true;
   if (Math.abs(a - b) <= 0.02) return true;
   if (Math.abs(a - b) <= Math.abs(b) * 0.02) return true;
-  return a === Math.round(b);
+  return false;
 }
 
 // Every `= N` / `≈ N` value printed in a single text (steps only — the formula
@@ -113,6 +127,19 @@ const resultNumsOf = (text) => {
   for (const m of String(text).matchAll(RESULT_RX)) out.push(Number(m[1].replace(/,/g, '')));
   return out;
 };
+
+// Range options ("0.35 to 0.45", "8-12 m" with spaced dash) are legitimate for
+// computation items; the answer is then a bounded interval, not a single value.
+const RANGE_RX = /(-?\d[\d,]*(?:\.\d+)?)\s*(?:to|–|—|\.\.\.?)\s*(-?\d[\d,]*(?:\.\d+)?)/i;
+
+function optionRange(opt) {
+  const m = String(opt).match(RANGE_RX);
+  if (!m) return null;
+  const a = Number(m[1].replace(/,/g, ''));
+  const b = Number(m[2].replace(/,/g, ''));
+  if (!Number.isFinite(a) || !Number.isFinite(b) || a === b) return null;
+  return a < b ? [a, b] : [b, a];
+}
 
 // ---------- per-question checks ----------
 
@@ -176,14 +203,17 @@ for (const q of questions) {
   }
 
   const sol = q.solution ?? {};
-  if (typeof sol.steps !== 'object' || !Array.isArray(sol.steps) || sol.steps.length === 0) {
-    fail(q.id, 'solution-steps', 'solution.steps missing or empty');
+  const isSibling = m !== null && Number(m[5]) > 0;
+  if (!Array.isArray(sol.steps)) {
+    fail(q.id, 'solution-steps', 'solution.steps is not an array');
+  } else if (q.type === 'computation' && sol.steps.length === 0 && isSibling) {
+    fail(q.id, 'solution-steps', 'computation sibling has no solution steps');
   }
   if (typeof sol.keyConcept !== 'string' || sol.keyConcept.trim() === '') {
     fail(q.id, 'solution-keyconcept', 'solution.keyConcept missing or empty');
   }
-  if (q.type === 'computation' && (sol.formula === undefined || sol.formula === '' || sol.formula === 'N/A')) {
-    fail(q.id, 'solution-formula', 'computation question has no formula');
+  if (q.type === 'computation' && (sol.formula === undefined || sol.formula === '' || sol.formula === 'N/A') && isSibling) {
+    fail(q.id, 'solution-formula', 'computation sibling has no formula');
   }
 
   for (const field of STRING_FIELDS(q)) {
@@ -210,60 +240,143 @@ for (const q of questions) {
   const canon = q.question.trim().toLowerCase();
   qtextCount.set(canon, (qtextCount.get(canon) ?? 0) + 1);
 
-  // A computation question must print at least one computed value, and the
-  // marked correct option must be one of the printed values.
-  if (q.type === 'computation' && sol.formula && sol.formula !== 'N/A') {
-    const marked = parseNum(Array.isArray(q.options) ? q.options[q.correctAnswer] : null);
+  // A computation SIBLING must print at least one computed value, and the
+  // marked correct option must be one of the printed values. v0s are skipped:
+  // they carry the PDF's documented answer and steps verbatim, so their
+  // "consistency" is defined by the source, not by recomputation.
+  if (isSibling && q.type === 'computation' && sol.formula && sol.formula !== 'N/A') {
+    const markedOpt = Array.isArray(q.options) ? q.options[q.correctAnswer] : null;
     const computed = resultNumsOf((sol.steps ?? []).join('\n'));
-    if (computed.length && marked === null) {
-      fail(q.id, 'answer-consistency', `steps compute ${computed.join(', ')} but the correct option has no numeric value`);
-    } else if (computed.length && marked !== null && !computed.some((n) => numApproxEq(marked, n))) {
-      fail(q.id, 'answer-consistency', `steps compute ${computed.join(', ')}; correctAnswer marks '${q.options[q.correctAnswer]}' (${marked}), which no computation produces`);
+    if (!computed.length) continue;
+    const range = optionRange(markedOpt);
+    let matches = false;
+    if (range) {
+      const [lo, hi] = range;
+      const slop = Math.max(0.02, (hi - lo) * 0.02);
+      matches = computed.some((n) => n >= lo - slop && n <= hi + slop);
+    } else {
+      const marked = parseNum(markedOpt);
+      if (marked === null) {
+        fail(q.id, 'answer-consistency', `steps compute ${computed.join(', ')} but the correct option has no numeric value`);
+        continue;
+      }
+      matches = computed.some((n) => numApproxEq(marked, n));
+    }
+    if (!matches) {
+      fail(q.id, 'answer-consistency', `steps compute ${computed.join(', ')}; correctAnswer marks '${markedOpt}', which no computation produces`);
     }
   }
 }
 
 // ---------- cross-question checks ----------
 
-// Group the questions in array order so we can tell complete variant groups
-// apart from groups that interleave with other bases.
-const byBase = new Map(); // base -> { positions: [], variants: <Set> }
+// Group the questions in array order so we can tell intact families apart from
+// groups that interleave with other bases. The family model is now:
+//   * every base has exactly one v0 (verbatim original);
+//   * theory families == 1 member;
+//   * computation families == 1 original + 0-3 contiguous siblings (v1..).
+const byBase = new Map(); // base -> { positions: [], variants: <Set>, type }
 questions.forEach((q, i) => {
   const m = ID_RE.exec(q.id ?? '');
   if (m === null) return;
   const base = m.slice(2, 5).join('-');
   const v = Number(m[5]);
-  if (!byBase.has(base)) byBase.set(base, { positions: [], variants: new Set() });
+  if (!byBase.has(base)) byBase.set(base, { positions: [], variants: new Set(), type: q.type });
   const group = byBase.get(base);
+  if (group.type !== q.type) group.type = 'mixed';
   group.positions.push(i);
   group.variants.add(v);
 });
 
 let completeGroups = 0;
+let singleFamilies = 0;
+let expandedFamilies = 0;
+let siblingMembers = 0;
 let brokenGroups = 0;
 let splitGroups = 0;
 for (const [base, group] of byBase) {
-  const missing = [0, 1, 2, 3].filter((v) => !group.variants.has(v));
-  if (missing.length) {
+  const present = [...group.variants].sort((a, b) => a - b);
+  if (!group.variants.has(0)) {
     brokenGroups++;
-    fail(base, 'variant-group', `missing variant${missing.length > 1 ? 's' : ''} v${missing.join(', v')}`);
+    fail(base, 'family-shape', 'family missing original v0');
+    continue;
+  }
+  let contiguous = true;
+  for (let k = 1; k < present.length; k++) {
+    if (present[k] !== present[k - 1] + 1) {
+      contiguous = false;
+      break;
+    }
+  }
+  if (!contiguous) {
+    brokenGroups++;
+    fail(base, 'family-shape', `sibling numbers not contiguous (v${present.join(', v')})`);
+    continue;
+  }
+  if (group.type === 'theory' && present.length > 1) {
+    brokenGroups++;
+    fail(base, 'family-shape', `theory family has ${present.length} members; theory ships verbatim only`);
+    continue;
+  }
+  if (group.type === 'mixed') {
+    brokenGroups++;
+    fail(base, 'family-shape', 'family mixes question types');
     continue;
   }
   completeGroups++;
-  const consecutive = group.positions.every((pos, idx) => idx === 0 || pos === group.positions[idx - 1] + 1);
-  if (!consecutive) {
-    splitGroups++;
-    fail(base, 'variant-adjacency', `all 4 variants present but stored at non-consecutive rows (${group.positions.join(', ')}); the four copies of a base must stay adjacent`);
+  if (present.length === 1) {
+    singleFamilies++;
+  } else {
+    expandedFamilies++;
+    siblingMembers += present.length - 1;
+    const consecutive = group.positions.every((pos, idx) => idx === 0 || pos === group.positions[idx - 1] + 1);
+    if (!consecutive) {
+      splitGroups++;
+      fail(base, 'variant-adjacency', `family members stored at non-consecutive rows (${group.positions.join(', ')}); a base and its siblings must stay adjacent`);
+    }
   }
 }
 
-// Duplicate stem text = one question used twice with (likely) two different
-// answers marked correct, which is an incoherence the bank must not ship.
+// Original fidelity: every v0 must be a byte-faithful copy of its parsed source
+// row (question, options, correctAnswer, year, area). This is the guarantee the
+// new bank was rebuilt for — the PDF answer must survive verbatim.
+const optsEq = (a, b) => Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((o, i) => o === b[i]);
+let fidelityChecked = 0;
+let fidelityBad = 0;
+for (const vq of variants) {
+  if (vq.variantRole !== 'original') continue;
+  fidelityChecked++;
+  const src = parsed[vq.sourceIndex];
+  if (!src) {
+    fidelityBad++;
+    fail(vq.id, 'original-fidelity', `sourceIndex ${vq.sourceIndex} is out of range in the parsed bank`);
+    continue;
+  }
+  const mis = [];
+  if (String(vq.question).trim() !== String(src.question).trim()) mis.push('question');
+  if (!optsEq(vq.options, src.options)) mis.push('options');
+  if (Number(vq.correctAnswer) !== Number(src.correctAnswer)) mis.push('correctAnswer');
+  if (Number(vq.year) !== Number(src.year)) mis.push('year');
+  if (vq.area !== src.area) mis.push('area');
+  if (mis.length) {
+    fidelityBad++;
+    fail(vq.id, 'original-fidelity', `v0 deviates from parsed source (${mis.join(', ')})`);
+  }
+}
+
+// Build sync: the shipped module must be exactly the staged JSON bank.
+if (variants.length !== questions.length) {
+  fail('<dataset>', 'build-sync', `recalled-questions-variants.json has ${variants.length} questions but recalled-questions.ts has ${questions.length}`);
+}
+
+// Duplicate stem text. Cross-family repeats are real (the same recalled item
+// reappears in multiple exam years and ships verbatim each time), so these are
+// informational only.
 for (const [text, count] of qtextCount) {
   if (count <= 1) continue;
   for (const q of questions) {
     if (q.question.trim().toLowerCase() === text) {
-      fail(q.id, 'duplicate-text', `stem duplicated across ${count} questions`);
+      warn(q.id, 'duplicate-stem', `stem duplicated across ${count} questions (usually the same recalled item in multiple exam years)`);
     }
   }
 }
@@ -319,8 +432,9 @@ if (total > 0) {
   INFO.push(`distinct subTopic strings per area (${subTopicInventory.size}): ${[...subTopicInventory.keys()].join(' | ')}`);
   INFO.push(`distinct topic strings per area (${topicInventory.size}): ${[...topicInventory.keys()].join(' | ')}`);
   INFO.push(`questions with no usable year: ${noYear}`);
-  INFO.push(`variant groups: ${completeGroups} complete+adjacent, ${brokenGroups} missing copies, ${splitGroups} split`);
-  INFO.push(`duplicate question texts: ${dupTextTotal}`);
+  INFO.push(`variant families: ${completeGroups} intact (${singleFamilies} verbatim-only, ${expandedFamilies} with ${siblingMembers} siblings), ${brokenGroups} broken, ${splitGroups} split`);
+  INFO.push(`original fidelity: ${fidelityChecked} verbatim originals cross-checked against the parsed bank, ${fidelityBad} mismatched`);
+  INFO.push(`duplicate question texts (cross-year repeats): ${dupTextTotal}`);
 } else {
   INFO.push('NO QUESTIONS LOADED');
   fail('<dataset>', 'empty', 'recalledQuestions resolved to an empty array');
